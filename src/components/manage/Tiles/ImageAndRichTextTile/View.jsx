@@ -22,7 +22,6 @@ const View = ({ data }) => (
       />
       <div className="card-body">
         <h1>{data.title}</h1>
-        <h1 />
         <div dangerouslySetInnerHTML={{ __html: data.description }} />
       </div>
     </div>

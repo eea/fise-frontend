@@ -38,7 +38,7 @@ class StackedBarChartView extends Component {
     return (
       <div className="chartWrapperView">
         <div className="tile-inner-wrapper">
-          {this.state.renderChart ? (
+          {this.state.chartData ? (
             <ResponsiveContainer>
               <BarChart
                 data={this.state.chartData}
