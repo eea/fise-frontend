@@ -1,12 +1,5 @@
-/**
- * View image tile.
- * @module components/manage/Tiles/Hero/View
- */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { flattenToAppURL } from '@plone/volto/helpers';
-// import PropTypes from 'prop-types';
 
 import {
   ResponsiveContainer,
@@ -19,36 +12,26 @@ import {
   Legend,
 } from 'recharts';
 
-/**
- * View image tile class.
- * @class View
- * @extends Component
- */
 class StackedBarChartView extends Component {
   constructor(props) {
     super(props);
 
-    const chartData = this.props.data.chartData || [];
-    this.state = {
-      renderChart: true,
-      chartData: chartData,
-    };
+    let chartData = this.props.data.chartData || [];
 
-    this.getChartData = this.getChartData.bind(this);
-  }
-
-  getChartData() {
-    let chartData = this.state.chartData;
-    if (typeof chartData == 'string') {
-      try {
+    try {
+      if (typeof chartData !== 'string') {
         chartData = JSON.parse(chartData);
-      } catch (error) {
-        console.log(error);
-        chartData = [];
       }
+    } catch (error) {
+      console.log('Error in JSON parsing chart data', error);
+      chartData = [];
     }
-    console.log(chartData);
-    return chartData;
+
+    // TODO: the axis labels need to come from the data
+
+    this.state = {
+      chartData,
+    };
   }
 
   render() {
@@ -58,7 +41,7 @@ class StackedBarChartView extends Component {
           {this.state.renderChart ? (
             <ResponsiveContainer>
               <BarChart
-                data={this.getChartData()}
+                data={this.state.chartData}
                 margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
@@ -71,7 +54,7 @@ class StackedBarChartView extends Component {
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <div>Invalid or missing data.</div>
+            <div>No valid data.</div>
           )}
         </div>
       </div>
@@ -79,11 +62,6 @@ class StackedBarChartView extends Component {
   }
 }
 
-/**
- * Property types.
- * @property {Object} propTypes Property types.
- * @static
- */
 StackedBarChartView.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
 };

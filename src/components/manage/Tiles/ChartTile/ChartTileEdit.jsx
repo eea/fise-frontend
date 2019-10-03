@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-import { Button, Input, Message, TextArea } from 'semantic-ui-react';
 
 import {
   ResponsiveContainer,
@@ -21,29 +19,7 @@ const data = [
   { name: '16', Decidous: 1890, Conifers: 4800 },
 ];
 
-// const messages = defineMessages({
-//     ChartTile: {
-//       id: 'Enter chart data',
-//       defaultMessage: 'Enter chart data',
-//     },
-//   });
-
 class StackedBarChart extends Component {
-  // static propTypes = {
-  //     selected: PropTypes.bool.isRequired,
-  //     tile: PropTypes.string.isRequired,
-  //     index: PropTypes.number.isRequired,
-  //     data: PropTypes.objectOf(PropTypes.any).isRequired,
-  //     pathname: PropTypes.string.isRequired,
-  //     onChangeTile: PropTypes.func.isRequired,
-  //     onSelectTile: PropTypes.func.isRequired,
-  //     onDeleteTile: PropTypes.func.isRequired,
-  //     onFocusPreviousTile: PropTypes.func.isRequired,
-  //     onFocusNextTile: PropTypes.func.isRequired,
-  //     handleKeyDown: PropTypes.func.isRequired,
-  //     intl: intlShape.isRequired,
-  // };
-
   constructor(props) {
     super(props);
 
@@ -93,7 +69,8 @@ class StackedBarChart extends Component {
         chartData = [];
       }
     }
-    console.log(chartData);
+    // TODO: the axis labels need to come from the data
+    // console.log(chartData);
     return chartData;
   }
 
@@ -136,8 +113,9 @@ class StackedBarChart extends Component {
             </div>
           )}
           <div className="hero-body">
-            <label>Enter JSON data</label>
+            <label htmlFor="chart-data">Enter JSON data</label>
             <textarea
+              id="chart-data"
               defaultValue={JSON.stringify(this.getChartData())}
               placeholder="Enter data in JSON format"
               onChange={this.handleChange}
