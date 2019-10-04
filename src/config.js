@@ -19,15 +19,14 @@ import {
   tiles as defaultTiles,
 } from '@plone/volto/config';
 
+import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
+
 // Tiles
 import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
 import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
 
 import TableauTileEdit from '~/components/manage/Tiles/TableauTile/TableauTileEdit';
 import tableauTileView from '~/components/manage/Tiles/TableauTile/TableauTileView';
-
-// import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
-// import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
 
 import TextTileEdit from '~/components/manage/Tiles/Text/Edit';
 import TextTileView from '~/components/manage/Tiles/Text/View';
@@ -36,18 +35,22 @@ import TextTileView from '~/components/manage/Tiles/Text/View';
 import CountryView from '~/components/theme/CountryView/CountryView';
 import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
-// import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
-// import TableauTestView from '~/components/theme/TableauTestView/View';
-// import MosaicView from '~/components/theme/MosaicView/MosaicView';
-
-import { layoutViews } from '../volto-mosaic/src';
 
 import React from 'react';
 import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import underlineSVG from '@plone/volto/icons/underline.svg';
-// import divideVertical from '@plone/volto/icons/divide-vertical.svg';
 import chartIcon from '@plone/volto/icons/world.svg';
+
+// TODO: this needs to be reorganized
+import { layoutViews } from '../volto-mosaic/src';
+
+// import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
+// import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
+// import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
+// import TableauTestView from '~/components/theme/TableauTestView/View';
+// import MosaicView from '~/components/theme/MosaicView/MosaicView';
+// import divideVertical from '@plone/volto/icons/divide-vertical.svg';
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
@@ -79,11 +82,20 @@ export const views = {
   },
 };
 
+// read @plone/volto/components/manage/Form/Field.jsx to understand this
 export const widgets = {
   ...defaultWidgets,
+  vocabulary: {
+    ...defaultWidgets.vocabulary,
+    'fise.topics': TokenWidget,
+    'fise.keywords': TokenWidget,
+    'fise.publishers': TokenWidget,
+  },
 };
 
-console.log('------', defaultTiles);
+console.log('Widgets', widgets);
+
+// console.log('------', defaultTiles);
 
 export const tiles = {
   ...defaultTiles,
