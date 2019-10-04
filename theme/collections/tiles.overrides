@@ -1,6 +1,6 @@
 .tile-box {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
 
   &.preview {
     display: inline-block;

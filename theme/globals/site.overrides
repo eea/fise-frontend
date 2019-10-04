@@ -652,7 +652,7 @@ nav.navigation .menu > a.item:first-of-type { display:none !important }
 
 
 .modal .tile {
-    min-height: 600px;
+    min-height: 400px;
 }
 
 .ui.modal {
