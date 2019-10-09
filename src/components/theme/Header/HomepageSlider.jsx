@@ -10,6 +10,7 @@ import right from '@plone/volto/icons/right-key.svg';
 // Import css files
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import SliderCaret from './slidercarret.svg'
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -137,6 +138,7 @@ class HomepageSlider extends Component {
         >
           {this.state.slides}
         </Slider>
+        <img className="slider-caret" src={SliderCaret} alt=""/>
       </div>
     );
   }

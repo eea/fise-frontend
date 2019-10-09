@@ -2,6 +2,7 @@
         Theme Overrides
 *******************************/
 
+@menuColor:  #564535;
 
 .ui.menu .active.item,
 .ui.menu .active.item:hover,
@@ -11,5 +12,16 @@
 }
 
 .ui.menu .item {
-    color: @textColor;
+    color: @menuColor;
+    font-weight: 500;
+    text-transform: none!important;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+// #564535
+
+
+.ui.form .searchbox.field {
+    display: flex;
+    align-items: center;
 }

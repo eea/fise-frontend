@@ -82,8 +82,44 @@
     }
   }
 
-  @media only screen and (min-width: @largerMonitorBreakpoint + @offset) {
-    .contentWidthMedia(@largerMonitorWidth, @largeMonitorGutter, -30px);
+  @media only screen and (min-width: @widescreenlaptopBreakpoint + @offset) {
+    .contentWidthMedia(@widescreenlaptopWidth, @largeMonitorGutter, -30px);
+    [class*='mobile only']:not([class*='large screen']),
+    [class*='tablet only']:not([class*='large screen']),
+    [class*='computer only']:not([class*='large screen']),
+    [class*='large screen hidden'],
+    [class*='widescreen only']:not([class*='large screen']),
+    [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+
+  @media only screen and (min-width: @widescreenlaptopBigBreakpoint + @offset) {
+    .contentWidthMedia(@widescreenlaptopBigWidth, @largeMonitorGutter, -30px);
+    [class*='mobile only']:not([class*='large screen']),
+    [class*='tablet only']:not([class*='large screen']),
+    [class*='computer only']:not([class*='large screen']),
+    [class*='large screen hidden'],
+    [class*='widescreen only']:not([class*='large screen']),
+    [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+
+  @media only screen and (min-width: @widescreenmonitorSmallBreakpoint + @offset) {
+    .contentWidthMedia(@widescreenmonitorSmallWidth, @largeMonitorGutter, -30px);
+    [class*='mobile only']:not([class*='large screen']),
+    [class*='tablet only']:not([class*='large screen']),
+    [class*='computer only']:not([class*='large screen']),
+    [class*='large screen hidden'],
+    [class*='widescreen only']:not([class*='large screen']),
+    [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+  
+  @media only screen and (min-width: @widescreenMonitorBreakpoint + @offset) {
+    .contentWidthMedia(@widescreenMonitorWidth, @largeMonitorGutter, -30px);
     [class*='mobile only']:not([class*='large screen']),
     [class*='tablet only']:not([class*='large screen']),
     [class*='computer only']:not([class*='large screen']),
