@@ -25,6 +25,9 @@ import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
 import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
 
+import PlotlyTileEdit from '~/components/manage/Tiles/PlotlyChart/Edit';
+// import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
+
 import TableauTileEdit from '~/components/manage/Tiles/TableauTile/TableauTileEdit';
 import tableauTileView from '~/components/manage/Tiles/TableauTile/TableauTileView';
 
@@ -93,8 +96,7 @@ export const widgets = {
   },
 };
 
-console.log('Widgets', widgets);
-
+// console.log('Widgets', widgets);
 // console.log('------', defaultTiles);
 
 export const tiles = {
@@ -102,8 +104,15 @@ export const tiles = {
 
   tilesConfig: {
     ...defaultTiles.tilesConfig,
+    plotlytile: {
+      title: 'Plotly Chart',
+      view: PlotlyTileEdit,
+      edit: PlotlyTileEdit,
+      icon: chartIcon,
+      height: 400,
+    },
     charttile: {
-      title: 'charttile',
+      title: 'Demo Chart Tile',
       view: ChartTileView,
       edit: ChartTileEdit,
       icon: chartIcon,
