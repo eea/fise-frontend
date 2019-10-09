@@ -8,6 +8,7 @@ import { defaultRoutes } from '@plone/volto/routes';
 import { EditMosaic } from '../volto-mosaic/src';
 
 import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
+import DataProvidersView from '~/components/theme/TestViews/DataProvidersView';
 
 /**
  * Routes array.
@@ -19,6 +20,8 @@ const routes = [
     path: '/',
     component: App, // Change this if you want a different component
     routes: [
+      ...defaultRoutes,
+
       // Add your routes here
       {
         path: '/edit',
@@ -34,7 +37,10 @@ const routes = [
         path: '*/mosaic-settings-view',
         component: MosaicSettingsView,
       },
-      ...defaultRoutes
+      {
+        path: '*/data-providers-view',
+        component: DataProvidersView,
+      },
     ],
   },
 ];

@@ -18,6 +18,7 @@ import {
   SET_FOLDER_TABS,
   GET_PARENT_FOLDER_DATA,
   GET_MOSAIC_SETTINGS,
+  GET_DATA_PROVIDERS,
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -74,10 +75,19 @@ export function getParentFolderData(url) {
   };
 }
 
-
 export function getMosaicSettings() {
   return {
     type: GET_MOSAIC_SETTINGS,
+    request: {
+      op: 'get',
+      path: `/@mosaic-settings`,
+    },
+  };
+}
+
+export function getDataProviders() {
+  return {
+    type: GET_DATA_PROVIDERS,
     request: {
       op: 'get',
       path: `/@mosaic-settings`,
