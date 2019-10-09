@@ -19,6 +19,7 @@ import {
   tiles as defaultTiles,
 } from '@plone/volto/config';
 
+import { defineMessages } from 'react-intl';
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 // Tiles
@@ -96,34 +97,61 @@ export const widgets = {
   },
 };
 
-// console.log('Widgets', widgets);
-// console.log('------', defaultTiles);
+defineMessages({
+  custom_addons: {
+    id: 'custom_addons',
+    defaultMessage: 'Custom Addons',
+  },
+  plotly_chart: {
+    id: 'plotly_chart',
+    defaultMessage: 'Plotly Chart',
+  },
+  demo_chart: {
+    id: 'demo_chart',
+    defaultMessage: 'Demo Chart',
+  },
+  tableau: {
+    id: 'tableau',
+    defaultMessage: 'Tableau',
+  },
+});
 
 export const tiles = {
   ...defaultTiles,
 
+  groupTilesOrder: [
+    ...defaultTiles.groupTilesOrder,
+    { id: 'custom_addons', title: 'Custom addons' },
+  ],
+
   tilesConfig: {
     ...defaultTiles.tilesConfig,
-    plotlytile: {
+    plotly_chart: {
+      id: 'plotly_chart',
       title: 'Plotly Chart',
       view: PlotlyTileEdit,
       edit: PlotlyTileEdit,
       icon: chartIcon,
       height: 400,
+      group: 'custom_addons',
     },
-    charttile: {
-      title: 'Demo Chart Tile',
+    demo_chart: {
+      id: 'demo_chart',
+      title: 'Demo Chart',
       view: ChartTileView,
       edit: ChartTileEdit,
       icon: chartIcon,
       height: 400,
+      group: 'custom_addons',
     },
-    tableautile: {
-      title: 'tableautile',
+    tableau: {
+      id: 'tableau',
+      title: 'Tableau',
       view: tableauTileView,
       edit: TableauTileEdit,
       icon: chartIcon,
       height: 400,
+      group: 'custom_addons',
     },
     text: {
       ...defaultTiles.tilesConfig.text,
@@ -135,10 +163,10 @@ export const tiles = {
       ...defaultTiles.tilesConfig.video,
       height: 600,
     },
-    image: {
-      ...defaultTiles.tilesConfig.image,
-      height: 600,
-    },
+    // image: {
+    //   ...defaultTiles.tilesConfig.image,
+    //   height: 600,
+    // },
     hero: {
       ...defaultTiles.tilesConfig.hero,
       height: 600,
