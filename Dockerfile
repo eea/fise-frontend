@@ -1,6 +1,6 @@
 # Based on https://github.com/plone/volto/blob/master/entrypoint.sh
 
-FROM node:12-stretch
+FROM node:10-jessie
 
 RUN apt-get update -y
 RUN apt-get install -y git
