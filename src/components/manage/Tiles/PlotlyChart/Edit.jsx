@@ -32,10 +32,12 @@ class Edit extends Component {
   constructor(props) {
     super(props);
 
+    const chartData = this.props.data.chartData;
+
     this.state = {
-      data: [],
-      layout: {},
-      frames: [],
+      data: chartData.data || [],
+      layout: chartData.layout || [],
+      frames: chartData.frames || [],
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -56,21 +58,19 @@ class Edit extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log('got props', nextProps);
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('got props', nextProps);
+  // }
 
   componentWillMount() {
     this.props.searchContent('', { portal_type: 'discodataconnector' });
   }
 
   handleChange(data, layout, frames) {
-    console.log('Handle change', data, layout, frames);
     this.setState({ data, layout, frames }, this.onSubmit);
   }
 
   handleChangeProvider(ev, { value }) {
-    console.log('Selected', value);
     this.props.getDataFromProvider(value);
   }
 
@@ -128,7 +128,6 @@ class Edit extends Component {
 
 export default connect(
   (state, props) => {
-    console.log('connected', state.data_providers);
     const providerData = state.data_providers ? state.data_providers.item : {};
     return {
       providers: state.search.items,
