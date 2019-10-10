@@ -32,7 +32,7 @@ class Edit extends Component {
   constructor(props) {
     super(props);
 
-    const chartData = this.props.data.chartData;
+    const chartData = this.props.data.chartData || {};
 
     this.state = {
       data: chartData.data || [],

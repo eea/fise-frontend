@@ -778,3 +778,6 @@ nav.navigation .menu>a.item:first-of-type {
 a {
   color: #047A79;
 }
+
+// chart editor fixes
+.editor_controls .fold__top { height: initial; }
