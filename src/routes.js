@@ -20,8 +20,6 @@ const routes = [
     path: '/',
     component: App, // Change this if you want a different component
     routes: [
-      ...defaultRoutes,
-
       // Add your routes here
       {
         path: '/edit',
@@ -41,6 +39,7 @@ const routes = [
         path: '*/data-providers-view',
         component: DataProvidersView,
       },
+      ...defaultRoutes,
     ],
   },
 ];
