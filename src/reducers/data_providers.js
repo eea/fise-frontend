@@ -29,10 +29,11 @@ export default function data_providers(state = initialState, action = {}) {
         loading: true,
       };
     case `${GET_DATA_FROM_PROVIDER}_SUCCESS`:
+      console.log('Success', action.result);
       return {
         ...state,
         error: null,
-        item: action.result,
+        item: action.result['@components']?.['connector-data']?.data || [],
         loaded: true,
         loading: false,
       };

@@ -85,22 +85,22 @@ export function getMosaicSettings() {
   };
 }
 
-export function getDataProviders() {
-  return {
-    type: GET_DATA_PROVIDERS,
-    request: {
-      op: 'get',
-      path: `/@mosaic-settings`,
-    },
-  };
-}
+// export function getDataProviders() {
+//   return {
+//     type: GET_DATA_PROVIDERS,
+//     request: {
+//       op: 'get',
+//       path: `/@mosaic-settings`,
+//     },
+//   };
+// }
 
 export function getDataFromProvider(path) {
   return {
     type: GET_DATA_FROM_PROVIDER,
     request: {
       op: 'get',
-      path,
+      path: path + '?expand=connector-data',
     },
   };
 }
