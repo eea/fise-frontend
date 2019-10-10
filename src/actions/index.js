@@ -13,12 +13,12 @@
 
 import {
   GET_FRONTPAGESLIDES,
-  SET_FOLDER_HEADER,
+  // SET_FOLDER_HEADER,
   GET_DEFAULT_HEADER_IMAGE,
   SET_FOLDER_TABS,
   GET_PARENT_FOLDER_DATA,
   GET_MOSAIC_SETTINGS,
-  GET_DATA_PROVIDERS,
+  GET_DATA_FROM_PROVIDER,
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -91,6 +91,16 @@ export function getDataProviders() {
     request: {
       op: 'get',
       path: `/@mosaic-settings`,
+    },
+  };
+}
+
+export function getDataFromProvider(path) {
+  return {
+    type: GET_DATA_FROM_PROVIDER,
+    request: {
+      op: 'get',
+      path,
     },
   };
 }

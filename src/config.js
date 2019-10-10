@@ -27,7 +27,7 @@ import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
 import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
 
 import PlotlyTileEdit from '~/components/manage/Tiles/PlotlyChart/Edit';
-// import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
+import PlotlyTileView from '~/components/manage/Tiles/PlotlyChart/View';
 
 import TableauTileEdit from '~/components/manage/Tiles/TableauTile/TableauTileEdit';
 import tableauTileView from '~/components/manage/Tiles/TableauTile/TableauTileView';
@@ -129,7 +129,7 @@ export const tiles = {
     plotly_chart: {
       id: 'plotly_chart',
       title: 'Plotly Chart',
-      view: PlotlyTileEdit,
+      view: PlotlyTileView,
       edit: PlotlyTileEdit,
       icon: chartIcon,
       height: 400,

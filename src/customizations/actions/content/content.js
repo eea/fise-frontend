@@ -125,6 +125,7 @@ export function getContent(url, version = null, subrequest = null) {
         path: `${url}${version ? `/@history/${version}` : ''}?fullobjects`,
       },
     });
+    console.log('getContent', url);
     dispatch({
       type: GET_CONTENT,
       subrequest,

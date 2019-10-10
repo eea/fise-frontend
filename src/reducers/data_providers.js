@@ -3,11 +3,11 @@
  * @module reducers/data_providers
  */
 
-import { GET_DATA_PROVIDERS } from '~/constants/ActionTypes';
+import { GET_DATA_FROM_PROVIDER } from '~/constants/ActionTypes';
 
 const initialState = {
   error: null,
-  items: {},
+  item: {},
   loaded: false,
   loading: false,
 };
@@ -21,26 +21,26 @@ const initialState = {
  */
 export default function data_providers(state = initialState, action = {}) {
   switch (action.type) {
-    case `${GET_DATA_PROVIDERS}_PENDING`:
+    case `${GET_DATA_FROM_PROVIDER}_PENDING`:
       return {
         ...state,
         error: null,
         loaded: false,
         loading: true,
       };
-    case `${GET_DATA_PROVIDERS}_SUCCESS`:
+    case `${GET_DATA_FROM_PROVIDER}_SUCCESS`:
       return {
         ...state,
         error: null,
-        items: action.result,
+        item: action.result,
         loaded: true,
         loading: false,
       };
-    case `${GET_DATA_PROVIDERS}_FAIL`:
+    case `${GET_DATA_FROM_PROVIDER}_FAIL`:
       return {
         ...state,
         error: action.error,
-        items: {},
+        item: {},
         loaded: false,
         loading: false,
       };

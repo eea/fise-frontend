@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import 'react-chart-editor/lib/react-chart-editor.css';
 import Loadable from 'react-loadable';
-// import plotly from 'plotly.js/dist/plotly';
+import { connect } from 'react-redux';
+import { searchContent } from '@plone/volto/actions';
+import { getDataFromProvider } from '~/actions';
+import { Dropdown } from 'semantic-ui-react';
 
 const LoadablePlotlyEditor = Loadable({
   loader: () => import('react-chart-editor'),
   loading() {
-    return <div>Loading...</div>;
+    return <div>Loading chart editor...</div>;
   },
 });
 
@@ -15,6 +18,11 @@ const dataSources = {
   col2: [4, 3, 2], // eslint-disable-line no-magic-numbers
   col3: [17, 13, 9], // eslint-disable-line no-magic-numbers
 };
+
+// const mapDispatchToProps = {
+//   getContent,
+//   searchContent,
+// };
 
 const dataSourceOptions = Object.keys(dataSources).map(name => ({
   value: name,
@@ -27,82 +35,102 @@ class Edit extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { data: [], layout: {}, frames: [] };
+    this.state = {
+      data: [],
+      layout: {},
+      frames: [],
+    };
 
-    // this.onSubmit = this.onSubmit.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeProvider = this.handleChangeProvider.bind(this);
     // this.getChartData = this.getChartData.bind(this);
   }
 
+  onSubmit() {
+    const chartData = {
+      data: this.state.data,
+      layout: this.state.layout,
+      frames: this.state.frames,
+    };
+    this.props.onChangeTile(this.props.tile, {
+      ...this.props.data,
+      chartData,
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('got props', nextProps.data_provider, nextProps);
+  }
+
+  componentWillMount() {
+    this.props.searchContent('', { portal_type: 'discodataconnector' });
+  }
+
+  handleChange(data, layout, frames) {
+    console.log('Handle change', data, layout, frames);
+    this.setState({ data, layout, frames }, this.onSubmit);
+  }
+
+  handleChangeProvider(ev, { value }) {
+    console.log('Selected', value);
+    this.props.getDataFromProvider(value);
+  }
+
   render() {
-    console.log(this.state);
     const plotly = require('plotly.js/dist/plotly');
+    const selectProviders = this.props.providers.map(el => {
+      return {
+        key: el['@id'],
+        text: el.title,
+        value: el['@id'],
+      };
+    });
+
     return (
       <div>
-        {__SERVER__ ? (
-          ''
-        ) : (
+        {__CLIENT__ ? (
           <div className="tile selected">
             <div className="tile-inner-wrapper">
+              <Dropdown
+                placeholder="Select data provider"
+                fluid
+                selection
+                options={selectProviders}
+                onChange={this.handleChangeProvider}
+              />
               <LoadablePlotlyEditor
                 data={this.state.data}
                 layout={this.state.layout}
                 config={config}
                 frames={this.state.frames}
-                dataSources={dataSources}
+                dataSources={this.state.dataSources}
                 dataSourceOptions={dataSourceOptions}
                 plotly={plotly}
-                onUpdate={(data, layout, frames) =>
-                  this.setState({ data, layout, frames })
-                }
+                onUpdate={this.handleChange}
                 useResizeHandler
                 debug
                 advancedTraceTypeSelector
               />
             </div>
           </div>
+        ) : (
+          ''
         )}
       </div>
     );
   }
 }
 
-export default Edit;
-//
-// handleChange(e) {
-//   let data = e.target.value;
-//   try {
-//     data = JSON.parse(e.target.value);
-//     this.setState(
-//       {
-//         chartData: data,
-//         show: true,
-//       },
-//       this.onSubmit,
-//     );
-//   } catch {
-//     console.warning('Invalid JSON data: ', data);
-//   }
-// }
-//
-// onSubmit() {
-//   this.props.onChangeTile(this.props.tile, {
-//     ...this.props.data,
-//     chartData: this.state.chartData,
-//   });
-// }
-//
-// getChartData() {
-//   let chartData = this.state.chartData;
-//   if (typeof chartData == 'string') {
-//     try {
-//       chartData = JSON.parse(chartData);
-//     } catch (error) {
-//       console.log(error);
-//       chartData = [];
-//     }
-//   }
-//   // TODO: the axis labels need to come from the data
-//   // console.log(chartData);
-//   return chartData;
-// }
+export default connect(
+  (state, props) => {
+    console.log('connected', state);
+    return {
+      providers: state.search.items,
+      provider_data: state.data_providers
+        ? state.data_providers.item.provider_data
+        : {},
+    };
+  },
+  { searchContent, getDataFromProvider },
+)(Edit);

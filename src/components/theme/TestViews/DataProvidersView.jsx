@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { getDataProviders } from '~/actions';
+import { searchContent } from '@plone/volto/actions';
 
 class DataProvidersView extends Component {
   static propTypes = {
@@ -15,9 +15,11 @@ class DataProvidersView extends Component {
     this.state = {
       providers: props.providers,
     };
+    console.log('providers props', props);
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log('nextprops', nextProps);
     let old = JSON.stringify(this.props.providers);
     let neu = JSON.stringify(nextProps.providers);
 
@@ -27,23 +29,30 @@ class DataProvidersView extends Component {
   }
 
   componentWillMount() {
-    this.props.getDataProviders();
+    this.props.searchContent('', { portal_type: 'discodataconnector' });
   }
 
   render() {
     console.log('state', this.state.providers);
-    // return this.state.settings && this.state.settings.styles ? (
-    //   <div>{this.state.settings.styles.map(this.getCard)}</div>
-    // ) : (
-    //   ''
-    // );
-    return <div />;
+    return this.state.providers ? (
+      <div>
+        {this.state.providers.map(el => {
+          return (
+            <div key={el['@id']}>
+              {el['@id']} {el.title}
+            </div>
+          );
+        })}
+      </div>
+    ) : (
+      ''
+    );
   }
 }
 
 export default connect(
   state => ({
-    providers: state.data_providers.items,
+    providers: state.search.items,
   }),
-  { getDataProviders },
+  { searchContent },
 )(DataProvidersView);
