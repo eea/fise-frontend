@@ -19,15 +19,12 @@ const dataSources = {
   col3: [17, 13, 9], // eslint-disable-line no-magic-numbers
 };
 
-// const mapDispatchToProps = {
-//   getContent,
-//   searchContent,
-// };
-
-const dataSourceOptions = Object.keys(dataSources).map(name => ({
-  value: name,
-  label: name,
-}));
+function getDataSourceOptions(data) {
+  return Object.keys(data).map(name => ({
+    value: name,
+    label: name,
+  }));
+}
 
 const config = { editable: true };
 
@@ -60,7 +57,7 @@ class Edit extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('got props', nextProps.data_provider, nextProps);
+    console.log('got props', nextProps);
   }
 
   componentWillMount() {
@@ -89,6 +86,10 @@ class Edit extends Component {
 
     return (
       <div>
+        {this.props.providerData && this.props.providerData.length}
+        {this.props.dataSourceOptions.map(el => (
+          <span>{el.title}</span>
+        ))}
         {__CLIENT__ ? (
           <div className="tile selected">
             <div className="tile-inner-wrapper">
@@ -104,8 +105,11 @@ class Edit extends Component {
                 layout={this.state.layout}
                 config={config}
                 frames={this.state.frames}
-                dataSources={this.state.dataSources}
-                dataSourceOptions={dataSourceOptions}
+                dataSources={this.props.providerData || dataSources}
+                dataSourceOptions={
+                  this.props.dataSourceOptions ||
+                  getDataSourceOptions(dataSources)
+                }
                 plotly={plotly}
                 onUpdate={this.handleChange}
                 useResizeHandler
@@ -124,12 +128,12 @@ class Edit extends Component {
 
 export default connect(
   (state, props) => {
-    console.log('connected', state);
+    console.log('connected', state.data_providers);
+    const providerData = state.data_providers ? state.data_providers.item : {};
     return {
       providers: state.search.items,
-      provider_data: state.data_providers
-        ? state.data_providers.item.provider_data
-        : {},
+      providerData,
+      dataSourceOptions: getDataSourceOptions(providerData || dataSources),
     };
   },
   { searchContent, getDataFromProvider },
