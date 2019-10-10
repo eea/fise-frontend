@@ -61,7 +61,7 @@
     "@blueprintjs/icons": "^3.10.0",
     "@ckeditor/ckeditor5-build-classic": "^12.4.0",
     "@ckeditor/ckeditor5-react": "^1.1.3",
-    "@plone/volto": "4.0.0-alpha.3",
+    "@plone/volto": "4.0.0-alpha.6",
     "plotly.js": "^1.50.0",
     "react-chart-editor": "^0.40.0",
     "react-grid-layout": "^0.16.6",
