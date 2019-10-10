@@ -271,6 +271,7 @@ body.has-toolbar {
   height  : 780px;
   display : block;
   position: relative;
+  background-size: cover;
 }
 
 
