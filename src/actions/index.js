@@ -41,22 +41,22 @@ export function getDefaultHeaderImage() {
   };
 }
 
-export function setFolderHeader(payload) {
-  const actualPayload = {};
-  for (const key in payload) {
-    if (payload[key] !== null && payload[key] !== undefined) {
-      actualPayload[key] = payload[key];
-    }
-  }
+// export function setFolderHeader(payload) {
+//   const actualPayload = {};
+//   for (const key in payload) {
+//     if (payload[key] !== null && payload[key] !== undefined) {
+//       actualPayload[key] = payload[key];
+//     }
+//   }
 
-  if (Object.keys(actualPayload)) {
-    return {
-      type: SET_FOLDER_HEADER,
-      payload: actualPayload,
-    };
-  }
-  return;
-}
+//   if (Object.keys(actualPayload)) {
+//     return {
+//       type: SET_FOLDER_HEADER,
+//       payload: actualPayload,
+//     };
+//   }
+//   return;
+// }
 
 export function setFolderTabs(payload) {
   return {

@@ -23,18 +23,38 @@ const initialState = {
  * @returns {Object} New state.
  */
 export default function folder_header(state = initialState, action = {}) {
-  if (action.type === SET_FOLDER_HEADER) {
-    const oldVal = state.items ? state.items : {};
-    return {
-      ...state,
-      error: null,
-      items: {
-        ...oldVal,
-        ...action.payload,
-      },
-      loaded: true,
-      loading: false,
-    };
+  switch (action.type) {
+    case `${SET_FOLDER_HEADER}_PENDING`:
+      return {
+        ...state,
+        error: null,
+        loaded: false,
+        loading: true,
+      };
+    case `${SET_FOLDER_HEADER}_SUCCESS`:
+      const image = action.result.image || null;
+      const title = action.result.title || null;
+      const description = action.result.description || null;
+      return {
+        ...state,
+        error: null,
+        items: {
+          image,
+          title,
+          description,
+        },
+        loaded: true,
+        loading: false,
+      };
+    case `${SET_FOLDER_HEADER}_FAIL`:
+      return {
+        ...state,
+        error: action.error,
+        items: [],
+        loaded: false,
+        loading: false,
+      };
+    default:
+      return state;
   }
-  return state;
 }

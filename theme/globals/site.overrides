@@ -119,8 +119,10 @@ body.has-toolbar {
     position: relative;
 
     .overSearchIcon {
+      // position: absolute;
+      // right   : 0;
       position: absolute;
-      right   : 0;
+      right: 44px;
       svg {
         stroke: #015610;
         stroke-width: 3px;
@@ -130,7 +132,8 @@ body.has-toolbar {
 
   .searchIcon {
     position: absolute;
-    right   : 0;
+    right   : 44px;
+    margin-right: 1rem;
   }
 
   .searchInput {
@@ -148,6 +151,11 @@ body.has-toolbar {
 
   .field.searchbox {
     min-height: 45px;
+    padding-right: 3rem;
+  }
+  .accountIcon {
+    position: absolute;
+    right: 0;
   }
 }
 
@@ -165,14 +173,23 @@ body.has-toolbar {
 
   .slide-body {
     position   : absolute;
-    bottom     : 40%;
+    // bottom     : 40%;
+    bottom: 30%;
+    max-width: 600px;
     margin-left: 4rem;
     color      : white;
 
     .slide-title {
-      font-size    : 30px;
-      font-weight  : bold;
+      font-size: 3rem;
+      font-weight: bold;
       margin-bottom: 3rem;
+      line-height: 1.2;
+    }
+    .slide-description {
+      font-size: 1.2rem;
+      line-height: 1.2;
+      font-weight: 200;
+      opacity: 0.8;
     }
   }
 }
@@ -188,7 +205,7 @@ body.has-toolbar {
   // overflow: hidden;
   .navSlider {
     position: absolute;
-    z-index : 100;
+    z-index : 1;
     width   : 90%;
     right   : 2rem;
     bottom  : 0;
@@ -331,8 +348,21 @@ body.has-toolbar {
 }
 
 .footerWrapper {
+  .ui.grid {
+    padding-top: 3rem;
+  }
   background: #F9F9F7 !important;
   margin-top: 6rem !important;
+  .column {
+    p {
+      font-size: .9rem;
+    }
+    b {
+      color: #564535;
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
 }
 
 
@@ -686,11 +716,11 @@ body #page-document .imageAndRichText+p {
 
 .footerLogoWrapper {
   display        : flex;
-  justify-content: center;
+  // justify-content: center;
   align-items    : center;
 
   .footerLogo {
-    height: 60px;
+    height: 50px;
     width : auto;
     margin: .5rem;
   }
@@ -733,4 +763,15 @@ nav.navigation .menu>a.item:first-of-type {
   left     : 50%;
   width    : 119px;
   transform: translateX(-50%);
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+
+// #047A79
+
+a {
+  color: #047A79;
 }

@@ -18,7 +18,9 @@ import {
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { setFolderHeader, setFolderTabs, getParentFolderData } from '~/actions';
+import { 
+  // setFolderHeader, 
+  setFolderTabs, getParentFolderData } from '~/actions';
 
 // import { settings, tiles } from '~/config';
 
@@ -48,7 +50,7 @@ const numberToWord = {
 };
 
 const mapDispatchToProps = {
-  setFolderHeader,
+  // setFolderHeader,
   setFolderTabs,
   getParentFolderData,
 };
@@ -106,11 +108,11 @@ class HomepageView extends Component {
   }
 
   componentDidMount() {
-    this.props.setFolderHeader({ inCountryFolder: true });
+    // this.props.setFolderHeader({ inCountryFolder: true });
   }
 
   componentWillUnmount() {
-    this.props.setFolderHeader({ inCountryFolder: false });
+    // this.props.setFolderHeader({ inCountryFolder: false });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -124,7 +126,7 @@ class HomepageView extends Component {
         nextProps.parent.items.find(c => c['@type'] === 'Image');
       const url = image && image.image.download;
       const inCountryFolder = true;
-      this.props.setFolderHeader({ title, description, url, inCountryFolder });
+      // this.props.setFolderHeader({ title, description, url, inCountryFolder });
       const tabsItems = nextProps.parent.items
         .map(i => ({
           // this is ugly

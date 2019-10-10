@@ -2,7 +2,6 @@
  * Full view component.
  * @module components/theme/View/FullView
  */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -10,7 +9,9 @@ import { Link } from 'react-router-dom';
 import { Container, Image } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { setFolderHeader, setFolderTabs } from '~/actions';
+import { 
+  // setFolderHeader, 
+  setFolderTabs } from '~/actions';
 
 /**
  * Full view component class.
@@ -35,7 +36,7 @@ const numberToWord = {
 };
 
 const mapDispatchToProps = {
-  setFolderHeader,
+  // setFolderHeader,
   setFolderTabs,
 };
 
@@ -104,7 +105,7 @@ class FullView extends Component {
       content.items && content.items.find(c => c['@type'] === 'Image');
     const url = image && image.image.download;
     const inCountryFolder = true;
-    this.props.setFolderHeader({ title, description, url, inCountryFolder });
+    // this.props.setFolderHeader({ title, description, url, inCountryFolder });
   }
 
   renderTabs(nextContent) {
@@ -149,7 +150,7 @@ class FullView extends Component {
   }
 
   componentWillUnmount() {
-    this.props.setFolderHeader({ inCountryFolder: false });
+    // this.props.setFolderHeader({ inCountryFolder: false });
   }
 
   render() {

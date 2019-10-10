@@ -33,7 +33,7 @@ const Logo = ({ intl }) => (
       src={LogoImage}
       alt={intl.formatMessage(messages.plonesite)}
       title={intl.formatMessage(messages.plonesite)}
-      height={64}
+      height={80}
     />
   </Link>
 );

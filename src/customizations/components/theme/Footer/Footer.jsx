@@ -35,46 +35,48 @@ const Footer = ({ intl }) => (
     role="contentinfo"
     vertical
     padded
-    textAlign="center"
+    // textAlign="center"
     className="footerWrapper"
   >
     <img className="footerImage" src={footerImage} alt="" />
     <Container>
-
-
       <div className="ui vertically divided grid">
         <div className="four column row">
           <div className="column">
-
             <b>ABOUT</b>
-            <p>Fise - Forest Information System for Europe is a forest knowledge base in support of the EU Forest Strategy <a href="#">See more</a></p>
-            <img style={{ width: '200px' }} src={LogoImage} alt="Forest" />
+            <p>
+              Fise - Forest Information System for Europe is a forest knowledge
+              base in support of the EU Forest Strategy <a href="#">See more</a>
+            </p>
+            <img
+              style={{ width: '250px', marginTop: '2rem' }}
+              src={LogoImage}
+              alt="Forest"
+            />
           </div>
 
-
-
-          <div className="column">
-
+          <div style={{ flexGrow: '1' }} className="column">
             <div>
-              <div style={{ display: 'none' }}> fasasf </div>
+              <div style={{ display: 'none' }}> a </div>
             </div>
           </div>
 
-
-          <div className="column">
-
-
+          <div
+            style={{ width: '150px!important', fontSize: '.9rem' }}
+            className="column"
+          >
             <b>LINKS</b>
             <ul className="unlist">
-
               <li>
                 <Link className="item" to="/legal_notice">
-                  <FormattedMessage id="legal_notice" defaultMessage="Legal notice" />
+                  <FormattedMessage
+                    id="legal_notice"
+                    defaultMessage="Legal notice"
+                  />
                 </Link>
               </li>
 
               <li>
-
                 <Link className="item" to="/private_policy">
                   <FormattedMessage
                     id="private_policy"
@@ -88,10 +90,7 @@ const Footer = ({ intl }) => (
                 </Link>
               </li>
             </ul>
-
           </div>
-
-
 
           <div className="column">
             <b>PARTNERS</b>
@@ -102,8 +101,6 @@ const Footer = ({ intl }) => (
           </div>
         </div>
       </div>
-
-
     </Container>
   </Segment>
 );

@@ -12,7 +12,7 @@ import { defineMessages, injectIntl, intlShape } from 'react-intl';
 
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
-import Person from './person.svg'
+import Person from './person.svg';
 
 const messages = defineMessages({
   search: {
@@ -172,8 +172,14 @@ class SearchWidget extends Component {
           ) : (
             ''
           )}
+          <img
+            onClick={() => document.querySelector('.toolbar .user').click()}
+            className="accountIcon"
+            style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
+            src={Person}
+            alt=""
+          />
         </Form.Field>
-        <img src={Person} alt=""/>
       </Form>
     );
   }
