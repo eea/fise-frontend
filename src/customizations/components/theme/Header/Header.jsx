@@ -151,7 +151,7 @@ class Header extends Component {
     // );
 
     return (
-      <Segment basic className="header-wrapper" role="banner">
+      <div basic className="header-wrapper" role="banner">
         <Container>
           <div className="header-bg">
             <img src={HeaderBackground} alt="" />
@@ -193,7 +193,7 @@ class Header extends Component {
             </div>
           )}
         </Container>
-      </Segment>
+      </div>
     );
   }
 }
