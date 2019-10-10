@@ -24,9 +24,9 @@ body {
   }
 }
 
-.ui.container {
+/* .ui.container {
   padding: 0 0.5em;
-}
+} */
 
 .ui.basic.segment.header-wrapper {
   padding-bottom  : 0;
@@ -54,7 +54,7 @@ body.has-toolbar {
   max-width       : calc(100% + 6rem);
   margin-left     : -3rem;
   margin-right    : -3rem;
-  padding         : 1em;
+  padding         : 1em 0;
 }
 
 .header-bg {

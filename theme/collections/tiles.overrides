@@ -1,5 +1,6 @@
 .tile-container {
-  padding: 1rem;
+  padding: 10px;
+  height: 100%;
 }
 
 .default-tile {
@@ -24,12 +25,15 @@
 }
 
 .tile-wrapper {
-  padding: 1rem;
+  height: 100%;
+  >div {
+    padding: 20px;
+  }
 }
 
 .tile-box {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 
   &.preview {
     display: inline-block;
@@ -42,5 +46,11 @@
   color: @darkBrown;
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 1rem;
+  padding: 20px ;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.tile p {
+  margin: 0 !important;
 }
