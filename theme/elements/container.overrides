@@ -48,7 +48,7 @@
       display: none !important;
     }
   }
-  @media only screen and (min-width: @tabletBreakpoint + @offset) and (max-width: @largestTabletScreen + @offset) {
+  @media only screen and (min-width: @tabletBreakpoint + @offset) {
     .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
     [class*='mobile only']:not(.tablet),
     [class*='tablet hidden'],
@@ -59,17 +59,17 @@
       display: none !important;
     }
   }
-  @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
-    .contentWidthMedia(@computerWidth, @computerGutter, -30px);
-    [class*='mobile only']:not(.computer),
-    [class*='tablet only']:not(.computer),
-    [class*='computer hidden'],
-    [class*='large screen only']:not(.computer),
-    [class*='widescreen only']:not(.computer),
-    [class*='or lower hidden']:not(.tablet):not(.mobile) {
-      display: none !important;
-    }
-  }
+  // @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
+  //   .contentWidthMedia(@computerWidth, @computerGutter, -30px);
+  //   [class*='mobile only']:not(.computer),
+  //   [class*='tablet only']:not(.computer),
+  //   [class*='computer hidden'],
+  //   [class*='large screen only']:not(.computer),
+  //   [class*='widescreen only']:not(.computer),
+  //   [class*='or lower hidden']:not(.tablet):not(.mobile) {
+  //     display: none !important;
+  //   }
+  // }
   @media only screen and (min-width: @largeMonitorBreakpoint + @offset) {
     .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
     [class*='mobile only']:not([class*='large screen']),
@@ -82,29 +82,29 @@
     }
   }
 
-  @media only screen and (min-width: @widescreenlaptopBreakpoint + @offset) {
-    .contentWidthMedia(@widescreenlaptopWidth, @largeMonitorGutter, -30px);
-    [class*='mobile only']:not([class*='large screen']),
-    [class*='tablet only']:not([class*='large screen']),
-    [class*='computer only']:not([class*='large screen']),
-    [class*='large screen hidden'],
-    [class*='widescreen only']:not([class*='large screen']),
-    [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-      display: none !important;
-    }
-  }
+  // @media only screen and (min-width: @widescreenlaptopBreakpoint + @offset) {
+  //   .contentWidthMedia(@widescreenlaptopWidth, @largeMonitorGutter, -30px);
+  //   [class*='mobile only']:not([class*='large screen']),
+  //   [class*='tablet only']:not([class*='large screen']),
+  //   [class*='computer only']:not([class*='large screen']),
+  //   [class*='large screen hidden'],
+  //   [class*='widescreen only']:not([class*='large screen']),
+  //   [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+  //     display: none !important;
+  //   }
+  // }
 
-  @media only screen and (min-width: @widescreenlaptopBigBreakpoint + @offset) {
-    .contentWidthMedia(@widescreenlaptopBigWidth, @largeMonitorGutter, -30px);
-    [class*='mobile only']:not([class*='large screen']),
-    [class*='tablet only']:not([class*='large screen']),
-    [class*='computer only']:not([class*='large screen']),
-    [class*='large screen hidden'],
-    [class*='widescreen only']:not([class*='large screen']),
-    [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-      display: none !important;
-    }
-  }
+  // @media only screen and (min-width: @widescreenlaptopBigBreakpoint + @offset) {
+  //   .contentWidthMedia(@widescreenlaptopBigWidth, @largeMonitorGutter, -30px);
+  //   [class*='mobile only']:not([class*='large screen']),
+  //   [class*='tablet only']:not([class*='large screen']),
+  //   [class*='computer only']:not([class*='large screen']),
+  //   [class*='large screen hidden'],
+  //   [class*='widescreen only']:not([class*='large screen']),
+  //   [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+  //     display: none !important;
+  //   }
+  // }
 
   @media only screen and (min-width: @widescreenmonitorSmallBreakpoint + @offset) {
     .contentWidthMedia(@widescreenmonitorSmallWidth, @largeMonitorGutter, -30px);
