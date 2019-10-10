@@ -128,7 +128,7 @@
 @largeMonitorBreakpoint            : 1200px;
 @widescreenlaptopBreakpoint        : 1366;
 @widescreenlaptopBigBreakpoint     : 1440;
-@widescreenmonitorSmallBreakpoint  : 1660;
+@widescreenmonitorSmallBreakpoint  : 1626;
 @widescreenMonitorBreakpoint       : 1920px;
 
 /* Responsive */
