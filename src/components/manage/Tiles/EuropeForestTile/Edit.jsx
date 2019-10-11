@@ -42,49 +42,51 @@ class Edit extends Component {
             />
 
             <Field
-                id="europe-forest-surface-area"
-                title="Surface"
-                type="text"
-                value={this.state.europe_forest_surface}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_forest_surface: d })}
-                />
+              id="europe-forest-surface-area"
+              title="Surface"
+              type="text"
+              value={this.state.europe_forest_surface}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_forest_surface: d })}
+            />
 
             <Field
-                id="europe-total-area"
-                title="Total area"
-                type="text"
-                value={this.state.europe_total_area}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_total_area: d })}
-              />
+              id="europe-total-area"
+              title="Total area"
+              type="text"
+              value={this.state.europe_total_area}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_total_area: d })}
+            />
 
             <Field
-                id="europe-total-public"
-                title="Total public"
-                type="text"
-                value={this.state.europe_total_public}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_total_public: d })}
-              />
+              id="europe-total-public"
+              title="Total public"
+              type="text"
+              value={this.state.europe_total_public}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_total_public: d })}
+            />
 
             <Field
-                id="europe-total-private"
-                title="Total private"
-                type="text"
-                value={this.state.europe_total_private}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_total_private: d })}
-              />
+              id="europe-total-private"
+              title="Total private"
+              type="text"
+              value={this.state.europe_total_private}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_total_private: d })}
+            />
 
             <Field
-                id="europe-source"
-                title="Source"
-                type="text"
-                value={this.state.europe_text_attribution}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_text_attribution: d })}
-              />
+              id="europe-source"
+              title="Source"
+              type="text"
+              value={this.state.europe_text_attribution}
+              required={false}
+              onChange={(e, d) =>
+                this.updateData({ europe_text_attribution: d })
+              }
+            />
 
             <Field
               id="europe-tile-link"
