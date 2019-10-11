@@ -41,16 +41,25 @@
 }
 
 .navigation .menu > .dropdown.item > .menu .item {
-    padding: .8rem 1.5rem!important;
+    padding: .8rem 1.5rem;
     &:not(a) {
-    border-bottom: 1px solid #eee;
-
+        padding: 0!important;
+        border-bottom: 1px solid #eee;
     }
+   
+    .submenu {
+        padding-left: 0;
+        a {
+            color: #564535;
+            font-weight: 400;
+        }
+    }
+}
+
+.navigation .menu > .dropdown.item > .menu a.item {
     &:hover {
         background: #cc4400!important;
-        a {
-            color: white!important;
-        }
+        color: white!important;
     }
 }
 
