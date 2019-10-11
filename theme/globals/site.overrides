@@ -640,7 +640,7 @@ body #page-document .imageAndRichText+p {
       height: 250px;
     }
 
-    .chart-description {
+    .chart-highlight {
       color           : @darkGreen;
       font-size       : 14px;
       background-color: #f6f6f5;

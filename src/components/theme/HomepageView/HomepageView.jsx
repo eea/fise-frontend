@@ -18,8 +18,8 @@ import {
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { 
-  // setFolderHeader, 
+import {
+  // setFolderHeader,
   setFolderTabs, getParentFolderData } from '~/actions';
 
 // import { settings, tiles } from '~/config';
@@ -245,7 +245,7 @@ class HomepageView extends Component {
                       <div className="ui grid">
                         <div className="four wide column">
                           <h5>Growing stock</h5>
-                          <div className="chart-description">
+                          <div className="chart-hightlight">
                             Vestibulum eget est ac lorem dapibus lacinia.
                             Integer magna nunc, scelerisque in lacinia nec,
                             laoreet non augue. Nunc quis pharetra magna, in

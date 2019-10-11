@@ -95,12 +95,46 @@ class Edit extends Component {
 
     const CKEditor = require('@ckeditor/ckeditor5-react');
     const ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
+    console.log(
+      'plugins',
+      ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName),
+    );
+    // const ClassicEditor = require('@ckeditor/ckeditor5-build-balloon-block');
+    // const ClassicEditor = require('@ckeditor/ckeditor5-editor-classic/src/classiceditor');
 
-    // const editorConfiguration = {
-    //   plugins: [Essentials, Bold, Italic, Paragraph],
-    //   toolbar: ['bold', 'italic'],
-    // };
-    // config={editorConfiguration}
+    const editorConfiguration = {
+      heading: {
+        options: [
+          // {
+          //   model: 'paragraph',
+          //   title: 'Paragraph Tibi',
+          //   class: 'ck-heading_paragraph',
+          // },
+          {
+            model: 'heading5',
+            view: 'h5',
+            title: 'Tile Title (H5)',
+            class: 'ck-heading_heading5',
+          },
+          {
+            model: 'tile_description',
+            view: {
+              name: 'div',
+              classes: 'chart-highlight',
+            },
+            title: 'Tile Description',
+            class: 'chart-highlight',
+          },
+          // {
+          //   model: 'heading2',
+          //   view: 'h2',
+          //   title: 'Heading 2',
+          //   class: 'ck-heading_heading2',
+          // },
+        ],
+      },
+    };
+    //
 
     return (
       <div
@@ -110,6 +144,7 @@ class Edit extends Component {
         ref={node => (this.ref = node)}
       >
         <CKEditor
+          config={editorConfiguration}
           editor={ClassicEditor}
           data={this.state.htmltext}
           onInit={editor => {
