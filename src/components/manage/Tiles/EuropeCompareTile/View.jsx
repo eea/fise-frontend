@@ -9,7 +9,9 @@ class View extends Component {
         <div className="data-box orange-data-highlight">
           <h5>{this.props.data.europe_tile_title}</h5>
           <div className="land-data-wrapper">
-            <div className="land-data">{this.props.data.europe_protected_area}</div>
+            <div className="land-data">
+              {this.props.data.europe_protected_area}
+            </div>
             <div className="land-data-content">
               of Europe's land surface <span>{this.props.data.europe_total_area}</span>
           </div>
@@ -29,7 +31,9 @@ class View extends Component {
           </div>
         </div>
         <a href={this.props.data.europe_tile_link}>
-          <span className="discreet">See all countries</span>
+          <span className="discreet">
+            {this.props.data.europe_text_attribution}
+          </span>
         </a>
       </div>
       </div>
