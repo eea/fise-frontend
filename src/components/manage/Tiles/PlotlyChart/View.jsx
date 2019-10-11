@@ -25,6 +25,7 @@ class ChartView extends Component {
             data={this.state.data}
             layout={this.state.layout}
             frames={this.state.frames}
+            config={{ displayModeBar: false }}
           />
         </div>
       </div>

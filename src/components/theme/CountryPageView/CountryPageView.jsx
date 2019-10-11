@@ -20,8 +20,8 @@ import { map } from 'lodash';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { 
-  // setFolderHeader, 
+import {
+  // setFolderHeader,
   setFolderTabs, getParentFolderData } from '~/actions';
 
 import { settings, tiles } from '~/config';
@@ -299,7 +299,7 @@ class CountryPageView extends Component {
                       <div className="ui grid">
                         <div className="four wide column">
                           <h5>Species Coverage</h5>
-                          <div className="chart-description">
+                          <div className="chart-highlight">
                             Vestibulum eget est ac lorem dapibus lacinia.
                             Integer magna nunc, scelerisque in lacinia nec,
                             laoreet non augue. Nunc quis pharetra magna, in

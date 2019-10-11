@@ -59,7 +59,13 @@
   "dependencies": {
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
+    "@ckeditor/ckeditor5-basic-styles": "^11.1.4",
+    "@ckeditor/ckeditor5-build-balloon-block": "^12.4.0",
     "@ckeditor/ckeditor5-build-classic": "^12.4.0",
+    "@ckeditor/ckeditor5-editor-classic": "^12.1.4",
+    "@ckeditor/ckeditor5-essentials": "^11.0.5",
+    "@ckeditor/ckeditor5-heading": "^11.0.5",
+    "@ckeditor/ckeditor5-paragraph": "^11.0.5",
     "@ckeditor/ckeditor5-react": "^1.1.3",
     "@plone/volto": "4.0.0-alpha.6",
     "plotly.js": "^1.50.0",

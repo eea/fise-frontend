@@ -8,6 +8,11 @@ import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
 import cx from 'classnames';
 
+// import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
+// import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
+// import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+// import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+
 /**
  * Edit text tile class.
  * @class Edit
@@ -90,6 +95,46 @@ class Edit extends Component {
 
     const CKEditor = require('@ckeditor/ckeditor5-react');
     const ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
+    console.log(
+      'plugins',
+      ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName),
+    );
+    // const ClassicEditor = require('@ckeditor/ckeditor5-build-balloon-block');
+    // const ClassicEditor = require('@ckeditor/ckeditor5-editor-classic/src/classiceditor');
+
+    const editorConfiguration = {
+      heading: {
+        options: [
+          // {
+          //   model: 'paragraph',
+          //   title: 'Paragraph Tibi',
+          //   class: 'ck-heading_paragraph',
+          // },
+          {
+            model: 'heading5',
+            view: 'h5',
+            title: 'Tile Title (H5)',
+            class: 'ck-heading_heading5',
+          },
+          {
+            model: 'tile_description',
+            view: {
+              name: 'div',
+              classes: 'chart-highlight',
+            },
+            title: 'Tile Description',
+            class: 'chart-highlight',
+          },
+          // {
+          //   model: 'heading2',
+          //   view: 'h2',
+          //   title: 'Heading 2',
+          //   class: 'ck-heading_heading2',
+          // },
+        ],
+      },
+    };
+    //
 
     return (
       <div
@@ -99,6 +144,7 @@ class Edit extends Component {
         ref={node => (this.ref = node)}
       >
         <CKEditor
+          config={editorConfiguration}
           editor={ClassicEditor}
           data={this.state.htmltext}
           onInit={editor => {
