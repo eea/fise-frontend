@@ -6,12 +6,13 @@ class TableauTileView extends Component {
     super(props);
 
     let data = this.props.data.tableauData || {};
-    let filters = data.filters && data.sheetname ? data.filters[data.sheetname] : {};
+    let filters =
+      data.filters && data.sheetname ? data.filters[data.sheetname] : {};
     this.state = {
       show: __SERVER__ ? false : true,
       url: data.url || '',
       sheetname: data.sheetname || '',
-      filters: filters
+      filters: filters,
     };
   }
 

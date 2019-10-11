@@ -1,51 +1,22 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import { Button, Input, Message, TextArea } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from 'recharts';
+import { ResponsiveContainer } from 'recharts';
 
 import TableauReport from '~/components/theme/TableauView/TableauReport';
 
 // const url = 'http://public.tableau.com/views/RegionalSampleWorkbook/Storms';
-// const messages = defineMessages({
-//     ChartTile: {
-//       id: 'Enter chart data',
-//       defaultMessage: 'Enter chart data',
-//     },
-//   });
 
 class StackedBarChart extends Component {
-  // static propTypes = {
-  //     selected: PropTypes.bool.isRequired,
-  //     tile: PropTypes.string.isRequired,
-  //     index: PropTypes.number.isRequired,
-  //     data: PropTypes.objectOf(PropTypes.any).isRequired,
-  //     pathname: PropTypes.string.isRequired,
-  //     onChangeTile: PropTypes.func.isRequired,
-  //     onSelectTile: PropTypes.func.isRequired,
-  //     onDeleteTile: PropTypes.func.isRequired,
-  //     onFocusPreviousTile: PropTypes.func.isRequired,
-  //     onFocusNextTile: PropTypes.func.isRequired,
-  //     handleKeyDown: PropTypes.func.isRequired,
-  //     intl: intlShape.isRequired,
-  // };
-
   constructor(props) {
     super(props);
 
     const data = this.props.data.tableauData || {};
     let show = !__SERVER__ && data ? true : false;
 
-    let filters = data.filters && data.sheetname ? data.filters[data.sheetname] : {};
+    let filters =
+      data.filters && data.sheetname ? data.filters[data.sheetname] : {};
 
     this.state = {
       show,
@@ -81,15 +52,18 @@ class StackedBarChart extends Component {
       ...this.props.data,
       tableauData: this.state.tableauData,
     });
-    this.props.handleClose()
+    this.props.handleClose();
   }
 
   saveCallback(saveData) {
-    console.log("Received save data", saveData);
+    console.log('Received save data', saveData);
     let stateData = JSON.parse(JSON.stringify(this.state));
-    this.setState({
-      tableauData: saveData
-    }, this.onSubmit)
+    this.setState(
+      {
+        tableauData: saveData,
+      },
+      this.onSubmit,
+    );
   }
 
   getChartData() {
@@ -148,17 +122,10 @@ class StackedBarChart extends Component {
               placeholder="Enter tableau URL"
               onChange={this.handleChange}
             />
-            <Button
-              onClick={() =>
-                this.setState({ show: true })
-              }
-            >
+            <Button onClick={() => this.setState({ show: true })}>
               Show dashboard
             </Button>
-            <Button onClick={this.onSubmit} >
-              Save
-            </Button>
-
+            <Button onClick={this.onSubmit}>Save</Button>
           </div>
         </div>
       </div>

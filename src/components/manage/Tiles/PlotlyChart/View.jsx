@@ -17,6 +17,7 @@ class ChartView extends Component {
   }
 
   render() {
+    console.log('this state layout', this.props.data.chartData);
     return (
       <div className="chartWrapperView">
         <div className="tile-inner-wrapper">

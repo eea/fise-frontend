@@ -768,6 +768,8 @@ nav.navigation .menu>a.item:first-of-type {
 .ui.modal {
   transform: translate(-50%, -50%);
   margin   : 0 !important;
+  top: 50%;
+  left: 50%;
 }
 
 

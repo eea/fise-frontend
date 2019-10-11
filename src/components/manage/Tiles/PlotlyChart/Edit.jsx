@@ -63,7 +63,9 @@ class Edit extends Component {
   // }
 
   componentWillMount() {
-    this.props.searchContent('', { portal_type: 'discodataconnector' });
+    this.props.searchContent('', {
+      object_provides: 'forests.content.interfaces.IBasicDataProvider',
+    });
   }
 
   handleChange(data, layout, frames) {
@@ -86,7 +88,6 @@ class Edit extends Component {
 
     return (
       <div>
-        {this.props.providerData && this.props.providerData.length}
         {this.props.dataSourceOptions.map(el => (
           <span>{el.title}</span>
         ))}
