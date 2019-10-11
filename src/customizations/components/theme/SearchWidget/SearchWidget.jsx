@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 import { Form, Input } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { PropTypes } from 'prop-types';
-import { defineMessages, injectIntl, intlShape } from 'react-intl';
+import { defineMessages, injectIntl } from 'react-intl';
 
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
@@ -38,9 +38,8 @@ class SearchWidget extends Component {
    * @static
    */
   static propTypes = {
-    token: PropTypes.string,    
+    token: PropTypes.string,
     pathname: PropTypes.string.isRequired,
-    intl: intlShape.isRequired,
   };
   static defaultProps = {
     token: null,
@@ -177,15 +176,15 @@ class SearchWidget extends Component {
           ) : (
             ''
           )}
-          { this.props.token &&  
-          <img
-            onClick={() => document.querySelector('.toolbar .user').click()}
-            className="accountIcon"
-            style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
-            src={Person}
-            alt=""
-          />
-          }
+          {this.props.token && (
+            <img
+              onClick={() => document.querySelector('.toolbar .user').click()}
+              className="accountIcon"
+              style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
+              src={Person}
+              alt=""
+            />
+          )}
         </Form.Field>
       </Form>
     );

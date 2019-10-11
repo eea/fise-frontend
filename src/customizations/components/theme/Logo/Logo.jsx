@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { defineMessages, injectIntl, intlShape } from 'react-intl';
+import { defineMessages, injectIntl } from 'react-intl';
 import { Image } from 'semantic-ui-react';
 
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
@@ -43,8 +43,6 @@ const Logo = ({ intl }) => (
  * @property {Object} propTypes Property types.
  * @static
  */
-Logo.propTypes = {
-  intl: intlShape.isRequired,
-};
+Logo.propTypes = {};
 
 export default injectIntl(Logo);

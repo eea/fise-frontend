@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import cx from 'classnames';
 
 // import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
@@ -37,7 +37,6 @@ class Edit extends Component {
     onFocusPreviousTile: PropTypes.func.isRequired,
     onFocusNextTile: PropTypes.func.isRequired,
     onSelectTile: PropTypes.func.isRequired,
-    intl: intlShape.isRequired,
   };
 
   /**

@@ -9,7 +9,7 @@ import { isMatch } from 'lodash';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
-import { defineMessages, injectIntl, intlShape } from 'react-intl';
+import { defineMessages, injectIntl } from 'react-intl';
 import { Menu, Dropdown } from 'semantic-ui-react';
 import cx from 'classnames';
 import { getBaseUrl } from '@plone/volto/helpers';
@@ -48,7 +48,6 @@ class Navigation extends Component {
         items: PropTypes.array,
       }),
     ).isRequired,
-    intl: intlShape.isRequired,
   };
 
   /**
@@ -219,7 +218,7 @@ class Navigation extends Component {
                              </Link>
                           ))}
                           </div>
-                          ) 
+                          )
                       }
                     </Dropdown.Item>
                   ))}

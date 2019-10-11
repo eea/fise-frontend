@@ -21,14 +21,14 @@ const routes = [
     component: App, // Change this if you want a different component
     routes: [
       // Add your routes here
-      {
-        path: '/edit',
-        component: EditMosaic,
-      },
-      {
-        path: '*/**/edit',
-        component: EditMosaic,
-      },
+      // {
+      //   path: '/edit',
+      //   component: EditMosaic,
+      // },
+      // {
+      //   path: '*/**/edit',
+      //   component: EditMosaic,
+      // },
 
       // test routes
       {
