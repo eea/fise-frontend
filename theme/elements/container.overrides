@@ -1,3 +1,214 @@
+// /*******************************
+//          Theme Overrides
+// *******************************/
+
+// @toolbarWidth: 80px;
+// @sidebarWidth: 375px;
+// @collapsedWidth: 20px;
+
+
+// .ui.messages.container {
+//   margin-bottom: 1em;
+// }
+
+// /* All Sizes */
+// .ui.container {
+// // .ui.wrapper > *,
+// // .ui.wrapper > .ui.inner > * {
+//   display: block;
+//   max-width: 1670px ;
+//   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+// }
+
+// .ui.wrapper > * {
+//   width: initial;
+// }
+
+// .contentWidthMedia(@width, @gutter, @offset) {
+//   .ui.container {
+//   // .ui.wrapper > *,
+//   // .ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
+//     width: 89%!important;
+//     margin-right: auto!important;
+//     margin-left: auto!important;
+//     max-width: 1670px!important;
+//   }
+ 
+//   .drag.handle.wrapper {
+//     margin-left: @offset ;
+//   }
+//   .tile .delete-button {
+//     margin-right: @offset ;
+//   }
+// }
+
+
+// .contentWidth(@offset) {
+//   @media only screen and (max-width: @largestMobileScreen + @offset) {
+//     .contentWidthMedia(@mobileWidth, @mobileGutter, -12px);
+//     [class*='mobile hidden'],
+//     [class*='tablet only']:not(.mobile),
+//     [class*='computer only']:not(.mobile),
+//     [class*='large screen only']:not(.mobile),
+//     [class*='widescreen only']:not(.mobile),
+//     [class*='or lower hidden'] {
+//       display: none ;
+//     }
+//   }
+//   @media only screen and (min-width: @tabletBreakpoint + @offset) {
+//     .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
+//     [class*='mobile only']:not(.tablet),
+//     [class*='tablet hidden'],
+//     [class*='computer only']:not(.tablet),
+//     [class*='large screen only']:not(.tablet),
+//     [class*='widescreen only']:not(.tablet),
+//     [class*='or lower hidden']:not(.mobile) {
+//       display: none ;
+//     }
+//   }
+//   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
+//     .contentWidthMedia(@computerWidth, @computerGutter, -30px);
+//     [class*='mobile only']:not(.computer),
+//     [class*='tablet only']:not(.computer),
+//     [class*='computer hidden'],
+//     [class*='large screen only']:not(.computer),
+//     [class*='widescreen only']:not(.computer),
+//     [class*='or lower hidden']:not(.tablet):not(.mobile) {
+//       display: none ;
+//     }
+//   }
+//   @media only screen and (min-width: @largeMonitorBreakpoint + @offset) {
+//     .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
+//     [class*='mobile only']:not([class*='large screen']),
+//     [class*='tablet only']:not([class*='large screen']),
+//     [class*='computer only']:not([class*='large screen']),
+//     [class*='large screen hidden'],
+//     [class*='widescreen only']:not([class*='large screen']),
+//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+//       display: none ;
+//     }
+//   }
+
+//   @media only screen and (min-width: @widescreenlaptopBreakpoint + @offset) {
+//     .contentWidthMedia(@widescreenlaptopWidth, @largeMonitorGutter, -30px);
+//     [class*='mobile only']:not([class*='large screen']),
+//     [class*='tablet only']:not([class*='large screen']),
+//     [class*='computer only']:not([class*='large screen']),
+//     [class*='large screen hidden'],
+//     [class*='widescreen only']:not([class*='large screen']),
+//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+//       display: none ;
+//     }
+//   }
+
+//   @media only screen and (min-width: @widescreenlaptopBigBreakpoint + @offset) {
+//     .contentWidthMedia(@widescreenlaptopBigWidth, @largeMonitorGutter, -30px);
+//     [class*='mobile only']:not([class*='large screen']),
+//     [class*='tablet only']:not([class*='large screen']),
+//     [class*='computer only']:not([class*='large screen']),
+//     [class*='large screen hidden'],
+//     [class*='widescreen only']:not([class*='large screen']),
+//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+//       display: none ;
+//     }
+//   }
+
+//   @media only screen and (min-width: 1700px) {
+//     .contentWidthMedia(@widescreenmonitorSmallWidth, @largeMonitorGutter, -30px);
+//     [class*='mobile only']:not([class*='large screen']),
+//     [class*='tablet only']:not([class*='large screen']),
+//     [class*='computer only']:not([class*='large screen']),
+//     [class*='large screen hidden'],
+//     [class*='widescreen only']:not([class*='large screen']),
+//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+//       display: none ;
+//     }
+//   }
+  
+
+
+
+//   @media only screen and (min-width: @widescreenMonitorBreakpoint + @offset) {
+//     .contentWidthMedia(@widescreenMonitorWidth, @largeMonitorGutter, -30px);
+//     [class*='mobile only']:not([class*='large screen']),
+//     [class*='tablet only']:not([class*='large screen']),
+//     [class*='computer only']:not([class*='large screen']),
+//     [class*='large screen hidden'],
+//     [class*='widescreen only']:not([class*='large screen']),
+//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+//       display: none ;
+//     }
+//   }
+//   @media only screen and (min-width: 1280px) {
+    
+//   }
+// }
+
+// .ui.wrapper > .ui.inner {
+//   width: 100% ;
+// }
+
+// body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .contentWidth(@toolbarWidth);
+// }
+
+// body.has-toolbar.has-sidebar {
+//   .contentWidth(@toolbarWidth + @sidebarWidth);
+// }
+
+// body.has-toolbar.has-sidebar-collapsed {
+//   .contentWidth(@toolbarWidth + @collapsedWidth);
+// }
+
+// body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .contentWidth(@collapsedWidth);
+// }
+
+// body.has-toolbar-collapsed.has-sidebar {
+//   .contentWidth(@collapsedWidth + @sidebarWidth);
+// }
+
+// body.has-toolbar-collapsed.has-sidebar-collapsed {
+//   .contentWidth(@collapsedWidth + @collapsedWidth);
+// }
+
+// .drag.handle.wrapper {
+//   margin-left: -15px;
+// }
+
+// .tile .delete-button {
+//   margin-right: -25px;
+// }
+
+
+// .ui.wrapper > *,
+// .ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
+//   width: unset!important;
+//   padding: 0 2rem;
+// }
+// body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) .ui.wrapper > *{
+//   width: unset!important;
+//   padding: 0 2rem;
+// }
+// body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) .ui.wrapper > * {
+//   width: unset!important;
+//   padding: 0 2rem;
+// }
+
+// .content-area main {
+//   width: unset!important;
+//   // padding: 2rem;
+// }
+
+// .ui.container .ui.container {
+//   width: 100%!important;
+// }
+
+
 /*******************************
          Theme Overrides
 *******************************/
@@ -6,35 +217,19 @@
 @sidebarWidth: 375px;
 @collapsedWidth: 20px;
 
-
-.ui.messages.container {
-  margin-bottom: 1em;
-}
-
 /* All Sizes */
 .ui.container {
-// .ui.wrapper > *,
-// .ui.wrapper > .ui.inner > * {
   display: block;
   max-width: @maxWidth !important;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.ui.wrapper > * {
-  width: initial;
-}
-
-.contentWidthMediaForest(@width, @gutter, @offset) {
+.contentWidthMedia(@width, @gutter, @offset) {
   .ui.container {
-  // .ui.wrapper > *,
-  // .ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
-    // width: @width !important;
-    width: 89%!important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    max-width: 1670px!important;
+    width: @width !important;
+    margin-right: @gutter !important;
+    margin-left: @gutter !important;
   }
- 
   .drag.handle.wrapper {
     margin-left: @offset !important;
   }
@@ -45,7 +240,7 @@
 
 .contentWidth(@offset) {
   @media only screen and (max-width: @largestMobileScreen + @offset) {
-    .contentWidthMediaForest(@mobileWidth, @mobileGutter, -12px);
+    .contentWidthMedia(@mobileWidth, @mobileGutter, -12px);
     [class*='mobile hidden'],
     [class*='tablet only']:not(.mobile),
     [class*='computer only']:not(.mobile),
@@ -55,8 +250,8 @@
       display: none !important;
     }
   }
-  @media only screen and (min-width: @tabletBreakpoint + @offset) {
-    .contentWidthMediaForest(@tabletWidth, @tabletGutter, -30px);
+  @media only screen and (min-width: @tabletBreakpoint + @offset) and (max-width: @largestTabletScreen + @offset) {
+    .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
     [class*='mobile only']:not(.tablet),
     [class*='tablet hidden'],
     [class*='computer only']:not(.tablet),
@@ -66,19 +261,19 @@
       display: none !important;
     }
   }
-  // @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
-  //   .contentWidthMediaForest(@computerWidth, @computerGutter, -30px);
-  //   [class*='mobile only']:not(.computer),
-  //   [class*='tablet only']:not(.computer),
-  //   [class*='computer hidden'],
-  //   [class*='large screen only']:not(.computer),
-  //   [class*='widescreen only']:not(.computer),
-  //   [class*='or lower hidden']:not(.tablet):not(.mobile) {
-  //     display: none !important;
-  //   }
-  // }
+  @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
+    .contentWidthMedia(@computerWidth, @computerGutter, -30px);
+    [class*='mobile only']:not(.computer),
+    [class*='tablet only']:not(.computer),
+    [class*='computer hidden'],
+    [class*='large screen only']:not(.computer),
+    [class*='widescreen only']:not(.computer),
+    [class*='or lower hidden']:not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
   @media only screen and (min-width: @largeMonitorBreakpoint + @offset) {
-    .contentWidthMediaForest(@largeMonitorWidth, @largeMonitorGutter, -30px);
+    .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
     [class*='mobile only']:not([class*='large screen']),
     [class*='tablet only']:not([class*='large screen']),
     [class*='computer only']:not([class*='large screen']),
@@ -89,32 +284,8 @@
     }
   }
 
-  // @media only screen and (min-width: @widescreenlaptopBreakpoint + @offset) {
-  //   .contentWidthMediaForest(@widescreenlaptopWidth, @largeMonitorGutter, -30px);
-  //   [class*='mobile only']:not([class*='large screen']),
-  //   [class*='tablet only']:not([class*='large screen']),
-  //   [class*='computer only']:not([class*='large screen']),
-  //   [class*='large screen hidden'],
-  //   [class*='widescreen only']:not([class*='large screen']),
-  //   [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-  //     display: none !important;
-  //   }
-  // }
-
-  // @media only screen and (min-width: @widescreenlaptopBigBreakpoint + @offset) {
-  //   .contentWidthMediaForest(@widescreenlaptopBigWidth, @largeMonitorGutter, -30px);
-  //   [class*='mobile only']:not([class*='large screen']),
-  //   [class*='tablet only']:not([class*='large screen']),
-  //   [class*='computer only']:not([class*='large screen']),
-  //   [class*='large screen hidden'],
-  //   [class*='widescreen only']:not([class*='large screen']),
-  //   [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-  //     display: none !important;
-  //   }
-  // }
-
-  @media only screen and (min-width: 1700px) {
-    .contentWidthMediaForest(@widescreenmonitorSmallWidth, @largeMonitorGutter, -30px);
+  @media only screen and (min-width: @widescreenMonitorBreakpoint + @offset) {
+    .contentWidthMedia(@widescreenMonitorWidth, @largeMonitorGutter, -30px);
     [class*='mobile only']:not([class*='large screen']),
     [class*='tablet only']:not([class*='large screen']),
     [class*='computer only']:not([class*='large screen']),
@@ -124,22 +295,6 @@
       display: none !important;
     }
   }
-  
-  // @media only screen and (min-width: @widescreenMonitorBreakpoint + @offset) {
-  //   .contentWidthMediaForest(@widescreenMonitorWidth, @largeMonitorGutter, -30px);
-  //   [class*='mobile only']:not([class*='large screen']),
-  //   [class*='tablet only']:not([class*='large screen']),
-  //   [class*='computer only']:not([class*='large screen']),
-  //   [class*='large screen hidden'],
-  //   [class*='widescreen only']:not([class*='large screen']),
-  //   [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-  //     display: none !important;
-  //   }
-  // }
-}
-
-.ui.wrapper > .ui.inner {
-  width: 100% !important;
 }
 
 body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
@@ -178,18 +333,19 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
   margin-right: -25px !important;
 }
 
-
-.ui.wrapper > *,
-.ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
-  width: unset!important;
-  padding: 0 2rem;
+// Hack for escape the blocks container in blocks full width
+.full-width {
+  position: relative;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+  // object-fit: cover;
 }
-body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) .ui.wrapper > *{
-  width: unset!important;
-  padding: 0 2rem;
-}
 
-.content-area main {
-  width: unset!important;
-  padding: 0 2rem;
+.page-document,
+.page-edit {
+  padding: 1rem;
 }
