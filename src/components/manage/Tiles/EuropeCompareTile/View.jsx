@@ -6,11 +6,11 @@ class View extends Component {
     console.log('props', this.props);
     return (
       <div className="forest-tile-wrapper">
-        <div className="forest-specific-tile data-box orange-data-highlight">
+        <div className="forest-specific-tile forest-comparation">
           <h5>{this.props.data.europe_tile_title}</h5>
           <div className="land-data-wrapper">
             <div className="land-data">
-              {this.props.data.europe_protected_area}
+              {this.props.data.europe_protected_area}%
             </div>
             <div className="land-data-content">
               of Europe's land surface <span>{this.props.data.europe_total_area}</span>
@@ -18,15 +18,21 @@ class View extends Component {
           </div>
           <div className="ui bulleted list">
             <div className="item">
-              {this.props.data.europe_country_1_name}
+              <a href={this.props.data.europe_country_1_link}>
+                {this.props.data.europe_country_1_name}
+              </a>
               <span>{this.props.data.europe_country_1_value}</span>
             </div>
             <div className="item">
-              {this.props.data.europe_country_2_name}
+              <a href={this.props.data.europe_country_2_link}>
+                {this.props.data.europe_country_2_name}
+              </a>
               <span>{this.props.data.europe_country_2_value}</span>
             </div>
             <div className="item">
-              {this.props.data.europe_country_3_name}
+              <a href={this.props.data.europe_country_3_link}>
+                {this.props.data.europe_country_3_name}
+              </a>
               <span>{this.props.data.europe_country_3_value}</span>
             </div>
           </div>

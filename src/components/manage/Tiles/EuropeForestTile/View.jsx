@@ -6,27 +6,30 @@ class View extends Component {
     console.log('props', this.props);
     return (
       <div className="forest-tile-wrapper">
-        <div className="forest-specific-tile coverage-segment">
+        <div className="forest-specific-tile forest-area-tile">
           <h5>{this.props.data.europe_tile_title}</h5>
-          <div className="land-data-wrapper">
+
+          <div className="land-data-wrapper eu28-data">
             <div className="land-data">
-              {this.props.data.europe_forest_surface}
+              {this.props.data.europe_forest_p_eu28}%
             </div>
             <div className="land-data-content">
-              of Europe's land surface <span>{this.props.data.europe_total_area}</span>
+              of Europe's land surface <span>{this.props.data.europe_forest_l_eu28}</span>
             </div>
           </div>
-          <div className="coverage-data">
-            <div className="owned-data">
-              <span>{this.props.data.europe_total_public}</span> publicy owned
+
+          <div className="land-data-wrapper eea39-data">
+            <div className="land-data">
+              {this.props.data.europe_forest_p_eea39}%
             </div>
-            <div className="private-data">
-              <span>{this.props.data.europe_total_private}</span> private
+            <div className="land-data-content">
+              of Europe's land surface <span>{this.props.data.europe_forest_p_eea39}</span>
             </div>
           </div>
-            <a className="discreet" href={this.props.data.europe_tile_link}>
-              {this.props.data.europe_text_attribution}
-            </a>
+
+          <a className="discreet" href={this.props.data.europe_tile_link}>
+            {this.props.data.europe_text_attribution}
+          </a>
         </div>
       </div>
     );

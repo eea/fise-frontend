@@ -42,39 +42,39 @@ class Edit extends Component {
             />
 
             <Field
-                id="europe-forest-surface-area"
-                title="Surface"
+                id="europe-forest-p-eu28"
+                title="Forest area in EU28"
                 type="text"
-                value={this.state.europe_forest_surface}
+                value={this.state.europe_forest_p_eu28}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_forest_surface: d })}
+                onChange={(e, d) => this.updateData({ europe_forest_p_eu28: d })}
                 />
 
             <Field
-                id="europe-total-area"
-                title="Total area"
+                id="europe-forest-l-eu28"
+                title="Total forest area in EU28"
                 type="text"
-                value={this.state.europe_total_area}
+                value={this.state.europe_forest_l_eu28}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_total_area: d })}
+                onChange={(e, d) => this.updateData({ europe_forest_l_eu28: d })}
               />
 
             <Field
-                id="europe-total-public"
-                title="Total public"
+                id="europe-forest-p-eea39"
+                title="Forest area in EEA39"
                 type="text"
-                value={this.state.europe_total_public}
+                value={this.state.europe_forest_p_eea39}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_total_public: d })}
-              />
+                onChange={(e, d) => this.updateData({ europe_forest_p_eea39: d })}
+                />
 
             <Field
-                id="europe-total-private"
-                title="Total private"
+                id="europe-forest-l-eea39"
+                title="Total forest area in EEA39"
                 type="text"
-                value={this.state.europe_total_private}
+                value={this.state.europe_forest_l_eea39}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_total_private: d })}
+                onChange={(e, d) => this.updateData({ europe_forest_l_eea39: d })}
               />
 
             <Field

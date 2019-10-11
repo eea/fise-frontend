@@ -76,6 +76,14 @@ class Edit extends Component {
                 required={false}
                 onChange={(e, d) => this.updateData({ europe_country_1_value: d })}
                 />
+              <Field
+                id="europe-country-1-link"
+                title="Country link"
+                type="text"
+                value={this.state.europe_country_1_link}
+                required={false}
+                onChange={(e, d) => this.updateData({ europe_country_1_link: d })}
+                />
             </UiForm.Group>
 
             <UiForm.Group widths="equal">
@@ -95,6 +103,14 @@ class Edit extends Component {
                 required={false}
                 onChange={(e, d) => this.updateData({ europe_country_2_value: d })}
                 />
+              <Field
+                id="europe-country-2-link"
+                title="Country link"
+                type="text"
+                value={this.state.europe_country_2_link}
+                required={false}
+                onChange={(e, d) => this.updateData({ europe_country_2_link: d })}
+                />
             </UiForm.Group>
 
             <UiForm.Group widths="equal">
@@ -113,6 +129,14 @@ class Edit extends Component {
                 value={this.state.europe_country_3_value}
                 required={false}
                 onChange={(e, d) => this.updateData({ europe_country_3_value: d })}
+                />
+              <Field
+                id="europe-country-3-link"
+                title="Country link"
+                type="text"
+                value={this.state.europe_country_3_link}
+                required={false}
+                onChange={(e, d) => this.updateData({ europe_country_3_link: d })}
                 />
             </UiForm.Group>
 
