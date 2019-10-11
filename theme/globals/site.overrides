@@ -800,3 +800,7 @@ a {
 .tools {
   margin-right: 0;
 }
+.tiler-chooser {
+top:unset;
+buttom: 9px;
+}

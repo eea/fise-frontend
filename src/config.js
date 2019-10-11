@@ -202,7 +202,7 @@ export const tiles = {
       height: 600,
     },
     table: {
-      ...defaultTiles.tilesConfig.image,
+      ...defaultTiles.tilesConfig.table,
       height: 600,
     },
   },

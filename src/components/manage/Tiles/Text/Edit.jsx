@@ -89,10 +89,10 @@ class Edit extends Component {
 
     const CKEditor = require('@ckeditor/ckeditor5-react');
     const ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
-    console.log(
-      'plugins',
-      ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName),
-    );
+    // console.log(
+    //   'plugins',
+    //   ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName),
+    // );
     // const ClassicEditor = require('@ckeditor/ckeditor5-build-balloon-block');
     // const ClassicEditor = require('@ckeditor/ckeditor5-editor-classic/src/classiceditor');
 
