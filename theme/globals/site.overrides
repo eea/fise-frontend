@@ -8,6 +8,13 @@ body {
   margin-top: 2rem;
 }
 
+.logo-nav-wrapper {
+  display    : flex;
+  align-items: baseline;
+  margin-top: 1rem;
+  padding: 0 2rem;
+}
+
 .navigation .ui.secondary.pointing.menu .menuActive {
   border-color: #E40166;
 }
@@ -34,6 +41,11 @@ body {
   position        : relative !important;
 }
 
+.header-wrapper {
+  background: white;
+  position: relative;
+}
+
 
 .ui.basic.segment.content-area {
   margin-top : 0;
@@ -42,13 +54,13 @@ body {
 
 body.has-toolbar {
   .content-area main {
-    width: 100%;    
+    width: 100%;
   }
 }
 
 .content-area main {
-  background-color: #fff;
-  margin          : auto;
+  background-color   : #fff;
+  margin             : auto;
   // max-width       : calc(100% + 6rem);
   // margin-left     : -3rem;
   // margin-right    : -3rem;
@@ -67,13 +79,10 @@ body.has-toolbar {
 }
 
 .header-image {
-  max-width              : calc(100% + 6rem);
   border-top-left-radius : 1rem;
   border-top-right-radius: 1rem;
   position               : relative;
   /*z-index              : -1;*/
-  margin-left            : -3rem;
-  margin-right           : -3rem;
   overflow               : hidden;
   display                : flex;
   justify-content        : center;
@@ -98,13 +107,13 @@ body.has-toolbar {
   }
 }
 
-body.has-toolbar {
-  .header-image {
-    max-width   : calc(100% + 3rem);
-    margin-left : -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
+// body.has-toolbar {
+//   .header-image {
+//     max-width   : calc(100% + 3rem);
+//     margin-left : -1.5rem;
+//     margin-right: -1.5rem;
+//   }
+// }
 
 @media only screen and (min-width: 1440px) {
   body .ui.container {
@@ -119,18 +128,19 @@ body.has-toolbar {
     .overSearchIcon {
       // position: absolute;
       // right   : 0;
-      position: absolute;
-      right: 44px;
+      position   : absolute;
+      right      : 44px;
+
       svg {
-        stroke: #015610;
+        stroke      : #015610;
         stroke-width: 3px;
       }
     }
   }
 
   .searchIcon {
-    position: absolute;
-    right   : 44px;
+    position    : absolute;
+    right       : 44px;
     margin-right: 1rem;
   }
 
@@ -148,12 +158,13 @@ body.has-toolbar {
   }
 
   .field.searchbox {
-    min-height: 45px;
+    min-height   : 45px;
     padding-right: 3rem;
   }
+
   .accountIcon {
     position: absolute;
-    right: 0;
+    right   : 0;
   }
 }
 
@@ -170,33 +181,34 @@ body.has-toolbar {
   }
 
   .slide-body {
-    position   : absolute;
+    position      : absolute;
     // bottom     : 40%;
-    bottom: 30%;
-    max-width: 600px;
-    margin-left: 4rem;
-    color      : white;
+    bottom        : 30%;
+    max-width     : 600px;
+    margin-left   : 4rem;
+    color         : white;
 
     .slide-title {
-      font-size: 3rem;
-      font-weight: bold;
+      font-size    : 3rem;
+      font-weight  : bold;
       margin-bottom: 3rem;
-      line-height: 1.2;
+      line-height  : 1.2;
     }
+
     .slide-description {
-      font-size: 1.2rem;
+      font-size  : 1.2rem;
       line-height: 1.2;
       font-weight: 200;
-      opacity: 0.8;
+      opacity    : 0.8;
     }
   }
 }
 
 .slider-wrapper {
-  max-width              : 1670px;
-  border-top-left-radius : 1rem;
-  border-top-right-radius: 1rem;
-  position               : relative;
+  max-width                 : 1670px;
+  border-top-left-radius    : 1rem;
+  border-top-right-radius   : 1rem;
+  position                  : relative;
   // margin-left            : -3rem;
   // margin-right           : -3rem;
 
@@ -218,17 +230,17 @@ body.has-toolbar {
 }
 
 
-body.has-toolbar {
-  .slider-wrapper {
-    max-width              : calc(100% + 3rem);
-    border-top-left-radius : 1rem;
-    border-top-right-radius: 1rem;
-    position               : relative;
-    margin-left            : -1.5rem;
-    margin-right           : -1.5rem;
-    // overflow            : hidden;
-  }
-}
+// body.has-toolbar {
+//   .slider-wrapper {
+//     max-width              : calc(100% + 3rem);
+//     border-top-left-radius : 1rem;
+//     border-top-right-radius: 1rem;
+//     position               : relative;
+//     margin-left            : -1.5rem;
+//     margin-right           : -1.5rem;
+//     // overflow            : hidden;
+//   }
+// }
 
 .header {
   position: relative;
@@ -237,7 +249,7 @@ body.has-toolbar {
   .nav-actions {
     position       : absolute;
     top            : 0;
-    right          : 0;
+    right          : 3rem;
     display        : flex;
     justify-content: center;
     align-items    : center;
@@ -265,10 +277,10 @@ body.has-toolbar {
 }
 
 .slider-image {
-  // width: 100%;
-  height  : 780px;
-  display : block;
-  position: relative;
+  // width       : 100%;
+  height         : 780px;
+  display        : block;
+  position       : relative;
   background-size: cover;
 }
 
@@ -350,16 +362,19 @@ body.has-toolbar {
   .ui.grid {
     padding-top: 3rem;
   }
+
   background: #F9F9F7 !important;
   margin-top: 6rem !important;
+
   .column {
     p {
       font-size: .9rem;
     }
+
     b {
-      color: #564535;
+      color        : #564535;
       margin-bottom: 1rem;
-      display: block;
+      display      : block;
     }
   }
 }
@@ -679,7 +694,7 @@ body #page-document .imageAndRichText+p {
 
     button {
       box-shadow      : 0 0 0 1px @darkGreen inset !important;
-      color           : @darkGreen !important;
+      color           : @darkGreen  !important;
       background-color: transparent;
     }
   }
@@ -714,9 +729,9 @@ body #page-document .imageAndRichText+p {
 }
 
 .footerLogoWrapper {
-  display        : flex;
+  display           : flex;
   // justify-content: center;
-  align-items    : center;
+  align-items       : center;
 
   .footerLogo {
     height: 50px;
@@ -758,7 +773,7 @@ nav.navigation .menu>a.item:first-of-type {
 
 .slider-caret {
   position : absolute;
-  bottom   : -18px;
+  bottom   : -17px;
   left     : 50%;
   width    : 119px;
   transform: translateX(-50%);
@@ -776,4 +791,6 @@ a {
 }
 
 // chart editor fixes
-.editor_controls .fold__top { height: initial; }
+.editor_controls .fold__top {
+  height: initial;
+}
