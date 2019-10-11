@@ -176,15 +176,19 @@ class Navigation extends Component {
               <Dropdown
                 className={this.isActive(item.url) ? 'item menuActive' : 'item'}
                 key={item.url}
-                text={item.title}
+                // text={item.title}
+                trigger={<Link to={item.url === '' ? '/' : item.url} key={item.url}>{item.title}</Link>}
+                item
+                simple
               >
                 <Dropdown.Menu>
                   <Dropdown.Header>
-                    <Link to={item.url === '' ? '/' : item.url} key={item.url}>
-                      {item.title}
-                    </Link>
+                    <div className="carretTop"></div>
+                    {/* <Link to={item.url === '' ? '/' : item.url} key={item.url}> */}
+                      {/* {item.title} */}
+                    {/* </Link> */}
                   </Dropdown.Header>
-                  <Dropdown.Divider />
+                  {/* <Dropdown.Divider /> */}
                   {item.items.map(subitem => (
                     <Dropdown.Item key={subitem.url}>
                       <Link
