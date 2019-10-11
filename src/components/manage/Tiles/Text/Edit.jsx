@@ -58,12 +58,7 @@ class Edit extends Component {
     super(props);
 
     if (!__SERVER__) {
-      let htmltext;
-      if (props.data && props.data.text) {
-        htmltext = props.data.text;
-      } else {
-        htmltext = '<p>Please edit this text...</p>';
-      }
+      const htmltext = (props.data && props.data.text) || '';
 
       this.state = {
         htmltext,
@@ -75,7 +70,7 @@ class Edit extends Component {
 
   onChange(event, editor) {
     const text = editor.getData();
-    console.log({ event, editor, text });
+    // console.log({ event, editor, text });
     this.props.onChangeTile(this.props.tile, {
       ...this.props.data,
       text,
@@ -151,12 +146,8 @@ class Edit extends Component {
             // console.log('Editor is ready to use!', editor);
           }}
           onChange={this.onChange}
-          onBlur={(event, editor) => {
-            // console.log('Blur.', editor);
-          }}
-          onFocus={(event, editor) => {
-            // console.log('Focus.', editor);
-          }}
+          onBlur={(event, editor) => {}}
+          onFocus={(event, editor) => {}}
         />
       </div>
     );
