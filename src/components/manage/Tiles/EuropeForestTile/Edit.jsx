@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form as UiForm, Header } from 'semantic-ui-react';
+import { Form as UiForm } from 'semantic-ui-react';
 import { Field } from '@plone/volto/components'; // EditTile
 
 class Edit extends Component {
@@ -78,8 +78,17 @@ class Edit extends Component {
               />
 
             <Field
+                id="europe-source"
+                title="Source"
+                type="text"
+                value={this.state.europe_text_attribution}
+                required={false}
+                onChange={(e, d) => this.updateData({ europe_text_attribution: d })}
+              />
+
+            <Field
               id="europe-tile-link"
-              title="Link"
+              title="Source link"
               type="text"
               value={this.state.europe_tile_link}
               required={false}

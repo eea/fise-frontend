@@ -117,8 +117,17 @@ class Edit extends Component {
             </UiForm.Group>
 
             <Field
+              id="europe-tile-source"
+              title="Source"
+              type="text"
+              value={this.state.europe_text_attribution}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_text_attribution: d })}
+            />
+
+            <Field
               id="europe-tile-link"
-              title="Link"
+              title="Source link"
               type="text"
               value={this.state.europe_tile_link}
               required={false}
