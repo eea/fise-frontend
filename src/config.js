@@ -29,6 +29,9 @@ import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 import EuropeCompareTileEdit from '~/components/manage/Tiles/EuropeCompareTile/Edit';
 import EuropeCompareTileView from '~/components/manage/Tiles/EuropeCompareTile/View';
 
+import EuropeForestTileEdit from '~/components/manage/Tiles/EuropeForestTile/Edit';
+import EuropeForestTileView from '~/components/manage/Tiles/EuropeForestTile/View';
+
 import PlotlyTileEdit from '~/components/manage/Tiles/PlotlyChart/Edit';
 import PlotlyTileView from '~/components/manage/Tiles/PlotlyChart/View';
 
@@ -139,6 +142,14 @@ export const tiles = {
       title: 'Europe Compare Tile',
       view: EuropeCompareTileView,
       edit: EuropeCompareTileEdit,
+      icon: chartIcon,
+      group: 'forests_specific',
+    },
+    europe_forest_tile: {
+      id: 'europe_forest_tile',
+      title: 'Europe Forest Area Tile',
+      view: EuropeForestTileView,
+      edit: EuropeForestTileEdit,
       icon: chartIcon,
       group: 'forests_specific',
     },

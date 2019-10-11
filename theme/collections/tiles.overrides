@@ -1,27 +1,8 @@
+// General styling
+
 .tile-container {
   padding: 10px;
   height: 100%;
-}
-
-.default-tile {
-  background-color: #fff;
-}
-
-.drop-shadow-tile {
-  -webkit-box-shadow: 0px 1px 6px 0 #C7D5D8;
-  -moz-box-shadow: 0px 1px 6px 0 #C7D5D8;
-  box-shadow: 0px 1px 6px 0 #C7D5D8;
-  border-radius: 5px;
-}
-
-.border-tile {
-  border: 1px solid @lightGreyBorderColor;
-  border-radius: 5px;
-}
-
-.filled-tile {
-  background-color: #f6f6f5;
-  border-radius: 5px;
 }
 
 .tile-wrapper {
@@ -53,4 +34,171 @@
 
 .tile p {
   margin: 0 !important;
+}
+
+
+
+// Tile style types
+
+.default-tile {
+  background-color: #fff;
+}
+
+.drop-shadow-tile {
+  -webkit-box-shadow: 0px 1px 6px 0 #C7D5D8;
+  -moz-box-shadow: 0px 1px 6px 0 #C7D5D8;
+  box-shadow: 0px 1px 6px 0 #C7D5D8;
+  border-radius: 5px;
+}
+
+.border-tile {
+  border: 1px solid @lightGreyBorderColor;
+  border-radius: 5px;
+}
+
+.filled-tile {
+  background-color: #f6f6f5;
+  border-radius: 5px;
+}
+
+
+// Europe forest specific tiles styling
+
+.tile-container {
+  h5 {
+    color         : @darkBrown;
+    text-transform: uppercase;
+    font-weight   : bold;
+  }
+
+  .land-data-wrapper {
+    display         : flex;
+    align-items     : center;
+    background-color: #f6f6f5;
+    border-radius   : 5px;
+    padding         : 1.5em;
+  }
+
+  .land-data {
+    font-size    : 50px;
+    font-weight  : bold;
+    padding-right: 10px;
+  }
+
+  .land-data-content span {
+    font-weight: bold;
+  }
+
+  .coverage-segment {
+    .land-data,
+    .land-data-content span {
+      color: @darkGreen;
+    }
+  }
+
+  .data-box {
+    .ui.list .item span {
+      float: right;
+    }
+  }
+
+  .data-box.orange-data-highlight {
+    .land-data,
+    .land-data-content span {
+      color: @darkOrange;
+    }
+  }
+
+  .data-box.deadwood-segment {
+    .land-data,
+    .land-data-content span {
+      color: @lightGreen;
+    }
+
+    ul.ui.list li:before,
+    .ui.bulleted.list .list>.item:before,
+    .ui.bulleted.list>.item:before {
+      background-color: @lightGreen;
+      content         : '';
+      border-radius   : 50%;
+      height          : 0.80rem;
+      width           : 0.80rem;
+      top             : 2px;
+    }
+
+    .ui.bulleted.list>.item {
+      padding-bottom: 18px;
+    }
+  }
+
+  .ui.bulleted.list>.item {
+    font-size: 12px;
+  }
+
+  ul.ui.list li:before,
+  .ui.bulleted.list .list>.item:before,
+  .ui.bulleted.list>.item:before {
+    background-color: @darkOrange;
+    content         : '';
+    border-radius   : 50%;
+    height          : 0.50rem;
+    width           : 0.50rem;
+    top             : 5px;
+  }
+
+  .coverage-data {
+    display  : flex;
+    color    : #fff;
+    font-size: 16px;
+    margin   : 1em 0;
+
+    .owned-data {
+      background-color: @lightGreen;
+      padding         : 1em;
+      border-radius   : 5px;
+      width           : 60%;
+      margin-right    : 0.2em;
+    }
+
+    .private-data {
+      background-color: @darkGreen;
+      padding         : 1em;
+      border-radius   : 5px;
+      flex            : 1;
+    }
+
+    span {
+      font-size    : 28px;
+      display      : block;
+      margin-bottom: 0.2em;
+    }
+  }
+
+  .discreet {
+    color    : #999;
+    font-size: 12px;
+    position : absolute;
+    bottom   : 30px;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .chart-description {
+    color           : @darkGreen;
+    font-size       : 14px;
+    background-color: #f6f6f5;
+    padding         : 1em;
+  }
+
+  .map-wrapper {
+    border       : 1px solid @darkGreen;
+    border-radius: 5px;
+    padding      : 5px;
+  }
+
+  .map-buttons {
+    margin-top: 2em;
+  }
 }
