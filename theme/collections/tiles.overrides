@@ -66,9 +66,20 @@
 
 .tile-container {
   h5 {
-    color         : @darkBrown;
+    color : @darkBrown;
     text-transform: uppercase;
-    font-weight   : bold;
+    font-weight : bold;
+  }
+
+  .forest-tile-wrapper {
+    display: flex;
+    height: 100%;
+  }
+
+  .forest-specific-tile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .land-data-wrapper {
@@ -177,8 +188,7 @@
   .discreet {
     color    : #999;
     font-size: 12px;
-    position : absolute;
-    bottom   : 30px;
+    margin-top: auto;
   }
 
   .chart-container {
