@@ -46,35 +46,37 @@ class Anontools extends Component {
   render() {
     return (
       !this.props.token && (
-        <img
-        onClick={() => document.querySelector('.toolbar .user').click()}
-        className="accountIcon"
-        style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
-        src={Person}
-        alt=""
-      />
-        <List floated="right" horizontal>
-          {/* needs divs around links for a11y, and semanticui insists on using List as div role="list" instead of simply using <ul></ul> */}
-          <div role="listitem" className="item">
-            <Link
-              to={`/login${
-                this.props.content
-                  ? `?return_url=${this.props.content['@id'].replace(
-                      settings.apiPath,
-                      '',
-                    )}`
-                  : ''
-              }`}
-            >
-              <FormattedMessage id="Log in" defaultMessage="Log in" />
-            </Link>
-          </div>
-          <div role="listitem" className="item">
-            <Link to="/register">
-              <FormattedMessage id="Register" defaultMessage="Register" />
-            </Link>
-          </div>
-        </List>
+        <div>
+          <img
+            onClick={() => document.querySelector('.toolbar .user').click()}
+            className="accountIcon"
+            style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
+            src={Person}
+            alt=""
+          />
+          <List floated="right" horizontal>
+            {/* needs divs around links for a11y, and semanticui insists on using List as div role="list" instead of simply using <ul></ul> */}
+            <div role="listitem" className="item">
+              <Link
+                to={`/login${
+                  this.props.content
+                    ? `?return_url=${this.props.content['@id'].replace(
+                        settings.apiPath,
+                        '',
+                      )}`
+                    : ''
+                }`}
+              >
+                <FormattedMessage id="Log in" defaultMessage="Log in" />
+              </Link>
+            </div>
+            <div role="listitem" className="item">
+              <Link to="/register">
+                <FormattedMessage id="Register" defaultMessage="Register" />
+              </Link>
+            </div>
+          </List>
+        </div>
       )
     );
   }
