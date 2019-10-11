@@ -23,8 +23,11 @@ import { defineMessages } from 'react-intl';
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 // Tiles
-import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
-import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
+// import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
+// import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
+
+import EuropeCompareTileEdit from '~/components/manage/Tiles/EuropeCompareTile/Edit';
+import EuropeCompareTileView from '~/components/manage/Tiles/EuropeCompareTile/View';
 
 import PlotlyTileEdit from '~/components/manage/Tiles/PlotlyChart/Edit';
 import PlotlyTileView from '~/components/manage/Tiles/PlotlyChart/View';
@@ -114,6 +117,10 @@ defineMessages({
     id: 'tableau',
     defaultMessage: 'Tableau',
   },
+  forests_specific: {
+    id: 'forests_specific',
+    defaultMessage: 'Forests Specific Tiles',
+  },
 });
 
 export const tiles = {
@@ -122,10 +129,19 @@ export const tiles = {
   groupTilesOrder: [
     ...defaultTiles.groupTilesOrder,
     { id: 'custom_addons', title: 'Custom addons' },
+    { id: 'forests_specific', title: 'Forests Specific Tiles' },
   ],
 
   tilesConfig: {
     ...defaultTiles.tilesConfig,
+    europe_compare_tile: {
+      id: 'europe_compare_tile',
+      title: 'Europe Compare Tile',
+      view: EuropeCompareTileView,
+      edit: EuropeCompareTileEdit,
+      icon: chartIcon,
+      group: 'forests_specific',
+    },
     plotly_chart: {
       id: 'plotly_chart',
       title: 'Plotly Chart',
@@ -135,15 +151,15 @@ export const tiles = {
       height: 400,
       group: 'custom_addons',
     },
-    demo_chart: {
-      id: 'demo_chart',
-      title: 'Demo Chart',
-      view: ChartTileView,
-      edit: ChartTileEdit,
-      icon: chartIcon,
-      height: 400,
-      group: 'custom_addons',
-    },
+    // demo_chart: {
+    //   id: 'demo_chart',
+    //   title: 'Demo Chart',
+    //   view: ChartTileView,
+    //   edit: ChartTileEdit,
+    //   icon: chartIcon,
+    //   height: 400,
+    //   group: 'custom_addons',
+    // },
     tableau: {
       id: 'tableau',
       title: 'Tableau',
