@@ -53,14 +53,8 @@ import underlineSVG from '@plone/volto/icons/underline.svg';
 import chartIcon from '@plone/volto/icons/world.svg';
 
 // TODO: this needs to be reorganized
-import { layoutViews } from '../volto-mosaic/src';
-
-// import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
-// import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
-// import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
-// import TableauTestView from '~/components/theme/TableauTestView/View';
-// import MosaicView from '~/components/theme/MosaicView/MosaicView';
-// import divideVertical from '@plone/volto/icons/divide-vertical.svg';
+import { layoutViews } from '~/../volto-mosaic/src';
+import MosaicView from '~/../volto-mosaic/src/components/theme/View';
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
@@ -88,7 +82,8 @@ export const views = {
   },
   contentTypesViews: {
     ...defaultViews.contentTypesViews,
-    'Plone Site': HomepageView,
+    // 'Plone Site': HomepageView,
+    'Plone Site': MosaicView,
   },
 };
 
@@ -212,3 +207,10 @@ export const tiles = {
     },
   },
 };
+
+// import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
+// import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
+// import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
+// import TableauTestView from '~/components/theme/TableauTestView/View';
+// import MosaicView from '~/components/theme/MosaicView/MosaicView';
+// import divideVertical from '@plone/volto/icons/divide-vertical.svg';

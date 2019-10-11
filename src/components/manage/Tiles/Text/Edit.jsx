@@ -5,28 +5,8 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { defineMessages, injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import cx from 'classnames';
-
-// import Editor from 'draft-js-plugins-editor';
-// import TemplatedTilesSVG from '@plone/volto/icons/theme.svg';
-// import addSVG from '@plone/volto/icons/circle-plus.svg';
-// import cameraSVG from '@plone/volto/icons/camera.svg';
-// import createInlineToolbarPlugin from 'draft-js-inline-toolbar-plugin';
-// import videoSVG from '@plone/volto/icons/videocamera.svg';
-// import { Button } from 'semantic-ui-react';
-// import { Icon } from '@plone/volto/components';
-// import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
-// import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
-// import { includes, isEqual } from 'lodash';
-// import { settings, tiles } from '~/config';
-
-// const messages = defineMessages({
-//   text: {
-//     id: 'Type text…',
-//     defaultMessage: 'Type text…',
-//   },
-// });
 
 /**
  * Edit text tile class.
@@ -123,14 +103,14 @@ class Edit extends Component {
           data={this.state.htmltext}
           onInit={editor => {
             // You can store the "editor" and use when it is needed.
-            console.log('Editor is ready to use!', editor);
+            // console.log('Editor is ready to use!', editor);
           }}
           onChange={this.onChange}
           onBlur={(event, editor) => {
-            console.log('Blur.', editor);
+            // console.log('Blur.', editor);
           }}
           onFocus={(event, editor) => {
-            console.log('Focus.', editor);
+            // console.log('Focus.', editor);
           }}
         />
       </div>
