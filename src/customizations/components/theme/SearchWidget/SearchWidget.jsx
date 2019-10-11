@@ -13,6 +13,7 @@ import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import Person from './person.svg';
+import { connect } from 'react-redux';
 
 const messages = defineMessages({
   search: {
@@ -37,8 +38,12 @@ class SearchWidget extends Component {
    * @static
    */
   static propTypes = {
+    token: PropTypes.string,    
     pathname: PropTypes.string.isRequired,
     intl: intlShape.isRequired,
+  };
+  static defaultProps = {
+    token: null,
   };
 
   /**
@@ -172,6 +177,7 @@ class SearchWidget extends Component {
           ) : (
             ''
           )}
+          { this.props.token &&  
           <img
             onClick={() => document.querySelector('.toolbar .user').click()}
             className="accountIcon"
@@ -179,6 +185,7 @@ class SearchWidget extends Component {
             src={Person}
             alt=""
           />
+          }
         </Form.Field>
       </Form>
     );
@@ -186,6 +193,9 @@ class SearchWidget extends Component {
 }
 
 export default compose(
+  connect(state => ({
+    token: state.userSession.token,
+  })),
   withRouter,
   injectIntl,
 )(SearchWidget);

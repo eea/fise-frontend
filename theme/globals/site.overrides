@@ -796,3 +796,7 @@ a {
 .editor_controls .fold__top {
   height: initial;
 }
+
+.tools {
+  margin-right: 0;
+}
