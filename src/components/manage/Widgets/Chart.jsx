@@ -2,7 +2,7 @@ import ChartEditor from './ChartEditor';
 import React, { Component } from 'react';
 import showIcon from '@plone/volto/icons/show.svg';
 import { Icon as VoltoIcon } from '@plone/volto/components';
-import { Modal, Form, Grid, Label, Button } from 'semantic-ui-react';
+import { Button, Modal, Form, Grid, Label } from 'semantic-ui-react';
 import { map } from 'lodash';
 
 // import Loadable from 'react-loadable';
@@ -103,10 +103,15 @@ class ChartWidget extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width="8">
-              <VoltoIcon
-                name={showIcon}
-                onClick={() => this.setState({ showChartEditor: true })}
-              />
+              <Button
+                onClick={ev => {
+                  ev.stopPropagation();
+                  ev.preventDefault();
+                  this.setState({ showChartEditor: true });
+                }}
+              >
+                Open Chart Editor
+              </Button>
 
               {this.state.showChartEditor ? (
                 <ModalChartEditor
