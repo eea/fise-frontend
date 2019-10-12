@@ -175,10 +175,13 @@ export const tiles = {
       height: 400,
       group: 'custom_addons',
     },
-    text: {
-      ...defaultTiles.tilesConfig.text,
+    cktext: {
+      id: 'cktext',
+      group: 'text',
+      title: 'CKEditor',
       view: TextTileView,
       edit: TextTileEdit,
+      icon: defaultTiles.tilesConfig.text.icon,
       height: 200,
     },
     video: {

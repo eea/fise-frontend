@@ -14,10 +14,11 @@ import { settings } from '~/config';
  * @extends Component
  */
 const View = ({ data }) => {
-  let text = data.text;
+  let text = data.cktext;
   let result;
 
   if (typeof text === 'string') {
+    // TODO: need better regexp here
     text = text.replace(/(<? *script)/gi, 'illegalscript');
     result = (
       <div

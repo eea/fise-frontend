@@ -58,7 +58,7 @@ class Edit extends Component {
     super(props);
 
     if (!__SERVER__) {
-      const htmltext = (props.data && props.data.text) || '';
+      const htmltext = (props.data && props.data.cktext) || '';
 
       this.state = {
         htmltext,
@@ -69,11 +69,10 @@ class Edit extends Component {
   }
 
   onChange(event, editor) {
-    const text = editor.getData();
-    // console.log({ event, editor, text });
+    const cktext = editor.getData();
     this.props.onChangeTile(this.props.tile, {
       ...this.props.data,
-      text,
+      cktext,
     });
   }
 
