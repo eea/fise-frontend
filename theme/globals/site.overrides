@@ -801,6 +801,9 @@ a {
   margin-right: 0;
 }
 .tiles-chooser {
-top:initial !important;
-bottom: 9px;
+  top:initial !important;
+  bottom: 9px;
+}
+.hiddenWidget {
+  display: none;
 }
