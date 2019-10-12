@@ -43,7 +43,7 @@ class App extends Component {
   static propTypes = {
     pathname: PropTypes.string.isRequired,
     purgeMessages: PropTypes.func.isRequired,
-    folderHeader: PropTypes.object,
+    folderHeader: PropTypes.any,
   };
 
   state = {
@@ -118,7 +118,7 @@ class App extends Component {
                 <Error
                   message={this.state.error.message}
                   stackTrace={this.state.errorInfo.componentStack}
-                  />
+                />
               ) : (
                 renderRoutes(this.props.route.routes)
               )}

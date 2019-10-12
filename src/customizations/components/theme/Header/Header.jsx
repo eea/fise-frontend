@@ -52,7 +52,7 @@ class Header extends Component {
     token: PropTypes.string,
     pathname: PropTypes.string.isRequired,
     actualPathName: PropTypes.string.isRequired,
-    folderHeader: PropTypes.object,
+    folderHeader: PropTypes.any,
     defaultHeaderImage: PropTypes.array,
     frontPageSlides: PropTypes.array,
     getFrontpageSlides: PropTypes.func.isRequired,
@@ -151,7 +151,7 @@ class Header extends Component {
     // );
 
     return (
-      <div basic className="header-wrapper" role="banner">
+      <div className="header-wrapper" role="banner">
         <Container>
           <div className="header-bg">
             <img src={HeaderBackground} alt="" />

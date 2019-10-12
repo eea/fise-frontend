@@ -3,7 +3,6 @@
  * @module components/manage/Form/Form
  */
 
-
 // Customized the default to be able to fix some bug;
 //
 import React, { Component } from 'react';
