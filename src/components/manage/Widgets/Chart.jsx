@@ -22,8 +22,8 @@ class ModalChartEditor extends Component {
 
   render() {
     return (
-      <Modal open={true}>
-        <Modal.Content>
+      <Modal open={true} size="fullscreen">
+        <Modal.Content scrolling>
           <ChartEditor
             value={this.props.value}
             onChangeValue={data => {
