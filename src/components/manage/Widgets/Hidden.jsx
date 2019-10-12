@@ -16,7 +16,7 @@ const HiddenWidget = ({
     inline
     required={required}
     error={error ? error.length > 0 : false}
-    className='hiddenWidget'
+    className="hiddenWidget"
     id={`${fieldSet || 'field'}-${id}`}
   >
     <Grid>

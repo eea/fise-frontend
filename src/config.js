@@ -22,6 +22,7 @@ import {
 import { defineMessages } from 'react-intl';
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 import HiddenWidget from '~/components/manage/Widgets/Hidden';
+import ChartWidget from '~/components/manage/Widgets/Chart';
 
 // Tiles
 // import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
@@ -101,6 +102,7 @@ export const widgets = {
     ...defaultWidgets.id,
     tiles: HiddenWidget,
     tiles_layout: HiddenWidget,
+    vizualization: ChartWidget,
   },
 };
 
