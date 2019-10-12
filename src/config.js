@@ -21,8 +21,10 @@ import {
 
 import { defineMessages } from 'react-intl';
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
+// import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
 import HiddenWidget from '~/components/manage/Widgets/Hidden';
 import ChartWidget from '~/components/manage/Widgets/Chart';
+// import ChartWidget from '~/components/manage/Widgets/TestWidget';
 
 // Tiles
 // import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';

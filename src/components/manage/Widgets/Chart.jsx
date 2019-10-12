@@ -1,9 +1,11 @@
+import ChartEditor from './ChartEditor';
 import React, { Component } from 'react';
+import showIcon from '@plone/volto/icons/show.svg';
+import { Icon as VoltoIcon } from '@plone/volto/components';
 import { Modal, Form, Grid, Label, Button } from 'semantic-ui-react';
 import { map } from 'lodash';
-import ChartEditor from './ChartEditor';
 
-import Loadable from 'react-loadable';
+// import Loadable from 'react-loadable';
 
 class ModalChartEditor extends Component {
   constructor(props) {
@@ -40,12 +42,12 @@ class ModalChartEditor extends Component {
   }
 }
 
-const LoadablePlot = Loadable({
-  loader: () => import('react-plotly.js'),
-  loading() {
-    return <div>Loading chart...</div>;
-  },
-});
+// const LoadablePlot = Loadable({
+//   loader: () => import('react-plotly.js'),
+//   loading() {
+//     return <div>Loading chart...</div>;
+//   },
+// });
 
 class ChartWidget extends Component {
   constructor(props) {
@@ -81,6 +83,10 @@ class ChartWidget extends Component {
       onChange,
       fieldSet,
     } = this.props;
+    if (__SERVER__) return '';
+
+    const LoadablePlot = require('react-plotly.js').default;
+    console.log('plot', LoadablePlot);
     return (
       <Form.Field
         inline
@@ -97,9 +103,10 @@ class ChartWidget extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width="8">
-              <Button onClick={() => this.setState({ showChartEditor: true })}>
-                Open chart editor
-              </Button>
+              <VoltoIcon
+                name={showIcon}
+                onClick={() => this.setState({ showChartEditor: true })}
+              />
 
               {this.state.showChartEditor ? (
                 <ModalChartEditor
