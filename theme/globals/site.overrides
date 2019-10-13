@@ -1,3 +1,7 @@
+
+@import './site.less';
+
+
 body {
   color           : @textColor;
   background-color: #f4f4f1;
@@ -743,6 +747,11 @@ body #page-document .imageAndRichText+p {
 
 .unlist {
   list-style-type: none;
+  li {
+    &:before {
+      display: none;
+    }
+  }
   padding-left   : 0;
 }
 

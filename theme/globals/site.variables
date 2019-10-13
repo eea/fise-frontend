@@ -30,10 +30,10 @@
       Base Sizes
 --------------------*/
 /* This is the single variable that controls them all */
-@emSize   : 15px;
+@emSize   : 16px;
 
 /* The size of page text  */
-@fontSize : 14px;
+@fontSize : 16px;
 
 
 /*-------------------
@@ -167,12 +167,13 @@
 /*---  Theme colors  ---*/
 
 @lightGreen       : #769e2e;
-@darkGreen        : #005511;
+@darkGreen        : #225511;
 @darkerGreen      : #003311;
 @darkBrown        : #554433;
 @darkOrange       : #cc4400;
 
-@textColor        : #002200;
+// @textColor        : #002200;
+@textColor: #162A16;
 
 /*---  Colors  ---*/
 @orange           : #FA5C2A; // Palette: reddishOrange

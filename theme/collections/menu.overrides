@@ -179,6 +179,11 @@
     padding: 0;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
     list-style-type: none;
+    li {
+        &:before {
+            display: none;
+        }
+    }
     border-radius: 4px;
     overflow: hidden;
     li {
