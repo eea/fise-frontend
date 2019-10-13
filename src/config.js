@@ -167,7 +167,7 @@ export const tiles = {
       icon: chartIcon,
       group: 'forests_specific',
     },
-    simple_chart: {
+    embed_chart: {
       id: 'embed_chart',
       title: 'Embed Chart',
       view: ChartTileView,
