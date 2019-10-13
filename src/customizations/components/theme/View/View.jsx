@@ -219,6 +219,9 @@ class View extends Component {
 
     return (
       <div id="view">
+        <div id="content-left-column" />
+        <div id="content-right-column" />
+
         {/* Body class if displayName in component is set */}
         <BodyClass
           className={
@@ -258,6 +261,8 @@ class View extends Component {
         {this.props.content.allow_discussion && (
           <Comments pathname={this.props.pathname} />
         )}
+
+        <div id="content-below" />
 
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar pathname={this.props.pathname} inner={<span />} />
