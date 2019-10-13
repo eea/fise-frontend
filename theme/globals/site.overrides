@@ -816,3 +816,16 @@ h4,
 h5 {
   font-family: @fontName;
 }
+
+
+
+.modal {
+  .ck-editor,
+  .tile.text, 
+  .ck.ck-editor__main,
+  .ck .ck-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+  }
+}

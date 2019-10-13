@@ -81,6 +81,5 @@ export function getIcon(type, isFolderish) {
  * @returns {string} Flattened URL to the app server
  */
 export function flattenToAppURL(url) {
-    if(settings.host === 'localhost') return url
-    return url.replace(settings.apiPath, '');
+  return url.replace(settings.apiPath, '');
 }

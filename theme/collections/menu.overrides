@@ -171,13 +171,26 @@
     font-family: @headerFont;
 }
 
-.modal {
-    .ck-editor,
-    .tile.text, 
-    .ck.ck-editor__main,
-    .ck .ck-content {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
+
+
+.localNavigation {
+    background: white;
+    // padding: .5rem 1rem;
+    padding: 0;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    border-radius: 4px;
+    overflow: hidden;
+    li {
+        a {
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            display: block;
+                &:hover {
+                    background: #cc4400!important;
+                    color: white!important;
+                }
+            }
     }
 }

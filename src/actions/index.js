@@ -19,6 +19,7 @@ import {
   GET_PARENT_FOLDER_DATA,
   GET_MOSAIC_SETTINGS,
   GET_DATA_FROM_PROVIDER,
+  GET_LOCALNAVIGATION,
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -37,6 +38,16 @@ export function getDefaultHeaderImage() {
     request: {
       op: 'get',
       path: `/default_header_image?fullobjects`,
+    },
+  };
+}
+
+export function getLocalnavigation(folder) {
+  return {
+    type: GET_LOCALNAVIGATION,
+    request: {
+      op: 'get',
+      path: `${folder}/@localnavigation`,
     },
   };
 }

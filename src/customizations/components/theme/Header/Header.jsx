@@ -88,8 +88,6 @@ class Header extends Component {
       });
     }
 
-    console.log('alalalala', nextProps)
-
     if (
       JSON.stringify(nextProps.frontPageSlides) !==
       JSON.stringify(this.props.frontPageSlides)

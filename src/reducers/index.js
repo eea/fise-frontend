@@ -11,7 +11,7 @@ import default_header_image from '~/reducers/default_header_image';
 import mosaic_settings from '~/reducers/mosaic_settings';
 import data_providers from '~/reducers/data_providers';
 import parent_folder_data from '~/reducers/parent_folder_data';
-
+import localnavigation from '~/reducers/localnavigation';
 /**
  * Root reducer.
  * @function
@@ -28,6 +28,7 @@ const reducers = {
   parent_folder_data,
   mosaic_settings,
   data_providers,
+  localnavigation,
   // Add your reducers here
 };
 

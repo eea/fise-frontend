@@ -16,7 +16,7 @@
 
 @googleFontName    : @fontName;
 @importGoogleFonts : true;
-@googleFontSizes   : '400,700,400italic,700italic';
+@googleFontSizes   : '300,400,500,600,700,400italic,700italic';
 @googleSubset      : 'latin';
 
 @googleProtocol    : 'https://';
