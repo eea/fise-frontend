@@ -75,7 +75,7 @@ const ForestMetadata = props => {
         </div>
       )}
 
-      {topics && (
+      {topics && topics.length !== 0 && (
         <div id="forest-metadata-topics">
           <strong>Topics:</strong>
           <ul>
@@ -86,7 +86,7 @@ const ForestMetadata = props => {
         </div>
       )}
 
-      {keywords && (
+      {keywords && keywords.length !== 0 && (
         <div id="forest-metadata-keywords">
           <strong>Keywords:</strong>
           <ul>
