@@ -793,6 +793,7 @@ a {
 
 .tools {
   margin-right: 0;
+  line-height: 1;
 }
 .tiles-chooser {
   top:initial !important;
@@ -844,4 +845,15 @@ h5 {
 #page-document {
   max-width: 800px!important;
   margin: 0 auto!important;
+}
+
+.anon-actions-list {
+  margin-left: 1rem!important;
+  overflow: hidden;
+  white-space: nowrap;
+  width: auto;
+  &.hidden-width {
+    width: 0;
+  }
+  transition: width 100ms;
 }

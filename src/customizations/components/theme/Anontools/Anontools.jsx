@@ -48,13 +48,24 @@ class Anontools extends Component {
       !this.props.token && (
         <div>
           <img
-            onClick={() => document.querySelector('.toolbar .user').click()}
+            onClick={() =>
+              document
+                .querySelector('.anon-actions-list')
+                .classList.toggle('hidden-width')
+            }
             className="accountIcon"
-            style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
+            style={{
+              marginLeft: '1.5rem',
+              cursor: 'pointer',
+            }}
             src={Person}
             alt=""
           />
-          <List floated="right" horizontal>
+          <List
+            className="anon-actions-list hidden-width"
+            floated="right"
+            horizontal
+          >
             {/* needs divs around links for a11y, and semanticui insists on using List as div role="list" instead of simply using <ul></ul> */}
             <div role="listitem" className="item">
               <Link
