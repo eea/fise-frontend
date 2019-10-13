@@ -12,6 +12,8 @@
  * }
  */
 
+import React from 'react';
+
 import {
   settings as defaultSettings,
   views as defaultViews,
@@ -21,14 +23,8 @@ import {
 
 import { defineMessages } from 'react-intl';
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
-// import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
 import HiddenWidget from '~/components/manage/Widgets/Hidden';
 import ChartWidget from '~/components/manage/Widgets/Chart';
-// import ChartWidget from '~/components/manage/Widgets/TestWidget';
-
-// Tiles
-// import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
-// import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
 
 import EuropeCompareTileEdit from '~/components/manage/Tiles/EuropeCompareTile/Edit';
 import EuropeCompareTileView from '~/components/manage/Tiles/EuropeCompareTile/View';
@@ -45,12 +41,13 @@ import tableauTileView from '~/components/manage/Tiles/TableauTile/TableauTileVi
 import TextTileEdit from '~/components/manage/Tiles/Text/Edit';
 import TextTileView from '~/components/manage/Tiles/Text/View';
 
+import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
+
 // Display types
 import CountryView from '~/components/theme/CountryView/CountryView';
 import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
-import React from 'react';
 import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import underlineSVG from '@plone/volto/icons/underline.svg';
@@ -221,6 +218,12 @@ export const tiles = {
   },
 };
 
+export const portlets = [ForestMetadata];
+
+// import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
+// import ChartWidget from '~/components/manage/Widgets/TestWidget';
+// import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
+// import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
 // import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
 // import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
 // import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
