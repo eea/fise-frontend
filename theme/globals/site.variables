@@ -8,8 +8,23 @@
 
 @fontName          : 'Poppins';
 
+
 @googleFontSizes   : '300,400,500,700,400italic,700italic';
 
+@headerFont        : 'Roboto', sans-serif;
+@pageFont          : 'Roboto', sans-serif;
+
+@googleFontName    : @fontName;
+@importGoogleFonts : true;
+@googleFontSizes   : '400,700,400italic,700italic';
+@googleSubset      : 'latin';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
+
+
+@bold              : bold;
+@normal            : normal;
 
 /*-------------------
       Base Sizes

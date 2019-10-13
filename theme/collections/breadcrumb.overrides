@@ -20,12 +20,14 @@
 
 body .ui.vertical.segment.breadcrumbs {
     background: none;
-    margin-bottom: -2.2rem;
     padding: 0;
     margin-top: 3rem;
-    border-bottom:none;
+    border-bottom: none;
     position: relative!important;
     z-index: 1;
+    border-top-left-radius: 1rem;
+    bottom: -2rem;
+    overflow: hidden;
     .ui.container {
         padding: 0;
     }

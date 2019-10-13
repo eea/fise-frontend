@@ -165,7 +165,7 @@ class Navigation extends Component {
           secondary
           className={
             this.state.isMobileMenuOpen
-              ? 'open'
+              ? 'open firstLevel'
               : 'tablet computer large screen widescreen only'
           }
           onClick={this.closeMobileMenu}
@@ -173,18 +173,30 @@ class Navigation extends Component {
           {this.props.items.map(item =>
             item.items && item.items.length ? (
               <Dropdown
-                className={this.isActive(item.url) ? 'item menuActive' : 'item'}
+                className={
+                  this.isActive(item.url)
+                    ? 'item menuActive firstLevel'
+                    : 'item firstLevel'
+                }
                 key={item.url}
                 // text={item.title}
-                trigger={<Link to={item.url === '' ? '/' : item.url} key={item.url}>{item.title}</Link>}
+                trigger={
+                  <Link
+                    className="firstLevel"
+                    to={item.url === '' ? '/' : item.url}
+                    key={item.url}
+                  >
+                    {item.title}
+                  </Link>
+                }
                 item
                 simple
               >
                 <Dropdown.Menu>
                   <Dropdown.Header>
-                    <div className="carretTop"></div>
+                    <div className="carretTop" />
                     {/* <Link to={item.url === '' ? '/' : item.url} key={item.url}> */}
-                      {/* {item.title} */}
+                    {/* {item.title} */}
                     {/* </Link> */}
                   </Dropdown.Header>
                   {/* <Dropdown.Divider /> */}
@@ -195,31 +207,29 @@ class Navigation extends Component {
                         key={subitem.url}
                         className={
                           this.isActive(subitem.url)
-                            ? 'item menuActive'
-                            : 'item'
+                            ? 'item secondLevel menuActive'
+                            : 'item secondLevel'
                         }
                       >
                         {subitem.title}
                       </Link>
-                      {
-                        subitem.items && (
-                          <div className="submenu">
+                      {subitem.items && (
+                        <div className="submenu">
                           {subitem.items.map(subsubitem => (
                             <Link
-                               to={subsubitem.url === '' ? '/' : subsubitem.url}
-                               key={subsubitem.url}
-                               className={
-                                 this.isActive(subsubitem.url)
-                                   ? 'item menuActive'
-                                   : 'item'
-                               }
-                             >
-                               {subsubitem.title}
-                             </Link>
+                              to={subsubitem.url === '' ? '/' : subsubitem.url}
+                              key={subsubitem.url}
+                              className={
+                                this.isActive(subsubitem.url)
+                                  ? 'item thirdLevel menuActive'
+                                  : 'item thirdLevel'
+                              }
+                            >
+                              {subsubitem.title}
+                            </Link>
                           ))}
-                          </div>
-                          )
-                      }
+                        </div>
+                      )}
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
@@ -228,7 +238,11 @@ class Navigation extends Component {
               <Link
                 to={item.url === '' ? '/' : item.url}
                 key={item.url}
-                className={this.isActive(item.url) ? 'item menuActive' : 'item'}
+                className={
+                  this.isActive(item.url)
+                    ? 'item menuActive firstLevel'
+                    : 'item firstLevel'
+                }
               >
                 {item.title}
               </Link>

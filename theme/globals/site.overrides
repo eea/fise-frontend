@@ -244,7 +244,7 @@ body.has-toolbar {
 
 .header {
   position: relative;
-  height  : 115px;
+  // height  : 115px;
 
   .nav-actions {
     position       : absolute;
@@ -806,4 +806,13 @@ a {
 }
 .hiddenWidget {
   display: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: @fontName;
 }
