@@ -52,7 +52,10 @@ const ForestMetadata = props => {
 
       {publisher && (
         <div id="forest-metadata-publisher">
-          <strong>Publisher:</strong> {publisher}
+          <strong>Publisher: </strong>
+          {publisher.map((p, i) => (
+            <span key={i}>{p}</span>
+          ))}
         </div>
       )}
 
