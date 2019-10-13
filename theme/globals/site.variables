@@ -7,9 +7,9 @@
 --------------------*/
 
 @fontName          : 'Poppins';
+@headerFontName    : 'Roboto';
 
-
-@googleFontSizes   : '300,400,500,700,400italic,700italic';
+// @googleFontSizes   : '300,400,500,700,400italic,700italic';
 
 @headerFont        : 'Roboto', sans-serif;
 @pageFont          : 'Roboto', sans-serif;
@@ -20,7 +20,7 @@
 @googleSubset      : 'latin';
 
 @googleProtocol    : 'https://';
-@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}|@{headerFontName}:@{googleFontSizes}';
 
 
 @bold              : bold;
