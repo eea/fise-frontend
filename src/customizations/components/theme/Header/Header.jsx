@@ -76,24 +76,19 @@ class Header extends Component {
       });
     }
     if (
-      JSON.stringify(nextProps.folderHeader) !==
-      JSON.stringify(this.props.folderHeader)
+      JSON.stringify(nextProps.folderHeader.url) !==
+      JSON.stringify(this.props.folderHeader.url)
     ) {
       this.setState({
         url: nextProps.folderHeader.url,
         description: nextProps.folderHeader.description,
         title: nextProps.folderHeader.title,
+        image: nextProps.folderHeader.image,
         inCountryFolder: nextProps.folderHeader.inCountryFolder,
       });
     }
-    if (
-      JSON.stringify(nextProps.defaultHeaderImage) !==
-      JSON.stringify(this.props.defaultHeaderImage)
-    ) {
-      this.setState({
-        defaultHeaderImage: nextProps.defaultHeaderImage[0],
-      });
-    }
+
+    console.log('alalalala', nextProps)
 
     if (
       JSON.stringify(nextProps.frontPageSlides) !==
@@ -128,14 +123,12 @@ class Header extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    let headerImage = this.state.defaultHeaderImage
-      ? this.state.defaultHeaderImage.image
-      : staticHeader;
-    let headerImageUrl =
-      this.state.inCountryFolder && this.state.url
-        ? this.state.url
-        : headerImage;
+    // let headerImage = this.state.defaultHeaderImage
+    //   ? this.state.defaultHeaderImage.image
+    //   : staticHeader;
+    let headerImageUrl = this.state.image || this.state.defaultHeaderImage
 
+    console.log('props in header', this.props, this.state)
     // console.log(
     //   'header',
     //   this.state.defaultHeaderImage,

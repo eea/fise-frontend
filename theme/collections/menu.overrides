@@ -43,6 +43,7 @@
 .navigation .menu .firstLevel {
     color: @menuColor;
     font-weight: 600;
+    line-height: 21px;
 }
 
 .navigation .menu .secondLevel {
@@ -168,4 +169,15 @@
 
 .ui.menu {
     font-family: @headerFont;
+}
+
+.modal {
+    .ck-editor,
+    .tile.text, 
+    .ck.ck-editor__main,
+    .ck .ck-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
 }

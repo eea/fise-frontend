@@ -32,9 +32,10 @@ export default function folder_header(state = initialState, action = {}) {
         loading: true,
       };
     case `${SET_FOLDER_HEADER}_SUCCESS`:
-      const image = action.result.image || null;
+      const image = action.result.image && action.result.image.download || null;
       const title = action.result.title || null;
       const description = action.result.description || null;
+      const url = action.result['@id'] || null;
       return {
         ...state,
         error: null,
@@ -42,6 +43,7 @@ export default function folder_header(state = initialState, action = {}) {
           image,
           title,
           description,
+          url,
         },
         loaded: true,
         loading: false,
