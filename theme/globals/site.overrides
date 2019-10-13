@@ -84,6 +84,7 @@ body.has-toolbar {
 
 .header-image {
   border-top-left-radius : 1rem;
+  background-color: rgba(0,0,0,0.3);
   border-top-right-radius: 1rem;
   position               : relative;
   /*z-index              : -1;*/
@@ -98,6 +99,7 @@ body.has-toolbar {
   p {
     color     : white;
     text-align: center;
+    max-width: 800px;
   }
 
   h1 {
@@ -106,10 +108,7 @@ body.has-toolbar {
     font-size    : 48px;
   }
 
-  p {
-    max-width: 900px;
-    width    : 75%;
-  }
+
 }
 
 // body.has-toolbar {
@@ -853,4 +852,11 @@ h5 {
   h5 {
     display: inline-block;
   }
+}
+
+
+
+#page-document {
+  max-width: 800px!important;
+  margin: 0 auto!important;
 }

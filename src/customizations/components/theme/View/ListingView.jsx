@@ -63,26 +63,13 @@ class ListingView extends Component {
     const intl = this.props.intl;
     const tilesFieldname = getTilesFieldname(content);
     const tilesLayoutFieldname = getTilesLayoutFieldname(content);
-    const localNavigation = this.props.localNavigation.items || [];
-
-    // return (
-    //   <Container id="page-home">
-    //     <Helmet title={content.title} />
-    //     <section id="content-core">
-    //       {content.items.map(item => (
-    //         <article key={item.url}>
-    //           <h2>
-    //             <Link to={item.url} title={item['@type']}>
-    //               {item.title}
-    //             </Link>
-    //           </h2>
-    //           {item.description && <p>{item.description}</p>}
-    //         </article>
-    //       ))}
-    //     </section>
-    //   </Container>
-    // );
-    return (
+    const localNavigation =
+      (this.props.localNavigation.items &&
+        this.props.localNavigation.items.filter(
+          item => item.title !== 'Home',
+        )) ||
+      [];
+    let pageTemplate = (
       <Grid columns={2} className="folderWithContent">
         <Grid.Column width={6}>
           {hasTilesData(content) ? (
@@ -155,6 +142,82 @@ class ListingView extends Component {
         </Grid.Column>
       </Grid>
     );
+    if (!localNavigation.length) {
+      pageTemplate = hasTilesData(content) ? (
+        <div id="page-document">
+          <Helmet title={content.title} />
+          {map(content[tilesLayoutFieldname].items, tile => {
+            const Tile =
+              tiles.tilesConfig[(content[tilesFieldname]?.[tile]?.['@type'])]?.[
+                'view'
+              ] || null;
+            return Tile !== null ? (
+              <Tile
+                key={tile}
+                id={tile}
+                properties={content}
+                data={content[tilesFieldname][tile]}
+              />
+            ) : (
+              <div key={tile}>
+                {intl.formatMessage(messages.unknownBlock, {
+                  block: content[tilesFieldname]?.[tile]?.['@type'],
+                })}
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <Container id="page-document">
+          <Helmet title={content.title} />
+          <h1 className="documentFirstHeading">{content.title}</h1>
+          {content.description && (
+            <p className="documentDescription">{content.description}</p>
+          )}
+          {content.image && (
+            <Image
+              className="document-image"
+              src={content.image.scales.thumb.download}
+              floated="right"
+            />
+          )}
+          {content.remoteUrl && (
+            <span>
+              The link address is:
+              <a href={content.remoteUrl}>{content.remoteUrl}</a>
+            </span>
+          )}
+          {content.text && (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: content.text.data.replace(
+                  /a href="([^"]*\.[^"]*)"/g,
+                  `a href="${settings.apiPath}$1/download/file"`,
+                ),
+              }}
+            />
+          )}
+        </Container>
+      );
+    }
+    // return (
+    //   <Container id="page-home">
+    //     <Helmet title={content.title} />
+    //     <section id="content-core">
+    //       {content.items.map(item => (
+    //         <article key={item.url}>
+    //           <h2>
+    //             <Link to={item.url} title={item['@type']}>
+    //               {item.title}
+    //             </Link>
+    //           </h2>
+    //           {item.description && <p>{item.description}</p>}
+    //         </article>
+    //       ))}
+    //     </section>
+    //   </Container>
+    // );
+    return pageTemplate;
   }
 }
 
