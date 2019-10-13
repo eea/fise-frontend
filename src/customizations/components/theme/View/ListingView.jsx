@@ -84,9 +84,9 @@ class ListingView extends Component {
     // );
     return (
       <Grid columns={2} className="folderWithContent">
-        <Grid.Column>
+        <Grid.Column width={6}>
           {hasTilesData(content) ? (
-            <div id="page-document" className="ui container">
+            <div id="page-document">
               <Helmet title={content.title} />
               {map(content[tilesLayoutFieldname].items, tile => {
                 const Tile =
@@ -142,7 +142,7 @@ class ListingView extends Component {
             </Container>
           )}
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column width={6}>
           <ul className="localNavigation">
             {localNavigation.map(item => (
               <li>

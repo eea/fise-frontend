@@ -136,16 +136,23 @@ a:hover {
     }
 }
 
-ul {
-    list-style-type: none;
-    li {
-        &:before {
-            content: '►';
-            color: @headingColor;
-            font-size: .8rem;
-            margin-right: 7px;
-            margin-left: -1rem;
-            position: absolute;
+#page-document {
+    ul {
+        list-style-type: none;
+        li {
+            &:before {
+                content: '►';
+                color: @headingColor;
+                font-size: .8rem;
+                margin-right: 7px;
+                margin-left: -1rem;
+                position: absolute;
+            }
         }
     }
+}
+
+
+#page-document {
+    max-width: 800px!important;
 }
