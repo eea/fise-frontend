@@ -20,7 +20,7 @@ import HeaderImage from '~/components/theme/Header/HeaderImage';
 import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import Sticky from 'react-stickynode';
 
-import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
+import { getFrontpageSlides } from '~/actions';
 
 import HeaderBackground from './header-bg.png';
 
@@ -40,7 +40,6 @@ class Header extends Component {
       description: null,
       title: null,
       inCountryFolder: false,
-      defaultHeaderImage: null,
       frontPageSlides: null,
     };
   }
@@ -54,10 +53,9 @@ class Header extends Component {
     pathname: PropTypes.string.isRequired,
     actualPathName: PropTypes.string.isRequired,
     folderHeader: PropTypes.any,
-    defaultHeaderImage: PropTypes.array,
+    defaultHeaderImage: PropTypes.any,
     frontPageSlides: PropTypes.array,
     getFrontpageSlides: PropTypes.func.isRequired,
-    getDefaultHeaderImage: PropTypes.func.isRequired,
   };
 
   /**
@@ -107,7 +105,7 @@ class Header extends Component {
 
   componentWillMount() {
     this.props.getFrontpageSlides();
-    this.props.getDefaultHeaderImage();
+    // this.props.getDefaultHeaderImage();
   }
   // componentWillUnmount() {
   //   this.setState({
@@ -124,7 +122,8 @@ class Header extends Component {
     // let headerImage = this.state.defaultHeaderImage
     //   ? this.state.defaultHeaderImage.image
     //   : staticHeader;
-    let headerImageUrl = this.state.image || this.state.defaultHeaderImage
+    const defaultHeaderImage = this.props.defaultHeaderImage && this.props.defaultHeaderImage.length && this.props.defaultHeaderImage[0].image
+    let headerImageUrl = this.state.image || defaultHeaderImage
 
     console.log('props in header', this.props, this.state)
     // console.log(
@@ -200,9 +199,9 @@ export default compose(
     state => ({
       frontPageSlides: state.frontpage_slides.items,
       token: state.userSession.token,
-      defaultHeaderImage: state.default_header_image.items,
+      // defaultHeaderImage: state.default_header_image.items,
       folder_header: state.folder_header.items,
     }),
-    { getFrontpageSlides, getDefaultHeaderImage },
+    { getFrontpageSlides },
   ),
 )(Header);

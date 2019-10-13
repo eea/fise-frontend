@@ -24,11 +24,12 @@ import {
   getWorkflow,
   purgeMessages,
 } from '@plone/volto/actions';
-
-import { getFrontpageSlides } from '~/actions';
+import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
-
+const mapDispatchToProps = {
+  getDefaultHeaderImage,
+};
 /**
  * @export
  * @class App
@@ -44,6 +45,8 @@ class App extends Component {
     pathname: PropTypes.string.isRequired,
     purgeMessages: PropTypes.func.isRequired,
     folderHeader: PropTypes.any,
+    getDefaultHeaderImage: PropTypes.func.isRequired,
+    defaultHeaderImage: PropTypes.object.isRequired,
   };
 
   state = {
@@ -60,6 +63,7 @@ class App extends Component {
    * @returns {undefined}
    */
   componentDidMount() {
+    this.props.getDefaultHeaderImage();
     if (__CLIENT__ && process.env.SENTRY_DSN) {
       Raven.config(process.env.SENTRY_DSN).install();
     }
@@ -102,6 +106,8 @@ class App extends Component {
   render() {
     const path = getBaseUrl(this.props.pathname);
     const action = getView(this.props.pathname);
+    const headerImage = this.props.defaultHeaderImage;
+    console.log('---------', headerImage);
     return (
       <Fragment>
         <BodyClass className={`view-${action}view`} />
@@ -109,6 +115,7 @@ class App extends Component {
           folderHeader={this.props.folderHeader}
           actualPathName={this.props.pathname}
           pathname={path}
+          defaultHeaderImage={headerImage}
         />
         <Segment basic className="content-area">
           <Container>
@@ -178,8 +185,9 @@ export default compose(
   connect(
     (state, props) => ({
       folderHeader: state.folder_header.items,
+      defaultHeaderImage: state.default_header_image.items,
       pathname: props.location.pathname,
     }),
-    { purgeMessages },
+    { purgeMessages, getDefaultHeaderImage },
   ),
 )(App);
