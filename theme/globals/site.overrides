@@ -839,3 +839,18 @@ h5 {
       flex-grow: 1;
   }
 }
+
+.page_metadata {
+  font-size: .8rem;
+  h5 {
+    margin-bottom: .3rem;
+    margin-top: 1rem;
+  }
+}
+
+
+.inline-headings {
+  h5 {
+    display: inline-block;
+  }
+}
