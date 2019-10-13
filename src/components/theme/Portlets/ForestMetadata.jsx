@@ -22,7 +22,6 @@ const ForestMetadata = props => {
 
   return (
     <Portal node={__CLIENT__ && document.getElementById('view')}>
-      <h2>Metadata</h2>
       <Grid columns={2} className="page_metadata">
         <Grid.Column width={3}>
           {nuts_level && nuts_level.length > 0 && (
