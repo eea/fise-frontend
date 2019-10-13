@@ -178,14 +178,10 @@ class Header extends Component {
               <Breadcrumbs pathname={this.props.pathname} />
 
               <HeaderImage url={headerImageUrl}>
-                {this.state.inCountryFolder ? (
                   <div className="header-image">
                     <h1>{this.state.title}</h1>
                     <p>{this.state.description}</p>
                   </div>
-                ) : (
-                  ''
-                )}
               </HeaderImage>
             </div>
           )}

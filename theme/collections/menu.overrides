@@ -126,7 +126,7 @@
     color: initial!important;
 }
 .sticky-inner-wrapper {
-    z-index: 1;
+    z-index: 2;
 }
 .sticky-outer-wrapper.active {
     .sticky-inner-wrapper {

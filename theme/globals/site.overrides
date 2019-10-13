@@ -88,6 +88,7 @@ body.has-toolbar {
   justify-content        : center;
   align-items            : center;
   flex-direction         : column;
+  width: 100%;
 
   h1,
   p {

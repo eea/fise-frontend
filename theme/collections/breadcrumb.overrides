@@ -26,7 +26,7 @@ body .ui.vertical.segment.breadcrumbs {
     position: relative!important;
     z-index: 1;
     border-top-left-radius: 1rem;
-    bottom: -2rem;
+    bottom: -31px;
     overflow: hidden;
     .ui.container {
         padding: 0;
