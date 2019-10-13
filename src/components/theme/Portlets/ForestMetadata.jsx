@@ -3,6 +3,7 @@ import { Portal } from 'react-portal';
 
 const ForestMetadata = props => {
   const {
+    nuts_level,
     resource_type,
     data_source,
     dataset,
@@ -20,21 +21,32 @@ const ForestMetadata = props => {
 
   return (
     <Portal node={__CLIENT__ && document.getElementById('view')}>
+      {nuts_level && nuts_level.length > 0 && (
+        <div id="forest-metadata-resource_type">
+          <strong>NUTS Level:</strong>
+          <ul>
+            {nuts_level.map(el => (
+              <li key={el.token}>{el.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {resource_type && (
         <div id="forest-metadata-resource_type">
-          <strong>Resource type:</strong> {resource_type}
+          <strong>Resource type:</strong> {resource_type.title}
         </div>
       )}
 
       {data_source && (
         <div id="forest-metadata-data_source">
-          <strong>Data source:</strong> {data_source}
+          <strong>Data source:</strong> {data_source.title}
         </div>
       )}
 
       {dataset && (
         <div id="forest-metadata-dataset">
-          <strong>Dataset:</strong> {dataset}
+          <strong>Dataset:</strong> {dataset.title}
         </div>
       )}
 
@@ -50,7 +62,7 @@ const ForestMetadata = props => {
         </div>
       )}
 
-      {geo_coverage && geo_coverage.length !== 0 && (
+      {geo_coverage && geo_coverage.length > 0 && (
         <div id="forest-metadata-geo-coverage">
           <strong>Geo coverage:</strong>
           <ul>
@@ -75,23 +87,23 @@ const ForestMetadata = props => {
         </div>
       )}
 
-      {topics && topics.length !== 0 && (
+      {topics && topics.length > 0 && (
         <div id="forest-metadata-topics">
           <strong>Topics:</strong>
           <ul>
             {topics.map(el => (
-              <li key={el.token}>{el.title}</li>
+              <li key={el}>{el}</li>
             ))}
           </ul>
         </div>
       )}
 
-      {keywords && keywords.length !== 0 && (
+      {keywords && keywords.length > 0 && (
         <div id="forest-metadata-keywords">
           <strong>Keywords:</strong>
           <ul>
             {keywords.map(el => (
-              <li key={el.token}>{el.title}</li>
+              <li key={el}>{el}</li>
             ))}
           </ul>
         </div>
@@ -99,13 +111,13 @@ const ForestMetadata = props => {
 
       {info_level && (
         <div id="forest-metadata-info_level">
-          <strong>Info level:</strong> {info_level}
+          <strong>Info level:</strong> {info_level.title}
         </div>
       )}
 
       {accessibility_level && (
         <div id="forest-metadata-accessibility_level">
-          <strong>Accessibility level:</strong> {accessibility_level}
+          <strong>Accessibility level:</strong> {accessibility_level.title}
         </div>
       )}
     </Portal>
