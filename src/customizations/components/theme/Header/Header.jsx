@@ -18,6 +18,7 @@ import {
 
 import HeaderImage from '~/components/theme/Header/HeaderImage';
 import HomepageSlider from '~/components/theme/Header/HomepageSlider';
+import Sticky from 'react-stickynode';
 
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
 
@@ -152,28 +153,33 @@ class Header extends Component {
 
     return (
       <div className="header-wrapper" role="banner">
+        <Sticky enabled={true} top={0}>
+          <Container>
+            <div className="header">
+              <div className="logo-nav-wrapper space-between">
+                <div className="logo">
+                  <Logo />
+                </div>
+                <Navigation pathname={this.props.pathname} />
+              </div>
+              <div className="nav-actions">
+                <div className="search">
+                  <SearchWidget pathname={this.props.pathname} />
+                </div>
+                {!this.props.token && (
+                  <div className="tools">
+                    <Anontools />
+                  </div>
+                )}
+              </div>
+            </div>
+          </Container>
+        </Sticky>
         <Container>
           <div className="header-bg">
             <img src={HeaderBackground} alt="" />
           </div>
-          <div className="header">
-            <div className="logo-nav-wrapper space-between">
-              <div className="logo">
-                <Logo />
-              </div>
-              <Navigation pathname={this.props.pathname} />
-            </div>
-            <div className="nav-actions">
-              <div className="search">
-                <SearchWidget pathname={this.props.pathname} />
-              </div>
-              {!this.props.token && (
-                <div className="tools">
-                  <Anontools />
-                </div>
-              )}
-            </div>
-          </div>
+
           {this.state.isHomepage ? (
             <HomepageSlider items={this.state.frontPageSlides} />
           ) : (
@@ -208,6 +214,7 @@ export default compose(
       frontPageSlides: state.frontpage_slides.items,
       token: state.userSession.token,
       defaultHeaderImage: state.default_header_image.items,
+      folder_header: state.folder_header.items,
     }),
     { getFrontpageSlides, getDefaultHeaderImage },
   ),
