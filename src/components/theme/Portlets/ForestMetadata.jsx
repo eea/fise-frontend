@@ -3,12 +3,16 @@ import { Portal } from 'react-portal';
 
 const ForestMetadata = props => (
   <Portal node={__CLIENT__ && document.getElementById('view')}>
-    <strong>Geo coverage:</strong>
-    <ul id="forest-metadata-geo-coverage">
-      {props.content.geo_coverage.map(el => (
-        <li key={el.token}>{el.title}</li>
-      ))}
-    </ul>
+    {props.content.geo_coverage && (
+      <div id="forest-metadata-geo-coverage">
+        <strong>Geo coverage:</strong>
+        <ul>
+          {props.content.geo_coverage.map(el => (
+            <li key={el.token}>{el.title}</li>
+          ))}
+        </ul>
+      </div>
+    )}
   </Portal>
 );
 export default ForestMetadata;
