@@ -20,6 +20,7 @@ import {
   GET_MOSAIC_SETTINGS,
   GET_DATA_FROM_PROVIDER,
   GET_LOCALNAVIGATION,
+  GET_CHART_DATA_FROM_VISUALIZATION,
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -112,6 +113,16 @@ export function getDataFromProvider(path) {
     request: {
       op: 'get',
       path: path + '?expand=connector-data',
+    },
+  };
+}
+
+export function getChartDataFromVisualization(path) {
+  return {
+    type: GET_CHART_DATA_FROM_VISUALIZATION,
+    request: {
+      op: 'get',
+      path,
     },
   };
 }

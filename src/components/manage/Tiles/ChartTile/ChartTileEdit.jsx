@@ -1,130 +1,137 @@
+import { getChartDataFromVisualization } from '~/actions';
+import { searchContent } from '@plone/volto/actions';
+import { connect } from 'react-redux';
+import Loadable from 'react-loadable';
 import React, { Component } from 'react';
+import { Grid, Form as UiForm } from 'semantic-ui-react';
+import { Field } from '@plone/volto/components'; // EditTile
 
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from 'recharts';
+const LoadablePlot = Loadable({
+  loader: () => import('react-plotly.js'),
+  loading() {
+    return <div>Loading chart...</div>;
+  },
+});
 
-const data = [
-  { name: '00', Decidous: 4000, Conifers: 2400 },
-  { name: '04', Decidous: 3000, Conifers: 1398 },
-  { name: '08', Decidous: 2000, Conifers: 9800 },
-  { name: '12', Decidous: 2780, Conifers: 3908 },
-  { name: '16', Decidous: 1890, Conifers: 4800 },
-];
+// const data = [
+//   { name: 'Finland', 'Total area': 4000, 'Forest area': 2400 },
+//   { name: 'Sweeden', 'Total area': 3000, 'Forest area': 1398 },
+//   { name: 'Slovenia', 'Total area': 2000, 'Forest area': 9800 },
+//   { name: 'Estonia', 'Total area': 2780, 'Forest area': 3908 },
+//   { name: 'Austria', 'Total area': 1890, 'Forest area': 4800 },
+//   { name: 'Slovakia', 'Total area': 1890, 'Forest area': 4800 },
+// ];
 
-class StackedBarChart extends Component {
+/*
+ * Pick up a chart from an existing visualization, add text
+ */
+class ChartPick extends Component {
   constructor(props) {
     super(props);
 
-    const chartData = this.props.data.chartData || data;
-    let show = this.props.data.chartData ? true : false;
+    const localChartData = props.data.chartData || {};
+
+    let text = props.data['chart-text'];
+    if (typeof text !== 'string') text = '';
 
     this.state = {
-      show,
-      chartData: chartData,
+      localChartData,
+      text,
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.getChartData = this.getChartData.bind(this);
+    this.updateData = this.updateData.bind(this);
+    // this.getChartData = this.getChartData.bind(this);
+    this.handleChangeVisualization = this.handleChangeVisualization.bind(this);
   }
 
-  handleChange(e) {
-    let data = e.target.value;
-    try {
-      data = JSON.parse(e.target.value);
-      this.setState(
-        {
-          chartData: data,
-          show: true,
-        },
-        this.onSubmit,
-      );
-    } catch {
-      console.warning('Invalid JSON data: ', data);
-    }
+  updateData(obj) {
+    this.setState(obj, this.onSubmit);
   }
 
   onSubmit() {
     this.props.onChangeTile(this.props.tile, {
       ...this.props.data,
-      chartData: this.state.chartData,
+      'chart-text': this.state.text,
+      chartData: this.state.localChartData,
     });
   }
 
-  getChartData() {
-    let chartData = this.state.chartData;
-    if (typeof chartData == 'string') {
-      try {
-        chartData = JSON.parse(chartData);
-      } catch (error) {
-        console.log(error);
-        chartData = [];
-      }
+  handleChangeVisualization(id, path) {
+    this.props.getChartDataFromVisualization(path);
+  }
+
+  componentWillMount() {
+    // get the existing visualizations
+    this.props.searchContent('', {
+      object_provides: 'forests.content.interfaces.IDataVisualization',
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log('new props', this.props);
+    if (this.props.remoteChartData !== prevProps.remoteChartData) {
+      this.setState({
+        localChartData: this.props.remoteChartData,
+      });
     }
-    // TODO: the axis labels need to come from the data
-    // console.log(chartData);
-    return chartData;
   }
 
   render() {
-    console.log(this.state);
+    console.log('state in render', this.state);
     return (
-      <div className="tile hero selected chartWrapperEdit">
+      <div className="tile selected">
         <div className="tile-inner-wrapper">
-          {this.state.show && this.state.chartData ? (
-            <div className="image-add">
-              <ResponsiveContainer>
-                <BarChart
-                  data={this.getChartData()}
-                  margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="Decidous" stackId="a" fill="#225511" />
-                  <Bar dataKey="Conifers" stackId="a" fill="#769e2e" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          ) : (
-            <div className="image-add">
-              <div class="ui segment">
-                <div class="ui placeholder">
-                  <div class="image header">
-                    <div class="line" />
-                    <div class="line" />
-                  </div>
-                  <div class="paragraph">
-                    <div class="medium line" />
-                    <div class="short line" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-          <div className="hero-body">
-            <label htmlFor="chart-data">Enter JSON data</label>
-            <textarea
-              id="chart-data"
-              defaultValue={JSON.stringify(this.getChartData())}
-              placeholder="Enter data in JSON format"
-              onChange={this.handleChange}
-            />
-          </div>
+          <Grid columns={2} divided>
+            <Grid.Row>
+              <Grid.Column>
+                {this.state.localChartData && (
+                  <LoadablePlot
+                    data={this.state.localChartData.data || []}
+                    layout={this.state.localChartData.layout || {}}
+                    frames={this.state.localChartData.frames || []}
+                    config={{ displayModeBar: false }}
+                  />
+                )}
+              </Grid.Column>
+              <Grid.Column>
+                <UiForm>
+                  <Field
+                    title="Pick chart from existing visualization"
+                    id="chart-data"
+                    choices={this.props.visualizations}
+                    required={true}
+                    onChange={this.handleChangeVisualization}
+                  />
+                  <Field
+                    title="Text"
+                    id="chart-text"
+                    widget="cktext"
+                    value={this.state.text}
+                    required={false}
+                    onChange={(e, d) => this.updateData({ text: d })}
+                  />
+                </UiForm>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </div>
       </div>
     );
   }
 }
 
-export default StackedBarChart;
+export default connect(
+  (state, props) => {
+    // const chartData = state.data_providers ? state.data_providers.item : {};
+    // console.log('connect props', state, props);
+    let visualizations = state.search ? state.search.items : [];
+    visualizations = visualizations.map(el => [el['@id'], el.title]);
+    return {
+      visualizations,
+      remoteChartData:
+        state.chart_data_visualization && state.chart_data_visualization.data,
+    };
+  },
+  { searchContent, getChartDataFromVisualization },
+)(ChartPick);

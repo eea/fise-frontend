@@ -42,40 +42,40 @@ class Edit extends Component {
             />
 
             <Field
-                id="europe-forest-p-eu28"
-                title="Forest area in EU28"
-                type="text"
-                value={this.state.europe_forest_p_eu28}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_forest_p_eu28: d })}
-                />
+              id="europe-forest-p-eu28"
+              title="Forest area in EU28"
+              type="text"
+              value={this.state.europe_forest_p_eu28}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_forest_p_eu28: d })}
+            />
 
             <Field
-                id="europe-forest-l-eu28"
-                title="Total forest area in EU28"
-                type="text"
-                value={this.state.europe_forest_l_eu28}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_forest_l_eu28: d })}
-              />
+              id="europe-forest-l-eu28"
+              title="Total forest area in EU28"
+              type="text"
+              value={this.state.europe_forest_l_eu28}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_forest_l_eu28: d })}
+            />
 
             <Field
-                id="europe-forest-p-eea39"
-                title="Forest area in EEA39"
-                type="text"
-                value={this.state.europe_forest_p_eea39}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_forest_p_eea39: d })}
-                />
+              id="europe-forest-p-eea39"
+              title="Forest area in EEA39"
+              type="text"
+              value={this.state.europe_forest_p_eea39}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_forest_p_eea39: d })}
+            />
 
             <Field
-                id="europe-forest-l-eea39"
-                title="Total forest area in EEA39"
-                type="text"
-                value={this.state.europe_forest_l_eea39}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_forest_l_eea39: d })}
-              />
+              id="europe-forest-l-eea39"
+              title="Total forest area in EEA39"
+              type="text"
+              value={this.state.europe_forest_l_eea39}
+              required={false}
+              onChange={(e, d) => this.updateData({ europe_forest_l_eea39: d })}
+            />
 
             <Field
               id="europe-source"

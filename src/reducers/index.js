@@ -12,6 +12,8 @@ import mosaic_settings from '~/reducers/mosaic_settings';
 import data_providers from '~/reducers/data_providers';
 import parent_folder_data from '~/reducers/parent_folder_data';
 import localnavigation from '~/reducers/localnavigation';
+import chart_data_visualization from './chart_data_visualization';
+
 /**
  * Root reducer.
  * @function
@@ -29,6 +31,7 @@ const reducers = {
   mosaic_settings,
   data_providers,
   localnavigation,
+  chart_data_visualization,
   // Add your reducers here
 };
 

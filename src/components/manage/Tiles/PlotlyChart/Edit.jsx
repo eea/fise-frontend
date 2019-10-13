@@ -88,9 +88,6 @@ class Edit extends Component {
 
     return (
       <div>
-        {this.props.dataSourceOptions.map(el => (
-          <span>{el.title}</span>
-        ))}
         {__CLIENT__ ? (
           <div className="tile selected">
             <div className="tile-inner-wrapper">

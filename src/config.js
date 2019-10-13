@@ -24,7 +24,11 @@ import {
 import { defineMessages } from 'react-intl';
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 import HiddenWidget from '~/components/manage/Widgets/Hidden';
+import CKEditorWidget from '~/components/manage/Widgets/CKEditor';
 import ChartWidget from '~/components/manage/Widgets/Chart';
+
+import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
+import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
 
 import EuropeCompareTileEdit from '~/components/manage/Tiles/EuropeCompareTile/Edit';
 import EuropeCompareTileView from '~/components/manage/Tiles/EuropeCompareTile/View';
@@ -105,7 +109,13 @@ export const widgets = {
     tiles_layout: HiddenWidget,
     visualization: ChartWidget,
   },
+  widget: {
+    ...defaultWidgets.widget,
+    cktext: CKEditorWidget,
+  },
 };
+
+console.log('config widgets', widgets);
 
 defineMessages({
   custom_addons: {
@@ -157,31 +167,31 @@ export const tiles = {
       icon: chartIcon,
       group: 'forests_specific',
     },
+    simple_chart: {
+      id: 'embed_chart',
+      title: 'Embed Chart',
+      view: ChartTileView,
+      edit: ChartTileEdit,
+      icon: chartIcon,
+      // height: 400,
+      group: 'custom_addons',
+    },
     plotly_chart: {
       id: 'plotly_chart',
       title: 'Plotly Chart',
       view: PlotlyTileView,
       edit: PlotlyTileEdit,
       icon: chartIcon,
-      height: 400,
+      // height: 400,
       group: 'custom_addons',
     },
-    // demo_chart: {
-    //   id: 'demo_chart',
-    //   title: 'Demo Chart',
-    //   view: ChartTileView,
-    //   edit: ChartTileEdit,
-    //   icon: chartIcon,
-    //   height: 400,
-    //   group: 'custom_addons',
-    // },
     tableau: {
       id: 'tableau',
       title: 'Tableau',
       view: tableauTileView,
       edit: TableauTileEdit,
       icon: chartIcon,
-      height: 400,
+      // height: 400,
       group: 'custom_addons',
     },
     cktext: {
@@ -191,32 +201,32 @@ export const tiles = {
       view: TextTileView,
       edit: TextTileEdit,
       icon: defaultTiles.tilesConfig.text.icon,
-      height: 200,
+      // height: 200,
     },
-    video: {
-      ...defaultTiles.tilesConfig.video,
-      height: 600,
-    },
-    // image: {
-    //   ...defaultTiles.tilesConfig.image,
+    // video: {
+    //   ...defaultTiles.tilesConfig.video,
     //   height: 600,
     // },
-    hero: {
-      ...defaultTiles.tilesConfig.hero,
-      height: 600,
-    },
-    maps: {
-      ...defaultTiles.tilesConfig.maps,
-      height: 600,
-    },
-    html: {
-      ...defaultTiles.tilesConfig.html,
-      height: 600,
-    },
-    table: {
-      ...defaultTiles.tilesConfig.table,
-      height: 600,
-    },
+    // // image: {
+    // //   ...defaultTiles.tilesConfig.image,
+    // //   height: 600,
+    // // },
+    // hero: {
+    //   ...defaultTiles.tilesConfig.hero,
+    //   height: 600,
+    // },
+    // maps: {
+    //   ...defaultTiles.tilesConfig.maps,
+    //   height: 600,
+    // },
+    // html: {
+    //   ...defaultTiles.tilesConfig.html,
+    //   height: 600,
+    // },
+    // table: {
+    //   ...defaultTiles.tilesConfig.table,
+    //   height: 600,
+    // },
   },
 };
 
@@ -224,8 +234,6 @@ export const portlets = [ForestMetadata];
 
 // import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
 // import ChartWidget from '~/components/manage/Widgets/TestWidget';
-// import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
-// import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
 // import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
 // import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
 // import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';

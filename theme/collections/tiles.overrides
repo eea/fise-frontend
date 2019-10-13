@@ -198,3 +198,8 @@
     margin-top: 2em;
   }
 }
+
+// frontpage chart tile text
+.tile-text-content {
+  padding: 1rem;
+}

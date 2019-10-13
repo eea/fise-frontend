@@ -1,9 +1,4 @@
-/**
- * Data Providers reducer
- * @module reducers/data_providers
- */
-
-import { GET_DATA_FROM_PROVIDER } from '~/constants/ActionTypes';
+import { GET_CHART_DATA_FROM_VISUALIZATION } from '~/constants/ActionTypes';
 
 const initialState = {
   error: null,
@@ -21,23 +16,26 @@ const initialState = {
  */
 export default function data_providers(state = initialState, action = {}) {
   switch (action.type) {
-    case `${GET_DATA_FROM_PROVIDER}_PENDING`:
+    case `${GET_CHART_DATA_FROM_VISUALIZATION}_PENDING`:
       return {
         ...state,
         error: null,
         loaded: false,
         loading: true,
       };
-    case `${GET_DATA_FROM_PROVIDER}_SUCCESS`:
-      console.log('Success getting data providers', action.result);
+    case `${GET_CHART_DATA_FROM_VISUALIZATION}_SUCCESS`:
+      console.log(
+        'Success getting chart data from viz',
+        action.result.visualization,
+      );
       return {
         ...state,
         error: null,
-        item: action.result['@components']?.['connector-data']?.data || [],
+        data: action.result.visualization || {},
         loaded: true,
         loading: false,
       };
-    case `${GET_DATA_FROM_PROVIDER}_FAIL`:
+    case `${GET_CHART_DATA_FROM_VISUALIZATION}_FAIL`:
       return {
         ...state,
         error: action.error,
