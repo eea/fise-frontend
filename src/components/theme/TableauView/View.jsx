@@ -4,11 +4,6 @@
  */
 
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import { flattenToAppURL } from '@plone/volto/helpers';
-// import PropTypes from 'prop-types';
-// import TableauReport from 'tableau-react';
-//
 import TableauReport from './TableauReport';
 
 const visUrl = 'http://public.tableau.com/views/RegionalSampleWorkbook/Storms';

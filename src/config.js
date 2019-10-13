@@ -101,7 +101,7 @@ export const widgets = {
     ...defaultWidgets.id,
     tiles: HiddenWidget,
     tiles_layout: HiddenWidget,
-    vizualization: ChartWidget,
+    visualization: ChartWidget,
   },
 };
 

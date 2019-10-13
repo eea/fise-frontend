@@ -200,7 +200,7 @@ class TableauReport extends React.Component {
 
         console.log('urls', this.props.url, this.state.saveData.url);
 
-        if (this.props.url != this.state.saveData.url) {
+        if (this.props.url !== this.state.saveData.url) {
           this.setState({ saveData }, this.onChange);
         } else {
           this.setState({ saveData });
@@ -217,9 +217,9 @@ class TableauReport extends React.Component {
                 sheetname: sheetname,
                 url: r,
                 filters: {
-                  ...this.state.saveData.filters
-                }
-              }
+                  ...this.state.saveData.filters,
+                },
+              };
               this.setState({ saveData: save }, this.onChange);
             });
           },
@@ -230,20 +230,19 @@ class TableauReport extends React.Component {
             console.log('changed filter');
 
             e.getFilterAsync().then(r => {
-
               console.log('filter async', r);
               let name = r.$caption;
               let values = r.$appliedValues.map(e => e.value);
-              let sheetname = this.state.saveData.sheetname              
+              let sheetname = this.state.saveData.sheetname;
               const save = {
                 ...this.state.saveData,
                 filters: {
                   ...this.state.saveData.filters,
                   [sheetname]: {
-                    ...this.state.saveData.filters[sheetname] || {},
-                    [name]: values
-                  }
-                }
+                    ...(this.state.saveData.filters[sheetname] || {}),
+                    [name]: values,
+                  },
+                },
               };
               this.setState({ saveData: save }, this.onChange);
             });
@@ -264,7 +263,6 @@ class TableauReport extends React.Component {
       vizUrl,
       options,
     );
-
   }
 
   render() {
