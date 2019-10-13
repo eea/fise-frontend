@@ -19,21 +19,6 @@ body {
   padding: 0 2rem;
 }
 
-.navigation .ui.secondary.pointing.menu .menuActive {
-  border-color: #E40166;
-}
-
-.navigation .ui.secondary.pointing.menu .dropdown .item {
-  margin-right: 0;
-
-  &div {
-    padding: 0 !important;
-  }
-
-  &a {
-    padding: 1rem !important;
-  }
-}
 
 .ui.container {
   padding: 0 0.5em;
@@ -784,7 +769,7 @@ nav.navigation .menu>a.item:first-of-type {
 
 .slider-caret {
   position : absolute;
-  bottom   : -17px;
+  bottom   : -15px;
   left     : 50%;
   width    : 119px;
   transform: translateX(-50%);

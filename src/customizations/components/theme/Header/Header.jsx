@@ -119,27 +119,11 @@ class Header extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    // let headerImage = this.state.defaultHeaderImage
-    //   ? this.state.defaultHeaderImage.image
-    //   : staticHeader;
-    const defaultHeaderImage = this.props.defaultHeaderImage && this.props.defaultHeaderImage.length && this.props.defaultHeaderImage[0].image
-    let headerImageUrl = this.state.image || defaultHeaderImage
-
-    console.log('props in header', this.props, this.state)
-    // console.log(
-    //   'header',
-    //   this.state.defaultHeaderImage,
-    //   '1',
-    //   staticHeader,
-    //   '3',
-    //   this.state.inCountryFolder,
-    //   '4',
-    //   this.state.url,
-    //   '5',
-    //   headerImage,
-    //   '6',
-    //   headerImageUrl,
-    // );
+    const defaultHeaderImage =
+      this.props.defaultHeaderImage &&
+      this.props.defaultHeaderImage.length &&
+      this.props.defaultHeaderImage[0].image;
+    let headerImageUrl = this.state.image || defaultHeaderImage;
 
     return (
       <div className="header-wrapper" role="banner">
@@ -173,14 +157,14 @@ class Header extends Component {
           {this.state.isHomepage ? (
             <HomepageSlider items={this.state.frontPageSlides} />
           ) : (
-            <div>
+            <div style={{ position: 'relative' }}>
               <Breadcrumbs pathname={this.props.pathname} />
 
               <HeaderImage url={headerImageUrl}>
-                  <div className="header-image">
-                    <h1>{this.state.title}</h1>
-                    <p>{this.state.description}</p>
-                  </div>
+                <div className="header-image">
+                  <h1>{this.state.title}</h1>
+                  <p>{this.state.description}</p>
+                </div>
               </HeaderImage>
             </div>
           )}

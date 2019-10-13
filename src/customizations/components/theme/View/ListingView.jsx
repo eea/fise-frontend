@@ -35,6 +35,7 @@ class ListingView extends Component {
   static propTypes = {
     localNavigation: PropTypes.array,
     getLocalnavigation: PropTypes.func.isRequired,
+    pathname: PropTypes.any,
     content: PropTypes.shape({
       title: PropTypes.string,
       description: PropTypes.string,
@@ -56,6 +57,12 @@ class ListingView extends Component {
 
   componentDidMount() {
     this.props.getLocalnavigation(flattenToAppURL(this.props.content['@id']));
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.pathname !== this.props.pathname) {
+      this.props.getLocalnavigation(flattenToAppURL(this.props.pathname));
+    }
   }
 
   render() {
@@ -222,8 +229,9 @@ class ListingView extends Component {
 }
 
 export default connect(
-  state => ({
+  (state, props) => ({
     localNavigation: state.localnavigation.items,
+    pathname: props.location.pathname,
   }),
   { getLocalnavigation },
 )(injectIntl(ListingView));
