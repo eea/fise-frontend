@@ -46,7 +46,7 @@ const ForestMetadata = props => {
 
       {external_url && (
         <div id="forest-metadata-external_url">
-          <strong>External url:</strong> {external_url}
+          <strong>External url:</strong> <a href={external_url}>Go to link</a>
         </div>
       )}
 
@@ -58,6 +58,54 @@ const ForestMetadata = props => {
               <li key={el.token}>{el.title}</li>
             ))}
           </ul>
+        </div>
+      )}
+
+      {publishing_year && (
+        <div id="forest-metadata-publishing_year">
+          <strong>Publishing year:</strong> {publisher}
+        </div>
+      )}
+
+      {collection_year_start && (
+        <div id="forest-metadata-collection_years">
+          <strong>Collection period:</strong>{' '}
+          <span>{collection_year_start}</span>
+          {collection_year_end && <span>- {collection_year_end}</span>}
+        </div>
+      )}
+
+      {topics && (
+        <div id="forest-metadata-topics">
+          <strong>Topics:</strong>
+          <ul>
+            {topics.map(el => (
+              <li key={el.token}>{el.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {keywords && (
+        <div id="forest-metadata-keywords">
+          <strong>Keywords:</strong>
+          <ul>
+            {keywords.map(el => (
+              <li key={el.token}>{el.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {info_level && (
+        <div id="forest-metadata-info_level">
+          <strong>Info level:</strong> {info_level}
+        </div>
+      )}
+
+      {accessibility_level && (
+        <div id="forest-metadata-accessibility_level">
+          <strong>Accessibility level:</strong> {accessibility_level}
         </div>
       )}
     </Portal>
