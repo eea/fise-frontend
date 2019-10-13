@@ -8,6 +8,6 @@
  *   Footer,
  * };
  */
-import CountryView from '~/components/CountryView/CountryView';
+import CountryView from '~/components/theme/CountryView/CountryView';
 
 export { CountryView };

@@ -50,7 +50,7 @@ const ForestMetadata = props => {
         </div>
       )}
 
-      {geo_coverage && (
+      {geo_coverage && geo_coverage.length && (
         <div id="forest-metadata-geo-coverage">
           <strong>Geo coverage:</strong>
           <ul>

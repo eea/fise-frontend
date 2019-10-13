@@ -1,11 +1,10 @@
 import ChartEditor from './ChartEditor';
 import React, { Component } from 'react';
-import showIcon from '@plone/volto/icons/show.svg';
-import { Icon as VoltoIcon } from '@plone/volto/components';
 import { Button, Modal, Form, Grid, Label } from 'semantic-ui-react';
 import { map } from 'lodash';
 
-// import Loadable from 'react-loadable';
+// import showIcon from '@plone/volto/icons/show.svg';
+// import { Icon as VoltoIcon } from '@plone/volto/components';
 
 class ModalChartEditor extends Component {
   constructor(props) {
@@ -41,13 +40,6 @@ class ModalChartEditor extends Component {
     );
   }
 }
-
-// const LoadablePlot = Loadable({
-//   loader: () => import('react-plotly.js'),
-//   loading() {
-//     return <div>Loading chart...</div>;
-//   },
-// });
 
 class ChartWidget extends Component {
   constructor(props) {
@@ -86,7 +78,6 @@ class ChartWidget extends Component {
     if (__SERVER__) return '';
 
     const LoadablePlot = require('react-plotly.js').default;
-    console.log('plot', LoadablePlot);
     return (
       <Form.Field
         inline

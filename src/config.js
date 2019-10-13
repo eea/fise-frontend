@@ -47,6 +47,7 @@ import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
 import CountryView from '~/components/theme/CountryView/CountryView';
 import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
+import VisualizationView from '~/components/theme/VisualizationView/View';
 
 import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
@@ -85,6 +86,7 @@ export const views = {
     ...defaultViews.contentTypesViews,
     // 'Plone Site': HomepageView,
     'Plone Site': MosaicView,
+    visualization: VisualizationView,
   },
 };
 
