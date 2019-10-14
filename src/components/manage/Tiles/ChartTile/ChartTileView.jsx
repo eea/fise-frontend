@@ -48,10 +48,11 @@ class EmbedChartView extends Component {
             <Grid.Column width={8}>
               {this.state.chartData ? (
                 <LoadablePlot
+                  className="embedded-chart"
                   data={this.state.chartData.data || []}
                   layout={{
                     ...this.state.chartData.layout,
-                    autosize: false,
+                    autosize: true,
                   }}
                   frames={this.state.chartData.frames || []}
                   config={{ displayModeBar: false }}

@@ -118,7 +118,7 @@ body.has-toolbar {
       // position: absolute;
       // right   : 0;
       position   : absolute;
-      right      : 44px;
+      right      : 50px;
 
       svg {
         stroke      : #015610;
@@ -129,7 +129,7 @@ body.has-toolbar {
 
   .searchIcon {
     position    : absolute;
-    right       : 44px;
+    right       : 50px;
     margin-right: 1rem;
   }
 
@@ -768,6 +768,7 @@ nav.navigation .menu>a.item:first-of-type {
 
 
 .slider-caret {
+  display: none;
   position : absolute;
   bottom   : -15px;
   left     : 50%;
@@ -792,7 +793,7 @@ a {
 }
 
 .tools {
-  margin-right: 0;
+  margin-right: 0!important;
   line-height: 1;
 }
 .tiles-chooser {
@@ -847,6 +848,10 @@ h5 {
   margin: 0 auto!important;
 }
 
+.folderWithContent #page-document {
+  max-width: unset!important;
+}
+
 .anon-actions-list {
   margin-left: 1rem!important;
   overflow: hidden;
@@ -856,4 +861,10 @@ h5 {
     width: 0;
   }
   transition: width 100ms;
+}
+
+.searchInput.show {
+  color: black;
+  border: 2px solid #275510;
+  padding: 0.2rem 1rem;
 }

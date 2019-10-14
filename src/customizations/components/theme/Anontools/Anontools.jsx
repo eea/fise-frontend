@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { List } from 'semantic-ui-react';
+import { List, Popup } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 import Person from './person.svg';
 
@@ -47,7 +47,7 @@ class Anontools extends Component {
     return (
       !this.props.token && (
         <div>
-          <img
+            <Popup content='Account actions' trigger={<img
             onClick={() =>
               document
                 .querySelector('.anon-actions-list')
@@ -60,7 +60,7 @@ class Anontools extends Component {
             }}
             src={Person}
             alt=""
-          />
+          />} />
           <List
             className="anon-actions-list hidden-width"
             floated="right"

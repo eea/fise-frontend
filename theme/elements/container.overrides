@@ -249,6 +249,13 @@
     [class*='or lower hidden'] {
       display: none !important;
     }
+
+    .logo-nav-wrapper {
+      flex-direction: column!important;
+    }
+    .navSlider {
+      display: none!important;
+    }
   }
   @media only screen and (min-width: @tabletBreakpoint + @offset) and (max-width: @largestTabletScreen + @offset) {
     .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
@@ -259,6 +266,13 @@
     [class*='widescreen only']:not(.tablet),
     [class*='or lower hidden']:not(.mobile) {
       display: none !important;
+    }
+
+    .logo-nav-wrapper {
+      flex-direction: column!important;
+    }
+    .nav-slider {
+      display: none!important;
     }
   }
   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
@@ -271,6 +285,11 @@
     [class*='or lower hidden']:not(.tablet):not(.mobile) {
       display: none !important;
     }
+
+    .slider-wrapper .navSlider {
+      max-width: 946px;
+    }
+
   }
   @media only screen and (min-width: @largeMonitorBreakpoint + @offset) {
     .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
@@ -281,6 +300,13 @@
     [class*='widescreen only']:not([class*='large screen']),
     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
       display: none !important;
+    }
+    .slider-wrapper .navSlider {
+      max-width: 574px;
+    }
+
+    .logo-nav-wrapper {
+      flex-direction: row!important;
     }
   }
 
@@ -293,6 +319,9 @@
     [class*='widescreen only']:not([class*='large screen']),
     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
       display: none !important;
+    }
+    .slider-wrapper .navSlider {
+      max-width: unset;
     }
   }
 }

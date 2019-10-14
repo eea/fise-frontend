@@ -9,7 +9,7 @@ import { Form, Input } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { PropTypes } from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
-
+import { Popup } from 'semantic-ui-react'
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import Person from './person.svg';
@@ -166,24 +166,25 @@ class SearchWidget extends Component {
             <Icon name={zoomSVG} size="18px" />
           </button>
           {!this.state.showSearchField ? (
-            <button
+             <Popup content='Search' trigger={<button
               onClick={this.showSearch}
               className="overSearchIcon ui small basic no-border icon button"
               aria-label={this.props.intl.formatMessage(messages.search)}
             >
               <Icon name={zoomSVG} size="18px" />
-            </button>
+            </button>} />
           ) : (
             ''
           )}
           {this.props.token && (
-            <img
+            
+            <Popup content='Account actions' trigger={<img
               onClick={() => document.querySelector('.toolbar .user').click()}
               className="accountIcon"
               style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
               src={Person}
               alt=""
-            />
+            />} />
           )}
         </Form.Field>
       </Form>
