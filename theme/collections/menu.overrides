@@ -100,6 +100,12 @@
     left         : 25px;
 }
 
+.sticky-outer-wrapper.active {
+    .carretTop {
+        top: -8px;
+    }
+}
+
 .ui.dropdown .menu>.header {
     width  : 0;
     height : 0;
