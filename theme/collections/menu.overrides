@@ -115,8 +115,7 @@
 
 
 .submenu {
-    min-width      : 200px;
-    // column-count: 2;
+    min-width: 328px;
     border-top     : 1px solid #eee;
     padding        : 1rem 0;
     display        : flex;

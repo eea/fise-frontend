@@ -864,7 +864,11 @@ h5 {
 }
 
 .searchInput.show {
-  color: black;
+  // color: black;
   border: 2px solid #275510;
   padding: 0.2rem 1rem;
+  background: #275510;
+  // input {
+  //   color: white!important;
+  // }
 }
