@@ -115,14 +115,25 @@
 
 
 .submenu {
-    min-width: 328px;
-    border-top     : 1px solid #eee;
-    padding        : 1rem 0;
-    display        : flex;
-    flex-wrap      : wrap;
-    max-height     : 300px;
-    overflow-y     : auto;
-    display        : flex;
+    // min-width: 328px;
+    // border-top     : 1px solid #eee;
+    // padding        : 1rem 0;
+    // display        : flex;
+    // flex-wrap      : wrap;
+    // max-height     : 300px;
+    // overflow-y     : auto;
+    // display        : flex;
+
+        /* min-width: 328px; */
+        border-top: 1px solid #eee;
+        padding: 1rem 0;
+        -ms-flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        /* max-height: 300px; */
+        overflow-y: auto;
+        display: -ms-flexbox;
+        /* display: flex; */
+        column-count: 2;
 
     .item {
         padding  : 0.3rem 1.5rem !important;

@@ -77,8 +77,9 @@ class ListingView extends Component {
         )) ||
       [];
     let pageTemplate = (
-      <Grid columns={2} className="folderWithContent">
-        <Grid.Column width={6}>
+      <Grid columns={3} className="folderWithContent">
+        <Grid.Column tablet={0} largeScreen={3} widescreen={3}></Grid.Column>
+        <Grid.Column tablet={12} largeScreen={6} widescreen={6}>
           {hasTilesData(content) ? (
             <div id="page-document">
               <Helmet title={content.title} />
@@ -106,10 +107,10 @@ class ListingView extends Component {
           ) : (
             <Container id="page-document">
               <Helmet title={content.title} />
-              <h1 className="documentFirstHeading">{content.title}</h1>
+              {/* <h1 className="documentFirstHeading">{content.title}</h1>
               {content.description && (
                 <p className="documentDescription">{content.description}</p>
-              )}
+              )} */}
               {content.image && (
                 <Image
                   className="document-image"
@@ -136,11 +137,11 @@ class ListingView extends Component {
             </Container>
           )}
         </Grid.Column>
-        <Grid.Column width={6}>
+        <Grid.Column tablet={6} largeScreen={3} widescreen={3}>
           <ul className="localNavigation">
             {localNavigation.map(item => (
               <li>
-                <Link to={item.url} key={item.url}>
+                <Link to={flattenToAppURL(item['@id'])} key={item['@id']}>
                   {item.title}
                 </Link>
               </li>

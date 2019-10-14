@@ -81,11 +81,11 @@ class Anontools extends Component {
                 <FormattedMessage id="Log in" defaultMessage="Log in" />
               </Link>
             </div>
-            <div role="listitem" className="item">
+            {/* <div role="listitem" className="item">
               <Link to="/register">
                 <FormattedMessage id="Register" defaultMessage="Register" />
               </Link>
-            </div>
+            </div> */}
           </List>
         </div>
       )

@@ -177,10 +177,9 @@ class SearchWidget extends Component {
             ''
           )}
           {this.props.token && (
-            
             <Popup content='Account actions' trigger={<img
               onClick={() => document.querySelector('.toolbar .user').click()}
-              className="accountIcon"
+              className="accountIcon insearch"
               style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
               src={Person}
               alt=""
