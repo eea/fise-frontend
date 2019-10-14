@@ -19,5 +19,5 @@ COPY entrypoint-prod.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/opt/fise/entrypoint.sh"]
-EXPOSE 3000
+EXPOSE 3000 3001 4000 4001
 CMD yarn start:prod
