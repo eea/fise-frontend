@@ -454,6 +454,7 @@ body #page-document .imageAndRichText+p {
     width         : 100%;
     display       : flex;
     flex-direction: column;
+    padding: 20px;
 
     >.recharts-responsive-container {
       flex-grow: 1;
@@ -817,7 +818,7 @@ h5 {
 
 .modal {
   .ck-editor,
-  .tile.text, 
+  .tile.text,
   .ck.ck-editor__main,
   .ck .ck-content {
       display: flex;

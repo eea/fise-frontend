@@ -175,15 +175,13 @@
     margin-top: auto;
   }
 
-  .chart-container {
-    height: 250px;
-  }
-
   .chart-description {
     color: @darkGreen;
     font-size: 14px;
+    font-weight: 300;
     background-color: #f6f6f5;
     padding: 1em;
+    border-radius: 5px;
   }
 
   .map-wrapper {

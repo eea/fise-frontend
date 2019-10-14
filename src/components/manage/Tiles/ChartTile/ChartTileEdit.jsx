@@ -53,6 +53,8 @@ class ChartPick extends Component {
     this.props.onChangeTile(this.props.tile, {
       ...this.props.data,
       'chart-text': this.state.text,
+      'chart_source': this.state.chart_source,
+      'chart_source_link': this.state.chart_source_link,
       chartData: this.state.localChartData,
     });
   }
@@ -110,6 +112,22 @@ class ChartPick extends Component {
                     value={this.state.text}
                     required={false}
                     onChange={(e, d) => this.updateData({ text: d })}
+                  />
+                  <Field
+                    title="Source"
+                    id="chart-source"
+                    type="text"
+                    value={this.state.chart_source}
+                    required={false}
+                    onChange={(e, d) => this.updateData({ chart_source: d })}
+                  />
+                  <Field
+                    title="Source Link"
+                    id="chart-source-link"
+                    type="text"
+                    value={this.state.chart_source_link}
+                    required={false}
+                    onChange={(e, d) => this.updateData({ chart_source_link: d })}
                   />
                 </UiForm>
               </Grid.Column>
