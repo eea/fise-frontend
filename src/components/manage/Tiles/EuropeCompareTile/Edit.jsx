@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form as UiForm, Header } from 'semantic-ui-react';
+import { Form as UiForm } from 'semantic-ui-react';
 import { Field } from '@plone/volto/components'; // EditTile
 
 class Edit extends Component {
@@ -41,102 +41,49 @@ class Edit extends Component {
               onChange={(e, d) => this.updateData({ europe_tile_title: d })}
             />
             <Field
-              id="europe-protected-area"
-              title="Protected area"
+              id="europe-forest-area"
+              title="Total forest land"
               type="text"
-              value={this.state.europe_protected_area}
+              value={this.state.europe_forest_area}
               required={false}
-              onChange={(e, d) => this.updateData({ europe_protected_area: d })}
+              onChange={(e, d) => this.updateData({ europe_forest_area: d })}
               />
-            <Field
-              id="europe-total-area"
-              title="Total area"
-              type="text"
-              value={this.state.europe_total_area}
-              required={false}
-              onChange={(e, d) => this.updateData({ europe_total_area: d })}
-            />
-
-            <h5> Top Countries:</h5>
 
             <UiForm.Group widths="equal">
               <Field
-                id="europe-country-1-name"
-                title="Country name"
+                id="europe-data-1-name"
+                title="Data"
                 type="text"
-                value={this.state.europe_country_1_name}
+                value={this.state.europe_data_1_name}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_country_1_name: d })}
+                onChange={(e, d) => this.updateData({ europe_data_1_name: d })}
                 />
               <Field
-                id="europe-country-1-value"
-                title="Country value"
+                id="europe-data-1-value"
+                title="Value"
                 type="text"
-                value={this.state.europe_country_1_value}
+                value={this.state.europe_data_1_value}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_country_1_value: d })}
-                />
-              <Field
-                id="europe-country-1-link"
-                title="Country link"
-                type="text"
-                value={this.state.europe_country_1_link}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_country_1_link: d })}
+                onChange={(e, d) => this.updateData({ europe_data_1_value: d })}
                 />
             </UiForm.Group>
 
             <UiForm.Group widths="equal">
               <Field
-                id="europe-country-2-name"
-                title="Country name"
+                id="europe-data-2-name"
+                title="Data"
                 type="text"
-                value={this.state.europe_country_2_name}
+                value={this.state.europe_data_2_name}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_country_2_name: d })}
+                onChange={(e, d) => this.updateData({ europe_data_2_name: d })}
                 />
               <Field
                 id="europe-country-2-value"
-                title="Country value"
+                title="Value"
                 type="text"
-                value={this.state.europe_country_2_value}
+                value={this.state.europe_data_2_value}
                 required={false}
-                onChange={(e, d) => this.updateData({ europe_country_2_value: d })}
-                />
-              <Field
-                id="europe-country-2-link"
-                title="Country link"
-                type="text"
-                value={this.state.europe_country_2_link}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_country_2_link: d })}
-                />
-            </UiForm.Group>
-
-            <UiForm.Group widths="equal">
-              <Field
-                id="europe-country-3-name"
-                title="Country name"
-                type="text"
-                value={this.state.europe_country_3_name}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_country_3_name: d })}
-                />
-              <Field
-                id="europe-country-3-value"
-                title="Country value"
-                type="text"
-                value={this.state.europe_country_3_value}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_country_3_value: d })}
-                />
-              <Field
-                id="europe-country-3-link"
-                title="Country link"
-                type="text"
-                value={this.state.europe_country_3_link}
-                required={false}
-                onChange={(e, d) => this.updateData({ europe_country_3_link: d })}
+                onChange={(e, d) => this.updateData({ europe_data_2_value: d })}
                 />
             </UiForm.Group>
 

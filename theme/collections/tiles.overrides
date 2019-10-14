@@ -83,37 +83,42 @@
   }
 
   .land-data-wrapper {
-    display         : flex;
-    align-items     : center;
-    border-radius   : 5px;
-    padding         : 1.7em;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 1em;
     margin-bottom: 1em;
   }
 
   .land-data {
-    font-size    : 48px;
-    font-weight  : 700;
     padding-right: 10px;
+    span {
+      font-size : 50px;
+      line-height: 46px;
+      font-weight: 700;
+    }
   }
 
-  .land-data-content span {
-    font-weight: 500;
-    display: block;
+  .land-data-content {
+    font-size: 14px;
+    font-weight: 300;
+    span {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 
 
   .forest-comparation {
     .land-data-wrapper {
       background-color: #f3eeea;
+      color: @darkBrown;
+      margin-bottom: 0;
     }
 
     .ui.list .item span {
       float: right;
-    }
-
-    .land-data,
-    .land-data-content span {
-      color: @darkBrown;
     }
 
     .ui.bulleted.list>.item {
@@ -130,50 +135,43 @@
     .ui.bulleted.list .list>.item:before,
     .ui.bulleted.list>.item:before {
       background-color: @darkBrown;
-      content         : '';
-      border-radius   : 50%;
-      height          : 8px;
-      width           : 8px;
-      top             : 12px;
+      content: '';
+      border-radius: 50%;
+      height: 8px;
+      width: 8px;
+      top: 10px;
     }
   }
 
   .forest-area-tile {
     .land-data-wrapper.eu28-data {
       background-color: #ebf5da;
-
-      .land-data,
-      .land-data-content span {
-        color: @darkGreen;
-      }
+      color: @darkGreen;
     }
 
     .land-data-wrapper.eea39-data {
       background-color: #e6edf5;
-
-      .land-data,
-      .land-data-content span {
-        color: #002d54;
-      }
+      color: #002d54;
     }
 
     .coverage-data {
-      display  : flex;
-      color    : #fff;
+      display: flex;
+      color: #fff;
       font-size: 16px;
-      margin   : 1em 0;
+      margin: 1em 0;
 
       span {
-        font-size    : 28px;
-        display      : block;
+        font-size: 28px;
+        display: block;
         margin-bottom: 0.2em;
       }
     }
   }
 
   .discreet {
-    color    : #999;
+    color: #999;
     font-size: 12px;
+    line-height: normal;
     margin-top: auto;
   }
 
@@ -182,16 +180,16 @@
   }
 
   .chart-description {
-    color           : @darkGreen;
-    font-size       : 14px;
+    color: @darkGreen;
+    font-size: 14px;
     background-color: #f6f6f5;
-    padding         : 1em;
+    padding: 1em;
   }
 
   .map-wrapper {
-    border       : 1px solid @darkGreen;
+    border: 1px solid @darkGreen;
     border-radius: 5px;
-    padding      : 5px;
+    padding: 5px;
   }
 
   .map-buttons {
