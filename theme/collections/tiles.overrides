@@ -203,3 +203,4 @@
 .tile-text-content {
   padding: 1rem;
 }
+.embedded-chart {width: 100%; height: 100%}

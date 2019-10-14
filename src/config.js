@@ -89,7 +89,7 @@ export const views = {
   contentTypesViews: {
     ...defaultViews.contentTypesViews,
     // 'Plone Site': HomepageView,
-    'Plone Site': MosaicView,
+    // 'Plone Site': MosaicView,
     visualization: VisualizationView,
   },
 };

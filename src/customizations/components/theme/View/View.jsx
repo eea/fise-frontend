@@ -217,6 +217,10 @@ class View extends Component {
     const RenderedView =
       this.getViewByType() || this.getViewByLayout() || this.getViewDefault();
 
+    console.log('found view by type', this.getViewByType());
+    console.log('found view by layout', this.getViewByLayout());
+    console.log('found view default', this.getViewDefault());
+
     return (
       <div id="view">
         <div id="content-left-column" />

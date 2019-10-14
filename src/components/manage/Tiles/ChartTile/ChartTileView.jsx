@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 
-import { ResponsiveContainer } from 'recharts';
-
 const LoadablePlot = Loadable({
   loader: () => import('react-plotly.js'),
   loading() {
@@ -12,7 +10,7 @@ const LoadablePlot = Loadable({
   },
 });
 
-class StackedBarChartView extends Component {
+class EmbedChartView extends Component {
   constructor(props) {
     super(props);
 
@@ -50,14 +48,15 @@ class StackedBarChartView extends Component {
               </Grid.Column>
               <Grid.Column>
                 {this.state.chartData ? (
-                  <ResponsiveContainer>
-                    <LoadablePlot
-                      data={this.state.chartData.data || []}
-                      layout={this.state.chartData.layout || {}}
-                      frames={this.state.chartData.frames || []}
-                      config={{ displayModeBar: false }}
-                    />
-                  </ResponsiveContainer>
+                  <LoadablePlot
+                    data={this.state.chartData.data || []}
+                    layout={{
+                      ...this.state.chartData.layout,
+                      autosize: false,
+                    }}
+                    frames={this.state.chartData.frames || []}
+                    config={{ displayModeBar: false }}
+                  />
                 ) : (
                   <div>No valid data.</div>
                 )}
@@ -70,8 +69,8 @@ class StackedBarChartView extends Component {
   }
 }
 
-StackedBarChartView.propTypes = {
+EmbedChartView.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-export default StackedBarChartView;
+export default EmbedChartView;
