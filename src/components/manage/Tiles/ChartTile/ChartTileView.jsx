@@ -39,29 +39,27 @@ class EmbedChartView extends Component {
     return (
       <div className="chartWrapperView">
         <div className="tile-inner-wrapper">
-          <Grid columns={2}>
-            <Grid.Row>
-              <Grid.Column>
-                <div class="tile-text-content">
-                  {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
-                </div>
-              </Grid.Column>
-              <Grid.Column>
-                {this.state.chartData ? (
-                  <LoadablePlot
-                    data={this.state.chartData.data || []}
-                    layout={{
-                      ...this.state.chartData.layout,
-                      autosize: false,
-                    }}
-                    frames={this.state.chartData.frames || []}
-                    config={{ displayModeBar: false }}
-                  />
-                ) : (
-                  <div>No valid data.</div>
-                )}
-              </Grid.Column>
-            </Grid.Row>
+          <Grid>
+            <Grid.Column width={4}>
+              <div class="tile-text-content">
+                {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
+              </div>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              {this.state.chartData ? (
+                <LoadablePlot
+                  data={this.state.chartData.data || []}
+                  layout={{
+                    ...this.state.chartData.layout,
+                    autosize: false,
+                  }}
+                  frames={this.state.chartData.frames || []}
+                  config={{ displayModeBar: false }}
+                />
+              ) : (
+                <div>No valid data.</div>
+              )}
+            </Grid.Column>
           </Grid>
         </div>
       </div>
