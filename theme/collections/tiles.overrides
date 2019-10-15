@@ -1,5 +1,4 @@
-// General styling
-
+// General
 .tile-container {
   padding: 10px;
   height: 100%;
@@ -37,9 +36,7 @@
 }
 
 
-
 // Tile style types
-
 .default-tile {
   background-color: #fff;
 }
@@ -56,14 +53,19 @@
   border-radius: 5px;
 }
 
+.green-border-tile {
+  border: 1px solid @lightGreen;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .filled-tile {
   background-color: #f6f6f5;
   border-radius: 5px;
 }
 
 
-// Europe forest specific tiles styling
-
+// Europe forest specific tiles
 .tile-container {
   h5 {
     color : @darkBrown;
@@ -175,15 +177,6 @@
     margin-top: auto;
   }
 
-  .chart-description {
-    color: @darkGreen;
-    font-size: 14px;
-    font-weight: 300;
-    background-color: #f6f6f5;
-    padding: 1em;
-    border-radius: 5px;
-  }
-
   .map-wrapper {
     border: 1px solid @darkGreen;
     border-radius: 5px;
@@ -195,8 +188,29 @@
   }
 }
 
+
 // frontpage chart tile text
 .tile-text-content {
-  padding: 1rem;
+  color: @darkGreen;
+  font-size: 14px;
+  font-weight: 300;
+  >div {
+    padding: 1em;
+    background-color: #f6f6f5;
+    border-radius: 5px;
+  }
 }
 .embedded-chart {width: 100%; height: 100%}
+
+
+// Embedded map tile
+.tile-container {
+  .tile.maps {
+    height: 100%;
+    .video-inner,
+    iframe {
+      height: 100% !important;
+      min-height: 100px;
+    }
+  }
+}

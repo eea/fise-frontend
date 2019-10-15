@@ -41,7 +41,7 @@ class EmbedChartView extends Component {
         <div className="tile-inner-wrapper">
           <Grid>
             <Grid.Column width={4}>
-              <div class="tile-text-content chart-description">
+              <div class="tile-text-content">
                 {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
               </div>
             </Grid.Column>
@@ -56,17 +56,20 @@ class EmbedChartView extends Component {
                   }}
                   frames={this.state.chartData.frames || []}
                   config={{ displayModeBar: false }}
-                />
+                  />
               ) : (
                 <div>No valid data.</div>
               )}
             </Grid.Column>
+            <Grid.Column width={12}>
+              <div>
+                <a className="discreet"
+                   href={this.props.data.chart_source_link}>
+                  {this.props.data.chart_source}
+                </a>
+              </div>
+            </Grid.Column>
           </Grid>
-          <div>
-            <a className="discreet" href={this.props.data.chart_source_link}>
-              {this.props.data.chart_source}
-            </a>
-          </div>
         </div>
       </div>
     );
