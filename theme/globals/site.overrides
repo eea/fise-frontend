@@ -238,7 +238,10 @@ body.has-toolbar {
   .nav-actions {
     position       : absolute;
     top            : 0;
-    right          : 3rem;
+    right: 0;
+    // padding-right: 2rem;
+
+    padding-right: 5rem;
     display        : flex;
     justify-content: center;
     align-items    : center;
@@ -794,7 +797,8 @@ a {
 }
 
 .tools {
-  margin-right: 0!important;
+  // margin-right: 0!important;
+  margin-right: -3rem!important;
   line-height: 1;
 }
 .tiles-chooser {

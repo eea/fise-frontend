@@ -37,6 +37,7 @@ class ChartPick extends Component {
     this.state = {
       localChartData,
       text,
+      ...props.data
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -53,9 +54,8 @@ class ChartPick extends Component {
     this.props.onChangeTile(this.props.tile, {
       ...this.props.data,
       'chart-text': this.state.text,
-      'chart_source': this.state.chart_source,
-      'chart_source_link': this.state.chart_source_link,
       chartData: this.state.localChartData,
+      ...this.state,
     });
   }
 
