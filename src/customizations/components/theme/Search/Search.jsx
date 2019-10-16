@@ -32,8 +32,8 @@ const toSearchOptions = (searchableText, subject, path) => {
 };
 
 const panes = context => [
-  { menuItem: 'Documents', render: () => renderIframe(context) },
-  { menuItem: 'Plone results', render: () => renderSearch(context) },
+  { menuItem: 'National Forest Inventories', render: () => renderIframe(context) },
+  { menuItem: 'Portal results', render: () => renderSearch(context) },
 ];
 
 function renderSearch(context) {
@@ -91,7 +91,7 @@ function renderSearch(context) {
 function renderIframe(context) {
   return (
     <iframe
-      src={`http://nfi-search.dev.eaudeweb.ro/#${context.term}`}
+      src={`https://nfi-search.dev.eaudeweb.ro/#${context.term}`}
       width="100%"
       height="1300"
       title="fise search"
