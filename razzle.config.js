@@ -2,7 +2,6 @@
  * Replace with custom razzle config when needed.
  * @module razzle.config
  */
-
 const jsConfig = require('./jsconfig').compilerOptions;
 
 const pathsConfig = jsConfig.paths;
@@ -13,17 +12,26 @@ Object.keys(pathsConfig).forEach(pkg => {
   }
 });
 
+const voltoConfig = require(`${voltoPath}/razzle.config`);
 
-const razzleConfig = require(`${voltoPath}/razzle.config`);
-
-const razzleModify = razzleConfig.modify 
-
+const razzleModify = voltoConfig.modify;
 
 module.exports = {
-    ...razzleConfig,
-    modify: (config, { target, dev }, webpack) => {
-      const modifiedConfig = razzleModify(config, { target, dev }, webpack)
-      modifiedConfig.module.rules[0].include.push('/opt/fise/volto-mosaic')
-      return modifiedConfig
-    }
-}
+  ...voltoConfig,
+  plugins: ['forest-analyzer', ...voltoConfig.plugins],
+  modify: (config, { target, dev }, webpack) => {
+    const modifiedConfig = razzleModify(config, { target, dev }, webpack);
+    modifiedConfig.module.rules[0].include.push('/opt/fise/volto-mosaic');
+
+    // modifiedConfig.plugins.push({
+    //   name: 'bundle-analyzer',
+    //   options: {
+    //     concatenateModules: false,
+    //   },
+    // });
+    // console.log('modified config', modifiedConfig);
+
+    // modifiedConfig.module.exports
+    return modifiedConfig;
+  },
+};
