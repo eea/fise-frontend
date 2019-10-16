@@ -19,19 +19,10 @@ const razzleModify = voltoConfig.modify;
 module.exports = {
   ...voltoConfig,
   plugins: ['forest-analyzer', ...voltoConfig.plugins],
+
   modify: (config, { target, dev }, webpack) => {
     const modifiedConfig = razzleModify(config, { target, dev }, webpack);
     modifiedConfig.module.rules[0].include.push('/opt/fise/volto-mosaic');
-
-    // modifiedConfig.plugins.push({
-    //   name: 'bundle-analyzer',
-    //   options: {
-    //     concatenateModules: false,
-    //   },
-    // });
-    // console.log('modified config', modifiedConfig);
-
-    // modifiedConfig.module.exports
     return modifiedConfig;
   },
 };
