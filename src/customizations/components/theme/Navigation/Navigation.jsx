@@ -214,20 +214,22 @@ class Navigation extends Component {
                         {subitem.title}
                       </Link>
                       {subitem.items && (
-                        <div className="submenu">
-                          {subitem.items.map(subsubitem => (
-                            <Link
-                              to={subsubitem.url === '' ? '/' : subsubitem.url}
-                              key={subsubitem.url}
-                              className={
-                                this.isActive(subsubitem.url)
+                        <div className="submenu-wrapper">
+                          <div className="submenu">
+                            {subitem.items.map(subsubitem => (
+                              <Link
+                                to={subsubitem.url === '' ? '/' : subsubitem.url}
+                                key={subsubitem.url}
+                                className={
+                                  this.isActive(subsubitem.url)
                                   ? 'item thirdLevel menuActive'
                                   : 'item thirdLevel'
-                              }
-                            >
-                              {subsubitem.title}
-                            </Link>
-                          ))}
+                                }
+                                >
+                                {subsubitem.title}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </Dropdown.Item>

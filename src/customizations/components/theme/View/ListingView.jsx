@@ -33,7 +33,7 @@ const messages = defineMessages({
 
 class ListingView extends Component {
   static propTypes = {
-    localNavigation: PropTypes.array,
+    localNavigation: PropTypes.any,
     getLocalnavigation: PropTypes.func.isRequired,
     pathname: PropTypes.any,
     content: PropTypes.shape({
