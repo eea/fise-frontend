@@ -41,7 +41,7 @@ class EmbedChartView extends Component {
         <div className="tile-inner-wrapper">
           <Grid>
             <Grid.Column width={4}>
-              <div class="tile-text-content">
+              <div className="tile-text-content">
                 {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
               </div>
             </Grid.Column>
