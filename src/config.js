@@ -115,7 +115,7 @@ export const widgets = {
   },
 };
 
-console.log('config widgets', widgets);
+// console.log('config widgets', widgets);
 
 defineMessages({
   custom_addons: {

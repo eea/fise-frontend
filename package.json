@@ -26,7 +26,7 @@
       "/node_modules/(?!@plone/volto).+\\.js$"
     ],
     "moduleNameMapper": {
-      "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
+      "@plone/volto/(.*)$": "<rootDir>/volto/src/$1",
       "@package/(.*)$": "<rootDir>/src/$1",
       "~/(.*)$": "<rootDir>/src/$1"
     },
