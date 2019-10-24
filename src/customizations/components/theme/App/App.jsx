@@ -15,7 +15,7 @@ import { Slide, ToastContainer, toast } from 'react-toastify';
 
 import Error from '@plone/volto/error';
 
-import { Footer, Header, Icon, Messages } from '@plone/volto/components';
+import { Icon, Messages } from '@plone/volto/components';
 import { BodyClass, getBaseUrl, getView } from '@plone/volto/helpers';
 import {
   getContent,
@@ -30,17 +30,39 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 const mapDispatchToProps = {
   getDefaultHeaderImage,
 };
-/**
- * @export
- * @class App
- * @extends {Component}
- */
+
+
+
+import Loadable from 'react-loadable';
+// import Loading from './my-loading-component';
+
+const LoadableFooter = Loadable({
+  loader: () => import(/* webpackChunkName: "footer" */ '~/customizations/components/theme/Footer/Footer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+
+const Header = Loadable({
+  loader: () => import('~/customizations/components/theme/Header/Header'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+
+// const LoadableFooter = ''
+
+// export default class App extends React.Component {
+//   render() {
+//     return <LoadableComponent/>;
+//   }
+// }
+
+
+
 class App extends Component {
-  /**
-   * Property types.
-   * @property {Object} propTypes Property types.
-   * @static
-   */
   static propTypes = {
     pathname: PropTypes.string.isRequired,
     purgeMessages: PropTypes.func.isRequired,
@@ -131,7 +153,7 @@ class App extends Component {
             </main>
           </Container>
         </Segment>
-        <Footer />
+        <LoadableFooter />
         <ToastContainer
           position={toast.POSITION.BOTTOM_CENTER}
           hideProgressBar

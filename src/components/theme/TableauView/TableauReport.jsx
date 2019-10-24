@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import url from 'url';
-import { Promise } from 'es6-promise';
+// import { Promise } from 'es6-promise';
 import shallowequal from 'shallowequal';
 import tokenizeUrl from './tokenizeUrl';
 
@@ -37,9 +37,9 @@ class TableauReport extends React.Component {
     };
 
     if (!__SERVER__) {
-      this.api = require('./../../../../thirdparty/tableau-2.3.0');
+      // this.api = require('./../../../../thirdparty/tableau-2.3.0');
     } else {
-      this.api = null;
+      // this.api = null;
     }
     this.onChange = this.onChange.bind(this);
   }

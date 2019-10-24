@@ -17,7 +17,7 @@ import {
 } from '@plone/volto/components';
 
 import HeaderImage from '~/components/theme/Header/HeaderImage';
-import HomepageSlider from '~/components/theme/Header/HomepageSlider';
+// import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import Sticky from 'react-stickynode';
 
 import { getFrontpageSlides } from '~/actions';
@@ -25,6 +25,21 @@ import { getFrontpageSlides } from '~/actions';
 import HeaderBackground from './header-bg.png';
 
 const staticHeader = require('~/static/s1.jpg');
+
+
+
+import Loadable from 'react-loadable';
+
+const HomepageSlider = Loadable({
+  loader: () => import(/* webpackChunkName: "Slider" */ '~/components/theme/Header/HomepageSlider'),
+  loading() {
+    return <div>Loading...</div>
+  },
+});
+
+
+
+
 
 /**
  * Header component class.
