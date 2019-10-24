@@ -1,4 +1,7 @@
-import { GET_ALL_ATTACHMENTS } from '~/constants/ActionTypes';
+import {
+  GET_ALL_ATTACHMENTS,
+  CREATE_ATTACHMENT,
+} from '~/constants/ActionTypes';
 
 const initialState = {
   error: null,
@@ -14,7 +17,7 @@ const initialState = {
  * @param {Object} action Action to be handled.
  * @returns {Object} New state.
  */
-export default function data_providers(state = initialState, action = {}) {
+export default function attachments(state = initialState, action = {}) {
   switch (action.type) {
     case `${GET_ALL_ATTACHMENTS}_PENDING`:
       return {
@@ -28,7 +31,7 @@ export default function data_providers(state = initialState, action = {}) {
       return {
         ...state,
         error: null,
-        attachments: action.result.items || {},
+        attachments: action.result.items || [],
         loaded: true,
         loading: false,
       };
@@ -36,7 +39,32 @@ export default function data_providers(state = initialState, action = {}) {
       return {
         ...state,
         error: action.error,
-        attachments: {},
+        attachments: [],
+        loaded: false,
+        loading: false,
+      };
+
+    case `${CREATE_ATTACHMENT}_PENDING`:
+      return {
+        ...state,
+        error: null,
+        loaded: false,
+        loading: true,
+      };
+    case `${CREATE_ATTACHMENT}_SUCCESS`:
+      console.log('Success creating attachment', action.result);
+      return {
+        ...state,
+        error: null,
+        attachments: [action.result, ...state.attachments],
+        loaded: true,
+        loading: false,
+      };
+    case `${CREATE_ATTACHMENT}_FAIL`:
+      return {
+        ...state,
+        error: action.error,
+        attachments: [],
         loaded: false,
         loading: false,
       };

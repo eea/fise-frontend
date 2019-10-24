@@ -61,23 +61,21 @@ class EditSlider extends Component {
     return (
       <div>
         <Dropzone onDrop={this.onDrop} className="dropzone">
-          {({ getRootProps, getInputProps }) => (
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              <Message>
-                {(this.state.uploading && (
-                  <Dimmer active>
-                    <Loader indeterminate>Uploading</Loader>
-                  </Dimmer>
-                )) || <div>Drag files here</div>}
-              </Message>
-            </div>
-          )}
+          <Message>
+            {(this.state.uploading && (
+              <Dimmer active>
+                <Loader indeterminate>Uploading</Loader>
+              </Dimmer>
+            )) || <div>Drag files here</div>}
+          </Message>
         </Dropzone>
         <Item.Group divided>
           {this.props.attachments.map(at => (
-            <Item>
-              <Item.Image size="tiny" src={at.file.scales.listing.download} />
+            <Item key={at['@id']}>
+              <Item.Image
+                size="tiny"
+                src={flattenToAppURL(at.file.scales.thumb.download)}
+              />
               <Item.Content>{at.text}</Item.Content>
             </Item>
           ))}
