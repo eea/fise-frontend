@@ -13,6 +13,7 @@ import data_providers from '~/reducers/data_providers';
 import parent_folder_data from '~/reducers/parent_folder_data';
 import localnavigation from '~/reducers/localnavigation';
 import chart_data_visualization from './chart_data_visualization';
+import attachments from './attachments';
 
 /**
  * Root reducer.
@@ -23,6 +24,7 @@ import chart_data_visualization from './chart_data_visualization';
  */
 const reducers = {
   ...defaultReducers,
+  // Add your reducers here
   frontpage_slides,
   folder_header,
   default_header_image,
@@ -32,7 +34,7 @@ const reducers = {
   data_providers,
   localnavigation,
   chart_data_visualization,
-  // Add your reducers here
+  attachments,
 };
 
 export default reducers;

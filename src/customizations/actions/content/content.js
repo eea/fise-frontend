@@ -117,15 +117,15 @@ export function sortContent(url, on, order) {
  */
 export function getContent(url, version = null, subrequest = null) {
   return function(dispatch) {
-    dispatch({
-      type: SET_FOLDER_HEADER,
-      subrequest,
-      request: {
-        op: 'get',
-        path: `${url}${version ? `/@history/${version}` : ''}?fullobjects`,
-      },
-    });
-    console.log('getContent', url);
+    // dispatch({
+    //   type: SET_FOLDER_HEADER,
+    //   subrequest,
+    //   request: {
+    //     op: 'get',
+    //     path: `${url}${version ? `/@history/${version}` : ''}?fullobjects`,
+    //   },
+    // });
+    console.log('will getContent', url);
     dispatch({
       type: GET_CONTENT,
       subrequest,

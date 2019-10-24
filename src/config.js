@@ -1,17 +1,3 @@
-/**
- * Add your config changes here.
- * @module config
- * @example
- * export const settings = {
- *   ...defaultSettings,
- *   port: 4300,
- *   listBlockTypes: {
- *     ...defaultSettings.listBlockTypes,
- *     'my-list-item',
- *   }
- * }
- */
-
 import React from 'react';
 
 import {
@@ -46,6 +32,7 @@ import TextTileEdit from '~/components/manage/Tiles/Text/Edit';
 import TextTileView from '~/components/manage/Tiles/Text/View';
 
 import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
+import SliderEditButton from '~/components/manage/Slider/Portlet';
 
 // Display types
 import CountryView from '~/components/theme/CountryView/CountryView';
@@ -58,9 +45,7 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import underlineSVG from '@plone/volto/icons/underline.svg';
 import chartIcon from '@plone/volto/icons/world.svg';
 
-// TODO: this needs to be reorganized
 import { layoutViews } from '~/../volto-mosaic/src';
-import MosaicView from '~/../volto-mosaic/src/components/theme/View';
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
@@ -73,6 +58,13 @@ export const settings = {
     Underline,
     ...defaultSettings.richTextEditorInlineToolbarButtons,
   ],
+  nonContentRoutes: [
+    // handled differently in getBaseUrl
+    ...defaultSettings.nonContentRoutes,
+    '/manage-slider',
+    '/mosaic-settings-view',
+    '/data-providers-view',
+  ],
 };
 
 export const views = {
@@ -82,14 +74,10 @@ export const views = {
     full_view: CountryView,
     country_tab_view: CountryPageView,
     homepage_view: HomepageView,
-    // tableau_test_view: TableauTestView,
-    // mosaic_tiles_view: MosaicView,
     ...layoutViews,
   },
   contentTypesViews: {
     ...defaultViews.contentTypesViews,
-    // 'Plone Site': HomepageView,
-    // 'Plone Site': MosaicView,
     visualization: VisualizationView,
   },
 };
@@ -114,8 +102,6 @@ export const widgets = {
     cktext: CKEditorWidget,
   },
 };
-
-console.log('config widgets', widgets);
 
 defineMessages({
   custom_addons: {
@@ -173,7 +159,6 @@ export const tiles = {
       view: ChartTileView,
       edit: ChartTileEdit,
       icon: chartIcon,
-      // height: 400,
       group: 'custom_addons',
     },
     plotly_chart: {
@@ -182,7 +167,6 @@ export const tiles = {
       view: PlotlyTileView,
       edit: PlotlyTileEdit,
       icon: chartIcon,
-      // height: 400,
       group: 'custom_addons',
     },
     tableau: {
@@ -191,7 +175,6 @@ export const tiles = {
       view: tableauTileView,
       edit: TableauTileEdit,
       icon: chartIcon,
-      // height: 400,
       group: 'custom_addons',
     },
     cktext: {
@@ -201,42 +184,8 @@ export const tiles = {
       view: TextTileView,
       edit: TextTileEdit,
       icon: defaultTiles.tilesConfig.text.icon,
-      // height: 200,
     },
-    // video: {
-    //   ...defaultTiles.tilesConfig.video,
-    //   height: 600,
-    // },
-    // // image: {
-    // //   ...defaultTiles.tilesConfig.image,
-    // //   height: 600,
-    // // },
-    // hero: {
-    //   ...defaultTiles.tilesConfig.hero,
-    //   height: 600,
-    // },
-    // maps: {
-    //   ...defaultTiles.tilesConfig.maps,
-    //   height: 600,
-    // },
-    // html: {
-    //   ...defaultTiles.tilesConfig.html,
-    //   height: 600,
-    // },
-    // table: {
-    //   ...defaultTiles.tilesConfig.table,
-    //   height: 600,
-    // },
   },
 };
 
-export const portlets = [ForestMetadata];
-
-// import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
-// import ChartWidget from '~/components/manage/Widgets/TestWidget';
-// import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
-// import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
-// import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
-// import TableauTestView from '~/components/theme/TableauTestView/View';
-// import MosaicView from '~/components/theme/MosaicView/MosaicView';
-// import divideVertical from '@plone/volto/icons/divide-vertical.svg';
+export const portlets = [ForestMetadata, SliderEditButton];

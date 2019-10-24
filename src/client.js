@@ -5,7 +5,7 @@
 
 import client from '@plone/volto/start-client';
 
-console.log("Starting");
+console.log('Starting');
 client();
 
 if (module.hot) {

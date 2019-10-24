@@ -21,6 +21,9 @@ import {
   GET_DATA_FROM_PROVIDER,
   GET_LOCALNAVIGATION,
   GET_CHART_DATA_FROM_VISUALIZATION,
+  CREATE_ATTACHMENT,
+  GET_ALL_ATTACHMENTS,
+  GET_ATTACHMENTS,
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -123,6 +126,38 @@ export function getChartDataFromVisualization(path) {
     request: {
       op: 'get',
       path,
+    },
+  };
+}
+
+export function createAttachment(url, content) {
+  return {
+    type: CREATE_ATTACHMENT,
+    request: {
+      op: 'post',
+      path: url,
+      data: content,
+    },
+  };
+}
+
+export function getAllAttachments(path) {
+  return {
+    type: GET_ALL_ATTACHMENTS,
+    request: {
+      op: 'get',
+      path,
+    },
+  };
+}
+
+export function getAttachments(path, _type) {
+  return {
+    type: GET_ATTACHMENTS,
+    request: {
+      op: 'get',
+      path,
+      data: { container: _type },
     },
   };
 }
