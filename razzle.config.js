@@ -1,4 +1,4 @@
-const resolve = require('path').resolve;
+const { resolve } = require('path');
 const jsConfig = require('./jsconfig').compilerOptions;
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
@@ -31,13 +31,13 @@ module.exports = {
       new ReactLoadablePlugin({
         filename: './build/react-loadable.json',
       }),
-      new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        generateStatsFile: true,
-        statsFilename: stats,
-        reportFilename: report,
-        openAnalyzer: false,
-      }),
+      // new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
+      //   analyzerMode: 'static',
+      //   generateStatsFile: true,
+      //   statsFilename: stats,
+      //   reportFilename: report,
+      //   openAnalyzer: false,
+      // }),
     ] || []
 
     vc.plugins = [...vc.plugins, ...productionPlugins]
