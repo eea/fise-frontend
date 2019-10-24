@@ -44,9 +44,24 @@ export default function attachments(state = initialState, action = {}) {
         loading: false,
       };
 
+    default:
+      return state;
+  }
+}
+
+const createInitialState = {
+  error: null,
+  created_attachment: null,
+  loaded: false,
+  loading: false,
+};
+
+export function create_attachment(state = createInitialState, action = {}) {
+  switch (action.type) {
     case `${CREATE_ATTACHMENT}_PENDING`:
       return {
         ...state,
+        created_attachment: null,
         error: null,
         loaded: false,
         loading: true,
@@ -56,7 +71,7 @@ export default function attachments(state = initialState, action = {}) {
       return {
         ...state,
         error: null,
-        attachments: [action.result, ...state.attachments],
+        created_attachment: action.result,
         loaded: true,
         loading: false,
       };
@@ -64,7 +79,7 @@ export default function attachments(state = initialState, action = {}) {
       return {
         ...state,
         error: action.error,
-        attachments: [],
+        created_attachment: null,
         loaded: false,
         loading: false,
       };

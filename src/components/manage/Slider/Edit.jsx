@@ -20,9 +20,6 @@ import { withRouter } from 'react-router-dom';
 import redraft from 'redraft';
 import ReactDOMServer from 'react-dom/server';
 
-// import { convertFromRaw, convertToRaw, EditorState } from 'draft-js';
-// import Editor from 'draft-js-plugins-editor';
-
 const CONTAINER = 'slider-images';
 
 class SlideEditor extends Component {
@@ -175,18 +172,26 @@ class EditSlider extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.pathname === prevProps.pathname) return;
-    const url = `${getBaseUrl(this.props.pathname)}/@attachments`;
-    this.props.getAllAttachments(url);
+    if (this.props.pathname !== prevProps.pathname) {
+      const url = `${getBaseUrl(this.props.pathname)}/@attachments`;
+      this.props.getAllAttachments(url);
+      return;
+    }
+    if (
+      this.props.create_attachment.loaded === true &&
+      prevProps.create_attachment.loading === true
+    ) {
+      this.setState({ uploading: false });
+    }
   }
 
   onChange(id, data) {
-    this.props.saveAttachment(id, data);
+    this.props.updateAttachment(id, data);
     console.log('on change', data);
   }
 
   render() {
-    console.log('props attachments', this.props.attachments);
+    console.log('props attachments', this.props.slides);
     return (
       <div>
         <Dropzone onDrop={this.onDrop} className="dropzone">
@@ -199,7 +204,7 @@ class EditSlider extends Component {
           </Message>
         </Dropzone>
         <Item.Group divided>
-          {this.props.attachments.map((at, i) => (
+          {this.props.slides.map((at, i) => (
             <SlideEditor
               key={at['@id']}
               slide={at}
@@ -210,38 +215,31 @@ class EditSlider extends Component {
           ))}
         </Item.Group>
         {this.props.attach_errors || ''}
-        {this.props.data.url ? (
-          <p>
-            <img
-              src={
-                this.props.data.url.includes(settings.apiPath)
-                  ? `${flattenToAppURL(this.props.data.url)}/@@images/image`
-                  : this.props.data.url
-              }
-              alt=""
-            />
-          </p>
-        ) : null}
       </div>
     );
   }
 }
 
-function getSliderImages(attachments) {
+function getSliderImages(attachments, new_attachment) {
   if (!attachments) return [];
 
   const atch = attachments.attachments || [];
   const slider = (atch && atch.find(el => el['@id'] === 'slider-images')) || [];
-  return (slider && slider.items) || [];
+  let res = [...(slider.items || [])];
+  if (new_attachment) res = [new_attachment, ...res];
+  return res;
 }
 
 export default compose(
   connect(
     (state, props) => ({
-      data: {},
-      attachments: getSliderImages(state.attachments || {}),
+      slides: getSliderImages(
+        state.attachments || {},
+        state.create_attachment.created_attachment,
+      ),
       pathname: props.location.pathname,
       attach_errors: state.attachments.errors,
+      create_attachment: state.create_attachment,
     }),
     {
       createAttachment,
