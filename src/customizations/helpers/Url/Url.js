@@ -13,10 +13,11 @@ import { settings } from '~/config';
  * @return {string} Base url of content object.
  */
 export const getBaseUrl = memoize(url => {
-  let adjustedUrl = settings.nonContentRoutes.reduce(
-    (acc, item) => acc.replace(item, ''),
-    url,
-  );
+  // console.log('settings routes', settings.nonContentRoutes);
+  let adjustedUrl = settings.nonContentRoutes.reduce((acc, item) => {
+    // console.log('cur acc', acc, item);
+    return acc.replace(item, '');
+  }, url);
 
   adjustedUrl = adjustedUrl || '/';
   return adjustedUrl === '/' ? '' : adjustedUrl;

@@ -20,16 +20,15 @@
     "import/no-unresolved": 1,
     "prettier/prettier": [
       "error",
-      { "trailingComma": "all", "singleQuote": true }
+    { "trailingComma": "all", "singleQuote": true }
     ]
   },
   "settings": {
     "import/resolver": {
       "alias": {
         "map": [
-          ["@plone/volto", "./node_modules/@plone/volto/src"],
-          ["~", "./src"],
-          ["~/actions", "./src/actions"]
+          ["@plone/volto", "./volto/src"],
+          ["~", "./src"]
         ],
         "extensions": [".js", ".jsx", ".json"]
       },
@@ -52,6 +51,6 @@
     "webpackIsomorphicTools": true,
     "cy": true,
     "Cypress": true
-  }
+  },
+  "root": true,
 }
-

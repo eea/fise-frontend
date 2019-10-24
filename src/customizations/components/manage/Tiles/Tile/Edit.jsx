@@ -163,7 +163,7 @@ class Edit extends Component {
           this.props.data.text.blocks &&
           this.props.data.text.blocks.length === 1 &&
           this.props.data.text.blocks[0].text === ''));
-    console.log('props in folder edit', this.props)
+    // console.log('props in folder edit', this.props)
     // return connectDropTarget(
     //   connectDragPreview(
        return <div className={`ui drag tile inner ${type}`}>

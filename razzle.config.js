@@ -1,3 +1,9 @@
+/**
+ * Replace with custom razzle config when needed.
+ * @module razzle.config
+ */
+
+const { ReactLoadablePlugin } = require('react-loadable/webpack');
 const jsConfig = require('./jsconfig').compilerOptions;
 
 const pathsConfig = jsConfig.paths;
@@ -10,22 +16,31 @@ Object.keys(pathsConfig).forEach(pkg => {
 
 const voltoConfig = require(`${voltoPath}/razzle.config`);
 
-const razzleModify = voltoConfig.modify;
-
 module.exports = {
   ...voltoConfig,
   // plugins: ['forest-analyzer', ...voltoConfig.plugins],
 
   modify: (config, { target, dev }, webpack) => {
-    const modifiedConfig = razzleModify(config, { target, dev }, webpack);
-    modifiedConfig.module.rules[0].include.push('/opt/fise/volto-mosaic');
-    
-    // need to include /theme/ to less loader in order to have it working with volto as a submodule.
-    const modifiedLess = modifiedConfig.module.rules.find(module => module.test && module.test.toString() == /\.less$/)
-    const index = modifiedConfig.module.rules.indexOf(modifiedLess)
-    modifiedLess.include.push(/theme/)
-    modifiedConfig.module.rules[index] = modifiedLess
+    const vc = voltoConfig.modify(config, { target, dev }, webpack);
 
-    return modifiedConfig;
+    vc.module.rules[0].include.push('./volto-mosaic');
+
+    // need to include /theme/ to less loader in order to have it working with volto as a submodule.
+    const modifiedLess = vc.module.rules.find(
+      module => module.test && module.test.toString() == /\.less$/,
+    );
+    const index = vc.module.rules.indexOf(modifiedLess);
+    modifiedLess.include.push(/theme/);
+    vc.module.rules[index] = modifiedLess;
+
+    console.log('vc', vc);
+    vc.plugins = [
+      ...vc.plugins,
+      new ReactLoadablePlugin({
+        filename: './build/react-loadable.json',
+      }),
+    ];
+
+    return vc;
   },
 };

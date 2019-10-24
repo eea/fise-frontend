@@ -40,7 +40,7 @@ export function persistAuthToken(store) {
       if (!currentValue) {
         cookie.remove('auth_token', { path: '/' });
       } else {
-          console.log(jwtDecode(currentValue).exp, jwtDecode(currentValue))
+        console.log(jwtDecode(currentValue).exp, jwtDecode(currentValue));
         cookie.save('auth_token', currentValue, {
           path: '/',
           expires: new Date(jwtDecode(currentValue).exp * 1000),

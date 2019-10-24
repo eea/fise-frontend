@@ -6,6 +6,7 @@
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
 import { EditMosaic } from '../volto-mosaic/src';
+import EditSlider from '~/components/manage/Slider/Edit';
 
 import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';
 import DataProvidersView from '~/components/theme/TestViews/DataProvidersView';
@@ -28,6 +29,15 @@ const routes = [
       {
         path: '*/**/edit',
         component: EditMosaic,
+      },
+
+      {
+        path: '/manage-slider',
+        component: EditSlider,
+      },
+      {
+        path: '*/**/manage-slider',
+        component: EditSlider,
       },
 
       // test routes
