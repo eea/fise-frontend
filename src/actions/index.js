@@ -24,6 +24,8 @@ import {
   CREATE_ATTACHMENT,
   GET_ALL_ATTACHMENTS,
   GET_ATTACHMENTS,
+  DELETE_ATTACHMENT,
+  UPDATE_ATTACHMENT,
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -158,6 +160,28 @@ export function getAttachments(path, _type) {
       op: 'get',
       path,
       data: { container: _type },
+    },
+  };
+}
+
+export function deleteAttachment(path) {
+  console.log('deleting attachment action', path);
+  return {
+    type: DELETE_ATTACHMENT,
+    request: {
+      op: 'del',
+      path,
+    },
+  };
+}
+
+export function updateAttachment(path, data) {
+  return {
+    type: UPDATE_ATTACHMENT,
+    request: {
+      op: 'patch',
+      path,
+      data: {},
     },
   };
 }
