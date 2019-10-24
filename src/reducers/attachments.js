@@ -2,6 +2,7 @@ import {
   GET_ALL_ATTACHMENTS,
   CREATE_ATTACHMENT,
 } from '~/constants/ActionTypes';
+import { settings } from '~/config';
 
 const initialState = {
   error: null,
@@ -31,7 +32,10 @@ export default function attachments(state = initialState, action = {}) {
       return {
         ...state,
         error: null,
-        attachments: action.result.items || [],
+        attachments: action.result.items.map(item => ({
+          ...item,
+          url: item['@id'].replace(settings.apiPath, ''),
+        })),
         loaded: true,
         loading: false,
       };

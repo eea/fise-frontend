@@ -27,6 +27,7 @@ import {
   DELETE_ATTACHMENT,
   UPDATE_ATTACHMENT,
 } from '~/constants/ActionTypes';
+import { settings } from '~/config';
 
 export function getFrontpageSlides() {
   return {
@@ -170,18 +171,19 @@ export function deleteAttachment(path) {
     type: DELETE_ATTACHMENT,
     request: {
       op: 'del',
-      path,
+      path: path.replace(settings.apiPath, ''),
     },
   };
 }
 
 export function updateAttachment(path, data) {
+  console.log('action updateAttachment', path, data);
   return {
     type: UPDATE_ATTACHMENT,
     request: {
       op: 'patch',
-      path,
-      data: {},
+      path: path.replace(settings.apiPath, ''),
+      data,
     },
   };
 }

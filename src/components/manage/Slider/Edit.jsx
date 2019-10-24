@@ -39,7 +39,6 @@ class SlideEditor extends Component {
     this.setState({
       editorState: data,
     });
-    console.log(arguments);
   }
 
   sendDelete() {
@@ -55,7 +54,8 @@ class SlideEditor extends Component {
       ),
     );
     this.setState({ editing: false }, () => {
-      this.props.onChange(this.props.slide['@id'], text);
+      const url = this.props.slide['@id'];
+      this.props.onChange(url, { text });
     });
   }
 
@@ -128,7 +128,6 @@ class SlideEditor extends Component {
 class EditSlider extends Component {
   constructor(props) {
     super(props);
-    console.log('editslider props', props);
     this.state = {
       uploading: false,
     };
@@ -139,7 +138,6 @@ class EditSlider extends Component {
   }
 
   onDrop(acceptedFiles) {
-    console.log('ondrop props', this.props);
     this.setState({ uploading: true });
     acceptedFiles.forEach(file => {
       readAsDataURL(file).then(data => {
@@ -163,7 +161,7 @@ class EditSlider extends Component {
   }
 
   onDelete(path) {
-    this.props.deleteAttachment(path.replace(settings.apiPath, ''));
+    this.props.deleteAttachment(path);
   }
 
   componentDidMount() {
@@ -185,13 +183,11 @@ class EditSlider extends Component {
     }
   }
 
-  onChange(id, data) {
-    this.props.updateAttachment(id, data);
-    console.log('on change', data);
+  onChange(url, data) {
+    this.props.updateAttachment(url, data);
   }
 
   render() {
-    console.log('props attachments', this.props.slides);
     return (
       <div>
         <Dropzone onDrop={this.onDrop} className="dropzone">
