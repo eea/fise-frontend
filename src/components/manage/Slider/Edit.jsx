@@ -19,6 +19,8 @@ import { settings } from '~/config';
 import { withRouter } from 'react-router-dom';
 import redraft from 'redraft';
 import ReactDOMServer from 'react-dom/server';
+import { convertToRaw } from 'draft-js';
+import { stateFromHTML } from 'draft-js-import-html';
 
 const CONTAINER = 'slider-images';
 
@@ -65,6 +67,11 @@ class SlideEditor extends Component {
 
   render() {
     const slide = this.props.slide;
+    let editorState = stateFromHTML(slide.text.data || '', {
+      customBlockFn: settings.FromHTMLCustomBlockFn,
+    });
+    let text = convertToRaw(editorState);
+    const textdata = { text };
     return (
       <div ref={this.node}>
         <Item>
@@ -77,23 +84,29 @@ class SlideEditor extends Component {
               </Grid.Column>
               <Grid.Column width={8}>
                 {this.state.editing ? (
-                  <Editor
-                    index={this.props.index}
-                    detached={true}
-                    selected={false}
-                    tile={slide['@id']}
-                    onAddTile={this.nop}
-                    onChangeTile={this.onChangeTile}
-                    onDeleteTile={this.nop}
-                    onFocusPreviousTile={this.nop}
-                    onFocusNextTile={this.nop}
-                    onSelectTile={this.nop}
-                    onMutateTile={this.nop}
-                    data={slide.text || {}}
-                    tileNode={this.node}
-                  />
+                  <div>
+                    <Editor
+                      index={this.props.index}
+                      detached={true}
+                      selected={this.state.editing}
+                      tile={slide['@id']}
+                      onAddTile={this.nop}
+                      onChangeTile={this.onChangeTile}
+                      onDeleteTile={this.nop}
+                      onFocusPreviousTile={this.nop}
+                      onFocusNextTile={this.nop}
+                      onSelectTile={this.nop}
+                      onMutateTile={this.nop}
+                      data={textdata}
+                      tileNode={this.node}
+                    />
+                  </div>
                 ) : (
-                  <div>{slide.text}</div>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: (slide.text && slide.text.data) || '',
+                    }}
+                  />
                 )}
               </Grid.Column>
               <Grid.Column width={2}>
@@ -184,7 +197,7 @@ class EditSlider extends Component {
   }
 
   onChange(url, data) {
-    this.props.updateAttachment(url, data);
+    this.props.saveAttachment(url, data);
   }
 
   render() {
@@ -226,6 +239,19 @@ function getSliderImages(attachments, new_attachment) {
   return res;
 }
 
+// update attachment then sync all attachments
+function saveAttachment(path, data) {
+  return (dispatch, getState) => {
+    const basePath = getState().router.location.pathname;
+    return new Promise(resolve => {
+      resolve(dispatch(updateAttachment(path, data)));
+    }).then(() => {
+      const url = `${getBaseUrl(basePath)}/@attachments`;
+      dispatch(getAllAttachments(url));
+    });
+  };
+}
+
 export default compose(
   connect(
     (state, props) => ({
@@ -240,7 +266,7 @@ export default compose(
     {
       createAttachment,
       getAllAttachments,
-      updateAttachment,
+      saveAttachment,
       deleteAttachment,
     },
   ),
