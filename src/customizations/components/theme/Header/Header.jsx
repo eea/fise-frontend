@@ -24,28 +24,19 @@ import { getFrontpageSlides } from '~/actions';
 
 import HeaderBackground from './header-bg.png';
 
+// import React from 'react';
+import Loadable from 'react-loadable';
+import LoadingComponent from '~/components/Loadable/Loading.jsx';
+
 const staticHeader = require('~/static/s1.jpg');
 
-
-
-import Loadable from 'react-loadable';
-
 const HomepageSlider = Loadable({
-  loader: () => import(/* webpackChunkName: "Slider" */ '~/components/theme/Header/HomepageSlider'),
+  loader: () => import('~/components/theme/Header/HomepageSlider.jsx'),
   loading() {
-    return <div>Loading...</div>
+    return LoadingComponent('HomepageSlider');
   },
 });
 
-
-
-
-
-/**
- * Header component class.
- * @class Header
- * @extends Component
- */
 class Header extends Component {
   constructor(props) {
     super(props);

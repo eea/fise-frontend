@@ -80,6 +80,7 @@ class HomepageSlider extends Component {
   }
 
   componentDidMount() {
+    console.log('-------- MOUNTED')
     if (this.props.items && this.props.items.length) {
       this.getSlides();
     } else {
