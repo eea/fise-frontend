@@ -163,12 +163,12 @@ class Edit extends Component {
           this.props.data.text.blocks &&
           this.props.data.text.blocks.length === 1 &&
           this.props.data.text.blocks[0].text === ''));
-    // console.log('props in folder edit', this.props)
-    // return connectDropTarget(
-    //   connectDragPreview(
-       return <div className={`ui drag tile inner ${type}`}>
-          {selected && (
-            // connectDragSource
+
+    return connectDropTarget(
+      connectDragPreview(
+        <div className={`ui drag tile inner ${type}`}>
+          {selected &&
+            connectDragSource(
               <div
                 className={
                   hideHandler
@@ -177,7 +177,7 @@ class Edit extends Component {
                 }
               >
                 <Icon className="drag handle" name={dragSVG} size="18px" />
-              </div>
+              </div>,
             )}
           {Tile !== null ? (
             <div
@@ -236,21 +236,19 @@ class Edit extends Component {
               <Icon name={trashSVG} size="18px" />
             </Button>
           )}
-        </div>
-    //   ),
-    // );
+        </div>,
+      ),
+    );
   }
 }
 
-export default Edit
-
-// export default compose(
-//   injectIntl,
-//   DropTarget(ItemTypes.ITEM, itemTarget, connect => ({
-//     connectDropTarget: connect.dropTarget(),
-//   })),
-//   DragSource(ItemTypes.ITEM, itemSource, (connect, monitor) => ({
-//     connectDragSource: connect.dragSource(),
-//     connectDragPreview: connect.dragPreview(),
-//   })),
-// )(Edit);
+export default compose(
+  injectIntl,
+  DropTarget(ItemTypes.ITEM, itemTarget, connect => ({
+    connectDropTarget: connect.dropTarget(),
+  })),
+  DragSource(ItemTypes.ITEM, itemSource, (connect, monitor) => ({
+    connectDragSource: connect.dragSource(),
+    connectDragPreview: connect.dragPreview(),
+  })),
+)(Edit);
