@@ -1,5 +1,10 @@
-# IMAGE = "tiberiuichim/fise-frontend"
-DOCKERIMAGE_FILE = "docker-image.txt"
+image-name-split = $(word $2,$(subst :, ,$1))
+
+SHELL=/bin/bash
+DOCKERIMAGE_FILE="docker-image.txt"
+NAME := $(call image-name-split,$(shell cat $(DOCKERIMAGE_FILE)), 1)
+IMAGE := $(shell cat $(DOCKERIMAGE_FILE))
+
 .DEFAULT_GOAL := help
 
 .PHONY: all
@@ -11,7 +16,11 @@ clean:
 
 .PHONY: build
 build:
-	DEBUG= NODE_OPTIONS=--max_old_space_size=4096 RAZZLE_API_PATH=VOLTO_API_PATH RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH yarn build
+	DEBUG= \
+				 NODE_OPTIONS=--max_old_space_size=4096 \
+				 RAZZLE_API_PATH=VOLTO_API_PATH \
+				 RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
+				 yarn build;	\
 	./entrypoint-prod.sh
 
 .PHONY: start
@@ -20,7 +29,12 @@ start:		## (Inside container) starts production mode frontend server
 
 .PHONY: analyze
 analyze:		## (Inside container) build production resources and start bundle analyzer HTTP server
-	DEBUG= BUNDLE_ANALYZE=true NODE_OPTIONS=--max_old_space_size=4096 RAZZLE_API_PATH=VOLTO_API_PATH RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH yarn build
+	DEBUG= \
+				 BUNDLE_ANALYZE=true \
+				 NODE_OPTIONS=--max_old_space_size=4096 \
+				 RAZZLE_API_PATH=VOLTO_API_PATH \
+				 RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
+				 yarn build
 
 .PHONY: image
 image: bump build-image push		## (Host side) release a new version of frontend docker image
@@ -28,21 +42,19 @@ image: bump build-image push		## (Host side) release a new version of frontend d
 .PHONY: bump
 bump:
 	echo "Bumping version...";
-	python ./../scripts/version_bump.py $(VERSIONFILE);
+	python ./../scripts/version_bump.py $(DOCKERIMAGE_FILE);
 
 .PHONY: build-image
 build-image:
-	$(eval DOCKER_VERSION=$(shell cat $(DOCKERIMAGE_FILE)))
-	@echo "Building new docker image: $(DOCKER_VERSION)";
-	docker build . -t "$(DOCKER_VERSION)";
+	@echo "Building new docker image: $(IMAGE)";
+	docker build . -t "$(IMAGE)";
 	@echo "Image built."
 
 .PHONY: push
 push:
-	$(eval DOCKER_VERSION=$(shell cat $(DOCKERIMAGE_FILE)))
-	docker push $(DOCKER_VERSION)
-	# docker tag $(IMAGE):$(DOCKER_VERSION) $(IMAGE):latest
-	# docker push $(IMAGE):latest
+	docker push $(IMAGE)
+	docker tag $(IMAGE) $(NAME):latest
+	docker push $(NAME):latest
 
 .PHONY: help
 help:		## Show this help.
