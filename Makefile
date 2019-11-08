@@ -3,7 +3,7 @@ image-name-split = $(word $2,$(subst :, ,$1))
 SHELL=/bin/bash
 DOCKERIMAGE_FILE="docker-image.txt"
 NAME := $(call image-name-split,$(shell cat $(DOCKERIMAGE_FILE)), 1)
-IMAGE := $(shell cat $(DOCKERIMAGE_FILE))
+IMAGE=$(shell cat $(DOCKERIMAGE_FILE))
 
 .DEFAULT_GOAL := help
 
@@ -36,8 +36,8 @@ analyze:		## (Inside container) build production resources and start bundle anal
 				 RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
 				 yarn build
 
-.PHONY: image
-image: bump build-image push		## (Host side) release a new version of frontend docker image
+.PHONY: release
+release: bump build-image push		## (Host side) release a new version of frontend docker image
 
 .PHONY: bump
 bump:
@@ -55,6 +55,11 @@ push:
 	docker push $(IMAGE)
 	docker tag $(IMAGE) $(NAME):latest
 	docker push $(NAME):latest
+
+.PHONY: init-submodules		## Initialize the git submodules
+init-submodules:
+	git submodule init
+	git submodule update
 
 .PHONY: help
 help:		## Show this help.
