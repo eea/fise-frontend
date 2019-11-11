@@ -9,7 +9,7 @@ WORKDIR /opt/frontend/
 
 COPY docker-image.txt /
 COPY package.json .
-RUN yarn install
+RUN npm install
 
 COPY . .
 RUN rm -f package.json.lock
