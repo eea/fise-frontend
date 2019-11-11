@@ -9,6 +9,7 @@ IMAGE=$(shell cat $(DOCKERIMAGE_FILE))
 
 .PHONY: all
 all: clean build		## (Inside container) build a production version of resources
+	@echo "Built production files"
 
 .PHONY: clean
 clean:
@@ -47,7 +48,7 @@ bump:
 .PHONY: build-image
 build-image:
 	@echo "Building new docker image: $(IMAGE)";
-	docker build . -t "$(IMAGE)";
+	docker build . --network=host -t "$(IMAGE)";
 	@echo "Image built."
 
 .PHONY: push
