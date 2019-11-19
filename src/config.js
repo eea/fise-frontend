@@ -28,8 +28,12 @@ import PlotlyBlockView from 'volto-blocks/PlotlyChart/View';
 import TableauBlockEdit from 'volto-blocks/TableauBlock/TableauBlockEdit';
 import tableauBlockView from 'volto-blocks/TableauBlock/TableauBlockView';
 
-import TextBlockEdit from 'volto-blocks/Text/Edit';
-import TextBlockView from 'volto-blocks/Text/View';
+import TextBlockEdit from 'volto-blocks/Ckeditor/Edit';
+import TextBlockView from 'volto-blocks/Ckeditor/View';
+
+
+import TextBlockEditWysiwyg from 'volto-blocks/Text/Edit';
+import TextBlockViewWysiwyg from 'volto-blocks/Text/View';
 
 import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
 import SliderEditButton from '~/components/manage/Slider/Portlet';
@@ -185,6 +189,14 @@ export const blocks = {
       edit: TextBlockEdit,
       icon: defaultBlocks.blocksConfig.text.icon,
     },
+    wysiwyg: {
+      id: 'wysiwyg',
+      group: 'text',
+      title: 'WYSIWYG',
+      view: TextBlockViewWysiwyg,
+      edit: TextBlockEditWysiwyg,
+      icon: defaultBlocks.blocksConfig.text.icon,
+    }
   },
 };
 
