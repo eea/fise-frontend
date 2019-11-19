@@ -3,6 +3,7 @@
  * @module components/manage/Toolbar/Toolbar
  */
 
+import { Portal } from 'react-portal';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';

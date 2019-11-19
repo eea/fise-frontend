@@ -22,16 +22,16 @@
                         "./src"
                     ], 
                     [
-                        "volto-blocks", 
-                        "./src/addons/volto-blocks/src"
-                    ], 
-                    [
                         "volto-mosaic", 
                         "./src/addons/volto-mosaic/src"
                     ], 
                     [
                         "volto-datablocks", 
                         "./src/addons/volto-datablocks/src"
+                    ], 
+                    [
+                        "volto-blocks", 
+                        "./src/addons/volto-blocks/src"
                     ]
                 ]
             }, 
