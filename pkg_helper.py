@@ -3,10 +3,14 @@
 import argparse
 import json
 import os
+import subprocess
 import sys
+from collections import OrderedDict
 
 
 def activate(target):
+    """ Activates a package: write the required files for this
+    """
 
     if os.path.exists('jsconfig.json'):
         with open('jsconfig.json') as f:
@@ -15,7 +19,7 @@ def activate(target):
         t = '{}'
 
     try:
-        o = json.loads(t)
+        o = json.loads(t, object_pairs_hook=OrderedDict)
     except:
         print("Error in loading jsconfig.json file")
         sys.exit(137)
@@ -39,7 +43,7 @@ def activate(target):
         with open('.eslintrc') as f:
             t = f.read()
         try:
-            j = json.loads(t)
+            j = json.loads(t, object_pairs_hook=OrderedDict)
         except:
             print("Error in loading .eslintrc file")
             sys.exit(137)
@@ -67,6 +71,9 @@ def activate(target):
 
 
 def deactivate(target):
+    """ Removes activation for a package
+    """
+
     if not os.path.exists('jsconfig.json'):
         pass
     else:
@@ -74,7 +81,7 @@ def deactivate(target):
             t = f.read()
 
         try:
-            j = json.loads(t)
+            j = json.loads(t, object_pairs_hook=OrderedDict)
         except:
             print("Error in loading jsconfig.json file")
             sys.exit(137)
@@ -94,7 +101,7 @@ def deactivate(target):
         t = f.read()
 
     try:
-        j = json.loads(t)
+        j = json.loads(t, object_pairs_hook=OrderedDict)
     except:
         print("Error in loading .eslintrc file")
         sys.exit(137)
@@ -109,17 +116,60 @@ def deactivate(target):
     print("Deactivated package: {}".format(target))
 
 
+def activate_all():
+    """ Activates all packages in mr.developer.json
+    """
+
+    if not os.path.exists('./mr.developer.json'):
+        print("No Volto addons declared, no activation step needed")
+
+        return
+
+    with open('./mr.developer.json') as f:
+        j = json.load(f)
+
+    for name in j.keys():
+        activate(name)
+        subprocess.call(['npm', 'install', 'src/addons/{}'.format(name)])
+
+
+def list_addons():
+    """ Prints a list of addons available
+    """
+
+    if not os.path.exists('./mr.developer.json'):
+        return
+
+    with open('./mr.developer.json') as f:
+        j = json.load(f)
+
+    for k in j.keys():
+        print(k)
+
+
 def main(op, target):
     if op == 'activate':
-        activate(target)
+        if target:
+            activate(target)
 
     if op == 'deactivate':
-        deactivate(target)
+        if target:
+            deactivate(target)
+
+    if op == 'activate-all':
+        activate_all()
+
+    if op == 'list':
+        list_addons()
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser('Volto development helper')
-    parser.add_argument('op', type=str, choices=['activate', 'deactivate'])
-    parser.add_argument('target', type=str)
+    parser.add_argument('op', type=str,
+                        choices=['activate', 'deactivate',
+                                 'activate-all', 'list'],
+                        help="Operation type")
+    parser.add_argument('--target', type=str, default='', help="target name",
+                        dest="target")
     args = parser.parse_args()
     main(args.op, args.target)

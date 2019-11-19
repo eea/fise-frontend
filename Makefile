@@ -5,28 +5,51 @@ DOCKERIMAGE_FILE="docker-image.txt"
 NAME := $(call image-name-split,$(shell cat $(DOCKERIMAGE_FILE)), 1)
 IMAGE=$(shell cat $(DOCKERIMAGE_FILE))
 
+VOLTO_ADDONS=$(shell ./pkg_helper.py list)
+
 .DEFAULT_GOAL := help
 
 .PHONY: activate
 activate:		## Activate an addon package for development
-	@if [[ -z ${pkg} ]]; then\
+	if [[ -z "${pkg}" ]]; then\
 		echo "You need to specify package name in make command";\
 		echo "Ex: make activate pkg=volto-datablocks";\
 	else \
-		exec ./pkg_helper.py activate ${pkg};\
-		echo "Running npm install in src/addons/${pkg}";\
-		cd "src/addons/${pkg}";\
-		npm install;\
+		./pkg_helper.py --target=${pkg} activate;\
+		echo "Running npm install src/addons/${pkg}";\
+		npm install "src/addons/${pkg}";\
+		echo "Cleaning up after npm install";\
+		read -ra ADDR <<< "${VOLTO_ADDONS}"; \
+		for pkg in "$${ADDR[@]}"; do \
+			echo "removing $$pkg"; \
+			rm -rf "./node_modules/$$pkg";\
+		done; \
 		echo "Done.";\
 	fi
 
+PHONY: clean-addons
+clean-addons:
+	set -x; \
+		echo "Cleaning up after npm install";\
+		read -ra ADDR <<< "${VOLTO_ADDONS}"; \
+		for pkg in "$${ADDR[@]}"; do \
+			echo "removing $$pkg"; \
+			rm -rf "./node_modules/$$pkg";\
+		done; \
+
+.PHONY: activate-all
+activate-all:		## Automatically activates all addons from mr.developer.json
+	@echo "Activating all addon packages"
+	./pkg_helper.py activate-all
+
 .PHONY: deactivate
 deactivate:		## Deactivate an addon package for development
-	@if [[ -z ${pkg} ]]; then\
+	@if [[ -z "${pkg}" ]]; then\
 		echo "You need to specify package name in make command";\
 		echo "Ex: make deactivate pkg=volto-datablocks";\
 	else \
-		exec ./pkg_helper.py deactivate ${pkg};\
+		exec ./pkg_helper.py --target=${pkg} deactivate;\
+		rm -rf node_modules/${pkg};\
 		echo "Deactivated ${pkg}";\
 	fi
 
