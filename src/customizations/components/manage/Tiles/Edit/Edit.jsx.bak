@@ -16,7 +16,7 @@ import React, { Component } from 'react';
 
 // import { Form, Icon, Toolbar, Sidebar } from '@plone/volto/components';
 // import { updateContent, getContent, getSchema } from '@plone/volto/actions';
-// import { getBaseUrl, hasTilesData } from '@plone/volto/helpers';
+// import { getBaseUrl, hasBlocksData } from '@plone/volto/helpers';
 
 // import saveSVG from '@plone/volto/icons/save.svg';
 // import clearSVG from '@plone/volto/icons/clear.svg';
@@ -29,7 +29,7 @@ import { Classes, HTMLSelect } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import classNames from 'classnames';
 import dropRight from 'lodash/dropRight';
-import EditText from '@plone/volto/components/manage/Tiles/Text/Edit';
+import EditText from '@plone/volto/components/manage/Blocks/Text/Edit';
 
 import {
   Corner,
@@ -101,7 +101,7 @@ export default class ExampleApp extends Component {
         <div className="react-mosaic-example-app">
           {this.renderNavBar()}
           <Mosaic
-            renderTile={(count, path) => (
+            renderBlock={(count, path) => (
               <MosaicWindow
                 // <number>
                 // additionalControls={count === 3 ? additionalControls : EMPTY_ARRAY}

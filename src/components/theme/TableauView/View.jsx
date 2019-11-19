@@ -1,6 +1,6 @@
 /**
- * View image tile.
- * @module components/manage/Tiles/Hero/View
+ * View image block.
+ * @module components/manage/Blocks/Hero/View
  */
 
 import React, { Component } from 'react';
@@ -14,7 +14,7 @@ const visUrl = 'http://public.tableau.com/views/RegionalSampleWorkbook/Storms';
 //   'https://tableau.discomap.eea.europa.eu/t/Aironline/views/AQStatisticsAggregations_0/StatisticsViewer';
 
 /**
- * View image tile class.
+ * View image block class.
  * @class View
  * @extends Component
  */
@@ -40,7 +40,7 @@ class TableauTestView extends Component {
 
     return (
       <div className="chartWrapperView">
-        <div className="tile-inner-wrapper">
+        <div className="block-inner-wrapper">
           {this.state.renderChart ? (
             <TableauReport url={this.state.url} callback={this.saveCallback} />
           ) : (

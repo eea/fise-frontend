@@ -24,12 +24,12 @@ import {
   // setFolderHeader,
   setFolderTabs, getParentFolderData } from '~/actions';
 
-import { settings, tiles } from '~/config';
+import { settings, blocks } from '~/config';
 
 import {
-  getTilesFieldname,
-  getTilesLayoutFieldname,
-  hasTilesData,
+  getBlocksFieldname,
+  getBlocksLayoutFieldname,
+  hasBlocksData,
 } from '@plone/volto/helpers';
 
 const numberToWord = {
@@ -195,8 +195,8 @@ class CountryPageView extends Component {
 
   render() {
     const content = this.props.content;
-    const tilesFieldname = getTilesFieldname(content);
-    const tilesLayoutFieldname = getTilesLayoutFieldname(content);
+    const blocksFieldname = getBlocksFieldname(content);
+    const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
     {
       /*if (!this.tabs) {
       const pathArr = this.props.location.pathname.split('/');
@@ -207,7 +207,7 @@ class CountryPageView extends Component {
     */
     }
 
-    return hasTilesData(content) ? (
+    return hasBlocksData(content) ? (
       <div id="page-document" className="ui wrapper">
         {/*this.tabs && this.tabs.length ? (
           <div
@@ -383,19 +383,19 @@ class CountryPageView extends Component {
         </div>
 
         <div className="country-page-content-wrapper">
-          {map(content[tilesLayoutFieldname].items, tile => {
-            let Tile = null;
-            Tile =
-              tiles.defaultTilesViewMap[content[tilesFieldname][tile]['@type']];
-            return Tile !== null ? (
-              <Tile
-                key={tile}
+          {map(content[blocksLayoutFieldname].items, block => {
+            let Block = null;
+            Block =
+              blocks.defaultBlocksViewMap[content[blocksFieldname][block]['@type']];
+            return Block !== null ? (
+              <Block
+                key={block}
                 properties={content}
-                data={content[tilesFieldname][tile]}
+                data={content[blocksFieldname][block]}
               />
             ) : (
               <div>
-                {JSON.stringify(content[tilesFieldname][tile]['@type'])}
+                {JSON.stringify(content[blocksFieldname][block]['@type'])}
               </div>
             );
           })}

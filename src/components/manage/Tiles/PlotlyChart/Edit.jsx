@@ -52,7 +52,7 @@ class Edit extends Component {
       layout: this.state.layout,
       frames: this.state.frames,
     };
-    this.props.onChangeTile(this.props.tile, {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       chartData,
     });
@@ -89,8 +89,8 @@ class Edit extends Component {
     return (
       <div>
         {__CLIENT__ ? (
-          <div className="tile selected">
-            <div className="tile-inner-wrapper">
+          <div className="block selected">
+            <div className="block-inner-wrapper">
               <Dropdown
                 placeholder="Select data provider"
                 fluid

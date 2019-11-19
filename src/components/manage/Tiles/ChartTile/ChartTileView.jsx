@@ -38,10 +38,10 @@ class EmbedChartView extends Component {
     if (typeof text !== 'string') text = '';
     return (
       <div className="chartWrapperView">
-        <div className="tile-inner-wrapper">
+        <div className="block-inner-wrapper">
           <Grid>
             <Grid.Column width={4}>
-              <div className="tile-text-content">
+              <div className="block-text-content">
                 {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
               </div>
             </Grid.Column>

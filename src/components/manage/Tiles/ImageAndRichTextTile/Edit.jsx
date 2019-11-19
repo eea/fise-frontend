@@ -1,6 +1,6 @@
 /**
- * Edit Hero tile.
- * @module components/manage/Tiles/Image/Edit
+ * Edit Hero block.
+ * @module components/manage/Blocks/Image/Edit
  */
 
 import React, { Component } from 'react';
@@ -54,7 +54,7 @@ const extendedDescripBlockRenderMap = DefaultDraftBlockRenderMap.merge(
 );
 
 /**
- * Edit image tile class.
+ * Edit image block class.
  * @class Edit
  * @extends Component
  */
@@ -66,7 +66,7 @@ class Edit extends Component {
    */
   static propTypes = {
     selected: PropTypes.bool.isRequired,
-    tile: PropTypes.string.isRequired,
+    block: PropTypes.string.isRequired,
     index: PropTypes.number.isRequired,
     data: PropTypes.objectOf(PropTypes.any).isRequired,
     content: PropTypes.objectOf(PropTypes.any).isRequired,
@@ -75,11 +75,11 @@ class Edit extends Component {
       loaded: PropTypes.bool,
     }).isRequired,
     pathname: PropTypes.string.isRequired,
-    onChangeTile: PropTypes.func.isRequired,
-    onSelectTile: PropTypes.func.isRequired,
-    onDeleteTile: PropTypes.func.isRequired,
-    onFocusPreviousTile: PropTypes.func.isRequired,
-    onFocusNextTile: PropTypes.func.isRequired,
+    onChangeBlock: PropTypes.func.isRequired,
+    onSelectBlock: PropTypes.func.isRequired,
+    onDeleteBlock: PropTypes.func.isRequired,
+    onFocusPreviousBlock: PropTypes.func.isRequired,
+    onFocusNextBlock: PropTypes.func.isRequired,
     handleKeyDown: PropTypes.func.isRequired,
     createContent: PropTypes.func.isRequired,
   };
@@ -154,7 +154,7 @@ class Edit extends Component {
       this.setState({
         uploading: false,
       });
-      this.props.onChangeTile(this.props.tile, {
+      this.props.onChangeBlock(this.props.block, {
         ...this.props.data,
         url: nextProps.content['@id'],
       });
@@ -203,7 +203,7 @@ class Edit extends Component {
    */
   onChangeTitle(titleEditorState) {
     this.setState({ titleEditorState }, () => {
-      this.props.onChangeTile(this.props.tile, {
+      this.props.onChangeBlock(this.props.block, {
         ...this.props.data,
         title: titleEditorState.getCurrentContent().getPlainText(),
       });
@@ -218,7 +218,7 @@ class Edit extends Component {
    */
   onChangeDescription(descriptionEditorState) {
     this.setState({ descriptionEditorState }, () => {
-      this.props.onChangeTile(this.props.tile, {
+      this.props.onChangeBlock(this.props.block, {
         ...this.props.data,
         description: descriptionEditorState.getCurrentContent().getPlainText(),
       });
@@ -261,15 +261,15 @@ class Edit extends Component {
     return (
       <div
         role="presentation"
-        onClick={() => this.props.onSelectTile(this.props.tile)}
-        className={cx('tile hero', {
+        onClick={() => this.props.onSelectBlock(this.props.block)}
+        className={cx('block hero', {
           selected: this.props.selected,
         })}
         onKeyDown={e =>
           this.props.handleKeyDown(
             e,
             this.props.index,
-            this.props.tile,
+            this.props.block,
             this.node,
             { disableArrowUp: true, disableArrowDown: true },
           )
@@ -285,7 +285,7 @@ class Edit extends Component {
                 icon
                 basic
                 onClick={() =>
-                  this.props.onChangeTile(this.props.tile, {
+                  this.props.onChangeBlock(this.props.block, {
                     ...this.props.data,
                     url: '',
                   })
@@ -296,7 +296,7 @@ class Edit extends Component {
             </Button.Group>
           </div>
         )}
-        <div className="tile-inner-wrapper">
+        <div className="block-inner-wrapper">
           <div className="rich-text-body">
             <Editor
               ref={node => {
@@ -318,7 +318,7 @@ class Edit extends Component {
                     .first()
                     .getKey() === selectionState.getFocusKey()
                 ) {
-                  this.props.onFocusPreviousTile(this.props.tile, this.node);
+                  this.props.onFocusPreviousBlock(this.props.block, this.node);
                 }
               }}
               onDownArrow={() => {
@@ -365,7 +365,7 @@ class Edit extends Component {
                   .getLength();
 
                 if (currentCursorPosition === blockLength) {
-                  this.props.onFocusNextTile(this.props.tile, this.node);
+                  this.props.onFocusNextBlock(this.props.block, this.node);
                 }
               }}
             />
@@ -404,8 +404,8 @@ class Edit extends Component {
         </div>
         <PositionToolbar
           data={this.props.data}
-          onChangeTile={this.props.onChangeTile}
-          tile={this.props.tile}
+          onChangeBlock={this.props.onChangeBlock}
+          block={this.props.block}
         />
       </div>
     );

@@ -60,8 +60,8 @@ function renderSearch(context) {
       </header>
       <section id="content-core">
         {context.items.map(item => (
-          <article className="tileItem" key={item['@id']}>
-            <h2 className="tileHeadline">
+          <article className="blockItem" key={item['@id']}>
+            <h2 className="blockHeadline">
               <Link
                 to={item['@id']}
                 className="summary url"
@@ -71,11 +71,11 @@ function renderSearch(context) {
               </Link>
             </h2>
             {item.description && (
-              <div className="tileBody">
+              <div className="blockBody">
                 <span className="description">{item.description}</span>
               </div>
             )}
-            <div className="tileFooter">
+            <div className="blockFooter">
               <Link to={item['@id']}>
                 <FormattedMessage id="Read More…" defaultMessage="Read More…" />
               </Link>

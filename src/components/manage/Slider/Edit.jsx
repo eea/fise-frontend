@@ -1,5 +1,5 @@
 import Dropzone from 'react-dropzone';
-import Editor from '@plone/volto/components/manage/Tiles/Text/Edit';
+import Editor from '@plone/volto/components/manage/Blocks/Text/Edit';
 import React, { Component } from 'react';
 import clearIcon from '@plone/volto/icons/clear.svg';
 import penIcon from '@plone/volto/icons/pen.svg';
@@ -33,11 +33,11 @@ class SlideEditor extends Component {
       editorState: null,
     };
     this.save = this.save.bind(this);
-    this.onChangeTile = this.onChangeTile.bind(this);
+    this.onChangeBlock = this.onChangeBlock.bind(this);
     this.sendDelete = this.sendDelete.bind(this);
   }
 
-  onChangeTile(id, data) {
+  onChangeBlock(id, data) {
     this.setState({
       editorState: data,
     });
@@ -89,16 +89,16 @@ class SlideEditor extends Component {
                       index={this.props.index}
                       detached={true}
                       selected={this.state.editing}
-                      tile={slide['@id']}
-                      onAddTile={this.nop}
-                      onChangeTile={this.onChangeTile}
-                      onDeleteTile={this.nop}
-                      onFocusPreviousTile={this.nop}
-                      onFocusNextTile={this.nop}
-                      onSelectTile={this.nop}
-                      onMutateTile={this.nop}
+                      block={slide['@id']}
+                      onAddBlock={this.nop}
+                      onChangeBlock={this.onChangeBlock}
+                      onDeleteBlock={this.nop}
+                      onFocusPreviousBlock={this.nop}
+                      onFocusNextBlock={this.nop}
+                      onSelectBlock={this.nop}
+                      onMutateBlock={this.nop}
                       data={textdata}
-                      tileNode={this.node}
+                      blockNode={this.node}
                     />
                   </div>
                 ) : (

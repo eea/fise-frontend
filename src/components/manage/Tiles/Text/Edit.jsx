@@ -1,6 +1,6 @@
 /**
- * Edit text tile.
- * @module components/manage/Tiles/Title/Edit
+ * Edit text block.
+ * @module components/manage/Blocks/Title/Edit
  */
 
 import React, { Component } from 'react';
@@ -14,7 +14,7 @@ import cx from 'classnames';
 // import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 
 /**
- * Edit text tile class.
+ * Edit text block class.
  * @class Edit
  * @extends Component
  */
@@ -29,14 +29,14 @@ class Edit extends Component {
     detached: PropTypes.bool,
     index: PropTypes.number.isRequired,
     selected: PropTypes.bool.isRequired,
-    tile: PropTypes.string.isRequired,
-    onAddTile: PropTypes.func.isRequired,
-    onChangeTile: PropTypes.func.isRequired,
-    onDeleteTile: PropTypes.func.isRequired,
-    onMutateTile: PropTypes.func.isRequired,
-    onFocusPreviousTile: PropTypes.func.isRequired,
-    onFocusNextTile: PropTypes.func.isRequired,
-    onSelectTile: PropTypes.func.isRequired,
+    block: PropTypes.string.isRequired,
+    onAddBlock: PropTypes.func.isRequired,
+    onChangeBlock: PropTypes.func.isRequired,
+    onDeleteBlock: PropTypes.func.isRequired,
+    onMutateBlock: PropTypes.func.isRequired,
+    onFocusPreviousBlock: PropTypes.func.isRequired,
+    onFocusNextBlock: PropTypes.func.isRequired,
+    onSelectBlock: PropTypes.func.isRequired,
   };
 
   /**
@@ -70,7 +70,7 @@ class Edit extends Component {
 
   onChange(event, editor) {
     const cktext = editor.getData();
-    this.props.onChangeTile(this.props.tile, {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       cktext,
     });
@@ -106,16 +106,16 @@ class Edit extends Component {
           {
             model: 'heading5',
             view: 'h5',
-            title: 'Tile Title (H5)',
+            title: 'Block Title (H5)',
             class: 'ck-heading_heading5',
           },
           {
-            model: 'tile_description',
+            model: 'block_description',
             view: {
               name: 'div',
               classes: 'chart-highlight',
             },
-            title: 'Tile Description',
+            title: 'Block Description',
             class: 'chart-highlight',
           },
           // {
@@ -132,8 +132,8 @@ class Edit extends Component {
     return (
       <div
         role="presentation"
-        onClick={() => this.props.onSelectTile(this.props.tile)}
-        className={cx('tile text', { selected: this.props.selected })}
+        onClick={() => this.props.onSelectBlock(this.props.block)}
+        className={cx('block text', { selected: this.props.selected })}
         ref={node => (this.ref = node)}
       >
         <CKEditor

@@ -33,7 +33,7 @@ class MosaicSettingsView extends Component {
   getCard(style, key) {
     let bits = style.split('|');
     let name = bits[0];
-    let klass = 'tile-box preview ' + bits[1];
+    let klass = 'block-box preview ' + bits[1];
 
     return (
       <div className={klass} key={key}>

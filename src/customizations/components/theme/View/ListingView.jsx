@@ -16,12 +16,12 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { Container, Image, Grid } from 'semantic-ui-react';
 import { map } from 'lodash';
 
-import { settings, tiles } from '~/config';
+import { settings, blocks } from '~/config';
 
 import {
-  getTilesFieldname,
-  getTilesLayoutFieldname,
-  hasTilesData,
+  getBlocksFieldname,
+  getBlocksLayoutFieldname,
+  hasBlocksData,
 } from '@plone/volto/helpers';
 
 const messages = defineMessages({
@@ -68,8 +68,8 @@ class ListingView extends Component {
   render() {
     const content = this.props.content;
     const intl = this.props.intl;
-    const tilesFieldname = getTilesFieldname(content);
-    const tilesLayoutFieldname = getTilesLayoutFieldname(content);
+    const blocksFieldname = getBlocksFieldname(content);
+    const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
     const localNavigation =
       (this.props.localNavigation.items &&
         this.props.localNavigation.items.filter(
@@ -80,25 +80,25 @@ class ListingView extends Component {
       <Grid columns={3} className="folderWithContent">
         <Grid.Column tablet={0} largeScreen={3} widescreen={3}></Grid.Column>
         <Grid.Column tablet={12} largeScreen={6} widescreen={6}>
-          {hasTilesData(content) ? (
+          {hasBlocksData(content) ? (
             <div id="page-document">
               <Helmet title={content.title} />
-              {map(content[tilesLayoutFieldname].items, tile => {
-                const Tile =
-                  tiles.tilesConfig[
-                    (content[tilesFieldname]?.[tile]?.['@type'])
+              {map(content[blocksLayoutFieldname].items, block => {
+                const Block =
+                  blocks.blocksConfig[
+                    (content[blocksFieldname]?.[block]?.['@type'])
                   ]?.['view'] || null;
-                return Tile !== null ? (
-                  <Tile
-                    key={tile}
-                    id={tile}
+                return Block !== null ? (
+                  <Block
+                    key={block}
+                    id={block}
                     properties={content}
-                    data={content[tilesFieldname][tile]}
+                    data={content[blocksFieldname][block]}
                   />
                 ) : (
-                  <div key={tile}>
+                  <div key={block}>
                     {intl.formatMessage(messages.unknownBlock, {
-                      block: content[tilesFieldname]?.[tile]?.['@type'],
+                      block: content[blocksFieldname]?.[block]?.['@type'],
                     })}
                   </div>
                 );
@@ -151,25 +151,25 @@ class ListingView extends Component {
       </Grid>
     );
     if (!localNavigation.length) {
-      pageTemplate = hasTilesData(content) ? (
+      pageTemplate = hasBlocksData(content) ? (
         <div id="page-document">
           <Helmet title={content.title} />
-          {map(content[tilesLayoutFieldname].items, tile => {
-            const Tile =
-              tiles.tilesConfig[(content[tilesFieldname]?.[tile]?.['@type'])]?.[
+          {map(content[blocksLayoutFieldname].items, block => {
+            const Block =
+              blocks.blocksConfig[(content[blocksFieldname]?.[block]?.['@type'])]?.[
                 'view'
               ] || null;
-            return Tile !== null ? (
-              <Tile
-                key={tile}
-                id={tile}
+            return Block !== null ? (
+              <Block
+                key={block}
+                id={block}
                 properties={content}
-                data={content[tilesFieldname][tile]}
+                data={content[blocksFieldname][block]}
               />
             ) : (
-              <div key={tile}>
+              <div key={block}>
                 {intl.formatMessage(messages.unknownBlock, {
-                  block: content[tilesFieldname]?.[tile]?.['@type'],
+                  block: content[blocksFieldname]?.[block]?.['@type'],
                 })}
               </div>
             );

@@ -1,6 +1,6 @@
 /**
- * Edit map tile.
- * @module components/manage/Tiles/Maps/Edit
+ * Edit map block.
+ * @module components/manage/Blocks/Maps/Edit
  */
 
 import React, { Component } from 'react';
@@ -19,14 +19,14 @@ import globeSVG from '@plone/volto/icons/globe.svg';
 import PositionToolbar from '~/components/manage/PositionToolbar';
 
 const messages = defineMessages({
-  ImageTileInputPlaceholder: {
+  ImageBlockInputPlaceholder: {
     id: 'Enter Map URL',
     defaultMessage: 'Enter Map URL',
   },
 });
 
 /**
- * Edit image tile class.
+ * Edit image block class.
  * @class Edit
  * @extends Component
  */
@@ -38,15 +38,15 @@ class Edit extends Component {
    */
   static propTypes = {
     selected: PropTypes.bool.isRequired,
-    tile: PropTypes.string.isRequired,
+    block: PropTypes.string.isRequired,
     index: PropTypes.number.isRequired,
     data: PropTypes.objectOf(PropTypes.any).isRequired,
     pathname: PropTypes.string.isRequired,
-    onChangeTile: PropTypes.func.isRequired,
-    onSelectTile: PropTypes.func.isRequired,
-    onDeleteTile: PropTypes.func.isRequired,
-    onFocusPreviousTile: PropTypes.func.isRequired,
-    onFocusNextTile: PropTypes.func.isRequired,
+    onChangeBlock: PropTypes.func.isRequired,
+    onSelectBlock: PropTypes.func.isRequired,
+    onDeleteBlock: PropTypes.func.isRequired,
+    onFocusPreviousBlock: PropTypes.func.isRequired,
+    onFocusNextBlock: PropTypes.func.isRequired,
     handleKeyDown: PropTypes.func.isRequired,
   };
 
@@ -93,13 +93,13 @@ class Edit extends Component {
   }
 
   /**
-   * Align tile handler
-   * @method onAlignTile
+   * Align block handler
+   * @method onAlignBlock
    * @param {string} align Alignment option
    * @returns {undefined}
    */
-  onAlignTile(align) {
-    this.props.onChangeTile(this.props.tile, {
+  onAlignBlock(align) {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       align,
     });
@@ -124,7 +124,7 @@ class Edit extends Component {
    * @returns {undefined}
    */
   onSubmitUrl() {
-    this.props.onChangeTile(this.props.tile, {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       url: this.state.url,
     });
@@ -177,9 +177,9 @@ class Edit extends Component {
     return (
       <div
         role="presentation"
-        onClick={() => this.props.onSelectTile(this.props.tile)}
+        onClick={() => this.props.onSelectBlock(this.props.block)}
         className={cx(
-          'tile maps align',
+          'block maps align',
           {
             selected: this.props.selected,
             center: !Boolean(this.props.data.align),
@@ -190,7 +190,7 @@ class Edit extends Component {
           this.props.handleKeyDown(
             e,
             this.props.index,
-            this.props.tile,
+            this.props.block,
             this.node,
           )
         }
@@ -200,8 +200,8 @@ class Edit extends Component {
       >
         <PositionToolbar
           data={this.props.data}
-          onChangeTile={this.props.onChangeTile}
-          tile={this.props.tile}
+          onChangeBlock={this.props.onChangeBlock}
+          block={this.props.block}
         />
         {this.props.selected && !!this.props.data.url && (
           <div className="toolbar">
@@ -210,7 +210,7 @@ class Edit extends Component {
                 icon
                 basic
                 aria-label="Left"
-                onClick={() => this.onAlignTile('left')}
+                onClick={() => this.onAlignBlock('left')}
                 active={this.props.data.align === 'left'}
               >
                 <Icon name={imageLeftSVG} size="24px" />
@@ -221,7 +221,7 @@ class Edit extends Component {
                 icon
                 basic
                 aria-label="Right"
-                onClick={() => this.onAlignTile('right')}
+                onClick={() => this.onAlignBlock('right')}
                 active={this.props.data.align === 'right'}
               >
                 <Icon name={imageRightSVG} size="24px" />
@@ -232,7 +232,7 @@ class Edit extends Component {
                 icon
                 basic
                 aria-label="Center"
-                onClick={() => this.onAlignTile('center')}
+                onClick={() => this.onAlignBlock('center')}
                 active={
                   this.props.data.align === 'center' || !this.props.data.align
                 }
@@ -245,7 +245,7 @@ class Edit extends Component {
                 icon
                 basic
                 aria-label="Full"
-                onClick={() => this.onAlignTile('full')}
+                onClick={() => this.onAlignBlock('full')}
                 active={this.props.data.align === 'full'}
               >
                 <Icon name={imageFullSVG} size="24px" />
@@ -257,7 +257,7 @@ class Edit extends Component {
                 icon
                 basic
                 onClick={() =>
-                  this.props.onChangeTile(this.props.tile, {
+                  this.props.onChangeBlock(this.props.block, {
                     ...this.props.data,
                     url: '',
                   })
@@ -275,7 +275,7 @@ class Edit extends Component {
               onKeyDown={this.onKeyDownVariantMenuForm}
               onChange={this.onChangeUrl}
               placeholder={this.props.intl.formatMessage(
-                messages.ImageTileInputPlaceholder,
+                messages.ImageBlockInputPlaceholder,
               )}
             />
           </div>
@@ -283,7 +283,7 @@ class Edit extends Component {
         {this.props.data.url ? (
           <div>
             <iframe
-              title="Google Maps Embedded Tile"
+              title="Google Maps Embedded Block"
               src={this.props.data.url}
               className="google-map"
               frameBorder="0"

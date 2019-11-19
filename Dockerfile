@@ -3,7 +3,7 @@
 FROM node:10-jessie
 
 RUN apt-get update -y
-RUN apt-get install -y git
+RUN apt-get install -y git bsdmainutils
 
 WORKDIR /opt/frontend/
 

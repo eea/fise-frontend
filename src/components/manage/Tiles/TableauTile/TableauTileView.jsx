@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TableauReport from '~/components/theme/TableauView/TableauReport';
 
-class TableauTileView extends Component {
+class TableauBlockView extends Component {
   constructor(props) {
     super(props);
 
@@ -34,4 +34,4 @@ class TableauTileView extends Component {
   }
 }
 
-export default TableauTileView;
+export default TableauBlockView;

@@ -5,7 +5,7 @@
 
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
-import { EditMosaic } from '../volto-mosaic/src';
+import { EditMosaic } from 'volto-mosaic';
 import EditSlider from '~/components/manage/Slider/Edit';
 
 import MosaicSettingsView from '~/components/theme/TestViews/MosaicSettingsView';

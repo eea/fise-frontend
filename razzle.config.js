@@ -1,7 +1,6 @@
-const { resolve } = require('path');
-const jsConfig = require('./jsconfig').compilerOptions;
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const jsConfig = require('./jsconfig').compilerOptions;
 
 const pathsConfig = jsConfig.paths;
 let voltoPath = './node_modules/@plone/volto';
@@ -11,53 +10,26 @@ Object.keys(pathsConfig).forEach(pkg => {
   }
 });
 
-const { ReactLoadablePlugin } = require('react-loadable/webpack');
+// module.exports = require(`${voltoPath}/razzle.config`);
 
-const voltoConfig = require(`${voltoPath}/razzle.config`);
+let config = require(`${voltoPath}/razzle.config`);
+// console.log(config);
+// module.exports = config;
 
-const razzleModify = voltoConfig.modify;
-
+const razzleModify = config.modify;
 
 module.exports = {
   modify: (config, { target, dev }, webpack) => {
     const vc = razzleModify(config, { target, dev }, webpack);
-    // TODO: use find instead of hardcoding the index
-    vc.module.rules[0].include.push(resolve('./volto-mosaic'));
-
-    const stats = `bundle-stats-${target}`.json;
-    const report = `bundle-stats-${target}`.html;
-
-    const productionPlugins = !dev && [
-      new ReactLoadablePlugin({
-        filename: './build/react-loadable.json',
-      }),
-      // new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
-      //   analyzerMode: 'static',
-      //   generateStatsFile: true,
-      //   statsFilename: stats,
-      //   reportFilename: report,
-      //   openAnalyzer: false,
-      // }),
-    ] || []
-
-    vc.plugins = [...vc.plugins, ...productionPlugins]
-
-    // need to include /theme/ to less loader in order to have it working with volto as a submodule.
-    const modifiedLess = vc.module.rules.find(
-      module => module.test && module.test.toString() == /\.less$/,
-    );
-    const index = vc.module.rules.indexOf(modifiedLess);
-    modifiedLess.include.push(/theme/);
-    vc.module.rules[index] = modifiedLess;
-
     // console.log('vc', vc);
-    // vc.plugins = [
-    //   ...vc.plugins,
-    //   new ReactLoadablePlugin({
-    //     filename: './build/react-loadable.json',
-    //   }),
-    // ];
-
+    // vc.module.rules.forEach((rule, i) => {
+    //   console.log('rule', i, '-----');
+    //   console.log(rule);
+    //   console.log('rule options');
+    //   console.log(rule.use && rule.use[0].options);
+    // });
+    // const hardSource = new HardSourceWebpackPlugin();
+    // vc.plugins.push(hardSource);
     return vc;
   },
 };

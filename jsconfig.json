@@ -1,8 +1,16 @@
 {
     "compilerOptions": {
+        "baseUrl": "src", 
         "paths": {
-            "@plone/volto": ["../volto"]
-        },
-        "baseUrl": "src"
+            "volto-blocks": [
+                "addons/volto-blocks/src"
+            ], 
+            "volto-datablocks": [
+                "addons/volto-datablocks/src"
+            ], 
+            "volto-mosaic": [
+                "addons/volto-mosaic/src"
+            ]
+        }
     }
 }

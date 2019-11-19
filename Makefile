@@ -7,6 +7,29 @@ IMAGE=$(shell cat $(DOCKERIMAGE_FILE))
 
 .DEFAULT_GOAL := help
 
+.PHONY: activate
+activate:		## Activate an addon package for development
+	@if [[ -z ${pkg} ]]; then\
+		echo "You need to specify package name in make command";\
+		echo "Ex: make activate pkg=volto-datablocks";\
+	else \
+		exec ./pkg_helper.py activate ${pkg};\
+		echo "Running npm install in src/addons/${pkg}";\
+		cd "src/addons/${pkg}";\
+		npm install;\
+		echo "Done.";\
+	fi
+
+.PHONY: deactivate
+deactivate:		## Deactivate an addon package for development
+	@if [[ -z ${pkg} ]]; then\
+		echo "You need to specify package name in make command";\
+		echo "Ex: make deactivate pkg=volto-datablocks";\
+	else \
+		exec ./pkg_helper.py deactivate ${pkg};\
+		echo "Deactivated ${pkg}";\
+	fi
+
 .PHONY: all
 all: clean build		## (Inside container) build a production version of resources
 	@echo "Built production files"
@@ -57,10 +80,9 @@ push:
 	docker tag $(IMAGE) $(NAME):latest
 	docker push $(NAME):latest
 
-.PHONY: init-submodules		## Initialize the git submodules
-init-submodules:
-	git submodule init
-	git submodule update
+.PHONY: init-submodules
+init-submodules:		## Initialize the git submodules
+	git submodule update --init --recursive
 
 .PHONY: help
 help:		## Show this help.

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Loadable from 'react-loadable';
 import React, { Component } from 'react';
 import { Grid, Form as UiForm } from 'semantic-ui-react';
-import { Field } from '@plone/volto/components'; // EditTile
+import { Field } from '@plone/volto/components'; // EditBlock
 
 const LoadablePlot = Loadable({
   loader: () => import('react-plotly.js'),
@@ -51,7 +51,7 @@ class ChartPick extends Component {
   }
 
   onSubmit() {
-    this.props.onChangeTile(this.props.tile, {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       'chart-text': this.state.text,
       chartData: this.state.localChartData,
@@ -82,8 +82,8 @@ class ChartPick extends Component {
   render() {
     console.log('state in render', this.state);
     return (
-      <div className="tile selected">
-        <div className="tile-inner-wrapper">
+      <div className="block selected">
+        <div className="block-inner-wrapper">
           <Grid columns={2} divided>
             <Grid.Row>
               <Grid.Column>

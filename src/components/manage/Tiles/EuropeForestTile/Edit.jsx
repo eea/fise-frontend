@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Form as UiForm } from 'semantic-ui-react';
-import { Field } from '@plone/volto/components'; // EditTile
+import { Field } from '@plone/volto/components'; // EditBlock
 
 class Edit extends Component {
   constructor(props) {
     super(props);
 
-    const tileData = props.data;
+    const blockData = props.data;
 
     this.state = {
-      ...tileData,
+      ...blockData,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -21,7 +21,7 @@ class Edit extends Component {
   }
 
   onSubmit() {
-    this.props.onChangeTile(this.props.tile, {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       ...this.state,
     });
@@ -29,16 +29,16 @@ class Edit extends Component {
 
   render() {
     return (
-      <div className="tile selected">
-        <div className="tile-inner-wrapper">
+      <div className="block selected">
+        <div className="block-inner-wrapper">
           <UiForm>
             <Field
-              id="europe-tile-title"
+              id="europe-block-title"
               title="Title"
               type="text"
-              value={this.state.europe_tile_title}
+              value={this.state.europe_block_title}
               required={false}
-              onChange={(e, d) => this.updateData({ europe_tile_title: d })}
+              onChange={(e, d) => this.updateData({ europe_block_title: d })}
             />
 
             <Field
@@ -89,12 +89,12 @@ class Edit extends Component {
             />
 
             <Field
-              id="europe-tile-link"
+              id="europe-block-link"
               title="Source link"
               type="text"
-              value={this.state.europe_tile_link}
+              value={this.state.europe_block_link}
               required={false}
-              onChange={(e, d) => this.updateData({ europe_tile_link: d })}
+              onChange={(e, d) => this.updateData({ europe_block_link: d })}
             />
           </UiForm>
         </div>

@@ -1,6 +1,6 @@
 /**
- * Edit tile.
- * @module components/manage/Tiles/Tile/Edit
+ * Edit block.
+ * @module components/manage/Blocks/Block/Edit
  */
 
 import React, { Component } from 'react';
@@ -9,7 +9,7 @@ import { compose } from 'redux';
 import { DragSource, DropTarget } from 'react-dnd';
 import { findDOMNode } from 'react-dom';
 import { defineMessages, injectIntl } from 'react-intl';
-import { tiles } from '~/config';
+import { blocks } from '~/config';
 import { Button } from 'semantic-ui-react';
 import includes from 'lodash/includes';
 import cx from 'classnames';
@@ -35,7 +35,7 @@ const itemSource = {
 };
 
 const ItemTypes = {
-  ITEM: 'tile',
+  ITEM: 'block',
 };
 
 const itemTarget = {
@@ -75,7 +75,7 @@ const itemTarget = {
     }
 
     // Time to actually perform the action
-    props.onMoveTile(dragIndex, hoverIndex);
+    props.onMoveBlock(dragIndex, hoverIndex);
 
     // Note: we're mutating the monitor item here!
     // Generally it's better to avoid mutations,
@@ -86,7 +86,7 @@ const itemTarget = {
 };
 
 /**
- * Edit tile class.
+ * Edit block class.
  * @class Edit
  * @extends Component
  */
@@ -105,37 +105,37 @@ class Edit extends Component {
     connectDropTarget: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
     id: PropTypes.string.isRequired,
-    onMoveTile: PropTypes.func.isRequired,
-    onDeleteTile: PropTypes.func.isRequired,
+    onMoveBlock: PropTypes.func.isRequired,
+    onDeleteBlock: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
     const { type } = this.props;
-    const tileHasOwnFocusManagement =
-      tiles.tilesConfig?.[type]?.['tileHasOwnFocusManagement'] || null;
+    const blockHasOwnFocusManagement =
+      blocks.blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
     if (
-      !tileHasOwnFocusManagement &&
+      !blockHasOwnFocusManagement &&
       this.props.selected &&
-      this.tileNode.current
+      this.blockNode.current
     ) {
-      this.tileNode.current.focus();
+      this.blockNode.current.focus();
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { type } = this.props;
-    const tileHasOwnFocusManagement =
-      tiles.tilesConfig?.[type]?.['tileHasOwnFocusManagement'] || null;
+    const blockHasOwnFocusManagement =
+      blocks.blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
     if (
-      !tileHasOwnFocusManagement &&
+      !blockHasOwnFocusManagement &&
       nextProps.selected &&
-      this.tileNode.current
+      this.blockNode.current
     ) {
-      this.tileNode.current.focus();
+      this.blockNode.current.focus();
     }
   }
 
-  tileNode = React.createRef();
+  blockNode = React.createRef();
 
   /**
    * Render method.
@@ -152,9 +152,9 @@ class Edit extends Component {
       connectDragPreview,
     } = this.props;
 
-    const Tile = tiles.tilesConfig?.[type]?.['edit'] || null;
-    const tileHasOwnFocusManagement =
-      tiles.tilesConfig?.[type]?.['tileHasOwnFocusManagement'] || null;
+    const Block = blocks.blocksConfig?.[type]?.['edit'] || null;
+    const blockHasOwnFocusManagement =
+      blocks.blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
 
     const hideHandler =
       this.props.data['@type'] === 'text' &&
@@ -166,7 +166,7 @@ class Edit extends Component {
 
     return connectDropTarget(
       connectDragPreview(
-        <div className={`ui drag tile inner ${type}`}>
+        <div className={`ui drag block inner ${type}`}>
           {selected &&
             connectDragSource(
               <div
@@ -179,29 +179,29 @@ class Edit extends Component {
                 <Icon className="drag handle" name={dragSVG} size="18px" />
               </div>,
             )}
-          {Tile !== null ? (
+          {Block !== null ? (
             <div
               role="presentation"
-              onClick={() => this.props.onSelectTile(this.props.tile)}
+              onClick={() => this.props.onSelectBlock(this.props.block)}
               onKeyDown={
-                !tileHasOwnFocusManagement
+                !blockHasOwnFocusManagement
                   ? e =>
                       this.props.handleKeyDown(
                         e,
                         this.props.index,
-                        this.props.tile,
-                        this.tileNode.current,
+                        this.props.block,
+                        this.blockNode.current,
                       )
                   : null
               }
-              className={cx(`tile ${type}`, { selected: this.props.selected })}
+              className={cx(`block ${type}`, { selected: this.props.selected })}
               style={{ outline: 'none' }}
-              ref={this.tileNode}
+              ref={this.blockNode}
               // The tabIndex is required for the keyboard navigation
               /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-              tabIndex={!tileHasOwnFocusManagement ? -1 : null}
+              tabIndex={!blockHasOwnFocusManagement ? -1 : null}
             >
-              <Tile {...this.props} tileNode={this.tileNode} />
+              <Block {...this.props} blockNode={this.blockNode} />
             </div>
           ) : (
             <div
@@ -210,13 +210,13 @@ class Edit extends Component {
                 this.props.handleKeyDown(
                   e,
                   this.props.index,
-                  this.props.tile,
-                  this.tileNode.current,
+                  this.props.block,
+                  this.blockNode.current,
                 )
               }
-              className={cx(`tile ${type}`, { selected: this.props.selected })}
+              className={cx(`block ${type}`, { selected: this.props.selected })}
               style={{ outline: 'none' }}
-              ref={this.tileNode}
+              ref={this.blockNode}
               // The tabIndex is required for the keyboard navigation
               tabIndex={-1}
             >
@@ -225,11 +225,11 @@ class Edit extends Component {
               })}
             </div>
           )}
-          {selected && !includes(tiles.requiredTiles, type) && (
+          {selected && !includes(blocks.requiredBlocks, type) && (
             <Button
               icon
               basic
-              onClick={() => this.props.onDeleteTile(id)}
+              onClick={() => this.props.onDeleteBlock(id)}
               className="delete-button"
               aria-label="delete"
             >

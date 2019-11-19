@@ -11,7 +11,7 @@ import React, { Component } from 'react';
 
 import { Container, Image } from 'semantic-ui-react';
 // import { map } from 'lodash';
-import { settings, tiles } from '~/config';
+import { settings, blocks } from '~/config';
 
 import {
   Mosaic,
@@ -30,9 +30,9 @@ import {
 } from 'react-mosaic-component';
 
 import {
-  getTilesFieldname,
-  getTilesLayoutFieldname,
-  // hasTilesData,
+  getBlocksFieldname,
+  getBlocksLayoutFieldname,
+  // hasBlocksData,
 } from '@plone/volto/helpers';
 
 /**
@@ -48,9 +48,9 @@ class MosaicView extends Component {
 
     let content = props.content;
     console.log('content', content);
-    const tilesLayoutFieldname = getTilesLayoutFieldname(content);
+    const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
-    let layout = content[tilesLayoutFieldname].layout;
+    let layout = content[blocksLayoutFieldname].layout;
 
     if (!__SERVER__) {
       this.state = {
@@ -62,7 +62,7 @@ class MosaicView extends Component {
   }
 
   createNode = () => {
-    // this.onAddTile('text', 0);
+    // this.onAddBlock('text', 0);
     console.log('Called createNode');
   };
 
@@ -74,23 +74,23 @@ class MosaicView extends Component {
     console.log('Mosaic.onRelease():', currentNode);
   };
 
-  renderTile(tileid) {
+  renderBlock(blockid) {
     const content = this.props.content;
-    const tilesFieldname = getTilesFieldname(content);
-    const availableTiles = content[tilesFieldname];
-    const tiletype = availableTiles[tileid]['@type'];
+    const blocksFieldname = getBlocksFieldname(content);
+    const availableBlocks = content[blocksFieldname];
+    const blocktype = availableBlocks[blockid]['@type'];
 
-    console.log('Rendering tile:', tileid, tiletype, tilesFieldname, content);
+    console.log('Rendering block:', blockid, blocktype, blocksFieldname, content);
 
-    let Tile = null;
-    Tile = tiles.defaultTilesViewMap[tiletype];
+    let Block = null;
+    Block = blocks.defaultBlocksViewMap[blocktype];
 
-    return Tile !== null ? (
-      <div class="tile-container">
-        <Tile key={tileid} properties={content} data={availableTiles[tileid]} />
+    return Block !== null ? (
+      <div class="block-container">
+        <Block key={blockid} properties={content} data={availableBlocks[blockid]} />
       </div>
     ) : (
-      <div> {JSON.stringify(tiletype)} </div>
+      <div> {JSON.stringify(blocktype)} </div>
     );
   }
 
@@ -98,20 +98,20 @@ class MosaicView extends Component {
     const content = this.props.content;
     console.log('This.state in render: ', this.state);
 
-    const tilesLayoutFieldname = getTilesLayoutFieldname(content);
-    const height = content[tilesLayoutFieldname].layout_height || 500;
+    const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
+    const height = content[blocksLayoutFieldname].layout_height || 500;
 
     return true ? (
       <div id="page-document" className="ui wrapper" style={{ height: height }}>
         {/* <Helmet title={content.title} /> */}
         <Mosaic
-          renderTile={(tileid, path) => (
+          renderBlock={(blockid, path) => (
             <MosaicWindow
-              title={`Window ${tileid}`}
+              title={`Window ${blockid}`}
               createNode={this.createNode}
               path={path}
             >
-              {this.renderTile(tileid)}
+              {this.renderBlock(blockid)}
             </MosaicWindow>
           )}
           value={this.state.currentNode}

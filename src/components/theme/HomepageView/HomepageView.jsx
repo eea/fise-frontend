@@ -22,11 +22,11 @@ import {
   // setFolderHeader,
   setFolderTabs, getParentFolderData } from '~/actions';
 
-// import { settings, tiles } from '~/config';
+// import { settings, blocks } from '~/config';
 
-// import // getTilesFieldname,
-// // getTilesLayoutFieldname,
-// // hasTilesData,
+// import // getBlocksFieldname,
+// // getBlocksLayoutFieldname,
+// // hasBlocksData,
 // '@plone/volto/helpers';
 
 import BasicForestIMG from '~/components/theme/HomepageView/images/basic-forest.png';
@@ -141,8 +141,8 @@ class HomepageView extends Component {
 
   render() {
     // const content = this.props.content;
-    // const tilesFieldname = getTilesFieldname(content);
-    // const tilesLayoutFieldname = getTilesLayoutFieldname(content);
+    // const blocksFieldname = getBlocksFieldname(content);
+    // const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
     this.tabs = [
       { title: 'Coverage & Growth', url: '', type: 'Section' },

@@ -48,7 +48,7 @@ class StackedBarChart extends Component {
   }
 
   onSubmit() {
-    this.props.onChangeTile(this.props.tile, {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       tableauData: this.state.tableauData,
     });
@@ -85,8 +85,8 @@ class StackedBarChart extends Component {
     // const TableauReport = require('tableau-react');
     console.log(this.state);
     return (
-      <div className="tile chartWrapperEdit">
-        <div className="tile-inner-wrapper">
+      <div className="block chartWrapperEdit">
+        <div className="block-inner-wrapper">
           {this.state.show && this.state.url ? (
             <div className="image-add">
               <ResponsiveContainer>

@@ -5,9 +5,9 @@ class View extends Component {
   render() {
     console.log('props', this.props);
     return (
-      <div className="forest-tile-wrapper">
-        <div className="forest-specific-tile forest-area-tile">
-          <h5>{this.props.data.europe_tile_title}</h5>
+      <div className="forest-block-wrapper">
+        <div className="forest-specific-block forest-area-block">
+          <h5>{this.props.data.europe_block_title}</h5>
 
           <div className="land-data-wrapper eu28-data">
             <div className="land-data">
@@ -27,7 +27,7 @@ class View extends Component {
             </div>
           </div>
 
-          <a className="discreet" href={this.props.data.europe_tile_link}>
+          <a className="discreet" href={this.props.data.europe_block_link}>
             {this.props.data.europe_text_attribution}
           </a>
         </div>

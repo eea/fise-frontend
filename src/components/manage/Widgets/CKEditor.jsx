@@ -27,16 +27,16 @@ const CKText = ({
         {
           model: 'heading5',
           view: 'h5',
-          title: 'Tile Title (H5)',
+          title: 'Block Title (H5)',
           class: 'ck-heading_heading5',
         },
         {
-          model: 'tile_description',
+          model: 'block_description',
           view: {
             name: 'div',
             classes: 'chart-highlight',
           },
-          title: 'Tile Description',
+          title: 'Block Description',
           class: 'chart-highlight',
         },
         // {

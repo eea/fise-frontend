@@ -1,56 +1,43 @@
 {
-  "extends": ["react-app", "prettier", "plugin:jsx-a11y/recommended"],
-  "plugins": ["prettier", "react-hooks", "jsx-a11y"],
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true,
-    "mocha": true,
-    "jasmine": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "legacyDecorators": true
+    "extends": "./node_modules/@plone/volto/.eslintrc", 
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "extensions": [
+                    ".js", 
+                    ".jsx", 
+                    ".json"
+                ], 
+                "map": [
+                    [
+                        "@plone/volto", 
+                        "@plone/volto/src"
+                    ], 
+                    [
+                        "@package", 
+                        "./src"
+                    ], 
+                    [
+                        "~", 
+                        "./src"
+                    ], 
+                    [
+                        "volto-blocks", 
+                        "./src/addons/volto-blocks/src"
+                    ], 
+                    [
+                        "volto-mosaic", 
+                        "./src/addons/volto-mosaic/src"
+                    ], 
+                    [
+                        "volto-datablocks", 
+                        "./src/addons/volto-datablocks/src"
+                    ]
+                ]
+            }, 
+            "babel-plugin-root-import": {
+                "rootPathSuffix": "src"
+            }
+        }
     }
-  },
-  "rules": {
-    "import/no-unresolved": 1,
-    "prettier/prettier": [
-      "error",
-    { "trailingComma": "all", "singleQuote": true }
-    ]
-  },
-  "settings": {
-    "import/resolver": {
-      "alias": {
-        "map": [
-          ["@plone/volto", "./volto/src"],
-          ["~", "./src"]
-        ],
-        "extensions": [".js", ".jsx", ".json"]
-      },
-      "babel-plugin-root-import": {
-        "rootPathSuffix": "src"
-      }
-    }
-  },
-  "globals": {
-    "root": true,
-    "__DEVELOPMENT__": true,
-    "__CLIENT__": true,
-    "__SERVER__": true,
-    "__DISABLE_SSR__": true,
-    "__DEVTOOLS__": true,
-    "__DEBUG__": true,
-    "__SSR__": true,
-    "jest": true,
-    "socket": true,
-    "webpackIsomorphicTools": true,
-    "cy": true,
-    "Cypress": true
-  },
-  "root": true,
 }

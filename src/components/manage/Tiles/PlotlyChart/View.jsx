@@ -18,7 +18,7 @@ class ChartView extends Component {
   render() {
     return (
       <div className="chartWrapperView">
-        <div className="tile-inner-wrapper">
+        <div className="block-inner-wrapper">
           <LoadablePlot
             data={this.state.data}
             layout={this.state.layout}

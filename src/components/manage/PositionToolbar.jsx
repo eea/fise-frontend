@@ -5,7 +5,7 @@ import circleRight from '@plone/volto/icons/circle-right.svg';
 import check from '@plone/volto/icons/check.svg';
 import { Icon } from '@plone/volto/components';
 
-function PositionToolbar({ data, onChangeTile, tile }) {
+function PositionToolbar({ data, onChangeBlock, block }) {
   return (
     <div className="toolbar toolbar-bottom">
       <Button.Group>
@@ -17,7 +17,7 @@ function PositionToolbar({ data, onChangeTile, tile }) {
           basic
           title="left"
           onClick={() =>
-            onChangeTile(tile, {
+            onChangeBlock(block, {
               ...data,
               position: 'left',
             })
@@ -33,7 +33,7 @@ function PositionToolbar({ data, onChangeTile, tile }) {
           basic
           title="right"
           onClick={() =>
-            onChangeTile(tile, {
+            onChangeBlock(block, {
               ...data,
               position: 'right',
             })

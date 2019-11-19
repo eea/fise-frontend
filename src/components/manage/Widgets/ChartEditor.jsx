@@ -82,8 +82,8 @@ class Edit extends Component {
     return (
       <div>
         {__CLIENT__ ? (
-          <div className="tile selected">
-            <div className="tile-inner-wrapper">
+          <div className="block selected">
+            <div className="block-inner-wrapper">
               <Dropdown
                 placeholder="Select data provider"
                 fluid
