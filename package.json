@@ -92,7 +92,8 @@
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.2.2",
+    "cypress": "^3.6",
+    "eslint": "^5.16.0",
     "eslint-config-react-app": "^5.0.1",
     "eslint-plugin-flowtype": "^3.13.0",
     "eslint-plugin-import": "^2.18.2",
@@ -103,7 +104,6 @@
     "postcss-overrides": "3.1.4",
     "prettier": "1.17.0",
     "prettier-eslint": "^9.0.0",
-    "prettier-stylelint": "0.4.2",
-    "cypress": "^3.6"
+    "prettier-stylelint": "0.4.2"
   }
 }

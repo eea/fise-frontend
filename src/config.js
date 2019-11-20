@@ -1,39 +1,18 @@
 import React from 'react';
 
-import {
-  settings as defaultSettings,
-  views as defaultViews,
-  widgets as defaultWidgets,
-  blocks as defaultBlocks,
-} from '@plone/volto/config';
+// import {
+//   settings as defaultSettings,
+//   views as defaultViews,
+//   widgets as defaultWidgets,
+//   blocks as defaultBlocks,
+// } from '@plone/volto/config';
 
 import { defineMessages } from 'react-intl';
+
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
-import HiddenWidget from '~/components/manage/Widgets/Hidden';
+// import HiddenWidget from '~/components/manage/Widgets/Hidden';
 import CKEditorWidget from '~/components/manage/Widgets/CKEditor';
 import ChartWidget from '~/components/manage/Widgets/Chart';
-
-import ChartBlockEdit from 'volto-blocks/ChartBlock/ChartBlockEdit';
-import ChartBlockView from 'volto-blocks/ChartBlock/ChartBlockView';
-
-import EuropeCompareBlockEdit from 'volto-blocks/EuropeCompareBlock/Edit';
-import EuropeCompareBlockView from 'volto-blocks/EuropeCompareBlock/View';
-
-import EuropeForestBlockEdit from 'volto-blocks/EuropeForestBlock/Edit';
-import EuropeForestBlockView from 'volto-blocks/EuropeForestBlock/View';
-
-import PlotlyBlockEdit from 'volto-blocks/PlotlyChart/Edit';
-import PlotlyBlockView from 'volto-blocks/PlotlyChart/View';
-
-import TableauBlockEdit from 'volto-blocks/TableauBlock/TableauBlockEdit';
-import tableauBlockView from 'volto-blocks/TableauBlock/TableauBlockView';
-
-import TextBlockEdit from 'volto-blocks/Ckeditor/Edit';
-import TextBlockView from 'volto-blocks/Ckeditor/View';
-
-
-import TextBlockEditWysiwyg from 'volto-blocks/Text/Edit';
-import TextBlockViewWysiwyg from 'volto-blocks/Text/View';
 
 import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
 import SliderEditButton from '~/components/manage/Slider/Portlet';
@@ -49,7 +28,16 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import underlineSVG from '@plone/volto/icons/underline.svg';
 import chartIcon from '@plone/volto/icons/world.svg';
 
-import { layoutViews } from 'volto-mosaic';
+import * as voltoConfig from '@plone/volto/config';
+
+import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
+import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
+
+const config = [mosaicConfig, dataBlocksConfig].reduce(
+  apply => apply(config),
+  voltoConfig,
+);
+// const config = mosaicConfig(dataBlocksConfig(voltoConfig));
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
@@ -57,14 +45,14 @@ const Underline = createInlineStyleButton({
 });
 
 export const settings = {
-  ...defaultSettings,
+  ...config.settings,
   richTextEditorInlineToolbarButtons: [
     Underline,
-    ...defaultSettings.richTextEditorInlineToolbarButtons,
+    ...config.settings.richTextEditorInlineToolbarButtons,
   ],
   nonContentRoutes: [
     // handled differently in getBaseUrl
-    ...defaultSettings.nonContentRoutes,
+    ...config.settings.nonContentRoutes,
     '/manage-slider',
     '/mosaic-settings-view',
     '/data-providers-view',
@@ -72,37 +60,37 @@ export const settings = {
 };
 
 export const views = {
-  ...defaultViews,
+  ...config.views,
   layoutViews: {
-    ...defaultViews.layoutViews,
+    ...config.views.layoutViews,
     full_view: CountryView,
     country_tab_view: CountryPageView,
     homepage_view: HomepageView,
-    ...layoutViews,
+    // ...layoutViews,
   },
   contentTypesViews: {
-    ...defaultViews.contentTypesViews,
+    ...config.views.contentTypesViews,
     visualization: VisualizationView,
   },
 };
 
 // read @plone/volto/components/manage/Form/Field.jsx to understand this
 export const widgets = {
-  ...defaultWidgets,
+  ...config.widgets,
   vocabulary: {
-    ...defaultWidgets.vocabulary,
+    ...config.widgets.vocabulary,
     'fise.topics': TokenWidget,
     'fise.keywords': TokenWidget,
     'fise.publishers': TokenWidget,
   },
   id: {
-    ...defaultWidgets.id,
-    blocks: HiddenWidget,
-    blocks_layout: HiddenWidget,
+    ...config.widgets.id,
+    // blocks: HiddenWidget,
+    // blocks_layout: HiddenWidget,
     visualization: ChartWidget,
   },
   widget: {
-    ...defaultWidgets.widget,
+    ...config.widgets.widget,
     cktext: CKEditorWidget,
   },
 };
@@ -131,16 +119,16 @@ defineMessages({
 });
 
 export const blocks = {
-  ...defaultBlocks,
+  ...config.blocks,
 
   groupBlocksOrder: [
-    ...defaultBlocks.groupBlocksOrder,
+    ...config.blocks.groupBlocksOrder,
     { id: 'custom_addons', title: 'Custom addons' },
     { id: 'forests_specific', title: 'Forests Specific Blocks' },
   ],
 
   blocksConfig: {
-    ...defaultBlocks.blocksConfig,
+    ...config.blocks.blocksConfig,
     europe_compare_block: {
       id: 'europe_compare_block',
       title: 'Europe Compare Block',
@@ -187,7 +175,7 @@ export const blocks = {
       title: 'CKEditor',
       view: TextBlockView,
       edit: TextBlockEdit,
-      icon: defaultBlocks.blocksConfig.text.icon,
+      icon: config.blocks.blocksConfig.text.icon,
     },
     wysiwyg: {
       id: 'wysiwyg',
@@ -195,8 +183,8 @@ export const blocks = {
       title: 'WYSIWYG',
       view: TextBlockViewWysiwyg,
       edit: TextBlockEditWysiwyg,
-      icon: defaultBlocks.blocksConfig.text.icon,
-    }
+      icon: config.blocks.blocksConfig.text.icon,
+    },
   },
 };
 
