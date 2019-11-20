@@ -293,7 +293,7 @@ class Toolbar extends Component {
                 {this.props.hideDefaultViewButtons && this.props.inner && (
                   <>{this.props.inner}</>
                 )}
-                {!this.props.hideDefaultViewButtons && (
+                {(
                   <>
                     {editAction && (
                       <Link
