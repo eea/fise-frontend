@@ -17,7 +17,6 @@ import {
   GET_DEFAULT_HEADER_IMAGE,
   SET_FOLDER_TABS,
   GET_PARENT_FOLDER_DATA,
-  GET_DATA_FROM_PROVIDER,
   GET_LOCALNAVIGATION,
   GET_CHART_DATA_FROM_VISUALIZATION,
   CREATE_ATTACHMENT,
@@ -101,16 +100,6 @@ export function getParentFolderData(url) {
 //     },
 //   };
 // }
-
-export function getDataFromProvider(path) {
-  return {
-    type: GET_DATA_FROM_PROVIDER,
-    request: {
-      op: 'get',
-      path: path + '?expand=connector-data',
-    },
-  };
-}
 
 export function getChartDataFromVisualization(path) {
   return {

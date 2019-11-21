@@ -11,9 +11,11 @@
     "volto-addons": {
       "url": "https://github.com/eea/volto-addons.git"
     },
-
     "volto-ckeditor": {
       "url": "https://github.com/eea/volto-ckeditor.git"
+    },
+    "volto-drafteditor": {
+      "url": "https://github.com/eea/volto-drafteditor.git"
     },
     "volto-plotlycharts": {
       "url": "https://github.com/eea/volto-plotlycharts.git"

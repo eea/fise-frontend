@@ -1,27 +1,22 @@
 import React from 'react';
 
-// import {
-//   settings as defaultSettings,
-//   views as defaultViews,
-//   widgets as defaultWidgets,
-//   blocks as defaultBlocks,
-// } from '@plone/volto/config';
-
 import { defineMessages } from 'react-intl';
 
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
-// import HiddenWidget from '~/components/manage/Widgets/Hidden';
-import CKEditorWidget from '~/components/manage/Widgets/CKEditor';
-import ChartWidget from '~/components/manage/Widgets/Chart';
+
+import EuropeCompareBlockEdit from './components/manage/Blocks/EuropeCompareBlock/Edit';
+import EuropeCompareBlockView from './components/manage/Blocks/EuropeCompareBlock/View';
+
+import EuropeForestBlockEdit from './components/manage/Blocks/EuropeForestBlock/Edit';
+import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/View';
 
 import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
-import SliderEditButton from '~/components/manage/Slider/Portlet';
+// import SliderEditButton from '~/components/manage/Slider/Portlet';
 
 // Display types
 import CountryView from '~/components/theme/CountryView/CountryView';
 import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
-import VisualizationView from '~/components/theme/VisualizationView/View';
 
 import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
@@ -30,14 +25,19 @@ import chartIcon from '@plone/volto/icons/world.svg';
 
 import * as voltoConfig from '@plone/volto/config';
 
+import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
+import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
+import { applyConfig as draftConfig } from 'volto-drafteditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 
-const config = [mosaicConfig, dataBlocksConfig].reduce(
-  apply => apply(config),
-  voltoConfig,
-);
-// const config = mosaicConfig(dataBlocksConfig(voltoConfig));
+const config = [
+  plotlyConfig,
+  ckeditorConfig,
+  draftConfig,
+  mosaicConfig,
+  dataBlocksConfig,
+].reduce(apply => apply(config), voltoConfig);
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
@@ -54,8 +54,6 @@ export const settings = {
     // handled differently in getBaseUrl
     ...config.settings.nonContentRoutes,
     '/manage-slider',
-    '/mosaic-settings-view',
-    '/data-providers-view',
   ],
 };
 
@@ -68,10 +66,6 @@ export const views = {
     homepage_view: HomepageView,
     // ...layoutViews,
   },
-  contentTypesViews: {
-    ...config.views.contentTypesViews,
-    visualization: VisualizationView,
-  },
 };
 
 // read @plone/volto/components/manage/Form/Field.jsx to understand this
@@ -82,16 +76,6 @@ export const widgets = {
     'fise.topics': TokenWidget,
     'fise.keywords': TokenWidget,
     'fise.publishers': TokenWidget,
-  },
-  id: {
-    ...config.widgets.id,
-    // blocks: HiddenWidget,
-    // blocks_layout: HiddenWidget,
-    visualization: ChartWidget,
-  },
-  widget: {
-    ...config.widgets.widget,
-    cktext: CKEditorWidget,
   },
 };
 
@@ -123,7 +107,7 @@ export const blocks = {
 
   groupBlocksOrder: [
     ...config.blocks.groupBlocksOrder,
-    { id: 'custom_addons', title: 'Custom addons' },
+    { id: 'custom_addons', title: 'Custom addons' }, // TODO: needs to be fixed
     { id: 'forests_specific', title: 'Forests Specific Blocks' },
   ],
 
@@ -145,47 +129,8 @@ export const blocks = {
       icon: chartIcon,
       group: 'forests_specific',
     },
-    embed_chart: {
-      id: 'embed_chart',
-      title: 'Embed Chart',
-      view: ChartBlockView,
-      edit: ChartBlockEdit,
-      icon: chartIcon,
-      group: 'custom_addons',
-    },
-    plotly_chart: {
-      id: 'plotly_chart',
-      title: 'Plotly Chart',
-      view: PlotlyBlockView,
-      edit: PlotlyBlockEdit,
-      icon: chartIcon,
-      group: 'custom_addons',
-    },
-    tableau: {
-      id: 'tableau',
-      title: 'Tableau',
-      view: tableauBlockView,
-      edit: TableauBlockEdit,
-      icon: chartIcon,
-      group: 'custom_addons',
-    },
-    cktext: {
-      id: 'cktext',
-      group: 'text',
-      title: 'CKEditor',
-      view: TextBlockView,
-      edit: TextBlockEdit,
-      icon: config.blocks.blocksConfig.text.icon,
-    },
-    wysiwyg: {
-      id: 'wysiwyg',
-      group: 'text',
-      title: 'WYSIWYG',
-      view: TextBlockViewWysiwyg,
-      edit: TextBlockEditWysiwyg,
-      icon: config.blocks.blocksConfig.text.icon,
-    },
   },
 };
 
-export const portlets = [ForestMetadata, SliderEditButton];
+export const portlets = [ForestMetadata]; // SliderEditButton
+export const addonReducers = { ...config.addonReducers };
