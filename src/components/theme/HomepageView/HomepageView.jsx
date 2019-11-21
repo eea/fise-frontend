@@ -1,287 +1,239 @@
+/**
+ * View container.
+ * @module components/theme/View/View
+ */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from 'recharts';
-
-// import Helmet from 'react-helmet';
-// import { Container, Image } from 'semantic-ui-react';
-// import { map } from 'lodash';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { compose } from 'redux';
+import { Portal } from 'react-portal';
+import { injectIntl } from 'react-intl';
+import qs from 'query-string';
+import { views } from '~/config';
 
-import {
-  // setFolderHeader,
-  setFolderTabs, getParentFolderData } from '~/actions';
-
-// import { settings, blocks } from '~/config';
-
-// import // getBlocksFieldname,
-// // getBlocksLayoutFieldname,
-// // hasBlocksData,
-// '@plone/volto/helpers';
-
+import { Comments, Tags, Toolbar } from '@plone/volto/components';
+import { listActions, getContent } from '@plone/volto/actions';
+import { BodyClass, getBaseUrl, getLayoutFieldname } from '@plone/volto/helpers';
 import BasicForestIMG from '~/components/theme/HomepageView/images/basic-forest.png';
 import ForestCarbonIMG from '~/components/theme/HomepageView/images/forest-carbon.png';
 import ForestIMG from '~/components/theme/HomepageView/images/forest.png';
 import NatureIMG from '~/components/theme/HomepageView/images/nature.png';
+import MosaicView from 'volto-mosaic/components/theme/View'
 
-const numberToWord = {
-  1: 'one',
-  2: 'two',
-  3: 'three',
-  4: 'four',
-  5: 'five',
-  6: 'six',
-  7: 'seven',
-  8: 'eight',
-  9: 'nine',
-  10: 'ten',
-  11: 'eleven',
-  12: 'twelve',
-};
+/**
+ * View container class.
+ * @class View
+ * @extends Component
+ */
+class View extends Component {
+  /**
+   * Property types.
+   * @property {Object} propTypes Property types.
+   * @static
+   */
+  static propTypes = {
+    actions: PropTypes.shape({
+      object: PropTypes.arrayOf(PropTypes.object),
+      object_buttons: PropTypes.arrayOf(PropTypes.object),
+      user: PropTypes.arrayOf(PropTypes.object),
+    }),
+    listActions: PropTypes.func.isRequired,
+    /**
+     * Action to get the content
+     */
+    getContent: PropTypes.func.isRequired,
+    /**
+     * Pathname of the object
+     */
+    pathname: PropTypes.string.isRequired,
+    location: PropTypes.shape({
+      search: PropTypes.string,
+      pathname: PropTypes.string,
+    }).isRequired,
+    /**
+     * Version id of the object
+     */
+    versionId: PropTypes.string,
+    /**
+     * Content of the object
+     */
+    content: PropTypes.shape({
+      /**
+       * Layout of the object
+       */
+      layout: PropTypes.string,
+      /**
+       * Allow discussion of the object
+       */
+      allow_discussion: PropTypes.bool,
+      /**
+       * Title of the object
+       */
+      title: PropTypes.string,
+      /**
+       * Description of the object
+       */
+      description: PropTypes.string,
+      /**
+       * Type of the object
+       */
+      '@type': PropTypes.string,
+      /**
+       * Subjects of the object
+       */
+      subjects: PropTypes.arrayOf(PropTypes.string),
+      is_folderish: PropTypes.bool,
+    }),
+    error: PropTypes.shape({
+      /**
+       * Error type
+       */
+      status: PropTypes.number,
+    }),
+  };
 
-const mapDispatchToProps = {
-  // setFolderHeader,
-  setFolderTabs,
-  getParentFolderData,
-};
+  /**
+   * Default properties.
+   * @property {Object} defaultProps Default properties.
+   * @static
+   */
+  static defaultProps = {
+    actions: null,
+    content: null,
+    versionId: null,
+    error: null,
+  };
 
-const data = [
-  { name: '00', Decidous: 4000, Conifers: 2400 },
-  { name: '04', Decidous: 3000, Conifers: 1398 },
-  { name: '08', Decidous: 2000, Conifers: 9800 },
-  { name: '12', Decidous: 2780, Conifers: 3908 },
-  { name: '16', Decidous: 1890, Conifers: 4800 },
-];
+  state = {
+    hasObjectButtons: null,
+  };
 
-class StackedBarChart extends Component {
-  render() {
-    return (
-      <ResponsiveContainer>
-        <BarChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="Decidous" stackId="a" fill="#225511" />
-          <Bar dataKey="Conifers" stackId="a" fill="#769e2e" />
-        </BarChart>
-      </ResponsiveContainer>
+  /**
+   * Component will mount
+   * @method componentWillMount
+   * @returns {undefined}
+   */
+  componentWillMount() {
+    this.props.listActions(getBaseUrl(this.props.pathname));
+    this.props.getContent(
+      getBaseUrl(this.props.pathname),
+      this.props.versionId,
     );
   }
-}
 
-class HomepageView extends Component {
-  static propTypes = {
-    tabs: PropTypes.array,
-    content: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-      items: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string,
-          description: PropTypes.string,
-          url: PropTypes.string,
-          image: PropTypes.object,
-          image_caption: PropTypes.string,
-          '@type': PropTypes.string,
-        }),
-      ),
-    }).isRequired,
-  };
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {
-    // this.props.setFolderHeader({ inCountryFolder: true });
-  }
-
-  componentWillUnmount() {
-    // this.props.setFolderHeader({ inCountryFolder: false });
-  }
-
+  /**
+   * Component will receive props
+   * @method componentWillReceiveProps
+   * @param {Object} nextProps Next properties
+   * @returns {undefined}
+   */
   componentWillReceiveProps(nextProps) {
-    if (
-      JSON.stringify(nextProps.parent) !== JSON.stringify(this.props.parent)
-    ) {
-      const title = nextProps.parent.title;
-      const description = nextProps.parent.description;
-      const image =
-        nextProps.parent.items &&
-        nextProps.parent.items.find(c => c['@type'] === 'Image');
-      const url = image && image.image.download;
-      const inCountryFolder = true;
-      // this.props.setFolderHeader({ title, description, url, inCountryFolder });
-      const tabsItems = nextProps.parent.items
-        .map(i => ({
-          // this is ugly
-          url: i['@id'].split('/Plone/')[1],
-          title: i.title,
-          '@type': i['@type'],
-        }))
-        .filter(i => i.title !== 'folder_info');
-      this.props.setFolderTabs(tabsItems);
+    if (nextProps.pathname !== this.props.pathname) {
+      this.props.listActions(getBaseUrl(nextProps.pathname));
+      this.props.getContent(
+        getBaseUrl(nextProps.pathname),
+        this.props.versionId,
+      );
+    }
+
+    if (nextProps.actions.object_buttons) {
+      const objectButtons = nextProps.actions.object_buttons;
+      this.setState({
+        hasObjectButtons: !!objectButtons.length,
+      });
     }
   }
 
+  /**
+   * Default fallback view
+   * @method getViewDefault
+   * @returns {string} Markup for component.
+   */
+  getViewDefault = () => views.defaultView;
+
+  /**
+   * Get view by content type
+   * @method getViewByType
+   * @returns {string} Markup for component.
+   */
+  getViewByType = () =>
+    views.contentTypesViews[this.props.content['@type']] || null;
+
+  /**
+   * Get view by content layout property
+   * @method getViewByLayout
+   * @returns {string} Markup for component.
+   */
+  getViewByLayout = () =>
+    views.layoutViews[
+      this.props.content[getLayoutFieldname(this.props.content)]
+    ] || null;
+
+  /**
+   * Cleans the component displayName (specially for connected components)
+   * which have the Connect(componentDisplayName)
+   * @method cleanViewName
+   * @param  {string} dirtyDisplayName The displayName
+   * @returns {string} Clean displayName (no Connect(...)).
+   */
+  cleanViewName = dirtyDisplayName =>
+    dirtyDisplayName
+      .replace('Connect(', '')
+      .replace(')', '')
+      .toLowerCase();
+
+  /**
+   * Render method.
+   * @method render
+   * @returns {string} Markup for the component.
+   */
   render() {
-    // const content = this.props.content;
-    // const blocksFieldname = getBlocksFieldname(content);
-    // const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
-
-    this.tabs = [
-      { title: 'Coverage & Growth', url: '', type: 'Section' },
-      { title: 'Economy', url: '', type: 'Section' },
-      { title: 'Other Benefits', url: '', type: 'Section' },
-    ];
-
+    if (this.props.error) {
+      let FoundView;
+      if (this.props.error.status === undefined) {
+        // For some reason, while development and if CORS is in place and the
+        // requested resource is 404, it returns undefined as status, then the
+        // next statement will fail
+        FoundView = views.errorViews['404'];
+      } else {
+        FoundView = views.errorViews[this.props.error.status.toString()];
+      }
+      if (!FoundView) {
+        FoundView = views.errorViews['404']; // default to 404
+      }
+      return (
+        <div id="view">
+          <FoundView />
+        </div>
+      );
+    }
+    if (!this.props.content) {
+      return <span />;
+    }
+    const RenderedView = MosaicView
+    
     return (
-      <div id="page-document" className="ui wrapper">
-        <div className="main-content">
-          <div className="centered-content">
-            <h2>A bird's-eye view on Europe’s forests</h2>
-            <p>
-              Europe is one of the few regions of the world where forest cover
-              has increased over the last century. The EU currently contains 5 %
-              of the world's forests. Let’s take a look at factors which led to
-              this net growth as well as their economical and ecological
-              implication.
-            </p>
-          </div>
+      <div id="view">
+        {/* Body class if displayName in component is set */}
+        <BodyClass
+          className={
+            RenderedView.displayName
+              ? `view-${this.cleanViewName(
+                  RenderedView.displayName
+                    .replace('injectIntl(', '')
+                    .toLowerCase(),
+                )}`
+              : null
+          }
+        />
 
-          {this.tabs && this.tabs.length ? (
-            <div
-              className={
-                'ui home-tab item stackable tabs menu ' +
-                numberToWord[this.tabs.length]
-              }
-            >
-              {this.tabs.map((item, ix) => (
-                <Link
-                  key={ix}
-                  className="item"
-                  to={item.url}
-                  title={item['@type']}
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </div>
-          ) : (
-            ''
-          )}
-
-          <div className="ui active tab tab-content">
-            <div className="ui stackable two column grid">
-              <div className="column">
-                <div className="ui two column stackable grid">
-                  <div className="column">
-                    <div className="ui segment coverage-segment">
-                      <h5>Forest coverage</h5>
-                      <div className="land-data-wrapper">
-                        <div className="land-data">43%</div>
-                        <div className="land-data-content">
-                          of Europe's land surface <span>181 Mha</span>
-                        </div>
-                      </div>
-                      <div className="coverage-data">
-                        <div className="owned-data">
-                          <span>71%</span> publicy owned
-                        </div>
-                        <div className="private-data">
-                          <span>29%</span> private
-                        </div>
-                      </div>
-                      <span className="discreet">2017 tree cover extent</span>
-                    </div>
-                  </div>
-
-                  <div className="column">
-                    <div className="ui segment data-box orange-data-highlight">
-                      <h5>Protected forests</h5>
-                      <div className="land-data-wrapper">
-                        <div className="land-data">12%</div>
-                        <div className="land-data-content">
-                          of Europe's land surface <span>51 Mha</span>
-                        </div>
-                      </div>
-                      <div className="ui bulleted list">
-                        <div className="item">
-                          Germany
-                          <span>16.2Mha</span>
-                        </div>
-                        <div className="item">
-                          Finland
-                          <span>12.4Mha</span>
-                        </div>
-                        <div className="item">
-                          Italy
-                          <span>14.5Mha</span>
-                        </div>
-                      </div>
-                      <span className="discreet">See all countries</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="ui one column stackable grid">
-                  <div className="column">
-                    <div className="ui segment">
-                      <div className="ui grid">
-                        <div className="four wide column">
-                          <h5>Growing stock</h5>
-                          <div className="chart-hightlight">
-                            Vestibulum eget est ac lorem dapibus lacinia.
-                            Integer magna nunc, scelerisque in lacinia nec,
-                            laoreet non augue. Nunc quis pharetra magna, in
-                            convallis ligula.
-                          </div>
-                        </div>
-                        <span className="discreet">2017 tree cover extent</span>
-                        <div className="eight wide column">
-                          <div className="chart-container">
-                            <StackedBarChart />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="column map-container">
-                <div className="map-wrapper">
-                  <iframe
-                    title="Test Map"
-                    src="https://maps.eea.europa.eu/CopernicusViewer/?webmap=f9a8ae48d60a49f1bd9b16dba0f2c5fe&extent=-20.0,30.0,44.0,66.0&zoom=true"
-                    width="100%"
-                    height="490"
-                  />
-                </div>
-
-                <div className="map-buttons">
-                  <button className="ui primary button">Land Cover</button>
-                  <button className="ui button">Map type no2</button>
-                  <button className="ui button">Map type no3</button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <RenderedView
+          content={this.props.content}
+          location={this.props.location}
+          token={this.props.token}
+          history={this.props.history}
+        />
 
           <div className="thematic-areas">
             <div className="centered-content">
@@ -356,16 +308,47 @@ class HomepageView extends Component {
               </div>
             </div>
           </div>
-        </div>
+
+
+        {this.props.content.subjects &&
+          this.props.content.subjects.length > 0 && (
+            <Tags tags={this.props.content.subjects} />
+          )}
+        {/* Add opt-in social sharing if required, disabled by default */}
+        {/* In the future this might be parameterized from the app config */}
+        {/* <SocialSharing
+          url={typeof window === 'undefined' ? '' : window.location.href}
+          title={this.props.content.title}
+          description={this.props.content.description || ''}
+        /> */}
+        {this.props.content.allow_discussion && (
+          <Comments pathname={this.props.pathname} />
+        )}
+
+        <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
+          <Toolbar pathname={this.props.pathname} inner={<span />} />
+        </Portal>
       </div>
     );
   }
 }
 
-export default connect(
-  state => ({
-    tabs: state.folder_tabs.items,
-    parent: state.parent_folder_data.items,
-  }),
-  mapDispatchToProps,
-)(HomepageView);
+export default compose(
+  injectIntl,
+  connect(
+    (state, props) => ({
+      actions: state.actions.actions,
+      token: state.userSession.token,
+      content: state.content.data,
+      error: state.content.get.error,
+      pathname: props.location.pathname,
+      versionId:
+        qs.parse(props.location.search) &&
+        qs.parse(props.location.search).version_id,
+    }),
+    {
+      listActions,
+      getContent,
+    },
+  ),
+)(View);
