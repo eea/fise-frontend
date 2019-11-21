@@ -37,7 +37,7 @@ const config = [
   draftConfig,
   mosaicConfig,
   dataBlocksConfig,
-].reduce(apply => apply(config), voltoConfig);
+].reduce((acc, apply) => apply(acc), voltoConfig);
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
