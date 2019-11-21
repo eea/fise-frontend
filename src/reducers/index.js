@@ -11,6 +11,7 @@ import default_header_image from '~/reducers/default_header_image';
 import parent_folder_data from '~/reducers/parent_folder_data';
 import localnavigation from '~/reducers/localnavigation';
 import attachments, { create_attachment } from './attachments';
+import { addonReducers } from '~/config';
 
 /**
  * Root reducer.
@@ -21,6 +22,7 @@ import attachments, { create_attachment } from './attachments';
  */
 const reducers = {
   ...defaultReducers,
+  ...addonReducers,
   // Add your reducers here
   frontpage_slides,
   folder_header,
