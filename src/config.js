@@ -25,6 +25,7 @@ import chartIcon from '@plone/volto/icons/world.svg';
 
 import * as voltoConfig from '@plone/volto/config';
 
+import { applyConfig as addonsConfig } from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as draftConfig } from 'volto-drafteditor/config';
@@ -32,6 +33,7 @@ import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 
 const config = [
+  addonsConfig,
   plotlyConfig,
   ckeditorConfig,
   draftConfig,
