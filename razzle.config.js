@@ -1,4 +1,3 @@
-
 // const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const jsConfig = require('./jsconfig').compilerOptions;
 

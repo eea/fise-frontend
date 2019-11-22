@@ -31,7 +31,6 @@ import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as draftConfig } from 'volto-drafteditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
-const util = require('util');
 
 const config = [
   addonsConfig,
@@ -49,6 +48,7 @@ const Underline = createInlineStyleButton({
 
 export const settings = {
   ...config.settings,
+  // allow_cors_origin: '*',
   richTextEditorInlineToolbarButtons: [
     Underline,
     ...config.settings.richTextEditorInlineToolbarButtons,
@@ -138,7 +138,3 @@ export const blocks = {
 export const portlets = [ForestMetadata]; // SliderEditButton
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
-
-console.log('----------------', addonReducers)
-
-console.log('last logged config', util.inspect(config, false, null, true));
