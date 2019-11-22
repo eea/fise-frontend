@@ -148,8 +148,7 @@ def list_addons():
     with open('./mr.developer.json') as f:
         j = json.load(f)
 
-    for k in j.keys():
-        print(k)
+    print(" ".join(j.keys()))
 
 
 def main(op, target):

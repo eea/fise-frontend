@@ -5,36 +5,39 @@ DOCKERIMAGE_FILE="docker-image.txt"
 NAME := $(call image-name-split,$(shell cat $(DOCKERIMAGE_FILE)), 1)
 IMAGE=$(shell cat $(DOCKERIMAGE_FILE))
 
-VOLTO_ADDONS=$(shell ./pkg_helper.py list)
+# VOLTO_ADDONS=$(shell ./pkg_helper.py list)
 
 .DEFAULT_GOAL := help
 
 .PHONY: activate
 activate:		## Activate an addon package for development
-	if [[ -z "${pkg}" ]]; then\
-		echo "You need to specify package name in make command";\
-		echo "Ex: make activate pkg=volto-datablocks";\
-	else \
-		./pkg_helper.py --target=${pkg} activate;\
-		echo "Running npm install src/addons/${pkg}";\
-		npm install "src/addons/${pkg}";\
-		echo "Cleaning up after npm install";\
-		read -ra ADDR <<< "${VOLTO_ADDONS}"; \
-		for pkg in "$${ADDR[@]}"; do \
-			echo "removing $$pkg"; \
-			rm -rf "./node_modules/$$pkg";\
-		done; \
-		echo "Done.";\
-	fi
+	set -e; \
+		if [[ -z "${pkg}" ]]; then\
+			echo "You need to specify package name in make command";\
+			echo "Ex: make activate pkg=volto-datablocks";\
+		else \
+			./pkg_helper.py --target=${pkg} activate;\
+			echo "Running npm install src/addons/${pkg}";\
+			npm install "src/addons/${pkg}";\
+			echo "Cleaning up after npm install";\
+			export VOLTO_ADDONS=`./pkg_helper.py list`;\
+			read -ra ADDR <<< "$${VOLTO_ADDONS}"; \
+			for pkg in "$${ADDR[@]}"; do \
+				echo "removing $${pkg}"; \
+				rm -rf "./node_modules/$${pkg}";\
+			done; \
+			echo "Done.";\
+		fi
 
 PHONY: clean-addons
 clean-addons:
-	set -x; \
+	set -e; \
 		echo "Cleaning up after npm install";\
-		read -ra ADDR <<< "${VOLTO_ADDONS}"; \
+		export VOLTO_ADDONS=`./pkg_helper.py list`;\
+		read -ra ADDR <<< "$${VOLTO_ADDONS}"; \
 		for pkg in "$${ADDR[@]}"; do \
-			echo "removing $$pkg"; \
-			rm -rf "./node_modules/$$pkg";\
+			echo "removing $${pkg}"; \
+			rm -rf "./node_modules/$${pkg}";\
 		done; \
 
 .PHONY: activate-all
@@ -63,6 +66,9 @@ clean:
 
 .PHONY: build
 build:
+	echo "";\
+	echo "Make sure that you have the npm cache (Verdaccio) running!";\
+	echo "";\
 	DEBUG= \
 				 NODE_OPTIONS=--max_old_space_size=4096 \
 				 RAZZLE_API_PATH=VOLTO_API_PATH \
