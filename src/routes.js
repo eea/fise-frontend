@@ -6,6 +6,7 @@
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
 import EditSlider from '~/components/manage/Slider/Edit';
+import HomepageView from '~/components/theme/HomepageView/HomepageView'
 
 import { addonRoutes } from '~/config';
 
@@ -20,7 +21,11 @@ const routes = [
     component: App, // Change this if you want a different component
     routes: [
       // Add your routes here
-
+      {
+        path:'/',
+        component: HomepageView,
+        exact: true,
+      },
       {
         path: '/manage-slider',
         component: EditSlider,

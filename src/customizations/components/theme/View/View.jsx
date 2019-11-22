@@ -1,10 +1,6 @@
 /**
  * View container.
  * @module components/theme/View/View
- *
- *
- * Customization based on Volto 4.0.0.alpha-9
- * The intention is to add "portlets" that list metadata
  */
 
 import React, { Component } from 'react';
@@ -14,15 +10,11 @@ import { compose } from 'redux';
 import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
-import { views, portlets } from '~/config';
+import { views } from '~/config';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
-import {
-  BodyClass,
-  getBaseUrl,
-  getLayoutFieldname,
-} from '@plone/volto/helpers';
+import { BodyClass, getBaseUrl, getLayoutFieldname } from '@plone/volto/helpers';
 
 /**
  * View container class.
@@ -217,32 +209,20 @@ class View extends Component {
     const RenderedView =
       this.getViewByType() || this.getViewByLayout() || this.getViewDefault();
 
-    console.log('found view by type', this.getViewByType());
-    console.log('found view by layout', this.getViewByLayout());
-    console.log('found view default', this.getViewDefault());
-
     return (
       <div id="view">
-        <div id="content-left-column" />
-        <div id="content-right-column" />
-
         {/* Body class if displayName in component is set */}
         <BodyClass
           className={
             RenderedView.displayName
-              ? `view-${this.cleanViewName(RenderedView.displayName)}`
+              ? `view-${this.cleanViewName(
+                  RenderedView.displayName
+                    .replace('injectIntl(', '')
+                    .toLowerCase(),
+                )}`
               : null
           }
         />
-
-        {/* Body class depending on content type */}
-        {this.props.content && this.props.content['@type'] && (
-          <BodyClass
-            className={`contenttype-${this.props.content['@type']
-              .replace(' ', '-')
-              .toLowerCase()}`}
-          />
-        )}
 
         <RenderedView
           content={this.props.content}
@@ -266,16 +246,9 @@ class View extends Component {
           <Comments pathname={this.props.pathname} />
         )}
 
-        <div id="content-below" />
-
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar pathname={this.props.pathname} inner={<span />} />
         </Portal>
-
-        {portlets &&
-          portlets.map((Portlet, i) => (
-            <Portlet key={`portlet-${i}`} {...this.props} />
-          ))}
       </div>
     );
   }

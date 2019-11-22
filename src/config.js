@@ -139,4 +139,6 @@ export const portlets = [ForestMetadata]; // SliderEditButton
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
 
+console.log('----------------', addonReducers)
+
 console.log('last logged config', util.inspect(config, false, null, true));
