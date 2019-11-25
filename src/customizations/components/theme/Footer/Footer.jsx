@@ -41,7 +41,8 @@ const Footer = ({ intl }) => (
             <b>ABOUT</b>
             <p>
               Fise - Forest Information System for Europe is a forest knowledge
-              base in support of the EU Forest Strategy <a href="#">See more</a>
+              base in support of the EU Forest Strategy.{' '}
+              {/* <a href="#">See more</a> */}
             </p>
             <img
               style={{ width: '250px', marginTop: '2rem' }}
