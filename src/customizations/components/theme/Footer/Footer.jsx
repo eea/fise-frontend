@@ -82,7 +82,7 @@ const Footer = ({ intl }) => (
               </li>
               <li>
                 <Link className="item" to="/credits">
-                  <FormattedMessage id="Credits" defaultMessage="Credis" />
+                  <FormattedMessage id="Credits" defaultMessage="Credits" />
                 </Link>
               </li>
             </ul>
