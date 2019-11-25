@@ -40,7 +40,7 @@ const Footer = ({ intl }) => (
           <div className="column">
             <b>ABOUT</b>
             <p>
-              Fise - Forest Information System for Europe is a forest knowledge
+              FISE - Forest Information System for Europe is a forest knowledge
               base in support of the EU Forest Strategy.{' '}
               {/* <a href="#">See more</a> */}
             </p>
