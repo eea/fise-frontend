@@ -52,7 +52,8 @@ body.has-toolbar {
   // max-width       : calc(100% + 6rem);
   // margin-left     : -3rem;
   // margin-right    : -3rem;
-  padding            : 1em;
+  // padding            : 1em;
+  padding: 3rem 1rem;
 }
 .view-viewview {
   .contnet-area main {
@@ -691,8 +692,11 @@ ul.ui.list li:before,
   }
 
   .area-title {
-    color    : @darkGreen;
+    color    : #003311;
     font-size: 22px;
+    a {
+      color: inherit;
+    }
   }
 
   area-description {
@@ -763,7 +767,7 @@ ul.ui.list li:before,
   margin-right: -4rem;
   margin-left: -4rem;
   background: #f4f4f1;
-  margin-bottom: -2rem;
+  margin-bottom: -5rem;
 }
 
 nav.navigation .menu>a.item:first-of-type {
@@ -874,7 +878,7 @@ h5 {
 }
 
 .folderWithContent {
-  padding: 0 90px;
+  padding: 0 90px!important;
 }
 
 .localNavigationHeader {

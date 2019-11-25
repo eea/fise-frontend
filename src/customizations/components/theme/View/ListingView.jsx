@@ -159,26 +159,26 @@ class ListingView extends Component {
               blocks.blocksConfig[
                 (content[blocksFieldname]?.[block]?.['@type'])
               ]?.['view'] || null;
-            return Block !== null ? (
-              <Block
-                key={block}
-                id={block}
-                properties={content}
-                data={content[blocksFieldname][block]}
-              />
-            ) : (
-              <div key={block}>
-                {intl.formatMessage(messages.unknownBlock, {
-                  block: content[blocksFieldname]?.[block]?.['@type'],
-                })}
-              </div>
-            );
+              return Block !== null && (content[blocksFieldname][block]['@type'] != 'title') ? (
+                <Block
+                  key={block}
+                  id={block}
+                  properties={content}
+                  data={content[blocksFieldname][block]}
+                />
+              ) : (
+              //   <div key={block}>
+              //     {intl.formatMessage(messages.unknownBlock, {
+              //       block: content[blocksFieldname]?.[block]?.['@type'],
+              //     })}
+              //   </div>
+              ''
+              );
           })}
         </div>
       ) : (
         <Container id="page-document">
           <Helmet title={content.title} />
-          <h1 className="documentFirstHeading">{content.title}</h1>
           {content.description && (
             <p className="documentDescription">{content.description}</p>
           )}

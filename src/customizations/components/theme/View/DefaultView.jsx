@@ -38,13 +38,12 @@ const DefaultView = ({ content, intl }) => {
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
-      {/* <Helmet title={content.title} /> */}
+      <Helmet title={content.title} />
       {map(content[blocksLayoutFieldname].items, block => {
         const Block =
           blocks.blocksConfig[(content[blocksFieldname]?.[block]?.['@type'])]?.[
             'view'
           ] || null;
-          console.log('alalala',content[blocksFieldname][block]['@type'])
         return Block !== null && (content[blocksFieldname][block]['@type'] != 'title') ? (
           <Block
             key={block}
