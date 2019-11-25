@@ -258,45 +258,74 @@ class View extends Component {
           <div className="ui stackable five column grid thematic_areas_wrapper">
             <div className="column area-section">
               <div className="area-image">
-                <img src={BasicForestIMG} alt="" />
+                <a href="/thematic-areas/forest-basic-information">
+                  <img src={BasicForestIMG} alt="" />
+                </a>
               </div>
               <div className="area-content">
-                <h5 className="area-title">Forest base</h5>
+                <h5 className="area-title">
+                  <a href="/thematic-areas/forest-basic-information">
+                    Forest base
+                  </a>
+                </h5>
               </div>
             </div>
 
             <div className="column area-section">
               <div className="area-image">
-                <img src={NatureIMG} alt="" />
+                <a href="/thematic-areas/forest-bioeconomy">
+                  <img src={NatureIMG} alt="" />
+                </a>
               </div>
               <div className="area-content">
-                <h5 className="area-title">Bioeconomy</h5>
+                <h5 className="area-title">
+                  <a href="/thematic-areas/forest-bioeconomy">Bioeconomy</a>
+                </h5>
               </div>
             </div>
 
             <div className="column area-section">
               <div className="area-image">
-                <img src={ForestCarbonIMG} alt="" />
+                <a href="/thematic-areas/forest-nature-and-biodiversity">
+                  <img src={ForestCarbonIMG} alt="" />
+                </a>
               </div>
               <div className="area-content">
-                <h5 className="area-title">Nature and biodiversity</h5>
+                <h5 className="area-title">
+                  <a href="/thematic-areas/forest-nature-and-biodiversity">
+                    Nature and biodiversity
+                  </a>
+                </h5>
               </div>
             </div>
 
             <div className="column area-section">
               <div className="area-image">
-                <img src={ForestIMG} alt="" />
+                <a href="/thematic-areas/forest-and-climate-change">
+                  <img src={ForestIMG} alt="" />
+                </a>
               </div>
               <div className="area-content">
-                <h5 className="area-title">Climate change mitigation</h5>
+                <h5 className="area-title">
+                  <a href="/thematic-areas/forest-and-climate-change">
+                    Climate change mitigation
+                  </a>
+                </h5>
               </div>
             </div>
+
             <div className="column area-section">
               <div className="area-image">
-                <img src={ForestHealthIMG} alt="" />
+                <a href="/thematic-areas/folder-condition">
+                  <img src={ForestHealthIMG} alt="" />
+                </a>
               </div>
               <div className="area-content">
-                <h5 className="area-title">Forest health and resilience</h5>
+                <h5 className="area-title">
+                  <a href="/thematic-areas/folder-condition">
+                    Forest health and resilience
+                  </a>
+                </h5>
               </div>
             </div>
           </div>
