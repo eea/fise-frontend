@@ -74,10 +74,10 @@ const Footer = ({ intl }) => (
               </li>
 
               <li>
-                <Link className="item" to="/private_policy">
+                <Link className="item" to="/privacy_policy">
                   <FormattedMessage
-                    id="private_policy"
-                    defaultMessage="Private policy"
+                    id="privacy_policy"
+                    defaultMessage="Privacy policy"
                   />
                 </Link>
               </li>
