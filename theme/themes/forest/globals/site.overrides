@@ -759,10 +759,11 @@ ul.ui.list li:before,
 }
 
 .thematic-areas {
-  padding-top : 2rem;
+  padding-top: 2rem;
   margin-right: -4rem;
-  margin-left : -4rem;
-  background  : #f4f4f1;
+  margin-left: -4rem;
+  background: #f4f4f1;
+  margin-bottom: -2rem;
 }
 
 nav.navigation .menu>a.item:first-of-type {

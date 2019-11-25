@@ -233,13 +233,14 @@ class View extends Component {
               : null
           }
         />
-
-        <RenderedView
-          content={this.props.content}
-          location={this.props.location}
-          token={this.props.token}
-          history={this.props.history}
-        />
+        <div className="homepage-content">
+          <RenderedView
+            content={this.props.content}
+            location={this.props.location}
+            token={this.props.token}
+            history={this.props.history}
+          />
+        </div>
 
         <div className="thematic-areas">
           <div className="centered-content">
