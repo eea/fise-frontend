@@ -14,12 +14,18 @@ import { views } from '~/config';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
-import { BodyClass, getBaseUrl, getLayoutFieldname } from '@plone/volto/helpers';
-import BasicForestIMG from '~/components/theme/HomepageView/images/basic-forest.png';
-import ForestCarbonIMG from '~/components/theme/HomepageView/images/forest-carbon.png';
-import ForestIMG from '~/components/theme/HomepageView/images/forest.png';
-import NatureIMG from '~/components/theme/HomepageView/images/nature.png';
-import MosaicView from 'volto-mosaic/components/theme/View'
+import {
+  BodyClass,
+  getBaseUrl,
+  getLayoutFieldname,
+} from '@plone/volto/helpers';
+import BasicForestIMG from '~/components/theme/HomepageView/images/1.jpg';
+import ForestCarbonIMG from '~/components/theme/HomepageView/images/2.jpg';
+import ForestIMG from '~/components/theme/HomepageView/images/3.jpg';
+import NatureIMG from '~/components/theme/HomepageView/images/4.jpg';
+import ForestHealthIMG from '~/components/theme/HomepageView/images/5.jpg';
+
+import MosaicView from 'volto-mosaic/components/theme/View';
 
 /**
  * View container class.
@@ -211,8 +217,8 @@ class View extends Component {
     if (!this.props.content) {
       return <span />;
     }
-    const RenderedView = MosaicView
-    
+    const RenderedView = MosaicView;
+
     return (
       <div id="view">
         {/* Body class if displayName in component is set */}
@@ -235,80 +241,66 @@ class View extends Component {
           history={this.props.history}
         />
 
-          <div className="thematic-areas">
-            <div className="centered-content">
-              <h2>Main thematic areas</h2>
-              <p>
-                For several decades now, environmental forest functions have
-                attracted increasing attention mainly in relation to the
-                protection of biodiversity and, more recently, in the context of
-                climate change impacts and energy policies. Forests are
-                increasingly valued for their role as regulators of climate and
-                local weather, protection against natural disasters and
-                renewable energy sources.
-              </p>
+        <div className="thematic-areas">
+          <div className="centered-content">
+            <h2>Main thematic areas</h2>
+            <p>
+              For several decades now, environmental forest functions have
+              attracted increasing attention mainly in relation to the
+              protection of biodiversity and, more recently, in the context of
+              climate change impacts and energy policies. Forests are
+              increasingly valued for their role as regulators of climate and
+              local weather, protection against natural disasters and renewable
+              energy sources.
+            </p>
+          </div>
+
+          <div className="ui stackable five column grid thematic_areas_wrapper">
+            <div className="column area-section">
+              <div className="area-image">
+                <img src={BasicForestIMG} alt="" />
+              </div>
+              <div className="area-content">
+                <h5 className="area-title">Forest base</h5>
+              </div>
             </div>
 
-            <div className="ui stackable four column grid">
-              <div className="column area-section">
-                <div className="area-image">
-                  <img src={BasicForestIMG} alt="" />
-                </div>
-                <div className="area-content">
-                  <h5 className="area-title">Basic forest information</h5>
-                  <p className="area-description">
-                    Forests provide renewable raw materials and energy, maintain
-                    biodiversity, and protect land and water resources.
-                  </p>
-                </div>
-                <button className="ui button">Learn more</button>
+            <div className="column area-section">
+              <div className="area-image">
+                <img src={NatureIMG} alt="" />
               </div>
-
-              <div className="column area-section">
-                <div className="area-image">
-                  <img src={NatureIMG} alt="" />
-                </div>
-                <div className="area-content">
-                  <h5 className="area-title">Nature and biodiversity</h5>
-                  <p className="area-description">
-                    Biodiversity is the wide variety of animals, plants, their
-                    habitats and their genes, and it is vital to countless human
-                    activities.
-                  </p>
-                </div>
-                <button className="ui button">Learn more</button>
+              <div className="area-content">
+                <h5 className="area-title">Bioeconomy</h5>
               </div>
+            </div>
 
-              <div className="column area-section">
-                <div className="area-image">
-                  <img src={ForestCarbonIMG} alt="" />
-                </div>
-                <div className="area-content">
-                  <h5 className="area-title">Forest carbon - LULUCF</h5>
-                  <p className="area-description">
-                    EU climate policy which helps reduce EU greenhouse gas
-                    emissions to at least 40 per cent below 1990 levels by 2030.
-                  </p>
-                </div>
-                <button className="ui button">Learn more</button>
+            <div className="column area-section">
+              <div className="area-image">
+                <img src={ForestCarbonIMG} alt="" />
               </div>
+              <div className="area-content">
+                <h5 className="area-title">Nature and biodiversity</h5>
+              </div>
+            </div>
 
-              <div className="column area-section">
-                <div className="area-image">
-                  <img src={ForestIMG} alt="" />
-                </div>
-                <div className="area-content">
-                  <h5 className="area-title">Forest bioeconomy</h5>
-                  <p className="area-description">
-                    Usin renewable biological resources to produce food,
-                    materials and energy.
-                  </p>
-                </div>
-                <button className="ui button">Learn more</button>
+            <div className="column area-section">
+              <div className="area-image">
+                <img src={ForestIMG} alt="" />
+              </div>
+              <div className="area-content">
+                <h5 className="area-title">Climate change mitigation</h5>
+              </div>
+            </div>
+            <div className="column area-section">
+              <div className="area-image">
+                <img src={ForestHealthIMG} alt="" />
+              </div>
+              <div className="area-content">
+                <h5 className="area-title">Forest health and resilience</h5>
               </div>
             </div>
           </div>
-
+        </div>
 
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (

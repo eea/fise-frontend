@@ -13,9 +13,7 @@ class View extends Component {
               <div className="land-data">
                 <span>{this.props.data.europe_forest_area}</span>
               </div>
-              <div className="land-data-content">
-                of Europe's land area consists of Forest and Other wooden land
-              </div>
+              <div className="land-data-content">of Europe's land surface</div>
             </div>
             <div className="ui bulleted list">
               <div className="item">

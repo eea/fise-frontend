@@ -194,7 +194,7 @@ class Navigation extends Component {
               >
                 <Dropdown.Menu>
                   <Dropdown.Header>
-                    <div className="carretTop" />
+                    {/* <div className="carretTop" /> */}
                     {/* <Link to={item.url === '' ? '/' : item.url} key={item.url}> */}
                     {/* {item.title} */}
                     {/* </Link> */}

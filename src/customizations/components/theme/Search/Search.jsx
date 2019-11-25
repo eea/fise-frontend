@@ -91,7 +91,7 @@ function renderSearch(context) {
 function renderIframe(context) {
   return (
     <iframe
-      src={`https://nfi-search.dev.eaudeweb.ro/#${context.term}`}
+      src={`https://demo-forests-p5.eea.europa.eu/search/#${context.term}`}
       width="100%"
       height="1300"
       title="fise search"

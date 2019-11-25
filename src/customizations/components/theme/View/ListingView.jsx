@@ -78,8 +78,7 @@ class ListingView extends Component {
       [];
     let pageTemplate = (
       <Grid columns={3} className="folderWithContent">
-        <Grid.Column tablet={0} largeScreen={3} widescreen={3}></Grid.Column>
-        <Grid.Column tablet={12} largeScreen={6} widescreen={6}>
+        <Grid.Column tablet={12} largeScreen={6} widescreen={9}>
           {hasBlocksData(content) ? (
             <div id="page-document">
               <Helmet title={content.title} />
@@ -139,6 +138,7 @@ class ListingView extends Component {
         </Grid.Column>
         <Grid.Column tablet={6} largeScreen={3} widescreen={3}>
           <ul className="localNavigation">
+            <div className="localNavigationHeader">Navigation</div>
             {localNavigation.map(item => (
               <li>
                 <Link to={flattenToAppURL(item['@id'])} key={item['@id']}>
@@ -156,9 +156,9 @@ class ListingView extends Component {
           <Helmet title={content.title} />
           {map(content[blocksLayoutFieldname].items, block => {
             const Block =
-              blocks.blocksConfig[(content[blocksFieldname]?.[block]?.['@type'])]?.[
-                'view'
-              ] || null;
+              blocks.blocksConfig[
+                (content[blocksFieldname]?.[block]?.['@type'])
+              ]?.['view'] || null;
             return Block !== null ? (
               <Block
                 key={block}

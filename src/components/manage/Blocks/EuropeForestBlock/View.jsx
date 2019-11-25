@@ -15,7 +15,7 @@ class View extends Component {
                 <span>{this.props.data.europe_forest_p_eu28}</span>
               </div>
               <div className="land-data-content">
-                of Europe's land surface <span>{this.props.data.europe_forest_l_eu28}</span>
+                of EU28 land surface <span>{this.props.data.europe_forest_l_eu28}</span>
               </div>
             </div>
 
@@ -24,7 +24,7 @@ class View extends Component {
                 <span>{this.props.data.europe_forest_p_eea39}</span>
               </div>
               <div className="land-data-content">
-                of Europe's land surface <span>{this.props.data.europe_forest_l_eea39}</span>
+                of EEA39s land surface <span>{this.props.data.europe_forest_l_eea39}</span>
               </div>
             </div>
 

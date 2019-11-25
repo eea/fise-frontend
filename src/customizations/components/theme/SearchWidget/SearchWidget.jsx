@@ -9,7 +9,7 @@ import { Form, Input } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { PropTypes } from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Popup } from 'semantic-ui-react'
+import { Popup } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import Person from './person.svg';
@@ -22,7 +22,7 @@ const messages = defineMessages({
   },
   searchSite: {
     id: 'Search Site',
-    defaultMessage: 'Search Site',
+    defaultMessage: 'Search website',
   },
 });
 
@@ -148,9 +148,7 @@ class SearchWidget extends Component {
       <Form action="/search" onSubmit={this.onSubmit}>
         <Form.Field className="searchbox">
           <Input
-            className={
-              'searchInput' + (this.state.showSearchField ? ' show' : ' hidden')
-            }
+            className={'searchInput show'}
             aria-label={this.props.intl.formatMessage(messages.search)}
             onChange={this.onChangeText}
             name="SearchableText"
@@ -160,12 +158,12 @@ class SearchWidget extends Component {
             title={this.props.intl.formatMessage(messages.search)}
           />
           <button
-            className="searchIcon ui small basic no-border icon button"
+            className="overSearchIcon ui small basic no-border icon button"
             aria-label={this.props.intl.formatMessage(messages.search)}
           >
             <Icon name={zoomSVG} size="18px" />
           </button>
-          {!this.state.showSearchField ? (
+          {/* {!this.state.showSearchField ? (
              <Popup content='Search' trigger={<button
               onClick={this.showSearch}
               className="overSearchIcon ui small basic no-border icon button"
@@ -175,16 +173,7 @@ class SearchWidget extends Component {
             </button>} />
           ) : (
             ''
-          )}
-          {this.props.token && (
-            <Popup content='Account actions' trigger={<img
-              onClick={() => document.querySelector('.toolbar .user').click()}
-              className="accountIcon insearch"
-              style={{ marginLeft: '1.5rem', cursor: 'pointer' }}
-              src={Person}
-              alt=""
-            />} />
-          )}
+          )} */}
         </Form.Field>
       </Form>
     );

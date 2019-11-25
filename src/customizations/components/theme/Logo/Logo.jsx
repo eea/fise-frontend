@@ -9,6 +9,7 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { Image } from 'semantic-ui-react';
 
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
+import LogoImageSm from './Logo-sm.svg';
 
 const messages = defineMessages({
   site: {
@@ -30,7 +31,15 @@ const messages = defineMessages({
 const Logo = ({ intl }) => (
   <Link to="/" title={intl.formatMessage(messages.site)}>
     <Image
+      className="logoImage"
       src={LogoImage}
+      alt={intl.formatMessage(messages.plonesite)}
+      title={intl.formatMessage(messages.plonesite)}
+      height={80}
+    />
+     <Image
+      className="logoImageSm"
+      src={LogoImageSm}
       alt={intl.formatMessage(messages.plonesite)}
       title={intl.formatMessage(messages.plonesite)}
       height={80}

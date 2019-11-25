@@ -8,6 +8,8 @@ import { Container, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { Portal } from 'react-portal';
+
 import {
   Anontools,
   Logo,
@@ -146,11 +148,6 @@ class Header extends Component {
                 <div className="search">
                   <SearchWidget pathname={this.props.pathname} />
                 </div>
-                {!this.props.token && (
-                  <div className="tools">
-                    <Anontools />
-                  </div>
-                )}
               </div>
             </div>
           </Container>
@@ -175,6 +172,15 @@ class Header extends Component {
             </div>
           )}
         </Container>
+        {!this.props.token && (
+          <Portal
+            node={__CLIENT__ && document.querySelector('#links_column')}
+          >
+            <div className="tools">
+              <Anontools />
+            </div>
+          </Portal>
+        )}
       </div>
     );
   }

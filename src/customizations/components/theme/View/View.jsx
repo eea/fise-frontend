@@ -246,8 +246,14 @@ class View extends Component {
           <Comments pathname={this.props.pathname} />
         )}
 
+
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar pathname={this.props.pathname} inner={<span />} />
+        </Portal>
+
+        <Portal node={__CLIENT__ && document.querySelector('.header-image .header-image')}>
+          <h1>{this.props.content.title}</h1>
+          <p>{this.props.content.description}</p>
         </Portal>
       </div>
     );

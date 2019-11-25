@@ -59,6 +59,7 @@ const Footer = ({ intl }) => (
           <div
             style={{ width: '150px!important', fontSize: '.9rem' }}
             className="column"
+            id="links_column"
           >
             <b>LINKS</b>
             <ul className="unlist">
