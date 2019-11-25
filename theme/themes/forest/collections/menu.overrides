@@ -53,8 +53,8 @@
 }
 
 .ui.secondary.pointing.menu a.item:active {
-    border: none;
     color : inherit;
+    border-bottom: 2px solid transparent;
 }
 
 .navigation .menu .dropdown>.menu>.dropdown .menu {
@@ -152,10 +152,6 @@
     background-color: transparent !important;
 }
 
-.ui.simple.active.dropdown > .menu, .ui.simple.dropdown:hover > .menu {
-    opacity: 1!important;
-    top: 100%!important;
-}
 
 .carretTop {
     content         : '';

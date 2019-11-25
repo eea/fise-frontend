@@ -99,6 +99,13 @@ class Navigation extends Component {
     );
   }
 
+  componentDidUpdate(nextProps) {
+    // this hack prevents menu from staying open on route change
+    if (__CLIENT__ && document.querySelector('body')) {
+      document.querySelector('body').click();
+    }
+  }
+
   /**
    * Toggle mobile menu's open state
    * @method toggleMobileMenu
@@ -219,14 +226,16 @@ class Navigation extends Component {
                           <div className="submenu">
                             {subitem.items.map(subsubitem => (
                               <Link
-                                to={subsubitem.url === '' ? '/' : subsubitem.url}
+                                to={
+                                  subsubitem.url === '' ? '/' : subsubitem.url
+                                }
                                 key={subsubitem.url}
                                 className={
                                   this.isActive(subsubitem.url)
-                                  ? 'item thirdLevel menuActive'
-                                  : 'item thirdLevel'
+                                    ? 'item thirdLevel menuActive'
+                                    : 'item thirdLevel'
                                 }
-                                >
+                              >
                                 {subsubitem.title}
                               </Link>
                             ))}
