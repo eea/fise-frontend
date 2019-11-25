@@ -30,10 +30,6 @@
                         "./src/addons/volto-datablocks/src"
                     ], 
                     [
-                        "volto-addons", 
-                        "./src/addons/volto-addons/src"
-                    ], 
-                    [
                         "volto-ckeditor", 
                         "./src/addons/volto-ckeditor/src"
                     ], 
@@ -48,6 +44,14 @@
                     [
                         "volto-plotlycharts", 
                         "./src/addons/volto-plotlycharts/src"
+                    ], 
+                    [
+                        "volto-corsproxy", 
+                        "./src/addons/volto-corsproxy/src"
+                    ], 
+                    [
+                        "volto-addons", 
+                        "./src/addons/volto-addons/src"
                     ]
                 ]
             }, 

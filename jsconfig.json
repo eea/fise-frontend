@@ -11,6 +11,9 @@
             "volto-ckeditor": [
                 "addons/volto-ckeditor/src"
             ], 
+            "volto-corsproxy": [
+                "addons/volto-corsproxy/src"
+            ], 
             "volto-datablocks": [
                 "addons/volto-datablocks/src"
             ], 
