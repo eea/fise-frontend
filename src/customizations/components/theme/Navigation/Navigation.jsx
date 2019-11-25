@@ -101,7 +101,9 @@ class Navigation extends Component {
 
   componentDidUpdate(nextProps) {
     // this hack prevents menu from staying open on route change
-    document.querySelector('body').click();
+    if (__CLIENT__ && document.querySelector('body')) {
+      document.querySelector('body').click();
+    }
   }
 
   /**
