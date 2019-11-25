@@ -173,6 +173,7 @@ class Navigation extends Component {
           {this.props.items.map(item =>
             item.items && item.items.length ? (
               <Dropdown
+                closeOnChange={true}
                 className={
                   this.isActive(item.url)
                     ? 'item menuActive firstLevel'

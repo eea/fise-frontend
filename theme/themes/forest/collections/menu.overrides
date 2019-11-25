@@ -143,8 +143,8 @@
 .navigation .menu>.dropdown.item>.menu {
     border       : none;
     // left      : -25px;
-    left         : unset;
-    right        : calc(100% - 4rem);
+    left         : 0;
+    // right        : calc(100% - 4rem);
     box-shadow   : 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -152,6 +152,10 @@
     background-color: transparent !important;
 }
 
+.ui.simple.active.dropdown > .menu, .ui.simple.dropdown:hover > .menu {
+    opacity: 1!important;
+    top: 100%!important;
+}
 
 .carretTop {
     content         : '';
