@@ -165,8 +165,6 @@ class Header extends Component {
 
               <HeaderImage url={headerImageUrl}>
                 <div className="header-image">
-                  <h1>{this.state.title}</h1>
-                  <p>{this.state.description}</p>
                 </div>
               </HeaderImage>
             </div>

@@ -98,6 +98,14 @@ body.has-toolbar {
     font-size    : 48px;
   }
 
+  h1.left,
+  p.left {
+    max-width: unset;
+    text-align: left;
+    padding: 0 100px!important;
+    width: 100%;
+  }
+
 
 }
 
@@ -877,8 +885,9 @@ h5 {
   margin   : 0 auto !important;
 }
 
-.folderWithContent {
-  padding: 0 90px!important;
+.folderWithContent,
+.breadcrumbs {
+  padding: 0 100px!important;
 }
 
 .localNavigationHeader {
@@ -889,8 +898,17 @@ h5 {
   box-shadow : 0px 4px 19px rgba(0, 0, 1, 0.07);
 }
 
-.folderWithContent #page-document {
-  max-width: unset !important;
+.localNavigation {
+  margin-left: 3rem;
+}
+
+.folderWithContent {
+  #page-document {
+    max-width: unset !important;
+  }
+  > .column {
+    padding: 0!important; 
+  }
 }
 
 .anon-actions-list {

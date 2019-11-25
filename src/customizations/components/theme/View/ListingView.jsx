@@ -76,6 +76,24 @@ class ListingView extends Component {
           item => item.title !== 'Home',
         )) ||
       [];
+
+    if (
+      __CLIENT__ &&
+      localNavigation.length &&
+      document.querySelector('.header-image .header-image')
+    ) {
+      const header = document.querySelector('.header-image .header-image');
+      header.querySelector('h1')?.classList.add('left');
+      header.querySelector('p')?.classList.add('left');
+    } else if (
+      __CLIENT__ &&
+      !localNavigation.length &&
+      document.querySelector('.header-image .header-image')
+    ) {
+      const header = document.querySelector('.header-image .header-image');
+      header.querySelector('h1')?.classList.remove('left');
+      header.querySelector('p')?.classList.remove('left');
+    }
     let pageTemplate = (
       <Grid columns={3} className="folderWithContent">
         <Grid.Column tablet={12} largeScreen={6} widescreen={9}>
@@ -87,20 +105,21 @@ class ListingView extends Component {
                   blocks.blocksConfig[
                     (content[blocksFieldname]?.[block]?.['@type'])
                   ]?.['view'] || null;
-                return Block !== null ? (
-                  <Block
-                    key={block}
-                    id={block}
-                    properties={content}
-                    data={content[blocksFieldname][block]}
-                  />
-                ) : (
-                  <div key={block}>
-                    {intl.formatMessage(messages.unknownBlock, {
-                      block: content[blocksFieldname]?.[block]?.['@type'],
-                    })}
-                  </div>
-                );
+                  return Block !== null && (content[blocksFieldname][block]['@type'] != 'title') ? (
+                    <Block
+                      key={block}
+                      id={block}
+                      properties={content}
+                      data={content[blocksFieldname][block]}
+                    />
+                  ) : (
+                  //   <div key={block}>
+                  //     {intl.formatMessage(messages.unknownBlock, {
+                  //       block: content[blocksFieldname]?.[block]?.['@type'],
+                  //     })}
+                  //   </div>
+                  ''
+                  );
               })}
             </div>
           ) : (
@@ -159,21 +178,22 @@ class ListingView extends Component {
               blocks.blocksConfig[
                 (content[blocksFieldname]?.[block]?.['@type'])
               ]?.['view'] || null;
-              return Block !== null && (content[blocksFieldname][block]['@type'] != 'title') ? (
-                <Block
-                  key={block}
-                  id={block}
-                  properties={content}
-                  data={content[blocksFieldname][block]}
-                />
-              ) : (
+            return Block !== null &&
+              content[blocksFieldname][block]['@type'] != 'title' ? (
+              <Block
+                key={block}
+                id={block}
+                properties={content}
+                data={content[blocksFieldname][block]}
+              />
+            ) : (
               //   <div key={block}>
               //     {intl.formatMessage(messages.unknownBlock, {
               //       block: content[blocksFieldname]?.[block]?.['@type'],
               //     })}
               //   </div>
               ''
-              );
+            );
           })}
         </div>
       ) : (
