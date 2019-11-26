@@ -391,9 +391,7 @@
     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
       display: none !important;
     }
-    .slider-wrapper .navSlider {
-      max-width: 574px;
-    }
+    
 
     .logo-nav-wrapper {
       flex-direction: row!important;
