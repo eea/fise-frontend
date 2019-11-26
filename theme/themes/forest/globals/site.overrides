@@ -104,6 +104,7 @@ body.has-toolbar {
     text-align: left;
     padding: 0 100px!important;
     width: 100%;
+    padding-right: 50%!important;
   }
 
 
@@ -182,8 +183,8 @@ body.has-toolbar {
 
 .mainSlider {
   .slick-slide {
-    border-top-left-radius : 1rem;
-    border-top-right-radius: 1rem;
+    // border-top-left-radius : 1rem;
+    // border-top-right-radius: 1rem;
     overflow               : hidden;
   }
 
@@ -216,6 +217,7 @@ body.has-toolbar {
   border-top-left-radius    : 1rem;
   border-top-right-radius   : 1rem;
   position                  : relative;
+  overflow: hidden;
   // margin-left            : -3rem;
   // margin-right           : -3rem;
 
@@ -259,7 +261,8 @@ body.has-toolbar {
     right           : 0;
     // padding-right: 2rem;
 
-    padding-right  : 5rem;
+    // padding-right  : 5rem;
+    padding-right: 62px;
     display        : flex;
     justify-content: center;
     align-items    : center;

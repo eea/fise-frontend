@@ -1,213 +1,3 @@
-// /*******************************
-//          Theme Overrides
-// *******************************/
-
-// @toolbarWidth: 80px;
-// @sidebarWidth: 375px;
-// @collapsedWidth: 20px;
-
-
-// .ui.messages.container {
-//   margin-bottom: 1em;
-// }
-
-// /* All Sizes */
-// .ui.container {
-// // .ui.wrapper > *,
-// // .ui.wrapper > .ui.inner > * {
-//   display: block;
-//   max-width: 1670px ;
-//   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-// }
-
-// .ui.wrapper > * {
-//   width: initial;
-// }
-
-// .contentWidthMedia(@width, @gutter, @offset) {
-//   .ui.container {
-//   // .ui.wrapper > *,
-//   // .ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
-//     width: 89%!important;
-//     margin-right: auto!important;
-//     margin-left: auto!important;
-//     max-width: 1670px!important;
-//   }
- 
-//   .drag.handle.wrapper {
-//     margin-left: @offset ;
-//   }
-//   .block .delete-button {
-//     margin-right: @offset ;
-//   }
-// }
-
-
-// .contentWidth(@offset) {
-//   @media only screen and (max-width: @largestMobileScreen + @offset) {
-//     .contentWidthMedia(@mobileWidth, @mobileGutter, -12px);
-//     [class*='mobile hidden'],
-//     [class*='tablet only']:not(.mobile),
-//     [class*='computer only']:not(.mobile),
-//     [class*='large screen only']:not(.mobile),
-//     [class*='widescreen only']:not(.mobile),
-//     [class*='or lower hidden'] {
-//       display: none ;
-//     }
-//   }
-//   @media only screen and (min-width: @tabletBreakpoint + @offset) {
-//     .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
-//     [class*='mobile only']:not(.tablet),
-//     [class*='tablet hidden'],
-//     [class*='computer only']:not(.tablet),
-//     [class*='large screen only']:not(.tablet),
-//     [class*='widescreen only']:not(.tablet),
-//     [class*='or lower hidden']:not(.mobile) {
-//       display: none ;
-//     }
-//   }
-//   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
-//     .contentWidthMedia(@computerWidth, @computerGutter, -30px);
-//     [class*='mobile only']:not(.computer),
-//     [class*='tablet only']:not(.computer),
-//     [class*='computer hidden'],
-//     [class*='large screen only']:not(.computer),
-//     [class*='widescreen only']:not(.computer),
-//     [class*='or lower hidden']:not(.tablet):not(.mobile) {
-//       display: none ;
-//     }
-//   }
-//   @media only screen and (min-width: @largeMonitorBreakpoint + @offset) {
-//     .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
-//     [class*='mobile only']:not([class*='large screen']),
-//     [class*='tablet only']:not([class*='large screen']),
-//     [class*='computer only']:not([class*='large screen']),
-//     [class*='large screen hidden'],
-//     [class*='widescreen only']:not([class*='large screen']),
-//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-//       display: none ;
-//     }
-//   }
-
-//   @media only screen and (min-width: @widescreenlaptopBreakpoint + @offset) {
-//     .contentWidthMedia(@widescreenlaptopWidth, @largeMonitorGutter, -30px);
-//     [class*='mobile only']:not([class*='large screen']),
-//     [class*='tablet only']:not([class*='large screen']),
-//     [class*='computer only']:not([class*='large screen']),
-//     [class*='large screen hidden'],
-//     [class*='widescreen only']:not([class*='large screen']),
-//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-//       display: none ;
-//     }
-//   }
-
-//   @media only screen and (min-width: @widescreenlaptopBigBreakpoint + @offset) {
-//     .contentWidthMedia(@widescreenlaptopBigWidth, @largeMonitorGutter, -30px);
-//     [class*='mobile only']:not([class*='large screen']),
-//     [class*='tablet only']:not([class*='large screen']),
-//     [class*='computer only']:not([class*='large screen']),
-//     [class*='large screen hidden'],
-//     [class*='widescreen only']:not([class*='large screen']),
-//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-//       display: none ;
-//     }
-//   }
-
-//   @media only screen and (min-width: 1700px) {
-//     .contentWidthMedia(@widescreenmonitorSmallWidth, @largeMonitorGutter, -30px);
-//     [class*='mobile only']:not([class*='large screen']),
-//     [class*='tablet only']:not([class*='large screen']),
-//     [class*='computer only']:not([class*='large screen']),
-//     [class*='large screen hidden'],
-//     [class*='widescreen only']:not([class*='large screen']),
-//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-//       display: none ;
-//     }
-//   }
-  
-
-
-
-//   @media only screen and (min-width: @widescreenMonitorBreakpoint + @offset) {
-//     .contentWidthMedia(@widescreenMonitorWidth, @largeMonitorGutter, -30px);
-//     [class*='mobile only']:not([class*='large screen']),
-//     [class*='tablet only']:not([class*='large screen']),
-//     [class*='computer only']:not([class*='large screen']),
-//     [class*='large screen hidden'],
-//     [class*='widescreen only']:not([class*='large screen']),
-//     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-//       display: none ;
-//     }
-//   }
-//   @media only screen and (min-width: 1280px) {
-    
-//   }
-// }
-
-// .ui.wrapper > .ui.inner {
-//   width: 100% ;
-// }
-
-// body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
-//   .contentWidth(0);
-// }
-
-// body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
-//   .contentWidth(@toolbarWidth);
-// }
-
-// body.has-toolbar.has-sidebar {
-//   .contentWidth(@toolbarWidth + @sidebarWidth);
-// }
-
-// body.has-toolbar.has-sidebar-collapsed {
-//   .contentWidth(@toolbarWidth + @collapsedWidth);
-// }
-
-// body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
-//   .contentWidth(@collapsedWidth);
-// }
-
-// body.has-toolbar-collapsed.has-sidebar {
-//   .contentWidth(@collapsedWidth + @sidebarWidth);
-// }
-
-// body.has-toolbar-collapsed.has-sidebar-collapsed {
-//   .contentWidth(@collapsedWidth + @collapsedWidth);
-// }
-
-// .drag.handle.wrapper {
-//   margin-left: -15px;
-// }
-
-// .block .delete-button {
-//   margin-right: -25px;
-// }
-
-
-// .ui.wrapper > *,
-// .ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
-//   width: unset!important;
-//   padding: 0 2rem;
-// }
-// body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) .ui.wrapper > *{
-//   width: unset!important;
-//   padding: 0 2rem;
-// }
-// body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) .ui.wrapper > * {
-//   width: unset!important;
-//   padding: 0 2rem;
-// }
-
-// .content-area main {
-//   width: unset!important;
-//   // padding: 2rem;
-// }
-
-// .ui.container .ui.container {
-//   width: 100%!important;
-// }
-
 
 /*******************************
          Theme Overrides
@@ -249,6 +39,31 @@
     [class*='or lower hidden'] {
       display: none !important;
     }
+    nav.navigation {
+      position: absolute;
+      right: 0;
+      background: white;
+      top: 1rem;
+      z-index: 1;
+    }
+
+
+    .nav-actions {
+      position: relative;
+      justify-content: flex-end;
+      padding-right: 0;
+    }
+
+    .sticky-outer-wrapper.active {
+      .logo {
+        display: none;
+      }
+      nav.navigation {
+        top: 0;
+        right: auto;
+        left: 0;
+      }
+    }
 
     .logo-nav-wrapper {
       flex-direction: column!important;
@@ -256,7 +71,11 @@
     .navSlider {
       display: none!important;
     }
+    .slider-image {
+      background-position: center;
+    }
   }
+  // ~768 - 1024
   @media only screen and (min-width: @tabletBreakpoint + @offset) and (max-width: @largestTabletScreen + @offset) {
     .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
     [class*='mobile only']:not(.tablet),
@@ -268,223 +87,15 @@
       display: none !important;
     }
     // body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) .header-wrapper {
-
+      .slider-image {
+        background-position: center;
+      }
+      nav.navigation {
+        margin-top:2rem;
+      }
       .header-wrapper  {
-        .sticky-outer-wrapper {// /*******************************
-          //          Theme Overrides
-          // *******************************/
-          
-          // @toolbarWidth: 80px;
-          // @sidebarWidth: 375px;
-          // @collapsedWidth: 20px;
-          
-          
-          // .ui.messages.container {
-          //   margin-bottom: 1em;
-          // }
-          
-          // /* All Sizes */
-          // .ui.container {
-          // // .ui.wrapper > *,
-          // // .ui.wrapper > .ui.inner > * {
-          //   display: block;
-          //   max-width: 1670px ;
-          //   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-          // }
-          
-          // .ui.wrapper > * {
-          //   width: initial;
-          // }
-          
-          // .contentWidthMedia(@width, @gutter, @offset) {
-          //   .ui.container {
-          //   // .ui.wrapper > *,
-          //   // .ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
-          //     width: 89%!important;
-          //     margin-right: auto!important;
-          //     margin-left: auto!important;
-          //     max-width: 1670px!important;
-          //   }
-           
-          //   .drag.handle.wrapper {
-          //     margin-left: @offset ;
-          //   }
-          //   .block .delete-button {
-          //     margin-right: @offset ;
-          //   }
-          // }
-          
-          
-          // .contentWidth(@offset) {
-          //   @media only screen and (max-width: @largestMobileScreen + @offset) {
-          //     .contentWidthMedia(@mobileWidth, @mobileGutter, -12px);
-          //     [class*='mobile hidden'],
-          //     [class*='tablet only']:not(.mobile),
-          //     [class*='computer only']:not(.mobile),
-          //     [class*='large screen only']:not(.mobile),
-          //     [class*='widescreen only']:not(.mobile),
-          //     [class*='or lower hidden'] {
-          //       display: none ;
-          //     }
-          //   }
-          //   @media only screen and (min-width: @tabletBreakpoint + @offset) {
-          //     .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
-          //     [class*='mobile only']:not(.tablet),
-          //     [class*='tablet hidden'],
-          //     [class*='computer only']:not(.tablet),
-          //     [class*='large screen only']:not(.tablet),
-          //     [class*='widescreen only']:not(.tablet),
-          //     [class*='or lower hidden']:not(.mobile) {
-          //       display: none ;
-          //     }
-          //   }
-          //   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
-          //     .contentWidthMedia(@computerWidth, @computerGutter, -30px);
-          //     [class*='mobile only']:not(.computer),
-          //     [class*='tablet only']:not(.computer),
-          //     [class*='computer hidden'],
-          //     [class*='large screen only']:not(.computer),
-          //     [class*='widescreen only']:not(.computer),
-          //     [class*='or lower hidden']:not(.tablet):not(.mobile) {
-          //       display: none ;
-          //     }
-          //   }
-          //   @media only screen and (min-width: @largeMonitorBreakpoint + @offset) {
-          //     .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
-          //     [class*='mobile only']:not([class*='large screen']),
-          //     [class*='tablet only']:not([class*='large screen']),
-          //     [class*='computer only']:not([class*='large screen']),
-          //     [class*='large screen hidden'],
-          //     [class*='widescreen only']:not([class*='large screen']),
-          //     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-          //       display: none ;
-          //     }
-          //   }
-          
-          //   @media only screen and (min-width: @widescreenlaptopBreakpoint + @offset) {
-          //     .contentWidthMedia(@widescreenlaptopWidth, @largeMonitorGutter, -30px);
-          //     [class*='mobile only']:not([class*='large screen']),
-          //     [class*='tablet only']:not([class*='large screen']),
-          //     [class*='computer only']:not([class*='large screen']),
-          //     [class*='large screen hidden'],
-          //     [class*='widescreen only']:not([class*='large screen']),
-          //     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-          //       display: none ;
-          //     }
-          //   }
-          
-          //   @media only screen and (min-width: @widescreenlaptopBigBreakpoint + @offset) {
-          //     .contentWidthMedia(@widescreenlaptopBigWidth, @largeMonitorGutter, -30px);
-          //     [class*='mobile only']:not([class*='large screen']),
-          //     [class*='tablet only']:not([class*='large screen']),
-          //     [class*='computer only']:not([class*='large screen']),
-          //     [class*='large screen hidden'],
-          //     [class*='widescreen only']:not([class*='large screen']),
-          //     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-          //       display: none ;
-          //     }
-          //   }
-          
-          //   @media only screen and (min-width: 1700px) {
-          //     .contentWidthMedia(@widescreenmonitorSmallWidth, @largeMonitorGutter, -30px);
-          //     [class*='mobile only']:not([class*='large screen']),
-          //     [class*='tablet only']:not([class*='large screen']),
-          //     [class*='computer only']:not([class*='large screen']),
-          //     [class*='large screen hidden'],
-          //     [class*='widescreen only']:not([class*='large screen']),
-          //     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-          //       display: none ;
-          //     }
-          //   }
-            
-          
-          
-          
-          //   @media only screen and (min-width: @widescreenMonitorBreakpoint + @offset) {
-          //     .contentWidthMedia(@widescreenMonitorWidth, @largeMonitorGutter, -30px);
-          //     [class*='mobile only']:not([class*='large screen']),
-          //     [class*='tablet only']:not([class*='large screen']),
-          //     [class*='computer only']:not([class*='large screen']),
-          //     [class*='large screen hidden'],
-          //     [class*='widescreen only']:not([class*='large screen']),
-          //     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
-          //       display: none ;
-          //     }
-          //   }
-          //   @media only screen and (min-width: 1280px) {
-              
-          //   }
-          // }
-          
-          // .ui.wrapper > .ui.inner {
-          //   width: 100% ;
-          // }
-          
-          // body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
-          //   .contentWidth(0);
-          // }
-          
-          // body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
-          //   .contentWidth(@toolbarWidth);
-          // }
-          
-          // body.has-toolbar.has-sidebar {
-          //   .contentWidth(@toolbarWidth + @sidebarWidth);
-          // }
-          
-          // body.has-toolbar.has-sidebar-collapsed {
-          //   .contentWidth(@toolbarWidth + @collapsedWidth);
-          // }
-          
-          // body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
-          //   .contentWidth(@collapsedWidth);
-          // }
-          
-          // body.has-toolbar-collapsed.has-sidebar {
-          //   .contentWidth(@collapsedWidth + @sidebarWidth);
-          // }
-          
-          // body.has-toolbar-collapsed.has-sidebar-collapsed {
-          //   .contentWidth(@collapsedWidth + @collapsedWidth);
-          // }
-          
-          // .drag.handle.wrapper {
-          //   margin-left: -15px;
-          // }
-          
-          // .block .delete-button {
-          //   margin-right: -25px;
-          // }
-          
-          
-          // .ui.wrapper > *,
-          // .ui.wrapper > .ui.inner > *:not(.drag):not(.handle):not(.delete-button) {
-          //   width: unset!important;
-          //   padding: 0 2rem;
-          // }
-          // body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) .ui.wrapper > *{
-          //   width: unset!important;
-          //   padding: 0 2rem;
-          // }
-          // body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) .ui.wrapper > * {
-          //   width: unset!important;
-          //   padding: 0 2rem;
-          // }
-          
-          // .content-area main {
-          //   width: unset!important;
-          //   // padding: 2rem;
-          // }
-          
-          // .ui.container .ui.container {
-          //   width: 100%!important;
-          // }
-          
-          
-          /*******************************
-                   Theme Overrides
-          *******************************/
-          
+        .sticky-outer-wrapper {
+   
           @toolbarWidth: 80px;
           @sidebarWidth: 375px;
           @collapsedWidth: 20px;
@@ -509,7 +120,7 @@
               margin-right: @offset !important;
             }
           }
-          
+          // ~768
           .contentWidth(@offset) {
             @media only screen and (max-width: @largestMobileScreen + @offset) {
               .contentWidthMedia(@mobileWidth, @mobileGutter, -12px);
@@ -526,6 +137,21 @@
                 svg, .accountIcon {
                   height: 24px!important;
                 }
+              }
+              nav.navigation {
+                float: right;
+                position: absolute;
+                right: 0;
+                background: white;
+                top: 1rem;
+                z-index: 1;
+              }
+
+
+              .nav-actions {
+                position: relative;
+                justify-content: flex-end;
+                padding-right: 0;
               }
           
               .tools {
@@ -546,6 +172,7 @@
                 display: none!important;
               }
             }
+            // 768 - 1024
             @media only screen and (min-width: @tabletBreakpoint + @offset) and (max-width: @largestTabletScreen + @offset) {
               .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
               [class*='mobile only']:not(.tablet),
@@ -560,6 +187,9 @@
                 #page-document {
                   max-width: 681px!important;
                 }
+                nav.navigation {
+                  margin-top:2rem;
+                }
                 .header-wrapper  {
                   .sticky-outer-wrapper.active {
                     .ui.container {
@@ -570,6 +200,9 @@
               // }
               .slider-wrapper .navSlider {
                 display: none!important;
+              }
+              .slider-image {
+                background-position: center;
               }
           
               .logo {
@@ -599,7 +232,13 @@
               [class*='or lower hidden']:not(.tablet):not(.mobile) {
                 display: none !important;
               }
-          
+              .slider-image {
+                background-position: center;
+              }
+              nav.navigation {
+                margin-top:2rem;
+              }
+
               .slider-wrapper .navSlider {
                 max-width: 946px;
               }
@@ -727,6 +366,10 @@
     [class*='widescreen only']:not(.computer),
     [class*='or lower hidden']:not(.tablet):not(.mobile) {
       display: none !important;
+    }
+
+    .header-wrapper .sticky-inner-wrapper > .ui.container {
+      width: 90%!important;
     }
 
     .slider-wrapper .navSlider {
