@@ -27,30 +27,30 @@ import {
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
-const mapDispatchToProps = {
-  getDefaultHeaderImage,
-};
-
-
 
 import Loadable from 'react-loadable';
+
+// const mapDispatchToProps = {
+//   getDefaultHeaderImage,
+// };
 // import Loading from './my-loading-component';
 
 const LoadableFooter = Loadable({
-  loader: () => import(/* webpackChunkName: "footer" */ '~/customizations/components/theme/Footer/Footer'),
+  loader: () =>
+    import(
+      /* webpackChunkName: "footer" */ '~/customizations/components/theme/Footer/Footer'
+    ),
   loading() {
-    return <div>Loading...</div>
-  }
+    return <div>Loading...</div>;
+  },
 });
-
 
 const Header = Loadable({
   loader: () => import('~/customizations/components/theme/Header/Header'),
   loading() {
-    return <div>Loading...</div>
-  }
+    return <div>Loading...</div>;
+  },
 });
-
 
 // const LoadableFooter = ''
 
@@ -59,8 +59,6 @@ const Header = Loadable({
 //     return <LoadableComponent/>;
 //   }
 // }
-
-
 
 class App extends Component {
   static propTypes = {
