@@ -12,6 +12,7 @@ import { Segment, Container } from 'semantic-ui-react';
 import Raven from 'raven-js';
 import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
+import ViewletsRenderer from 'volto-addons/Viewlets/Render';
 
 import Error from '@plone/volto/error';
 
@@ -114,7 +115,10 @@ class App extends Component {
                   stackTrace={this.state.errorInfo.componentStack}
                 />
               ) : (
-                renderRoutes(this.props.route.routes)
+                <>
+                  {renderRoutes(this.props.route.routes)}
+                  <ViewletsRenderer {...this.props} />
+                </>
               )}
             </main>
           </Container>

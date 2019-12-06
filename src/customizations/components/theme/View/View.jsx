@@ -19,7 +19,6 @@ import {
   getBaseUrl,
   getLayoutFieldname,
 } from '@plone/volto/helpers';
-import ViewletsRenderer from 'volto-addons/Viewlets/Render';
 
 /**
  * View container class.
@@ -263,8 +262,6 @@ class View extends Component {
           <h1>{this.props.content.title}</h1>
           <p>{this.props.content.description}</p>
         </Portal>
-
-        <ViewletsRenderer {...this.props} />
       </div>
     );
   }
