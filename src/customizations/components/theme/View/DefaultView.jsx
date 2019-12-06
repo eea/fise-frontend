@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from '@plone/volto/helpers';
+import { Helmet } from '@plone/volto/helpers';
 import { injectIntl } from 'react-intl'; // defineMessages,
 
 import { Container, Image } from 'semantic-ui-react';

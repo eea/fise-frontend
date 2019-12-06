@@ -11,14 +11,14 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
+  // Legend,
 } from 'recharts';
 
-import Helmet from '@plone/volto/helpers';
+import { Helmet } from '@plone/volto/helpers';
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import {
   // setFolderHeader,

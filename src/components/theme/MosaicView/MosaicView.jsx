@@ -5,7 +5,7 @@
 
 import 'react-mosaic-component/react-mosaic-component.css';
 
-import Helmet from '@plone/volto/helpers';
+import { Helmet } from '@plone/volto/helpers';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
