@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { defineMessages, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl'; // defineMessages,
 
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
@@ -19,12 +19,12 @@ import {
   hasBlocksData,
 } from '@plone/volto/helpers';
 
-const messages = defineMessages({
-  unknownBlock: {
-    id: 'Unknown Block',
-    defaultMessage: 'Unknown Block {block}',
-  },
-});
+// const messages = defineMessages({
+//   unknownBlock: {
+//     id: 'Unknown Block',
+//     defaultMessage: 'Unknown Block {block}',
+//   },
+// });
 
 /**
  * Component to display the default view.
@@ -44,7 +44,8 @@ const DefaultView = ({ content, intl }) => {
           blocks.blocksConfig[(content[blocksFieldname]?.[block]?.['@type'])]?.[
             'view'
           ] || null;
-        return Block !== null && (content[blocksFieldname][block]['@type'] != 'title') ? (
+        return Block !== null &&
+          content[blocksFieldname][block]['@type'] !== 'title' ? (
           <Block
             key={block}
             id={block}
@@ -52,12 +53,12 @@ const DefaultView = ({ content, intl }) => {
             data={content[blocksFieldname][block]}
           />
         ) : (
-        //   <div key={block}>
-        //     {intl.formatMessage(messages.unknownBlock, {
-        //       block: content[blocksFieldname]?.[block]?.['@type'],
-        //     })}
-        //   </div>
-        ''
+          //   <div key={block}>
+          //     {intl.formatMessage(messages.unknownBlock, {
+          //       block: content[blocksFieldname]?.[block]?.['@type'],
+          //     })}
+          //   </div>
+          ''
         );
       })}
     </div>
