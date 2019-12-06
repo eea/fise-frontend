@@ -3,8 +3,6 @@ import { Portal } from 'react-portal';
 import { Label, Grid } from 'semantic-ui-react';
 
 const ForestMetadata = props => {
-  console.log('portlet props', props);
-  // return '';
   const {
     nuts_level,
     resource_type,
