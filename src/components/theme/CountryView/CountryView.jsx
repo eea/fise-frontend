@@ -6,13 +6,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
-import { Container, Image } from 'semantic-ui-react';
-import { FormattedMessage } from 'react-intl';
+import { Container } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import {
-  // setFolderHeader,
-  setFolderTabs,
-} from '~/actions';
+import { setFolderTabs } from '~/actions';
 
 /**
  * Full view component class.
@@ -99,13 +95,11 @@ class FullView extends Component {
   }
 
   getFolderHeader(nextContent) {
-    const content = nextContent ? nextContent : this.props.content;
-    const title = content.title;
-    const description = content.description;
-    const image =
-      content.items && content.items.find(c => c['@type'] === 'Image');
-    const url = image && image.image.download;
-    const inCountryFolder = true;
+    // const content = nextContent ? nextContent : this.props.content;
+    // const image =
+    //   content.items && content.items.find(c => c['@type'] === 'Image');
+    // const url = image && image.image.download;
+    // const inCountryFolder = true;
     // this.props.setFolderHeader({ title, description, url, inCountryFolder });
   }
 
