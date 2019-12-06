@@ -11,7 +11,7 @@ import { getLocalnavigation } from '~/actions';
 import { connect } from 'react-redux';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
-import { defineMessages, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl'; // defineMessages,
 
 import { Container, Image, Grid } from 'semantic-ui-react';
 import { map } from 'lodash';
@@ -24,12 +24,12 @@ import {
   hasBlocksData,
 } from '@plone/volto/helpers';
 
-const messages = defineMessages({
-  unknownBlock: {
-    id: 'Unknown Block',
-    defaultMessage: 'Unknown Block {block}',
-  },
-});
+// const messages = defineMessages({
+//   unknownBlock: {
+//     id: 'Unknown Block',
+//     defaultMessage: 'Unknown Block {block}',
+//   },
+// });
 
 class ListingView extends Component {
   static propTypes = {
@@ -67,7 +67,7 @@ class ListingView extends Component {
 
   render() {
     const content = this.props.content;
-    const intl = this.props.intl;
+    // const intl = this.props.intl;
     const blocksFieldname = getBlocksFieldname(content);
     const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
     const localNavigation =
@@ -83,16 +83,20 @@ class ListingView extends Component {
       document.querySelector('.header-image .header-image')
     ) {
       const header = document.querySelector('.header-image .header-image');
-      header.querySelector('h1')?.classList.add('left');
-      header.querySelector('p')?.classList.add('left');
+      header.querySelector('h1') &&
+        header.querySelector('h1').classList.add('left');
+      header.querySelector('p') &&
+        header.querySelector('p').classList.add('left');
     } else if (
       __CLIENT__ &&
       !localNavigation.length &&
       document.querySelector('.header-image .header-image')
     ) {
       const header = document.querySelector('.header-image .header-image');
-      header.querySelector('h1')?.classList.remove('left');
-      header.querySelector('p')?.classList.remove('left');
+      header.querySelector('h1') &&
+        header.querySelector('h1').classList.remove('left');
+      header.querySelector('p') &&
+        header.querySelector('p').classList.remove('left');
     }
     let pageTemplate = (
       <Grid columns={3} className="folderWithContent">
@@ -105,21 +109,22 @@ class ListingView extends Component {
                   blocks.blocksConfig[
                     (content[blocksFieldname]?.[block]?.['@type'])
                   ]?.['view'] || null;
-                  return Block !== null && (content[blocksFieldname][block]['@type'] != 'title') ? (
-                    <Block
-                      key={block}
-                      id={block}
-                      properties={content}
-                      data={content[blocksFieldname][block]}
-                    />
-                  ) : (
+                return Block !== null &&
+                  content[blocksFieldname][block]['@type'] !== 'title' ? (
+                  <Block
+                    key={block}
+                    id={block}
+                    properties={content}
+                    data={content[blocksFieldname][block]}
+                  />
+                ) : (
                   //   <div key={block}>
                   //     {intl.formatMessage(messages.unknownBlock, {
                   //       block: content[blocksFieldname]?.[block]?.['@type'],
                   //     })}
                   //   </div>
                   ''
-                  );
+                );
               })}
             </div>
           ) : (
@@ -179,7 +184,7 @@ class ListingView extends Component {
                 (content[blocksFieldname]?.[block]?.['@type'])
               ]?.['view'] || null;
             return Block !== null &&
-              content[blocksFieldname][block]['@type'] != 'title' ? (
+              content[blocksFieldname][block]['@type'] !== 'title' ? (
               <Block
                 key={block}
                 id={block}
