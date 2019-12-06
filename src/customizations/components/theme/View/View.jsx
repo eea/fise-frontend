@@ -3,7 +3,6 @@
  *
  */
 
-import { renderPortlets } from '~/helpers';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -20,6 +19,7 @@ import {
   getBaseUrl,
   getLayoutFieldname,
 } from '@plone/volto/helpers';
+import ViewletsRenderer from 'volto-addons/Viewlets/Render';
 
 /**
  * View container class.
@@ -264,7 +264,7 @@ class View extends Component {
           <p>{this.props.content.description}</p>
         </Portal>
 
-        {renderPortlets(this.props)}
+        <ViewletsRenderer {...this.props} />
       </div>
     );
   }

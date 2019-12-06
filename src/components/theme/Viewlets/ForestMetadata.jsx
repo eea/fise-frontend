@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import React from 'react';
 import { Portal } from 'react-portal';
 import { Label, Grid } from 'semantic-ui-react';
@@ -137,4 +138,6 @@ const ForestMetadata = props => {
     ''
   );
 };
-export default ForestMetadata;
+export default connect((state, props) => ({
+  content: state.content.data,
+}))(ForestMetadata);

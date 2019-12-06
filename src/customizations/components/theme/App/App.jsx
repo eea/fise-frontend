@@ -34,7 +34,7 @@ class App extends Component {
     purgeMessages: PropTypes.func.isRequired,
     folderHeader: PropTypes.any,
     getDefaultHeaderImage: PropTypes.func.isRequired,
-    defaultHeaderImage: PropTypes.object.isRequired,
+    // defaultHeaderImage: PropTypes.object.isRequired,
   };
 
   state = {
@@ -172,7 +172,8 @@ export default compose(
   connect(
     (state, props) => ({
       folderHeader: state.folder_header.items,
-      defaultHeaderImage: state.default_header_image.items,
+      defaultHeaderImage:
+        state.default_header_image.items && state.default_header_image.items[0],
       pathname: props.location.pathname,
     }),
     { purgeMessages, getDefaultHeaderImage },

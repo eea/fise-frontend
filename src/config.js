@@ -10,7 +10,7 @@ import EuropeCompareBlockView from './components/manage/Blocks/EuropeCompareBloc
 import EuropeForestBlockEdit from './components/manage/Blocks/EuropeForestBlock/Edit';
 import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/View';
 
-import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
+import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 // import SliderEditButton from '~/components/manage/Slider/Portlet';
 
 // Display types
@@ -135,6 +135,10 @@ export const blocks = {
   },
 };
 
-export const portlets = [ForestMetadata]; // SliderEditButton
+export const portlets = []; // SliderEditButton
+export const viewlets = [
+  { path: '/', component: ForestMetadata },
+  ...(config.addonViewlets || []),
+];
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
