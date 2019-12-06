@@ -1,8 +1,3 @@
-/**
- * Document view component.
- * @module components/theme/View/ListingView
- */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -23,13 +18,6 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
-
-// const messages = defineMessages({
-//   unknownBlock: {
-//     id: 'Unknown Block',
-//     defaultMessage: 'Unknown Block {block}',
-//   },
-// });
 
 class ListingView extends Component {
   static propTypes = {
@@ -233,23 +221,6 @@ class ListingView extends Component {
         </Container>
       );
     }
-    // return (
-    //   <Container id="page-home">
-    //     <Helmet title={content.title} />
-    //     <section id="content-core">
-    //       {content.items.map(item => (
-    //         <article key={item.url}>
-    //           <h2>
-    //             <Link to={item.url} title={item['@type']}>
-    //               {item.title}
-    //             </Link>
-    //           </h2>
-    //           {item.description && <p>{item.description}</p>}
-    //         </article>
-    //       ))}
-    //     </section>
-    //   </Container>
-    // );
     return pageTemplate;
   }
 }

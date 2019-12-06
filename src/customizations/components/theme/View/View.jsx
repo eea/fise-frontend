@@ -1,8 +1,9 @@
 /**
- * View container.
- * @module components/theme/View/View
+ * Customized View to include Header image and Portlets
+ *
  */
 
+import { renderPortlets } from '~/helpers';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -14,7 +15,11 @@ import { views } from '~/config';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
-import { BodyClass, getBaseUrl, getLayoutFieldname } from '@plone/volto/helpers';
+import {
+  BodyClass,
+  getBaseUrl,
+  getLayoutFieldname,
+} from '@plone/volto/helpers';
 
 /**
  * View container class.
@@ -109,7 +114,7 @@ class View extends Component {
    * @method componentWillMount
    * @returns {undefined}
    */
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.listActions(getBaseUrl(this.props.pathname));
     this.props.getContent(
       getBaseUrl(this.props.pathname),
@@ -123,7 +128,7 @@ class View extends Component {
    * @param {Object} nextProps Next properties
    * @returns {undefined}
    */
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
       this.props.listActions(getBaseUrl(nextProps.pathname));
       this.props.getContent(
@@ -246,15 +251,20 @@ class View extends Component {
           <Comments pathname={this.props.pathname} />
         )}
 
-
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar pathname={this.props.pathname} inner={<span />} />
         </Portal>
 
-        <Portal node={__CLIENT__ && document.querySelector('.header-image .header-image')}>
+        <Portal
+          node={
+            __CLIENT__ && document.querySelector('.header-image .header-image')
+          }
+        >
           <h1>{this.props.content.title}</h1>
           <p>{this.props.content.description}</p>
         </Portal>
+
+        {renderPortlets(this.props)}
       </div>
     );
   }

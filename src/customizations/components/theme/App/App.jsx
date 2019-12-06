@@ -15,7 +15,7 @@ import { Slide, ToastContainer, toast } from 'react-toastify';
 
 import Error from '@plone/volto/error';
 
-import { Icon, Messages } from '@plone/volto/components';
+import { Icon, Messages, Footer, Header } from '@plone/volto/components';
 import { BodyClass, getBaseUrl, getView } from '@plone/volto/helpers';
 import {
   getContent,
@@ -27,38 +27,6 @@ import {
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
-
-import Loadable from 'react-loadable';
-
-// const mapDispatchToProps = {
-//   getDefaultHeaderImage,
-// };
-// import Loading from './my-loading-component';
-
-const LoadableFooter = Loadable({
-  loader: () =>
-    import(
-      /* webpackChunkName: "footer" */ '~/customizations/components/theme/Footer/Footer'
-    ),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
-
-const Header = Loadable({
-  loader: () => import('~/customizations/components/theme/Header/Header'),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
-
-// const LoadableFooter = ''
-
-// export default class App extends React.Component {
-//   render() {
-//     return <LoadableComponent/>;
-//   }
-// }
 
 class App extends Component {
   static propTypes = {
@@ -151,7 +119,7 @@ class App extends Component {
             </main>
           </Container>
         </Segment>
-        <LoadableFooter />
+        <Footer />
         <ToastContainer
           position={toast.POSITION.BOTTOM_CENTER}
           hideProgressBar
