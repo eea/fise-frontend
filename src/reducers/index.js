@@ -10,7 +10,6 @@ import folder_tabs from '~/reducers/folder_tabs';
 import default_header_image from '~/reducers/default_header_image';
 import parent_folder_data from '~/reducers/parent_folder_data';
 import localnavigation from '~/reducers/localnavigation';
-import attachments, { create_attachment } from './attachments';
 import { addonReducers } from '~/config';
 
 /**
@@ -30,8 +29,6 @@ const reducers = {
   folder_tabs,
   parent_folder_data,
   localnavigation,
-  attachments,
-  create_attachment,
 };
 
 export default reducers;

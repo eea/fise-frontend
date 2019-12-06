@@ -15,7 +15,13 @@ import SliderCaret from './slidercarret.svg';
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
-    <div className="slideArrow nextArrow" onClick={onClick}>
+    <div
+      role="button"
+      className="slideArrow nextArrow"
+      onClick={onClick}
+      tabIndex={-1}
+      onKeyPress={() => {}}
+    >
       <Icon name={right} size="45px" />
     </div>
   );
@@ -24,7 +30,13 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
-    <div className="slideArrow prevArrow" onClick={onClick}>
+    <div
+      role="button"
+      className="slideArrow prevArrow"
+      onClick={onClick}
+      tabIndex={-1}
+      onKeyPress={() => {}}
+    >
       <Icon name={left} size="45px" />
     </div>
   );
@@ -39,7 +51,6 @@ class HomepageSlider extends Component {
       slides: [],
     };
     this.getSlides = this.getSlides.bind(this);
-    // this.SampleNextArrow = this.SampleNextArrow.bind(this);
   }
 
   static propTypes = {
@@ -80,7 +91,6 @@ class HomepageSlider extends Component {
   }
 
   componentDidMount() {
-    console.log('-------- MOUNTED')
     if (this.props.items && this.props.items.length) {
       this.getSlides();
     } else {
