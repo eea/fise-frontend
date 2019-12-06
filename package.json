@@ -60,7 +60,7 @@
   "dependencies": {
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
-    "@plone/volto": "4.0.0-alpha.11",
+    "@plone/volto": "4.0.0-alpha.17",
     "mr-developer": "^1.4.0",
     "plotly.js": "^1.50.0",
     "react-grid-layout": "^0.16.6",

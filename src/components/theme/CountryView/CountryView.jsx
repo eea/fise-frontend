@@ -4,13 +4,13 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import Helmet from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
 import { Container, Image } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { 
-  // setFolderHeader, 
+import {
+  // setFolderHeader,
   setFolderTabs } from '~/actions';
 
 /**

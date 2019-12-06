@@ -14,7 +14,7 @@ import {
   Legend,
 } from 'recharts';
 
-import Helmet from 'react-helmet';
+import Helmet from '@plone/volto/helpers';
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 import { connect } from 'react-redux';
@@ -22,7 +22,9 @@ import { Link } from 'react-router-dom';
 
 import {
   // setFolderHeader,
-  setFolderTabs, getParentFolderData } from '~/actions';
+  setFolderTabs,
+  getParentFolderData,
+} from '~/actions';
 
 import { settings, blocks } from '~/config';
 
@@ -386,7 +388,9 @@ class CountryPageView extends Component {
           {map(content[blocksLayoutFieldname].items, block => {
             let Block = null;
             Block =
-              blocks.defaultBlocksViewMap[content[blocksFieldname][block]['@type']];
+              blocks.defaultBlocksViewMap[
+                content[blocksFieldname][block]['@type']
+              ];
             return Block !== null ? (
               <Block
                 key={block}

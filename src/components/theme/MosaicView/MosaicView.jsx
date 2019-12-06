@@ -5,7 +5,7 @@
 
 import 'react-mosaic-component/react-mosaic-component.css';
 
-import Helmet from 'react-helmet';
+import Helmet from '@plone/volto/helpers';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -80,14 +80,24 @@ class MosaicView extends Component {
     const availableBlocks = content[blocksFieldname];
     const blocktype = availableBlocks[blockid]['@type'];
 
-    console.log('Rendering block:', blockid, blocktype, blocksFieldname, content);
+    console.log(
+      'Rendering block:',
+      blockid,
+      blocktype,
+      blocksFieldname,
+      content,
+    );
 
     let Block = null;
     Block = blocks.defaultBlocksViewMap[blocktype];
 
     return Block !== null ? (
       <div class="block-container">
-        <Block key={blockid} properties={content} data={availableBlocks[blockid]} />
+        <Block
+          key={blockid}
+          properties={content}
+          data={availableBlocks[blockid]}
+        />
       </div>
     ) : (
       <div> {JSON.stringify(blocktype)} </div>
