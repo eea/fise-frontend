@@ -48,7 +48,6 @@ const Underline = createInlineStyleButton({
 
 export const settings = {
   ...config.settings,
-  // allow_cors_origin: '*',
   richTextEditorInlineToolbarButtons: [
     Underline,
     ...config.settings.richTextEditorInlineToolbarButtons,
