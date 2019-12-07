@@ -9,6 +9,19 @@ import sys
 from collections import OrderedDict
 
 
+def _get_base_dir():
+    with open('./jsconfig.json') as f:
+        j = json.load(f)
+
+    try:
+        return j['compilerOptions']['baseUrl']
+    except KeyError:
+        print("{}: Could not get proper base src path".format(__file__))
+        sys.exit(1)
+
+    return
+
+
 def activate(target):
     """ Activates a package: write the required files for this
     """
@@ -151,29 +164,94 @@ def list_addons():
     print(" ".join(j.keys()))
 
 
-def main(op, target):
-    if op == 'activate':
-        if target:
-            activate(target)
+def _get_addons():
+    if not os.path.exists('./mr.developer.json'):
+        return {}
 
-    if op == 'deactivate':
-        if target:
-            deactivate(target)
+    with open('./mr.developer.json') as f:
+        j = json.load(f)
 
-    if op == 'activate-all':
-        activate_all()
+    return j
 
-    if op == 'list':
-        list_addons()
+
+class Addon:
+    """ Class representing an addon
+    """
+
+    git_repo = None
+    git_branch = None
+    local_path = None
+
+    def __init__(self, name):
+        self.name = name
+
+    @classmethod
+    def fromconfig(cls, name, jsconfig, mrdeveloper):
+        """
+        """
+        addon = cls(name)
+
+        if name not in mrdeveloper:
+            print("{}: No {} addon defined in mr.developer.json".format(
+                __file__, name))
+            sys.exit(1)
+
+        conf = mrdeveloper[name]
+        addon.get_repo = conf['url']
+        addon.git_branch = conf.get('branch', 'master')
+
+        paths = jsconfig['compilerOptions']['paths']
+
+        if name not in paths:
+            print("{}: No {} addon defined in mr.developer.json".format(
+                __file__, name))
+            sys.exit(1)
+
+        addon.local_path = os.path.join(_get_base_dir(), paths[name][0])
+
+        return addon
+
+    def update(self):
+        print("Updating {}".format(self.name))
+        self.init()
+        subprocess.call(['git', 'pull'], cwd=self.local_path)
+
+    def init(self):
+        if not os.path.exists(self.local_path):
+            print("Path not found {}, cloning".format(self.local_path))
+            subprocess.call(['git', 'clone', self.git_repo, self.local_path])
+
+
+def develop():
+    """ Refreshes addon packages
+    """
+    with open('./jsconfig.json') as jf:
+        j = json.load(jf)
+
+    with open('./mr.developer.json') as mf:
+        m = json.load(mf)
+
+    addons = m.keys()
+
+    for name in addons:
+        addon = Addon.fromconfig(name, j, m)
+        addon.update()
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser('Volto development helper')
     parser.add_argument('op', type=str,
                         choices=['activate', 'deactivate',
-                                 'activate-all', 'list'],
+                                 'activate-all', 'list', 'develop'],
                         help="Operation type")
     parser.add_argument('--target', type=str, default='', help="target name",
                         dest="target")
     args = parser.parse_args()
-    main(args.op, args.target)
+
+    {
+        'develop': develop,
+        'activate-all': activate_all,
+        'list': list_addons,
+        'activate': lambda: activate(args.target),
+        'deactivate': lambda: deactivate(args.target)
+    }[args.op]()
