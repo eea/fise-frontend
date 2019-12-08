@@ -13,7 +13,6 @@ import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 // import SliderEditButton from '~/components/manage/Slider/Portlet';
 
-// Display types
 import CountryView from '~/components/theme/CountryView/CountryView';
 import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
@@ -25,7 +24,10 @@ import chartIcon from '@plone/volto/icons/world.svg';
 
 import * as voltoConfig from '@plone/volto/config';
 
-import { applyConfig as addonsConfig } from 'volto-addons/config';
+import {
+  applyConfig as addonsConfig,
+  installImageSlides,
+} from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as draftConfig } from 'volto-drafteditor/config';
@@ -34,6 +36,7 @@ import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 
 const config = [
   addonsConfig,
+  installImageSlides,
   plotlyConfig,
   ckeditorConfig,
   draftConfig,
