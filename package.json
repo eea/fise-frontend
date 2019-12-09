@@ -1,8 +1,8 @@
 {
-  "name": "volto-starter-kit",
-  "description": "Volto Starter Kit",
+  "name": "fise-frontend",
+  "description": "Frontend server for FISE",
   "license": "MIT",
-  "version": "3.1.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
