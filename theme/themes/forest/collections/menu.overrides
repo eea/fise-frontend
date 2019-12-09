@@ -173,14 +173,17 @@
         top: -8px;
     }
 }
+.navigation {
 
-.ui.dropdown .menu>.header {
-    width   : 0;
-    height  : 0;
-    padding : 0 !important;
-    margin  : 0 !important;
-    position: absolute;
-    right   : 70px;
+    
+    .ui.dropdown .menu>.header {
+        width   : 0;
+        height  : 0;
+        padding : 0 !important;
+        margin  : 0 !important;
+        position: absolute;
+        right   : 70px;
+    }
 }
 
 .sticky-outer-wrapper.active .sticky-inner-wrapper .navigation .ui.secondary.pointing.menu>.item.firstLevel {
