@@ -11,6 +11,7 @@ import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { views } from '~/config';
+import { Helmet } from '@plone/volto/helpers';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
@@ -218,10 +219,10 @@ class View extends Component {
       return <span />;
     }
     const RenderedView = MosaicView;
-
     return (
       <div id="view">
         {/* Body class if displayName in component is set */}
+        <Helmet title={'FISE'} />;
         <BodyClass
           className={
             RenderedView.displayName
