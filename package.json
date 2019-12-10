@@ -57,6 +57,20 @@
   "engines": {
     "node": "^8 || ^10"
   },
+  "bundlesize": [
+    {
+      "path": "build/public/static/js/*.js",
+      "maxSize": "680kB"
+    }
+  ],
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "build/public/static/js/*.js",
+        "maxSize": "680kB"
+      }
+    ]
+  },
   "dependencies": {
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
