@@ -156,7 +156,7 @@ class ListingView extends Component {
           <ul className="localNavigation">
             <div className="localNavigationHeader">Navigation</div>
             {localNavigation.map(item => (
-              <li>
+              <li key={item['@id']}>
                 <Link to={flattenToAppURL(item['@id'])} key={item['@id']}>
                   {item.title}
                 </Link>
