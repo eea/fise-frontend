@@ -44,12 +44,16 @@ class ListingView extends Component {
   };
 
   componentDidMount() {
-    this.props.getLocalnavigation(flattenToAppURL(this.props.content['@id']));
+    const url = this.props.content['@id']
+      .replace(settings.apiPath, '')
+      .replace(settings.internalApiPath, '');
+    this.props.getLocalnavigation(url);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.pathname !== this.props.pathname) {
-      this.props.getLocalnavigation(flattenToAppURL(this.props.pathname));
+      const url = this.props.pathname;
+      this.props.getLocalnavigation(url);
     }
   }
 
