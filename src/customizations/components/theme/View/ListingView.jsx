@@ -4,14 +4,16 @@ import { Helmet } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
 import { getLocalnavigation } from '~/actions';
 import { connect } from 'react-redux';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { compose } from 'redux';
+import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers';
 
-import { injectIntl } from 'react-intl'; // defineMessages,
+// import { injectIntl } from 'react-intl'; // defineMessages,
 
 import { Container, Image, Grid } from 'semantic-ui-react';
 import { map } from 'lodash';
 
 import { settings, blocks } from '~/config';
+import { asyncConnect } from 'redux-connect';
 
 import {
   getBlocksFieldname,
@@ -43,27 +45,40 @@ class ListingView extends Component {
     }).isRequired,
   };
 
-  componentDidMount() {
-    const url = this.props.content['@id']
+  constructor(props) {
+    super(props);
+
+    const url = props.content['@id']
       .replace(settings.apiPath, '')
       .replace(settings.internalApiPath, '');
-    this.props.getLocalnavigation(url);
+
+    // this.props.getLocalnavigation(url);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.pathname !== this.props.pathname) {
-      const url = this.props.pathname;
-      this.props.getLocalnavigation(url);
-    }
-  }
+  // componentDidMount() {
+  //   const url = this.props.content['@id']
+  //     .replace(settings.apiPath, '')
+  //     .replace(settings.internalApiPath, '');
+  //
+  //   this.props.getLocalnavigation(url);
+  // }
+  //
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.pathname !== this.props.pathname) {
+  //     const url = this.props.pathname;
+  //     this.props.getLocalnavigation(url);
+  //   }
+  // }
 
   render() {
+    console.log('asynclocalnav prop', this.props);
     const content = this.props.content;
     // const intl = this.props.intl;
     const blocksFieldname = getBlocksFieldname(content);
     const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
     const localNavigation =
-      (this.props.localNavigation.items &&
+      (this.props.localNavigation &&
+        this.props.localNavigation.items &&
         this.props.localNavigation.items.filter(
           item => item.title !== 'Home',
         )) ||
@@ -229,10 +244,20 @@ class ListingView extends Component {
   }
 }
 
-export default connect(
-  (state, props) => ({
-    localNavigation: state.localnavigation.items,
-    pathname: props.location.pathname,
-  }),
-  { getLocalnavigation },
-)(injectIntl(ListingView));
+export default compose(
+  asyncConnect([
+    {
+      key: 'localnavigation',
+      promise: ({ location, store: { content, dispatch } }) =>
+        dispatch(getLocalnavigation(getBaseUrl(location.pathname))),
+    },
+  ]),
+  connect(
+    (state, props) => ({
+      localNavigation: state.localnavigation.items,
+      pathname: props.location.pathname,
+      // localnavigation: state.localnavigation,
+    }),
+    { getLocalnavigation },
+  ),
+)(ListingView);

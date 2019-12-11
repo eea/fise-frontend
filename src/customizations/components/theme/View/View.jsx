@@ -20,6 +20,8 @@ import {
   getLayoutFieldname,
 } from '@plone/volto/helpers';
 
+import renderPortletManager from 'volto-addons/Portlets';
+
 /**
  * View container class.
  * @class View
@@ -234,6 +236,7 @@ class View extends Component {
           token={this.props.token}
           history={this.props.history}
         />
+        {renderPortletManager('plone.rightcolumn', { ...this.props })}
 
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (

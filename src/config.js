@@ -27,6 +27,7 @@ import * as voltoConfig from '@plone/volto/config';
 import {
   applyConfig as addonsConfig,
   installImageSlides,
+  installPortlets,
 } from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
@@ -37,12 +38,15 @@ import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 const config = [
   addonsConfig,
   installImageSlides,
+  installPortlets,
   plotlyConfig,
   ckeditorConfig,
   draftConfig,
   mosaicConfig,
   dataBlocksConfig,
 ].reduce((acc, apply) => apply(acc), voltoConfig);
+
+console.log('config');
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
@@ -144,3 +148,7 @@ export const viewlets = [
 ];
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
+
+export const portletManagers = {
+  ...config.portletManagers,
+};
