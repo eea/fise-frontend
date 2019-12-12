@@ -46,14 +46,17 @@
 
         .item.firstLevel {
             &:hover {
-                color: @hoverColor !important;
+                color: @hoverColor  !important;
+                a.firstLevel {
+                    color: #cc4400!important;
+                }
             }
         }
     }
 }
 
 .ui.secondary.pointing.menu a.item:active {
-    color : inherit;
+    color        : inherit;
     border-bottom: 2px solid transparent;
 }
 
@@ -141,11 +144,11 @@
 }
 
 .navigation .menu>.dropdown.item>.menu {
-    border       : none;
-    // left      : -25px;
-    left         : 0;
+    border          : none;
+    // left         : -25px;
+    left            : 0;
     // right        : calc(100% - 4rem);
-    box-shadow   : 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+    box-shadow      : 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
 }
 
 .ui.menu .ui.dropdown .menu>.item:hover {
@@ -173,9 +176,10 @@
         top: -8px;
     }
 }
+
 .navigation {
 
-    
+
     .ui.dropdown .menu>.header {
         width   : 0;
         height  : 0;
@@ -317,4 +321,14 @@
 
 .ui.menu .item>i.dropdown.icon {
     display: none;
+}
+
+// hamburger 
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after,
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #015610!important;
 }
