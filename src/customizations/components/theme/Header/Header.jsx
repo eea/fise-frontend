@@ -19,25 +19,15 @@ import {
 } from '@plone/volto/components';
 
 import HeaderImage from '~/components/theme/Header/HeaderImage';
-// import HomepageSlider from '~/components/theme/Header/HomepageSlider';
+import HomepageSlider from '~/components/theme/Header/HomepageSlider';
+import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
 
 import { getFrontpageSlides } from '~/actions';
 
 import HeaderBackground from './header-bg.png';
 
-// import React from 'react';
-import Loadable from 'react-loadable';
-import LoadingComponent from '~/components/Loadable/Loading.jsx';
-
 const staticHeader = require('~/static/s1.jpg');
-
-const HomepageSlider = Loadable({
-  loader: () => import('~/components/theme/Header/HomepageSlider.jsx'),
-  loading() {
-    return LoadingComponent('HomepageSlider');
-  },
-});
 
 class Header extends Component {
   constructor(props) {
@@ -47,7 +37,6 @@ class Header extends Component {
       url: null,
       description: null,
       title: null,
-      inCountryFolder: false,
       frontPageSlides: null,
     };
   }
@@ -90,7 +79,6 @@ class Header extends Component {
         description: nextProps.folderHeader.description,
         title: nextProps.folderHeader.title,
         image: nextProps.folderHeader.image,
-        inCountryFolder: nextProps.folderHeader.inCountryFolder,
       });
     }
 
@@ -142,9 +130,14 @@ class Header extends Component {
                 <div className="logo">
                   <Logo />
                 </div>
+                <div className="nav-actions-mobile large screen hidden">
+                  <div className="search">
+                    <MobileSearchWidget pathname={this.props.pathname} />
+                  </div>
+                </div>
                 <Navigation pathname={this.props.pathname} />
               </div>
-              <div className="nav-actions">
+              <div className="nav-actions tablet or lower hidden">
                 <div className="search">
                   <SearchWidget pathname={this.props.pathname} />
                 </div>
@@ -153,7 +146,7 @@ class Header extends Component {
           </Container>
         </Sticky>
         <Container>
-          <div className="header-bg">
+          <div className={`header-bg ${this.state.isHomepage ? 'homepage' : 'contentpage'}`}>
             <img src={HeaderBackground} alt="" />
           </div>
 
@@ -164,16 +157,13 @@ class Header extends Component {
               <Breadcrumbs pathname={this.props.pathname} />
 
               <HeaderImage url={headerImageUrl}>
-                <div className="header-image">
-                </div>
+                <div className="header-image" />
               </HeaderImage>
             </div>
           )}
         </Container>
         {!this.props.token && (
-          <Portal
-            node={__CLIENT__ && document.querySelector('#links_column')}
-          >
+          <Portal node={__CLIENT__ && document.querySelector('#links_column')}>
             <div className="tools">
               <Anontools />
             </div>
