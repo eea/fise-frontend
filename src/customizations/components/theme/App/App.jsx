@@ -26,6 +26,7 @@ import {
   purgeMessages,
 } from '@plone/volto/actions';
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
+import { getPortlets } from 'volto-addons/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 
@@ -171,6 +172,32 @@ export default compose(
       key: 'workflow',
       promise: ({ location, store: { dispatch } }) =>
         dispatch(getWorkflow(getBaseUrl(location.pathname))),
+    },
+    {
+      key: 'portlets',
+      promise: ({ location, store: { dispatch } }) =>
+        dispatch(getPortlets(getBaseUrl(location.pathname))),
+    },
+    {
+      key: 'portlets_left',
+      promise: ({ location, store: { dispatch } }) =>
+        dispatch(
+          getPortlets(getBaseUrl(location.pathname), 'plone.leftcolumn'),
+        ),
+    },
+    {
+      key: 'portlets_right',
+      promise: ({ location, store: { dispatch } }) =>
+        dispatch(
+          getPortlets(getBaseUrl(location.pathname), 'plone.rightcolumn'),
+        ),
+    },
+    {
+      key: 'portlets_footer',
+      promise: ({ location, store: { dispatch } }) =>
+        dispatch(
+          getPortlets(getBaseUrl(location.pathname), 'plone.footerportlets'),
+        ),
     },
   ]),
   connect(
