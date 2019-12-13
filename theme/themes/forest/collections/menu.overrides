@@ -97,7 +97,7 @@
 
 .navigation .menu>.dropdown.item>.menu .item {
     margin: 0;
-
+    border-bottom: none!important;
     &:not(a) {
         padding      : 0 !important;
         border-bottom: 1px solid #eee;
@@ -149,6 +149,9 @@
     left            : 0;
     // right        : calc(100% - 4rem);
     box-shadow      : 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 350px;
 }
 
 .ui.menu .ui.dropdown .menu>.item:hover {
