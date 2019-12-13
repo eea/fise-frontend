@@ -98,7 +98,7 @@
 }
 
 
-.ui.modal {
-  transform: none;
-  transform-origin: unset;
-}
+// .ui.modal {
+//   transform: none;
+//   transform-origin: unset;
+// }

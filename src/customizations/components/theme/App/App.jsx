@@ -110,6 +110,8 @@ class App extends Component {
           <Container>
             <main>
               <Messages />
+              <div className="editor-toolbar-wrapper"/>
+
               {this.state.hasError ? (
                 <Error
                   message={this.state.error.message}

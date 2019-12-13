@@ -43,6 +43,7 @@
       "@plone/volto/test-setup.js"
     ]
   },
+  "customizationPaths": ["src/customizations/","src/addons/volto-addons/src/customizations/"],
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true
@@ -75,6 +76,7 @@
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
     "@plone/volto": "4.0.0-alpha.17",
+    "draft-js-static-toolbar-plugin": "^3.0.1",
     "react": "^16.12.0",
     "react-image-gallery": "^0.9.1",
     "react-loadable": "^5.5.0",
