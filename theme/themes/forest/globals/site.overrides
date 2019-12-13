@@ -99,9 +99,9 @@ body.has-toolbar {
 }
 
 .header-image {
-  border-top-left-radius : 1rem;
+  border-top-left-radius : 4px;
   background-color       : rgba(0, 0, 0, 0.3);
-  border-top-right-radius: 1rem;
+  border-top-right-radius: 4px;
   position               : relative;
   /*z-index              : -1;*/
   overflow               : hidden;
@@ -877,8 +877,8 @@ h5 {
 
 .slider-wrapper {
   // max-width                 : 1670px;
-  border-top-left-radius       : 1rem;
-  border-top-right-radius      : 1rem;
+  border-top-left-radius       : 4px;
+  border-top-right-radius      : 4px;
   position                     : relative;
   overflow                     : hidden;
   // margin-left               : -3rem;
