@@ -222,7 +222,7 @@ class View extends Component {
     return (
       <div id="view">
         {/* Body class if displayName in component is set */}
-        <Helmet title={'FISE'} />;
+        <Helmet title={'FISE'} />
         <BodyClass
           className={
             RenderedView.displayName

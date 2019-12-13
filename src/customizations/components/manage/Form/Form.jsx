@@ -21,7 +21,10 @@ import { v4 as uuid } from 'uuid';
 import { Portal } from 'react-portal';
 
 import { EditBlock, Icon, Field } from '@plone/volto/components';
-import { getBlocksFieldname, getBlocksLayoutFieldname } from '@plone/volto/helpers';
+import {
+  getBlocksFieldname,
+  getBlocksLayoutFieldname,
+} from '@plone/volto/helpers';
 
 import aheadSVG from '@plone/volto/icons/ahead.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
@@ -520,6 +523,7 @@ class Form extends Component {
     const blocksLayoutFieldname = getBlocksLayoutFieldname(formData);
     const renderBlocks = formData[blocksLayoutFieldname].items;
     const blocksDict = formData[blocksFieldname];
+
     return this.props.visual ? (
       <div className="ui container">
         {map(renderBlocks, (block, index) => (
