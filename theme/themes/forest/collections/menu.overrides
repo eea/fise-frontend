@@ -217,7 +217,7 @@
 
     .sticky-inner-wrapper {
         background: @stickyMenuColor;
-        z-index   : 2;
+        z-index   : 10;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
         .menu {

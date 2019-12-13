@@ -914,6 +914,7 @@ h5 {
     background     : white;
     border-radius  : 4px;
     overflow       : hidden;
+    white-space: normal;
 
     .thumbnail-img {
       height         : 100%;
@@ -935,6 +936,8 @@ h5 {
       /* font-family : 'Roboto Condensed'; */
       font-family    : Roboto;
       flex-grow      : 1;
+      line-height: 1;
+      text-align: left;
     }
   }
 
@@ -993,4 +996,14 @@ h5 {
 
 .image-gallery-thumbnail.active {
   border: none;
+}
+
+.editor-toolbar-wrapper {
+  position: sticky;
+  top: 80px;
+  z-index: 2;
+}
+
+.image-gallery-slides {
+  white-space: normal!important;
 }
