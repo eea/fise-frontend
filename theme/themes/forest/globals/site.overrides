@@ -72,9 +72,11 @@ body.has-toolbar {
   left       : 0;
   right      : 0;
   top        : 20rem;
+
   &.contentpage {
-    top: unset;
+    top   : unset;
     bottom: -2rem;
+
     &:after {
       display: none;
     }
@@ -914,7 +916,7 @@ h5 {
     background     : white;
     border-radius  : 4px;
     overflow       : hidden;
-    white-space: normal;
+    white-space    : normal;
 
     .thumbnail-img {
       height         : 100%;
@@ -936,8 +938,8 @@ h5 {
       /* font-family : 'Roboto Condensed'; */
       font-family    : Roboto;
       flex-grow      : 1;
-      line-height: 1;
-      text-align: left;
+      line-height    : 1;
+      text-align     : left;
     }
   }
 
@@ -995,15 +997,15 @@ h5 {
 }
 
 .image-gallery-thumbnail.active {
-  border: none;
+  border-color: transparent;
 }
 
 .editor-toolbar-wrapper {
   position: sticky;
-  top: 80px;
-  z-index: 2;
+  top     : 80px;
+  z-index : 2;
 }
 
 .image-gallery-slides {
-  white-space: normal!important;
+  white-space: normal !important;
 }
