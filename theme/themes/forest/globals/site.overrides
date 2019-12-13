@@ -1009,3 +1009,7 @@ h5 {
 .image-gallery-slides {
   white-space: normal !important;
 }
+
+.image-gallery-fullscreen-button, .image-gallery-left-nav, .image-gallery-play-button, .image-gallery-right-nav {
+  z-index: 1;
+}
