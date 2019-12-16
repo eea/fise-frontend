@@ -3,7 +3,9 @@
  * @module client
  */
 
-import client from '@plone/volto/start-client';
+//  TODO Mihai: remove this when route change animation is implemented in volto
+
+import client from './start-client';
 
 console.log('Starting');
 client();
