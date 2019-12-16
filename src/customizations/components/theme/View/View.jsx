@@ -20,7 +20,7 @@ import {
   getLayoutFieldname,
 } from '@plone/volto/helpers';
 
-import renderPortletManager from 'volto-addons/Portlets';
+import renderPortletManager from 'volto-addons/Portlets/utils';
 
 /**
  * View container class.
