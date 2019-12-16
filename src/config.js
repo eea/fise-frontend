@@ -46,8 +46,6 @@ const config = [
   dataBlocksConfig,
 ].reduce((acc, apply) => apply(acc), voltoConfig);
 
-console.log('config');
-
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
   children: <Icon name={underlineSVG} size="24px" />,
@@ -76,6 +74,8 @@ export const views = {
     // ...layoutViews,
   },
 };
+
+// console.log('config views', views);
 
 // read @plone/volto/components/manage/Form/Field.jsx to understand this
 export const widgets = {
