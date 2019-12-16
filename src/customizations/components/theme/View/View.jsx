@@ -236,7 +236,9 @@ class View extends Component {
           token={this.props.token}
           history={this.props.history}
         />
+        {renderPortletManager('plone.leftcolumn', { ...this.props })}
         {renderPortletManager('plone.rightcolumn', { ...this.props })}
+        {renderPortletManager('plone.footerportlets', { ...this.props })}
 
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (
