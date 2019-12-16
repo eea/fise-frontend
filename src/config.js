@@ -31,7 +31,7 @@ import {
 } from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
-import { applyConfig as draftConfig } from 'volto-drafteditor/config';
+// import { applyConfig as draftConfig } from 'volto-drafteditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 
@@ -41,7 +41,7 @@ const config = [
   installPortlets,
   plotlyConfig,
   ckeditorConfig,
-  draftConfig,
+  // draftConfig,
   mosaicConfig,
   dataBlocksConfig,
 ].reduce((acc, apply) => apply(acc), voltoConfig);
