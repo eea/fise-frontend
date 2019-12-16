@@ -279,28 +279,65 @@ body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-si
 }
 
 body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
-  .contentWidth(@toolbarWidth);
+  // .contentWidth(@toolbarWidth);
+  .contentWidth(0);
+
 }
 
 body.has-toolbar.has-sidebar {
-  .contentWidth(@toolbarWidth + @sidebarWidth);
+  // .contentWidth(@toolbarWidth + @sidebarWidth);
+  .contentWidth(0);
+
 }
 
 body.has-toolbar.has-sidebar-collapsed {
-  .contentWidth(@toolbarWidth + @collapsedWidth);
+  // .contentWidth(@toolbarWidth + @collapsedWidth);
+  .contentWidth(0);
+
 }
 
 body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
-  .contentWidth(@collapsedWidth);
+  // .contentWidth(@collapsedWidth);
+  .contentWidth(0);
+
 }
 
 body.has-toolbar-collapsed.has-sidebar {
-  .contentWidth(@collapsedWidth + @sidebarWidth);
+  // .contentWidth(@collapsedWidth + @sidebarWidth);
+  .contentWidth(0);
+
 }
 
 body.has-toolbar-collapsed.has-sidebar-collapsed {
-  .contentWidth(@collapsedWidth + @collapsedWidth);
+  // .contentWidth(@collapsedWidth + @collapsedWidth);
+  .contentWidth(0);
+
 }
+
+
+// body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar.has-sidebar {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar.has-sidebar-collapsed {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar-collapsed.has-sidebar {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar-collapsed.has-sidebar-collapsed {
+//   .contentWidth(0);
+// }
 
 .drag.handle.wrapper {
   margin-left: -15px !important;
