@@ -141,7 +141,7 @@ export const blocks = {
   },
 };
 
-export const portlets = []; // SliderEditButton
+// export const portlets = []; // SliderEditButton
 export const viewlets = [
   { path: '/', component: ForestMetadata },
   ...(config.addonViewlets || []),
@@ -149,6 +149,6 @@ export const viewlets = [
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
 
-export const portletManagers = {
-  ...config.portletManagers,
+export const portlets = {
+  ...config.portlets,
 };
