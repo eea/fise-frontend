@@ -120,7 +120,7 @@ class Header extends Component {
       this.props.defaultHeaderImage.length &&
       this.props.defaultHeaderImage[0].image;
     let headerImageUrl = this.state.image || defaultHeaderImage;
-
+    console.log(defaultHeaderImage)
     return (
       <div className="header-wrapper" role="banner">
         <Sticky enabled={true} top={0}>
@@ -183,7 +183,7 @@ export default compose(
     state => ({
       frontPageSlides: state.frontpage_slides.items,
       token: state.userSession.token,
-      // defaultHeaderImage: state.default_header_image.items,
+      defaultHeaderImage: state.default_header_image.items,
       folder_header: state.folder_header.items,
     }),
     { getFrontpageSlides },
