@@ -92,8 +92,12 @@ const Footer = ({ intl }) => (
           <div className="column">
             <b>PARTNERS</b>
             <div className="footerLogoWrapper">
-              <img className="footerLogo" src={eeaLogo} alt="" />
+              <a href="https://ec.europa.eu/" title="European Commission">
+                <img className="footerLogo" src={eeaLogo} alt="" />
+              </a>
+              <a href="https://www.eea.europa.eu/" title="European Environment Agency">
               <img className="footerLogo" src={ecLogo} alt="" />
+              </a>
             </div>
           </div>
         </div>
