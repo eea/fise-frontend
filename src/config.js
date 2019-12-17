@@ -1,5 +1,3 @@
-// import SliderEditButton from '~/components/manage/Slider/Portlet';
-
 import * as voltoConfig from '@plone/volto/config';
 
 import {
@@ -9,7 +7,6 @@ import {
 } from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
-// import { applyConfig as draftConfig } from 'volto-drafteditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
@@ -34,9 +31,6 @@ export const views = {
   ...config.views,
 };
 
-// console.log('config views', views);
-
-// read @plone/volto/components/manage/Form/Field.jsx to understand this
 export const widgets = {
   ...config.widgets,
 };
