@@ -63,6 +63,7 @@ export function applyConfig(config) {
       // handled differently in getBaseUrl
       ...config.settings.nonContentRoutes,
       '/manage-slider',
+      '/sitemap',
     ],
   };
 
