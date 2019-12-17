@@ -9,9 +9,10 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { List, Popup } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
-import Person from './person.svg';
+import { Icon } from '@plone/volto/components';
 
 import { settings } from '~/config';
+import user from '@plone/volto/icons/user.svg';
 
 /**
  * Anontools container class.
@@ -46,21 +47,22 @@ class Anontools extends Component {
   render() {
     return (
       !this.props.token && (
-       
-            <li role="listitem" className="item">
-              <Link
-                to={`/login${
-                  this.props.content
-                    ? `?return_url=${this.props.content['@id'].replace(
-                        settings.apiPath,
-                        '',
-                      )}`
-                    : ''
-                }`}
-              >
-                <FormattedMessage id="Log in" defaultMessage="Log in" />
-              </Link>
-            </li>
+        <li role="listitem" className="item footer-login">
+          <Icon name={user} size="25px" />
+          <Link
+            style={{ marginLeft: '1rem' }}
+            to={`/login${
+              this.props.content
+                ? `?return_url=${this.props.content['@id'].replace(
+                    settings.apiPath,
+                    '',
+                  )}`
+                : ''
+            }`}
+          >
+            <FormattedMessage id="Log in" defaultMessage="Log in" />
+          </Link>
+        </li>
       )
     );
   }
