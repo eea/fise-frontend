@@ -84,102 +84,84 @@ class ListingView extends Component {
         )) ||
       [];
 
-    if (
-      __CLIENT__ &&
-      localNavigation.length &&
-      document.querySelector('.header-image .header-image')
-    ) {
-      const header = document.querySelector('.header-image .header-image');
-      header.querySelector('h1') &&
-        header.querySelector('h1').classList.add('left');
-      header.querySelector('p') &&
-        header.querySelector('p').classList.add('left');
-    } else if (
-      __CLIENT__ &&
-      !localNavigation.length &&
-      document.querySelector('.header-image .header-image')
-    ) {
-      const header = document.querySelector('.header-image .header-image');
-      header.querySelector('h1') &&
-        header.querySelector('h1').classList.remove('left');
-      header.querySelector('p') &&
-        header.querySelector('p').classList.remove('left');
-    }
-    let pageTemplate = (
-      <Grid columns={3} className="folderWithContent">
-        <Grid.Column tablet={12} largeScreen={6} widescreen={9}>
-          {hasBlocksData(content) ? (
-            <div id="page-document">
-              <Helmet title={content.title} />
-              {map(content[blocksLayoutFieldname].items, block => {
-                const Block =
-                  blocks.blocksConfig[
-                    (content[blocksFieldname]?.[block]?.['@type'])
-                  ]?.['view'] || null;
-                return Block !== null &&
-                  content[blocksFieldname][block]['@type'] !== 'title' ? (
-                  <Block
-                    key={block}
-                    id={block}
-                    properties={content}
-                    data={content[blocksFieldname][block]}
-                  />
-                ) : (
-                  //   <div key={block}>
-                  //     {intl.formatMessage(messages.unknownBlock, {
-                  //       block: content[blocksFieldname]?.[block]?.['@type'],
-                  //     })}
-                  //   </div>
-                  ''
-                );
-              })}
-            </div>
+    // if (
+    //   __CLIENT__ &&
+    //   localNavigation.length &&
+    //   document.querySelector('.header-image .header-image')
+    // ) {
+    //   const header = document.querySelector('.header-image .header-image');
+    //   header.querySelector('h1') &&
+    //     header.querySelector('h1').classList.add('left');
+    //   header.querySelector('p') &&
+    //     header.querySelector('p').classList.add('left');
+    // } else if (
+    //   __CLIENT__ &&
+    //   !localNavigation.length &&
+    //   document.querySelector('.header-image .header-image')
+    // ) {
+    //   const header = document.querySelector('.header-image .header-image');
+    //   header.querySelector('h1') &&
+    //     header.querySelector('h1').classList.remove('left');
+    //   header.querySelector('p') &&
+    //     header.querySelector('p').classList.remove('left');
+    // }
+    let pageTemplate = hasBlocksData(content) ? (
+      <div id="page-document">
+        <Helmet title={content.title} />
+        {map(content[blocksLayoutFieldname].items, block => {
+          const Block =
+            blocks.blocksConfig[
+              (content[blocksFieldname]?.[block]?.['@type'])
+            ]?.['view'] || null;
+          return Block !== null &&
+            content[blocksFieldname][block]['@type'] !== 'title' ? (
+            <Block
+              key={block}
+              id={block}
+              properties={content}
+              data={content[blocksFieldname][block]}
+            />
           ) : (
-            <Container id="page-document">
-              <Helmet title={content.title} />
-              {/* <h1 className="documentFirstHeading">{content.title}</h1>
+            //   <div key={block}>
+            //     {intl.formatMessage(messages.unknownBlock, {
+            //       block: content[blocksFieldname]?.[block]?.['@type'],
+            //     })}
+            //   </div>
+            ''
+          );
+        })}
+      </div>
+    ) : (
+      <Container id="page-document">
+        <Helmet title={content.title} />
+        {/* <h1 className="documentFirstHeading">{content.title}</h1>
               {content.description && (
                 <p className="documentDescription">{content.description}</p>
               )} */}
-              {content.image && (
-                <Image
-                  className="document-image"
-                  src={content.image.scales.thumb.download}
-                  floated="right"
-                />
-              )}
-              {content.remoteUrl && (
-                <span>
-                  The link address is:
-                  <a href={content.remoteUrl}>{content.remoteUrl}</a>
-                </span>
-              )}
-              {content.text && (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: content.text.data.replace(
-                      /a href="([^"]*\.[^"]*)"/g,
-                      `a href="${settings.apiPath}$1/download/file"`,
-                    ),
-                  }}
-                />
-              )}
-            </Container>
-          )}
-        </Grid.Column>
-        <Grid.Column tablet={6} largeScreen={3} widescreen={3}>
-          <ul className="localNavigation">
-            <div className="localNavigationHeader">Navigation</div>
-            {localNavigation.map(item => (
-              <li key={item['@id']}>
-                <Link to={flattenToAppURL(item['@id'])} key={item['@id']}>
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Grid.Column>
-      </Grid>
+        {content.image && (
+          <Image
+            className="document-image"
+            src={content.image.scales.thumb.download}
+            floated="right"
+          />
+        )}
+        {content.remoteUrl && (
+          <span>
+            The link address is:
+            <a href={content.remoteUrl}>{content.remoteUrl}</a>
+          </span>
+        )}
+        {content.text && (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: content.text.data.replace(
+                /a href="([^"]*\.[^"]*)"/g,
+                `a href="${settings.apiPath}$1/download/file"`,
+              ),
+            }}
+          />
+        )}
+      </Container>
     );
     if (!localNavigation.length) {
       pageTemplate = hasBlocksData(content) ? (

@@ -11,6 +11,7 @@ import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { views } from '~/config';
+import { Grid } from 'semantic-ui-react';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
@@ -229,17 +230,22 @@ class View extends Component {
               : null
           }
         />
+        <Grid columns="equal">
+          {renderPortletManager('plone.leftcolumn', 3, { ...this.props })}
+          <Grid.Column
+          //  tablet={12} largeScreen={6} widescreen={9}
+          >
+            <RenderedView
+              content={this.props.content}
+              location={this.props.location}
+              token={this.props.token}
+              history={this.props.history}
+            />
+          </Grid.Column>
 
-        <RenderedView
-          content={this.props.content}
-          location={this.props.location}
-          token={this.props.token}
-          history={this.props.history}
-        />
-        {renderPortletManager('plone.leftcolumn', { ...this.props })}
-        {renderPortletManager('plone.rightcolumn', { ...this.props })}
-        {renderPortletManager('plone.footerportlets', { ...this.props })}
-
+          {renderPortletManager('plone.rightcolumn', 3, { ...this.props })}
+        </Grid>
+        {renderPortletManager('plone.footerportlets', false , { ...this.props })}
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (
             <Tags tags={this.props.content.subjects} />

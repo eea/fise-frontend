@@ -819,18 +819,6 @@ h5 {
   padding: 0 100px !important;
 }
 
-.localNavigationHeader {
-  color      : #333;
-  font-size  : 16px;
-  font-weight: 500;
-  padding    : 1rem;
-  box-shadow : 0px 4px 19px rgba(0, 0, 1, 0.07);
-}
-
-.localNavigation {
-  margin-left: 3rem;
-}
-
 .folderWithContent {
   #page-document {
     max-width: unset !important;
@@ -1071,4 +1059,23 @@ h5 {
       animation-timing-function: ease-in;
     }
   }
+}
+
+
+.footer-login {
+  list-style-type: none;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 2rem;
+    border-top: 1px solid #aaa;
+    display: inline-flex;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #444;
+    font-weight: bold;
+    a {
+      color: #444;
+    }
 }
