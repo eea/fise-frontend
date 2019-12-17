@@ -1072,7 +1072,7 @@ h5 {
     display: inline-flex;
     padding-top: 1rem;
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #444;
     font-weight: bold;
     a {

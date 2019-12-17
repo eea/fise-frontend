@@ -48,9 +48,9 @@ class Anontools extends Component {
     return (
       !this.props.token && (
         <li role="listitem" className="item footer-login">
-          <Icon name={user} size="25px" />
+          <Icon name={user} size="20px" />
           <Link
-            style={{ marginLeft: '1rem' }}
+            style={{ marginLeft: '.5rem' }}
             to={`/login${
               this.props.content
                 ? `?return_url=${this.props.content['@id'].replace(
