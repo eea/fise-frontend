@@ -33,17 +33,27 @@ class SiteMap extends Component {
      */
     render() {
         const { navigation } = this.props;
+
+        const TreeMap = ({ data }) => {
+            return (
+                <ul>
+                    {data.map((m, i) => {
+                        return (
+                            <li key={i}>
+                                <Link to="/">
+                                    {m.title}
+                                </Link>
+                                {m.items && !!m.items.length && <TreeMap data={m.items} />}
+                            </li>
+                        );
+                    })}
+                </ul>
+            );
+        };
+
         return (
             <Fragment>
-                <ul>
-                    {navigation.items.map((item, i) =>
-                        <li key={i}>
-                            <Link>
-                                {item.title}
-                            </Link>
-                        </li>
-                    )}
-                </ul>
+                <TreeMap data={navigation.items} />
             </Fragment>
         );
     }
