@@ -10,6 +10,7 @@ import { getBaseUrl } from '@plone/volto/helpers';
 import {
     getNavigation,
 } from '@plone/volto/actions';
+import { getNavSiteMap } from '~/actions';
 
 /**
  * @export
@@ -24,8 +25,12 @@ class SiteMap extends Component {
      */
     static propTypes = {
         pathname: PropTypes.string.isRequired,
+        getNavSiteMap: PropTypes.func.isRequired,
     };
 
+    componentDidMount() {
+        this.props.getNavSiteMap(getBaseUrl(this.props.location.pathname), 1);
+    }
     /**
      * Render method.
      * @method render
@@ -69,13 +74,11 @@ export const __test__ = connect(
 
 export default compose(
     asyncConnect([
-
         {
             key: 'navigation',
             promise: ({ location, store: { dispatch } }) =>
-                dispatch(getNavigation(getBaseUrl(location.pathname), 9999)),
+                dispatch(getNavSiteMap(getBaseUrl(location.pathname), 4)),
         },
-
     ]),
-    connect((state, props) => ({ pathname: props.location.pathname }), {}),
+    connect((state, props) => ({ pathname: props.location.pathname }), { getNavSiteMap }),
 )(SiteMap);
