@@ -73,7 +73,7 @@ export default compose(
         {
             key: 'navigation',
             promise: ({ location, store: { dispatch } }) =>
-                dispatch(getNavigation(getBaseUrl(location.pathname))),
+                dispatch(getNavigation(getBaseUrl(location.pathname), 9999)),
         },
 
     ]),
