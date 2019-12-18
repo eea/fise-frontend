@@ -18,7 +18,9 @@ export function getNavigation(url, depth) {
     type: GET_NAVIGATION,
     request: {
       op: 'get',
-      path: `${url}/@navigation?expand.navigation.depth=3`,
+      path: `${url}/@navigation?expand.navigation.depth=${depth || 3}`,
     },
   };
 }
+
+
