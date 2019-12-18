@@ -29,7 +29,7 @@ class SiteMap extends Component {
     };
 
     componentDidMount() {
-        this.props.getNavSiteMap(getBaseUrl(this.props.location.pathname), 1);
+        this.props.getNavSiteMap(getBaseUrl(this.props.location.pathname), 100);
     }
     /**
      * Render method.
@@ -77,7 +77,7 @@ export default compose(
         {
             key: 'navigation',
             promise: ({ location, store: { dispatch } }) =>
-                dispatch(getNavSiteMap(getBaseUrl(location.pathname), 4)),
+                dispatch(getNavSiteMap(getBaseUrl(location.pathname), 100)),
         },
     ]),
     connect((state, props) => ({ pathname: props.location.pathname }), { getNavSiteMap }),
