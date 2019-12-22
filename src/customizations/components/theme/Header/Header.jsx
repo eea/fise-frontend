@@ -120,7 +120,7 @@ class Header extends Component {
       this.props.defaultHeaderImage.length &&
       this.props.defaultHeaderImage[0].image;
     let headerImageUrl = this.state.image || defaultHeaderImage;
-    console.log(defaultHeaderImage)
+    // console.log(defaultHeaderImage)
     return (
       <div className="header-wrapper" role="banner">
         <Sticky enabled={true} top={0}>
@@ -146,7 +146,11 @@ class Header extends Component {
           </Container>
         </Sticky>
         <Container>
-          <div className={`header-bg ${this.state.isHomepage ? 'homepage' : 'contentpage'}`}>
+          <div
+            className={`header-bg ${
+              this.state.isHomepage ? 'homepage' : 'contentpage'
+            }`}
+          >
             <img src={HeaderBackground} alt="" />
           </div>
 
