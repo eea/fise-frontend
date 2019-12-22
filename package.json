@@ -78,7 +78,7 @@
   "dependencies": {
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
-    "@plone/volto": "4.0.0-alpha.18",
+    "@plone/volto": "github:tiberiuichim/volto#kitchen_sink",
     "draft-js-static-toolbar-plugin": "^3.0.1",
     "react": "^16.12.0",
     "react-image-gallery": "^0.9.1",

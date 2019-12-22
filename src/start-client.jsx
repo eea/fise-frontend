@@ -1,3 +1,5 @@
+// customized to include animation wrapper from PR
+
 import React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-intl-redux';
