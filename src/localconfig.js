@@ -42,7 +42,21 @@ defineMessages({
   },
 });
 
+function addCustomGroup(config) {
+  const hasCustomGroup = config.blocks.groupBlocksOrder.filter(
+    el => el.id === 'custom_addons',
+  );
+  if (!hasCustomGroup.length) {
+    config.blocks.groupBlocksOrder.push({
+      id: 'custom_addons',
+      title: 'Custom addons',
+    });
+  }
+}
+
 export function applyConfig(config) {
+  addCustomGroup(config);
+
   const Underline = createInlineStyleButton({
     style: 'UNDERLINE',
     children: <Icon name={underlineSVG} size="24px" />,
