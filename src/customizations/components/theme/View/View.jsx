@@ -245,7 +245,7 @@ class View extends Component {
 
           {renderPortletManager('plone.rightcolumn', 3, { ...this.props })}
         </Grid>
-        {renderPortletManager('plone.footerportlets', false , { ...this.props })}
+        {renderPortletManager('plone.footerportlets', false, { ...this.props })}
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (
             <Tags tags={this.props.content.subjects} />
