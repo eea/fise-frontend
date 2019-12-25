@@ -43,7 +43,10 @@
       "@plone/volto/test-setup.js"
     ]
   },
-  "customizationPaths": [],
+  "customizationPaths": [
+    "src/customizations/volto"
+  ],
+  "addonsCustomizationPath": "src/customizations",
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true

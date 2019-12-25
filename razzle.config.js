@@ -16,13 +16,16 @@ Object.keys(pathsConfig).forEach(pkg => {
 let config = require(`${voltoPath}/razzle.config`);
 const razzleModify = config.modify;
 
-// const projectRootPath = path.resolve('.');
-
 /*
  * Returns the package path, potentially aliased by webpack, or from
  * node_modules
  */
 function getPackageAliasPath(pkgName, aliases) {
+  // Note: this relies on aliaes already populated with addons. Should use
+  // method below:
+  // const addonsPaths = Object.values(pathsConfig).map(
+  //   value => `${jsConfig.compilerOptions.baseUrl}/${value[0]}/`,
+  // );
   let base = aliases[pkgName] || `./node_modules/${pkgName}`;
   if (!base.endsWith('/')) base = `${base}/`;
   return base;
@@ -88,7 +91,13 @@ function customizeVoltoByAddon(addon, aliases) {
 /*
  * Allows customization of addons by the package
  */
-function customizeAddonByPackage(addon, aliases) {}
+function customizeAddonByPackage(addon, customizationPath, aliases) {
+  const addonSources = addon.sources;
+  addonSources.forEach(filename => {
+    const localPath = path.join(customizationPath, filename);
+    if (fs.existsSync(localPath)) aliases[filename] = localPath;
+  });
+}
 
 module.exports = {
   modify: (config, { target, dev }, webpack) => {
@@ -124,38 +133,23 @@ module.exports = {
       };
     }
 
+    const projectRootPath = path.resolve('.');
+    const addonsCustomizationPath = path.join(
+      projectRootPath,
+      require(`${projectRootPath}/package.json`).addonsCustomizationPath ||
+        'src/customizations',
+    );
+
     jsConfig.addons.forEach(name => {
       customizeVoltoByAddon(packageSources[name], vc.resolve.alias);
-      customizeAddonByPackage(packageSources[name], vc.resolve.alias);
+      customizeAddonByPackage(
+        packageSources[name],
+        addonsCustomizationPath,
+        vc.resolve.alias,
+      );
     });
 
-    // console.log('package sources', packageSources);
-
-    // TODO: this code is not documented, is hard to understand.
-    // Explain what it does, explain if it can customize any addon
-    // Log warnings if two addons customize the same path
-    // const addonsPaths = Object.values(pathsConfig).map(
-    //   value => `${jsConfig.compilerOptions.baseUrl}/${value[0]}/`,
-    // );
-    // const addonCustomizationPaths = ['src/customizations/addons/'];
-    //
-    // let addonCustomizations = [];
-    // addonsPaths.forEach(addonPath => {
-    //   addonCustomizations = [
-    //     ...addonCustomizations,
-    //     customizeAddons(addonCustomizationPaths, addonPath),
-    //   ];
-    // });
-    //
-    // addonCustomizations.forEach(cust => {
-    //   if (Object.keys(cust).length) {
-    //     vc.resolve.alias = {
-    //       ...vc.resolve.alias,
-    //       ...cust,
-    //     };
-    //   }
-    // });
-    // console.log('aliases', vc.resolve.alias);
+    console.log('aliases', vc.resolve.alias);
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
