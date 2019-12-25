@@ -25,6 +25,9 @@
             ], 
             "volto-plotlycharts": [
                 "addons/volto-plotlycharts/src"
+            ], 
+            "volto-sidebar": [
+                "addons/volto-sidebar/src"
             ]
         }
     }

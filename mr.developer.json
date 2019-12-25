@@ -22,6 +22,9 @@
     },
     "volto-corsproxy": {
       "url": "https://github.com/eea/volto-corsproxy.git"
+    },
+    "volto-sidebar": {
+      "url": "https://github.com/eea/volto-sidebar.git"
     }
 }
 

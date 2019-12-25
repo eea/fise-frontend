@@ -96,7 +96,8 @@
     "volto-drafteditor": "file:src/addons/volto-drafteditor",
     "volto-misc": "file:src/addons/volto-addons",
     "volto-mosaic": "file:src/addons/volto-mosaic",
-    "volto-plotlycharts": "file:src/addons/volto-plotlycharts"
+    "volto-plotlycharts": "file:src/addons/volto-plotlycharts",
+    "volto-sidebar": "file:src/addons/volto-sidebar"
   },
   "devDependencies": {
     "mr-developer": "^1.4.0",
