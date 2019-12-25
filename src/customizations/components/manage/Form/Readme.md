@@ -1,2 +1,0 @@
-- disableEnter is now false
-- I think it solves a bug with drag/drop
