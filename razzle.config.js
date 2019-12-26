@@ -67,7 +67,22 @@ function customizeVoltoByAddon(addon, aliases) {
     const targetPath = filename
       .replace(customPath, '')
       .replace(/\.(js|jsx)$/, '');
+
     const origPath = `@plone/volto/${targetPath}`;
+    const origVoltoPath = path.join(
+      voltoPath,
+      'src',
+      filename.replace(customPath, ''),
+    );
+
+    if (!fs.existsSync(origVoltoPath)) {
+      console.warn(
+        `Addon ${
+          addon.name
+        } customizes non-existing Volto file: ${origPath} at ${origVoltoPath}`,
+      );
+    }
+
     if (Object.keys(aliases).includes(origPath)) {
       console.warn(
         `Addon ${
@@ -158,7 +173,7 @@ module.exports = {
       );
     });
 
-    // console.log('aliases', vc.resolve.alias);
+    console.log('aliases', vc.resolve.alias);
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
