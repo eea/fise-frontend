@@ -63,6 +63,8 @@ function customizeVoltoByAddon(addon, aliases) {
 
   const paths = glob(`${customPath}${FILES_GLOB}`);
 
+  const customizations = {};
+
   for (const filename of paths) {
     const targetPath = filename
       .replace(customPath, '')
@@ -92,25 +94,30 @@ function customizeVoltoByAddon(addon, aliases) {
         }`,
       );
     }
-    aliases[origPath] = filename;
     console.info(
       `Volto Customization in ${addon.name}: ${origPath.replace(
         '@plone/volto',
         '',
       )}`,
     );
+
+    customizations[origPath] = filename;
   }
+  return customizations;
 }
 
 /*
  * Allows customization of addons by the package
  */
 function customizeAddonByPackage(addon, customizationPath, aliases) {
+  const customizations = {};
   const addonSources = addon.sources;
   addonSources.forEach(filename => {
     const localPath = path.join(customizationPath, filename);
-    if (fs.existsSync(localPath)) aliases[filename] = localPath;
+    const moduleName = filename.replace(/\.(js|jsx)$/, '');
+    if (fs.existsSync(localPath)) customizations[moduleName] = localPath;
   });
+  return customizations;
 }
 
 module.exports = {
@@ -165,15 +172,22 @@ module.exports = {
     );
 
     jsConfig.addons.forEach(name => {
-      customizeVoltoByAddon(packageSources[name], vc.resolve.alias);
-      customizeAddonByPackage(
-        packageSources[name],
-        addonsCustomizationPath,
-        vc.resolve.alias,
-      );
+      vc.resolve.alias = {
+        ...customizeVoltoByAddon(packageSources[name], vc.resolve.alias),
+        ...vc.resolve.alias,
+      };
+      vc.resolve.alias = {
+        ...customizeAddonByPackage(
+          packageSources[name],
+          addonsCustomizationPath,
+          vc.resolve.alias,
+        ),
+        ...vc.resolve.alias,
+      };
     });
 
-    console.log('aliases', vc.resolve.alias);
+    // vc.resolve.alias = { ...vc.resolve.alias };
+    // console.log('aliases', vc.resolve.alias);
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
