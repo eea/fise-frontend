@@ -5,6 +5,8 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob').sync;
 
+const FILES_GLOB = '**/*.*(svg|png|jpg|jpeg|gif|ico|less|js|jsx)';
+
 const pathsConfig = jsConfig.compilerOptions.paths;
 let voltoPath = './node_modules/@plone/volto';
 Object.keys(pathsConfig).forEach(pkg => {
@@ -15,13 +17,12 @@ Object.keys(pathsConfig).forEach(pkg => {
 
 let config = require(`${voltoPath}/razzle.config`);
 const razzleModify = config.modify;
-
 /*
  * Returns the package path, potentially aliased by webpack, or from
  * node_modules
  */
 function getPackageAliasPath(pkgName, aliases) {
-  // Note: this relies on aliaes already populated with addons. Should use
+  // Note: this relies on aliases already populated with addons. Should use
   // method below:
   // const addonsPaths = Object.values(pathsConfig).map(
   //   value => `${jsConfig.compilerOptions.baseUrl}/${value[0]}/`,
@@ -45,7 +46,7 @@ function getPackageBasePath(base) {
  * Returns a list of all customizable source files
  */
 function getPackageSourceFiles(pkgPath, blacklist = 'src/customizations') {
-  return glob(`${pkgPath}**/*.*(svg|png|jpg|jpeg|gif|ico|less|js|jsx)`).filter(
+  return glob(`${pkgPath}${FILES_GLOB}`).filter(
     p => !(p.includes('node_modules') || p.includes(blacklist)),
   );
 }
@@ -60,9 +61,7 @@ function customizeVoltoByAddon(addon, aliases) {
 
   if (!customPath.endsWith('/')) customPath += '/';
 
-  const paths = glob(
-    `${customPath}**/*.*(svg|png|jpg|jpeg|gif|ico|less|js|jsx)`,
-  );
+  const paths = glob(`${customPath}${FILES_GLOB}`);
 
   for (const filename of paths) {
     const targetPath = filename
@@ -112,6 +111,16 @@ module.exports = {
     // If any addon wants to customize Volto, it needs to write
     // a voltoCustomizationPath key in package.json, with the path to the
     // package-relative customization folder
+    //
+    // The frontend package can customize addons by having a folder with the
+    // addon name in the "addonsCustomizationPath" folder, for example, to
+    // customize volto-addons/actions.js, create a file and folder in
+    // src/customizations/volto-addons/actions.js
+    //
+    // Note that, to be able to customize successfully, the addon code should
+    // be changed to include the addon name in its imports. So, instead of
+    // ``import { getSomething } from './actions'``, it should be rewritten
+    // as ``import { getSomething } from 'volto-addons/actions``.
 
     // build a map of addon package source files
     const packageSources = {};
@@ -149,7 +158,7 @@ module.exports = {
       );
     });
 
-    console.log('aliases', vc.resolve.alias);
+    // console.log('aliases', vc.resolve.alias);
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');

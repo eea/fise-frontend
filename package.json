@@ -44,7 +44,7 @@
     ]
   },
   "customizationPaths": [
-    "src/customizations/volto"
+    "src/customizations/volto/"
   ],
   "addonsCustomizationPath": "src/customizations",
   "prettier": {
