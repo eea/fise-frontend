@@ -187,7 +187,7 @@ module.exports = {
     });
 
     // vc.resolve.alias = { ...vc.resolve.alias };
-    console.log('aliases', vc.resolve.alias);
+    // console.log('aliases', vc.resolve.alias);
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
