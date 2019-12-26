@@ -129,8 +129,8 @@ module.exports = {
       const pkgBase = getPackageBasePath(pkgPath);
       const pkgJson = require(`${pkgBase}/package.json`);
       let voltoCustomizationPath =
-        pkgJson.voltoCustomizationPath &&
-        path.join(pkgBase, pkgJson.voltoCustomizationPath);
+        pkgJson['voltoCustomizationPath'] &&
+        path.join(pkgBase, pkgJson['voltoCustomizationPath']);
 
       packageSources[addonName] = {
         name: addonName,
