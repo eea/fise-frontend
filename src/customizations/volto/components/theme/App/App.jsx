@@ -208,6 +208,7 @@ export default compose(
       defaultHeaderImage:
         state.default_header_image.items && state.default_header_image.items[0],
       pathname: props.location.pathname,
+      content: state.content.data,
     }),
     { purgeMessages, getDefaultHeaderImage },
   ),
