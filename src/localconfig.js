@@ -1,5 +1,4 @@
 import { defineMessages } from 'react-intl';
-import React from 'react';
 
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
@@ -7,9 +6,6 @@ import CountryView from '~/components/theme/CountryView/CountryView';
 import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
-import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
-import Icon from '@plone/volto/components/theme/Icon/Icon';
-import underlineSVG from '@plone/volto/icons/underline.svg';
 import chartIcon from '@plone/volto/icons/world.svg';
 
 import EuropeCompareBlockEdit from './components/manage/Blocks/EuropeCompareBlock/Edit';
@@ -57,14 +53,10 @@ function addCustomGroup(config) {
 export function applyConfig(config) {
   addCustomGroup(config);
 
-  const Underline = createInlineStyleButton({
-    style: 'UNDERLINE',
-    children: <Icon name={underlineSVG} size="24px" />,
-  });
   config.settings = {
     ...config.settings,
     richTextEditorInlineToolbarButtons: [
-      Underline,
+      // Underline,
       ...config.settings.richTextEditorInlineToolbarButtons,
     ],
     nonContentRoutes: [
