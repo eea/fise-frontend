@@ -169,22 +169,16 @@
 }
 
 .navigation .menu>.dropdown.item>.menu {
-    border                 : none;
-    // left                : -25px;
-    left                   : 0;
-    // right               : calc(100% - 4rem);
-    // box-shadow          : 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
-    // box-shadow          : 0px 3px 4px 0px rgba(0, 0, 0, 0.4);
     box-shadow: none;
     margin-top: -3px!important;
     left                   : 50%;
     border                 : 1px solid #eee;
     transform              : translateX(-50%);
-    max-width              : 350px;
     border-top-left-radius : 0 !important;
     border-top-right-radius: 0 !important;
-
-
+    // box-shadow      : 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .ui.menu .ui.dropdown .menu>.item:hover {

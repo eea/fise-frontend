@@ -62,6 +62,7 @@ class Navigation extends Component {
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.state = {
       isMobileMenuOpen: false,
+      tappedMenu: null,
     };
   }
 
@@ -72,6 +73,7 @@ class Navigation extends Component {
    */
   componentWillMount() {
     this.props.getNavigation(getBaseUrl(this.props.pathname), 2);
+    this.closeMobileMenu();
   }
 
   /**
@@ -83,6 +85,7 @@ class Navigation extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
       this.props.getNavigation(getBaseUrl(nextProps.pathname), 2);
+      this.closeMobileMenu();
     }
   }
 
@@ -187,9 +190,19 @@ class Navigation extends Component {
                     : 'item firstLevel'
                 }
                 key={item.url}
-                // text={item.title}
+                onOpen={() =>
+                  this.state.isMobileMenuOpen &&
+                  this.setState({ tappedMenu: item.url })
+                }
                 trigger={
                   <Link
+                    onClick={e =>
+                      this.state.isMobileMenuOpen &&
+                      item.items &&
+                      item.items.length &&
+                      this.state.tappedMenu !== item.url &&
+                      e.preventDefault()
+                    }
                     className="firstLevel"
                     to={item.url === '' ? '/' : item.url}
                     key={item.url}
