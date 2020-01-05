@@ -125,7 +125,6 @@ function customizeAddonByPackage(addon, customizationPath, aliases) {
   return customizations;
 }
 
-const projectRootPath = path.resolve('.');
 
 const projectRootPath = path.resolve('.');
 
