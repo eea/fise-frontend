@@ -1,3 +1,8 @@
+/**
+ * Replace with custom razzle config when needed.
+ * @module razzle.config
+ */
+
 // const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 const jsConfig = require('./jsconfig');
@@ -119,6 +124,9 @@ function customizeAddonByPackage(addon, customizationPath, aliases) {
   });
   return customizations;
 }
+
+
+const projectRootPath = path.resolve('.');
 
 module.exports = {
   modify: (config, { target, dev }, webpack) => {

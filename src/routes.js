@@ -8,6 +8,7 @@ import { defaultRoutes } from '@plone/volto/routes';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
 import { addonRoutes } from '~/config';
+import SiteMap from '~/components/theme/SiteMap/SiteMap';
 
 /**
  * Routes array.
@@ -23,6 +24,11 @@ const routes = [
       {
         path: '/',
         component: HomepageView,
+        exact: true,
+      },
+      {
+        path: '/sitemap',
+        component: SiteMap,
         exact: true,
       },
 
