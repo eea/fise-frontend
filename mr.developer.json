@@ -25,5 +25,9 @@
     },
     "volto-sidebar": {
       "url": "https://github.com/eea/volto-sidebar.git"
+    },
+    "@plone/volto": {
+      "url": "https://github.com/tiberiuichim/volto.git",
+      "branch": "kitchen_sink"
     }
 }

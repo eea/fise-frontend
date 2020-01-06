@@ -148,7 +148,10 @@ def activate_all():
 
     for name in j.keys():
         activate(name)
-        subprocess.call(['npm', 'install', 'src/addons/{}'.format(name)])
+        pkgdir = os.path.join('src/addons/', format(name))
+
+        if os.path.exists(pkgdir) and os.path.isdir(pkgdir):
+            subprocess.call(['npm', 'install'], cwd=pkgdir)
 
 
 def list_addons():

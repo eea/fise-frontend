@@ -10,16 +10,16 @@
                 ], 
                 "map": [
                     [
-                        "@plone/volto", 
-                        "@plone/volto/src"
-                    ], 
-                    [
                         "@package", 
                         "./src"
                     ], 
                     [
                         "~", 
                         "./src"
+                    ], 
+                    [
+                        "volto", 
+                        "./src/addons/volto/src"
                     ], 
                     [
                         "volto-mosaic", 
@@ -30,6 +30,10 @@
                         "./src/addons/volto-datablocks/src"
                     ], 
                     [
+                        "volto-addons", 
+                        "./src/addons/volto-addons/src"
+                    ], 
+                    [
                         "volto-ckeditor", 
                         "./src/addons/volto-ckeditor/src"
                     ], 
@@ -38,20 +42,20 @@
                         "./src/addons/volto-blocks/src"
                     ], 
                     [
-                        "volto-drafteditor", 
-                        "./src/addons/volto-drafteditor/src"
-                    ], 
-                    [
-                        "volto-plotlycharts", 
-                        "./src/addons/volto-plotlycharts/src"
-                    ], 
-                    [
                         "volto-corsproxy", 
                         "./src/addons/volto-corsproxy/src"
                     ], 
                     [
-                        "volto-addons", 
-                        "./src/addons/volto-addons/src"
+                        "volto-drafteditor", 
+                        "./src/addons/volto-drafteditor/src"
+                    ], 
+                    [
+                        "@plone/volto", 
+                        "./src/addons/@plone/volto/src"
+                    ], 
+                    [
+                        "volto-plotlycharts", 
+                        "./src/addons/volto-plotlycharts/src"
                     ], 
                     [
                         "volto-sidebar", 

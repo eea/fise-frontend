@@ -1,7 +1,21 @@
 {
+    "addons": [
+        "volto-addons",
+        "volto-blocks",
+        "volto-ckeditor",
+        "volto-corsproxy",
+        "volto-datablocks",
+        "volto-drafteditor",
+        "volto-mosaic",
+        "volto-plotlycharts",
+        "volto-sidebar"
+    ],
     "compilerOptions": {
         "baseUrl": "src",
         "paths": {
+            "@plone/volto": [
+                "addons/@plone/volto"
+            ],
             "volto-addons": [
                 "addons/volto-addons/src"
             ],
@@ -30,16 +44,5 @@
                 "addons/volto-sidebar/src"
             ]
         }
-    },
-    "addons": [
-      "volto-addons",
-      "volto-blocks",
-      "volto-ckeditor",
-      "volto-corsproxy",
-      "volto-datablocks",
-      "volto-drafteditor",
-      "volto-mosaic",
-      "volto-plotlycharts",
-      "volto-sidebar"
-    ]
+    }
 }

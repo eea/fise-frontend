@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 import CountryView from '~/components/theme/CountryView/CountryView';
-import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
+// import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
 import chartIcon from '@plone/volto/icons/world.svg';
@@ -72,7 +72,7 @@ export function applyConfig(config) {
     layoutViews: {
       ...config.views.layoutViews,
       full_view: CountryView,
-      country_tab_view: CountryPageView,
+      // country_tab_view: CountryPageView,
       homepage_view: HomepageView,
       // ...layoutViews,
     },

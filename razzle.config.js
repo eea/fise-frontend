@@ -125,7 +125,6 @@ function customizeAddonByPackage(addon, customizationPath, aliases) {
   return customizations;
 }
 
-
 const projectRootPath = path.resolve('.');
 
 module.exports = {
@@ -195,7 +194,7 @@ module.exports = {
     });
 
     // vc.resolve.alias = { ...vc.resolve.alias };
-    // console.log('aliases', vc.resolve.alias);
+    console.log('aliases', vc.resolve.alias);
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
