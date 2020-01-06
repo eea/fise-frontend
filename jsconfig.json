@@ -13,9 +13,6 @@
     "compilerOptions": {
         "baseUrl": "src",
         "paths": {
-            "@plone/volto": [
-                "addons/@plone/volto"
-            ],
             "volto-addons": [
                 "addons/volto-addons/src"
             ],

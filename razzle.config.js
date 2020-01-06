@@ -208,7 +208,7 @@ module.exports = {
       module => module.test && module.test.toString() == /\.(js|jsx|mjs)$/, // eslint-disable-line
     );
     const jsxIndex = vc.module.rules.indexOf(jsxRule);
-    jsxRule.exclude = [/node_modules/];
+    jsxRule.exclude = [/src\/addons\/.+\/node_modules/];
     vc.module.rules[jsxIndex] = jsxRule;
 
     console.log('aliases', vc.resolve.alias);
