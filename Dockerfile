@@ -8,10 +8,14 @@ RUN apt-get install -y git bsdmainutils
 ENV NODE_OPTIONS=--max_old_space_size=4096
 
 WORKDIR /opt/frontend/
+RUN chown -R node /opt/frontend
+
+USER node
 
 COPY docker-image.txt /
 COPY . .
 
+RUN echo "prefix = \"/home/node\"\n" > /home/node/.npmrc
 RUN rm -rf node_modules
 
 RUN npm install mr-developer
