@@ -89,7 +89,6 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "mr-developer": "^1.4.0",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "babel-eslint": "^10.0.3",
@@ -102,6 +101,7 @@
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "mr-developer": "^1.4.0",
     "postcss-overrides": "3.1.4",
     "prettier": "1.17.0",
     "prettier-eslint": "^9.0.0",

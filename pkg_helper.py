@@ -43,9 +43,14 @@ def activate(target):
         sys.exit(137)
 
     if 'compilerOptions' not in o:
+        targetpath = "addons/{}/src".format(target)
+
+        if target == "@plone/volto":
+            targetpath = "addons/volto"
+
         o['compilerOptions'] = {
             "paths": {
-                target: ["addons/{}/src".format(target)]
+                target: [targetpath]
             },
             "baseUrl": "src"
         }
@@ -148,10 +153,16 @@ def activate_all():
 
     for name in j.keys():
         activate(name)
+
+        if name == "@plone/volto":
+            continue
+
         pkgdir = os.path.join('src/addons/', format(name))
 
         if os.path.exists(pkgdir) and os.path.isdir(pkgdir):
+            subprocess.call(['rm', 'package-lock.json'], cwd=pkgdir)
             subprocess.call(['npm', 'install'], cwd=pkgdir)
+            subprocess.call(['rm', 'package-lock.json'], cwd=pkgdir)
 
 
 def list_addons():
