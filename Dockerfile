@@ -5,16 +5,18 @@ FROM node:10-jessie
 RUN apt-get update -y
 RUN apt-get install -y git bsdmainutils
 
+ENV NODE_OPTIONS=--max_old_space_size=4096
+
 WORKDIR /opt/frontend/
 
-ENV NODE_OPTIONS=--max_old_space_size=4096
+COPY docker-image.txt /
+COPY . .
+
+RUN mkdir /opt/frontend/src/addons
 
 RUN chown -R node /opt/frontend
 
 USER node
-
-COPY docker-image.txt /
-COPY . .
 
 RUN echo "prefix = \"/home/node\"\n" > /home/node/.npmrc
 RUN rm -rf node_modules
