@@ -5,6 +5,9 @@
 
 // const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
+// const autoprefixer = require('autoprefixer');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const jsConfig = require('./jsconfig');
 const path = require('path');
 const fs = require('fs');
@@ -125,7 +128,7 @@ function customizeAddonByPackage(addon, customizationPath, aliases) {
   return customizations;
 }
 
-const projectRootPath = path.resolve('.');
+// const projectRootPath = path.resolve('.');
 
 module.exports = {
   modify: (config, { target, dev }, webpack) => {
@@ -193,8 +196,24 @@ module.exports = {
       };
     });
 
-    // vc.resolve.alias = { ...vc.resolve.alias };
+    // need to include /theme/ to less loader in order to have it working with volto as a submodule.
+    const lessRule = vc.module.rules.find(
+      module => module.test && module.test.toString() == /\.less$/, // eslint-disable-line
+    );
+    const index = vc.module.rules.indexOf(lessRule);
+    lessRule.include.push(/src\/addons\/@plone\/volto\/theme/);
+    vc.module.rules[index] = lessRule;
+
+    const jsxRule = vc.module.rules.find(
+      module => module.test && module.test.toString() == /\.(js|jsx|mjs)$/, // eslint-disable-line
+    );
+    const jsxIndex = vc.module.rules.indexOf(jsxRule);
+    jsxRule.exclude = [/node_modules/];
+    vc.module.rules[jsxIndex] = jsxRule;
+
     console.log('aliases', vc.resolve.alias);
+    console.log('----');
+    console.log('rules', vc.module.rules);
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
