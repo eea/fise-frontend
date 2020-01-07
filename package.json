@@ -80,6 +80,7 @@
     "@blueprintjs/icons": "^3.10.0",
     "@plone/volto": "github:tiberiuichim/volto#kitchen_sink",
     "react": "^16.12.0",
+    "pretty-num": "^0.3.0",
     "react-image-gallery": "^0.9.1",
     "react-loadable": "^5.5.0",
     "react-slick": "^0.24.0",

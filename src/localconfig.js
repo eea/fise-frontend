@@ -13,6 +13,9 @@ import EuropeCompareBlockView from './components/manage/Blocks/EuropeCompareBloc
 import EuropeForestBlockEdit from './components/manage/Blocks/EuropeForestBlock/Edit';
 import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/View';
 
+import ForestCoverageBlockEdit from '~/components/manage/Blocks/ForestCoverageBlock/Edit';
+import ForestCoverageBlockView from '~/components/manage/Blocks/ForestCoverageBlock/View';
+
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 
 defineMessages({
@@ -115,6 +118,14 @@ export function applyConfig(config) {
         icon: chartIcon,
         group: 'forests_specific',
       },
+      forest_coverage_block: {
+        id: 'forest_coverage_block',
+        title: 'Forest Coverage Block',
+        view: ForestCoverageBlockView,
+        edit: ForestCoverageBlockEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      }
     },
   };
 
