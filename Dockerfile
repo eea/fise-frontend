@@ -12,7 +12,7 @@ WORKDIR /opt/frontend/
 COPY docker-image.txt /
 COPY . .
 
-RUN mkdir /opt/frontend/src/addons
+RUN mkdir -p /opt/frontend/src/addons
 
 RUN chown -R node /opt/frontend
 
