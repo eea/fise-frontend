@@ -42,7 +42,7 @@ function addCustomGroup(config) {
   const hasCustomGroup = config.blocks.groupBlocksOrder.filter(
     el => el.id === 'custom_addons',
   );
-  if (!hasCustomGroup.length) {
+  if (hasCustomGroup.length === 0) {
     config.blocks.groupBlocksOrder.push({
       id: 'custom_addons',
       title: 'Custom addons',
@@ -94,7 +94,6 @@ export function applyConfig(config) {
 
     groupBlocksOrder: [
       ...config.blocks.groupBlocksOrder,
-      { id: 'custom_addons', title: 'Custom addons' }, // TODO: needs to be fixed
       { id: 'forests_specific', title: 'Forests Specific Blocks' },
     ],
 
