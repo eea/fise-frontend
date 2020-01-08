@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Form as UiForm } from 'semantic-ui-react';
-import { Field } from '@plone/volto/components'; // EditBlock
-import ConnectedDataValue from 'volto-datablocks/ConnectedDataValue';
+import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
 import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
+
+// import { Form as UiForm } from 'semantic-ui-react';
+// import { Field } from '@plone/volto/components'; // EditBlock
 
 class Edit extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class Edit extends Component {
             <div className="land-data">
               <span>
                 {this.props.data.url && this.props.data.columns?.column1 && (
-                  <ConnectedDataValue
+                  <DataConnectedValue
                     url={this.props.data.url}
                     column={this.props.data.columns.column1.value}
                     format={this.props.data.columns.column1.format}
@@ -58,12 +59,13 @@ class Edit extends Component {
               of land surface
               <span>
                 {this.props.data.url && this.props.data.columns?.column2 && (
-                  <ConnectedDataValue
+                  <DataConnectedValue
                     url={this.props.data.url}
                     column={this.props.data.columns.column2.value}
                     format={this.props.data.columns.column2.format}
                   />
-                )} Mha
+                )}{' '}
+                Mha
               </span>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ConnectedDataValue from 'volto-datablocks/ConnectedDataValue';
+import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
 
 class View extends Component {
   render() {
@@ -13,7 +13,7 @@ class View extends Component {
               <div className="land-data">
                 <span>
                   {this.props.data.url && this.props.data.columns?.column1 && (
-                    <ConnectedDataValue
+                    <DataConnectedValue
                       url={this.props.data.url}
                       column={this.props.data.columns.column1.value}
                       format={this.props.data.columns.column1.format}
@@ -25,7 +25,7 @@ class View extends Component {
                 of land surface
                 <span>
                   {this.props.data.url && this.props.data.columns?.column2 && (
-                    <ConnectedDataValue
+                    <DataConnectedValue
                       url={this.props.data.url}
                       column={this.props.data.columns.column2.value}
                       format={this.props.data.columns.column2.format}
