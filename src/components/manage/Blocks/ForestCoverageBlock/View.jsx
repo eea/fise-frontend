@@ -15,10 +15,10 @@ class View extends Component {
                   {this.props.data.url && this.props.data.columns?.column1 && (
                     <ConnectedDataValue
                       url={this.props.data.url}
-                      column={this.props.data.columns.column1}
+                      column={this.props.data.columns.column1.value}
+                      format={this.props.data.columns.column1.format}
                     />
                   )}
-                  %
                 </span>
               </div>
               <div className="land-data-content">
@@ -27,7 +27,8 @@ class View extends Component {
                   {this.props.data.url && this.props.data.columns?.column2 && (
                     <ConnectedDataValue
                       url={this.props.data.url}
-                      column={this.props.data.columns.column2}
+                      column={this.props.data.columns.column2.value}
+                      format={this.props.data.columns.column2.format}
                     />
                   )}{' '}
                   Mha
