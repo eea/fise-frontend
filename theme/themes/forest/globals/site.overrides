@@ -1099,3 +1099,16 @@ h5 {
   }
 
 }
+body {
+  .sidebar-container {
+    .trigger,
+    .trigger:focus,
+    .trigger:hover {
+      opacity: 0.3;
+    }
+    
+    .trigger:hover {
+      opacity: 0.5;
+    }
+  }
+}
