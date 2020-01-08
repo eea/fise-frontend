@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Form as UiForm } from 'semantic-ui-react';
 import { Field } from '@plone/volto/components'; // EditBlock
-import ConnectedDataValue from 'volto-datablocks/dataentity/components/ConnectedDataValue';
-import EditBlock from 'volto-datablocks/dataentity/components/EditBlock';
+import ConnectedDataValue from 'volto-datablocks/ConnectedDataValue';
+import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
 
 class Edit extends Component {
   constructor(props) {

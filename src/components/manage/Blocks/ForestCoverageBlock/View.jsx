@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ConnectedDataValue from 'volto-datablocks/dataentity/components/ConnectedDataValue';
+import ConnectedDataValue from 'volto-datablocks/ConnectedDataValue';
 
 class View extends Component {
   render() {
@@ -29,7 +29,8 @@ class View extends Component {
                       url={this.props.data.url}
                       column={this.props.data.columns.column2}
                     />
-                  )} Mha
+                  )}{' '}
+                  Mha
                 </span>
               </div>
             </div>
