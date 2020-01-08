@@ -14,10 +14,12 @@ import { FormattedMessage } from 'react-intl';
 import { Portal } from 'react-portal';
 import { Container, Tab } from 'semantic-ui-react';
 import qs from 'query-string';
+import { BodyClass } from '@plone/volto/helpers';
 
 import { searchContent } from '@plone/volto/actions';
 
 import { SearchTags, Toolbar } from '@plone/volto/components';
+import RenderSearch from '~/components/theme/Search/RenderSearch';
 
 const toSearchOptions = (searchableText, subject, path) => {
   return {
@@ -33,75 +35,13 @@ const toSearchOptions = (searchableText, subject, path) => {
 
 const panes = context => [
   {
-    menuItem: 'National Forest Inventories',
-    render: () => renderIframe(context),
+    menuItem: `Portal data (${context.items.length})`,
+    render: () => <RenderSearch context={context} />,
   },
-  { menuItem: 'Portal results', render: () => renderSearch(context) },
+  { menuItem: 'National Forest Inventories' },
+  { menuItem: 'Regional / International data' },
 ];
 
-function renderSearch(context) {
-  return (
-    <article id="content">
-      <header>
-        <h1 className="documentFirstHeading">
-          {context.term ? (
-            <FormattedMessage
-              id="Search results for {term}"
-              defaultMessage="Search results for {term}"
-              values={{
-                term: <q>{context.term}</q>,
-              }}
-            />
-          ) : (
-            <FormattedMessage
-              id="Search results"
-              defaultMessage="Search results"
-            />
-          )}
-        </h1>
-        <SearchTags />
-      </header>
-      <section id="content-core">
-        {context.items.map(item => (
-          <article className="blockItem" key={item['@id']}>
-            <h2 className="blockHeadline">
-              <Link
-                to={item['@id']}
-                className="summary url"
-                title={item['@type']}
-              >
-                {item.title}
-              </Link>
-            </h2>
-            {item.description && (
-              <div className="blockBody">
-                <span className="description">{item.description}</span>
-              </div>
-            )}
-            <div className="blockFooter">
-              <Link to={item['@id']}>
-                <FormattedMessage id="Read More…" defaultMessage="Read More…" />
-              </Link>
-            </div>
-            <div className="visualClear" />
-          </article>
-        ))}
-      </section>
-    </article>
-  );
-}
-
-function renderIframe(context) {
-  return (
-    <iframe
-      src={`https://demo-forests-p5.eea.europa.eu/search/#${context.term}`}
-      width="100%"
-      height="1300"
-      title="fise search"
-      frameBorder="0"
-    />
-  );
-}
 class Search extends Component {
   static propTypes = {
     searchContent: PropTypes.func.isRequired,
@@ -183,7 +123,15 @@ class Search extends Component {
       <Container id="page-search">
         <Helmet title="Search" />
         <div className="container">
-          <Tab panes={panes(context)} />
+          <BodyClass className="search-container" />
+          <Tab
+            menu={{
+              compact: true,
+              attached: false,
+              tabular: false,
+            }}
+            panes={panes(context)}
+          />
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar

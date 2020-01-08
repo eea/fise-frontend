@@ -1,3 +1,156 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+
+.search-page {
+    .results-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #D4D4D5;
+        margin-bottom: 37px;
+    }
+
+    .max-results {
+        display: flex;
+        align-items: center;
+    }
+
+    .max-results-text {
+        font-size: @standardFont;
+        color: #555555;
+        margin: 0;
+
+    }
+
+    .max-results-select {
+        margin-left: 10px;
+        font-size: @standardFont;
+        background-color: #F5F5F5;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .results-count {
+        font-size: @standardFont;
+        color: #999999;
+        margin-right: 35px;
+    }
+
+    .block-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .block-item {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 100%;
+    }
+
+    .download-area {
+        display: flex;
+        align-self: flex-end;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .download-button {
+        display: flex;
+        align-items: center;
+        border: 1px solid #DDDDDD;
+        background-color: #ffffff;
+        border-radius: 7px;
+        padding: 7px;
+    }
+
+    .download-text {
+        font-size: @standardFont;
+        margin: 0;
+
+    }
+
+    .file-size {
+        font-size: @standardFont;
+        color: #555555
+    }
+
+    .block-headline {
+        font-size: 20px;
+        color: #005555;
+        font-weight: 500;
+    }
+
+    .meta-data {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 9px;
+        margin-bottom: 8px;
+    }
+
+    .format-icon {
+        background-color: #005555;
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        font-size: 9px;
+        color: white;
+        font-weight: 800;
+    }
+
+    .text-tab {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .format-text {
+        font-size: @standardFont;
+        color: #999999;
+    }
+
+    .format-type {
+        font-size: @standardFont;
+    }
+
+    .description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+    }
+
+    .tag-tab {
+        margin-top: 15px;
+        margin-bottom: 66px;
+    }
+
+    .result-tag {
+        font-size: @standardFont;
+        color: #CC4400;
+    }
+
+    .result-date {
+        font-size: @standardFont;
+        color: #999999;
+    }
+}
+
+.search-container {
+    .active {
+        background: #CC4400 !important;
+        color: white !important;
+    }
+
+    .menu {
+        box-shadow: none !important;
+    }
+
+}
