@@ -10,7 +10,8 @@ import routes from '~/routes';
 import '~/theme';
 
 import configureStore from '@plone/volto/store';
-import { Api, persistAuthToken } from '@plone/volto/helpers';
+import { persistAuthToken } from '@plone/volto/helpers';
+import { Api } from '~/customizations/volto/helpers';
 import { AnimationWrapper } from '~/helpers';
 
 export const history = createBrowserHistory();
