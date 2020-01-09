@@ -1,3 +1,4 @@
+@purple: #753852;
 // General
 .block-container {
   padding: 10px;
@@ -175,6 +176,17 @@
         span {
           color: @darkGreen;
         }
+      }
+      &.purple {
+      color           : @purple;
+
+      .land-data-content {
+        color: initial;
+
+        span {
+          color: @purple;
+        }
+      }
       }
     }
 

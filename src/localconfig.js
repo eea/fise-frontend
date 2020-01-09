@@ -16,6 +16,9 @@ import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/
 import ForestCoverageBlockEdit from '~/components/manage/Blocks/ForestCoverageBlock/Edit';
 import ForestCoverageBlockView from '~/components/manage/Blocks/ForestCoverageBlock/View';
 
+import ForestDeadwoodVolumeEdit from '~/components/manage/Blocks/ForestDeadwoodVolume/Edit';
+import ForestDeadwoodVolumeView from '~/components/manage/Blocks/ForestDeadwoodVolume/View';
+
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 
 defineMessages({
@@ -120,12 +123,20 @@ export function applyConfig(config) {
       },
       forest_coverage_block: {
         id: 'forest_coverage_block',
-        title: 'Forest Coverage Block',
+        title: 'Forest coverage block',
         view: ForestCoverageBlockView,
         edit: ForestCoverageBlockEdit,
         icon: chartIcon,
         group: 'forests_specific',
-      }
+      },
+      forest_deadwood_volume_block: {
+        id: 'forest_deadwood_volume_block',
+        title: 'Forest deadwood volume block',
+        view: ForestDeadwoodVolumeView,
+        edit: ForestDeadwoodVolumeEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      },
     },
   };
 
