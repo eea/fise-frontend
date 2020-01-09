@@ -11,6 +11,8 @@ import default_header_image from '~/reducers/default_header_image';
 import parent_folder_data from '~/reducers/parent_folder_data';
 import localnavigation from '~/reducers/localnavigation';
 import navSiteMap from '~/reducers/sitemap';
+import { facets } from '~/reducers/facets';
+import { keywords } from '~/reducers/keywords';
 import { addonReducers } from '~/config';
 
 /**
@@ -30,7 +32,9 @@ const reducers = {
   folder_tabs,
   parent_folder_data,
   localnavigation,
-  navSiteMap
+  navSiteMap,
+  facets,
+  keywords
 };
 
 export default reducers;

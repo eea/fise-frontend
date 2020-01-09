@@ -17,6 +17,7 @@ import qs from 'query-string';
 import { BodyClass } from '@plone/volto/helpers';
 
 import { searchContent } from '@plone/volto/actions';
+import { getKeywords, getCountry } from '~/actions';
 
 import { SearchTags, Toolbar } from '@plone/volto/components';
 import RenderSearch from '~/components/theme/Search/RenderSearch';
@@ -45,6 +46,8 @@ const panes = context => [
 class Search extends Component {
   static propTypes = {
     searchContent: PropTypes.func.isRequired,
+    getKeywords: PropTypes.func.isRequired,
+    getCountry: PropTypes.func.isRequired,
     searchableText: PropTypes.string,
     subject: PropTypes.string,
     path: PropTypes.string,
@@ -77,6 +80,7 @@ class Search extends Component {
       this.props.subject,
       this.props.path,
     );
+    // this.props.getKeywords();
   }
 
   /**
@@ -164,8 +168,9 @@ export default compose(
       subject: qs.parse(props.location.search).Subject,
       path: qs.parse(props.location.search).path,
       pathname: props.location.pathname,
+      keywords: state.keywords
     }),
-    { searchContent },
+    { searchContent, getKeywords, getCountry },
   ),
   asyncConnect([
     {

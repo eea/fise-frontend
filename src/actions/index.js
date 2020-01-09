@@ -7,6 +7,16 @@ import {
   GET_LOCALNAVIGATION,
   GET_CHART_DATA_FROM_VISUALIZATION,
   GET_NAVSITEMAP,
+  GET_KEYWORDS,
+  GET_COUNTRY,
+  GET_DATA_SET,
+  GET_DATA_TYPE,
+  GET_INFO_LEVEL,
+  GET_LANGUAGE,
+  GET_NUTS_LEVEL,
+  GET_RESOURCE_TYPE,
+  GET_TOPIC_CATEGORY,
+  GET_PUBLICATION_YEARS
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -104,3 +114,136 @@ export function getNavSiteMap(url, depth) {
 
   };
 }
+/**
+ * KEYWORDS
+ */
+export function getKeywords() {
+  return {
+    type: GET_KEYWORDS,
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/keyword',
+      external: true
+    }
+  }
+}
+/**
+ * Facets GET list requests
+ */
+export function getCountry() {
+  return {
+    type: GET_COUNTRY,
+    baseType: GET_COUNTRY,
+    stateToChange: 'country',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/country',
+      external: true
+    }
+  }
+}
+
+export function getDataSet() {
+  return {
+    type: GET_DATA_SET,
+    baseType: GET_DATA_SET,
+    stateToChange: 'dataSet',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/data-set',
+      external: true
+    }
+  }
+}
+
+export function getDataType() {
+  return {
+    type: GET_DATA_TYPE,
+    baseType: GET_DATA_TYPE,
+    stateToChange: 'dataType',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/data-type',
+      external: true
+    }
+  }
+}
+
+export function getInfoLevel() {
+  return {
+    type: GET_INFO_LEVEL,
+    baseType: GET_INFO_LEVEL,
+    stateToChange: 'countries',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/country',
+      external: true
+    }
+  }
+}
+
+export function getLanguage() {
+  return {
+    type: GET_LANGUAGE,
+    baseType: GET_LANGUAGE,
+    stateToChange: 'language',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/language',
+      external: true
+    }
+  }
+}
+
+export function getNutsLevel() {
+  return {
+    type: GET_NUTS_LEVEL,
+    baseType: GET_NUTS_LEVEL,
+    stateToChange: 'nutsLevel',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/nuts-level',
+      external: true
+    }
+  }
+}
+
+export function getResourceType() {
+  return {
+    type: GET_RESOURCE_TYPE,
+    baseType: GET_RESOURCE_TYPE,
+    stateToChange: 'resourceType',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/resource-type',
+      external: true
+    }
+  }
+}
+
+export function getTopicCategory() {
+  return {
+    type: GET_TOPIC_CATEGORY,
+    baseType: GET_TOPIC_CATEGORY,
+    stateToChange: 'topicCategory',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/topic-category',
+      external: true
+    }
+  }
+}
+
+export function getPublicationYears() {
+  return {
+    type: GET_PUBLICATION_YEARS,
+    baseType: GET_PUBLICATION_YEARS,
+    stateToChange: 'publicationYears',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/publication_years',
+      external: true
+    }
+  }
+}
+
