@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Form as UiForm } from 'semantic-ui-react';
-import { Field } from '@plone/volto/components'; // EditBlock
+// import { Form as UiForm } from 'semantic-ui-react';
+// import { Field } from '@plone/volto/components'; // EditBlock
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
 import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
 

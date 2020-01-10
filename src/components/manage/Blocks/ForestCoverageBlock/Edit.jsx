@@ -1,75 +1,40 @@
 import React, { Component } from 'react';
-import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
 import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
+import View from './View';
 
-// import { Form as UiForm } from 'semantic-ui-react';
-// import { Field } from '@plone/volto/components'; // EditBlock
+const clone = obj => JSON.parse(JSON.stringify(obj || {}));
+
+const SCHEMA = {
+  perc: {
+    title: 'Percentage column',
+    value: null,
+    format: 'percentage',
+  },
+  totalArea: {
+    title: 'Total Area column',
+    value: null,
+    format: 'compactnumber',
+  },
+};
 
 class Edit extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      url: props.data.url || null,
-      columns: {
-        column1: props.data.columns?.column1 || null,
-        column2: props.data.columns?.column2 || null,
-      },
-    };
-
-    this.onSubmit = this.onSubmit.bind(this);
-    this.updateData = this.updateData.bind(this);
-  }
-
-  updateData(obj) {
-    this.setState({ ...this.state, ...obj }, this.onSubmit);
-  }
-
-  onSubmit() {
-    this.props.onChangeBlock(this.props.block, {
-      ...this.props.data,
-      ...this.state,
-    });
-  }
-
+  // data is like {url: '', columns: {key: {value, format}}}
   render() {
     return (
       <div className="block-container">
         <EditBlock
-          updateData={this.updateData}
+          onChange={data => {
+            this.props.onChangeBlock(this.props.block, {
+              ...this.props.data,
+              ...data,
+            });
+          }}
+          schema={clone(SCHEMA)}
           block="data-entity"
-          data={this.state}
+          data={this.props.data}
           title="Data block parameters"
         />
-        <div className="forest-specific-block forest-area-block">
-          <h5>Forest coverage</h5>
-          <div className="land-data-wrapper eu28-data">
-            <div className="land-data">
-              <span>
-                {this.props.data.url && this.props.data.columns?.column1 && (
-                  <DataConnectedValue
-                    url={this.props.data.url}
-                    column={this.props.data.columns.column1.value}
-                    format={this.props.data.columns.column1.format}
-                  />
-                )}
-              </span>
-            </div>
-            <div className="land-data-content">
-              of land surface
-              <span>
-                {this.props.data.url && this.props.data.columns?.column2 && (
-                  <DataConnectedValue
-                    url={this.props.data.url}
-                    column={this.props.data.columns.column2.value}
-                    format={this.props.data.columns.column2.format}
-                  />
-                )}{' '}
-                Mha
-              </span>
-            </div>
-          </div>
-        </div>
+        <View {...this.props} />
       </div>
     );
   }
