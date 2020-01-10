@@ -32,7 +32,7 @@ class Edit extends Component {
           schema={clone(SCHEMA)}
           block="data-entity"
           data={this.props.data}
-          title="Data block parameters"
+          title="Forest Coverage block"
         />
         <View {...this.props} />
       </div>
