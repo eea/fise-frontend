@@ -19,6 +19,9 @@ import ForestCoverageBlockView from '~/components/manage/Blocks/ForestCoverageBl
 import ForestDeadwoodVolumeEdit from '~/components/manage/Blocks/ForestDeadwoodVolume/Edit';
 import ForestDeadwoodVolumeView from '~/components/manage/Blocks/ForestDeadwoodVolume/View';
 
+import ForestCoverageEvolutionEdit from '~/components/manage/Blocks/ForestCoverageEvolution/Edit';
+import ForestCoverageEvolutionView from '~/components/manage/Blocks/ForestCoverageEvolution/View';
+
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 
 defineMessages({
@@ -134,6 +137,14 @@ export function applyConfig(config) {
         title: 'Forest deadwood volume block',
         view: ForestDeadwoodVolumeView,
         edit: ForestDeadwoodVolumeEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      },
+      forest_coverage_evolution_block: {
+        id: 'forest_coverage_evolution_block',
+        title: 'Forest coverage evolution block',
+        view: ForestCoverageEvolutionView,
+        edit: ForestCoverageEvolutionEdit,
         icon: chartIcon,
         group: 'forests_specific',
       },
