@@ -58,7 +58,15 @@ class App extends Component {
       Raven.config(process.env.SENTRY_DSN).install();
     }
   }
-
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (nextProps.loadingContent.loading || nextProps.search.loading) {
+  //     console.log('dont load');
+  //     return false;
+  //   }
+  //   console.log('load:', nextProps.loadingContent);
+  //   return true;
+  // }
+  //
   /**
    * @method componentWillReceiveProps
    * @param {Object} nextProps Next properties
@@ -209,6 +217,8 @@ export default compose(
         state.default_header_image.items && state.default_header_image.items[0],
       pathname: props.location.pathname,
       content: state.content.data,
+      // loadingContent: state.content?.get,
+      // search: state.search,
     }),
     { purgeMessages, getDefaultHeaderImage },
   ),

@@ -1,45 +1,44 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
 
-class View extends Component {
-  render() {
-    console.log('props', this.props);
-    return (
-      <div className="block-container">
-        <div className="forest-block-wrapper">
-          <div className="forest-specific-block forest-area-block">
-            <h5>Forest coverage</h5>
-            <div className="land-data-wrapper eu28-data">
-              <div className="land-data">
-                <span>
-                  {this.props.data.url && this.props.data.columns?.column1 && (
-                    <DataConnectedValue
-                      url={this.props.data.url}
-                      column={this.props.data.columns.column1.value}
-                      format={this.props.data.columns.column1.format}
-                    />
-                  )}
-                </span>
-              </div>
-              <div className="land-data-content">
-                of land surface
-                <span>
-                  {this.props.data.url && this.props.data.columns?.column2 && (
-                    <DataConnectedValue
-                      url={this.props.data.url}
-                      column={this.props.data.columns.column2.value}
-                      format={this.props.data.columns.column2.format}
-                    />
-                  )}{' '}
-                  Mha
-                </span>
-              </div>
+const View = props => {
+  return (
+    <div className="block-container">
+      <div className="forest-block-wrapper">
+        <div className="forest-specific-block forest-area-block">
+          <h5>Forest coverage</h5>
+          <div className="land-data-wrapper eu28-data">
+            <div className="land-data">
+              <span>
+                {props.data.url && props.data.columns?.perc && (
+                  <DataConnectedValue
+                    url={props.data.url}
+                    column={props.data.columns.perc.value}
+                    format={props.data.columns.perc.format}
+                    placeholder="_"
+                  />
+                )}
+              </span>
+            </div>
+            <div className="land-data-content">
+              of land surface
+              <span>
+                {props.data.url && props.data.columns?.totalArea && (
+                  <DataConnectedValue
+                    url={props.data.url}
+                    column={props.data.columns.totalArea.value}
+                    format={props.data.columns.totalArea.format}
+                    placeholder="_"
+                  />
+                )}{' '}
+                ha
+              </span>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default View;

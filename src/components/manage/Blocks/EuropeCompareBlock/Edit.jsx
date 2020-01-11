@@ -47,7 +47,7 @@ class Edit extends Component {
               value={this.state.europe_forest_area}
               required={false}
               onChange={(e, d) => this.updateData({ europe_forest_area: d })}
-              />
+            />
 
             <UiForm.Group widths="equal">
               <Field
@@ -57,7 +57,7 @@ class Edit extends Component {
                 value={this.state.europe_data_1_name}
                 required={false}
                 onChange={(e, d) => this.updateData({ europe_data_1_name: d })}
-                />
+              />
               <Field
                 id="europe-data-1-value"
                 title="Value"
@@ -65,7 +65,7 @@ class Edit extends Component {
                 value={this.state.europe_data_1_value}
                 required={false}
                 onChange={(e, d) => this.updateData({ europe_data_1_value: d })}
-                />
+              />
             </UiForm.Group>
 
             <UiForm.Group widths="equal">
@@ -76,7 +76,7 @@ class Edit extends Component {
                 value={this.state.europe_data_2_name}
                 required={false}
                 onChange={(e, d) => this.updateData({ europe_data_2_name: d })}
-                />
+              />
               <Field
                 id="europe-country-2-value"
                 title="Value"
@@ -84,7 +84,7 @@ class Edit extends Component {
                 value={this.state.europe_data_2_value}
                 required={false}
                 onChange={(e, d) => this.updateData({ europe_data_2_value: d })}
-                />
+              />
             </UiForm.Group>
 
             <Field
@@ -93,7 +93,9 @@ class Edit extends Component {
               type="text"
               value={this.state.europe_text_attribution}
               required={false}
-              onChange={(e, d) => this.updateData({ europe_text_attribution: d })}
+              onChange={(e, d) =>
+                this.updateData({ europe_text_attribution: d })
+              }
             />
 
             <Field
