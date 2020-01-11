@@ -1,5 +1,8 @@
 {
     "extends": "./node_modules/@plone/volto/.eslintrc",
+    "rules": {
+      "linebreak-style": ["error", "unix"]
+    },
     "settings": {
         "import/resolver": {
             "alias": {
