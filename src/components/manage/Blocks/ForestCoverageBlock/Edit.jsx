@@ -1,43 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
 import View from './View';
 
-const clone = obj => JSON.parse(JSON.stringify(obj || {}));
+// const clone = obj => JSON.parse(JSON.stringify(obj || {}));
 
 const SCHEMA = {
   perc: {
     title: 'Percentage column',
-    value: null,
-    format: 'percentage',
+    defaultformat: 'percentage',
   },
   totalArea: {
     title: 'Total Area column',
-    value: null,
-    format: 'compactnumber',
+    defaultformat: 'compactnumber',
   },
 };
 
-class Edit extends Component {
+const Edit = props => {
   // data is like {url: '', columns: {key: {value, format}}}
-  render() {
-    return (
-      <div className="block-container">
-        <EditBlock
-          onChange={data => {
-            this.props.onChangeBlock(this.props.block, {
-              ...this.props.data,
-              ...data,
-            });
-          }}
-          schema={clone(SCHEMA)}
-          block="data-entity"
-          data={this.props.data}
-          title="Forest Coverage block"
-        />
-        <View {...this.props} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="block-container">
+      <EditBlock
+        onChange={data => {
+          props.onChangeBlock(props.block, {
+            ...props.data,
+            ...data,
+          });
+        }}
+        schema={SCHEMA}
+        block="data-entity"
+        data={props.data}
+        title="Forest Coverage block"
+        selected={props.selected}
+      />
+      <View {...props} />
+    </div>
+  );
+};
 
 export default Edit;
