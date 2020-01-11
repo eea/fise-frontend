@@ -2,8 +2,6 @@ import React from 'react';
 import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
 import View from './View';
 
-// const clone = obj => JSON.parse(JSON.stringify(obj || {}));
-
 const SCHEMA = {
   perc: {
     title: 'Percentage column',
