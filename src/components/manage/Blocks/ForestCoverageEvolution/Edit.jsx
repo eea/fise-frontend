@@ -19,54 +19,54 @@ const LoadablePlot = Loadable({
  * Pick up a chart from an existing visualization, add text
  */
 class ChartPick extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
+  //
+  //   // const localChartData = props.data.chartData || {};
+  //
+  //   // let text = props.data['chart-text'];
+  //   // if (typeof text !== 'string') text = '';
+  //
+  //   // this.state = {
+  //   //   localChartData,
+  //   //   ...props.data,
+  //   //   url: props.data.url || null,
+  //   //   columns: {
+  //   //     column1: props.data.columns?.column1 || null,
+  //   //   },
+  //   // };
+  //
+  //   // this.onSubmit = this.onSubmit.bind(this);
+  //   // this.updateData = this.updateData.bind(this);
+  //   // this.getChartData = this.getChartData.bind(this);
+  //   // this.handleChangeVisualization = this.handleChangeVisualization.bind(this);
+  // }
 
-    // const localChartData = props.data.chartData || {};
+  // updateData(obj) {
+  //   this.setState(obj, this.onSubmit);
+  // }
 
-    // let text = props.data['chart-text'];
-    // if (typeof text !== 'string') text = '';
+  // onSubmit(data) {
+  //   this.props.onChangeBlock(this.props.block, {
+  //     ...this.props.data,
+  //     data,
+  //   });
+  // }
 
-    // this.state = {
-    //   localChartData,
-    //   ...props.data,
-    //   url: props.data.url || null,
-    //   columns: {
-    //     column1: props.data.columns?.column1 || null,
-    //   },
-    // };
-
-    this.onSubmit = this.onSubmit.bind(this);
-    this.updateData = this.updateData.bind(this);
-    // this.getChartData = this.getChartData.bind(this);
-    this.handleChangeVisualization = this.handleChangeVisualization.bind(this);
-  }
-
-  updateData(obj) {
-    this.setState(obj, this.onSubmit);
-  }
-
-  onSubmit(data) {
-    this.props.onChangeBlock(this.props.block, {
-      ...this.props.data,
-      data,
-    });
-  }
-
-  handleChangeVisualization(id, path) {
-    // TODO: use getContent with subrequest, no need for specially dedicated
-    // action and reducer. Complication not needed.
-    this.props.getChartDataFromVisualization(path);
-    this.onSubmit(path);
-  }
-
-  componentDidMount() {
-    // get the existing visualizations
-    this.props.searchContent('', {
-      // object_provides: 'forests.content.interfaces.IDataVisualization',
-      portal_type: 'visualization',
-    });
-  }
+  // handleChangeVisualization(id, path) {
+  //   // TODO: use getContent with subrequest, no need for specially dedicated
+  //   // action and reducer. Complication not needed.
+  //   this.props.getChartDataFromVisualization(path);
+  //   this.onSubmit(path);
+  // }
+  //
+  // componentDidMount() {
+  //   // get the existing visualizations
+  //   this.props.searchContent('', {
+  //     // object_provides: 'forests.content.interfaces.IDataVisualization',
+  //     portal_type: 'visualization',
+  //   });
+  // }
 
   // componentDidUpdate(prevProps) {
   //   if (this.props.remoteChartData !== prevProps.remoteChartData) {
@@ -100,17 +100,7 @@ class ChartPick extends Component {
                   />
                 )}
               </Grid.Column>
-              <Grid.Column>
-                <UiForm>
-                  <Field
-                    title="Pick chart from existing visualization"
-                    id="chart-data"
-                    choices={this.props.visualizations}
-                    required={true}
-                    onChange={this.handleChangeVisualization}
-                  />
-                </UiForm>
-              </Grid.Column>
+              <Grid.Column>l</Grid.Column>
             </Grid.Row>
           </Grid>
         </div>
@@ -119,17 +109,19 @@ class ChartPick extends Component {
   }
 }
 
-export default connect(
-  (state, props) => {
-    // const chartData = state.data_providers ? state.data_providers.item : {};
-    // console.log('connect props', state, props);
-    let visualizations = state.search ? state.search.items : [];
-    visualizations = visualizations.map(el => [el['@id'], el.title]);
-    return {
-      visualizations,
-      remoteChartData:
-        state.chart_data_visualization && state.chart_data_visualization.data,
-    };
-  },
-  { searchContent, getChartDataFromVisualization },
-)(ChartPick);
+export default ChartPick;
+
+// export default connect(
+//   (state, props) => {
+//     // const chartData = state.data_providers ? state.data_providers.item : {};
+//     // console.log('connect props', state, props);
+//     let visualizations = state.search ? state.search.items : [];
+//     visualizations = visualizations.map(el => [el['@id'], el.title]);
+//     return {
+//       visualizations,
+//       remoteChartData:
+//         state.chart_data_visualization && state.chart_data_visualization.data,
+//     };
+//   },
+//   { searchContent, getChartDataFromVisualization },
+// )(ChartPick);

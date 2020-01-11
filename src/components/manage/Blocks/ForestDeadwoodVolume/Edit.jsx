@@ -23,7 +23,7 @@ const Edit = props => {
         schema={SCHEMA}
         block="data-entity"
         data={props.data}
-        title="Forest deadwood volume"
+        title="Forest deadwood volume block"
         selected={props.selected}
       />
       <View {...props} />
