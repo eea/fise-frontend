@@ -1,71 +1,74 @@
 {
-    "extends": "./node_modules/@plone/volto/.eslintrc",
+    "extends": "./node_modules/@plone/volto/.eslintrc", 
     "rules": {
-      "linebreak-style": ["error", "unix"]
-    },
+        "linebreak-style": [
+            "error", 
+            "unix"
+        ]
+    }, 
     "settings": {
         "import/resolver": {
             "alias": {
                 "extensions": [
-                    ".js",
-                    ".jsx",
+                    ".js", 
+                    ".jsx", 
                     ".json"
-                ],
+                ], 
                 "map": [
                     [
-                        "@package",
+                        "@package", 
                         "./src"
-                    ],
+                    ], 
                     [
-                        "~",
+                        "~", 
                         "./src"
-                    ],
+                    ], 
                     [
-                        "@plone/volto",
+                        "@plone/volto", 
                         "./node_modules/@plone/volto/src"
-                    ],
+                    ], 
                     [
-                        "volto-mosaic",
+                        "volto-mosaic", 
                         "./src/addons/volto-mosaic/src"
-                    ],
+                    ], 
                     [
-                        "volto-datablocks",
+                        "volto-datablocks", 
                         "./src/addons/volto-datablocks/src"
-                    ],
+                    ], 
                     [
-                        "volto-addons",
+                        "volto-addons", 
                         "./src/addons/volto-addons/src"
-                    ],
+                    ], 
                     [
-                        "volto-ckeditor",
+                        "volto-ckeditor", 
                         "./src/addons/volto-ckeditor/src"
-                    ],
+                    ], 
                     [
-                        "volto-blocks",
+                        "volto-blocks", 
                         "./src/addons/volto-blocks/src"
-                    ],
+                    ], 
                     [
-                        "volto-corsproxy",
+                        "volto-corsproxy", 
                         "./src/addons/volto-corsproxy/src"
-                    ],
+                    ], 
                     [
-                        "volto-drafteditor",
+                        "volto-drafteditor", 
                         "./src/addons/volto-drafteditor/src"
-                    ],
+                    ], 
                     [
-                        "@plone/volto",
+                        "@plone/volto", 
                         "./src/addons/@plone/volto/src"
-                    ],
+                    ], 
                     [
-                        "volto-plotlycharts",
-                        "./src/addons/volto-plotlycharts/src"
-                    ],
-                    [
-                        "volto-sidebar",
+                        "volto-sidebar", 
                         "./src/addons/volto-sidebar/src"
+                    ], 
+                    [
+                        "volto-plotlycharts", 
+                        "./src/addons/volto-plotlycharts/src"
                     ]
                 ]
-            },
+            }, 
             "babel-plugin-root-import": {
                 "rootPathSuffix": "src"
             }
