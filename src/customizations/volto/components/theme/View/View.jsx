@@ -232,7 +232,7 @@ class View extends Component {
         />
         <Grid columns="equal">
           {renderPortletManager('plone.leftcolumn', 3, { ...this.props })}
-          <Grid.Column tablet={12} largeScreen={6} widescreen={9}
+          <Grid.Column tablet={12} largeScreen={6} widescreen={6}
           >
             <RenderedView
               content={this.props.content}
