@@ -14,7 +14,7 @@ const SCHEMA = {
 };
 
 const Edit = props => {
-  // data is like {url: '', columns: {key: {value, format}}}
+  // data is like {provider_url: '', columns: {key: {value, format}}}
   return (
     <div className="block-container">
       <EditBlock

@@ -12,7 +12,7 @@ const View = props => {
               <span>
                 {props.data.url && props.data.columns?.perc && (
                   <DataConnectedValue
-                    url={props.data.url}
+                    url={props.data.provider_url}
                     column={props.data.columns.perc.value}
                     format={props.data.columns.perc.format}
                     placeholder="_"
@@ -25,7 +25,7 @@ const View = props => {
               <span>
                 {props.data.url && props.data.columns?.totalArea && (
                   <DataConnectedValue
-                    url={props.data.url}
+                    url={props.data.provider_url}
                     column={props.data.columns.totalArea.value}
                     format={props.data.columns.totalArea.format}
                     placeholder="_"
