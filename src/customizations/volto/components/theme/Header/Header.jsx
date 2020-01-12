@@ -25,14 +25,7 @@ import Sticky from 'react-stickynode';
 
 import { getFrontpageSlides } from '~/actions';
 
-import Loadable from 'react-loadable';
-
-const HeaderBackground = Loadable({
-  loader: () => import('./header-bg.png'),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
+import HeaderBackground from './header-bg.png';
 
 class Header extends Component {
   constructor(props) {

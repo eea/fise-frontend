@@ -7,22 +7,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Image } from 'semantic-ui-react';
-
-import Loadable from 'react-loadable';
-
-const LogoImage = Loadable({
-  loader: () => import('@plone/volto/components/theme/Logo/Logo.svg'),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
-
-const LogoImageSm = Loadable({
-  loader: () => import('./Logo-sm.svg'),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
+import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
+import LogoImageSm from './Logo-sm.svg';
 
 const messages = defineMessages({
   site: {
