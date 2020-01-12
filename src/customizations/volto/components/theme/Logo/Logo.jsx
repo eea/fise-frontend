@@ -7,7 +7,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Image } from 'semantic-ui-react';
-
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import LogoImageSm from './Logo-sm.svg';
 
@@ -37,7 +36,7 @@ const Logo = ({ intl }) => (
       title={intl.formatMessage(messages.plonesite)}
       height={80}
     />
-     <Image
+    <Image
       className="logoImageSm"
       src={LogoImageSm}
       alt={intl.formatMessage(messages.plonesite)}

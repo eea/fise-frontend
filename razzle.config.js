@@ -131,7 +131,6 @@ function customizeAddonByPackage(addon, customizationPath, aliases) {
 // const projectRootPath = path.resolve('.');
 
 module.exports = {
-  plugins: ['bundle-analyzer'],
   modify: (config, { target, dev }, webpack) => {
     const vc = razzleModify(config, { target, dev }, webpack);
 
