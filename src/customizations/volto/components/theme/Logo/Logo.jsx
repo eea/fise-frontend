@@ -8,8 +8,21 @@ import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Image } from 'semantic-ui-react';
 
-import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
-import LogoImageSm from './Logo-sm.svg';
+import Loadable from 'react-loadable';
+
+const LogoImage = Loadable({
+  loader: () => import('@plone/volto/components/theme/Logo/Logo.svg'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
+
+const LogoImageSm = Loadable({
+  loader: () => import('./Logo-sm.svg'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
 
 const messages = defineMessages({
   site: {
@@ -37,7 +50,7 @@ const Logo = ({ intl }) => (
       title={intl.formatMessage(messages.plonesite)}
       height={80}
     />
-     <Image
+    <Image
       className="logoImageSm"
       src={LogoImageSm}
       alt={intl.formatMessage(messages.plonesite)}

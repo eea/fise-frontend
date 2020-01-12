@@ -9,8 +9,22 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import footerImage from './footer.png';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
-import eeaLogo from './ec.svg.png';
-import ecLogo from './eea.png';
+
+import Loadable from 'react-loadable';
+
+const eeaLogo = Loadable({
+  loader: () => import('./ec.svg.png'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
+
+const ecLogo = Loadable({
+  loader: () => import('./eea.png'),
+  loading() {
+    return <div>Loading...</div>;
+  },
+});
 
 const messages = defineMessages({
   copyright: {
