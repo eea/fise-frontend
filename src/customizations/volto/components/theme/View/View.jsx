@@ -230,20 +230,14 @@ class View extends Component {
               : null
           }
         />
-        <Grid columns="equal">
-          {renderPortletManager('plone.leftcolumn', 3, { ...this.props })}
-          <Grid.Column tablet={12} largeScreen={6} widescreen={6}
-          >
-            <RenderedView
-              content={this.props.content}
-              location={this.props.location}
-              token={this.props.token}
-              history={this.props.history}
-            />
-          </Grid.Column>
 
-          {renderPortletManager('plone.rightcolumn', 3, { ...this.props })}
-        </Grid>
+        <RenderedView
+          content={this.props.content}
+          location={this.props.location}
+          token={this.props.token}
+          history={this.props.history}
+        />
+
         {renderPortletManager('plone.footerportlets', false, { ...this.props })}
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (
