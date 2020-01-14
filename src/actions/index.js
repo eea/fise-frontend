@@ -1,4 +1,5 @@
 import {
+  SET_LOADER,
   GET_FRONTPAGESLIDES,
   // SET_FOLDER_HEADER,
   GET_DEFAULT_HEADER_IMAGE,
@@ -16,8 +17,16 @@ import {
   GET_NUTS_LEVEL,
   GET_RESOURCE_TYPE,
   GET_TOPIC_CATEGORY,
-  GET_PUBLICATION_YEARS
+  GET_PUBLICATION_YEARS,
+  NFI_SEARCH
 } from '~/constants/ActionTypes';
+
+export function setLoader(value) {
+  return {
+    type: SET_LOADER,
+    payload: value
+  }
+}
 
 export function getFrontpageSlides() {
   return {
@@ -115,11 +124,13 @@ export function getNavSiteMap(url, depth) {
   };
 }
 /**
- * KEYWORDS
+ * Facets GET list requests
  */
 export function getKeywords() {
   return {
     type: GET_KEYWORDS,
+    baseType: GET_KEYWORDS,
+    stateToChange: 'keywords',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/keyword',
@@ -127,9 +138,6 @@ export function getKeywords() {
     }
   }
 }
-/**
- * Facets GET list requests
- */
 export function getCountry() {
   return {
     type: GET_COUNTRY,
@@ -247,3 +255,39 @@ export function getPublicationYears() {
   }
 }
 
+export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keywords = '') {
+  let pageQuery = page ? `&page=${page}` : '';
+  let pageSizeQuery = pageSize ? `&page_size=${pageSize}` : '';
+  let searchTermsQuery = '';
+  let keywordsQuery = '';
+  let query = '';
+  // Construct searchTermQuery
+  if (Array.isArray(searchTerms) && searchTerms.length > 0) {
+    searchTerms.forEach(term => {
+      searchTermsQuery = searchTermsQuery + `&search=${term}`;
+    })
+  } else if (searchTerms.length > 0) {
+    searchTermsQuery = searchTermsQuery + `&search=${searchTerms}`;
+  }
+  // Construct keywordsQuery
+  if (Array.isArray(keywords) && keywords.length > 0) {
+    keywords.forEach(keyword => {
+      keywordsQuery = keywordsQuery + `&search=${keyword}`;
+    })
+  } else if (keywords.length > 0) {
+    keywordsQuery = keywordsQuery + `&search=${keywords}`;
+  }
+  // Construct query
+  query = pageQuery + pageSizeQuery + searchTermsQuery + keywordsQuery;
+  query = query.replace('&', '?');
+  return {
+    type: NFI_SEARCH,
+    baseType: NFI_SEARCH,
+    stateToChange: 'search',
+    request: {
+      op: 'get',
+      path: `http://localhost:8000/api/search/${query}`,
+      external: true
+    }
+  }
+}

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { asyncConnect } from 'redux-connect';
-import { Segment, Container } from 'semantic-ui-react';
+import { Segment, Container, Loader, Dimmer } from 'semantic-ui-react';
 import Raven from 'raven-js';
 import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
@@ -97,9 +97,15 @@ class App extends Component {
     const path = getBaseUrl(this.props.pathname);
     const action = getView(this.props.pathname);
     const headerImage = this.props.defaultHeaderImage;
+    const loader = (
+      <Dimmer active={this.props.loader} inverted>
+        <Loader />
+      </Dimmer>
+    )
     return (
       <Fragment>
         <BodyClass className={`view-${action}view`} />
+        {loader}
         <Header
           folderHeader={this.props.folderHeader}
           actualPathName={this.props.pathname}
@@ -209,6 +215,7 @@ export default compose(
         state.default_header_image.items && state.default_header_image.items[0],
       pathname: props.location.pathname,
       content: state.content.data,
+      loader: state.app.loader
     }),
     { purgeMessages, getDefaultHeaderImage },
   ),

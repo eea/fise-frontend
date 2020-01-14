@@ -11,9 +11,9 @@ import default_header_image from '~/reducers/default_header_image';
 import parent_folder_data from '~/reducers/parent_folder_data';
 import localnavigation from '~/reducers/localnavigation';
 import navSiteMap from '~/reducers/sitemap';
-import { facets } from '~/reducers/facets';
-import { keywords } from '~/reducers/keywords';
+import { nfiFacets } from '~/reducers/nfi_facets';
 import { addonReducers } from '~/config';
+import { app } from '~/reducers/app';
 
 /**
  * Root reducer.
@@ -26,6 +26,7 @@ const reducers = {
   ...defaultReducers,
   ...addonReducers,
   // Add your reducers here
+  app,
   frontpage_slides,
   folder_header,
   default_header_image,
@@ -33,8 +34,7 @@ const reducers = {
   parent_folder_data,
   localnavigation,
   navSiteMap,
-  facets,
-  keywords
+  nfiFacets
 };
 
 export default reducers;

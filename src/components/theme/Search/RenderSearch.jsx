@@ -2,20 +2,48 @@ import React from 'react';
 import { BodyClass } from '@plone/volto/helpers';
 import { FormattedMessage } from 'react-intl';
 import ResultCard from '~/components/theme/Search/ResultCard';
+import { Pagination } from 'semantic-ui-react';
 
-const RenderSearch = ({ context }) => {
+
+const RenderSearch = ({ items, pagination }) => {
+    let renderPagination, renderMaxResults;
+    if (pagination) {
+        renderPagination = (
+            <Pagination  
+                defaultActivePage={1}
+                firstItem={null}
+                lastItem={null}
+                siblingRange={2}
+                totalPages={Math.ceil(pagination.totalItems / pagination.selectedItemsPerPage) }
+                onPageChange={pagination.updatePage}
+            />
+        )
+        const options = pagination.itemsPerPage.map((value, index) => <option key={index} value={value}>{value}</option>)
+        renderMaxResults = (
+            <div className="max-results">
+                <p className="max-results-text">Results per page</p>
+                <select className="max-results-select" onChange={pagination.updateItemsPerPage}>
+                    {options}
+                </select>
+            </div>
+        )
+    } else {
+        renderPagination = ''
+        renderMaxResults = ''
+    }
+
     return (
         <article id="content">
             <BodyClass className="search-page" />
             <header>
                 <div className="results-bar">
                     <div className="results-count">
-                        {context.items ? (
+                        {items ? (
                             <FormattedMessage
                                 id="Search produced: {items} results"
                                 defaultMessage="Search produced: {items} results"
                                 values={{
-                                    items: <span>{context.items.length}</span>,
+                                    items: <span>{items.length}</span>,
                                 }}
                             />
                         ) : (
@@ -25,22 +53,18 @@ const RenderSearch = ({ context }) => {
                                 />
                             )}
                     </div>
-                    <div className="max-results">
-                        <p className="max-results-text">Results per page</p>
-                        <select className="max-results-select">
-                            <option value={5}>5</option>
-                            <option value={10}>10</option>
-                            <option value={25}>25</option>
-                        </select>
-                    </div>
+                    {renderMaxResults}
                 </div>
                 {/* <SearchTags /> */}
             </header>
             <section id="content-core">
-                {context.items.map(item => (
-                    <ResultCard item={item} />
+                {items.map((item, index) => (
+                    <ResultCard item={item} key={index} />
                 ))}
             </section>
+            <footer>
+                {renderPagination}
+            </footer>
         </article>
     );
 };

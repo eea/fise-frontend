@@ -2,18 +2,24 @@
  * Facets reducer.
  * @module reducers/facets/facets
  */
-import { GET_KEYWORDS } from '~/constants/ActionTypes'
-
 const initialState = {
   error: null,
   loaded: false,
   loading: false,
   keywords: [],
-  originalKeywords: [],
-  selectedKeywords: []
+  country: [],
+  dataSet: [],
+  dataType: [],
+  countries: [],
+  language: [],
+  nutsLevel: [],
+  resourceType: [],
+  topicCategory: [],
+  publicationYears: [],
+  search: []
 };
 
-let newState = {}
+let newState = {};
 
 /**
  * Facets reducer.
@@ -22,34 +28,32 @@ let newState = {}
  * @param {Object} action Action to be handled.
  * @returns {Object} New state.
  */
-export const keywords = (state = initialState, action = {}) => {
+export const nfiFacets = (state = initialState, action = {}) => {
   switch (action.type) {
-    case `${GET_KEYWORDS}_PENDING`:
+    case `${action.baseType}_PENDING`:
       newState = {
         ...state,
         loading: true,
         loaded: false
-      }
-      return newState
-    case `${GET_KEYWORDS}_SUCCESS`:
+      };
+      return newState;
+    case `${action.baseType}_SUCCESS`:
       newState = {
         ...state,
-        keywords: action.result,
-        originalKeywords: action.result,
-        selectedKeywords: [],
         loading: false,
         loaded: true
-      }
-      return newState
-    case `${GET_KEYWORDS}_FAIL`:
+      };
+      newState[action.stateToChange] = action.result;
+      return newState;
+    case `${action.baseType}_FAIL`:
       newState = {
         ...state,
         error: action.error,
         loading: false,
         loaded: false
-      }
-      newState[action.stateToChange] = []
-      return newState
+      };
+      newState[action.stateToChange] = [];
+      return newState;
     default:
       return state;
   }
