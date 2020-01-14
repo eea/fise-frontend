@@ -6,7 +6,7 @@ import { Pagination } from 'semantic-ui-react';
 
 
 const RenderSearch = ({ items, pagination }) => {
-    let renderPagination, renderMaxResults;
+    let renderPagination, renderMaxResults, renderResultsCount;
     if (pagination) {
         renderPagination = (
             <Pagination  
@@ -27,9 +27,33 @@ const RenderSearch = ({ items, pagination }) => {
                 </select>
             </div>
         )
+        renderResultsCount = (
+            <FormattedMessage
+                id="Search produced: {items} results"
+                defaultMessage="Search produced: {items} results"
+                values={{
+                    items: <span>{pagination.totalItems}</span>,
+                }}
+            />
+        )
     } else {
         renderPagination = ''
         renderMaxResults = ''
+        renderResultsCount = items ?
+        (
+            <FormattedMessage
+                id="Search produced: {items} results"
+                defaultMessage="Search produced: {items} results"
+                values={{
+                    items: <span>{items.length}</span>,
+                }}
+            />
+        ) : (
+            <FormattedMessage
+                id="Search produced: 0 results"
+                defaultMessage="Search produced: 0 results"
+            />
+        )
     }
 
     return (
@@ -38,20 +62,7 @@ const RenderSearch = ({ items, pagination }) => {
             <header>
                 <div className="results-bar">
                     <div className="results-count">
-                        {items ? (
-                            <FormattedMessage
-                                id="Search produced: {items} results"
-                                defaultMessage="Search produced: {items} results"
-                                values={{
-                                    items: <span>{items.length}</span>,
-                                }}
-                            />
-                        ) : (
-                                <FormattedMessage
-                                    id="Search produced: 0 results"
-                                    defaultMessage="Search produced: 0 results"
-                                />
-                            )}
+                       {renderResultsCount}
                     </div>
                     {renderMaxResults}
                 </div>
