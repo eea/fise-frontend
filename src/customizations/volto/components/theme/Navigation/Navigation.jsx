@@ -138,7 +138,7 @@ class Navigation extends Component {
   render() {
     return (
       <nav className="navigation">
-        <div className="hamburger-wrapper large screen hidden">
+        <div className="hamburger-wrapper large screen hidden widescreen hidden">
           <button
             className={cx('hamburger hamburger--collapse', {
               'is-active': this.state.isMobileMenuOpen,
