@@ -20,6 +20,7 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
+import { samePath } from 'volto-mosaic/helpers';
 
 class ListingView extends Component {
   static propTypes = {
@@ -84,27 +85,14 @@ class ListingView extends Component {
         )) ||
       [];
 
-    // if (
-    //   __CLIENT__ &&
-    //   localNavigation.length &&
-    //   document.querySelector('.header-image .header-image')
-    // ) {
-    //   const header = document.querySelector('.header-image .header-image');
-    //   header.querySelector('h1') &&
-    //     header.querySelector('h1').classList.add('left');
-    //   header.querySelector('p') &&
-    //     header.querySelector('p').classList.add('left');
-    // } else if (
-    //   __CLIENT__ &&
-    //   !localNavigation.length &&
-    //   document.querySelector('.header-image .header-image')
-    // ) {
-    //   const header = document.querySelector('.header-image .header-image');
-    //   header.querySelector('h1') &&
-    //     header.querySelector('h1').classList.remove('left');
-    //   header.querySelector('p') &&
-    //     header.querySelector('p').classList.remove('left');
-    // }
+    const currentUrl = this.props.content?.['@id'];
+    const shouldRenderRoutes =
+      typeof currentUrl !== 'undefined' &&
+      samePath(currentUrl, this.props.pathname)
+        ? true
+        : false;
+    if (!shouldRenderRoutes) return '';
+
     let pageTemplate = hasBlocksData(content) ? (
       <div id="page-document">
         <Helmet title={content.title} />

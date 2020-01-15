@@ -20,6 +20,8 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
+import { samePath } from 'volto-mosaic/helpers';
+import { connect } from 'react-redux';
 
 // const messages = defineMessages({
 //   unknownBlock: {
@@ -39,6 +41,13 @@ const DefaultView = props => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
+  const currentUrl = content?.['@id'];
+  const shouldRenderRoutes =
+    typeof currentUrl !== 'undefined' && samePath(currentUrl, props.pathname)
+      ? true
+      : false;
+
+  if (!shouldRenderRoutes) return '';
   return (
     <Grid columns="equal">
       {renderPortletManager('plone.leftcolumn', 3, { ...props })}
@@ -138,4 +147,8 @@ DefaultView.propTypes = {
   }).isRequired,
 };
 
-export default injectIntl(DefaultView);
+// export default injectIntl(DefaultView);
+
+export default connect((state, props) => ({
+  pathname: state.router.location.pathname, //props.location.pathname,
+}))(injectIntl(DefaultView));
