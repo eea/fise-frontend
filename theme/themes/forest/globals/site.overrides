@@ -1360,6 +1360,70 @@ body {
   }
 }
 
+.forest-patch-size-distribution {
+  .square {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: .5rem;
+    &.blue {
+      background-color: blue;
+    }
+    &.orange {
+      background-color: orange;
+    }
+    &.grey {
+      background-color: grey;
+    }
+    &.yellow {
+      background-color: yellow;
+    }
+    &.lightblue {
+      background-color: lightblue;
+    }
+    &.green {
+      background-color: green;
+    }
+    &.darkblue {
+      background-color: darkblue;
+    }
+  }
+}
+
+
+// const SCHEMA = {
+//   blue: {
+//     title: '25-50',
+//     defaultformat: 'percentage',
+//   },
+//   orange: {
+//     title: '50-100',
+//     defaultformat: 'percentage',
+//   },
+//   grey: {
+//     title: '100-500',
+//     defaultformat: 'percentage',
+//   },
+//   yellow: {
+//     title: '500-2000',
+//     defaultformat: 'percentage',
+//   },
+//   lightblue: {
+//     title: '2000-10000',
+//     defaultformat: 'percentage',
+//   },
+//   green: {
+//     title: '10000-50000',
+//     defaultformat: 'percentage',
+//   },
+//   darkblue: {
+//     title: '>50000',
+//     defaultformat: 'percentage',
+//   },
+// };
+
+// BLOCKS END
+
 .homepage-content {
 
   // frontpage chart block text

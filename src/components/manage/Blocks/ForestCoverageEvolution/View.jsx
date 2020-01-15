@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 import ConnectedChart from 'volto-plotlycharts/ConnectedChart';
 import ViewText from '@plone/volto/components/manage/Blocks/Text/View';
+import ViewConnectedValue from './ViewConnectedValue';
 
 const EmbedChartView = props => {
   return (
@@ -10,9 +11,7 @@ const EmbedChartView = props => {
       <div className="block-inner-wrapper">
         <Grid>
           <Grid.Column width={4}>
-            <div className="block-text-content">
-              <ViewText {...props} />
-            </div>
+            <ViewConnectedValue {...props} />
           </Grid.Column>
           <Grid.Column width={8}>
             {props.data.chartData ? (
