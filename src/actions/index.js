@@ -18,14 +18,14 @@ import {
   GET_RESOURCE_TYPE,
   GET_TOPIC_CATEGORY,
   GET_PUBLICATION_YEARS,
-  NFI_SEARCH
+  NFI_SEARCH,
 } from '~/constants/ActionTypes';
 
 export function setLoader(value) {
   return {
     type: SET_LOADER,
-    payload: value
-  }
+    payload: value,
+  };
 }
 
 export function getFrontpageSlides() {
@@ -120,7 +120,6 @@ export function getNavSiteMap(url, depth) {
       op: 'get',
       path: `${url}/@navigation?expand.navigation.depth=${depth || 3}`,
     },
-
   };
 }
 /**
@@ -134,9 +133,9 @@ export function getKeywords() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/keyword',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 export function getCountry() {
   return {
@@ -146,9 +145,9 @@ export function getCountry() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/country',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getDataSet() {
@@ -159,9 +158,9 @@ export function getDataSet() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/data-set',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getDataType() {
@@ -172,9 +171,9 @@ export function getDataType() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/data-type',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getInfoLevel() {
@@ -185,9 +184,9 @@ export function getInfoLevel() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/country',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getLanguage() {
@@ -198,9 +197,9 @@ export function getLanguage() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/language',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getNutsLevel() {
@@ -211,9 +210,9 @@ export function getNutsLevel() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/nuts-level',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getResourceType() {
@@ -224,9 +223,9 @@ export function getResourceType() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/resource-type',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getTopicCategory() {
@@ -237,9 +236,9 @@ export function getTopicCategory() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/topic-category',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
 export function getPublicationYears() {
@@ -250,12 +249,17 @@ export function getPublicationYears() {
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/publication_years',
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }
 
-export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keywords = '') {
+export function doNfiSearch(
+  page = null,
+  pageSize = null,
+  searchTerms = '',
+  keywords = '',
+) {
   let pageQuery = page ? `&page=${page}` : '';
   let pageSizeQuery = pageSize ? `&page_size=${pageSize}` : '';
   let searchTermsQuery = '';
@@ -265,7 +269,7 @@ export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keyw
   if (Array.isArray(searchTerms) && searchTerms.length > 0) {
     searchTerms.forEach(term => {
       searchTermsQuery = searchTermsQuery + `&search=${term}`;
-    })
+    });
   } else if (searchTerms.length > 0) {
     searchTermsQuery = searchTermsQuery + `&search=${searchTerms}`;
   }
@@ -273,7 +277,7 @@ export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keyw
   if (Array.isArray(keywords) && keywords.length > 0) {
     keywords.forEach(keyword => {
       keywordsQuery = keywordsQuery + `&search=${keyword}`;
-    })
+    });
   } else if (keywords.length > 0) {
     keywordsQuery = keywordsQuery + `&search=${keywords}`;
   }
@@ -287,7 +291,7 @@ export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keyw
     request: {
       op: 'get',
       path: `http://localhost:8000/api/search/${query}`,
-      external: true
-    }
-  }
+      external: true,
+    },
+  };
 }

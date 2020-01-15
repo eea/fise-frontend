@@ -20,6 +20,7 @@ import { setLoader, getKeywords, getCountry, doNfiSearch } from '~/actions';
 
 import { SearchTags, Toolbar } from '@plone/volto/components';
 import RenderSearch from '~/components/theme/Search/RenderSearch';
+import SearchFilters from '~/components/theme/Search/SearchFilters';
 
 const toSearchOptions = (searchableText, subject, path) => {
   return {
@@ -35,41 +36,49 @@ const toSearchOptions = (searchableText, subject, path) => {
 
 const panes = context => {
   return [
-  {
-    menuItem: `Portal data (${context.items.length})`,
-    render: () => {
-      return (
-        <div>
+    {
+      menuItem: `Portal data (${context.items.length})`,
+      render: () => {
+        return (
+          <div>
+            <Grid>
+              <Grid.Column width={8}>
+                <RenderSearch
+                  items={context.items}
+                  pagination={context.pagination}
+                />
+              </Grid.Column>
+              <Grid.Column width={4}>
+                <SearchFilters />
+              </Grid.Column>
+            </Grid>
+          </div>
+        );
+      },
+    },
+    {
+      menuItem: `National Forest Inventories (${
+        context.nfiItems ? context.nfiItems.length : 0
+      })`,
+      render: () => {
+        return (
           <Grid>
             <Grid.Column width={8}>
-              <RenderSearch items={context.items} pagination={context.pagination} />
+              <RenderSearch
+                items={context.nfiItems ? context.nfiItems : []}
+                pagination={context.pagination}
+              />
             </Grid.Column>
             <Grid.Column width={4}>
-              <h4>FILTERS</h4>
+              <SearchFilters />
             </Grid.Column>
           </Grid>
-        </div>
-      );
-    }
-  },
-  {
-    menuItem: `National Forest Inventories (${context.nfiItems ? context.nfiItems.length : 0})`,
-    render: () => {
-      return (
-        <Grid>
-          <Grid.Column width={8}>
-            <RenderSearch items={context.nfiItems ? context.nfiItems : []} pagination={context.pagination} />
-          </Grid.Column>
-          <Grid.Column width={4}>
-            <h4>FILTERS</h4>
-          </Grid.Column>
-        </Grid>
-      )
-    }
-  },
-  { menuItem: 'Regional / International data' },
-];
-}
+        );
+      },
+    },
+    { menuItem: 'Regional / International data' },
+  ];
+};
 
 class Search extends Component {
   static propTypes = {
@@ -89,7 +98,7 @@ class Search extends Component {
         description: PropTypes.string,
       }),
     ),
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -101,7 +110,7 @@ class Search extends Component {
   };
 
   state = {
-    dataReady: false,
+    dataReady: true,
     activeTab: 0,
     selectedKeywords: [],
     keywords: [],
@@ -109,8 +118,8 @@ class Search extends Component {
       page: 1,
       selectedItemsPerPage: 5,
       totalItems: 0,
-      itemsPerPage: [5, 10, 25]
-    }
+      itemsPerPage: [5, 10, 25],
+    },
   };
   /**
    * Component will mount
@@ -122,12 +131,16 @@ class Search extends Component {
     /**
      * When url hastag is changed empty selectedKeywords and add the new hastag
      */
-    window.addEventListener('hashchange', (e) => {
-      this.setState({
-        selectedKeywords: []
-      })
-      this.addHashTagAndDoNfiSearch(e, true)
-    }, false);
+    window.addEventListener(
+      'hashchange',
+      e => {
+        this.setState({
+          selectedKeywords: [],
+        });
+        this.addHashTagAndDoNfiSearch(e, true);
+      },
+      false,
+    );
     this.doSearch(
       this.props.searchableText,
       this.props.subject,
@@ -171,13 +184,15 @@ class Search extends Component {
 
   initiateKeywords = () => {
     const hash = window.location.hash;
-    this.props.getKeywords()
+    this.props
+      .getKeywords()
       .then(() => {
         let keywords = [...this.props.originalKeywords];
         this.setState({ keywords });
-        this.addHashTagAndDoNfiSearch(hash, false)
+        this.addHashTagAndDoNfiSearch(hash, false);
       })
-  }
+      .catch(error => console.log(error));
+  };
 
   addHashTagAndDoNfiSearch = (hash, isEvent) => {
     if (isEvent) {
@@ -190,13 +205,13 @@ class Search extends Component {
     if (!hash.length) return this.handleNfiSearch();
     this.addTag(hash.slice(1));
     this.handleNfiSearch();
-  }
+  };
 
-  addTag = (newTag) => {
+  addTag = newTag => {
     const tag = {
-      key: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000)),
+      key: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000),
       text: newTag,
-      value: newTag
+      value: newTag,
     };
     let isNew = true;
     let keywords = [...this.state.keywords];
@@ -204,7 +219,7 @@ class Search extends Component {
       if (keyword.value === tag.value) {
         isNew = false;
       }
-    })
+    });
     if (isNew) {
       keywords.push(tag);
       this.setState({ keywords });
@@ -213,33 +228,35 @@ class Search extends Component {
     let selectedKeywords = [...this.state.selectedKeywords];
     selectedKeywords.push(tag.value);
     this.setState({ selectedKeywords });
-  }
+  };
 
   handleChange = (event, { value }) => {
     if (value.length > this.state.selectedKeywords.length) {
       value.forEach(val => {
-        const index = this.state.selectedKeywords.indexOf(val)
+        const index = this.state.selectedKeywords.indexOf(val);
         if (index === -1) {
-          this.addTag(val)
+          this.addTag(val);
         }
-      })
+      });
     } else {
       this.state.selectedKeywords.forEach(keyword => {
-        const index = value.indexOf(keyword)
+        const index = value.indexOf(keyword);
         if (index === -1) {
           let selectedKeywords = [...this.state.selectedKeywords];
           selectedKeywords.splice(selectedKeywords.indexOf(keyword), 1);
           this.setState({ selectedKeywords });
         }
-      })
+      });
     }
-  }
+  };
 
   handleNfiSearch = (page = null, pageSize = null) => {
-    this.props.setLoader(true)
+    this.props.setLoader(true);
     let keywords = [];
     let searchTerms = [];
-    let originalKeywords = this.props.originalKeywords.map(keyword => keyword.value);
+    let originalKeywords = this.props.originalKeywords.map(
+      keyword => keyword.value,
+    );
     this.state.selectedKeywords.forEach(selectedKeyword => {
       const index = originalKeywords.indexOf(selectedKeyword);
       if (index !== -1) {
@@ -247,44 +264,43 @@ class Search extends Component {
       } else {
         searchTerms.push(selectedKeyword);
       }
-    })
+    });
     if (!page) page = this.state.pagination.page;
-    if (!pageSize) pageSize = this.state.pagination.selectedItemsPerPage
-    this.props.doNfiSearch(page, pageSize, searchTerms, keywords)
-      .then(() => {
-        if (!this.state.dataReady) {
-          this.setState({ dataReady: true })
-        }
-        this.props.setLoader(false)
-        this.updateTotalItems(this.props.nfiSearch.count)
-      })
-  }
+    if (!pageSize) pageSize = this.state.pagination.selectedItemsPerPage;
+    this.props.doNfiSearch(page, pageSize, searchTerms, keywords).then(() => {
+      if (!this.state.dataReady) {
+        this.setState({ dataReady: true });
+      }
+      this.props.setLoader(false);
+      this.updateTotalItems(this.props.nfiSearch.count);
+    });
+  };
 
   handleTabChange = (event, data) => {
     this.setState({
-      activeTab: data.activeIndex
-    })
-  }
+      activeTab: data.activeIndex,
+    });
+  };
 
-  updateItemsPerPage = (event) => {
-    let pagination = {...this.state.pagination};
+  updateItemsPerPage = event => {
+    let pagination = { ...this.state.pagination };
     pagination.selectedItemsPerPage = event.target.value;
     this.setState({ pagination });
     this.handleNfiSearch(pagination.page, pagination.selectedItemsPerPage);
-  }
+  };
 
   updatePage = (event, data) => {
-    let pagination = {...this.state.pagination};
+    let pagination = { ...this.state.pagination };
     pagination.page = data.activePage;
-    this.setState({ pagination })
+    this.setState({ pagination });
     this.handleNfiSearch(pagination.page, pagination.selectedItemsPerPage);
-  }
+  };
 
-  updateTotalItems = (count) => {
-    let pagination = {...this.state.pagination};
+  updateTotalItems = count => {
+    let pagination = { ...this.state.pagination };
     pagination.totalItems = count;
     this.setState({ pagination });
-  }
+  };
 
   render() {
     const context = {
@@ -292,26 +308,41 @@ class Search extends Component {
       items: this.props.items,
       nfiItems: this.props.nfiSearch.results,
       nfiSearch: this.props.nfiSearch,
-      pagination: this.state.activeTab === 1 ? {...this.state.pagination, updateItemsPerPage: this.updateItemsPerPage, updatePage: this.updatePage} : null
+      pagination:
+        this.state.activeTab === 1
+          ? {
+              ...this.state.pagination,
+              updateItemsPerPage: this.updateItemsPerPage,
+              updatePage: this.updatePage,
+            }
+          : null,
     };
-    const loader = (<h1>Loading data...</h1>)
-    const multiselect = this.state.activeTab === 1 ? 
-    (
-      <div className="multiselect-container">
-        <Dropdown 
-          placeholder='Type...' 
-          fluid multiple selection search allowAdditions
-          options={this.state.keywords}
-          value={this.state.selectedKeywords}
-          onChange={this.handleChange}
-          loading
-        />
-        <Button 
-          className="search-button darkOrange"
-          onClick={() => this.handleNfiSearch()}
-        >Search</Button>
-      </div>
-    ) : ''
+    const loader = <h1>Loading data...</h1>;
+    const multiselect =
+      this.state.activeTab === 1 ? (
+        <div className="multiselect-container">
+          <Dropdown
+            placeholder="Type..."
+            fluid
+            multiple
+            selection
+            search
+            allowAdditions
+            options={this.state.keywords}
+            value={this.state.selectedKeywords}
+            onChange={this.handleChange}
+            loading
+          />
+          <Button
+            className="search-button darkOrange"
+            onClick={() => this.handleNfiSearch()}
+          >
+            Search
+          </Button>
+        </div>
+      ) : (
+        ''
+      );
     const ui = (
       <Container id="page-search">
         <Helmet title="Search" />
@@ -338,8 +369,8 @@ class Search extends Component {
         </Portal>
       </Container>
     );
-    if (!this.state.dataReady) return loader
-    return ui
+    if (!this.state.dataReady) return loader;
+    return ui;
   }
 }
 
@@ -362,8 +393,13 @@ export default compose(
       subject: qs.parse(props.location.search).Subject,
       path: qs.parse(props.location.search).path,
       pathname: props.location.pathname,
-      originalKeywords: state.nfiFacets.keywords.map(keyword => ({ key: keyword.id, id: keyword.id, text: keyword.name, value: keyword.name })),
-      nfiSearch: state.nfiFacets.search
+      originalKeywords: state.nfiFacets.keywords.map(keyword => ({
+        key: keyword.id,
+        id: keyword.id,
+        text: keyword.name,
+        value: keyword.name,
+      })),
+      nfiSearch: state.nfiFacets.search,
     }),
     { searchContent, setLoader, getKeywords, getCountry, doNfiSearch },
   ),
@@ -380,7 +416,7 @@ export default compose(
               qs.parse(location.search).path,
             ),
           ),
-        )
-    }
+        ),
+    },
   ]),
 )(Search);
