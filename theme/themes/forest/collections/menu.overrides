@@ -8,6 +8,7 @@
 
 .ui.menu {
     font-family: @headerFont;
+    transition: none;
 }
 
 .navigation .menu .item {
@@ -40,6 +41,7 @@
 
 .navigation {
     .menu {
+        transition: none!important;
         .firstLevel {
             font-size: 18px !important;
         }

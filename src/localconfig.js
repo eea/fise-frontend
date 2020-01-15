@@ -142,7 +142,7 @@ export function applyConfig(config) {
       },
       forest_coverage_evolution_block: {
         id: 'forest_coverage_evolution_block',
-        title: 'Forest coverage evolution block',
+        title: 'Forest patch size distribution block',
         view: ForestCoverageEvolutionView,
         edit: ForestCoverageEvolutionEdit,
         icon: chartIcon,

@@ -6,8 +6,10 @@ import ViewText from '@plone/volto/components/manage/Blocks/Text/View';
 import ViewConnectedValue from './ViewConnectedValue';
 
 const EmbedChartView = props => {
+  console.log('props in chart view', props);
   return (
     <div className="chartWrapperView">
+      {props.data.block_title ? <h5>{props.data.block_title}</h5> : ''}
       <div className="block-inner-wrapper">
         <Grid>
           <Grid.Column width={4}>
