@@ -19,7 +19,7 @@ RUN chown -R node /opt/frontend
 USER node
 
 RUN echo "prefix = \"/home/node\"\n" > /home/node/.npmrc
-RUN rm -rf node_modules
+RUN rm -rf node_modules .git
 
 RUN npm install mr-developer
 
