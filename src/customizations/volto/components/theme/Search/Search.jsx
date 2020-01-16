@@ -14,13 +14,22 @@ import { Portal } from 'react-portal';
 import { Container, Tab, Dropdown, Button, Grid } from 'semantic-ui-react';
 import qs from 'query-string';
 import { BodyClass } from '@plone/volto/helpers';
-
-import { searchContent } from '@plone/volto/actions';
-import { setLoader, getKeywords, getCountry, doNfiSearch } from '~/actions';
-
 import { SearchTags, Toolbar } from '@plone/volto/components';
 import RenderSearch from '~/components/theme/Search/RenderSearch';
 import SearchFilters from '~/components/theme/Search/SearchFilters';
+
+import { searchContent } from '@plone/volto/actions';
+import { 
+  setLoader, getKeywords, doNfiSearch,
+  getCountry,
+  getNutsLevel,
+  getPublicationYears,
+  getColectionRange,
+  getTopicCategory,
+  getResourceType,
+  getDataSet,
+  getDataType
+} from '~/actions';
 
 const toSearchOptions = (searchableText, subject, path) => {
   return {
@@ -37,14 +46,14 @@ const toSearchOptions = (searchableText, subject, path) => {
 const panes = context => {
   return [
     {
-      menuItem: `Portal data (${context.items.length})`,
+      menuItem: `Portal data (${context.portalData.items.length})`,
       render: () => {
         return (
           <div>
             <Grid>
               <Grid.Column width={8}>
-                <RenderSearch
-                  items={context.items}
+                <RenderSearch 
+                  data={context.portalData}
                   pagination={context.pagination}
                 />
               </Grid.Column>
@@ -54,18 +63,16 @@ const panes = context => {
             </Grid>
           </div>
         );
-      },
+      }
     },
     {
-      menuItem: `National Forest Inventories (${
-        context.nfiItems ? context.nfiItems.length : 0
-      })`,
+      menuItem: `National Forest Inventories (${context.nfiData.items ? context.nfiData.items.length : 0})`,
       render: () => {
         return (
           <Grid>
             <Grid.Column width={8}>
               <RenderSearch
-                items={context.nfiItems ? context.nfiItems : []}
+                data={context.nfiData ? context.nfiData : {}}
                 pagination={context.pagination}
               />
             </Grid.Column>
@@ -73,20 +80,47 @@ const panes = context => {
               <SearchFilters />
             </Grid.Column>
           </Grid>
-        );
-      },
+        )
+      }
     },
     { menuItem: 'Regional / International data' },
   ];
-};
+}
+
+const queryParams = {
+  country: 'country',
+  data_set: 'data_set',
+  data_type: 'data_type',
+  resource_type: 'resource_type',
+  nuts_level: 'nuts_level',
+  topic_category: 'topic_category',
+  published_year: 'published_year',
+  collections_range: 'collections_range',
+  keyword: 'keyword',
+  published_year_range: 'published_year__range',
+  data_collection_end_year: 'data_collection_end_year',
+  data_collection_start_year: 'data_collection_start_year',
+  data_collection_start_year__lte: 'data_collection_start_year__lte',
+  data_collection_end_year__gte: 'data_collection_end_year__gte'
+}
 
 class Search extends Component {
   static propTypes = {
     searchContent: PropTypes.func.isRequired,
     setLoader: PropTypes.func.isRequired,
+
     getKeywords: PropTypes.func.isRequired,
     getCountry: PropTypes.func.isRequired,
+    getNutsLevel:PropTypes.func.isRequired,
+    getPublicationYears: PropTypes.func.isRequired,
+    getColectionRange: PropTypes.func.isRequired,
+    getTopicCategory: PropTypes.func.isRequired,
+    getResourceType: PropTypes.func.isRequired,
+    getDataSet: PropTypes.func.isRequired,
+    getDataType: PropTypes.func.isRequired,
+
     doNfiSearch: PropTypes.func.isRequired,
+
     searchableText: PropTypes.string,
     subject: PropTypes.string,
     path: PropTypes.string,
@@ -113,13 +147,25 @@ class Search extends Component {
     dataReady: true,
     activeTab: 0,
     selectedKeywords: [],
+    nfiSelectedCountry: '',
     keywords: [],
     pagination: {
       page: 1,
       selectedItemsPerPage: 5,
       totalItems: 0,
-      itemsPerPage: [5, 10, 25],
+      itemsPerPage: [5, 10, 25]
     },
+    facets: {
+      country: { entityName: queryParams.country, getFunction: this.props.getCountry, facetNames: [queryParams.country] },
+      nuts_level: { entityName: queryParams.nuts_level, getFunction: this.props.getNutsLevel, facetNames: [queryParams.nuts_level] },
+      published_year: { entityName: queryParams.published_year, getFunction: this.props.getPublicationYears, facetNames: [queryParams.published_year] },
+      collections_range: { entityName: queryParams.collections_range, getFunction: this.props.getColectionRange, facetNames: [queryParams.data_collection_end_year, queryParams.data_collection_start_year] },
+      topic_category: { entityName: queryParams.topic_category, getFunction: this.props.getTopicCategory, facetNames: [queryParams.topic_category] },
+      resource_type: { entityName: queryParams.resource_type, getFunction: this.props.getResourceType, facetNames: [queryParams.resource_type] },
+      data_set: { entityName: queryParams.data_set, getFunction: this.props.getDataSet, facetNames: [queryParams.data_set] },
+      data_type: { entityName: queryParams.data_type, getFunction: this.props.getDataType, facetNames: [queryParams.data_type] },
+    },
+    facetsData: null
   };
   /**
    * Component will mount
@@ -127,7 +173,17 @@ class Search extends Component {
    * @returns {undefined}
    */
   componentDidMount() {
-    this.initiateKeywords();
+    this.initiateKeywords()
+      .then(() => {
+        if (Object.keys(this.props.nfiSearch).length === 0 || typeof this.props.nfiSearch.results === 'undefined') {
+          this.doNfiSearch()
+            .then(() => {
+              this.makeFacets();
+            })
+        } else {
+          this.makeFacets();
+        }
+      })
     /**
      * When url hastag is changed empty selectedKeywords and add the new hastag
      */
@@ -182,30 +238,49 @@ class Search extends Component {
     );
   };
 
-  initiateKeywords = () => {
-    const hash = window.location.hash;
-    this.props
-      .getKeywords()
+  doNfiSearch = (page = null, pageSize = null, searchTerms = '', keywords = '', countries = '') => {
+    this.props.setLoader(true)
+    return this.props.doNfiSearch(page, pageSize, searchTerms, keywords, countries)
       .then(() => {
-        let keywords = [...this.props.originalKeywords];
-        this.setState({ keywords });
-        this.addHashTagAndDoNfiSearch(hash, false);
+        if (!this.state.dataReady) {
+          this.setState({ dataReady: true })
+        }
+        this.props.setLoader(false)
+        this.updateTotalItems(this.props.nfiSearch.count)
+      })
+      .catch((error) => {
+
       })
       .catch(error => console.log(error));
   };
+
+  initiateKeywords = () => {
+    return new Promise((resolve, reject) => {
+      const hash = window.location.hash;
+      this.props.getKeywords()
+        .then(() => {
+          let keywords = [...this.props.originalKeywords];
+          this.setState({ keywords });
+          resolve(this.addHashTagAndDoNfiSearch(hash, false))
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+      
+  }
 
   addHashTagAndDoNfiSearch = (hash, isEvent) => {
     if (isEvent) {
       const newHashArr = hash.newURL.split('#');
       const newHash = newHashArr[newHashArr.length - 1];
       this.addTag(newHash);
-      this.handleNfiSearch();
-      return;
+      return this.handleNfiSearch();
     }
-    if (!hash.length) return this.handleNfiSearch();
+    if (!hash.length) return;
     this.addTag(hash.slice(1));
-    this.handleNfiSearch();
-  };
+    return this.handleNfiSearch();
+  }
 
   addTag = newTag => {
     const tag = {
@@ -251,12 +326,15 @@ class Search extends Component {
   };
 
   handleNfiSearch = (page = null, pageSize = null) => {
-    this.props.setLoader(true);
     let keywords = [];
     let searchTerms = [];
-    let originalKeywords = this.props.originalKeywords.map(
-      keyword => keyword.value,
-    );
+    let countries = [];
+    let originalKeywords = this.props.originalKeywords.map(keyword => keyword.value);
+
+    if (this.state.activeTab === 1) {
+      countries = this.state.nfiSelectedCountry
+    }
+
     this.state.selectedKeywords.forEach(selectedKeyword => {
       const index = originalKeywords.indexOf(selectedKeyword);
       if (index !== -1) {
@@ -266,15 +344,9 @@ class Search extends Component {
       }
     });
     if (!page) page = this.state.pagination.page;
-    if (!pageSize) pageSize = this.state.pagination.selectedItemsPerPage;
-    this.props.doNfiSearch(page, pageSize, searchTerms, keywords).then(() => {
-      if (!this.state.dataReady) {
-        this.setState({ dataReady: true });
-      }
-      this.props.setLoader(false);
-      this.updateTotalItems(this.props.nfiSearch.count);
-    });
-  };
+    if (!pageSize) pageSize = this.state.pagination.selectedItemsPerPage
+    return this.doNfiSearch(page, pageSize, searchTerms, keywords, countries)
+  }
 
   handleTabChange = (event, data) => {
     this.setState({
@@ -302,20 +374,99 @@ class Search extends Component {
     this.setState({ pagination });
   };
 
+  // NFI
+  handleCountrySelected = (country) => {
+    this.setState({
+      nfiSelectedCountry: country
+    }, this.handleNfiSearch)
+  }
+
+  // FACETS
+  makeFacets = () => {
+    const promises = [];
+    Object.keys(this.state.facets).map(key => {
+      const entity = this.state.facets[key];
+      promises.push(this.wrapPromiseGetEntity(entity));
+    });
+    Promise.all(promises)
+      .then(() => {
+        const facetEntities = Object.keys(this.state.facets).map(key => {
+          return { entityName: this.state.facets[key].entityName, facetNames: this.state.facets[key].facetNames, data: this.props.nfi[key] }
+        })
+
+        const facetsData = this.composeFacets(facetEntities, this.props.nfiSearch.facets) 
+        this.setState({ facetsData });
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  composeFacets = (facetEntities, facets) => {
+    let result = {};
+    facetEntities.map(entity => {
+      const facetNames = entity.facetNames;
+      const entityName = entity.entityName;
+      const entityData = entity.data;
+      const reducer = (accumulator, currentValue) => {
+        return Object.assign({}, facets[accumulator], facets[currentValue]);
+      };
+      const facetSets = facetNames.reduce(reducer, facetNames[0]);
+
+      result[entityName] = this.formatSets(
+        facetSets,
+        entityData
+      );
+
+    });
+    return result;
+  }
+
+  formatSets = (facetSets, facetEntitySets) => {
+    let result = {};
+
+    facetEntitySets.map(item => {
+      const formatedItemName = item.name.toLowerCase();
+      result[formatedItemName] = {};
+      result[formatedItemName].id = item.id ? item.id : new Date().getTime();
+      result[formatedItemName].name = item.name ? item.name : item;
+      result[formatedItemName].number = facetSets[formatedItemName] || 0;
+    });
+
+    return result;
+  }
+
+  wrapPromiseGetEntity = (entity) => {
+    return new Promise((resolve, reject) => {
+      entity.getFunction()
+        .then(response => {
+          resolve({
+            data: response.data,
+            facetNames: entity.facetNames,
+            entityName: entity.entityName
+          });
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  }
+
   render() {
     const context = {
       term: this.props.searchableText,
-      items: this.props.items,
-      nfiItems: this.props.nfiSearch.results,
-      nfiSearch: this.props.nfiSearch,
-      pagination:
-        this.state.activeTab === 1
-          ? {
-              ...this.state.pagination,
-              updateItemsPerPage: this.updateItemsPerPage,
-              updatePage: this.updatePage,
-            }
-          : null,
+      portalData: {
+        id: 'portal',
+        items: this.props.items
+      },
+      nfiData: {
+        id: 'nfi',
+        items: this.props.nfiSearch.results,
+        facets: this.state.facetsData,
+        selectedCountry: this.state.nfiSelectedCountry,
+        handleCountrySelected: this.handleCountrySelected
+      },
+      pagination: this.state.activeTab === 1 ? {...this.state.pagination, updateItemsPerPage: this.updateItemsPerPage, updatePage: this.updatePage} : null
     };
     const loader = <h1>Loading data...</h1>;
     const multiselect =
@@ -393,15 +544,11 @@ export default compose(
       subject: qs.parse(props.location.search).Subject,
       path: qs.parse(props.location.search).path,
       pathname: props.location.pathname,
-      originalKeywords: state.nfiFacets.keywords.map(keyword => ({
-        key: keyword.id,
-        id: keyword.id,
-        text: keyword.name,
-        value: keyword.name,
-      })),
-      nfiSearch: state.nfiFacets.search,
+      originalKeywords: state.nfi.keyword.map(keyword => ({ key: keyword.id, id: keyword.id, text: keyword.name, value: keyword.name })),
+      nfi: state.nfi,
+      nfiSearch: state.nfi.search
     }),
-    { searchContent, setLoader, getKeywords, getCountry, doNfiSearch },
+    { searchContent, setLoader, getKeywords, doNfiSearch, getCountry, getNutsLevel, getPublicationYears, getColectionRange, getTopicCategory, getResourceType, getDataSet, getDataType },
   ),
   asyncConnect([
     {

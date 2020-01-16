@@ -279,4 +279,44 @@
         margin-bottom: 5px;
         width: 70%;
     }
+
+  
+}
+.countries {
+    margin-top: 2em;
+    h4 {
+        color: #545454;
+    }
+    a {
+        color: #303030;
+        &:hover {
+            color: #CD4200;
+            text-decoration: underline;
+            cursor: pointer;
+            
+        }
+
+    }
+    span.count {
+        color: #9A9A9A;
+    }
+    .countries-header {
+        margin-bottom: 2em;
+    }
+    .countries-poll {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .countries-poll .country {
+        flex-grow: 1;
+        width: 25%;
+        margin: 2px 0;
+    }
+}
+
+hr.nfi-hr {
+    border-width: 1px;
+    border-style: solid;
+    border-top: 0;
+    border-color: #E6E6E6;
 }

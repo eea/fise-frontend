@@ -18,7 +18,8 @@ import {
   GET_RESOURCE_TYPE,
   GET_TOPIC_CATEGORY,
   GET_PUBLICATION_YEARS,
-  NFI_SEARCH,
+  GET_COLECTION_RANGE,
+  NFI_SEARCH
 } from '~/constants/ActionTypes';
 
 export function setLoader(value) {
@@ -129,7 +130,7 @@ export function getKeywords() {
   return {
     type: GET_KEYWORDS,
     baseType: GET_KEYWORDS,
-    stateToChange: 'keywords',
+    stateToChange: 'keyword',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/keyword',
@@ -154,7 +155,7 @@ export function getDataSet() {
   return {
     type: GET_DATA_SET,
     baseType: GET_DATA_SET,
-    stateToChange: 'dataSet',
+    stateToChange: 'data_set',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/data-set',
@@ -167,7 +168,7 @@ export function getDataType() {
   return {
     type: GET_DATA_TYPE,
     baseType: GET_DATA_TYPE,
-    stateToChange: 'dataType',
+    stateToChange: 'data_type',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/data-type',
@@ -180,33 +181,20 @@ export function getInfoLevel() {
   return {
     type: GET_INFO_LEVEL,
     baseType: GET_INFO_LEVEL,
-    stateToChange: 'countries',
+    stateToChange: 'info_level',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/country',
-      external: true,
-    },
-  };
-}
-
-export function getLanguage() {
-  return {
-    type: GET_LANGUAGE,
-    baseType: GET_LANGUAGE,
-    stateToChange: 'language',
-    request: {
-      op: 'get',
-      path: 'http://localhost:8000/api/facets/language',
-      external: true,
-    },
-  };
+      path: 'http://localhost:8000/api/facets/info-level',
+      external: true
+    }
+  }
 }
 
 export function getNutsLevel() {
   return {
     type: GET_NUTS_LEVEL,
     baseType: GET_NUTS_LEVEL,
-    stateToChange: 'nutsLevel',
+    stateToChange: 'nuts_level',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/nuts-level',
@@ -219,7 +207,7 @@ export function getResourceType() {
   return {
     type: GET_RESOURCE_TYPE,
     baseType: GET_RESOURCE_TYPE,
-    stateToChange: 'resourceType',
+    stateToChange: 'resource_type',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/resource-type',
@@ -232,7 +220,7 @@ export function getTopicCategory() {
   return {
     type: GET_TOPIC_CATEGORY,
     baseType: GET_TOPIC_CATEGORY,
-    stateToChange: 'topicCategory',
+    stateToChange: 'topic_category',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/facets/topic-category',
@@ -245,7 +233,7 @@ export function getPublicationYears() {
   return {
     type: GET_PUBLICATION_YEARS,
     baseType: GET_PUBLICATION_YEARS,
-    stateToChange: 'publicationYears',
+    stateToChange: 'published_year',
     request: {
       op: 'get',
       path: 'http://localhost:8000/api/publication_years',
@@ -254,16 +242,38 @@ export function getPublicationYears() {
   };
 }
 
-export function doNfiSearch(
-  page = null,
-  pageSize = null,
-  searchTerms = '',
-  keywords = '',
-) {
+export function getColectionRange() {
+  return {
+    type: GET_COLECTION_RANGE,
+    baseType: GET_COLECTION_RANGE,
+    stateToChange: 'collections_range',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/collections_range',
+      external: true
+    }
+  }
+}
+
+export function getLanguage() {
+  return {
+    type: GET_LANGUAGE,
+    baseType: GET_LANGUAGE,
+    stateToChange: 'language',
+    request: {
+      op: 'get',
+      path: 'http://localhost:8000/api/facets/language',
+      external: true
+    }
+  }
+}
+
+export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keywords = '', countries = '') {
   let pageQuery = page ? `&page=${page}` : '';
   let pageSizeQuery = pageSize ? `&page_size=${pageSize}` : '';
   let searchTermsQuery = '';
   let keywordsQuery = '';
+  let countriesQuery = '';
   let query = '';
   // Construct searchTermQuery
   if (Array.isArray(searchTerms) && searchTerms.length > 0) {
@@ -281,8 +291,16 @@ export function doNfiSearch(
   } else if (keywords.length > 0) {
     keywordsQuery = keywordsQuery + `&search=${keywords}`;
   }
+  // Construct countriesQuery
+  if (Array.isArray(countries) && countries.length > 0) {
+    countries.forEach(country => {
+      countriesQuery = countriesQuery + `&country=${country}`;
+    })
+  } else if (countries.length > 0) {
+    countriesQuery = countriesQuery + `&country=${countries}`;
+  }
   // Construct query
-  query = pageQuery + pageSizeQuery + searchTermsQuery + keywordsQuery;
+  query = pageQuery + pageSizeQuery + searchTermsQuery + keywordsQuery + countriesQuery;
   query = query.replace('&', '?');
   return {
     type: NFI_SEARCH,
