@@ -90,7 +90,8 @@ function getDefaultValues(choices, value) {
     return { label: value.title, value: value.token };
   }
   if (value && choices.length > 0) {
-    return { label: find(choices, o => o[0] === value)[1], value };
+    const found = find(choices, o => o[0] === value);
+    return found && found.length ? { label: found[1], value } : {};
   } else {
     return {};
   }
