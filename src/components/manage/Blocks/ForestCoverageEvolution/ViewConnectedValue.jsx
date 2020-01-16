@@ -45,13 +45,13 @@ const View = props => {
       className="forest-patch-size-distribution"
       style={{ marginTop: '2rem' }}
     >
-      {columnsData
-        ? Object.keys(columnsData)
+      {SCHEMA
+        ? Object.keys(SCHEMA)
             .sort((a, b) => SCHEMA[a].order - SCHEMA[b].order)
             .map(column => {
               return (
                 <div style={{borderBottom: '1px solid #eee'}}>
-                  <span
+                  {/* <span
                     style={{
                       fontWeight: 'bold',
                       fontSize: '.9rem',
@@ -67,7 +67,7 @@ const View = props => {
                       format={columnsData[column].format}
                       placeholder="_"
                     />
-                  </span>
+                  </span> */}
                   <span
                     style={{
                       marginLeft: '3px',

@@ -108,7 +108,7 @@ class ForestCoverageEvolution extends Component {
                 }
               />
               <MultiValuesEdit
-                schema={{ ...SCHEMA, ...this.props.schema }}
+                schema={{ ...this.props.schema }}
                 onChange={data =>
                   this.props.onChangeBlock(this.props.block, data)
                 }
