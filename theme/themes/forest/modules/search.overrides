@@ -4,15 +4,15 @@
 
 
 .search-page {
+    h4 {
+        margin: 0;
+    }
+
     .results-bar {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #D4D4D5;
-        margin-bottom: 37px;
     }
 
     .max-results {
@@ -39,7 +39,13 @@
     .results-count {
         font-size: @standardFont;
         color: #999999;
-        margin-right: 35px;
+    }
+
+    span.divider {
+        width: 1px;
+        height: 0.6em;
+        background: #E7E7E7;
+        margin: 0 0.5em;
     }
 
     .block-content {
@@ -143,7 +149,41 @@
     }
 }
 
-.search-container {
+.search-page-content {
+    // display: grid;
+    // position: relative;
+    // grid-template-columns: 2fr 1fr;
+    // grid-template-rows: max-content;
+    // grid-template-areas:
+    //     "tabs filters";
+    // column-gap: 4em;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    .multiselect-container {
+        // grid-area: multiselect;
+        position: absolute;
+        top: -10em;
+        width: 60%;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+    }
+
+    .tabs-container {
+        // grid-area: tabs;
+
+        width: 63%;
+    }
+
+    .filters-container {
+        // grid-area: filters;
+
+        width: 30%;
+    }
+
     a.active {
         background: #CC4400 !important;
         color: white !important;
@@ -152,77 +192,10 @@
     .menu {
         box-shadow: none !important;
     }
-
-    .multiselect-container {
-        display: flex;
-        flex-flow: row;
-
-        div.multiple.search {
-            border: 1px solid #C7D5D8;
-            border-radius: 0.25rem;
-
-            &.active {
-                background: #fff !important;
-
-                .visible.dropdown {
-                    border-bottom: none;
-                }
-            }
-
-            .menu {
-                border: 1px solid #C7D5D8;
-                border-radius: 0 0 0.25rem 0.25rem;
-            }
-
-            &.upward .menu {
-                border: 1px solid #C7D5D8;
-                border-radius: 0.25rem 0.25rem 0 0;
-            }
-
-            &.selection.active.dropdown {
-                &:hover {
-                    border-color: #96C8DA;
-
-                    .menu {
-                        border-color: #96C8DA;
-                    }
-                }
-
-                .menu {
-                    &:hover {
-                        border: 1px solid #96C8DA;
-                    }
-
-                    &:last-child {
-                        border: inherit;
-                    }
-
-                    .selected.item {
-                        color: #96C8DA;
-                    }
-                }
-            }
-
-            .default.text {
-                position: absolute;
-                top: 0;
-                left: 0.32em;
-            }
-
-            input.search {
-                padding-left: 0.32em;
-            }
-        }
-
-        .search-button {
-            margin-left: 16px;
-        }
-
-        margin: 16px 0;
-    }
+    margin: 16px 0;
 }
 
-.search-filters {
+.filters-container {
     .filters-head {
         display: flex;
         justify-content: space-between;
@@ -247,6 +220,12 @@
         margin-top: 15px;
         border-bottom: 1px solid #D4D4D5;
         padding-bottom: 25px;
+        // .ui.segment, .ui.container {
+        //     box-shadow: none;
+        //     border: none;
+        //     margin: 0;
+        //     padding: 0;
+        // }
     }
 
     .checkbox-area {
@@ -266,10 +245,8 @@
     }
 
     .multiple-select {
-        border: 1px solid #D4D4D5 !important;
-        border-radius: 5px !important;
-        padding: 10px !important;
         background-color: #F9F9F9 !important;
+        padding: 10px !important;
     }
 
     .collection {
@@ -279,34 +256,36 @@
         margin-bottom: 5px;
         width: 70%;
     }
-
-  
 }
 .countries {
-    margin-top: 2em;
     h4 {
         color: #545454;
     }
+
     a {
         color: #303030;
+        font-size: 0.9em;
         &:hover {
             color: #CD4200;
             text-decoration: underline;
             cursor: pointer;
-            
         }
 
     }
+
     span.count {
         color: #9A9A9A;
+        font-size: 0.7em;
     }
+
     .countries-header {
-        margin-bottom: 2em;
     }
+
     .countries-poll {
         display: flex;
         flex-wrap: wrap;
     }
+
     .countries-poll .country {
         flex-grow: 1;
         width: 25%;
@@ -319,4 +298,27 @@ hr.nfi-hr {
     border-style: solid;
     border-top: 0;
     border-color: #E6E6E6;
+    margin: 1em 0;
+}
+
+.ui.button.search-button {
+    margin-left: 16px;
+}
+
+.justify-space-between {
+    justify-content: space-between !important;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mt-2 {
+    margin-top: 2em;
+}
+
+.results-bar .ui.dropdown {
+    background-color: #F9F9F9 !important;
 }

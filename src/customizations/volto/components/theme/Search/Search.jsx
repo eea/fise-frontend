@@ -49,37 +49,21 @@ const panes = context => {
       menuItem: `Portal data (${context.portalData.items.length})`,
       render: () => {
         return (
-          <div>
-            <Grid>
-              <Grid.Column width={8}>
-                <RenderSearch 
-                  data={context.portalData}
-                  pagination={context.pagination}
-                />
-              </Grid.Column>
-              <Grid.Column width={4}>
-                <SearchFilters />
-              </Grid.Column>
-            </Grid>
-          </div>
+          <RenderSearch 
+            data={context.portalData}
+            pagination={context.pagination}
+          />
         );
       }
     },
     {
-      menuItem: `National Forest Inventories (${context.nfiData.items ? context.nfiData.items.length : 0})`,
+      menuItem: `National Forest Inventories`,
       render: () => {
         return (
-          <Grid>
-            <Grid.Column width={8}>
-              <RenderSearch
-                data={context.nfiData ? context.nfiData : {}}
-                pagination={context.pagination}
-              />
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <SearchFilters />
-            </Grid.Column>
-          </Grid>
+          <RenderSearch
+            data={context.nfiData ? context.nfiData : {}}
+            pagination={context.pagination}
+          />
         )
       }
     },
@@ -482,7 +466,6 @@ class Search extends Component {
             options={this.state.keywords}
             value={this.state.selectedKeywords}
             onChange={this.handleChange}
-            loading
           />
           <Button
             className="search-button darkOrange"
@@ -495,21 +478,23 @@ class Search extends Component {
         ''
       );
     const ui = (
-      <Container id="page-search">
+      <Container>
         <Helmet title="Search" />
-        <div className="container">
-          <BodyClass className="search-container" />
-          {multiselect}
-          <Tab
-            activeIndex={this.state.activeTab}
-            menu={{
-              compact: true,
-              attached: false,
-              tabular: false,
-            }}
-            panes={panes(context)}
-            onTabChange={this.handleTabChange}
-          />
+        <div className="search-page-content">
+          <BodyClass />
+            {multiselect}
+            <Tab
+              className="tabs-container"
+              activeIndex={this.state.activeTab}
+              menu={{
+                compact: true,
+                attached: false,
+                tabular: false,
+              }}
+              panes={panes(context)}
+              onTabChange={this.handleTabChange}
+            />
+            <SearchFilters data={context.nfiData} />
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar

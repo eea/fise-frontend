@@ -105,7 +105,6 @@ class App extends Component {
     return (
       <Fragment>
         <BodyClass className={`view-${action}view`} />
-        {loader}
         <Header
           folderHeader={this.props.folderHeader}
           actualPathName={this.props.pathname}
@@ -115,6 +114,7 @@ class App extends Component {
         <Segment basic className="content-area">
           <Container>
             <main>
+              {loader}
               <Messages />
               <div className="editor-toolbar-wrapper" />
 

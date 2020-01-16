@@ -2,7 +2,10 @@
          Theme Overrides
 *******************************/
 .ui.dimmer {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
+  z-index: 1;
+  justify-content: start;
+  .content {
+    position: fixed;
+    left: 50%;
+  }
 }

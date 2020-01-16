@@ -1,6 +1,6 @@
 import React from 'react';
 import { BodyClass } from '@plone/volto/helpers';
-import { Checkbox, Dropdown } from 'semantic-ui-react';
+import { Checkbox, Dropdown, Segment, Container } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Slider } from 'react-semantic-ui-range';
 
@@ -22,10 +22,10 @@ const settings = {
   step: 1,
 };
 
-const SearchFilters = () => {
+const SearchFilters = (data) => {
   return (
-    <div>
-      <BodyClass className="search-filters" />
+    <div className="filters-container">
+      <BodyClass  />
       <div className="filters-head">
         <h3 className="header">FILTERS</h3>
         <h5 className="clear-filters">CLEAR</h5>
@@ -100,7 +100,9 @@ const SearchFilters = () => {
       </div>
       <div className="filters-area">
         <h3>Published year</h3>
-        <Slider discrete multiple color="red" settings={settings} />
+        <Container>
+          <Slider discrete multiple color="red" settings={settings} />
+        </Container>
       </div>
       <div className="filters-area">
         <h3>Results Format</h3>
