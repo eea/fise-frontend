@@ -51,6 +51,17 @@ class Edit extends Component {
             />
 
             <Field
+              id="europe-forest-p-eu28-text"
+              title="Forest area in EU28 TEXT"
+              type="text"
+              value={this.state.europe_forest_p_eu28_text}
+              required={false}
+              onChange={(e, d) =>
+                this.updateData({ europe_forest_p_eu28_text: d })
+              }
+            />
+
+            <Field
               id="europe-forest-l-eu28"
               title="Total forest area in EU28"
               type="text"
@@ -66,6 +77,17 @@ class Edit extends Component {
               value={this.state.europe_forest_p_eea39}
               required={false}
               onChange={(e, d) => this.updateData({ europe_forest_p_eea39: d })}
+            />
+
+            <Field
+              id="europe-forest-p-eea39-text"
+              title="Forest area in EEA39 TEXT"
+              type="text"
+              value={this.state.europe_forest_p_eea39_text}
+              required={false}
+              onChange={(e, d) =>
+                this.updateData({ europe_forest_p_eea39_text: d })
+              }
             />
 
             <Field
