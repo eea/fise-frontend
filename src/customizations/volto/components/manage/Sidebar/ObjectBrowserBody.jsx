@@ -20,7 +20,6 @@ import linkSVG from '@plone/volto/icons/link.svg';
 import imageSVG from '@plone/volto/icons/image.svg';
 
 import ObjectBrowserNav from '@plone/volto/components/manage/Sidebar/ObjectBrowserNav';
-import { flattenToAppURL } from '@plone/volto/helpers';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const messages = defineMessages({
@@ -38,25 +37,6 @@ function getParentURL(url) {
 }
 function getParamsFromUrl(url) {
   return join(url.split('?').slice(1), '').split('&') || false;
-}
-
-let lastscrollvalue;
-
-function getScrollDirection(node) {
-  if (lastscrollvalue === undefined) {
-    lastscrollvalue = node.scrollTop;
-  } else if (node.scrollTop > lastscrollvalue) {
-    // DOWN
-    lastscrollvalue = node.scrollTop;
-    return true;
-  } else if (node.scrollTop < lastscrollvalue) {
-    // UP
-    lastscrollvalue = node.scrollTop;
-    if (node.scrollTop === 0) {
-      return node.scrollTop;
-    }
-    return false;
-  }
 }
 
 /**
@@ -120,6 +100,7 @@ class ObjectBrowserBody extends Component {
         ? this.props.data.href.replace(settings.apiPath, '')
         : '',
       showSearchInput: false,
+      items: {},
     };
   }
 
@@ -133,9 +114,55 @@ class ObjectBrowserBody extends Component {
     this.initialSearch(this.props.mode);
   }
 
-  // componentDidUpdate() {
-  //   console.log('object browser body', this.props, this.state);
-  // }
+  componentDidUpdate(prevProps) {
+    const prevSubrequests =
+      prevProps.searchSubrequests?.[`${prevProps.block}-${prevProps.mode}`];
+    const currSubrequests = this.props.searchSubrequests?.[
+      `${this.props.block}-${this.props.mode}`
+    ];
+    if (
+      prevSubrequests &&
+      prevSubrequests.batching &&
+      prevSubrequests.batching['@id'] &&
+      currSubrequests &&
+      currSubrequests.batching &&
+      currSubrequests.batching['@id']
+    ) {
+      if (
+        getParentURL(prevSubrequests.batching['@id']) ===
+          getParentURL(currSubrequests.batching['@id']) &&
+        prevSubrequests.batching.next &&
+        prevSubrequests.batching.next !== currSubrequests.batching.next
+      ) {
+        const currentSubRequestsWithoutItems = { ...currSubrequests };
+        delete currentSubRequestsWithoutItems.items;
+        this.setState({
+          items: {
+            ...this.state.items,
+            ...currentSubRequestsWithoutItems,
+            items: this.state.items.items
+              ? [
+                  ...this.state.items.items,
+                  ...prevSubrequests.items,
+                  ...currSubrequests.items,
+                ]
+              : [...prevSubrequests.items, ...currSubrequests.items],
+          },
+        });
+      }
+    }
+
+    if (
+      prevSubrequests &&
+      Object.keys(prevSubrequests.batching).length &&
+      currSubrequests &&
+      !Object.keys(currSubrequests.batching).length
+    ) {
+      this.setState({
+        items: {},
+      });
+    }
+  }
 
   /**
    * Component will receive props
@@ -173,10 +200,8 @@ class ObjectBrowserBody extends Component {
   };
 
   nextResults = (mode, url) => {
-    console.log('nextResults', url);
     if (getParentURL(url) && getParamsFromUrl(url)) {
       const params = getParamsFromUrl(url).reduce((acc, item) => {
-        console.log('-------', item);
         const itemArr = item.split('=');
         acc[itemArr[0]] = itemArr[1];
         return acc;
@@ -346,12 +371,10 @@ class ObjectBrowserBody extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    // console.log('object browser body', this.props, this.state);
-    const searchResults = this.props.searchSubrequests[
-      `${this.props.block}-${this.props.mode}`
-    ];
+    const searchResults = Object.keys(this.state.items).length
+      ? this.state.items
+      : this.props.searchSubrequests[`${this.props.block}-${this.props.mode}`];
 
-    console.log('searchresults', searchResults);
     return ReactDOM.createPortal(
       <aside
         role="presentation"
@@ -414,48 +437,20 @@ class ObjectBrowserBody extends Component {
             </button>
           </header>
           <Segment secondary>{this.state.currentFolder}</Segment>
-          {searchResults ? (
+          {searchResults &&
+          searchResults.items &&
+          Object.keys(searchResults.items).length ? (
             <InfiniteScroll
-              dataLength={searchResults.total}
+              dataLength={searchResults.items.length}
               next={() =>
-                this.nextResults(
-                  this.props.mode,
-                  searchResults.batching.next || searchResults.batching.prev,
-                )
+                this.nextResults(this.props.mode, searchResults.batching.next)
               }
               hasMore={searchResults.batching.next ? true : false}
               loader={''}
-              // onScroll={() => {
-              //   if (
-              //     searchResults.batching.prev &&
-              //     getScrollDirection(
-              //       document.getElementById('object-listing'),
-              //     ) === 0
-              //   ) {
-              //     this.nextResults(
-              //       this.props.mode,
-              //       searchResults.batching.prev,
-              //     );
-              //   }
-              // }}
-              // refreshFunction={() =>
-              //   this.nextResults(this.props.mode, searchResults.batching.first)
-              // }
-              // pullDownToRefresh
-              // pullDownToRefreshContent={
-              //   <h3 style={{textAlign: 'center'}}>&#8595; Pull down to refresh</h3>
-              // }
-              // releaseToRefreshContent={
-              //   <h3 style={{textAlign: 'center'}}>&#8593; Release to refresh</h3>
-              // }
               scrollableTarget="object-listing"
             >
               <ObjectBrowserNav
-                currentSearchResults={
-                  this.props.searchSubrequests[
-                    `${this.props.block}-${this.props.mode}`
-                  ]
-                }
+                currentSearchResults={searchResults}
                 selected={
                   this.props.mode === 'image'
                     ? this.state.selectedImage
