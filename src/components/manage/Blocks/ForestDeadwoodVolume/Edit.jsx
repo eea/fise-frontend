@@ -4,16 +4,16 @@ import View from './View';
 
 const SCHEMA = {
   total: {
-    title: 'Deadwood volume column',
+    title: 'Volume column',
     defaultformat: 'compactnumber',
   },
   totalText: {
-    title: 'Deadwood volume text',
+    title: 'Volume text',
     defaultformat: 'compactnumber',
     static: true,
   },
   totalUnit: {
-    title: 'Deadwood volume unit',
+    title: 'Volume unit',
     defaultformat: 'compactnumber',
     static: true,
   },
@@ -33,7 +33,7 @@ const Edit = props => {
         schema={SCHEMA}
         block="data-entity"
         data={props.data}
-        title="Forest deadwood volume block"
+        title="Volume block"
         selected={props.selected}
       />
       <View {...props} />
