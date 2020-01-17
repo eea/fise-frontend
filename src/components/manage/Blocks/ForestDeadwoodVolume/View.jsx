@@ -7,7 +7,11 @@ class View extends Component {
       <div className="block-container">
         <div className="forest-block-wrapper">
           <div className="forest-specific-block forest-area-block">
-            {this.props.data?.block_title ? <h5>{this.props.data.block_title}</h5> : ''}
+            {this.props.data?.block_title ? (
+              <h5>{this.props.data.block_title}</h5>
+            ) : (
+              ''
+            )}
 
             <div className="land-data-wrapper eu28-data purple">
               <div className="land-data">

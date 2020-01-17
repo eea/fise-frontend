@@ -50,7 +50,7 @@ const View = props => {
             .sort((a, b) => SCHEMA[a].order - SCHEMA[b].order)
             .map(column => {
               return (
-                <div style={{borderBottom: '1px solid #eee'}}>
+                <div style={{ borderBottom: '1px solid #eee' }}>
                   {/* <span
                     style={{
                       fontWeight: 'bold',
@@ -75,7 +75,10 @@ const View = props => {
                     }}
                     className="label"
                   >
-                    <span style={{marginBottom: '-1px'}} className={`${column} square`} />
+                    <span
+                      style={{ marginBottom: '-1px' }}
+                      className={`${column} square`}
+                    />
                     <span style={{ fontSize: '.9rem' }}>
                       {SCHEMA[column].title}
                     </span>
