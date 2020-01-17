@@ -1462,3 +1462,10 @@ body {
     }
   }
 }
+
+
+
+
+.sidebar-container-enter-done .ui.segment.object-listing {
+  max-height: calc(100vh - 95px);
+}

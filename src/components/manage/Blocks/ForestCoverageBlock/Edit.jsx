@@ -25,7 +25,7 @@ const Edit = props => {
           });
         }}
         schema={SCHEMA}
-        block="data-entity"
+        block={props.block}
         data={props.data}
         title="Forest Coverage block"
         selected={props.selected}

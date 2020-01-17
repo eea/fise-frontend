@@ -20,6 +20,8 @@ import linkSVG from '@plone/volto/icons/link.svg';
 import imageSVG from '@plone/volto/icons/image.svg';
 
 import ObjectBrowserNav from '@plone/volto/components/manage/Sidebar/ObjectBrowserNav';
+import { flattenToAppURL } from '@plone/volto/helpers';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 const messages = defineMessages({
   SearchInputPlaceholder: {
@@ -33,6 +35,28 @@ function getParentURL(url) {
     `${join(url.split('/').slice(0, -1), '/')}`.replace(settings.apiPath, '') ||
     '/'
   );
+}
+function getParamsFromUrl(url) {
+  return join(url.split('?').slice(1), '').split('&') || false;
+}
+
+let lastscrollvalue;
+
+function getScrollDirection(node) {
+  if (lastscrollvalue === undefined) {
+    lastscrollvalue = node.scrollTop;
+  } else if (node.scrollTop > lastscrollvalue) {
+    // DOWN
+    lastscrollvalue = node.scrollTop;
+    return true;
+  } else if (node.scrollTop < lastscrollvalue) {
+    // UP
+    lastscrollvalue = node.scrollTop;
+    if (node.scrollTop === 0) {
+      return node.scrollTop;
+    }
+    return false;
+  }
 }
 
 /**
@@ -109,6 +133,10 @@ class ObjectBrowserBody extends Component {
     this.initialSearch(this.props.mode);
   }
 
+  // componentDidUpdate() {
+  //   console.log('object browser body', this.props, this.state);
+  // }
+
   /**
    * Component will receive props
    * @method componentWillUnmount
@@ -138,6 +166,26 @@ class ObjectBrowserBody extends Component {
           'path.depth': 1,
           sort_on: 'getObjPositionInParent',
           metadata_fields: '_all',
+        },
+        `${this.props.block}-${mode}`,
+      );
+    }
+  };
+
+  nextResults = (mode, url) => {
+    console.log('nextResults', url);
+    if (getParentURL(url) && getParamsFromUrl(url)) {
+      const params = getParamsFromUrl(url).reduce((acc, item) => {
+        console.log('-------', item);
+        const itemArr = item.split('=');
+        acc[itemArr[0]] = itemArr[1];
+        return acc;
+      }, {});
+      // for(param of getParamsFromUrl)
+      this.props.searchContent(
+        getParentURL(url),
+        {
+          ...params,
         },
         `${this.props.block}-${mode}`,
       );
@@ -298,7 +346,12 @@ class ObjectBrowserBody extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    console.log('object browser body');
+    // console.log('object browser body', this.props, this.state);
+    const searchResults = this.props.searchSubrequests[
+      `${this.props.block}-${this.props.mode}`
+    ];
+
+    console.log('searchresults', searchResults);
     return ReactDOM.createPortal(
       <aside
         role="presentation"
@@ -361,24 +414,63 @@ class ObjectBrowserBody extends Component {
             </button>
           </header>
           <Segment secondary>{this.state.currentFolder}</Segment>
-
-          <ObjectBrowserNav
-            currentSearchResults={
-              this.props.searchSubrequests[
-                `${this.props.block}-${this.props.mode}`
-              ]
-            }
-            selected={
-              this.props.mode === 'image'
-                ? this.state.selectedImage
-                : this.state.selectedHref
-            }
-            getIcon={this.getIcon}
-            handleClickOnItem={this.handleClickOnItem}
-            handleDoubleClickOnItem={this.handleDoubleClickOnItem}
-            mode={this.props.mode}
-            navigateTo={this.navigateTo}
-          />
+          {searchResults ? (
+            <InfiniteScroll
+              dataLength={searchResults.total}
+              next={() =>
+                this.nextResults(
+                  this.props.mode,
+                  searchResults.batching.next || searchResults.batching.prev,
+                )
+              }
+              hasMore={searchResults.batching.next ? true : false}
+              loader={''}
+              // onScroll={() => {
+              //   if (
+              //     searchResults.batching.prev &&
+              //     getScrollDirection(
+              //       document.getElementById('object-listing'),
+              //     ) === 0
+              //   ) {
+              //     this.nextResults(
+              //       this.props.mode,
+              //       searchResults.batching.prev,
+              //     );
+              //   }
+              // }}
+              // refreshFunction={() =>
+              //   this.nextResults(this.props.mode, searchResults.batching.first)
+              // }
+              // pullDownToRefresh
+              // pullDownToRefreshContent={
+              //   <h3 style={{textAlign: 'center'}}>&#8595; Pull down to refresh</h3>
+              // }
+              // releaseToRefreshContent={
+              //   <h3 style={{textAlign: 'center'}}>&#8593; Release to refresh</h3>
+              // }
+              scrollableTarget="object-listing"
+            >
+              <ObjectBrowserNav
+                currentSearchResults={
+                  this.props.searchSubrequests[
+                    `${this.props.block}-${this.props.mode}`
+                  ]
+                }
+                selected={
+                  this.props.mode === 'image'
+                    ? this.state.selectedImage
+                    : this.state.selectedHref
+                }
+                getIcon={this.getIcon}
+                handleClickOnItem={this.handleClickOnItem}
+                handleDoubleClickOnItem={this.handleDoubleClickOnItem}
+                mode={this.props.mode}
+                navigateTo={this.navigateTo}
+              />
+            </InfiniteScroll>
+          ) : (
+            ''
+          )}
         </Segment.Group>
       </aside>,
       document.body,
