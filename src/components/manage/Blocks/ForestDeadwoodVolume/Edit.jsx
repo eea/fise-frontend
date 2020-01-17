@@ -7,6 +7,16 @@ const SCHEMA = {
     title: 'Deadwood volume column',
     defaultformat: 'compactnumber',
   },
+  totalText: {
+    title: 'Deadwood volume text',
+    defaultformat: 'compactnumber',
+    static: true,
+  },
+  totalUnit: {
+    title: 'Deadwood volume unit',
+    defaultformat: 'compactnumber',
+    static: true,
+  },
 };
 
 const Edit = props => {

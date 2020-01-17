@@ -7,7 +7,8 @@ class View extends Component {
       <div className="block-container">
         <div className="forest-block-wrapper">
           <div className="forest-specific-block forest-area-block">
-            <h5>Forest deadwood volume</h5>
+            {this.props.data?.block_title ? <h5>{this.props.data.block_title}</h5> : ''}
+
             <div className="land-data-wrapper eu28-data purple">
               <div className="land-data">
                 <span>
@@ -22,8 +23,8 @@ class View extends Component {
                 </span>
               </div>
               <div className="land-data-content">
-                <span>m3/ha</span>
-                standing deadwood volume
+                <span>{this.props.data?.columns?.totalUnit?.value}</span>
+                {this.props.data?.columns?.totalText?.value}
               </div>
             </div>
           </div>
