@@ -452,7 +452,7 @@ class Search extends Component {
         '',
       );
     }
-    this.setState({ nfiSelectedFilters });
+    this.setState({ nfiSelectedFilters }, this.handleNfiSearch);
   };
 
   handleClearFilters = () => {
