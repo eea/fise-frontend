@@ -16,10 +16,10 @@ const countriesOptions = [
   },
 ];
 
-const capitalize = (s) => {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
-}
+const capitalize = s => {
+  if (typeof s !== 'string') return '';
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
 
 const createCheckboxFacet = (data, facet) => {
   return Object.keys(data.facetsData[facet]).map(filter => {
@@ -27,9 +27,19 @@ const createCheckboxFacet = (data, facet) => {
     const value = data.facetsData[facet][filter].name;
     const number = data.facetsData[facet][filter].number;
     const key = data.facetsData[facet][filter].id;
-    return  (<Checkbox className="checkbox"  key={key} checked={data.selectedFilters[facet].includes(`&${facet}=${value}`)} value={value} name={facet} label={label} onChange={(event, checkbox) => data.handleFilterSelected(checkbox)} />)
-  })
-}
+    return (
+      <Checkbox
+        className="checkbox"
+        key={key}
+        checked={data.selectedFilters[facet].includes(`&${facet}=${value}`)}
+        value={value}
+        name={facet}
+        label={label}
+        onChange={(event, checkbox) => data.handleFilterSelected(checkbox)}
+      />
+    );
+  });
+};
 
 const SearchFilters = ({ data }) => {
   const [multipleValues, setMultipleValues] = useState([1950, 2018]);
@@ -45,7 +55,11 @@ const SearchFilters = ({ data }) => {
   };
 
   let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet;
-  if (data.facetsData && data.selectedFilters && Object.keys(data.selectedFilters).length > 0) {
+  if (
+    data.facetsData &&
+    data.selectedFilters &&
+    Object.keys(data.selectedFilters).length > 0
+  ) {
     renderTopicsFacet = createCheckboxFacet(data, 'topic_category');
     renderNutsLevelFacet = createCheckboxFacet(data, 'nuts_level');
   } else {
@@ -58,13 +72,13 @@ const SearchFilters = ({ data }) => {
       <BodyClass />
       <div className="filters-head">
         <h3 className="header">FILTERS</h3>
-        <h5 className="clear-filters" onClick={data.handleClearFilters}>CLEAR</h5>
+        <h5 className="clear-filters" onClick={data.handleClearFilters}>
+          CLEAR
+        </h5>
       </div>
       <div className="filters-area">
-      <h3>Topics</h3>
-        <div className="checkbox-area">
-          {renderTopicsFacet}
-        </div>
+        <h3>Topics</h3>
+        <div className="checkbox-area">{renderTopicsFacet}</div>
       </div>
       {data.id === 'portal' && (
         <div className="filters-area">
@@ -83,9 +97,7 @@ const SearchFilters = ({ data }) => {
       )}
       <div className="filters-area">
         <h3>NUTS Level</h3>
-        <div className="checkbox-area">
-          {renderNutsLevelFacet}
-        </div>
+        <div className="checkbox-area">{renderNutsLevelFacet}</div>
       </div>
       {data.id === 'portal' && (
         <div className="filters-area">
@@ -141,9 +153,7 @@ const SearchFilters = ({ data }) => {
           </div>
           <div className="slider-labels">
             {multipleValues.map((value, i) => (
-              <Label key={i}>
-                {value}
-              </Label>
+              <Label key={i}>{value}</Label>
             ))}
           </div>
         </Container>
