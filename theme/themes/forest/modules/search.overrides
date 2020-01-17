@@ -194,6 +194,7 @@
     .menu {
         box-shadow: none !important;
     }
+
     margin: 16px 0;
 }
 
@@ -258,7 +259,14 @@
         margin-bottom: 5px;
         width: 70%;
     }
+
+    .slider-labels {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
+
 .countries {
     h4 {
         color: #545454;
@@ -267,6 +275,7 @@
     a {
         color: #303030;
         font-size: 0.9em;
+
         &:hover {
             color: #CD4200;
             text-decoration: underline;
@@ -280,8 +289,7 @@
         font-size: 0.7em;
     }
 
-    .countries-header {
-    }
+    .countries-header {}
 
     .countries-poll {
         display: flex;

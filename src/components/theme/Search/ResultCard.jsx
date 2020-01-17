@@ -6,6 +6,7 @@ import globeSVG from '@plone/volto/icons/globe.svg';
 import spreadsheetSVG from '@plone/volto/icons/spreadsheet.svg';
 import tableSVG from '@plone/volto/icons/table.svg';
 import showBlocksSVG from '@plone/volto/icons/show-blocks.svg';
+import doumentDetailsSVG from '@plone/volto/icons/doument-details.svg';
 
 const ResultCard = ({ item, id }) => {
   const has_download = item.download_url ? true : false;
@@ -37,6 +38,15 @@ const ResultCard = ({ item, id }) => {
           <Icon
             className="format-icon"
             name={showBlocksSVG}
+            size="18px"
+            color="white"
+          />
+        );
+      case 'Report':
+        return (
+          <Icon
+            className="format-icon"
+            name={doumentDetailsSVG}
             size="18px"
             color="white"
           />
