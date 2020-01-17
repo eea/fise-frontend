@@ -20,7 +20,7 @@ const View = props => {
               </span>
             </div>
             <div className="land-data-content">
-              of land surface
+              {props.data?.columns?.percText.value}
               <span>
                 <DataConnectedValue
                   url={props.data.provider_url}
@@ -28,7 +28,7 @@ const View = props => {
                   format={props.data?.columns?.totalArea?.format}
                   placeholder="_"
                 />{' '}
-                ha
+                {props.data?.columns?.totalAreaUnit.value}
               </span>
             </div>
           </div>

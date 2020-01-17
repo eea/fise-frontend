@@ -11,6 +11,14 @@ const SCHEMA = {
     title: 'Total Area column',
     defaultformat: 'compactnumber',
   },
+  percText: {
+    title: 'Text for percentage column',
+    static: true,
+  },
+  totalAreaUnit: {
+    title: 'Measurement unit for total area',
+    static: true,
+  }
 };
 
 const Edit = props => {
