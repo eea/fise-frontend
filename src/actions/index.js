@@ -19,7 +19,7 @@ import {
   GET_TOPIC_CATEGORY,
   GET_PUBLICATION_YEARS,
   GET_COLECTION_RANGE,
-  NFI_SEARCH
+  NFI_SEARCH,
 } from '~/constants/ActionTypes';
 
 export function setLoader(value) {
@@ -133,7 +133,7 @@ export function getKeywords() {
     stateToChange: 'keyword',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/keyword',
+      path: 'http://localhost:8000/api/facets/keyword/',
       external: true,
     },
   };
@@ -145,7 +145,7 @@ export function getCountry() {
     stateToChange: 'country',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/country',
+      path: 'http://localhost:8000/api/facets/country/',
       external: true,
     },
   };
@@ -158,7 +158,7 @@ export function getDataSet() {
     stateToChange: 'data_set',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/data-set',
+      path: 'http://localhost:8000/api/facets/data-set/',
       external: true,
     },
   };
@@ -171,7 +171,7 @@ export function getDataType() {
     stateToChange: 'data_type',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/data-type',
+      path: 'http://localhost:8000/api/facets/data-type/',
       external: true,
     },
   };
@@ -184,10 +184,10 @@ export function getInfoLevel() {
     stateToChange: 'info_level',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/info-level',
-      external: true
-    }
-  }
+      path: 'http://localhost:8000/api/facets/info-level/',
+      external: true,
+    },
+  };
 }
 
 export function getNutsLevel() {
@@ -197,7 +197,7 @@ export function getNutsLevel() {
     stateToChange: 'nuts_level',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/nuts-level',
+      path: 'http://localhost:8000/api/facets/nuts-level/',
       external: true,
     },
   };
@@ -210,7 +210,7 @@ export function getResourceType() {
     stateToChange: 'resource_type',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/resource-type',
+      path: 'http://localhost:8000/api/facets/resource-type/',
       external: true,
     },
   };
@@ -223,7 +223,7 @@ export function getTopicCategory() {
     stateToChange: 'topic_category',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/topic-category',
+      path: 'http://localhost:8000/api/facets/topic-category/',
       external: true,
     },
   };
@@ -236,7 +236,7 @@ export function getPublicationYears() {
     stateToChange: 'published_year',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/publication_years',
+      path: 'http://localhost:8000/api/publication_years/',
       external: true,
     },
   };
@@ -249,10 +249,10 @@ export function getColectionRange() {
     stateToChange: 'collections_range',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/collections_range',
-      external: true
-    }
-  }
+      path: 'http://localhost:8000/api/collections_range/',
+      external: true,
+    },
+  };
 }
 
 export function getLanguage() {
@@ -262,13 +262,19 @@ export function getLanguage() {
     stateToChange: 'language',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/language',
-      external: true
-    }
-  }
+      path: 'http://localhost:8000/api/facets/language/',
+      external: true,
+    },
+  };
 }
 
-export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keywords = '', countries = '') {
+export function doNfiSearch(
+  page = null,
+  pageSize = null,
+  searchTerms = '',
+  keywords = '',
+  countries = '',
+) {
   let pageQuery = page ? `&page=${page}` : '';
   let pageSizeQuery = pageSize ? `&page_size=${pageSize}` : '';
   let searchTermsQuery = '';
@@ -295,12 +301,17 @@ export function doNfiSearch(page = null, pageSize = null, searchTerms = '', keyw
   if (Array.isArray(countries) && countries.length > 0) {
     countries.forEach(country => {
       countriesQuery = countriesQuery + `&country=${country}`;
-    })
+    });
   } else if (countries.length > 0) {
     countriesQuery = countriesQuery + `&country=${countries}`;
   }
   // Construct query
-  query = pageQuery + pageSizeQuery + searchTermsQuery + keywordsQuery + countriesQuery;
+  query =
+    pageQuery +
+    pageSizeQuery +
+    searchTermsQuery +
+    keywordsQuery +
+    countriesQuery;
   query = query.replace('&', '?');
   return {
     type: NFI_SEARCH,
