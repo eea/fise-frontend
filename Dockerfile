@@ -2,10 +2,14 @@
 
 FROM node:10-jessie
 
-RUN apt-get update -y
-RUN apt-get install -y git bsdmainutils vim-nox mc
+ARG NPM_CONFIG_REGISTRY
+ARG MAX_OLD_SPACE_SIZE=2048
 
-ENV NODE_OPTIONS=--max_old_space_size=4096
+ENV NODE_OPTIONS=--max_old_space_size=$MAX_OLD_SPACE_SIZE
+
+RUN apt-get update -y \
+ && apt-get install -y git bsdmainutils vim-nox mc \
+ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/frontend/
 
@@ -26,7 +30,7 @@ RUN npm install mr-developer
 RUN node_modules/.bin/mrdeveloper --config=jsconfig.json --no-config --output=addons
 
 RUN make activate-all
-RUN NPM_CONFIG_REGISTRY=http://127.0.0.1:4873 npm install
+RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install
 
 RUN make clean-addons
 RUN rm -f package-lock.json
