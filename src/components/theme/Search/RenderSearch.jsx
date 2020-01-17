@@ -17,12 +17,12 @@ const RenderSearch = ({ data, pagination }) => {
         renderContent = data.items.map((item, index) => (
           <ResultCard item={item} key={index} />
         ))
-        if (!data.selectedCountry && data.facets && data.facets.country && Object.keys(data.facets.country).length > 0) {
-          renderContent = Object.keys(data.facets.country).map(key => {
+        if (!data.selectedCountry && data.facetsData && data.facetsData.country && Object.keys(data.facetsData.country).length > 0) {
+          renderContent = Object.keys(data.facetsData.country).map(key => {
               return (
                 <div className="country" key={key}>
-                  <a onClick={() => data.handleCountrySelected(data.facets.country[key].name)}>{data.facets.country[key].name}</a>
-                  <span className="count"> {'(' + data.facets.country[key].number + ')'}</span>
+                  <a onClick={() => data.handleCountrySelected(data.facetsData.country[key].name)}>{data.facetsData.country[key].name}</a>
+                  <span className="count"> {'(' + data.facetsData.country[key].number + ')'}</span>
                 </div>
               )
           })
@@ -37,7 +37,7 @@ const RenderSearch = ({ data, pagination }) => {
             </div>
           )
           renderFooter = ''
-        } else if (data.selectedCountry && data.facets && data.facets.country && Object.keys(data.facets.country).length > 0) {
+        } else if (data.selectedCountry && data.facetsData && data.facetsData.country && Object.keys(data.facetsData.country).length > 0) {
           renderFooter = (<RenderPagination pagination={pagination} />)
         }
     }

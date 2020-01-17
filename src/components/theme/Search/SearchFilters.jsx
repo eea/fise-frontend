@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { BodyClass } from '@plone/volto/helpers';
-import {
-  Checkbox,
-  Dropdown,
-  Segment,
-  Container,
-  Label,
-} from 'semantic-ui-react';
+import { Checkbox, Dropdown, Label, Container } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Slider } from 'react-semantic-ui-range';
 import backgroundGraph from './assets/search-date-graph.png';
@@ -22,7 +16,22 @@ const countriesOptions = [
   },
 ];
 
-const SearchFilters = ({ data, activeTab }) => {
+const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+const createCheckboxFacet = (data, facet) => {
+  return Object.keys(data.facetsData[facet]).map(filter => {
+    const label = capitalize(data.facetsData[facet][filter].name);
+    const value = data.facetsData[facet][filter].name;
+    const number = data.facetsData[facet][filter].number;
+    const key = data.facetsData[facet][filter].id;
+    return  (<Checkbox className="checkbox"  key={key} checked={data.selectedFilters[facet].includes(`&${facet}=${value}`)} value={value} name={facet} label={label} onChange={(event, checkbox) => data.handleFilterSelected(checkbox)} />)
+  })
+}
+
+const SearchFilters = ({ data }) => {
   const [multipleValues, setMultipleValues] = useState([1950, 2018]);
 
   const settings = {
@@ -35,35 +44,29 @@ const SearchFilters = ({ data, activeTab }) => {
     },
   };
 
+  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet;
+  if (data.facetsData && data.selectedFilters && Object.keys(data.selectedFilters).length > 0) {
+    renderTopicsFacet = createCheckboxFacet(data, 'topic_category');
+    renderNutsLevelFacet = createCheckboxFacet(data, 'nuts_level');
+  } else {
+    renderTopicsFacet = '';
+    renderNutsLevelFacet = '';
+  }
+
   return (
     <div className="filters-container">
       <BodyClass />
       <div className="filters-head">
         <h3 className="header">FILTERS</h3>
-        <h5 className="clear-filters">CLEAR</h5>
+        <h5 className="clear-filters" onClick={data.handleClearFilters}>CLEAR</h5>
       </div>
       <div className="filters-area">
-        <h3>Topics</h3>
+      <h3>Topics</h3>
         <div className="checkbox-area">
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="All" />
-            <Checkbox className="checkbox" label="Damage" />
-            <Checkbox className="checkbox" label="Area" />
-            <Checkbox className="checkbox" label="Growing Stock" />
-          </div>
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="Biomass" />
-            <Checkbox className="checkbox" label="Carbon Stock" />
-            <Checkbox className="checkbox" label="Protection" />
-            <Checkbox className="checkbox" label="Felling" />
-          </div>
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="Deadwood" />
-            <Checkbox className="checkbox" label="Land-Cover" />
-          </div>
+          {renderTopicsFacet}
         </div>
       </div>
-      {activeTab === 0 && (
+      {data.id === 'portal' && (
         <div className="filters-area">
           <h3>Countries and regions</h3>
           <Dropdown
@@ -81,21 +84,10 @@ const SearchFilters = ({ data, activeTab }) => {
       <div className="filters-area">
         <h3>NUTS Level</h3>
         <div className="checkbox-area">
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="Level 0" />
-            <Checkbox className="checkbox" label="Level 3" />
-          </div>
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="Level 1" />
-            <Checkbox className="checkbox" label="Level 4" />
-          </div>
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="Level 2" />
-            <Checkbox className="checkbox" label="Level 5" />
-          </div>
+          {renderNutsLevelFacet}
         </div>
       </div>
-      {activeTab === 0 && (
+      {data.id === 'portal' && (
         <div className="filters-area">
           <h3>Collection method</h3>
           <div className="checkbox-area collection">
@@ -149,7 +141,7 @@ const SearchFilters = ({ data, activeTab }) => {
           </div>
           <div className="slider-labels">
             {multipleValues.map((value, i) => (
-              <Label color="transparent" key={i}>
+              <Label key={i}>
                 {value}
               </Label>
             ))}

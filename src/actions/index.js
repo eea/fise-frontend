@@ -274,6 +274,7 @@ export function doNfiSearch(
   searchTerms = '',
   keywords = '',
   countries = '',
+  customQuery = ''
 ) {
   let pageQuery = page ? `&page=${page}` : '';
   let pageSizeQuery = pageSize ? `&page_size=${pageSize}` : '';
@@ -311,7 +312,8 @@ export function doNfiSearch(
     pageSizeQuery +
     searchTermsQuery +
     keywordsQuery +
-    countriesQuery;
+    countriesQuery +
+    customQuery;
   query = query.replace('&', '?');
   return {
     type: NFI_SEARCH,

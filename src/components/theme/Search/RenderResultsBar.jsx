@@ -55,9 +55,9 @@ const RenderResultsBar = ({ pagination, data }) => {
   );
 
   if (data.id === 'nfi') {
-    if (data.selectedCountry && data.facets && data.facets.country && Object.keys(data.facets.country).length > 0) {
-      let countries = Object.keys(data.facets.country).map(key => {
-        return { key: data.facets.country[key].id, text: data.facets.country[key].name, value: data.facets.country[key].name }
+    if (data.selectedCountry && data.facetsData && data.facetsData.country && Object.keys(data.facetsData.country).length > 0) {
+      let countries = Object.keys(data.facetsData.country).map(key => {
+        return { key: data.facetsData.country[key].id, text: data.facetsData.country[key].name, value: data.facetsData.country[key].name }
       })
       countries.unshift({ key: 0, text: 'No country', value: '' })
       renderResultsBar = (

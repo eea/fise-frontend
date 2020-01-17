@@ -59,9 +59,7 @@ export const nfi = (state = initialState, action = {}) => {
         loading: false,
         loaded: true
       };
-      if (action.stateToChange === 'country') {
-        newState[action.stateToChange] = action.result.sort(dynamicSort('name'));
-      } else if (action.stateToChange === 'published_year') {
+     if (action.stateToChange === 'published_year') {
         newState[action.stateToChange] = action.result.map(item => { return { id: item, name: item + '' } });
       } else if (action.stateToChange === 'collections_range') {
         const max = action.result.max;
@@ -69,6 +67,8 @@ export const nfi = (state = initialState, action = {}) => {
         const result = Array.from({ length: max + 1 - min }, (v, k) => { return { id: k + min, name: k + min + ''} });
 
         newState[action.stateToChange] = result;
+      } else if (Array.isArray(action.result) && action.result.length > 0 && action.result[0].name) {
+        newState[action.stateToChange] = action.result.sort(dynamicSort('name'));
       } else {
         newState[action.stateToChange] = action.result;
       }

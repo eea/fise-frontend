@@ -134,6 +134,7 @@ class Search extends Component {
     activeTab: 0,
     selectedKeywords: [],
     nfiSelectedCountry: '',
+    nfiSelectedFilters: {},
     keywords: [],
     pagination: {
       page: 1,
@@ -260,16 +261,9 @@ class Search extends Component {
     );
   };
 
-  doNfiSearch = (
-    page = null,
-    pageSize = null,
-    searchTerms = '',
-    keywords = '',
-    countries = '',
-  ) => {
-    this.props.setLoader(true);
-    return this.props
-      .doNfiSearch(page, pageSize, searchTerms, keywords, countries)
+  doNfiSearch = (page = null, pageSize = null, searchTerms = '', keywords = '', countries = '', customQuery = '') => {
+    this.props.setLoader(true)
+    return this.props.doNfiSearch(page, pageSize, searchTerms, keywords, countries, customQuery)
       .then(() => {
         if (!this.state.dataReady) {
           this.setState({ dataReady: true });
@@ -296,6 +290,14 @@ class Search extends Component {
         });
     });
   };
+
+  initiateSelectedFilters = () => {
+    let nfiSelectedFilters = {}
+    Object.keys(this.state.facetsData).forEach(key => {
+      nfiSelectedFilters[key] = ''
+    })
+    this.setState({ nfiSelectedFilters });
+  }
 
   addHashTagAndDoNfiSearch = (hash, isEvent) => {
     if (isEvent) {
@@ -356,12 +358,14 @@ class Search extends Component {
     let keywords = [];
     let searchTerms = [];
     let countries = [];
-    let originalKeywords = this.props.originalKeywords.map(
-      keyword => keyword.value,
-    );
+    let customQuery = '';
+    let originalKeywords = this.props.originalKeywords.map(keyword => keyword.value);
 
     if (this.state.activeTab === 1) {
-      countries = this.state.nfiSelectedCountry;
+      countries = this.state.nfiSelectedCountry
+      Object.keys(this.state.nfiSelectedFilters).forEach(filter => { 
+        customQuery += this.state.nfiSelectedFilters[filter]
+      })
     }
 
     this.state.selectedKeywords.forEach(selectedKeyword => {
@@ -373,9 +377,9 @@ class Search extends Component {
       }
     });
     if (!page) page = this.state.pagination.page;
-    if (!pageSize) pageSize = this.state.pagination.selectedItemsPerPage;
-    return this.doNfiSearch(page, pageSize, searchTerms, keywords, countries);
-  };
+    if (!pageSize) pageSize = this.state.pagination.selectedItemsPerPage
+    return this.doNfiSearch(page, pageSize, searchTerms, keywords, countries, customQuery)
+  }
 
   handleTabChange = (event, data) => {
     this.setState({
@@ -404,14 +408,30 @@ class Search extends Component {
   };
 
   // NFI
-  handleCountrySelected = country => {
-    this.setState(
-      {
-        nfiSelectedCountry: country,
-      },
-      this.handleNfiSearch,
-    );
-  };
+  handleCountrySelected = (country) => {
+    this.setState({
+      nfiSelectedCountry: country
+    }, this.handleNfiSearch)
+  }
+  
+  handleFilterSelected = (data) => {
+    const query = `&${data.name}=${data.value}` 
+    let nfiSelectedFilters = {...this.state.nfiSelectedFilters};
+    if (data.checked && !nfiSelectedFilters[data.name].includes(query)) {
+      nfiSelectedFilters[data.name] += query;
+    } else if(!data.checked && nfiSelectedFilters[data.name].includes(query)) {
+      nfiSelectedFilters[data.name] = nfiSelectedFilters[data.name].replace(query, '');
+    }
+    this.setState({ nfiSelectedFilters });
+  }
+
+  handleClearFilters = () => {
+    let nfiSelectedFilters = {}
+    Object.keys(this.state.nfiSelectedFilters).forEach(filter =>{
+      nfiSelectedFilters[filter] = ''
+    })
+    this.setState({ nfiSelectedFilters })
+  }
 
   // FACETS
   makeFacets = () => {
@@ -430,11 +450,8 @@ class Search extends Component {
           };
         });
 
-        const facetsData = this.composeFacets(
-          facetEntities,
-          this.props.nfiSearch.facets,
-        );
-        this.setState({ facetsData });
+        const facetsData = this.composeFacets(facetEntities, this.props.nfiSearch.facets) 
+        this.setState({ facetsData }, this.initiateSelectedFilters);
       })
       .catch(error => {
         console.log(error);
@@ -494,13 +511,22 @@ class Search extends Component {
       portalData: {
         id: 'portal',
         items: this.props.items,
+        facets: this.state.facets,
+        facetsData: this.state.facetsData,
+        selectedFilters: this.state.nfiSelectedFilters,
+        handleFilterSelected: this.handleFilterSelected,
+        handleClearFilters: this.handleClearFilters
       },
       nfiData: {
         id: 'nfi',
         items: this.props.nfiSearch.results,
-        facets: this.state.facetsData,
+        facets: this.state.facets,
+        facetsData: this.state.facetsData,
         selectedCountry: this.state.nfiSelectedCountry,
+        selectedFilters: this.state.nfiSelectedFilters,
         handleCountrySelected: this.handleCountrySelected,
+        handleFilterSelected: this.handleFilterSelected,
+        handleClearFilters: this.handleClearFilters
       },
       pagination:
         this.state.activeTab === 1
@@ -512,8 +538,13 @@ class Search extends Component {
           : null,
     };
     const loader = <h1>Loading data...</h1>;
-    const multiselect =
-      this.state.activeTab === 1 ? (
+    let multiselect, searchFilters;
+
+    if (this.state.activeTab === 0) {
+      multiselect = ''
+      searchFilters = (<SearchFilters data={context.portalData} />);
+    } else if (this.state.activeTab === 1) {
+      multiselect = (
         <div className="multiselect-container">
           <Dropdown
             placeholder="Type..."
@@ -533,27 +564,31 @@ class Search extends Component {
             Search
           </Button>
         </div>
-      ) : (
-        ''
       );
+      searchFilters = (<SearchFilters data={context.nfiData} />);
+    } else if (this.state.activeTab === 2) {
+      multiselect = '';
+      searchFilters = '';
+    }
+
     const ui = (
       <Container>
         <Helmet title="Search" />
         <div className="search-page-content">
           <BodyClass />
-          {multiselect}
-          <Tab
-            className="tabs-container"
-            activeIndex={this.state.activeTab}
-            menu={{
-              compact: true,
-              attached: false,
-              tabular: false,
-            }}
-            panes={panes(context)}
-            onTabChange={this.handleTabChange}
-          />
-          <SearchFilters data={context} activeTab={this.state.activeTab} />
+            {multiselect}
+            <Tab
+              className="tabs-container"
+              activeIndex={this.state.activeTab}
+              menu={{
+                compact: true,
+                attached: false,
+                tabular: false,
+              }}
+              panes={panes(context)}
+              onTabChange={this.handleTabChange}
+            />
+            {searchFilters}
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar

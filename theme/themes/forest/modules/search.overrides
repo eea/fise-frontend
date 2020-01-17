@@ -223,17 +223,17 @@
         margin-top: 15px;
         border-bottom: 1px solid #D4D4D5;
         padding-bottom: 25px;
-        // .ui.segment, .ui.container {
-        //     box-shadow: none;
-        //     border: none;
-        //     margin: 0;
-        //     padding: 0;
-        // }
     }
 
     .checkbox-area {
         display: flex;
-        justify-content: space-between;
+    }
+
+    .checkbox-area:not(.collection) {
+        flex-wrap: wrap;
+        .checkbox  {
+            width: 33.3%;
+        }
     }
 
     .checkbox-column {
