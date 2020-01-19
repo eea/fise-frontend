@@ -211,7 +211,9 @@
 /*--- Colored Border ---*/
 // Pastanaga custom borders colors
 @greyBorderColor      : #C7D5D8; // breadcrumbs border
-@lightGreyBorderColor : #EDF1F2; // breadcrumbs background
+@lightGreyBorderColor : #E0E1E0; // breadcrumbs background
+@blocksBorderGreen: #226622;
+
 
 /*-------------------
      Alpha Colors
