@@ -31,6 +31,11 @@ class View extends Component {
                 {this.props.data?.columns?.totalText?.value}
               </div>
             </div>
+            <div>
+              <a className="discreet" href={this.props.data.chart_source_link}>
+                {this.props.data.chart_source}
+              </a>
+            </div>
           </div>
         </div>
       </div>

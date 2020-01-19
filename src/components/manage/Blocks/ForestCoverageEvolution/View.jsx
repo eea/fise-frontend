@@ -32,6 +32,13 @@ const EmbedChartView = props => {
               </a>
             </div>
           </Grid.Column>
+          <Grid.Column width={12}>
+            <div>
+              <a className="discreet" href={props.data.chart_source_link}>
+                {props.data.chart_source}
+              </a>
+            </div>
+          </Grid.Column>
         </Grid>
       </div>
     </div>

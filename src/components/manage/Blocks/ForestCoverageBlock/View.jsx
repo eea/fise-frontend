@@ -32,6 +32,11 @@ const View = props => {
               </span>
             </div>
           </div>
+          <div>
+            <a className="discreet" href={props.data.chart_source_link}>
+              {props.data.chart_source}
+            </a>
+          </div>
         </div>
       </div>
     </div>
