@@ -52,7 +52,6 @@ const withObjectBrowser = WrappedComponent =>
     closeObjectBrowser = () => this.setState({ isObjectBrowserOpen: false });
 
     render() {
-      console.log('object browser');
       return (
         <>
           <WrappedComponent
