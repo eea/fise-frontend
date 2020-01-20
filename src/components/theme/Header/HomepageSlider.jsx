@@ -14,16 +14,7 @@ import right from '@plone/volto/icons/right-key.svg';
 
 import 'react-image-gallery/styles/css/image-gallery.css';
 
-import Loadable from 'react-loadable';
-
-const ImageGallery = Loadable({
-  loader: () => import('react-image-gallery'),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
-
-
+import ImageGallery from 'react-image-gallery';
 
 // function SampleNextArrow(props) {
 //   const { onClick } = props;
