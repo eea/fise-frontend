@@ -460,7 +460,7 @@ class Search extends Component {
     Object.keys(this.state.nfiSelectedFilters).forEach(filter => {
       nfiSelectedFilters[filter] = '';
     });
-    this.setState({ nfiSelectedFilters });
+    this.setState({ nfiSelectedFilters }, this.handleNfiSearch);
   };
 
   // FACETS
