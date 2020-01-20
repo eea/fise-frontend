@@ -41,20 +41,63 @@ const createCheckboxFacet = (data, facet) => {
   });
 };
 
-const SearchFilters = ({ data }) => {
+const createSliderFacet = (data) => {
+
   const [multipleValues, setMultipleValues] = useState([1950, 2018]);
+  const range = Object.keys(data.facetsData["collections_range"]).map(year => parseInt(year));
 
   const settings = {
-    start: [1950, 2019],
-    min: 1920,
-    max: 2100,
+    start: [1920, 2019],
+    min: range[0],
+    max: range[range.length - 1],
     step: 1,
     onChange: value => {
+      const name = "published_year__range"
+      const rangeValue = `${value[0]}__${value[1]}`
+      const slider ={
+        name,
+        value: rangeValue
+      }
       setMultipleValues(value);
+      data.handleFilterSelected(slider)
     },
   };
+  return (
+    <React.Fragment>
+      <div
+        style={{
+          backgroundImage: `url(${backgroundGraph})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          paddingTop: '70px',
+        }}
+      >
+        <Slider
+          style={{
+            paddingTop: '10px',
+            marginBottom: '10px',
+            inner: { margin: '0' },
+          }}
+          discrete
+          multiple
+          color="red"
+          settings={settings}
+        />
+      </div>
+      <div className="slider-labels">
+        {multipleValues.map((value, i) => (
+          <Label key={i}>{value}</Label>
+        ))}
+      </div>
+    </React.Fragment>
+  )
+}
 
-  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet, renderResultsFormat;
+const SearchFilters = ({ data }) => {
+
+
+  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet, renderResultsFormat, renderYearSlider;
   if (
     data.facetsData &&
     data.selectedFilters &&
@@ -63,10 +106,12 @@ const SearchFilters = ({ data }) => {
     renderTopicsFacet = createCheckboxFacet(data, 'topic_category');
     renderNutsLevelFacet = createCheckboxFacet(data, 'nuts_level');
     renderResultsFormat = createCheckboxFacet(data, 'resource_type');
+    renderYearSlider = createSliderFacet(data)
   } else {
     renderTopicsFacet = '';
     renderNutsLevelFacet = '';
     renderResultsFormat = '';
+    renderYearSlider = '';
   }
 
   return (
@@ -132,32 +177,7 @@ const SearchFilters = ({ data }) => {
       <div className="filters-area">
         <h3>Published year</h3>
         <Container>
-          <div
-            style={{
-              backgroundImage: `url(${backgroundGraph})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              paddingTop: '70px',
-            }}
-          >
-            <Slider
-              style={{
-                paddingTop: '10px',
-                marginBottom: '10px',
-                inner: { margin: '0' },
-              }}
-              discrete
-              multiple
-              color="red"
-              settings={settings}
-            />
-          </div>
-          <div className="slider-labels">
-            {multipleValues.map((value, i) => (
-              <Label key={i}>{value}</Label>
-            ))}
-          </div>
+          {renderYearSlider}
         </Container>
       </div>
       <div className="filters-area">
