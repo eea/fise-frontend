@@ -31,7 +31,10 @@ class View extends Component {
             </div>
           </div>
           <div>
-            <a className="discreet" href={this.props.data.chart_source_link}>
+            <a
+              className="discreet block_source"
+              href={this.props.data.chart_source_link}
+            >
               {this.props.data.chart_source}
             </a>
           </div>

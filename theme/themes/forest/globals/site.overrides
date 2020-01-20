@@ -1145,6 +1145,10 @@ body {
 
 @purple: #753852;
 
+.block_source {
+  padding: 1rem;
+}
+
 // General
 .block-container {
   padding: 10px;
