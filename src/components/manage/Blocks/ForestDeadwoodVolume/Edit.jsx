@@ -22,7 +22,7 @@ const SCHEMA = {
 const Edit = props => {
   // data is like {provider_url: '', columns: {key: {value, format}}}
   return (
-    <div className="block-container">
+    <div>
       <EditBlock
         onChange={data => {
           props.onChangeBlock(props.block, {

@@ -40,6 +40,9 @@
 }
 
 .navigation {
+    .ui.secondary.pointing.menu .item {
+        transition: none!important;
+    }
     .menu {
         transition: none!important;
         .firstLevel {

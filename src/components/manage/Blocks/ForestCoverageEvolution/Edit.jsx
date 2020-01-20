@@ -122,7 +122,6 @@ class ForestCoverageEvolution extends Component {
           <UiForm>
             <Segment.Group horizontal>
               <Segment style={{ maxWidth: '40%' }}>
-                <div className="block-container">
                   {/* <EditBlock
                     onChange={data => {
                       this.props.onChangeBlock(this.props.block, {
@@ -137,7 +136,6 @@ class ForestCoverageEvolution extends Component {
                     selected={this.props.selected}
                   /> */}
                   <ViewConnectedValue {...this.props} />
-                </div>
               </Segment>
               <Segment secondary={this.state.activeEditorSegment === 0}>
                 {this.props.data?.chartData && (

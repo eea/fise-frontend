@@ -102,7 +102,7 @@
     }
 
     .slide-overlay {
-      display: none;
+      border-bottom: none;
     }
 
     .image-gallery-left-nav {
