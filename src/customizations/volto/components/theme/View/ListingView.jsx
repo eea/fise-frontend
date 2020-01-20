@@ -21,6 +21,7 @@ import {
   hasBlocksData,
 } from '@plone/volto/helpers';
 import { samePath } from 'volto-mosaic/helpers';
+import Spinner from 'volto-mosaic/components/theme/Spinner';
 
 class ListingView extends Component {
   static propTypes = {
@@ -91,7 +92,7 @@ class ListingView extends Component {
       samePath(currentUrl, this.props.pathname)
         ? true
         : false;
-    if (!shouldRenderRoutes) return '';
+    if (!shouldRenderRoutes) return <Spinner />;
 
     let pageTemplate = hasBlocksData(content) ? (
       <div id="page-document">

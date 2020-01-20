@@ -22,6 +22,7 @@ import {
 } from '@plone/volto/helpers';
 import { samePath } from 'volto-mosaic/helpers';
 import { connect } from 'react-redux';
+import Spinner from 'volto-mosaic/components/theme/Spinner';
 
 // const messages = defineMessages({
 //   unknownBlock: {
@@ -47,7 +48,7 @@ const DefaultView = props => {
       ? true
       : false;
 
-  if (!shouldRenderRoutes) return '';
+  if (!shouldRenderRoutes) return <Spinner />;
   return (
     <Grid columns="equal">
       {renderPortletManager('plone.leftcolumn', 3, { ...props })}

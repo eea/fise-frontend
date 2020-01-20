@@ -1496,3 +1496,177 @@ body {
 .sidebar-container-enter-done .ui.segment.object-listing {
   max-height: calc(100vh - 95px);
 }
+
+#floatBarsG {
+  position: relative;
+  width: 120px;
+  height: 14px;
+  margin: auto;
+}
+
+.floatBarsG {
+  position: absolute;
+  top: 0;
+  background-color: rgb(34, 85, 17);
+  width: 14px;
+  height: 14px;
+  animation-name: bounce_floatBarsG;
+  -o-animation-name: bounce_floatBarsG;
+  -ms-animation-name: bounce_floatBarsG;
+  -webkit-animation-name: bounce_floatBarsG;
+  -moz-animation-name: bounce_floatBarsG;
+  animation-duration: 1.105s;
+  -o-animation-duration: 1.105s;
+  -ms-animation-duration: 1.105s;
+  -webkit-animation-duration: 1.105s;
+  -moz-animation-duration: 1.105s;
+  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-direction: normal;
+  -o-animation-direction: normal;
+  -ms-animation-direction: normal;
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+  transform: scale(.3);
+  -o-transform: scale(.3);
+  -ms-transform: scale(.3);
+  -webkit-transform: scale(.3);
+  -moz-transform: scale(.3);
+}
+
+#floatBarsG_1 {
+  left: 0;
+  animation-delay: 0.446s;
+  -o-animation-delay: 0.446s;
+  -ms-animation-delay: 0.446s;
+  -webkit-animation-delay: 0.446s;
+  -moz-animation-delay: 0.446s;
+}
+
+#floatBarsG_2 {
+  left: 15px;
+  animation-delay: 0.5525s;
+  -o-animation-delay: 0.5525s;
+  -ms-animation-delay: 0.5525s;
+  -webkit-animation-delay: 0.5525s;
+  -moz-animation-delay: 0.5525s;
+}
+
+#floatBarsG_3 {
+  left: 30px;
+  animation-delay: 0.659s;
+  -o-animation-delay: 0.659s;
+  -ms-animation-delay: 0.659s;
+  -webkit-animation-delay: 0.659s;
+  -moz-animation-delay: 0.659s;
+}
+
+#floatBarsG_4 {
+  left: 45px;
+  animation-delay: 0.7755s;
+  -o-animation-delay: 0.7755s;
+  -ms-animation-delay: 0.7755s;
+  -webkit-animation-delay: 0.7755s;
+  -moz-animation-delay: 0.7755s;
+}
+
+#floatBarsG_5 {
+  left: 60px;
+  animation-delay: 0.882s;
+  -o-animation-delay: 0.882s;
+  -ms-animation-delay: 0.882s;
+  -webkit-animation-delay: 0.882s;
+  -moz-animation-delay: 0.882s;
+}
+
+#floatBarsG_6 {
+  left: 75px;
+  animation-delay: 0.9985s;
+  -o-animation-delay: 0.9985s;
+  -ms-animation-delay: 0.9985s;
+  -webkit-animation-delay: 0.9985s;
+  -moz-animation-delay: 0.9985s;
+}
+
+#floatBarsG_7 {
+  left: 90px;
+  animation-delay: 1.105s;
+  -o-animation-delay: 1.105s;
+  -ms-animation-delay: 1.105s;
+  -webkit-animation-delay: 1.105s;
+  -moz-animation-delay: 1.105s;
+}
+
+#floatBarsG_8 {
+  left: 105px;
+  animation-delay: 1.2115s;
+  -o-animation-delay: 1.2115s;
+  -ms-animation-delay: 1.2115s;
+  -webkit-animation-delay: 1.2115s;
+  -moz-animation-delay: 1.2115s;
+}
+
+
+
+@keyframes bounce_floatBarsG {
+  0% {
+    transform: scale(1);
+    background-color: rgb(34, 85, 17);
+  }
+
+  100% {
+    transform: scale(.3);
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@-o-keyframes bounce_floatBarsG {
+  0% {
+    -o-transform: scale(1);
+    background-color: rgb(34, 85, 17);
+  }
+
+  100% {
+    -o-transform: scale(.3);
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@-ms-keyframes bounce_floatBarsG {
+  0% {
+    -ms-transform: scale(1);
+    background-color: rgb(34, 85, 17);
+  }
+
+  100% {
+    -ms-transform: scale(.3);
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@-webkit-keyframes bounce_floatBarsG {
+  0% {
+    -webkit-transform: scale(1);
+    background-color: rgb(34, 85, 17);
+  }
+
+  100% {
+    -webkit-transform: scale(.3);
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@-moz-keyframes bounce_floatBarsG {
+  0% {
+    -moz-transform: scale(1);
+    background-color: rgb(34, 85, 17);
+  }
+
+  100% {
+    -moz-transform: scale(.3);
+    background-color: rgb(255, 255, 255);
+  }
+}
