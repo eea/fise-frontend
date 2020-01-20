@@ -78,6 +78,7 @@ const DefaultView = props => {
                 ''
               );
             })}
+            <div id="forest-metadata-slot">{''}</div>
           </div>
         ) : (
           <Container id="page-document">
@@ -109,6 +110,7 @@ const DefaultView = props => {
                 }}
               />
             )}
+            <div id="forest-metadata-slot">{''}</div>
           </Container>
         )}
       </Grid.Column>

@@ -22,8 +22,8 @@ const ForestMetadata = props => {
   } = (props && props.content) || {};
 
   return (
-    (__CLIENT__ && document.getElementById('view') && (
-      <Portal node={document.getElementById('view')}>
+    (__CLIENT__ && document.getElementById('forest-metadata-slot') && (
+      <Portal node={document.getElementById('forest-metadata-slot')}>
         <Grid columns={2} className="page_metadata">
           <Grid.Column width={3}>
             {nuts_level && nuts_level.length > 0 && (
