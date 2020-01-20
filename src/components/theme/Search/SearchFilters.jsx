@@ -54,7 +54,7 @@ const SearchFilters = ({ data }) => {
     },
   };
 
-  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet;
+  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet, renderResultsFormat;
   if (
     data.facetsData &&
     data.selectedFilters &&
@@ -62,9 +62,11 @@ const SearchFilters = ({ data }) => {
   ) {
     renderTopicsFacet = createCheckboxFacet(data, 'topic_category');
     renderNutsLevelFacet = createCheckboxFacet(data, 'nuts_level');
+    renderResultsFormat = createCheckboxFacet(data, 'resource_type');
   } else {
     renderTopicsFacet = '';
     renderNutsLevelFacet = '';
+    renderResultsFormat = '';
   }
 
   return (
@@ -161,17 +163,11 @@ const SearchFilters = ({ data }) => {
       <div className="filters-area">
         <h3>Results Format</h3>
         <div className="checkbox-area">
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="Tablular Data" />
-            <Checkbox className="checkbox" label="PDF Document" />
-          </div>
-          <div className="checkbox-column">
-            <Checkbox className="checkbox" label="Documentation" />
-            <Checkbox className="checkbox" label="Article" />
-          </div>
+          {renderResultsFormat}
         </div>
       </div>
     </div>
+
   );
 };
 
