@@ -68,7 +68,8 @@ export const nfi = (state = initialState, action = {}) => {
 
         newState[action.stateToChange] = result;
       } else if (Array.isArray(action.result) && action.result.length > 0 && action.result[0].name) {
-        newState[action.stateToChange] = action.result.sort(dynamicSort('name'));
+        const result = action.result.sort(dynamicSort('name'));
+        newState[action.stateToChange] = result;
       } else {
         newState[action.stateToChange] = action.result;
       }

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { BodyClass } from '@plone/volto/helpers';
-import { Checkbox, Dropdown, Label, Container } from 'semantic-ui-react';
+import { Checkbox, Dropdown, Grid, Segment, Label } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import { Slider } from 'react-semantic-ui-range';
-import backgroundGraph from './assets/search-date-graph.png';
+import { Range, getTrackBackground } from 'react-range';
 
 const countriesOptions = [
   {
@@ -35,69 +34,130 @@ const createCheckboxFacet = (data, facet) => {
         value={value}
         name={facet}
         label={label}
-        onChange={(event, checkbox) => data.handleFilterSelected(checkbox)}
+        onChange={(event, checkbox) => {
+          const query = `&${checkbox.name}=${checkbox.value}`;
+          data.handleFilterSelected(checkbox, 'checkbox', query)
+        }}
       />
     );
   });
 };
 
-const createSliderFacet = (data) => {
+const createSliderFacet = (data, facet) => {
+  const yearsRange = Object.keys(data.facetsData[facet]).map(item => parseInt(data.facetsData[facet][item].name));
+  const countRange = Object.keys(data.facetsData[facet]).map(item => parseInt(data.facetsData[facet][item].number));
 
-  const [multipleValues, setMultipleValues] = useState([1950, 2018]);
-  const range = Object.keys(data.facetsData["collections_range"]).map(year => parseInt(year));
+  const STEP = 1;
+  const MIN = yearsRange[0];
+  const MAX = yearsRange[yearsRange.length - 1];
 
-  const settings = {
-    start: [1920, 2019],
-    min: range[0],
-    max: range[range.length - 1],
-    step: 1,
-    onChange: value => {
-      const name = "published_year__range"
-      const rangeValue = `${value[0]}__${value[1]}`
-      const slider ={
-        name,
-        value: rangeValue
-      }
-      setMultipleValues(value);
-      data.handleFilterSelected(slider)
-    },
-  };
+  const minCount = countRange[0];
+  const maxCount = countRange[countRange.length - 1];
+
+  const [values, setValues] = useState([MIN, MAX]);
+
   return (
-    <React.Fragment>
-      <div
-        style={{
-          backgroundImage: `url(${backgroundGraph})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          paddingTop: '70px',
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap'
+      }}
+    >
+      <Range
+        values={values}
+        step={STEP}
+        min={MIN}
+        max={MAX}
+        onChange={values => setValues(values)}
+        onFinalChange={values => {
+          let query = ''
+          if (values[0] > MIN || values[1] < MAX) {
+            if (data.facets[facet].facetNames.length === 2) {
+              query = `&${data.facets[facet].facetNames[0]}=${values[0]}&${data.facets[facet].facetNames[1]}=${values[1]}`
+            } else if (data.facets[facet].facetNames.length === 1) {
+              query = `&${data.facets[facet].facetNames}=${values[0]}__${values[1]}`
+            }
+          }
+          data.handleFilterSelected({ name: facet }, 'slider', query)
         }}
-      >
-        <Slider
-          style={{
-            paddingTop: '10px',
-            marginBottom: '10px',
-            inner: { margin: '0' },
-          }}
-          discrete
-          multiple
-          color="red"
-          settings={settings}
-        />
-      </div>
-      <div className="slider-labels">
-        {multipleValues.map((value, i) => (
-          <Label key={i}>{value}</Label>
-        ))}
-      </div>
-    </React.Fragment>
-  )
+        renderTrack={({ props, children }) => (
+          <div
+            onMouseDown={props.onMouseDown}
+            onTouchStart={props.onTouchStart}
+            style={{
+              ...props.style,
+              height: '36px',
+              display: 'flex',
+              width: '100%'
+            }}
+          >
+            <div
+              ref={props.ref}
+              style={{
+                height: '5px',
+                width: '100%',
+                borderRadius: '4px',
+                background: getTrackBackground({
+                  values: values,
+                  colors: ['#ccc', '#548BF4', '#ccc'],
+                  min: MIN,
+                  max: MAX
+                }),
+                alignSelf: 'center'
+              }}
+            >
+              {children}
+            </div>
+          </div>
+        )}
+        renderThumb={({ index, props, isDragged }) => (
+          <div
+            {...props}
+            style={{
+              ...props.style,
+              height: '42px',
+              width: '42px',
+              borderRadius: '4px',
+              backgroundColor: '#FFF',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              boxShadow: '0px 2px 6px #AAA'
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: '-28px',
+                color: '#fff',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
+                padding: '4px',
+                borderRadius: '4px',
+                backgroundColor: '#548BF4'
+              }}
+            >
+              {values[index]}
+            </div>
+            <div
+              style={{
+                height: '16px',
+                width: '5px',
+                backgroundColor: isDragged ? '#548BF4' : '#CCC'
+              }}
+            />
+          </div>
+        )}
+      />
+    </div>
+  );
+
 }
 
 const SearchFilters = ({ data }) => {
-
-
-  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet, renderResultsFormat, renderYearSlider;
+  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet, renderResultsFormat, renderPublishedYear, renderCollectionsRange;
   if (
     data.facetsData &&
     data.selectedFilters &&
@@ -106,12 +166,14 @@ const SearchFilters = ({ data }) => {
     renderTopicsFacet = createCheckboxFacet(data, 'topic_category');
     renderNutsLevelFacet = createCheckboxFacet(data, 'nuts_level');
     renderResultsFormat = createCheckboxFacet(data, 'resource_type');
-    renderYearSlider = createSliderFacet(data)
+    renderPublishedYear = createSliderFacet(data, 'published_year');
+    renderCollectionsRange = createSliderFacet(data, 'collections_range');
   } else {
     renderTopicsFacet = '';
     renderNutsLevelFacet = '';
     renderResultsFormat = '';
-    renderYearSlider = '';
+    renderPublishedYear = '';
+    renderCollectionsRange = '';
   }
 
   return (
@@ -176,9 +238,11 @@ const SearchFilters = ({ data }) => {
       )}
       <div className="filters-area">
         <h3>Published year</h3>
-        <Container>
-          {renderYearSlider}
-        </Container>
+        {renderPublishedYear}
+      </div>
+      <div className="filters-area">
+        <h3>Collections range</h3>
+        {renderCollectionsRange}
       </div>
       <div className="filters-area">
         <h3>Results Format</h3>

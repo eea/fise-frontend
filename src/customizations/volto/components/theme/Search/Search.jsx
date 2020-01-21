@@ -69,7 +69,16 @@ const panes = context => {
         );
       },
     },
-    { menuItem: 'Regional / International data' },
+    { menuItem: 'Regional / International data',
+      render: () => {
+        return (
+          <RenderSearch
+            data={context.nfiData ? context.nfiData : {}}
+            pagination={context.pagination}
+          />
+        );
+      },
+    },
   ];
 };
 
@@ -132,9 +141,11 @@ class Search extends Component {
   state = {
     dataReady: true,
     activeTab: 0,
+    defaultRegions: [ 29, 27, 55 ],
     selectedKeywords: [],
+    selectedFilters: {},
     nfiSelectedCountry: '',
-    nfiSelectedFilters: {},
+    nfiSelectedRegion: '',
     keywords: [],
     pagination: {
       page: 1,
@@ -156,14 +167,14 @@ class Search extends Component {
       published_year: {
         entityName: queryParams.published_year,
         getFunction: this.props.getPublicationYears,
-        facetNames: [queryParams.published_year],
+        facetNames: [queryParams.published_year_range],
       },
       collections_range: {
         entityName: queryParams.collections_range,
         getFunction: this.props.getColectionRange,
         facetNames: [
-          queryParams.data_collection_end_year,
-          queryParams.data_collection_start_year,
+          queryParams.data_collection_end_year__gte,
+          queryParams.data_collection_start_year__lte,
         ],
       },
       topic_category: {
@@ -307,12 +318,24 @@ class Search extends Component {
   };
 
   initiateSelectedFilters = () => {
-    let nfiSelectedFilters = {};
+    let selectedFilters = {};
     Object.keys(this.state.facetsData).forEach(key => {
-      nfiSelectedFilters[key] = '';
+      selectedFilters[key] = '';
     });
-    this.setState({ nfiSelectedFilters });
+    this.setState({ selectedFilters });
   };
+
+  initiateRegions = () => {
+    let facetsData = {...this.state.facetsData};
+    facetsData.regions = {};
+    Object.keys(facetsData.country).forEach(item => {
+      if (this.state.defaultRegions.includes(facetsData.country[item].id)) {
+        facetsData.regions[item] = facetsData.country[item];
+        delete facetsData.country[item];
+      }
+    })
+    this.setState({ facetsData });
+  }
 
   addHashTagAndDoNfiSearch = (hash, isEvent) => {
     if (isEvent) {
@@ -380,8 +403,14 @@ class Search extends Component {
 
     if (this.state.activeTab === 1) {
       countries = this.state.nfiSelectedCountry;
-      Object.keys(this.state.nfiSelectedFilters).forEach(filter => {
-        customQuery += this.state.nfiSelectedFilters[filter];
+      Object.keys(this.state.selectedFilters).forEach(filter => {
+        console.log(filter)
+        customQuery += this.state.selectedFilters[filter];
+      });
+    } else if (this.state.activeTab === 2) {
+      countries = this.state.nfiSelectedRegion;
+      Object.keys(this.state.selectedFilters).forEach(filter => {
+        customQuery += this.state.selectedFilters[filter];
       });
     }
 
@@ -408,6 +437,8 @@ class Search extends Component {
   handleTabChange = (event, data) => {
     this.setState({
       activeTab: data.activeIndex,
+      nfiSelectedCountry: '',
+      nfiSelectedRegion: ''
     });
   };
 
@@ -433,36 +464,42 @@ class Search extends Component {
 
   // NFI
   handleCountrySelected = country => {
-    this.setState(
-      {
+    if (this.state.activeTab === 1) {
+      this.setState({
         nfiSelectedCountry: country,
-      },
-      this.handleNfiSearch,
-    );
+      }, this.handleNfiSearch);
+    } else if (this.state.activeTab === 2) {
+      this.setState({
+        nfiSelectedRegion: country,
+      }, this.handleNfiSearch);
+    }
   };
 
-  handleFilterSelected = data => {
-    const query = `&${data.name}=${data.value}`;
-    let nfiSelectedFilters = { ...this.state.nfiSelectedFilters };
-    if (data.checked && !nfiSelectedFilters[data.name].includes(query)) {
-      nfiSelectedFilters[data.name] += query;
-    } else if (!data.checked && nfiSelectedFilters[data.name].includes(query)) {
-      nfiSelectedFilters[data.name] = nfiSelectedFilters[data.name].replace(
-        query,
-        '',
-      );
+  handleFilterSelected = (data, type, outsideQuery) => {
+    let selectedFilters = { ...this.state.selectedFilters };
+    if (type === 'checkbox') {
+      if (data.checked && !selectedFilters[data.name].includes(outsideQuery)) {
+        selectedFilters[data.name] += outsideQuery;
+      } else if (!data.checked && selectedFilters[data.name].includes(outsideQuery)) {
+        selectedFilters[data.name] = selectedFilters[data.name].replace(
+          outsideQuery,
+          '',
+        );
+      }
+      this.setState({ selectedFilters }, this.handleNfiSearch);
+    } else if (type === 'slider') {
+      selectedFilters[data.name] = outsideQuery
+      this.setState({ selectedFilters }, this.handleNfiSearch);
     }
-    this.setState({ nfiSelectedFilters }, this.handleNfiSearch);
   };
 
   handleClearFilters = () => {
-    let nfiSelectedFilters = {};
-    Object.keys(this.state.nfiSelectedFilters).forEach(filter => {
-      nfiSelectedFilters[filter] = '';
+    let selectedFilters = {};
+    Object.keys(this.state.selectedFilters).forEach(filter => {
+      selectedFilters[filter] = '';
     });
-    this.setState({ nfiSelectedFilters }, this.handleNfiSearch);
+    this.setState({ selectedFilters }, this.handleNfiSearch);
   };
-
   // FACETS
   makeFacets = () => {
     const promises = [];
@@ -484,7 +521,10 @@ class Search extends Component {
           facetEntities,
           this.props.nfiSearch.facets,
         );
-        this.setState({ facetsData }, this.initiateSelectedFilters);
+        this.setState({ facetsData }, () => {
+          this.initiateSelectedFilters()
+          this.initiateRegions()
+        });
       })
       .catch(error => {
         console.log(error);
@@ -546,23 +586,24 @@ class Search extends Component {
         items: this.props.items,
         facets: this.state.facets,
         facetsData: this.state.facetsData,
-        selectedFilters: this.state.nfiSelectedFilters,
+        selectedFilters: this.state.selectedFilters,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
       },
       nfiData: {
-        id: 'nfi',
+        id: this.state.activeTab === 1 ? 'nfi_country' : 'nfi_region',
         items: this.props.nfiSearch.results,
         facets: this.state.facets,
         facetsData: this.state.facetsData,
         selectedCountry: this.state.nfiSelectedCountry,
-        selectedFilters: this.state.nfiSelectedFilters,
+        selectedRegion: this.state.nfiSelectedRegion,
+        selectedFilters: this.state.selectedFilters,
         handleCountrySelected: this.handleCountrySelected,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
       },
       pagination:
-        this.state.activeTab === 1
+        this.state.activeTab > 0
           ? {
               ...this.state.pagination,
               updateItemsPerPage: this.updateItemsPerPage,
@@ -576,7 +617,7 @@ class Search extends Component {
     if (this.state.activeTab === 0) {
       multiselect = '';
       searchFilters = <SearchFilters data={context.portalData} />;
-    } else if (this.state.activeTab === 1) {
+    } else {
       multiselect = (
         <div className="multiselect-container">
           <Dropdown
@@ -599,9 +640,6 @@ class Search extends Component {
         </div>
       );
       searchFilters = <SearchFilters data={context.nfiData} />;
-    } else if (this.state.activeTab === 2) {
-      multiselect = '';
-      searchFilters = '';
     }
 
     const ui = (

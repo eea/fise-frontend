@@ -54,8 +54,13 @@ const RenderResultsBar = ({ pagination, data }) => {
     </div>
   );
 
-  if (data.id === 'nfi') {
-    if (data.selectedCountry && data.facetsData && data.facetsData.country && Object.keys(data.facetsData.country).length > 0) {
+  if (data.id === 'nfi_country') {
+    if (
+      data.selectedCountry &&
+      data.facetsData &&
+      data.facetsData.country &&
+      Object.keys(data.facetsData.country).length > 0
+    ) {
       let countries = Object.keys(data.facetsData.country).map(key => {
         return { key: data.facetsData.country[key].id, text: data.facetsData.country[key].name, value: data.facetsData.country[key].name }
       })
@@ -65,7 +70,7 @@ const RenderResultsBar = ({ pagination, data }) => {
           <div className="results-bar mt-2 justify-space-between">
             <Dropdown
               onChange={(event, dropdown) => { data.handleCountrySelected(dropdown.value) } }
-              defaultValue={data.selectedCountry}
+              value={data.selectedCountry}
               placeholder='State'
               search
               selection
@@ -83,6 +88,42 @@ const RenderResultsBar = ({ pagination, data }) => {
         </div>
       );
     } else if (!data.selectedCountry) {
+      renderResultsBar = '';
+    }
+  } else if (data.id === 'nfi_region') {
+    if (
+      data.selectedRegion &&
+      data.facetsData &&
+      data.facetsData.regions &&
+      Object.keys(data.facetsData.regions).length > 0
+    ) {
+      let regions = Object.keys(data.facetsData.regions).map(key => {
+        return { key: data.facetsData.regions[key].id, text: data.facetsData.regions[key].name, value: data.facetsData.regions[key].name }
+      })
+      regions.unshift({ key: 0, text: 'No region', value: '' })
+      renderResultsBar = (
+        <div>
+          <div className="results-bar mt-2 justify-space-between">
+            <Dropdown
+              onChange={(event, dropdown) => { data.handleCountrySelected(dropdown.value) } }
+              value={data.selectedRegion}
+              placeholder='State'
+              search
+              selection
+              options={regions}
+            />
+            <div className="flex">
+              <div className="results-count">
+                {renderResultsCount}
+              </div>
+              <span className="divider"></span>
+              {renderMaxResults}
+            </div>
+          </div>
+          <hr className="nfi-hr" />
+        </div>
+      );
+    } else if (!data.selectedRegion) {
       renderResultsBar = '';
     }
   }
