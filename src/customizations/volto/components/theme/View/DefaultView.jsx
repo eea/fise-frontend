@@ -20,7 +20,7 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
-import { samePath } from 'volto-mosaic/helpers';
+// import { samePath } from 'volto-mosaic/helpers';
 import { connect } from 'react-redux';
 import Spinner from 'volto-mosaic/components/theme/Spinner';
 
@@ -43,12 +43,12 @@ const DefaultView = props => {
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
   const currentUrl = content?.['@id'];
-  const shouldRenderRoutes =
-    typeof currentUrl !== 'undefined' && samePath(currentUrl, props.pathname)
-      ? true
-      : false;
-
-  if (!shouldRenderRoutes) return <Spinner />;
+  // const shouldRenderRoutes =
+  //   typeof currentUrl !== 'undefined' && samePath(currentUrl, props.pathname)
+  //     ? true
+  //     : false;
+  //
+  // if (!shouldRenderRoutes) return <Spinner />;
   return (
     <Grid columns="equal">
       {renderPortletManager('plone.leftcolumn', 3, { ...props })}

@@ -11,7 +11,6 @@ import '~/theme';
 
 import configureStore from '@plone/volto/store';
 import { Api, persistAuthToken } from '@plone/volto/helpers';
-import { AnimationWrapper } from '~/helpers';
 
 export const history = createBrowserHistory();
 
@@ -24,9 +23,7 @@ export default () => {
   hydrate(
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <AnimationWrapper>
-          <ReduxAsyncConnect routes={routes} helpers={api} />
-        </AnimationWrapper>
+        <ReduxAsyncConnect routes={routes} helpers={api} />
       </ConnectedRouter>
     </Provider>,
     document.getElementById('main'),
