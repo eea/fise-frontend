@@ -133,7 +133,19 @@ function customizeAddonByPackage(addon, customizationPath, aliases) {
 // const voltoConfig = require(`${voltoPath}/razzle.config`);
 
 module.exports = {
-  // plugins: ['forest-analyzer'],
+  plugins: [
+    {
+      name: 'bundle-analyzer',
+      options: {
+        analyzerHost: '0.0.0.0',
+        analyzerMode: 'static',
+        generateStatsFile: true,
+        statsFilename: 'stats.json',
+        reportFilename: 'reports.html',
+        openAnalyzer: false,
+      },
+    },
+  ],
   modify: (config, { target, dev }, webpack) => {
     const vc = razzleModify(config, { target, dev }, webpack);
 
@@ -246,6 +258,8 @@ module.exports = {
     //   );
     // }
     // console.log('plugins', vc.plugins);
+
+    console.log('config', vc);
 
     return vc;
   },

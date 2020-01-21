@@ -79,6 +79,7 @@
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
     "@plone/volto": "github:tiberiuichim/volto#kitchen_sink",
+    "immutable": "^3.8.2",
     "razzle-plugin-forest-analyzer": "file:src/plugins",
     "react": "^16.12.0",
     "react-image-gallery": "^0.9.1",
