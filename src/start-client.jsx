@@ -11,7 +11,6 @@ import '~/theme';
 
 import configureStore from '@plone/volto/store';
 import { Api, persistAuthToken } from '@plone/volto/helpers';
-// import { AnimationWrapper } from '~/helpers';
 
 export const history = createBrowserHistory();
 
