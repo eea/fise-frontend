@@ -88,6 +88,7 @@ const createSliderFacet = (data, facet) => {
             style={{
               ...props.style,
               height: '36px',
+              marginTop: '34px',
               display: 'flex',
               width: '100%'
             }}
@@ -100,7 +101,7 @@ const createSliderFacet = (data, facet) => {
                 borderRadius: '4px',
                 background: getTrackBackground({
                   values: values,
-                  colors: ['#ccc', '#548BF4', '#ccc'],
+                  colors: ['#ccc', '#CD4200', '#ccc'],
                   min: MIN,
                   max: MAX
                 }),
@@ -116,9 +117,9 @@ const createSliderFacet = (data, facet) => {
             {...props}
             style={{
               ...props.style,
-              height: '42px',
-              width: '42px',
-              borderRadius: '4px',
+              height: '24px',
+              width: '24px',
+              borderRadius: '50%',
               backgroundColor: '#FFF',
               display: 'flex',
               justifyContent: 'center',
@@ -129,14 +130,14 @@ const createSliderFacet = (data, facet) => {
             <div
               style={{
                 position: 'absolute',
-                top: '-28px',
-                color: '#fff',
+                top: '-34px',
+                color: '#000',
                 fontWeight: 'bold',
                 fontSize: '14px',
                 fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
                 padding: '4px',
                 borderRadius: '4px',
-                backgroundColor: '#548BF4'
+                backgroundColor: '#fff'
               }}
             >
               {values[index]}

@@ -404,7 +404,6 @@ class Search extends Component {
     if (this.state.activeTab === 1) {
       countries = this.state.nfiSelectedCountry;
       Object.keys(this.state.selectedFilters).forEach(filter => {
-        console.log(filter)
         customQuery += this.state.selectedFilters[filter];
       });
     } else if (this.state.activeTab === 2) {
