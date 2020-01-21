@@ -332,3 +332,82 @@ hr.nfi-hr {
 .results-bar .ui.dropdown {
     background-color: #F9F9F9 !important;
 }
+
+.slider {
+    div {
+        width: 100%;
+    }
+}
+
+.svg-container {
+    position: relative;
+
+    // display: inline-block;
+    // width: 100%;
+    // padding-bottom: 100%; /* aspect ratio */
+    // vertical-align: top;
+    // overflow: hidden;
+
+    // svg {
+    //   display: inline-block;
+    //   position: absolute;
+    //   top: 10px;
+    //   left: 0;
+    // }
+  }
+
+.tick {
+  line {
+    stroke: #F0F2F8;
+  }
+}
+
+.x.axis {
+  .tick {
+    opacity: 0;
+    &:nth-child(8n) {
+      opacity: 1;
+      text {
+        opacity: 0;
+      }
+    }
+    &:nth-child(2),
+    &:last-child {
+      opacity: 1;
+      line {
+        opacity: 0;
+      }
+      text {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.y.axis {
+  .tick {
+    &:nth-child(2) {
+      opacity: 0;
+    }
+  }
+}
+
+.axis {
+  .domain {
+    stroke: #000;
+  }
+}
+
+.bar {
+  pointer-events: all;
+}
+
+.line {
+  fill: none;
+  // stroke: #AEABFB;
+  stroke-width: 3;
+}
+
+.area {
+    fill: #EFEFEF;
+}

@@ -167,14 +167,14 @@ class Search extends Component {
       published_year: {
         entityName: queryParams.published_year,
         getFunction: this.props.getPublicationYears,
-        facetNames: [queryParams.published_year_range],
+        facetNames: [queryParams.published_year],
       },
       collections_range: {
         entityName: queryParams.collections_range,
         getFunction: this.props.getColectionRange,
         facetNames: [
-          queryParams.data_collection_end_year__gte,
-          queryParams.data_collection_start_year__lte,
+          queryParams.data_collection_end_year,
+          queryParams.data_collection_start_year,
         ],
       },
       topic_category: {
@@ -540,7 +540,6 @@ class Search extends Component {
         return Object.assign({}, facets[accumulator], facets[currentValue]);
       };
       const facetSets = facetNames.reduce(reducer, facetNames[0]);
-
       result[entityName] = this.formatSets(facetSets, entityData);
     });
     return result;

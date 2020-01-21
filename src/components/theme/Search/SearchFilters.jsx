@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BodyClass } from '@plone/volto/helpers';
-import { Checkbox, Dropdown, Grid, Segment, Label } from 'semantic-ui-react';
+import { Checkbox, Dropdown } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Range, getTrackBackground } from 'react-range';
+import area_chart from './area_chart';
+import rd3 from 'react-d3-library';
+const RD3Component = rd3.Component;
 
 const countriesOptions = [
   {
@@ -45,25 +48,35 @@ const createCheckboxFacet = (data, facet) => {
 
 const createSliderFacet = (data, facet) => {
   const yearsRange = Object.keys(data.facetsData[facet]).map(item => parseInt(data.facetsData[facet][item].name));
-  const countRange = Object.keys(data.facetsData[facet]).map(item => parseInt(data.facetsData[facet][item].number));
+  const areaChartData = Object.keys(data.facetsData[facet]).map(item => {
+    return {
+      x: parseInt(data.facetsData[facet][item].name),
+      y: parseInt(data.facetsData[facet][item].number)
+    }
+  });
 
   const STEP = 1;
   const MIN = yearsRange[0];
   const MAX = yearsRange[yearsRange.length - 1];
 
-  const minCount = countRange[0];
-  const maxCount = countRange[countRange.length - 1];
-
   const [values, setValues] = useState([MIN, MAX]);
+  const [areaChart, setAreaChart] = useState('');
 
+  useEffect(() => {
+    setAreaChart(area_chart(400, 200, areaChartData))
+  })
+  
   return (
     <div
       style={{
         display: 'flex',
         justifyContent: 'center',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        width: '100%'
       }}
+      className="slider"
     >
+      <RD3Component data={areaChart} />
       <Range
         values={values}
         step={STEP}
@@ -88,7 +101,7 @@ const createSliderFacet = (data, facet) => {
             style={{
               ...props.style,
               height: '36px',
-              marginTop: '34px',
+              marginTop: '0',
               display: 'flex',
               width: '100%'
             }}
@@ -137,7 +150,7 @@ const createSliderFacet = (data, facet) => {
                 fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
                 padding: '4px',
                 borderRadius: '4px',
-                backgroundColor: '#fff'
+                backgroundColor: 'transparent'
               }}
             >
               {values[index]}
@@ -146,7 +159,7 @@ const createSliderFacet = (data, facet) => {
               style={{
                 height: '16px',
                 width: '5px',
-                backgroundColor: isDragged ? '#548BF4' : '#CCC'
+                backgroundColor: isDragged ? '#CD4200' : '#CCC'
               }}
             />
           </div>
