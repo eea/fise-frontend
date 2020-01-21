@@ -889,7 +889,7 @@ h5 {
   width                        : 100%;
   height                       : 780px;
   max-width                    : 100%;
-  height: 400px;
+  height: 780px;
   .image-gallery-thumbnails-container {
     height: 132px;
 
