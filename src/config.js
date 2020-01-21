@@ -12,6 +12,7 @@ import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
 import { applyConfig as installSidebar } from 'volto-sidebar/config';
+// import { applyConfig as installSearch } from 'volto-nfisearch/config';
 
 const config = [
   addonsConfig,
@@ -21,8 +22,8 @@ const config = [
   installTableau,
   plotlyConfig,
   ckeditorConfig,
-  // draftConfig,
   mosaicConfig,
+  // installSearch,
   dataBlocksConfig,
   installFiseFrontend,
 ].reduce((acc, apply) => apply(acc), voltoConfig);

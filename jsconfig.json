@@ -8,7 +8,8 @@
         "volto-drafteditor", 
         "volto-mosaic", 
         "volto-plotlycharts", 
-        "volto-sidebar"
+        "volto-sidebar", 
+        "volto-nfisearch"
     ], 
     "compilerOptions": {
         "baseUrl": "src", 
@@ -33,6 +34,9 @@
             ], 
             "volto-mosaic": [
                 "addons/volto-mosaic/src"
+            ], 
+            "volto-nfisearch": [
+                "addons/volto-nfisearch/src"
             ], 
             "volto-plotlycharts": [
                 "addons/volto-plotlycharts/src"
