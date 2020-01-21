@@ -16,19 +16,20 @@ const PREFETCH_ROUTER_LOCATION_CHANGE = 'PREFETCH_ROUTER_LOCATION_CHANGE';
 
 const matchCurrentPath = path => {
   // const pathsList = ['/', '/**'];
-  let foundMatch;
+  let alreadyMatched;
 
   for (let pathOption of defaultRoutes) {
-    // console.log('pathOption', pathOption);
     const match = matchPath(path, pathOption);
-    if (match) {
-      foundMatch = true;
-    }
-    if (match && !foundMatch && (match.path === '/**' || match.path === '/')) {
-      // console.log('got match', match);
-      // console.log('got match path', path);
-      // console.log('got match pathOption', pathOption);
+    // console.debug('pathOption', alreadyMatched, path, pathOption, match);
+    if (
+      match &&
+      !alreadyMatched &&
+      (match.path === '/**' || match.path === '/')
+    ) {
       return true;
+    }
+    if (match) {
+      alreadyMatched = true;
     }
   }
 };
@@ -37,35 +38,30 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
   if (typeof action === 'function') {
     return next(action);
   }
-  console.log('action', action.type);
-
-  // shouldUseFullObjectsAndExpandStuff &&
-  // settings.contentExpand.length
-  //   ? `${path}?fullobjects&expand=${settings.contentExpand.join(
-  //       ',',
-  //     )}`
-  //   : path,
 
   switch (action.type) {
     case '@@router/LOCATION_CHANGE':
       if (!action.payload?.prefetched) {
         const path = action.payload.location.pathname;
-        console.log('intercepting', path);
         const isGetContent = matchCurrentPath(path);
         const expand =
           isGetContent && settings.contentExpand?.length
             ? `&expand=${settings.contentExpand.join(',')}`
             : '';
         const fullObjects = `${isGetContent ? '?fullobjects' : ''}${expand}`;
+        const url = `${path}${fullObjects}`;
+        console.debug('isGetContent', isGetContent);
+        if (!isGetContent) return next(action);
         const prefetchAction = {
           type: PREFETCH_ROUTER_LOCATION_CHANGE,
           path,
           originalAction: action,
           request: {
             op: 'get',
-            path: `${path}${fullObjects}`,
+            path: url,
           },
         };
+        console.debug('Start prefetch', url);
         return next(prefetchAction);
       }
       return next(action);
@@ -82,7 +78,7 @@ const precacheContentEnd = ({ dispatch, getState }) => next => action => {
   const type = `${PREFETCH_ROUTER_LOCATION_CHANGE}_SUCCESS`;
 
   if (action.type === type) {
-    console.log('prefetch action end', action);
+    console.debug('prefetch action end', action);
     return dispatch({
       ...action.originalAction,
       payload: {
@@ -98,7 +94,7 @@ const precacheContentEnd = ({ dispatch, getState }) => next => action => {
 function prefetch(state = {}, action = {}) {
   switch (action.type) {
     case `@@router/LOCATION_CHANGE`:
-      console.log('action location change', action);
+      console.debug('action location change', action);
       return action.payload?.prefetched
         ? {
             ...state,
