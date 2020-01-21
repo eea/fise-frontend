@@ -6,35 +6,53 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import reducers from '~/reducers';
 
 import { api, crashReporter } from '@plone/volto/middleware';
+import { matchPath } from 'react-router';
+import { settings } from '~/config';
 
 const PREFETCH_ROUTER_LOCATION_CHANGE = 'PREFETCH_ROUTER_LOCATION_CHANGE';
+
+const matchCurrentPath = path => {
+  const pathsList = ['/', '/**'];
+
+  for (let pathOption of pathsList) {
+    const match = matchPath(path, {
+      path: pathOption,
+      exact: true,
+      strict: false,
+    });
+    if (match) {
+      return true;
+    }
+  }
+};
 
 const precacheContentStart = ({ dispatch, getState }) => next => action => {
   if (typeof action === 'function') {
     return next(action);
   }
   console.log('action', action.type);
-
   // TODO: match for View
-  // import { matchPath } from "react-router";
   //
-  // const match = matchPath("/users/123", {
-  //     path: "/users/:id",
-  //     exact: true,
-  //     strict: false
-  // });
 
   switch (action.type) {
     case '@@router/LOCATION_CHANGE':
       if (!action.payload?.prefetched) {
         const path = action.payload.location.pathname;
+        const shouldUseFullObjectsAndExpandStuff = matchCurrentPath(path);
         const prefetchAction = {
           type: PREFETCH_ROUTER_LOCATION_CHANGE,
           path,
           originalAction: action,
           request: {
             op: 'get',
-            path: `${path}?fullobjects`, // TODO: identify only needed routes, based on route matching
+            // path: `${path}?fullobjects`, // TODO: identify only needed routes, based on route matching
+            path:
+              shouldUseFullObjectsAndExpandStuff &&
+              settings.contentExpand.length
+                ? `${path}?fullobjects&expand=${settings.contentExpand.join(
+                    ',',
+                  )}`
+                : path,
           },
         };
         return next(prefetchAction);
