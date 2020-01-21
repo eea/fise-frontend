@@ -7,17 +7,6 @@ import area_chart from './area_chart';
 import rd3 from 'react-d3-library';
 const RD3Component = rd3.Component;
 
-const countriesOptions = [
-  {
-    text: 'Romania',
-    value: 'Romania',
-  },
-  {
-    text: 'Bulgaria',
-    value: 'Bulgaria',
-  },
-];
-
 const capitalize = s => {
   if (typeof s !== 'string') return '';
   return s.charAt(0).toUpperCase() + s.slice(1);
@@ -45,6 +34,31 @@ const createCheckboxFacet = (data, facet) => {
     );
   });
 };
+
+const createMultiselectFacet = (data, facet) => {
+  const [options, setOptions] = useState(Object.keys(data.facetsData[facet]).map(item => {
+    return { key: data.facetsData[facet][item].id, text: data.facetsData[facet][item].name, value: data.facetsData[facet][item].name }
+  }))
+  return (
+    <Dropdown
+      placeholder="Type..."
+      fluid
+      multiple
+      selection
+      search
+      allowAdditions
+      options={options}
+      value={data.selectedFilters[facet].split(`&${facet}=`).slice(1)}
+      onChange={(event, { value }) => {
+        let query = ''
+        value.forEach(val => {
+          query += `&${data.facets[facet].queryParams[0]}=${val}`
+        })
+        data.handleFilterSelected({ name: facet }, 'multiselect', query)
+      }}
+    />
+  );
+}
 
 const createSliderFacet = (data, facet) => {
   const yearsRange = Object.keys(data.facetsData[facet]).map(item => parseInt(data.facetsData[facet][item].name));
@@ -86,10 +100,10 @@ const createSliderFacet = (data, facet) => {
         onFinalChange={values => {
           let query = ''
           if (values[0] > MIN || values[1] < MAX) {
-            if (data.facets[facet].facetNames.length === 2) {
-              query = `&${data.facets[facet].facetNames[0]}=${values[0]}&${data.facets[facet].facetNames[1]}=${values[1]}`
-            } else if (data.facets[facet].facetNames.length === 1) {
-              query = `&${data.facets[facet].facetNames}=${values[0]}__${values[1]}`
+            if (data.facets[facet].queryParams.length === 2) {
+              query = `&${data.facets[facet].queryParams[0]}=${values[0]}&${data.facets[facet].queryParams[1]}=${values[1]}`
+            } else if (data.facets[facet].queryParams.length === 1) {
+              query = `&${data.facets[facet].queryParams}=${values[0]}__${values[1]}`
             }
           }
           data.handleFilterSelected({ name: facet }, 'slider', query)
@@ -171,7 +185,7 @@ const createSliderFacet = (data, facet) => {
 }
 
 const SearchFilters = ({ data }) => {
-  let renderTopicsFacet, renderNutsLevelFacet, renderCollectionMethodFacet, renderResultsFormat, renderPublishedYear, renderCollectionsRange;
+  let renderTopicsFacet, renderNutsLevelFacet, renderCountryMultiselectFacet, renderResultsFormatFacet, renderPublishedYearFacet, renderCollectionsRangeFacet;
   if (
     data.facetsData &&
     data.selectedFilters &&
@@ -179,15 +193,17 @@ const SearchFilters = ({ data }) => {
   ) {
     renderTopicsFacet = createCheckboxFacet(data, 'topic_category');
     renderNutsLevelFacet = createCheckboxFacet(data, 'nuts_level');
-    renderResultsFormat = createCheckboxFacet(data, 'resource_type');
-    renderPublishedYear = createSliderFacet(data, 'published_year');
-    renderCollectionsRange = createSliderFacet(data, 'collections_range');
+    renderResultsFormatFacet = createCheckboxFacet(data, 'resource_type');
+    renderPublishedYearFacet = createSliderFacet(data, 'published_year');
+    renderCollectionsRangeFacet = createSliderFacet(data, 'collections_range');
+    renderCountryMultiselectFacet = createMultiselectFacet(data, 'country');
   } else {
     renderTopicsFacet = '';
     renderNutsLevelFacet = '';
-    renderResultsFormat = '';
-    renderPublishedYear = '';
-    renderCollectionsRange = '';
+    renderResultsFormatFacet = '';
+    renderPublishedYearFacet = '';
+    renderCollectionsRangeFacet = '';
+    renderCountryMultiselectFacet = '';
   }
 
   return (
@@ -206,16 +222,7 @@ const SearchFilters = ({ data }) => {
       {data.id === 'portal' && (
         <div className="filters-area">
           <h3>Countries and regions</h3>
-          <Dropdown
-            compact={true}
-            className="multiple-select"
-            placeholder="Choose one or more"
-            fluid
-            multiple
-            search
-            selection
-            options={countriesOptions}
-          />
+          {renderCountryMultiselectFacet}
         </div>
       )}
       <div className="filters-area">
@@ -252,16 +259,16 @@ const SearchFilters = ({ data }) => {
       )}
       <div className="filters-area">
         <h3>Published year</h3>
-        {renderPublishedYear}
+        {renderPublishedYearFacet}
       </div>
       <div className="filters-area">
         <h3>Collections range</h3>
-        {renderCollectionsRange}
+        {renderCollectionsRangeFacet}
       </div>
       <div className="filters-area">
         <h3>Results Format</h3>
         <div className="checkbox-area">
-          {renderResultsFormat}
+          {renderResultsFormatFacet}
         </div>
       </div>
     </div>

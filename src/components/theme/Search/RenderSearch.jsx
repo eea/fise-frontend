@@ -7,9 +7,12 @@ import RenderPagination from './RenderPagination.jsx';
 const RenderSearch = ({ data, pagination }) => {
   let renderResultsBar, renderContent, renderFooter;
   renderResultsBar = <RenderResultsBar pagination={pagination} data={data} />;
-  renderContent = data.items.map((item, index) => (
-    <ResultCard item={item} key={index} />
-  ));
+  renderContent = '';
+  if (data.items) {
+    renderContent = data.items.map((item, index) => (
+      <ResultCard item={item} key={index} />
+    ));
+  }
   if (data.id === 'portal') {
     renderFooter = '';
   } else if (

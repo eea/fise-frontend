@@ -158,16 +158,19 @@ class Search extends Component {
         entityName: queryParams.country,
         getFunction: this.props.getCountry,
         facetNames: [queryParams.country],
+        queryParams: [queryParams.country]
       },
       nuts_level: {
         entityName: queryParams.nuts_level,
         getFunction: this.props.getNutsLevel,
         facetNames: [queryParams.nuts_level],
+        queryParams: [queryParams.nuts_level],
       },
       published_year: {
         entityName: queryParams.published_year,
         getFunction: this.props.getPublicationYears,
         facetNames: [queryParams.published_year],
+        queryParams: [queryParams.published_year_range],
       },
       collections_range: {
         entityName: queryParams.collections_range,
@@ -176,26 +179,34 @@ class Search extends Component {
           queryParams.data_collection_end_year,
           queryParams.data_collection_start_year,
         ],
+        queryParams: [
+          queryParams.data_collection_start_year__lte,
+          queryParams.data_collection_end_year__gte,
+        ],
       },
       topic_category: {
         entityName: queryParams.topic_category,
         getFunction: this.props.getTopicCategory,
         facetNames: [queryParams.topic_category],
+        queryParams: [queryParams.topic_category],
       },
       resource_type: {
         entityName: queryParams.resource_type,
         getFunction: this.props.getResourceType,
         facetNames: [queryParams.resource_type],
+        queryParams: [queryParams.resource_type],
       },
       data_set: {
         entityName: queryParams.data_set,
         getFunction: this.props.getDataSet,
         facetNames: [queryParams.data_set],
+        queryParams: [queryParams.data_set],
       },
       data_type: {
         entityName: queryParams.data_type,
         getFunction: this.props.getDataType,
         facetNames: [queryParams.data_type],
+        queryParams: [queryParams.data_type],
       },
     },
     facetsData: null,
@@ -297,8 +308,9 @@ class Search extends Component {
         this.props.setLoader(false);
         this.updateTotalItems(this.props.nfiSearch.count);
       })
-      .catch(error => {})
-      .catch(error => console.log(error));
+      .catch(error => {
+        this.props.setLoader(false)
+      })
   };
 
   initiateKeywords = () => {
@@ -434,10 +446,13 @@ class Search extends Component {
   };
 
   handleTabChange = (event, data) => {
+    let selectedFilters = {...this.state.selectedFilters};
+    selectedFilters.country = '';
     this.setState({
       activeTab: data.activeIndex,
       nfiSelectedCountry: '',
-      nfiSelectedRegion: ''
+      nfiSelectedRegion: '',
+      selectedFilters
     });
   };
 
@@ -487,6 +502,9 @@ class Search extends Component {
       }
       this.setState({ selectedFilters }, this.handleNfiSearch);
     } else if (type === 'slider') {
+      selectedFilters[data.name] = outsideQuery
+      this.setState({ selectedFilters }, this.handleNfiSearch);
+    } else if (type === 'multiselect') {
       selectedFilters[data.name] = outsideQuery
       this.setState({ selectedFilters }, this.handleNfiSearch);
     }
