@@ -12,6 +12,7 @@ import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { views } from '~/config';
 import { Grid } from 'semantic-ui-react';
+import Spinner from 'volto-mosaic/components/theme/Spinner';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
@@ -117,11 +118,11 @@ class View extends Component {
    * @returns {undefined}
    */
   UNSAFE_componentWillMount() {
-    this.props.listActions(getBaseUrl(this.props.pathname));
-    this.props.getContent(
-      getBaseUrl(this.props.pathname),
-      this.props.versionId,
-    );
+    // this.props.listActions(getBaseUrl(this.props.pathname));
+    // this.props.getContent(
+    //   getBaseUrl(this.props.pathname),
+    //   this.props.versionId,
+    // );
   }
 
   /**
@@ -131,13 +132,13 @@ class View extends Component {
    * @returns {undefined}
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.pathname !== this.props.pathname) {
-      this.props.listActions(getBaseUrl(nextProps.pathname));
-      this.props.getContent(
-        getBaseUrl(nextProps.pathname),
-        this.props.versionId,
-      );
-    }
+    // if (nextProps.pathname !== this.props.pathname) {
+    //   this.props.listActions(getBaseUrl(nextProps.pathname));
+    //   this.props.getContent(
+    //     getBaseUrl(nextProps.pathname),
+    //     this.props.versionId,
+    //   );
+    // }
 
     if (nextProps.actions.object_buttons) {
       const objectButtons = nextProps.actions.object_buttons;
@@ -219,6 +220,7 @@ class View extends Component {
     return (
       <div id="view">
         {/* Body class if displayName in component is set */}
+
         <BodyClass
           className={
             RenderedView.displayName
@@ -230,21 +232,16 @@ class View extends Component {
               : null
           }
         />
-        <Grid columns="equal">
-          {renderPortletManager('plone.leftcolumn', 3, { ...this.props })}
-          <Grid.Column
-          //  tablet={12} largeScreen={6} widescreen={9}
-          >
-            <RenderedView
-              content={this.props.content}
-              location={this.props.location}
-              token={this.props.token}
-              history={this.props.history}
-            />
-          </Grid.Column>
 
-          {renderPortletManager('plone.rightcolumn', 3, { ...this.props })}
-        </Grid>
+        {this.props.loading && <Spinner />}
+
+        <RenderedView
+          content={this.props.content}
+          location={this.props.location}
+          token={this.props.token}
+          history={this.props.history}
+        />
+
         {renderPortletManager('plone.footerportlets', false, { ...this.props })}
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (
@@ -287,9 +284,10 @@ export default compose(
     (state, props) => ({
       actions: state.actions.actions,
       token: state.userSession.token,
-      content: state.content.data,
+      content: state.prefetch?.[props.location.pathname] || state.content.data,
       error: state.content.get.error,
       pathname: props.location.pathname,
+      loading: state.content.get?.loading,
       versionId:
         qs.parse(props.location.search) &&
         qs.parse(props.location.search).version_id,

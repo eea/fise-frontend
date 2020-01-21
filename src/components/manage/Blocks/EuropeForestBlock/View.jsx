@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 class View extends Component {
   render() {
-    console.log('props', this.props);
     return (
       <div className="block-container">
         <div className="forest-block-wrapper">
@@ -15,7 +14,8 @@ class View extends Component {
                 <span>{this.props.data.europe_forest_p_eu28}</span>
               </div>
               <div className="land-data-content">
-                of EU28 land surface <span>{this.props.data.europe_forest_l_eu28}</span>
+                {this.props.data.europe_forest_p_eu28_text}{' '}
+                <span>{this.props.data.europe_forest_l_eu28}</span>
               </div>
             </div>
 
@@ -24,7 +24,8 @@ class View extends Component {
                 <span>{this.props.data.europe_forest_p_eea39}</span>
               </div>
               <div className="land-data-content">
-                of EEA39s land surface <span>{this.props.data.europe_forest_l_eea39}</span>
+                {this.props.data.europe_forest_p_eea39_text}{' '}
+                <span>{this.props.data.europe_forest_l_eea39}</span>
               </div>
             </div>
 

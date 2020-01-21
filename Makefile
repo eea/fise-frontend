@@ -102,7 +102,7 @@ bump:
 .PHONY: build-image
 build-image:
 	@echo "Building new docker image: $(IMAGE)";
-	docker build . --network=host -t "$(IMAGE)";
+	docker build . --network=host --build-arg MAX_OLD_SPACE_SIZE=4096 --build-arg NPM_CONFIG_REGISTRY=http://127.0.0.1:4873 -t "$(IMAGE)";
 	@echo "Image built."
 
 .PHONY: push

@@ -8,6 +8,7 @@
 
 .ui.menu {
     font-family: @headerFont;
+    transition: none;
 }
 
 .navigation .menu .item {
@@ -39,9 +40,15 @@
 }
 
 .navigation {
+    .ui.secondary.pointing.menu .item {
+        transition: none!important;
+    }
     .menu {
+        transition: none!important;
         .firstLevel {
-            font-size: 18px !important;
+            font-size: 18px!important;
+            line-height: 1;
+            border: 1px solid transparent;
         }
 
         .item.firstLevel {

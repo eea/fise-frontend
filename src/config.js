@@ -4,6 +4,7 @@ import {
   applyConfig as addonsConfig,
   installImageSlides,
   installPortlets,
+  installTableau,
 } from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
@@ -17,6 +18,7 @@ const config = [
   installSidebar,
   installPortlets,
   installImageSlides,
+  installTableau,
   plotlyConfig,
   ckeditorConfig,
   // draftConfig,
@@ -31,7 +33,7 @@ export const settings = {
     ...config.settings.contentExpand.filter(
       content => content !== 'navigation',
     ),
-    ...['navigation', '&expand.navigation.depth=4'],
+    ...['navigation', '&expand.navigation.depth=3'],
   ],
 };
 

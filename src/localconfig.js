@@ -13,6 +13,15 @@ import EuropeCompareBlockView from './components/manage/Blocks/EuropeCompareBloc
 import EuropeForestBlockEdit from './components/manage/Blocks/EuropeForestBlock/Edit';
 import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/View';
 
+import ForestCoverageBlockEdit from '~/components/manage/Blocks/ForestCoverageBlock/Edit';
+import ForestCoverageBlockView from '~/components/manage/Blocks/ForestCoverageBlock/View';
+
+import ForestDeadwoodVolumeEdit from '~/components/manage/Blocks/ForestDeadwoodVolume/Edit';
+import ForestDeadwoodVolumeView from '~/components/manage/Blocks/ForestDeadwoodVolume/View';
+
+import ForestCoverageEvolutionEdit from '~/components/manage/Blocks/ForestCoverageEvolution/Edit';
+import ForestCoverageEvolutionView from '~/components/manage/Blocks/ForestCoverageEvolution/View';
+
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 
 defineMessages({
@@ -42,7 +51,7 @@ function addCustomGroup(config) {
   const hasCustomGroup = config.blocks.groupBlocksOrder.filter(
     el => el.id === 'custom_addons',
   );
-  if (!hasCustomGroup.length) {
+  if (hasCustomGroup.length === 0) {
     config.blocks.groupBlocksOrder.push({
       id: 'custom_addons',
       title: 'Custom addons',
@@ -94,7 +103,6 @@ export function applyConfig(config) {
 
     groupBlocksOrder: [
       ...config.blocks.groupBlocksOrder,
-      { id: 'custom_addons', title: 'Custom addons' }, // TODO: needs to be fixed
       { id: 'forests_specific', title: 'Forests Specific Blocks' },
     ],
 
@@ -113,6 +121,30 @@ export function applyConfig(config) {
         title: 'Europe Forest Area Block',
         view: EuropeForestBlockView,
         edit: EuropeForestBlockEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      },
+      forest_coverage_block: {
+        id: 'forest_coverage_block',
+        title: 'Forest coverage block',
+        view: ForestCoverageBlockView,
+        edit: ForestCoverageBlockEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      },
+      forest_deadwood_volume_block: {
+        id: 'forest_deadwood_volume_block',
+        title: 'Forest deadwood volume block',
+        view: ForestDeadwoodVolumeView,
+        edit: ForestDeadwoodVolumeEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      },
+      forest_coverage_evolution_block: {
+        id: 'forest_coverage_evolution_block',
+        title: 'Forest patch size distribution block',
+        view: ForestCoverageEvolutionView,
+        edit: ForestCoverageEvolutionEdit,
         icon: chartIcon,
         group: 'forests_specific',
       },

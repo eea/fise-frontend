@@ -102,7 +102,7 @@
     }
 
     .slide-overlay {
-      display: none;
+      border-bottom: none;
     }
 
     .image-gallery-left-nav {
@@ -356,4 +356,20 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
   max-width   : initial !important;
   margin-right: -50vw !important;
   margin-left : -50vw !important;
+}
+
+body.view-editview {
+
+  @media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+    [class*='mobile only']:not(.computer),
+    [class*='tablet only']:not(.computer),
+    [class*='large screen hidden'],
+    [class*='large screen only']:not(.computer),
+    [class*='widescreen only']:not(.computer),
+    [class*='or lower hidden']:not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+
+
 }

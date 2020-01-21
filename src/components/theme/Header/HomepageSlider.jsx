@@ -12,9 +12,9 @@ import right from '@plone/volto/icons/right-key.svg';
 // import 'slick-carousel/slick/slick-theme.css';
 // import SliderCaret from './slidercarret.svg';
 
-import ImageGallery from 'react-image-gallery';
-
 import 'react-image-gallery/styles/css/image-gallery.css';
+
+import ImageGallery from 'react-image-gallery';
 
 // function SampleNextArrow(props) {
 //   const { onClick } = props;

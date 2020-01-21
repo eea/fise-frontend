@@ -15,6 +15,7 @@ const glob = require('glob').sync;
 
 const FILES_GLOB = '**/*.*(svg|png|jpg|jpeg|gif|ico|less|js|jsx)';
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 const pathsConfig = jsConfig.compilerOptions.paths;
 let voltoPath = './node_modules/@plone/volto';
 Object.keys(pathsConfig).forEach(pkg => {
@@ -129,8 +130,10 @@ function customizeAddonByPackage(addon, customizationPath, aliases) {
 }
 
 // const projectRootPath = path.resolve('.');
+// const voltoConfig = require(`${voltoPath}/razzle.config`);
 
 module.exports = {
+  // plugins: ['forest-analyzer'],
   modify: (config, { target, dev }, webpack) => {
     const vc = razzleModify(config, { target, dev }, webpack);
 
@@ -223,6 +226,27 @@ module.exports = {
     // });
     // const hardSource = new HardSourceWebpackPlugin();
     // vc.plugins.push(hardSource);
+
+    // const stats = `bundle-stats-${target}`.json;
+    // const report = `bundle-stats-${target}`.html;
+    //
+    // if (target === 'web' && !dev) {
+    //   vc.plugins.push(
+    //     new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
+    //       analyzerMode: 'static',
+    //       reportFilename: report,
+    //       generateStatsFile: true,
+    //       statsFilename: stats,
+    //       openAnalyzer: false,
+    //       logLevel: 'warn',
+    //       statsOptions: {
+    //         reasons: true,
+    //       },
+    //     }),
+    //   );
+    // }
+    // console.log('plugins', vc.plugins);
+
     return vc;
   },
 };

@@ -267,7 +267,7 @@ class View extends Component {
               <div className="area-content">
                 <h5 className="area-title">
                   <a href="/thematic-areas/forest-basic-information">
-                    Forest base
+                    Forest basic information
                   </a>
                 </h5>
               </div>

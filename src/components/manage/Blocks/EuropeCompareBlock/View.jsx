@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 class View extends Component {
   render() {
-    console.log('props', this.props);
     return (
       <div className="block-container">
         <div className="forest-block-wrapper">

@@ -27,8 +27,6 @@ import { getFrontpageSlides } from '~/actions';
 
 import HeaderBackground from './header-bg.png';
 
-const staticHeader = require('~/static/s1.jpg');
-
 class Header extends Component {
   constructor(props) {
     super(props);
