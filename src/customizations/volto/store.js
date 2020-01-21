@@ -8,19 +8,26 @@ import reducers from '~/reducers';
 import { api, crashReporter } from '@plone/volto/middleware';
 import { matchPath } from 'react-router';
 import { settings } from '~/config';
+import routes from '~/routes';
+
+const defaultRoutes = routes[0].routes;
 
 const PREFETCH_ROUTER_LOCATION_CHANGE = 'PREFETCH_ROUTER_LOCATION_CHANGE';
 
 const matchCurrentPath = path => {
-  const pathsList = ['/', '/**'];
+  // const pathsList = ['/', '/**'];
+  let foundMatch;
 
-  for (let pathOption of pathsList) {
-    const match = matchPath(path, {
-      path: pathOption,
-      exact: true,
-      strict: false,
-    });
+  for (let pathOption of defaultRoutes) {
+    // console.log('pathOption', pathOption);
+    const match = matchPath(path, pathOption);
     if (match) {
+      foundMatch = true;
+    }
+    if (match && !foundMatch && (match.path === '/**' || match.path === '/')) {
+      // console.log('got match', match);
+      // console.log('got match path', path);
+      // console.log('got match pathOption', pathOption);
       return true;
     }
   }
@@ -31,28 +38,32 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
     return next(action);
   }
   console.log('action', action.type);
-  // TODO: match for View
-  //
+
+  // shouldUseFullObjectsAndExpandStuff &&
+  // settings.contentExpand.length
+  //   ? `${path}?fullobjects&expand=${settings.contentExpand.join(
+  //       ',',
+  //     )}`
+  //   : path,
 
   switch (action.type) {
     case '@@router/LOCATION_CHANGE':
       if (!action.payload?.prefetched) {
         const path = action.payload.location.pathname;
-        const shouldUseFullObjectsAndExpandStuff = matchCurrentPath(path);
+        console.log('intercepting', path);
+        const isGetContent = matchCurrentPath(path);
+        const expand =
+          isGetContent && settings.contentExpand?.length
+            ? `&expand=${settings.contentExpand.join(',')}`
+            : '';
+        const fullObjects = `${isGetContent ? '?fullobjects' : ''}${expand}`;
         const prefetchAction = {
           type: PREFETCH_ROUTER_LOCATION_CHANGE,
           path,
           originalAction: action,
           request: {
             op: 'get',
-            // path: `${path}?fullobjects`, // TODO: identify only needed routes, based on route matching
-            path:
-              shouldUseFullObjectsAndExpandStuff &&
-              settings.contentExpand.length
-                ? `${path}?fullobjects&expand=${settings.contentExpand.join(
-                    ',',
-                  )}`
-                : path,
+            path: `${path}${fullObjects}`,
           },
         };
         return next(prefetchAction);
