@@ -12,6 +12,7 @@ import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { views } from '~/config';
 import { Helmet } from '@plone/volto/helpers';
+import { Link } from 'react-router-dom';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
@@ -260,73 +261,73 @@ class View extends Component {
           <div className="ui stackable five column grid thematic_areas_wrapper">
             <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/forest-basic-information">
+                <Link to="/thematic-areas/forest-basic-information">
                   <img src={BasicForestIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/forest-basic-information">
+                  <Link to="/thematic-areas/forest-basic-information">
                     Forest basic information
-                  </a>
+                  </Link>
                 </h5>
               </div>
             </div>
 
             <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/forest-bioeconomy">
+                <Link to="/thematic-areas/forest-bioeconomy">
                   <img src={NatureIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/forest-bioeconomy">Bioeconomy</a>
+                  <Link to="/thematic-areas/forest-bioeconomy">Bioeconomy</Link>
                 </h5>
               </div>
             </div>
 
             <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/forest-nature-and-biodiversity">
+                <Link to="/thematic-areas/forest-nature-and-biodiversity">
                   <img src={ForestCarbonIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/forest-nature-and-biodiversity">
+                  <Link to="/thematic-areas/forest-nature-and-biodiversity">
                     Nature and biodiversity
-                  </a>
+                  </Link>
                 </h5>
               </div>
             </div>
 
             <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/forest-and-climate-change">
+                <Link to="/thematic-areas/forest-and-climate-change">
                   <img src={ForestIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/forest-and-climate-change">
+                  <Link to="/thematic-areas/forest-and-climate-change">
                     Climate change mitigation
-                  </a>
+                  </Link>
                 </h5>
               </div>
             </div>
 
             <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/folder-condition">
+                <Link to="/thematic-areas/folder-condition">
                   <img src={ForestHealthIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/folder-condition">
+                  <Link to="/thematic-areas/folder-condition">
                     Forest health and resilience
-                  </a>
+                  </Link>
                 </h5>
               </div>
             </div>
