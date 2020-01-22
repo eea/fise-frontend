@@ -255,7 +255,7 @@ body.has-toolbar {
 
 .slider-image {
   // width       : 100%;
-  height         : 780px;
+  height         : 601px;
   display        : block;
   position       : relative;
   background-size: cover;
@@ -819,8 +819,6 @@ h5 {
   }
 }
 
-
-
 #page-document {
   max-width: 800px !important;
   margin   : 0 auto !important;
@@ -871,7 +869,6 @@ h5 {
   left         : 0;
   right        : 0;
   bottom       : 0;
-  border-bottom: 138px solid black;
   background   : linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.64) 14%, rgba(0, 0, 0, 0) 49%, rgba(0, 0, 0, 0) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
@@ -887,68 +884,85 @@ h5 {
   // margin-left               : -3rem;
   // margin-right              : -3rem;
   width                        : 100%;
-  height                       : 780px;
+  height                       : 601px;
   max-width                    : 100%;
-  height: 780px;
-  .image-gallery-thumbnails-container {
-    height: 132px;
-
-    a {
-      height: calc(100% - 1rem);
-    }
-  }
-
-  .image-gallery-thumbnail {
-    width : calc(33% - .8rem);
-    margin: .5rem;
-  }
 
   .image-gallery-thumbnails-wrapper {
     position: absolute !important;
     z-index : 1;
-    width   : 90%;
+    top     : 0;
     right   : 0;
+    // right: -50px;
     bottom  : 0;
-  }
+    width: 223px;
 
-  .slider-thumbnail {
-    position       : relative;
-    height         : 100%;
-    display        : flex;
-    justify-content: flex-start;
-    background     : white;
-    border-radius  : 4px;
-    overflow       : hidden;
-    white-space    : normal;
+    .image-gallery-thumbnails {
+      height : 100%;
+      padding: 0;
 
-    .thumbnail-img {
-      height         : 100%;
-      min-width      : 150px;
-      width          : 40%;
-      background-size: cover;
-    }
+      .image-gallery-thumbnails-container {
+        height        : 100%;
+        transform     : none !important;
+        height        : 100%;
+        display       : flex;
+        flex-direction: column;
+        .image-gallery-thumbnail {
+          width: auto;
+          color: white;
+          height: calc(25% - 2rem);
+          margin: 1rem;
+          transition: all 200ms;
+          width: 200px;
+          opacity: 0.4;
+          transform: translateX(40px);
+          &.active {
+            transform: translateX(0);
+            opacity: 1;
+            // .thumbnail-img {
+            // }
+          }
+          &:hover {
+            opacity: 1;
+          }
+          .slider-thumbnail {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            .thumbnail-img {
+              height: 100%;
+              background-size: cover;
+              box-shadow: 1px 3px 4px #000000bf;
+              border-radius: 4px;
+            }
+            .slide-title {
+              background: #ffffff;
+              position: absolute;
+              bottom: -5px;
+              font-size: 0.9rem;
+              width: 100%;
+              white-space: normal;
+              line-height: 1.2;
+              display: flex;
+              justify-content: center;
+              align-items: flex-end;
+              text-align: right;
+              padding: 0.3rem;
+              color: black;
+              padding-right: 37px;
+              border-radius: 4px;
+              border-top-left-radius: 0;
+              display: none;
 
-    .slide-title {
-      display        : flex;
-      justify-content: center;
-      align-items    : center;
-      font-size      : 20px;
-      color          : #3b503c;
-      // color       : #233A24;
-      font-weight    : 600;
-      font-size      : 20px;
-      padding        : 1.5rem;
-      /* font-family : 'Roboto Condensed'; */
-      font-family    : Roboto;
-      flex-grow      : 1;
-      line-height    : 1;
-      text-align     : left;
+            }
+          }
+        }
+      }
     }
   }
 
   .slider-slide {
     .slide-img {
-      height             : 780px;
+      height             : 601px;
       background-size    : cover;
       background-position: center;
     }
@@ -1011,8 +1025,7 @@ h5 {
 
 .modal {
   .editor-toolbar-wrapper {
-    top: 0;
-
+    top          : 0;
     margin-bottom: 1.5rem;
   }
 }
@@ -1439,150 +1452,150 @@ body {
 
 #floatBarsG {
   position: relative;
-  width: 120px;
-  height: 14px;
-  margin: auto;
+  width   : 120px;
+  height  : 14px;
+  margin  : auto;
 }
 
 .floatBarsG {
-  position: absolute;
-  top: 0;
-  background-color: rgb(34, 85, 17);
-  width: 14px;
-  height: 14px;
-  animation-name: bounce_floatBarsG;
-  -o-animation-name: bounce_floatBarsG;
-  -ms-animation-name: bounce_floatBarsG;
-  -webkit-animation-name: bounce_floatBarsG;
-  -moz-animation-name: bounce_floatBarsG;
-  animation-duration: 1.105s;
-  -o-animation-duration: 1.105s;
-  -ms-animation-duration: 1.105s;
-  -webkit-animation-duration: 1.105s;
-  -moz-animation-duration: 1.105s;
-  animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  -ms-animation-iteration-count: infinite;
+  position                         : absolute;
+  top                              : 0;
+  background-color                 : rgb(34, 85, 17);
+  width                            : 14px;
+  height                           : 14px;
+  animation-name                   : bounce_floatBarsG;
+  -o-animation-name                : bounce_floatBarsG;
+  -ms-animation-name               : bounce_floatBarsG;
+  -webkit-animation-name           : bounce_floatBarsG;
+  -moz-animation-name              : bounce_floatBarsG;
+  animation-duration               : 1.105s;
+  -o-animation-duration            : 1.105s;
+  -ms-animation-duration           : 1.105s;
+  -webkit-animation-duration       : 1.105s;
+  -moz-animation-duration          : 1.105s;
+  animation-iteration-count        : infinite;
+  -o-animation-iteration-count     : infinite;
+  -ms-animation-iteration-count    : infinite;
   -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-direction: normal;
-  -o-animation-direction: normal;
-  -ms-animation-direction: normal;
-  -webkit-animation-direction: normal;
-  -moz-animation-direction: normal;
-  transform: scale(.3);
-  -o-transform: scale(.3);
-  -ms-transform: scale(.3);
-  -webkit-transform: scale(.3);
-  -moz-transform: scale(.3);
+  -moz-animation-iteration-count   : infinite;
+  animation-direction              : normal;
+  -o-animation-direction           : normal;
+  -ms-animation-direction          : normal;
+  -webkit-animation-direction      : normal;
+  -moz-animation-direction         : normal;
+  transform                        : scale(.3);
+  -o-transform                     : scale(.3);
+  -ms-transform                    : scale(.3);
+  -webkit-transform                : scale(.3);
+  -moz-transform                   : scale(.3);
 }
 
 #floatBarsG_1 {
-  left: 0;
-  animation-delay: 0.446s;
-  -o-animation-delay: 0.446s;
-  -ms-animation-delay: 0.446s;
+  left                   : 0;
+  animation-delay        : 0.446s;
+  -o-animation-delay     : 0.446s;
+  -ms-animation-delay    : 0.446s;
   -webkit-animation-delay: 0.446s;
-  -moz-animation-delay: 0.446s;
+  -moz-animation-delay   : 0.446s;
 }
 
 #floatBarsG_2 {
-  left: 15px;
-  animation-delay: 0.5525s;
-  -o-animation-delay: 0.5525s;
-  -ms-animation-delay: 0.5525s;
+  left                   : 15px;
+  animation-delay        : 0.5525s;
+  -o-animation-delay     : 0.5525s;
+  -ms-animation-delay    : 0.5525s;
   -webkit-animation-delay: 0.5525s;
-  -moz-animation-delay: 0.5525s;
+  -moz-animation-delay   : 0.5525s;
 }
 
 #floatBarsG_3 {
-  left: 30px;
-  animation-delay: 0.659s;
-  -o-animation-delay: 0.659s;
-  -ms-animation-delay: 0.659s;
+  left                   : 30px;
+  animation-delay        : 0.659s;
+  -o-animation-delay     : 0.659s;
+  -ms-animation-delay    : 0.659s;
   -webkit-animation-delay: 0.659s;
-  -moz-animation-delay: 0.659s;
+  -moz-animation-delay   : 0.659s;
 }
 
 #floatBarsG_4 {
-  left: 45px;
-  animation-delay: 0.7755s;
-  -o-animation-delay: 0.7755s;
-  -ms-animation-delay: 0.7755s;
+  left                   : 45px;
+  animation-delay        : 0.7755s;
+  -o-animation-delay     : 0.7755s;
+  -ms-animation-delay    : 0.7755s;
   -webkit-animation-delay: 0.7755s;
-  -moz-animation-delay: 0.7755s;
+  -moz-animation-delay   : 0.7755s;
 }
 
 #floatBarsG_5 {
-  left: 60px;
-  animation-delay: 0.882s;
-  -o-animation-delay: 0.882s;
-  -ms-animation-delay: 0.882s;
+  left                   : 60px;
+  animation-delay        : 0.882s;
+  -o-animation-delay     : 0.882s;
+  -ms-animation-delay    : 0.882s;
   -webkit-animation-delay: 0.882s;
-  -moz-animation-delay: 0.882s;
+  -moz-animation-delay   : 0.882s;
 }
 
 #floatBarsG_6 {
-  left: 75px;
-  animation-delay: 0.9985s;
-  -o-animation-delay: 0.9985s;
-  -ms-animation-delay: 0.9985s;
+  left                   : 75px;
+  animation-delay        : 0.9985s;
+  -o-animation-delay     : 0.9985s;
+  -ms-animation-delay    : 0.9985s;
   -webkit-animation-delay: 0.9985s;
-  -moz-animation-delay: 0.9985s;
+  -moz-animation-delay   : 0.9985s;
 }
 
 #floatBarsG_7 {
-  left: 90px;
-  animation-delay: 1.105s;
-  -o-animation-delay: 1.105s;
-  -ms-animation-delay: 1.105s;
+  left                   : 90px;
+  animation-delay        : 1.105s;
+  -o-animation-delay     : 1.105s;
+  -ms-animation-delay    : 1.105s;
   -webkit-animation-delay: 1.105s;
-  -moz-animation-delay: 1.105s;
+  -moz-animation-delay   : 1.105s;
 }
 
 #floatBarsG_8 {
-  left: 105px;
-  animation-delay: 1.2115s;
-  -o-animation-delay: 1.2115s;
-  -ms-animation-delay: 1.2115s;
+  left                   : 105px;
+  animation-delay        : 1.2115s;
+  -o-animation-delay     : 1.2115s;
+  -ms-animation-delay    : 1.2115s;
   -webkit-animation-delay: 1.2115s;
-  -moz-animation-delay: 1.2115s;
+  -moz-animation-delay   : 1.2115s;
 }
 
 
 
 @keyframes bounce_floatBarsG {
   0% {
-    transform: scale(1);
+    transform       : scale(1);
     background-color: rgb(34, 85, 17);
   }
 
   100% {
-    transform: scale(.3);
+    transform       : scale(.3);
     background-color: rgb(255, 255, 255);
   }
 }
 
 @-o-keyframes bounce_floatBarsG {
   0% {
-    -o-transform: scale(1);
+    -o-transform    : scale(1);
     background-color: rgb(34, 85, 17);
   }
 
   100% {
-    -o-transform: scale(.3);
+    -o-transform    : scale(.3);
     background-color: rgb(255, 255, 255);
   }
 }
 
 @-ms-keyframes bounce_floatBarsG {
   0% {
-    -ms-transform: scale(1);
+    -ms-transform   : scale(1);
     background-color: rgb(34, 85, 17);
   }
 
   100% {
-    -ms-transform: scale(.3);
+    -ms-transform   : scale(.3);
     background-color: rgb(255, 255, 255);
   }
 }
@@ -1590,23 +1603,23 @@ body {
 @-webkit-keyframes bounce_floatBarsG {
   0% {
     -webkit-transform: scale(1);
-    background-color: rgb(34, 85, 17);
+    background-color : rgb(34, 85, 17);
   }
 
   100% {
     -webkit-transform: scale(.3);
-    background-color: rgb(255, 255, 255);
+    background-color : rgb(255, 255, 255);
   }
 }
 
 @-moz-keyframes bounce_floatBarsG {
   0% {
-    -moz-transform: scale(1);
+    -moz-transform  : scale(1);
     background-color: rgb(34, 85, 17);
   }
 
   100% {
-    -moz-transform: scale(.3);
+    -moz-transform  : scale(.3);
     background-color: rgb(255, 255, 255);
   }
 }
