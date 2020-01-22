@@ -166,7 +166,7 @@ class HomepageSlider extends Component {
           renderItem={this.renderSlide}
           renderThumbInner={this.renderThumbnail}
           slideDuration={300}
-          slideInterval={120000}
+          slideInterval={10000}
         />
       </div>
     );

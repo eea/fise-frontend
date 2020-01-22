@@ -995,13 +995,13 @@ h5 {
 
 
 .image-gallery-left-nav {
-  left  : 1rem;
+  left  : 4rem;
   bottom: -5.5rem;
   top   : unset;
 }
 
 .image-gallery-right-nav {
-  left  : 5rem;
+  left  : 8rem;
   right : unset;
   bottom: -5.5rem;
   top   : unset;
