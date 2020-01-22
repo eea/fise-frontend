@@ -338,3 +338,13 @@
 .hamburger.is-active .hamburger-inner::after {
     background-color: #015610 !important;
 }
+
+
+
+.sticky-outer-wrapper.active {
+    @media(min-width: 1200px) and (max-width: 1300px) {
+      .sticky-inner-wrapper .navigation .ui.secondary.pointing.menu > .item.firstLevel {
+        margin: 0;
+      }
+    }
+  }

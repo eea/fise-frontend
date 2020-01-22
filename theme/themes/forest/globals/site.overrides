@@ -193,7 +193,7 @@ body.has-toolbar {
     border       : none !important;
     padding      : .5rem;
 
-    transition   : width 200ms;
+    transition   : none;
     padding-right: 39px;
   }
 
@@ -974,19 +974,28 @@ h5 {
       max-width     : 600px;
       margin-left   : 4rem;
       color         : white;
+      @media(max-width: 700px) {
+        margin-left: 1rem;
+      }
 
       .slide-title {
         font-size    : 3rem;
         font-weight  : bold;
         margin-bottom: 3rem;
         line-height  : 1.2;
+        @media(max-width: 700px) {
+          font-size: 2rem;
+        }
       }
 
       .slide-description {
         font-size  : 1.2rem;
         line-height: 1.2;
         font-weight: 200;
-        opacity    : 0.8;
+        // opacity    : 0.8;
+        @media(max-width: 700px) {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -1011,6 +1020,9 @@ h5 {
 .image-gallery-right-nav,
 .image-gallery-left-nav {
   font-size: 3rem;
+  @media(max-width: 600px) {
+    bottom: 0;
+  }
 }
 
 .image-gallery-thumbnail.active {
@@ -1621,5 +1633,26 @@ body {
   100% {
     -moz-transform  : scale(.3);
     background-color: rgb(255, 255, 255);
+  }
+}
+
+
+.sticky-outer-wrapper:not(.active) {
+  .searchShowTrigger {
+    display: none!important;
+  }
+  .searchInput {
+    width: 100%!important;
+  }
+}
+
+.sticky-outer-wrapper.active {
+  .searchInput.hidden {
+    background: transparent;
+  }
+  @media(min-width: 1200px) and (max-width: 1300px) {
+    .searchInput.show {
+      width:  133px!important;
+    }
   }
 }
