@@ -51,14 +51,14 @@ const Footer = ({ intl }) => (
             />
           </div>
 
-          <div style={{ flexGrow: '1' }} className="column">
+          <div style={{ flexGrow: '1' }} className="column empty-column">
             <div>
               <div style={{ display: 'none' }}> a </div>
             </div>
           </div>
 
           <div
-            style={{ width: '150px!important', fontSize: '.9rem' }}
+            style={{ width: '150px!important' }}
             className="column"
             id="links_column"
           >
@@ -79,11 +79,6 @@ const Footer = ({ intl }) => (
                     id="privacy_policy"
                     defaultMessage="Privacy policy"
                   />
-                </Link>
-              </li>
-              <li>
-                <Link className="item" to="/credits">
-                  <FormattedMessage id="Credits" defaultMessage="Credits" />
                 </Link>
               </li>
             </ul>
