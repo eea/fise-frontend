@@ -319,13 +319,13 @@ class View extends Component {
 
             <div className="column area-section">
               <div className="area-image">
-                <Link to="/thematic-areas/folder-condition">
+                <Link to="/thematic-areas/forest-health-and-resilience">
                   <img src={ForestHealthIMG} alt="" />
                 </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <Link to="/thematic-areas/folder-condition">
+                  <Link to="/thematic-areas/forest-health-and-resilience">
                     Forest health and resilience
                   </Link>
                 </h5>
