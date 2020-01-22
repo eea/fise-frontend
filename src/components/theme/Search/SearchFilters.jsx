@@ -118,7 +118,8 @@ const createSliderFacet = (data, facet) => {
               height: '36px',
               marginTop: '0',
               display: 'flex',
-              width: '100%'
+              width: '100%',
+              marginTop: '-27px'
             }}
           >
             <div
@@ -158,9 +159,8 @@ const createSliderFacet = (data, facet) => {
             <div
               style={{
                 position: 'absolute',
-                top: '-34px',
+                bottom: '-34px',
                 color: '#000',
-                fontWeight: 'bold',
                 fontSize: '14px',
                 fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
                 padding: '4px',
@@ -174,7 +174,7 @@ const createSliderFacet = (data, facet) => {
               style={{
                 height: '16px',
                 width: '5px',
-                backgroundColor: isDragged ? '#CD4200' : '#CCC'
+                backgroundColor: "#ffffff"
               }}
             />
           </div>
