@@ -141,7 +141,7 @@ class Search extends Component {
   state = {
     dataReady: true,
     activeTab: 0,
-    defaultRegions: [ 29, 27, 55 ],
+    defaultRegions: [ 'EEA39', 'FAO234', 'SOEF46' ],
     selectedKeywords: [],
     selectedFilters: {},
     nfiSelectedCountry: '',
@@ -341,7 +341,7 @@ class Search extends Component {
     let facetsData = {...this.state.facetsData};
     facetsData.regions = {};
     Object.keys(facetsData.country).forEach(item => {
-      if (this.state.defaultRegions.includes(facetsData.country[item].id)) {
+      if (this.state.defaultRegions.includes(facetsData.country[item].name)) {
         facetsData.regions[item] = facetsData.country[item];
         delete facetsData.country[item];
       }
