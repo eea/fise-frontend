@@ -31,6 +31,7 @@ const createCheckboxFacet = (data, facet) => {
           data.handleFilterSelected(checkbox, 'checkbox', query)
         }}
       />
+
     );
   });
 };
@@ -79,7 +80,7 @@ const createSliderFacet = (data, facet) => {
   useEffect(() => {
     setAreaChart(area_chart(400, 200, areaChartData))
     if (!data.selectedFilters[facet]) { setValues([MIN, MAX]) }
-  },[data])
+  }, [data])
 
   return (
     <div

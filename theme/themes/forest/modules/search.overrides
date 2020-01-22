@@ -176,8 +176,15 @@
 
     .tabs-container {
         // grid-area: tabs;
+        flex: 1;
+        margin-right: 100px;
 
-        width: 63%;
+        @media only screen and (max-width: 900px) {
+            .ui.compact.menu {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+        }
     }
 
     .filters-container {
@@ -231,8 +238,9 @@
 
     .checkbox-area:not(.collection) {
         flex-wrap: wrap;
-        .checkbox  {
-            width: 33.3%;
+
+        .checkbox {
+            min-width: 150px;
         }
     }
 
@@ -264,6 +272,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        display: none
     }
 }
 
@@ -354,58 +366,63 @@ hr.nfi-hr {
     //   top: 10px;
     //   left: 0;
     // }
-  }
+}
 
 .tick {
-  line {
-    stroke: #F0F2F8;
-  }
+    line {
+        stroke: #F0F2F8;
+    }
 }
 
 .x.axis {
-  .tick {
-    opacity: 0;
-    &:nth-child(8n) {
-      opacity: 1;
-      text {
+    .tick {
         opacity: 0;
-      }
+
+        &:nth-child(8n) {
+            opacity: 1;
+
+            text {
+                opacity: 0;
+            }
+        }
+
+        &:nth-child(2),
+        &:last-child {
+            opacity: 1;
+
+            line {
+                opacity: 0;
+            }
+
+            text {
+                opacity: 1;
+            }
+        }
     }
-    &:nth-child(2),
-    &:last-child {
-      opacity: 1;
-      line {
-        opacity: 0;
-      }
-      text {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 .y.axis {
-  .tick {
-    &:nth-child(2) {
-      opacity: 0;
+    .tick {
+        &:nth-child(2) {
+            opacity: 0;
+        }
     }
-  }
 }
 
 .axis {
-  .domain {
-    stroke: #000;
-  }
+    .domain {
+        stroke: #000;
+    }
 }
 
 .bar {
-  pointer-events: all;
+    pointer-events: all;
 }
 
 .line {
-  fill: none;
-  // stroke: #AEABFB;
-  stroke-width: 3;
+    fill: none;
+    // stroke: #AEABFB;
+    stroke-width: 3;
 }
 
 .area {
