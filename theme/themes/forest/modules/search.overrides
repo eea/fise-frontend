@@ -13,6 +13,7 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .max-results {
@@ -211,13 +212,13 @@
 }
 
 .filters-container {
-    width: 300px;
+    width: 350px;
     margin: 16px 0;
 
     .filters-toggle {
         position: absolute;
         top: 0;
-        right: 360px;
+        right: 390px;
         background: white;
         border: 1px solid #225511;
         padding: 7px;
@@ -296,11 +297,11 @@
     }
 
     @media only screen and (max-width: 1200px) {
-        padding: 15px;
+        padding: 25px;
         position: absolute;
         background: white;
         right: 0;
-        transform: translateX(120%);
+        transform: translateX(110%);
         transition: transform 300ms;
         box-shadow: -1px 1px 4px 5px #00000026;
 
@@ -310,7 +311,7 @@
         width: 200px;
 
         .filters-toggle {
-            right:200px;
+            right: 200px;
         }
     }
 
@@ -375,6 +376,10 @@ hr.nfi-hr {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    // @media screen and (max-width: 550px) {
+    //     flex-direction: column;
+    // }
 }
 
 .mt-2 {
