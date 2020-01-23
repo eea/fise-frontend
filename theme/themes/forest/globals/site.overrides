@@ -372,8 +372,9 @@ body.has-toolbar {
 }
 
 .header-image {
-  height         : 400px;
+  height         : 280px;
   background-size: cover;
+  background-position: center;
 }
 
 .rich-text-body {
@@ -1682,7 +1683,7 @@ body {
 }
 
 #page-document {
-  h2 {
+  h2, h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
    }
