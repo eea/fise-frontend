@@ -69,7 +69,8 @@ const panes = context => {
         );
       },
     },
-    { menuItem: 'Regional / International data',
+    {
+      menuItem: 'Regional / International data',
       render: () => {
         return (
           <RenderSearch
@@ -139,9 +140,10 @@ class Search extends Component {
   };
 
   state = {
+    toggle: false,
     dataReady: true,
     activeTab: 0,
-    defaultRegions: [ 'EEA39', 'FAO234', 'SOEF46' ],
+    defaultRegions: ['EEA39', 'FAO234', 'SOEF46'],
     selectedKeywords: [],
     selectedFilters: {},
     nfiSelectedCountry: '',
@@ -267,6 +269,11 @@ class Search extends Component {
     }
   };
 
+
+  handleToggle = () => {
+    this.setState({ toggle: !this.state.toggle })
+  }
+
   /**
    * Search based on the given searchableText, subject and path.
    * @method doSearch
@@ -338,7 +345,7 @@ class Search extends Component {
   };
 
   initiateRegions = () => {
-    let facetsData = {...this.state.facetsData};
+    let facetsData = { ...this.state.facetsData };
     facetsData.regions = {};
     Object.keys(facetsData.country).forEach(item => {
       if (this.state.defaultRegions.includes(facetsData.country[item].name)) {
@@ -413,6 +420,7 @@ class Search extends Component {
       keyword => keyword.value,
     );
 
+
     if (this.state.activeTab === 1) {
       countries = this.state.nfiSelectedCountry;
       Object.keys(this.state.selectedFilters).forEach(filter => {
@@ -446,7 +454,7 @@ class Search extends Component {
   };
 
   handleTabChange = (event, data) => {
-    let selectedFilters = {...this.state.selectedFilters};
+    let selectedFilters = { ...this.state.selectedFilters };
     selectedFilters.country = '';
     this.setState({
       activeTab: data.activeIndex,
@@ -594,6 +602,9 @@ class Search extends Component {
     });
   };
 
+
+
+
   render() {
     const context = {
       term: this.props.searchableText,
@@ -605,6 +616,8 @@ class Search extends Component {
         selectedFilters: this.state.selectedFilters,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
+        toggleFilters: this.state.toggle,
+        handleToggle: this.handleToggle,
       },
       nfiData: {
         id: this.state.activeTab === 1 ? 'nfi_country' : 'nfi_region',
@@ -617,14 +630,16 @@ class Search extends Component {
         handleCountrySelected: this.handleCountrySelected,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
+        toggleFilters: this.state.toggle,
+        handleToggle: this.handleToggle,
       },
       pagination:
         this.state.activeTab > 0
           ? {
-              ...this.state.pagination,
-              updateItemsPerPage: this.updateItemsPerPage,
-              updatePage: this.updatePage,
-            }
+            ...this.state.pagination,
+            updateItemsPerPage: this.updateItemsPerPage,
+            updatePage: this.updatePage,
+          }
           : null,
     };
     const loader = <h1>Loading data...</h1>;
@@ -675,7 +690,8 @@ class Search extends Component {
             panes={panes(context)}
             onTabChange={this.handleTabChange}
           />
-          {searchFilters}
+           
+            {searchFilters}
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar

@@ -209,8 +209,8 @@ const SearchFilters = ({ data }) => {
   }
 
   return (
-    <div className="filters-container">
-      <BodyClass />
+    <div style={data.toggleFilters ? { transform: 'translate(0)' } : {}} className='filters-container'>
+      <button className="filters-toggle" onClick={() => data.handleToggle()}>{data.toggleFilters ? "HIDE" : "FILTERS"}</button>
       <div className="filters-head">
         <h3 className="header">FILTERS</h3>
         <h5 className="clear-filters" onClick={data.handleClearFilters}>

@@ -149,6 +149,11 @@
         font-size: @standardFont;
         color: #999999;
     }
+
+    .ui.container {
+        overflow: hidden;
+        position: relative;
+    }
 }
 
 .search-page-content {
@@ -179,33 +184,49 @@
         flex: 1;
         margin-right: 100px;
 
+
+
+        a.active {
+            border-radius: 3px !important;
+            background: #CC4400!important;
+            color: white !important;
+        }
+
+        .menu {
+            box-shadow: none !important;
+        }
+
         @media only screen and (max-width: 900px) {
             .ui.compact.menu {
                 display: flex !important;
                 flex-direction: column !important;
+                width: max-content
             }
         }
     }
 
-    .filters-container {
-        // grid-area: filters;
-
-        width: 30%;
+    @media only screen and (max-width:1200px) {
+        min-height: 1400px;
     }
-
-    a.active {
-        background: #CC4400 !important;
-        color: white !important;
-    }
-
-    .menu {
-        box-shadow: none !important;
-    }
-
-    margin: 16px 0;
 }
 
 .filters-container {
+    width: 300px;
+    margin: 16px 0;
+
+    .filters-toggle {
+        position: absolute;
+        top: 0;
+        right: 360px;
+        background: white;
+        border: 1px solid #225511;
+        padding: 7px;
+        border-radius: 5px;
+        color: #225511;
+        font-weight: 600;
+        width: 80px;
+    }
+
     .filters-head {
         display: flex;
         justify-content: space-between;
@@ -275,7 +296,20 @@
     }
 
     @media only screen and (max-width: 1200px) {
-        display: none
+        padding: 15px;
+        position: absolute;
+        background: white;
+        right: 0;
+        transform: translateX(120%);
+        transition: transform 300ms;
+        box-shadow: -1px 1px 4px 5px #00000026;
+
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .filters-toggle {
+            display: none;
+        }
     }
 }
 
@@ -300,8 +334,6 @@
         color: #9A9A9A;
         font-size: 0.7em;
     }
-
-    .countries-header {}
 
     .countries-poll {
         display: flex;
@@ -428,3 +460,13 @@ hr.nfi-hr {
 .area {
     fill: #EFEFEF;
 }
+
+// filters-container {
+//     position: absolute;
+//     background: white;
+//     right: 0;
+//     transform: translateX(107%);
+//     transition: transform 300ms;
+//     box-shadow: -1px 1px 4px 5px #00000026;
+//     transform: translateX(0);
+// }
