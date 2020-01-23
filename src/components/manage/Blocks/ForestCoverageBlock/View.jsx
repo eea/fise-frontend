@@ -1,5 +1,6 @@
 import React from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
+import { Link } from 'react-router-dom';
 
 const View = props => {
   console.log('block props', props);
@@ -35,6 +36,8 @@ const View = props => {
           <a
             className="discreet block_source"
             href={props.data.chart_source_link}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {props.data.chart_source}
           </a>
