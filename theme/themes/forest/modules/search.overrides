@@ -212,13 +212,14 @@
 }
 
 .filters-container {
-    width: 350px;
+    width: 33.33%;
     margin: 16px 0;
 
     .filters-toggle {
+        cursor: pointer;
         position: absolute;
         top: 0;
-        right: 390px;
+        right: 110%;
         background: white;
         border: 1px solid #225511;
         padding: 7px;
@@ -297,6 +298,7 @@
     }
 
     @media only screen and (max-width: 1200px) {
+        width: 50%;
         padding: 25px;
         position: absolute;
         background: white;
@@ -308,11 +310,8 @@
     }
 
     @media only screen and (max-width: 550px) {
-        width: 200px;
 
-        .filters-toggle {
-            right: 200px;
-        }
+        width: 65%;
     }
 
     @media only screen and (min-width: 1200px) {
@@ -350,9 +349,12 @@
     }
 
     .countries-poll .country {
-        flex-grow: 1;
         width: 25%;
         margin: 2px 0;
+
+        @media screen and (max-width:900px) {
+            flex-basis: 50%;
+        }
     }
 }
 
