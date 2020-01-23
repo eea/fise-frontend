@@ -188,7 +188,7 @@
 
         a.active {
             border-radius: 3px !important;
-            background: #CC4400!important;
+            background: #CC4400 !important;
             color: white !important;
         }
 
@@ -304,6 +304,14 @@
         transition: transform 300ms;
         box-shadow: -1px 1px 4px 5px #00000026;
 
+    }
+
+    @media only screen and (max-width: 550px) {
+        width: 200px;
+
+        .filters-toggle {
+            right:200px;
+        }
     }
 
     @media only screen and (min-width: 1200px) {
