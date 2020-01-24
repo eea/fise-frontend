@@ -246,15 +246,10 @@ class View extends Component {
 
         <div className="thematic-areas">
           <div className="centered-content">
-            <h2>Main thematic areas</h2>
+            <h2>Topics</h2>
             <p>
-              For several decades now, environmental forest functions have
-              attracted increasing attention mainly in relation to the
-              protection of biodiversity and, more recently, in the context of
-              climate change impacts and energy policies. Forests are
-              increasingly valued for their role as regulators of climate and
-              local weather, protection against natural disasters and renewable
-              energy sources.
+             Forests and their ecosystems are currently at the top of policy agenda and public attention in the context of the protection of biodiversity, climate change impacts, their adaptation and mitigation as well as renewable energy issues. 
+             Sustainable forest management is required to balance the environmental, social and economic pillars of sustainability.
             </p>
           </div>
 
@@ -311,7 +306,7 @@ class View extends Component {
               <div className="area-content">
                 <h5 className="area-title">
                   <Link to="/thematic-areas/forest-and-climate-change">
-                    Climate change mitigation
+                   Forest and climate change
                   </Link>
                 </h5>
               </div>
