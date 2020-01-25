@@ -165,42 +165,42 @@ export default compose(
     {
       key: 'content',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getContent(getBaseUrl(location.pathname))),
+         dispatch(getContent(getBaseUrl(location.pathname))),
     },
     {
       key: 'frontpage_slides',
       promise: ({ store: { dispatch } }) =>
-        __SERVER__ && dispatch(getFrontpageSlides()),
+         dispatch(getFrontpageSlides()),
     },
     {
       key: 'defaultHeaderImage',
       promise: ({ store: { dispatch } }) =>
-        __SERVER__ && dispatch(getDefaultHeaderImage()),
+         dispatch(getDefaultHeaderImage()),
     },
     {
       key: 'navigation',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getNavigation(getBaseUrl(location.pathname))),
+         dispatch(getNavigation(getBaseUrl(location.pathname))),
     },
     {
       key: 'types',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getTypes(getBaseUrl(location.pathname))),
+         dispatch(getTypes(getBaseUrl(location.pathname))),
     },
     {
       key: 'workflow',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getWorkflow(getBaseUrl(location.pathname))),
+         dispatch(getWorkflow(getBaseUrl(location.pathname))),
     },
     {
       key: 'portlets',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getPortlets(getBaseUrl(location.pathname))),
+         dispatch(getPortlets(getBaseUrl(location.pathname))),
     },
     {
       key: 'portlets_left',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ &&
+        
         dispatch(
           getPortlets(getBaseUrl(location.pathname), 'plone.leftcolumn'),
         ),
@@ -208,7 +208,7 @@ export default compose(
     {
       key: 'portlets_right',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ &&
+        
         dispatch(
           getPortlets(getBaseUrl(location.pathname), 'plone.rightcolumn'),
         ),
@@ -216,7 +216,7 @@ export default compose(
     {
       key: 'portlets_footer',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ &&
+        
         dispatch(
           getPortlets(getBaseUrl(location.pathname), 'plone.footerportlets'),
         ),
