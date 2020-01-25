@@ -111,7 +111,7 @@ class Header extends Component {
     // this.props.defaultHeaderImage &&
     // this.props.defaultHeaderImage.length &&
     // this.props.defaultHeaderImage[0].image;
-    let headerImageUrl = defaultHeaderImage.image || defaultHeaderImage;
+    let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
     // console.log(defaultHeaderImage)
     return (
       <div className="header-wrapper" role="banner">
