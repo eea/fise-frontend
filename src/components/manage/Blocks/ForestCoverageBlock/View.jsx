@@ -1,9 +1,9 @@
 import React from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const View = props => {
-  console.log('block props', props);
+  // console.log('block props', props);
   return (
     <div className="forest-block-wrapper">
       <div className="forest-specific-block forest-area-block">

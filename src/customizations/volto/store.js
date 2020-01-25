@@ -50,7 +50,7 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
             : '';
         const fullObjects = `${isGetContent ? '?fullobjects' : ''}${expand}`;
         const url = `${path}${fullObjects}`;
-        console.debug('isGetContent', isGetContent);
+        // console.debug('isGetContent', isGetContent);
         if (!isGetContent) return next(action);
         const prefetchAction = {
           type: PREFETCH_ROUTER_LOCATION_CHANGE,
