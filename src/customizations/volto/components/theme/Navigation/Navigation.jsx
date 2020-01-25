@@ -6,15 +6,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { isMatch } from 'lodash';
-import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Menu, Dropdown } from 'semantic-ui-react';
 import cx from 'classnames';
-import { getBaseUrl } from '@plone/volto/helpers';
-
-import { getNavigation } from '@plone/volto/actions';
+import { getBasePath } from '~/helpers';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -69,10 +66,10 @@ class Navigation extends Component {
   /**
    * Component will mount
    * @method componentWillMount
-   * @returns {undefined}
+   * @returns {undefined}getBasePath
    */
   componentWillMount() {
-    this.props.getNavigation(getBaseUrl(this.props.pathname), 2);
+    // this.props.getNavigation(getBaseUrl(this.props.pathname), 2);
     this.closeMobileMenu();
   }
 
@@ -84,7 +81,7 @@ class Navigation extends Component {
    */
   componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
-      this.props.getNavigation(getBaseUrl(nextProps.pathname), 2);
+      // this.props.getNavigation(getBaseUrl(nextProps.pathname), 2);
       this.closeMobileMenu();
     }
   }
@@ -130,12 +127,16 @@ class Navigation extends Component {
     this.setState({ isMobileMenuOpen: false });
   }
 
-  /**
-   * Render method.
-   * @method render
-   * @returns {string} Markup for the component.
-   */
+  formatNavUrl = nav => {
+    return nav.map(navItem => ({
+      ...navItem,
+      url: navItem.url ? getBasePath(navItem.url) : '',
+      items: navItem.items ? this.formatNavUrl(navItem.items) : false,
+    }));
+  };
+
   render() {
+    const navigation = this.formatNavUrl(this.props.navigation);
     return (
       <nav className="navigation">
         <div className="hamburger-wrapper large screen hidden widescreen hidden">
@@ -180,7 +181,7 @@ class Navigation extends Component {
           }
           onClick={this.closeMobileMenu}
         >
-          {this.props.items.map(item =>
+          {navigation.map(item =>
             item.items && item.items.length ? (
               <Dropdown
                 closeOnChange={true}
@@ -261,6 +262,7 @@ class Navigation extends Component {
               </Dropdown>
             ) : (
               <Link
+                // style={{ display: `${__CLIENT__ ? 'block' : 'none'}` }}
                 to={item.url === '' ? '/' : item.url}
                 key={item.url}
                 className={
@@ -279,12 +281,4 @@ class Navigation extends Component {
   }
 }
 
-export default compose(
-  injectIntl,
-  connect(
-    state => ({
-      items: state.navigation.items,
-    }),
-    { getNavigation },
-  ),
-)(Navigation);
+export default compose(injectIntl)(Navigation);

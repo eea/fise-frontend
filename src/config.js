@@ -34,7 +34,7 @@ export const settings = {
     ...config.settings.contentExpand.filter(
       content => content !== 'navigation',
     ),
-    ...['navigation', '&expand.navigation.depth=3'],
+    // ...['navigation', '&expand.navigation.depth=3'],
   ],
 };
 
