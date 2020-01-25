@@ -220,6 +220,7 @@ export default compose(
     {
       key: 'localnavigation',
       promise: ({ location, store: { content, dispatch } }) =>
+        __SERVER__ &&
         dispatch(getLocalnavigation(getBaseUrl(location.pathname))),
     },
   ]),

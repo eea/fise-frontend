@@ -267,17 +267,22 @@ class View extends Component {
           <Toolbar pathname={this.props.pathname} inner={<span />} />
         </Portal>
 
-        {__CLIENT__ && document.querySelector('.header-image .header-image') && (
-          <Portal
-            node={
-              __CLIENT__ &&
-              document.querySelector('.header-image .header-image')
-            }
-          >
-            <h1>{this.props.content.title}</h1>
-            <p>{this.props.content.description}</p>
-          </Portal>
-        )}
+        {__CLIENT__ &&
+          document.querySelector(
+            '.header-image-wrapper .header-image-content',
+          ) && (
+            <Portal
+              node={
+                __CLIENT__ &&
+                document.querySelector(
+                  '.header-image-wrapper .header-image-content',
+                )
+              }
+            >
+              <h1>{this.props.content.title}</h1>
+              <p>{this.props.content.description}</p>
+            </Portal>
+          )}
       </div>
     );
   }
