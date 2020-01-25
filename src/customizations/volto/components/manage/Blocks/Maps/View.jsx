@@ -33,18 +33,28 @@ const View = ({ data, intl }) => (
         data.align,
       )}
     >
+      blblaldsasa
       <div
         className={cx('video-inner', {
           'full-width': data.align === 'full',
         })}
       >
-        <iframe
-          title={intl.formatMessage(messages.EmbededGoogleMaps)}
-          src={data.url}
-          className="google-map"
-          frameBorder="0"
-          allowFullScreen
-        />
+        {({ isVisible }) =>
+          isVisible ? (
+            <div>
+              <div>I am {isVisible ? 'visible' : 'invisible'}</div>
+              <iframe
+                title={intl.formatMessage(messages.EmbededGoogleMaps)}
+                src={data.url}
+                className="google-map"
+                frameBorder="0"
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            ''
+          )
+        }
       </div>
     </p>
   </VisibilitySensor>
