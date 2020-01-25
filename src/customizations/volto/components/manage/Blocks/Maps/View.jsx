@@ -3,7 +3,7 @@
  * @module components/manage/Blocks/Maps/View
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -22,43 +22,41 @@ const messages = defineMessages({
  * @extends Component
  */
 
-const View = ({ data, intl }) => (
-  <VisibilitySensor partialVisibility={true}>
-    <p
-      className={cx(
-        'block maps align',
-        {
-          center: !Boolean(data.align),
-        },
-        data.align,
-      )}
-    >
-      blblaldsasa
-      <div
-        className={cx('video-inner', {
-          'full-width': data.align === 'full',
-        })}
+const View = ({ data, intl }) => {
+  const [visible, setVisibility] = useState(false);
+  return (
+    <VisibilitySensor partialVisibility={true} onChange={setVisibility}>
+      <p
+        className={cx(
+          'block maps align',
+          {
+            center: !Boolean(data.align),
+          },
+          data.align,
+        )}
       >
-        {({ isVisible }) =>
-          isVisible ? (
-            <div>
-              <div>I am {isVisible ? 'visible' : 'invisible'}</div>
-              <iframe
-                title={intl.formatMessage(messages.EmbededGoogleMaps)}
-                src={data.url}
-                className="google-map"
-                frameBorder="0"
-                allowFullScreen
-              />
-            </div>
+        <div
+          className={cx('video-inner', {
+            'full-width': data.align === 'full',
+          })}
+        >
+          {visible ? (
+            <iframe
+              title={intl.formatMessage(messages.EmbededGoogleMaps)}
+              src={data.url}
+              className="google-map"
+              frameBorder="0"
+              allowFullScreen
+              style={{ height: '100%' }}
+            />
           ) : (
             ''
-          )
-        }
-      </div>
-    </p>
-  </VisibilitySensor>
-);
+          )}
+        </div>
+      </p>
+    </VisibilitySensor>
+  );
+};
 
 /**
  * Property types.
