@@ -42,7 +42,7 @@ const DefaultView = props => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
-  console.log('default view props', props);
+  // console.log('default view props', props);
 
   // const currentUrl = content?.['@id'];
   // const shouldRenderRoutes =
