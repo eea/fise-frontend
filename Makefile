@@ -122,3 +122,12 @@ develop:		## Runs "git pull" in all addons
 .PHONY: help
 help:		## Show this help.
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
+
+.PHONY: build-production
+try-production:		## Build production bundle
+	NODE_OPTIONS=--max_old_space_size=4096 \
+		RAZZLE_API_PATH=VOLTO_API_PATH \
+		RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
+		yarn build
+	./entrypoint-dev.sh
+	echo "Now run: node build/server.js"
