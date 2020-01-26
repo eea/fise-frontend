@@ -46,10 +46,6 @@ RUN apt-get update -y \
 
 WORKDIR /opt/frontend/
 
-RUN chown -R node /opt/frontend
-
-USER node
-
 COPY entrypoint-prod.sh /opt/frontend/entrypoint.sh
 RUN chmod +x entrypoint.sh
 
@@ -58,6 +54,10 @@ COPY package-lock.json .
 
 COPY --from=build /opt/frontend/public ./public
 COPY --from=build /opt/frontend/build ./build
+
+RUN chown -R node /opt/frontend
+
+USER node
 
 RUN npm install --production
 
