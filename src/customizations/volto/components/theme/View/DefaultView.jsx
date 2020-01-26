@@ -22,7 +22,7 @@ import {
 } from '@plone/volto/helpers';
 // import { samePath } from 'volto-mosaic/helpers';
 import { connect } from 'react-redux';
-import Spinner from 'volto-mosaic/components/theme/Spinner';
+// import Spinner from 'volto-mosaic/components/theme/Spinner';
 
 // const messages = defineMessages({
 //   unknownBlock: {
@@ -42,7 +42,9 @@ const DefaultView = props => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
-  const currentUrl = content?.['@id'];
+  console.log('default view props', props);
+
+  // const currentUrl = content?.['@id'];
   // const shouldRenderRoutes =
   //   typeof currentUrl !== 'undefined' && samePath(currentUrl, props.pathname)
   //     ? true
