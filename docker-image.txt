@@ -1,1 +1,1 @@
-tiberiuichim/fise-frontend:4.2-0.81
+tiberiuichim/fise-frontend:4.2-0.82
