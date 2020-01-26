@@ -12,10 +12,11 @@ const jsConfig = require('./jsconfig');
 const path = require('path');
 const fs = require('fs');
 const glob = require('glob').sync;
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const FILES_GLOB = '**/*.*(svg|png|jpg|jpeg|gif|ico|less|js|jsx)';
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 const pathsConfig = jsConfig.compilerOptions.paths;
 let voltoPath = './node_modules/@plone/volto';
 Object.keys(pathsConfig).forEach(pkg => {
@@ -229,6 +230,8 @@ module.exports = {
     console.log('aliases', vc.resolve.alias);
     console.log('----');
     console.log('rules', vc.module.rules);
+
+    vc.plugins.push(new CompressionPlugin());
 
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
