@@ -131,73 +131,8 @@ class Navigation extends Component {
     return nav.map(navItem => ({
       ...navItem,
       url: navItem.url ? getBasePath(navItem.url) : '',
-      items:
-        navItem.title === 'Countries'
-          ? [
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-              {
-                url: '/',
-                title: 'Regions',
-              },
-              {
-                url: '/',
-                title: 'Austria',
-              },
-            ]
-          : false,
+      items: navItem.items ? this.formatNavUrl(navItem.items) : false,
     }));
-    // navItem.items ? this.formatNavUrl(navItem.items) : false,
   };
 
   render() {
