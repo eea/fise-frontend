@@ -131,12 +131,78 @@ class Navigation extends Component {
     return nav.map(navItem => ({
       ...navItem,
       url: navItem.url ? getBasePath(navItem.url) : '',
-      items: navItem.items ? this.formatNavUrl(navItem.items) : false,
+      items:
+        navItem.title === 'Countries'
+          ? [
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+              {
+                url: '/',
+                title: 'Regions',
+              },
+              {
+                url: '/',
+                title: 'Austria',
+              },
+            ]
+          : false,
     }));
+    // navItem.items ? this.formatNavUrl(navItem.items) : false,
   };
 
   render() {
     const navigation = this.formatNavUrl(this.props.navigation);
+    // return <div>{JSON.stringify(this.props.navigation)}</div>
     return (
       <nav className="navigation">
         <div className="hamburger-wrapper large screen hidden widescreen hidden">
@@ -214,7 +280,7 @@ class Navigation extends Component {
                 item
                 simple
               >
-                <Dropdown.Menu>
+                <Dropdown.Menu className={`${item.title}--section`}>
                   <Dropdown.Header>
                     {/* <div className="carretTop" /> */}
                     {/* <Link to={item.url === '' ? '/' : item.url} key={item.url}> */}
@@ -223,7 +289,11 @@ class Navigation extends Component {
                   </Dropdown.Header>
                   {/* <Dropdown.Divider /> */}
                   {item.items.map(subitem => (
-                    <Dropdown.Item key={subitem.url}>
+                    <Dropdown.Item
+                      className={`${item.title}--section-item`}
+                      id={subitem.title}
+                      key={subitem.url}
+                    >
                       <Link
                         to={subitem.url === '' ? '/' : subitem.url}
                         key={subitem.url}
