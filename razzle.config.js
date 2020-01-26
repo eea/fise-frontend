@@ -242,26 +242,6 @@ module.exports = {
     // const hardSource = new HardSourceWebpackPlugin();
     // vc.plugins.push(hardSource);
 
-    // const stats = `bundle-stats-${target}`.json;
-    // const report = `bundle-stats-${target}`.html;
-    //
-    // if (target === 'web' && !dev) {
-    //   vc.plugins.push(
-    //     new BundleAnalyzerPlugin.BundleAnalyzerPlugin({
-    //       analyzerMode: 'static',
-    //       reportFilename: report,
-    //       generateStatsFile: true,
-    //       statsFilename: stats,
-    //       openAnalyzer: false,
-    //       logLevel: 'warn',
-    //       statsOptions: {
-    //         reasons: true,
-    //       },
-    //     }),
-    //   );
-    // }
-    // console.log('plugins', vc.plugins);
-
     console.log('config', vc);
 
     return vc;
