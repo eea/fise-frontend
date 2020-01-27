@@ -54,7 +54,12 @@ const DefaultView = props => {
   return (
     <Grid columns="equal">
       {renderPortletManager('plone.leftcolumn', 3, { ...props })}
-      <Grid.Column tablet={12} largeScreen={6} widescreen={6}>
+      <Grid.Column
+        style={{ position: 'static' }}
+        tablet={12}
+        largeScreen={6}
+        widescreen={6}
+      >
         {hasBlocksData(content) ? (
           <div id="page-document" className="ui container">
             <Helmet title={content.title} />
