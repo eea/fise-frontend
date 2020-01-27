@@ -35,7 +35,7 @@ class App extends Component {
     pathname: PropTypes.string.isRequired,
     purgeMessages: PropTypes.func.isRequired,
     folderHeader: PropTypes.any,
-    getDefaultHeaderImage: PropTypes.func.isRequired,
+    // getDefaultHeaderImage: PropTypes.func.isRequired,
     // defaultHeaderImage: PropTypes.object.isRequired,
   };
 
@@ -227,7 +227,8 @@ export default compose(
       folderHeader: state.folder_header.items,
       defaultHeaderImage: state.default_header_image.items?.[0],
       pathname: props.location.pathname,
-      content: state.content.data,
+      // content: state.content.data,
+      content: state.prefetch?.[props.location.pathname] || state.content.data,
       frontpage_slides: state.frontpage_slides.items,
       navigation: state.navigation.items,
 

@@ -39,6 +39,7 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
     return next(action);
   }
 
+  // console.log('action', action.type);
   switch (action.type) {
     case '@@router/LOCATION_CHANGE':
       if (!action.payload?.prefetched) {

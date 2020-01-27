@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from '@plone/volto/helpers';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { getLocalnavigation } from '~/actions';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers'; // , flattenToAppURL
 
 // import { injectIntl } from 'react-intl'; // defineMessages,
 
-import { Container, Image, Grid } from 'semantic-ui-react';
+import { Container, Image } from 'semantic-ui-react'; // , Grid
 import { map } from 'lodash';
 
 import { settings, blocks } from '~/config';
@@ -47,15 +47,15 @@ class ListingView extends Component {
     }).isRequired,
   };
 
-  constructor(props) {
-    super(props);
-
-    const url = props.content['@id']
-      .replace(settings.apiPath, '')
-      .replace(settings.internalApiPath, '');
-
-    // this.props.getLocalnavigation(url);
-  }
+  // constructor(props) {
+  //   super(props);
+  //
+  //   const url = props.content['@id']
+  //     .replace(settings.apiPath, '')
+  //     .replace(settings.internalApiPath, '');
+  //
+  //   // this.props.getLocalnavigation(url);
+  // }
 
   // componentDidMount() {
   //   const url = this.props.content['@id']
@@ -73,7 +73,7 @@ class ListingView extends Component {
   // }
 
   render() {
-    console.log('asynclocalnav prop', this.props);
+    // console.log('asynclocalnav prop', this.props);
     const content = this.props.content;
     // const intl = this.props.intl;
     const blocksFieldname = getBlocksFieldname(content);

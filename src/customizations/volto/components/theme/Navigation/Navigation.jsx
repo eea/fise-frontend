@@ -36,15 +36,15 @@ class Navigation extends Component {
    * @static
    */
   static propTypes = {
-    getNavigation: PropTypes.func.isRequired,
+    // getNavigation: PropTypes.func.isRequired,
     pathname: PropTypes.string.isRequired,
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string,
-        url: PropTypes.string,
-        items: PropTypes.array,
-      }),
-    ).isRequired,
+    // items: PropTypes.arrayOf(
+    //   PropTypes.shape({
+    //     title: PropTypes.string,
+    //     url: PropTypes.string,
+    //     items: PropTypes.array,
+    //   }),
+    // ).isRequired,
   };
 
   /**
