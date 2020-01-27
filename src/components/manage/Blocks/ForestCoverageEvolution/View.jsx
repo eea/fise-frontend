@@ -4,7 +4,7 @@ import { Grid } from 'semantic-ui-react';
 import ConnectedChart from 'volto-plotlycharts/ConnectedChart';
 // import ViewText from '@plone/volto/components/manage/Blocks/Text/View';
 import ViewConnectedValue from './ViewConnectedValue';
-import SourceView from '~/components/theme/Blocks/SourceView'
+import SourceView from 'volto-datablocks/theme/Blocks/SourceView'
 
 const EmbedChartView = props => {
   // console.log('props in chart view', props);
