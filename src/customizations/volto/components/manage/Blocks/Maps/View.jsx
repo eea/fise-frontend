@@ -25,7 +25,12 @@ const messages = defineMessages({
 const View = ({ data, intl }) => {
   const [visible, setVisibility] = useState(false);
   return (
-    <VisibilitySensor partialVisibility={true} onChange={setVisibility}>
+    <VisibilitySensor
+      partialVisibility={true}
+      onChange={isVisible => {
+        !visible && isVisible && setVisibility(true);
+      }}
+    >
       <p
         className={cx(
           'block maps align',
