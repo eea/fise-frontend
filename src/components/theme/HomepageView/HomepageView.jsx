@@ -268,24 +268,11 @@ class View extends Component {
                 </h5>
               </div>
             </div>
-
-            <div className="column area-section">
-              <div className="area-image">
-                <Link to="/thematic-areas/forest-bioeconomy">
-                  <img src={NatureIMG} alt="" />
-                </Link>
-              </div>
-              <div className="area-content">
-                <h5 className="area-title">
-                  <Link to="/thematic-areas/forest-bioeconomy">Bioeconomy</Link>
-                </h5>
-              </div>
-            </div>
-
-            <div className="column area-section">
+            
+           <div className="column area-section">
               <div className="area-image">
                 <Link to="/thematic-areas/forest-nature-and-biodiversity">
-                  <img src={ForestCarbonIMG} alt="" />
+                  <img src={NatureIMG} alt="" />
                 </Link>
               </div>
               <div className="area-content">
@@ -296,8 +283,8 @@ class View extends Component {
                 </h5>
               </div>
             </div>
-
-            <div className="column area-section">
+            
+           <div className="column area-section">
               <div className="area-image">
                 <Link to="/thematic-areas/forest-and-climate-change">
                   <img src={ForestIMG} alt="" />
@@ -311,8 +298,8 @@ class View extends Component {
                 </h5>
               </div>
             </div>
-
-            <div className="column area-section">
+            
+           <div className="column area-section">
               <div className="area-image">
                 <Link to="/thematic-areas/forest-health-and-resilience">
                   <img src={ForestHealthIMG} alt="" />
@@ -326,6 +313,27 @@ class View extends Component {
                 </h5>
               </div>
             </div>
+            
+            
+            
+            <div className="column area-section">
+              <div className="area-image">
+                <Link to="/thematic-areas/forest-bioeconomy">
+                  <img src={ForestCarbonIMG} alt="" />
+                </Link>
+              </div>
+              <div className="area-content">
+                <h5 className="area-title">
+                  <Link to="/thematic-areas/forest-bioeconomy">Bioeconomy</Link>
+                </h5>
+              </div>
+            </div>
+
+           
+
+        
+
+   
           </div>
         </div>
 
