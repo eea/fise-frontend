@@ -44,12 +44,15 @@ const View = ({ data, intl }) => {
         className={cx({
           'full-width-block': data.align === 'full',
         })}
+        style={{ height: '100%' }}
       >
         <VisibilitySensor
           onChange={isVisible => {
             console.log('is visible', isVisible, visible);
             !visible && isVisible && setVisibility(true);
           }}
+          partialVisibility={true}
+          offset={{ bottom: 200 }}
         >
           {visible ? (
             <iframe
