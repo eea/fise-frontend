@@ -126,6 +126,7 @@ help:		## Show this help.
 .PHONY: build-production
 try-production:		## Build production bundle
 	NODE_OPTIONS=--max_old_space_size=4096 \
+		BUNDLE_ANALYZE=true \
 		RAZZLE_API_PATH=VOLTO_API_PATH \
 		RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
 		yarn build
