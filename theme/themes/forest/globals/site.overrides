@@ -1146,7 +1146,8 @@ body {
 @purple: #753852;
 
 .block_source {
-  padding: 1rem;
+  line-height: 1.2;
+  display: block;
 }
 
 // General

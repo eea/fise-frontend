@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
+import SourceView from '~/components/theme/Blocks/SourceView';
 
 class View extends Component {
   render() {
@@ -31,14 +32,11 @@ class View extends Component {
             </div>
           </div>
           <div>
-            <a
-              className="discreet block_source"
-              href={this.props.data.chart_source_link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {this.props.data.chart_source}
-            </a>
+            <SourceView
+              initialSource={this.props.data.chart_source}
+              initialSourceLink={this.props.data.chart_source_link}
+              multipleSources={this.props.data.chartSources}
+            />
           </div>
         </div>
       </div>

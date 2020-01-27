@@ -4,6 +4,7 @@ import { Grid } from 'semantic-ui-react';
 import ConnectedChart from 'volto-plotlycharts/ConnectedChart';
 // import ViewText from '@plone/volto/components/manage/Blocks/Text/View';
 import ViewConnectedValue from './ViewConnectedValue';
+import SourceView from '~/components/theme/Blocks/SourceView'
 
 const EmbedChartView = props => {
   // console.log('props in chart view', props);
@@ -27,14 +28,11 @@ const EmbedChartView = props => {
           </Grid.Column>
           <Grid.Column width={12}>
             <div>
-              <a
-                className="discreet block_source"
-                href={props.data.chart_source_link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {props.data.chart_source}
-              </a>
+              <SourceView
+                initialSource={props.data.chart_source}
+                initialSourceLink={props.data.chart_source_link}
+                multipleSources={props.data.chartSources}
+              />
             </div>
           </Grid.Column>
         </Grid>
