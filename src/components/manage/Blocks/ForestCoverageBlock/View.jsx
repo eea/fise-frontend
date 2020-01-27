@@ -20,7 +20,6 @@ const View = props => {
             </span>
           </div>
           <div className="land-data-content">
-            {props.data?.columns?.percText?.value}
             <span>
               <DataConnectedValue
                 url={props.data.provider_url}
@@ -30,6 +29,7 @@ const View = props => {
               />{' '}
               {props.data?.columns?.totalAreaUnit?.value}
             </span>
+            {props.data?.columns?.percText?.value}
           </div>
         </div>
         <div>
