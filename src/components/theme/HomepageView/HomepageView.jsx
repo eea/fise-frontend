@@ -256,13 +256,13 @@ class View extends Component {
           <div className="ui stackable five column grid thematic_areas_wrapper">
             <div className="column area-section">
               <div className="area-image">
-                <Link to="/thematic-areas/forest-basic-information">
+                <Link to="/topics/forest-basic-information">
                   <img src={BasicForestIMG} alt="" />
                 </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <Link to="/thematic-areas/forest-basic-information">
+                  <Link to="/topics/forest-basic-information">
                     Forest basic information
                   </Link>
                 </h5>
@@ -271,13 +271,13 @@ class View extends Component {
             
            <div className="column area-section">
               <div className="area-image">
-                <Link to="/thematic-areas/forest-nature-and-biodiversity">
+                <Link to="/topics/forest-nature-and-biodiversity">
                   <img src={NatureIMG} alt="" />
                 </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <Link to="/thematic-areas/forest-nature-and-biodiversity">
+                  <Link to="/topics/forest-nature-and-biodiversity">
                     Nature and biodiversity
                   </Link>
                 </h5>
@@ -286,13 +286,13 @@ class View extends Component {
             
            <div className="column area-section">
               <div className="area-image">
-                <Link to="/thematic-areas/forest-and-climate-change">
+                <Link to="/topics/forest-and-climate-change">
                   <img src={ForestIMG} alt="" />
                 </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <Link to="/thematic-areas/forest-and-climate-change">
+                  <Link to="/topics/forest-and-climate-change">
                    Forest and climate change
                   </Link>
                 </h5>
@@ -301,13 +301,13 @@ class View extends Component {
             
            <div className="column area-section">
               <div className="area-image">
-                <Link to="/thematic-areas/forest-health-and-resilience">
+                <Link to="/topics/forest-health-and-resilience">
                   <img src={ForestHealthIMG} alt="" />
                 </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <Link to="/thematic-areas/forest-health-and-resilience">
+                  <Link to="/topics/forest-health-and-resilience">
                     Forest health and resilience
                   </Link>
                 </h5>
@@ -318,13 +318,13 @@ class View extends Component {
             
             <div className="column area-section">
               <div className="area-image">
-                <Link to="/thematic-areas/forest-bioeconomy">
+                <Link to="/topics/forest-bioeconomy">
                   <img src={ForestCarbonIMG} alt="" />
                 </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <Link to="/thematic-areas/forest-bioeconomy">Bioeconomy</Link>
+                  <Link to="/topics/forest-bioeconomy">Bioeconomy</Link>
                 </h5>
               </div>
             </div>
