@@ -25,7 +25,7 @@ const messages = defineMessages({
 
 const View = ({ data, intl }) => {
   const [visible, setVisibility] = useState(false);
-  console.log('map', data);
+  // console.log('map', data);
   // partialVisibility={true}
   return (
     <div
