@@ -385,3 +385,10 @@
     }
   }
   
+  .nav-actions-mobile {
+        display: none!important;
+  }
+  
+  .nav-actions {
+        display: none!important;
+  }
