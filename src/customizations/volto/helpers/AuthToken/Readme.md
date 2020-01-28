@@ -1,2 +1,1 @@
-This is an older version of AuthToken, for some reason the new version doesn't
-work as expected, probably a problem with the prefetch.
+Fixes Volto issue https://github.com/plone/volto/issues/1148
