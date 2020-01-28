@@ -447,12 +447,19 @@ body #page-document .imageAndRichText+p {
   height: 1000px;
 }
 
-
+.download-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
 
 .chartWrapperView {
   height: 100%;
   min-height: 100px;
   padding: 10px;
+  // .download-button {
+    // padding-right: 1.5rem;
+  // }
 
   .ui.grid>.column:not(.row) {
     padding-top: 1px;
