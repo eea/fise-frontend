@@ -88,6 +88,10 @@
         .Countries--section {
             display: block;
             min-width: 450px!important;
+            @media(max-width: 800px) {
+                max-height: 50vh;
+                overflow: auto;
+            }
             .item.Countries--section-item {
                     display: inline-block!important;
                     width: 33%;
