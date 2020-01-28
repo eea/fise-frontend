@@ -18,7 +18,7 @@ const SCHEMA = {
   totalAreaUnit: {
     title: 'Measurement unit for total area',
     static: true,
-  }
+  },
 };
 
 const Edit = props => {

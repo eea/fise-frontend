@@ -37,6 +37,7 @@ const View = props => {
             initialSource={props.data.chart_source}
             initialSourceLink={props.data.chart_source_link}
             multipleSources={props.data.chartSources}
+            providerUrl={props.data.provider_url}
           />
         </div>
       </div>
