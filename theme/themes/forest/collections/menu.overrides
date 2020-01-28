@@ -90,7 +90,7 @@
             min-width: 450px!important;
             @media(max-width: 800px) {
                 max-height: 50vh;
-                overflow: auto;
+                overflow: auto!important;
             }
             .item.Countries--section-item {
                     display: inline-block!important;
