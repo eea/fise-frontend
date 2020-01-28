@@ -58,6 +58,8 @@
         display: flex;
         flex-direction: column;
         flex: 0 0 100%;
+
+
     }
 
     .download-area {
@@ -91,6 +93,7 @@
         font-size: 20px;
         color: #005555;
         font-weight: 500;
+        cursor: pointer;
     }
 
     .meta-data {
@@ -179,6 +182,8 @@
         flex-flow: row;
         align-items: center;
     }
+
+    
 
     .tabs-container {
         // grid-area: tabs;
@@ -485,3 +490,17 @@ hr.nfi-hr {
 //     box-shadow: -1px 1px 4px 5px #00000026;
 //     transform: translateX(0);
 // }
+
+.search-modal{
+    .modal-header {
+        font-size:20px;
+        color: #005555;
+    }
+    .modal-content {
+        display: contents !important;
+
+        .modal-description {
+            padding: 0 1.5rem 1.25rem 1.5rem;
+        }
+    }
+}
