@@ -460,6 +460,9 @@ body #page-document .imageAndRichText+p {
   // .download-button {
     // padding-right: 1.5rem;
   // }
+  .sources {
+    padding-left: 1rem;
+  }
 
   .ui.grid>.column:not(.row) {
     padding-top: 1px;
