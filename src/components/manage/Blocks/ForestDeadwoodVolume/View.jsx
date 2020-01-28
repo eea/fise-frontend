@@ -36,6 +36,7 @@ class View extends Component {
               initialSource={this.props.data.chart_source}
               initialSourceLink={this.props.data.chart_source_link}
               multipleSources={this.props.data.chartSources}
+              providerUrl={this.props.data.provider_url}
             />
           </div>
         </div>
