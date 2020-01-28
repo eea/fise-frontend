@@ -1,22 +1,28 @@
 import React from 'react';
 import { Pagination } from 'semantic-ui-react';
+import { useMediaQuery } from 'react-responsive'
 
 
 const RenderPagination = ({ pagination }) => {
     let renderPagination;
+    const isMobile = useMediaQuery({ maxDeviceWidth: 767 })
     if (pagination) {
         renderPagination = (
-            <Pagination  
+            <Pagination
                 defaultActivePage={1}
                 firstItem={null}
                 lastItem={null}
-                siblingRange={2}
-                totalPages={Math.ceil(pagination.totalItems / pagination.selectedItemsPerPage) }
+                siblingRange={1}
+                totalPages={Math.ceil(pagination.totalItems / pagination.selectedItemsPerPage)}
                 onPageChange={pagination.updatePage}
+                boundaryRange={isMobile? 0:1}
+                size={isMobile? 'small': ''}
+                ellipsisItem={isMobile? null: undefined}
             />
+            
         )
     } else {
-      renderPagination = ''
+        renderPagination = ''
     }
 
     return renderPagination;
