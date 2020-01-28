@@ -39,9 +39,11 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
     return next(action);
   }
 
-  // console.log('action', action.type);
   switch (action.type) {
     case '@@router/LOCATION_CHANGE':
+      if (action.payload?.location?.state?.isFromLogin) return next(action);
+
+      // console.log('action', action.type);
       if (!action.payload?.prefetched) {
         const path = action.payload.location.pathname;
         // TODO: use getBaseUrl based matching
@@ -62,7 +64,7 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
             path: url,
           },
         };
-        console.debug('Start prefetch', url);
+        // console.debug('Start prefetch', url);
         return next(prefetchAction);
       }
       return next(action);
@@ -79,7 +81,7 @@ const precacheContentEnd = ({ dispatch, getState }) => next => action => {
   const type = `${PREFETCH_ROUTER_LOCATION_CHANGE}_SUCCESS`;
 
   if (action.type === type) {
-    console.debug('prefetch action end', action);
+    // console.debug('prefetch action end', action);
     return dispatch({
       ...action.originalAction,
       payload: {
@@ -89,6 +91,7 @@ const precacheContentEnd = ({ dispatch, getState }) => next => action => {
     });
   }
 
+  // console.log('precacheContentEnd', action.type);
   return next(action);
 };
 
@@ -103,7 +106,7 @@ const optimizeProvidersFetch = ({ getState, dispatch }) => next => action => {
       data_providers.requested.includes(path) ||
       Object.keys(data_providers.data).includes(path)
     ) {
-      console.debug(`provider already fetched: ${path}`);
+      // console.debug(`provider already fetched: ${path}`);
       return;
     }
 
@@ -115,7 +118,7 @@ const optimizeProvidersFetch = ({ getState, dispatch }) => next => action => {
 function prefetch(state = {}, action = {}) {
   switch (action.type) {
     case `@@router/LOCATION_CHANGE`:
-      console.debug('action location change', action);
+      // console.debug('action location change', action);
       return action.payload?.prefetched
         ? {
             ...state,
