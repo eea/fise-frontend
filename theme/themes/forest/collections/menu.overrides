@@ -392,3 +392,10 @@
   .nav-actions {
         display: none!important;
   }
+
+
+  @media(min-width: 1200px) {
+    .firstLevel:active {
+        pointer-events: none;
+    }
+  }

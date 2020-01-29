@@ -199,14 +199,16 @@ class Navigation extends Component {
                 trigger={
                   <Link
                     onClick={e =>
-                      this.state.isMobileMenuOpen &&
-                      item.items &&
-                      item.items.length &&
-                      this.state.tappedMenu !== item.url &&
-                      e.preventDefault()
+                      item.items && item.items.length && e.preventDefault()
                     }
                     className="firstLevel"
-                    to={item.url === '' ? '/' : item.url}
+                    to={
+                      item.items && item.items.length
+                        ? ''
+                        : item.url === ''
+                        ? '/'
+                        : item.url
+                    }
                     key={item.url}
                   >
                     {item.title}
