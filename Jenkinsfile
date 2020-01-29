@@ -8,9 +8,9 @@ pipeline {
           script {
             try {
               checkout scm
-              sh '''docker build -t eeacms/forests-frontend . --build-arg MAX_OLD_SPACE_SIZE=8192'''
+              sh '''docker build -t eeacms/forests-frontend:$BRANCH_NAME . --build-arg MAX_OLD_SPACE_SIZE=8192'''
             } finally {
-              sh '''docker rmi eeacms/forests-frontend'''
+              sh '''docker rmi eeacms/forests-frontend:$BRANCH_NAME'''
             }
           }
         }
