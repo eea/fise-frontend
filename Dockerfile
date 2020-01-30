@@ -35,12 +35,12 @@ RUN make activate-all
 RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm ci
 # RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install
 
+RUN ./optimize_node_modules.sh
+
 RUN make clean-addons
 # RUN rm -f package-lock.json
 
 RUN RAZZLE_API_PATH=VOLTO_API_PATH RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH yarn build
-
-RUN ./optimize_node_modules.sh
 
 # Second stage build
 FROM node:10-jessie
