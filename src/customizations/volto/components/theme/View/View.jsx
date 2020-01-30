@@ -11,18 +11,18 @@ import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { views } from '~/config';
-import { Grid } from 'semantic-ui-react';
+// import { Grid } from 'semantic-ui-react';
 import Spinner from 'volto-mosaic/components/theme/Spinner';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
 import {
   BodyClass,
-  getBaseUrl,
+  // getBaseUrl,
   getLayoutFieldname,
 } from '@plone/volto/helpers';
 
-import renderPortletManager from 'volto-addons/Portlets/utils';
+// import renderPortletManager from 'volto-addons/Portlets/utils';
 
 /**
  * View container class.
@@ -217,6 +217,12 @@ class View extends Component {
     const RenderedView =
       this.getViewByType() || this.getViewByLayout() || this.getViewDefault();
 
+    //  <div>
+    //    {renderPortletManager('plone.footerportlets', false, {
+    //      ...this.props,
+    //    })}
+    //  </div>
+
     return (
       <div id="view">
         {/* Body class if displayName in component is set */}
@@ -242,7 +248,6 @@ class View extends Component {
           history={this.props.history}
         />
 
-        {renderPortletManager('plone.footerportlets', false, { ...this.props })}
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (
             <Tags tags={this.props.content.subjects} />
@@ -262,17 +267,22 @@ class View extends Component {
           <Toolbar pathname={this.props.pathname} inner={<span />} />
         </Portal>
 
-        {__CLIENT__ && document.querySelector('.header-image .header-image') && (
-          <Portal
-            node={
-              __CLIENT__ &&
-              document.querySelector('.header-image .header-image')
-            }
-          >
-            <h1>{this.props.content.title}</h1>
-            <p>{this.props.content.description}</p>
-          </Portal>
-        )}
+        {__CLIENT__ &&
+          document.querySelector(
+            '.header-image-wrapper .header-image-content',
+          ) && (
+            <Portal
+              node={
+                __CLIENT__ &&
+                document.querySelector(
+                  '.header-image-wrapper .header-image-content',
+                )
+              }
+            >
+              <h1>{this.props.content.title}</h1>
+              <p>{this.props.content.description}</p>
+            </Portal>
+          )}
       </div>
     );
   }

@@ -9,20 +9,28 @@ import { crashReporter } from '@plone/volto/middleware';
 import { api } from '~/middleware'
 import { matchPath } from 'react-router';
 import { settings } from '~/config';
+import routes from '~/routes';
+
+const defaultRoutes = routes[0].routes;
 
 const PREFETCH_ROUTER_LOCATION_CHANGE = 'PREFETCH_ROUTER_LOCATION_CHANGE';
 
 const matchCurrentPath = path => {
-  const pathsList = ['/', '/**'];
+  // const pathsList = ['/', '/**'];
+  let alreadyMatched;
 
-  for (let pathOption of pathsList) {
-    const match = matchPath(path, {
-      path: pathOption,
-      exact: true,
-      strict: false,
-    });
-    if (match) {
+  for (let pathOption of defaultRoutes) {
+    const match = matchPath(path, pathOption);
+    // console.debug('pathOption', alreadyMatched, path, pathOption, match);
+    if (
+      match &&
+      !alreadyMatched &&
+      (match.path === '/**' || match.path === '/')
+    ) {
       return true;
+    }
+    if (match) {
+      alreadyMatched = true;
     }
   }
 };
@@ -31,31 +39,33 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
   if (typeof action === 'function') {
     return next(action);
   }
-  console.log('action', action.type);
-  // TODO: match for View
-  //
 
   switch (action.type) {
     case '@@router/LOCATION_CHANGE':
+      if (action.payload?.location?.state?.isFromLogin) return next(action);
+
+      // console.log('action', action.type);
       if (!action.payload?.prefetched) {
         const path = action.payload.location.pathname;
-        const shouldUseFullObjectsAndExpandStuff = matchCurrentPath(path);
+        // TODO: use getBaseUrl based matching
+        const isGetContent = matchCurrentPath(path);
+        const expand =
+          isGetContent && settings.contentExpand?.length
+            ? `&expand=${settings.contentExpand.join(',')}`
+            : '';
+        const fullObjects = `${isGetContent ? '?fullobjects' : ''}${expand}`;
+        const url = `${path}${fullObjects}`;
+        if (!isGetContent) return next(action);
         const prefetchAction = {
           type: PREFETCH_ROUTER_LOCATION_CHANGE,
           path,
           originalAction: action,
           request: {
             op: 'get',
-            // path: `${path}?fullobjects`, // TODO: identify only needed routes, based on route matching
-            path:
-              shouldUseFullObjectsAndExpandStuff &&
-              settings.contentExpand.length
-                ? `${path}?fullobjects&expand=${settings.contentExpand.join(
-                    ',',
-                  )}`
-                : path,
+            path: url,
           },
         };
+        // console.debug('Start prefetch', url);
         return next(prefetchAction);
       }
       return next(action);
@@ -72,7 +82,7 @@ const precacheContentEnd = ({ dispatch, getState }) => next => action => {
   const type = `${PREFETCH_ROUTER_LOCATION_CHANGE}_SUCCESS`;
 
   if (action.type === type) {
-    console.log('prefetch action end', action);
+    // console.debug('prefetch action end', action);
     return dispatch({
       ...action.originalAction,
       payload: {
@@ -82,13 +92,34 @@ const precacheContentEnd = ({ dispatch, getState }) => next => action => {
     });
   }
 
+  // console.log('precacheContentEnd', action.type);
+  return next(action);
+};
+
+const optimizeProvidersFetch = ({ getState, dispatch }) => next => action => {
+  if (typeof action === 'function') {
+    return next(action);
+  }
+  if (action.type === 'GET_DATA_FROM_PROVIDER') {
+    const { data_providers } = getState();
+    const { path } = action.request;
+    if (
+      data_providers.requested.includes(path) ||
+      Object.keys(data_providers.data).includes(path)
+    ) {
+      // console.debug(`provider already fetched: ${path}`);
+      return;
+    }
+
+    return next(action);
+  }
   return next(action);
 };
 
 function prefetch(state = {}, action = {}) {
   switch (action.type) {
     case `@@router/LOCATION_CHANGE`:
-      console.log('action location change', action);
+      // console.debug('action location change', action);
       return action.payload?.prefetched
         ? {
             ...state,
@@ -103,6 +134,7 @@ function prefetch(state = {}, action = {}) {
 const configureStore = (initialState, history, apiHelper) => {
   const middlewares = composeWithDevTools(
     applyMiddleware(
+      optimizeProvidersFetch,
       precacheContentStart,
       routerMiddleware(history),
       crashReporter,

@@ -52,13 +52,17 @@ const Footer = ({ intl }) => (
           </div>
 
           <div style={{ flexGrow: '1' }} className="column">
-            <div>
-              <div style={{ display: 'none' }}> a </div>
-            </div>
+           <b>DISCLAIMER</b>
+            <p>
+             The withdrawal of the United Kingdom from the European Union did not affect the production of this website. 
+              Data reported by the United Kingdom are included in all analyses and assessments contained herein, 
+              unless otherwise indicated. 
+             
+            </p>
           </div>
 
           <div
-            style={{ width: '150px!important', fontSize: '.9rem' }}
+            style={{ width: '200px!important' }}
             className="column"
             id="links_column"
           >
@@ -77,14 +81,14 @@ const Footer = ({ intl }) => (
                 <Link className="item" to="/privacy_policy">
                   <FormattedMessage
                     id="privacy_policy"
-                    defaultMessage="Privacy policy"
+                    defaultMessage="Privacy statement"
                   />
                 </Link>
               </li>
               <li>
-                <Link className="item" to="/credits">
-                  <FormattedMessage id="Credits" defaultMessage="Credits" />
-                </Link>
+                <a className="item" href={`mailto:fise@eea.europa.eu`}>
+                  Contact us
+                </a>
               </li>
             </ul>
           </div>

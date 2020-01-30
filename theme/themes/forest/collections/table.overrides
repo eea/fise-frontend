@@ -8,15 +8,23 @@
 /* Headers */
 .ui.table th {
   cursor: auto;
-  background: @headerBackground;
+  // background: @headerBackground;
   text-align: @headerAlign;
-  color: @headerColor;
+  // color: @headerColor;
   padding: @headerVerticalPadding @headerHorizontalPadding;
   vertical-align: @headerVerticalAlign;
   font-style: @headerFontStyle;
   font-weight: @headerFontWeight;
   text-transform: @headerTextTransform;
   border-left: @headerDivider;
+}
+
+.ui.table {
+  border-collapse: collapse;
+}
+
+.ui.celled.table tr th, .ui.celled.table tr td {
+  border: 1px solid #eee;
 }
 
 .ui.table tr > th:first-child {

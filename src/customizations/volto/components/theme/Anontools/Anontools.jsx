@@ -7,12 +7,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { List, Popup } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 import { Icon } from '@plone/volto/components';
+import { getBaseUrl } from '@plone/volto/helpers';
 
 import { settings } from '~/config';
 import user from '@plone/volto/icons/user.svg';
+
+// import { List, Popup } from 'semantic-ui-react';
 
 /**
  * Anontools container class.
@@ -47,16 +49,15 @@ class Anontools extends Component {
   render() {
     return (
       !this.props.token && (
-        <li role="listitem" className="item footer-login">
+        <li className="item footer-login">
           <Icon name={user} size="20px" />
           <Link
             style={{ marginLeft: '.5rem' }}
             to={`/login${
               this.props.content
-                ? `?return_url=${this.props.content['@id'].replace(
-                    settings.apiPath,
-                    '',
-                  )}`
+                ? `?return_url=${getBaseUrl(this.props.content['@id'])
+                    .replace(settings.apiPath, '')
+                    .replace(settings.internalApiPath, '')}`
                 : ''
             }`}
           >
@@ -68,7 +69,10 @@ class Anontools extends Component {
   }
 }
 
-export default connect(state => ({
-  token: state.userSession.token,
-  content: state.content.data,
-}))(Anontools);
+export default connect((state, props) => {
+  const path = state.router.location?.pathname;
+  return {
+    token: state.userSession.token,
+    content: state.prefetch?.[path] || state.content.data,
+  };
+})(Anontools);

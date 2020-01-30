@@ -1,8 +1,9 @@
 import React from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
+import SourceView from 'volto-datablocks/theme/Blocks/SourceView';
 
 const View = props => {
-  console.log('block props', props);
+  // console.log('block props', props);
   return (
     <div className="forest-block-wrapper">
       <div className="forest-specific-block forest-area-block">
@@ -19,7 +20,6 @@ const View = props => {
             </span>
           </div>
           <div className="land-data-content">
-            {props.data?.columns?.percText?.value}
             <span>
               <DataConnectedValue
                 url={props.data.provider_url}
@@ -29,15 +29,16 @@ const View = props => {
               />{' '}
               {props.data?.columns?.totalAreaUnit?.value}
             </span>
+            {props.data?.columns?.percText?.value}
           </div>
         </div>
         <div>
-          <a
-            className="discreet block_source"
-            href={props.data.chart_source_link}
-          >
-            {props.data.chart_source}
-          </a>
+          <SourceView
+            initialSource={props.data.chart_source}
+            initialSourceLink={props.data.chart_source_link}
+            multipleSources={props.data.chartSources}
+            providerUrl={props.data.provider_url}
+          />
         </div>
       </div>
     </div>

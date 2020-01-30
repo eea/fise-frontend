@@ -102,12 +102,29 @@ export function applyConfig(config) {
     ...config.blocks,
 
     groupBlocksOrder: [
-      ...config.blocks.groupBlocksOrder,
+      { id: 'common_blocks', title: 'Common blocks' },
       { id: 'forests_specific', title: 'Forests Specific Blocks' },
+      ...config.blocks.groupBlocksOrder.filter(
+        block => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
+      ),
     ],
 
     blocksConfig: {
-      ...config.blocks.blocksConfig,
+      ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
+        if (
+          ['text', 'mostUsed', 'media', 'common'].includes(
+            config.blocks.blocksConfig[blockKey].group,
+          )
+        ) {
+          acc[blockKey] = {
+            ...config.blocks.blocksConfig[blockKey],
+            group: 'common_blocks',
+          };
+        } else {
+          acc[blockKey] = config.blocks.blocksConfig[blockKey];
+        }
+        return acc;
+      }, {}),
       europe_compare_block: {
         id: 'europe_compare_block',
         title: 'Europe Compare Block',

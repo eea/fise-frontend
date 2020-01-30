@@ -9,3 +9,127 @@
 .ui.form .ui.grid > .row {
   padding: 0;
 }
+/*******************************
+         Theme Overrides
+*******************************/
+.ui.grid > .header.row {
+  padding-bottom: 0;
+}
+
+.ui.form .ui.grid > .row {
+  padding: 0;
+}
+
+// lg: 1549, md: 1086, sm: 718
+
+@tablet-breakpoint: 1086px;
+@phone-breakpoint: 718px;
+@desktop-breakpoint: 1549px;
+
+// @tablet-query: min-width
+
+// .getQueryMax(@breakpoint) {
+//   [max-width~=@breakpoint]
+// }
+
+.centered {
+  justify-content: center !important;
+}
+
+.reverse {
+  flex-flow: row-reverse wrap !important;
+}
+
+.vertically-aligned {
+  height: 100%;
+  align-items: center !important;
+}
+
+.element-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: inherit;
+  align-items: flex-start;
+  width: 100% !important;
+  padding: 0rem;
+}
+
+.flex-size(@col) {
+  flex-basis: calc(100% / (12 / @col));
+  width: 100% / (12 / @col);
+}
+
+
+.viewport-columns(@screen-type) {
+  .@{screen-type}-one {
+    .flex-size(1);
+  }
+
+  .@{screen-type}-two {
+    .flex-size(2);
+  }
+
+  .@{screen-type}-three {
+    .flex-size(3);
+  }
+
+  .@{screen-type}-four {
+    .flex-size(4);
+  }
+
+  .@{screen-type}-five {
+    .flex-size(5);
+  }
+
+  .@{screen-type}-six {
+    .flex-size(6);
+  }
+
+  .@{screen-type}-seven {
+    .flex-size(7);
+  }
+
+  .@{screen-type}-eight {
+    .flex-size(8);
+  }
+
+  .@{screen-type}-nine {
+    .flex-size(9);
+  }
+
+  .@{screen-type}-ten {
+    .flex-size(10);
+  }
+
+  .@{screen-type}-eleven {
+    .flex-size(11);
+  }
+
+  .@{screen-type}-twelve {
+    .flex-size(12);
+  }
+}
+
+
+[class*='desktop-'], [class*='tablet-'], [class*='phone-'], [class*="widescreen-"] {
+  margin: 0;
+}
+
+// @media (min-width: @tablet-breakpoint) {
+  .viewport-columns(widescreen);
+  .viewport-columns(desktop);
+  .viewport-columns(tablet);
+  .viewport-columns(phone);
+// }
+
+
+// @media (max-width: @tablet-breakpoint) {
+// }
+
+
+// [max-width~=@phone-breakpoint] {
+// }
+
+// @media (min-width: @desktop-breakpoins) {
+  // .viewport-columns(desktop);
+// }

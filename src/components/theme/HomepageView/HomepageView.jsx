@@ -12,6 +12,7 @@ import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { views } from '~/config';
 import { Helmet } from '@plone/volto/helpers';
+import { Link } from 'react-router-dom';
 
 import { Comments, Tags, Toolbar } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
@@ -245,91 +246,94 @@ class View extends Component {
 
         <div className="thematic-areas">
           <div className="centered-content">
-            <h2>Main thematic areas</h2>
+            <h2>Topics</h2>
             <p>
-              For several decades now, environmental forest functions have
-              attracted increasing attention mainly in relation to the
-              protection of biodiversity and, more recently, in the context of
-              climate change impacts and energy policies. Forests are
-              increasingly valued for their role as regulators of climate and
-              local weather, protection against natural disasters and renewable
-              energy sources.
+             Forests and their ecosystems are currently at the top of policy agenda and public attention in the context of the protection of biodiversity, climate change impacts, their adaptation and mitigation as well as renewable energy issues. 
+             Sustainable forest management is required to balance the environmental, social and economic pillars of sustainability.
             </p>
           </div>
 
           <div className="ui stackable five column grid thematic_areas_wrapper">
             <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/forest-basic-information">
+                <Link to="/topics/forest-basic-information">
                   <img src={BasicForestIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/forest-basic-information">
+                  <Link to="/topics/forest-basic-information">
                     Forest basic information
-                  </a>
+                  </Link>
                 </h5>
               </div>
             </div>
-
-            <div className="column area-section">
+            
+           <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/forest-bioeconomy">
+                <Link to="/topics/forest-nature-and-biodiversity">
                   <img src={NatureIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/forest-bioeconomy">Bioeconomy</a>
-                </h5>
-              </div>
-            </div>
-
-            <div className="column area-section">
-              <div className="area-image">
-                <a href="/thematic-areas/forest-nature-and-biodiversity">
-                  <img src={ForestCarbonIMG} alt="" />
-                </a>
-              </div>
-              <div className="area-content">
-                <h5 className="area-title">
-                  <a href="/thematic-areas/forest-nature-and-biodiversity">
+                  <Link to="/topics/forest-nature-and-biodiversity">
                     Nature and biodiversity
-                  </a>
+                  </Link>
                 </h5>
               </div>
             </div>
-
-            <div className="column area-section">
+            
+           <div className="column area-section">
               <div className="area-image">
-                <a href="/thematic-areas/forest-and-climate-change">
+                <Link to="/topics/forest-and-climate-change">
                   <img src={ForestIMG} alt="" />
-                </a>
+                </Link>
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <a href="/thematic-areas/forest-and-climate-change">
-                    Climate change mitigation
-                  </a>
+                  <Link to="/topics/forest-and-climate-change">
+                   Forest and climate change
+                  </Link>
+                </h5>
+              </div>
+            </div>
+            
+           <div className="column area-section">
+              <div className="area-image">
+                <Link to="/topics/forest-health-and-resilience">
+                  <img src={ForestHealthIMG} alt="" />
+                </Link>
+              </div>
+              <div className="area-content">
+                <h5 className="area-title">
+                  <Link to="/topics/forest-health-and-resilience">
+                    Forest health and resilience
+                  </Link>
+                </h5>
+              </div>
+            </div>
+            
+            
+            
+            <div className="column area-section">
+              <div className="area-image">
+                <Link to="/topics/forest-bioeconomy">
+                  <img src={ForestCarbonIMG} alt="" />
+                </Link>
+              </div>
+              <div className="area-content">
+                <h5 className="area-title">
+                  <Link to="/topics/forest-bioeconomy">Bioeconomy</Link>
                 </h5>
               </div>
             </div>
 
-            <div className="column area-section">
-              <div className="area-image">
-                <a href="/thematic-areas/folder-condition">
-                  <img src={ForestHealthIMG} alt="" />
-                </a>
-              </div>
-              <div className="area-content">
-                <h5 className="area-title">
-                  <a href="/thematic-areas/folder-condition">
-                    Forest health and resilience
-                  </a>
-                </h5>
-              </div>
-            </div>
+           
+
+        
+
+   
           </div>
         </div>
 

@@ -148,7 +148,9 @@ class SearchWidget extends Component {
       <Form action="/search" onSubmit={this.onSubmit}>
         <Form.Field className="searchbox">
           <Input
-            className={'searchInput show'}
+            className={`searchInput ${
+              this.state.showSearchField ? 'show' : 'hidden'
+            }`}
             aria-label={this.props.intl.formatMessage(messages.search)}
             onChange={this.onChangeText}
             name="SearchableText"
@@ -163,17 +165,22 @@ class SearchWidget extends Component {
           >
             <Icon name={zoomSVG} size="18px" />
           </button>
-          {/* {!this.state.showSearchField ? (
-             <Popup content='Search' trigger={<button
-              onClick={this.showSearch}
-              className="overSearchIcon ui small basic no-border icon button"
-              aria-label={this.props.intl.formatMessage(messages.search)}
-            >
-              <Icon name={zoomSVG} size="18px" />
-            </button>} />
+          {!this.state.showSearchField ? (
+            <Popup
+              content="Search"
+              trigger={
+                <button
+                  onClick={this.showSearch}
+                  className="overSearchIcon searchShowTrigger ui small basic no-border icon button"
+                  aria-label={this.props.intl.formatMessage(messages.search)}
+                >
+                  <Icon name={zoomSVG} size="18px" />
+                </button>
+              }
+            />
           ) : (
             ''
-          )} */}
+          )}
         </Form.Field>
       </Form>
     );
