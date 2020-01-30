@@ -62,7 +62,7 @@ const Footer = ({ intl }) => (
           </div>
 
           <div
-            style={{ width: '150px!important' }}
+            style={{ width: '200px!important' }}
             className="column"
             id="links_column"
           >
