@@ -55,7 +55,8 @@
 }
 
 .flex-size(@col) {
-  flex-basis: 100% / (12 / @col);
+  flex-basis: calc(100% / (12 / @col));
+  width: 100% / (12 / @col);
 }
 
 
@@ -132,18 +133,3 @@
 // @media (min-width: @desktop-breakpoins) {
   // .viewport-columns(desktop);
 // }
-
-
-.test-block {
-  width: 100%;
-  height: 200px;
-  background-color: red;
-  &.blue {
-    background-color: black;
-  }
-}
-
-.tablet-one[min-width~="400px"] .test-block{
-  // flex-grow: 1;
-  width: 300px!important;
-}

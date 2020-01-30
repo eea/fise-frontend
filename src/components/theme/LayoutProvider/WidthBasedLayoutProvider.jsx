@@ -19,7 +19,7 @@ export default compose(
       if (width > 768) {
         return 'tablet';
       }
-      return 'mobile';
+      return 'phone';
     })(),
   })),
   WidthBasedLayoutProvider,
