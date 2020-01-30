@@ -25,5 +25,8 @@
     },
     "volto-sidebar": {
       "url": "https://github.com/eea/volto-sidebar.git"
+    },
+    "volto-nfisearch": {
+      "url": "https://github.com/eea/volto-nfisearch.git"
     }
 }

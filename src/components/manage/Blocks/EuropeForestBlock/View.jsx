@@ -14,8 +14,8 @@ class View extends Component {
                 <span>{this.props.data.europe_forest_p_eu28}</span>
               </div>
               <div className="land-data-content">
-                {this.props.data.europe_forest_p_eu28_text}{' '}
                 <span>{this.props.data.europe_forest_l_eu28}</span>
+                {this.props.data.europe_forest_p_eu28_text}{' '}
               </div>
             </div>
 
@@ -24,8 +24,8 @@ class View extends Component {
                 <span>{this.props.data.europe_forest_p_eea39}</span>
               </div>
               <div className="land-data-content">
-                {this.props.data.europe_forest_p_eea39_text}{' '}
                 <span>{this.props.data.europe_forest_l_eea39}</span>
+                {this.props.data.europe_forest_p_eea39_text}{' '}
               </div>
             </div>
 

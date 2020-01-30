@@ -160,7 +160,7 @@ class Search extends Component {
         entityName: queryParams.country,
         getFunction: this.props.getCountry,
         facetNames: [queryParams.country],
-        queryParams: [queryParams.country]
+        queryParams: [queryParams.country],
       },
       nuts_level: {
         entityName: queryParams.nuts_level,
@@ -269,10 +269,9 @@ class Search extends Component {
     }
   };
 
-
   handleToggle = () => {
-    this.setState({ toggle: !this.state.toggle })
-  }
+    this.setState({ toggle: !this.state.toggle });
+  };
 
   /**
    * Search based on the given searchableText, subject and path.
@@ -316,8 +315,8 @@ class Search extends Component {
         this.updateTotalItems(this.props.nfiSearch.count);
       })
       .catch(error => {
-        this.props.setLoader(false)
-      })
+        this.props.setLoader(false);
+      });
   };
 
   initiateKeywords = () => {
@@ -352,9 +351,9 @@ class Search extends Component {
         facetsData.regions[item] = facetsData.country[item];
         delete facetsData.country[item];
       }
-    })
+    });
     this.setState({ facetsData });
-  }
+  };
 
   addHashTagAndDoNfiSearch = (hash, isEvent) => {
     if (isEvent) {
@@ -420,7 +419,6 @@ class Search extends Component {
       keyword => keyword.value,
     );
 
-
     if (this.state.activeTab === 1) {
       countries = this.state.nfiSelectedCountry;
       Object.keys(this.state.selectedFilters).forEach(filter => {
@@ -460,7 +458,7 @@ class Search extends Component {
       activeTab: data.activeIndex,
       nfiSelectedCountry: '',
       nfiSelectedRegion: '',
-      selectedFilters
+      selectedFilters,
     });
   };
 
@@ -487,13 +485,19 @@ class Search extends Component {
   // NFI
   handleCountrySelected = country => {
     if (this.state.activeTab === 1) {
-      this.setState({
-        nfiSelectedCountry: country,
-      }, this.handleNfiSearch);
+      this.setState(
+        {
+          nfiSelectedCountry: country,
+        },
+        this.handleNfiSearch,
+      );
     } else if (this.state.activeTab === 2) {
-      this.setState({
-        nfiSelectedRegion: country,
-      }, this.handleNfiSearch);
+      this.setState(
+        {
+          nfiSelectedRegion: country,
+        },
+        this.handleNfiSearch,
+      );
     }
   };
 
@@ -502,7 +506,10 @@ class Search extends Component {
     if (type === 'checkbox') {
       if (data.checked && !selectedFilters[data.name].includes(outsideQuery)) {
         selectedFilters[data.name] += outsideQuery;
-      } else if (!data.checked && selectedFilters[data.name].includes(outsideQuery)) {
+      } else if (
+        !data.checked &&
+        selectedFilters[data.name].includes(outsideQuery)
+      ) {
         selectedFilters[data.name] = selectedFilters[data.name].replace(
           outsideQuery,
           '',
@@ -510,10 +517,10 @@ class Search extends Component {
       }
       this.setState({ selectedFilters }, this.handleNfiSearch);
     } else if (type === 'slider') {
-      selectedFilters[data.name] = outsideQuery
+      selectedFilters[data.name] = outsideQuery;
       this.setState({ selectedFilters }, this.handleNfiSearch);
     } else if (type === 'multiselect') {
-      selectedFilters[data.name] = outsideQuery
+      selectedFilters[data.name] = outsideQuery;
       this.setState({ selectedFilters }, this.handleNfiSearch);
     }
   };
@@ -547,8 +554,8 @@ class Search extends Component {
           this.props.nfiSearch.facets,
         );
         this.setState({ facetsData }, () => {
-          this.initiateSelectedFilters()
-          this.initiateRegions()
+          this.initiateSelectedFilters();
+          this.initiateRegions();
         });
       })
       .catch(error => {
@@ -602,9 +609,6 @@ class Search extends Component {
     });
   };
 
-
-
-
   render() {
     const context = {
       term: this.props.searchableText,
@@ -636,10 +640,10 @@ class Search extends Component {
       pagination:
         this.state.activeTab > 0
           ? {
-            ...this.state.pagination,
-            updateItemsPerPage: this.updateItemsPerPage,
-            updatePage: this.updatePage,
-          }
+              ...this.state.pagination,
+              updateItemsPerPage: this.updateItemsPerPage,
+              updatePage: this.updatePage,
+            }
           : null,
     };
     const loader = <h1>Loading data...</h1>;
@@ -690,8 +694,8 @@ class Search extends Component {
             panes={panes(context)}
             onTabChange={this.handleTabChange}
           />
-           
-            {searchFilters}
+
+          {searchFilters}
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
           <Toolbar

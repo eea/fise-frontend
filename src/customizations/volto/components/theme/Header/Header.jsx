@@ -23,8 +23,6 @@ import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
 
-import { getFrontpageSlides } from '~/actions';
-
 import HeaderBackground from './header-bg.png';
 
 class Header extends Component {
@@ -50,7 +48,7 @@ class Header extends Component {
     folderHeader: PropTypes.any,
     defaultHeaderImage: PropTypes.any,
     frontPageSlides: PropTypes.array,
-    getFrontpageSlides: PropTypes.func.isRequired,
+    // getFrontpageSlides: PropTypes.func.isRequired,
   };
 
   /**
@@ -97,10 +95,6 @@ class Header extends Component {
     }
   }
 
-  componentWillMount() {
-    this.props.getFrontpageSlides();
-    // this.props.getDefaultHeaderImage();
-  }
   // componentWillUnmount() {
   //   this.setState({
   //     isHomepage: false
@@ -113,11 +107,11 @@ class Header extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    const defaultHeaderImage =
-      this.props.defaultHeaderImage &&
-      this.props.defaultHeaderImage.length &&
-      this.props.defaultHeaderImage[0].image;
-    let headerImageUrl = this.state.image || defaultHeaderImage;
+    const defaultHeaderImage = this.props.defaultHeaderImage;
+    // this.props.defaultHeaderImage &&
+    // this.props.defaultHeaderImage.length &&
+    // this.props.defaultHeaderImage[0].image;
+    let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
     // console.log(defaultHeaderImage)
     return (
       <div className="header-wrapper" role="banner">
@@ -133,7 +127,10 @@ class Header extends Component {
                     <MobileSearchWidget pathname={this.props.pathname} />
                   </div>
                 </div>
-                <Navigation pathname={this.props.pathname} />
+                <Navigation
+                  navigation={this.props.navigationItems}
+                  pathname={this.props.pathname}
+                />
               </div>
               <div className="nav-actions tablet or lower hidden">
                 <div className="search">
@@ -153,14 +150,12 @@ class Header extends Component {
           </div>
 
           {this.state.isHomepage ? (
-            <HomepageSlider items={this.state.frontPageSlides} />
+            <HomepageSlider items={this.props.frontpage_slides} />
           ) : (
             <div style={{ position: 'relative' }}>
               <Breadcrumbs pathname={this.props.pathname} />
 
-              <HeaderImage url={headerImageUrl}>
-                <div className="header-image" />
-              </HeaderImage>
+              <HeaderImage url={headerImageUrl} />
             </div>
           )}
         </Container>
@@ -183,11 +178,11 @@ class Header extends Component {
 export default compose(
   connect(
     state => ({
-      frontPageSlides: state.frontpage_slides.items,
+      // frontPageSlides: state.frontpage_slides.items,
       token: state.userSession.token,
-      defaultHeaderImage: state.default_header_image.items,
+      // defaultHeaderImage: state.default_header_image.items,
       folder_header: state.folder_header.items,
     }),
-    { getFrontpageSlides },
+    // { getFrontpageSlides },
   ),
 )(Header);
