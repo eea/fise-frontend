@@ -1169,15 +1169,12 @@ body {
 // General
 .block-container {
   // padding: 10px;
+  padding: 10px;
   height: 100%;
 }
 
 .block-wrapper {
   height: 100%;
-
-  >div {
-    // padding: 20px;
-  }
 }
 
 .block-box {

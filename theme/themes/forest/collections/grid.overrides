@@ -52,6 +52,7 @@
   align-items: flex-start;
   width: 100% !important;
   padding: 0rem;
+  // height: 100%;
 }
 
 .flex-size(@col) {
