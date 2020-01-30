@@ -11,12 +11,15 @@ import { settings } from '~/config';
 import routes from '~/routes';
 import { createInstance } from '@datapunt/matomo-tracker-react';
 
-const matomo = createInstance({
-  urlBase: 'https://matomo.eea.europa.eu/',
-  siteId: 46, // optional, default value: `1`
-  // trackerUrl: 'https://LINK.TO.DOMAIN/tracking.php', // optional, default value: `${urlBase}matomo.php`
-  // srcUrl: 'https://LINK.TO.DOMAIN/tracking.js', // optional, default value: `${urlBase}matomo.js`
-});
+let matomo;
+if (__CLIENT__) {
+  matomo = createInstance({
+    urlBase: 'https://matomo.eea.europa.eu/',
+    siteId: 46, // optional, default value: `1`
+    // trackerUrl: 'https://LINK.TO.DOMAIN/tracking.php', // optional, default value: `${urlBase}matomo.php`
+    // srcUrl: 'https://LINK.TO.DOMAIN/tracking.js', // optional, default value: `${urlBase}matomo.js`
+  });
+}
 
 const defaultRoutes = routes[0].routes;
 
