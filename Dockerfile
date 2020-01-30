@@ -30,12 +30,19 @@ RUN npm install mr-developer
 RUN node_modules/.bin/mrdeveloper --config=jsconfig.json --no-config --output=addons
 
 RUN make activate-all
-RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install
+
+COPY optimize_node_modules.sh .
+RUN chmod +x optimize_node_modules.sh
+
+RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm ci
+# RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install
 
 RUN make clean-addons
 # RUN rm -f package-lock.json
 
 RUN RAZZLE_API_PATH=VOLTO_API_PATH RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH yarn build
+
+RUN ./optimize_node_modules.sh
 
 # Second stage build
 FROM node:10-jessie
@@ -59,7 +66,7 @@ RUN chown -R node /opt/frontend
 
 USER node
 
-RUN npm install --production
+RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install --production
 
 ENTRYPOINT ["/opt/frontend/entrypoint.sh"]
 
