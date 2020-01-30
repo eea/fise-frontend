@@ -19,8 +19,8 @@
 .ui.form .ui.grid > .row {
   padding: 0;
 }
-
 // lg: 1549, md: 1086, sm: 718
+
 
 @tablet-breakpoint: 1086px;
 @phone-breakpoint: 718px;
