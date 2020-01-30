@@ -77,8 +77,13 @@ const Footer = ({ intl }) => (
                 <Link className="item" to="/privacy_policy">
                   <FormattedMessage
                     id="privacy_policy"
-                    defaultMessage="Privacy policy"
+                    defaultMessage="Privacy statement"
                   />
+                </Link>
+              </li>
+              <li>
+                <Link className="item" to="mailto:fise@eea.europa.eu">
+                  Contact us
                 </Link>
               </li>
             </ul>
