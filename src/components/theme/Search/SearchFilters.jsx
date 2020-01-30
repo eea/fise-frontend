@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BodyClass } from '@plone/volto/helpers';
 import { Checkbox, Dropdown } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Range, getTrackBackground } from 'react-range';
-import area_chart from './area_chart';
-import rd3 from 'react-d3-library';
-const RD3Component = rd3.Component;
 
 const capitalize = s => {
   if (typeof s !== 'string') return '';
@@ -63,22 +59,13 @@ const createMultiselectFacet = (data, facet) => {
 
 const createSliderFacet = (data, facet) => {
   const yearsRange = Object.keys(data.facetsData[facet]).map(item => parseInt(data.facetsData[facet][item].name));
-  const areaChartData = Object.keys(data.facetsData[facet]).map(item => {
-    return {
-      x: parseInt(data.facetsData[facet][item].name),
-      y: parseInt(data.facetsData[facet][item].number)
-    }
-  });
-
   const STEP = 1;
   const MIN = yearsRange[0];
   const MAX = yearsRange[yearsRange.length - 1];
 
   const [values, setValues] = useState([MIN, MAX]);
-  const [areaChart, setAreaChart] = useState('');
 
   useEffect(() => {
-    setAreaChart(area_chart(400, 200, areaChartData))
     if (!data.selectedFilters[facet]) { setValues([MIN, MAX]) }
   }, [data])
 
@@ -92,7 +79,6 @@ const createSliderFacet = (data, facet) => {
       }}
       className="slider"
     >
-      <RD3Component data={areaChart} />
       <Range
         values={values}
         step={STEP}
@@ -120,7 +106,8 @@ const createSliderFacet = (data, facet) => {
               marginTop: '0',
               display: 'flex',
               width: '100%',
-              marginTop: '-27px'
+              marginTop: '30px',
+              padding: '0 12px'
             }}
           >
             <div
@@ -160,11 +147,11 @@ const createSliderFacet = (data, facet) => {
             <div
               style={{
                 position: 'absolute',
-                bottom: '-34px',
+                top: '-34px',
                 color: '#000',
                 fontSize: '14px',
                 fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
-                padding: '4px',
+                padding: '0px',
                 borderRadius: '4px',
                 backgroundColor: 'transparent'
               }}
