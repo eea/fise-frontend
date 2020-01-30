@@ -17,7 +17,7 @@ const RenderSearch = ({ data, pagination }) => {
   renderContent = '';
   if (data.items) {
     renderContent = data.items.map((item, index) => (
-      <ResultCard item={item} key={index} handleItemSelect={()=>{setSelectedItem(item), setModalOpen(true)}} />
+      <ResultCard item={item} key={index} handleItemSelect={()=>{setSelectedItem(item), setModalOpen(true)}} isPortal={data.id === "portal"? true : false} />
     ));
   }
   if (data.id === 'portal') {
