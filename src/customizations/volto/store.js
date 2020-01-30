@@ -9,6 +9,14 @@ import { api, crashReporter } from '@plone/volto/middleware';
 import { matchPath } from 'react-router';
 import { settings } from '~/config';
 import routes from '~/routes';
+import { createInstance } from '@datapunt/matomo-tracker-react';
+
+const matomo = createInstance({
+  urlBase: 'https://matomo.eea.europa.eu/',
+  siteId: 46, // optional, default value: `1`
+  // trackerUrl: 'https://LINK.TO.DOMAIN/tracking.php', // optional, default value: `${urlBase}matomo.php`
+  // srcUrl: 'https://LINK.TO.DOMAIN/tracking.js', // optional, default value: `${urlBase}matomo.js`
+});
 
 const defaultRoutes = routes[0].routes;
 
@@ -130,6 +138,28 @@ function prefetch(state = {}, action = {}) {
   }
 }
 
+const trackMatomo = ({ getState, dispatch }) => next => action => {
+  if (typeof action === 'function') {
+    return next(action);
+  }
+  switch (action.type) {
+    case `@@router/LOCATION_CHANGE`:
+      if (__CLIENT__ && action.payload?.prefetched) {
+        const content = action.payload.prefetched;
+        matomo.trackPageView({
+          documentTitle: content.title || 'untitled',
+          href: content['@id']
+            .replace(settings.apiPath, '')
+            .replace(settings.internalApiPath, ''),
+        });
+      }
+      break;
+    default:
+  }
+
+  return next(action);
+};
+
 const configureStore = (initialState, history, apiHelper) => {
   const middlewares = composeWithDevTools(
     applyMiddleware(
@@ -140,6 +170,7 @@ const configureStore = (initialState, history, apiHelper) => {
       thunk,
       api(apiHelper),
       precacheContentEnd,
+      trackMatomo,
     ),
   );
 
