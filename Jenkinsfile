@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Build & Release') {
       steps{
-        node(label: 'docker') {
+        node(label: 'docker-host') {
           script {
             checkout scm
             if (env.BRANCH_NAME == 'master') {
