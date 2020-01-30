@@ -15,6 +15,7 @@ WORKDIR /opt/frontend/
 
 COPY docker-image.txt /
 COPY . .
+RUN chmod +x optimize_node_modules.sh
 
 RUN mkdir -p /opt/frontend/src/addons
 
@@ -30,9 +31,6 @@ RUN npm install mr-developer
 RUN node_modules/.bin/mrdeveloper --config=jsconfig.json --no-config --output=addons
 
 RUN make activate-all
-
-COPY optimize_node_modules.sh .
-RUN chmod +x optimize_node_modules.sh
 
 RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm ci
 # RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install
