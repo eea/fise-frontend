@@ -176,6 +176,7 @@ const createSliderFacet = (data, facet) => {
 const SearchFilters = ({ data }) => {
   let renderTopicsFacet, renderNutsLevelFacet, renderCountryMultiselectFacet, renderResultsFormatFacet, renderPublishedYearFacet, renderCollectionsRangeFacet;
   if (
+    data &&
     data.facetsData &&
     data.selectedFilters &&
     Object.keys(data.selectedFilters).length === Object.keys(data.facetsData).length - 1
@@ -194,7 +195,6 @@ const SearchFilters = ({ data }) => {
     renderCollectionsRangeFacet = '';
     renderCountryMultiselectFacet = '';
   }
-
   return (
     <div style={data.toggleFilters ? { transform: 'translate(0)' } : {}} className='filters-container'>
       <button className="filters-toggle" onClick={() => data.handleToggle()}>{data.toggleFilters ? "HIDE" : "FILTERS"}</button>
