@@ -178,7 +178,7 @@ const SearchFilters = ({ data }) => {
   if (
     data.facetsData &&
     data.selectedFilters &&
-    Object.keys(data.selectedFilters).length > 0
+    Object.keys(data.selectedFilters).length === Object.keys(data.facetsData).length - 1
   ) {
     renderTopicsFacet = createCheckboxFacet(data, 'topic_category');
     renderNutsLevelFacet = createCheckboxFacet(data, 'nuts_level');

@@ -6,92 +6,82 @@ import RenderPagination from './RenderPagination.jsx';
 import ResultModal from './ResultModal';
 import { useState } from 'react';
 
+const renderCountriesList = (countries, handleClick) => {
+  return Object.keys(countries).map(key => {
+    return (
+      <div className="country" key={key}>
+        <a
+          onClick={() =>
+            handleClick(countries[key].name)
+          }
+        >
+          {countries[key].name}
+        </a>
+        <span className="count">
+          {' '}
+          {'(' + countries[key].number + ')'}
+        </span>
+      </div>
+    );
+  });
+}
+
+const renderPoll = (title, countriesList) => {
+  return (
+    <div className="countries">
+      <div className="countries-header">
+        <h4>{title}</h4>
+        <hr className="nfi-hr" />
+      </div>
+      <div className="countries-poll">{countriesList}</div>
+      <hr className="nfi-hr" />
+    </div>
+  )
+}
 
 const RenderSearch = ({ data, pagination }) => {
-
+  let renderResultsBar, renderContent, renderFooter;
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedItem, setSelectedItem] = useState('')
-
-  let renderResultsBar, renderContent, renderFooter;
+  // DEFAULT
   renderResultsBar = <RenderResultsBar pagination={pagination} data={data} />;
   renderContent = '';
+  renderFooter = '';
   if (data.items) {
     renderContent = data.items.map((item, index) => (
-      <ResultCard item={item} key={index} handleItemSelect={()=>{setSelectedItem(item), setModalOpen(true)}} isPortal={data.id === "portal"? true : false} />
+      <ResultCard
+        item={item}
+        key={index}
+        handleItemSelect={()=>{setSelectedItem(item), setModalOpen(true)}}
+        isPortal={data.id === "portal"? true : false}
+      />
     ));
   }
-  if (data.id === 'portal') {
-    renderFooter = '';
-  } else if (
+  //  CUSTOM
+  if (
     data.id === 'nfi_country' &&
+    data.handleCountrySelected &&
     !data.selectedCountry &&
     data.facetsData &&
     data.facetsData.country &&
     Object.keys(data.facetsData.country).length > 0
   ) {
-    renderFooter = '';
-    const countries = Object.keys(data.facetsData.country).map(key => {
-      return (
-        <div className="country" key={key}>
-          <a
-            onClick={() =>
-              data.handleCountrySelected(data.facetsData.country[key].name)
-            }
-          >
-            {data.facetsData.country[key].name}
-          </a>
-          <span className="count">
-            {' '}
-            {'(' + data.facetsData.country[key].number + ')'}
-          </span>
-        </div>
-      );
-    });
-    renderContent = (
-      <div className="countries">
-        <div className="countries-header">
-          <h4>CHOOSE COUNTRY TO SHOW RESULTS</h4>
-          <hr className="nfi-hr" />
-        </div>
-        <div className="countries-poll">{countries}</div>
-        <hr className="nfi-hr" />
-      </div>
-    )
+    renderContent = renderPoll(
+      'CHOOSE COUNTRY TO SHOW RESULTS',
+      renderCountriesList(data.facetsData.country, data.handleCountrySelected)
+    );
   } else if (
     data.id === 'nfi_region' &&
+    data.handleCountrySelected &&
     !data.selectedRegion &&
     data.facetsData &&
     data.facetsData.regions &&
     Object.keys(data.facetsData.regions).length > 0
   ) {
-    renderFooter = '';
-    const regions = Object.keys(data.facetsData.regions).map(key => {
-      return (
-        <div className="country" key={key}>
-          <a
-            onClick={() =>
-              data.handleCountrySelected(data.facetsData.regions[key].name)
-            }
-          >
-            {data.facetsData.regions[key].name}
-          </a>
-          <span className="count">
-            {' '}
-            {'(' + data.facetsData.regions[key].number + ')'}
-          </span>
-        </div>
-      );
-    });
-    renderContent = (
-      <div className="countries">
-        <div className="countries-header">
-          <h4>CHOOSE REGION TO SHOW RESULTS</h4>
-          <hr className="nfi-hr" />
-        </div>
-        <div className="countries-poll">{regions}</div>
-        <hr className="nfi-hr" />
-      </div>
-    )
+    renderContent = renderPoll(
+      'CHOOSE REGION TO SHOW RESULTS',
+      renderCountriesList(data.facetsData.regions, data.handleCountrySelected)
+    );
   } else if (pagination && ((data.id === 'nfi_country' && data.selectedCountry) || (data.id === 'nfi_region' && data.selectedRegion))) {
     renderFooter = <RenderPagination pagination={pagination} />;
   }
