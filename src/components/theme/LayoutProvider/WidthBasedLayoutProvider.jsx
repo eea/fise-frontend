@@ -11,13 +11,13 @@ mobile     tablet         desktop       widescreen */
 export default compose(
   componentQueries(({ width }) => ({
     layout_type: (() => {
-      if (width > 1600 - 50) {
+      if (width > 1600 - 20) {
         return 'widescreen';
       }
-      if (width > 1200 - 50) {
+      if (width > 1200 - 20) {
         return 'desktop';
       }
-      if (width > 767 - 50) {
+      if (width > 767 - 20) {
         return 'tablet';
       }
       return 'phone';
