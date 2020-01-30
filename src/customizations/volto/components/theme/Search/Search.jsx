@@ -47,17 +47,17 @@ const toSearchOptions = (searchableText, subject, path) => {
 
 const panes = context => {
   return [
-    {
-      menuItem: `Portal data (${context.portalData.items.length})`,
-      render: () => {
-        return (
-          <RenderSearch
-            data={context.portalData}
-            pagination={context.pagination}
-          />
-        );
-      },
-    },
+    // {
+    //   menuItem: `Portal data (${context.portalData.items.length})`,
+    //   render: () => {
+    //     return (
+    //       <RenderSearch
+    //         data={context.portalData}
+    //         pagination={context.pagination}
+    //       />
+    //     );
+    //   },
+    // },
     {
       menuItem: `National Forest Inventories`,
       render: () => {
@@ -624,7 +624,7 @@ class Search extends Component {
         handleToggle: this.handleToggle,
       },
       nfiData: {
-        id: this.state.activeTab === 1 ? 'nfi_country' : 'nfi_region',
+        id: this.state.activeTab === 0 ? 'nfi_country' : 'nfi_region',
         items: this.props.nfiSearch.results,
         facets: this.state.facets,
         facetsData: this.state.facetsData,
@@ -694,7 +694,6 @@ class Search extends Component {
             panes={panes(context)}
             onTabChange={this.handleTabChange}
           />
-
           {searchFilters}
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
