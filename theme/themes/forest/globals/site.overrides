@@ -481,7 +481,8 @@ body #page-document .imageAndRichText+p {
   }
 
   .block-inner-wrapper {
-    height: 100%;
+    // height: 100%;
+    height: calc(100% - 52px);
     min-height: 100px;
     width: 100%;
     display: flex;
