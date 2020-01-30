@@ -82,9 +82,9 @@ const Footer = ({ intl }) => (
                 </Link>
               </li>
               <li>
-                <Link className="item" to="mailto:fise@eea.europa.eu">
+                <a className="item" href={`mailto:fise@eea.europa.eu`}>
                   Contact us
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
