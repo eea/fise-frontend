@@ -396,6 +396,8 @@
 
   @media(min-width: 1200px) {
     .firstLevel:active {
-        pointer-events: none;
+        a.firstLevel {
+            pointer-events: none;
+        }
     }
   }
