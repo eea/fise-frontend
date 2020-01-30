@@ -51,14 +51,18 @@ const Footer = ({ intl }) => (
             />
           </div>
 
-          <div style={{ flexGrow: '1' }} className="column empty-column">
-            <div>
-              <div style={{ display: 'none' }}> a </div>
-            </div>
+          <div style={{ flexGrow: '1' }} className="column">
+           <b>DISCLAIMER</b>
+            <p>
+             The withdrawal of the United Kingdom from the European Union did not affect the production of this website. 
+              Data reported by the United Kingdom are included in all analyses and assessments contained herein, 
+              unless otherwise indicated. 
+             
+            </p>
           </div>
 
           <div
-            style={{ width: '150px!important' }}
+            style={{ width: '200px!important' }}
             className="column"
             id="links_column"
           >
