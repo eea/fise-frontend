@@ -7,8 +7,9 @@ import globeSVG from '@plone/volto/icons/globe.svg';
 import tableSVG from '@plone/volto/icons/table.svg';
 import showBlocksSVG from '@plone/volto/icons/show-blocks.svg';
 import doumentDetailsSVG from '@plone/volto/icons/doument-details.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
 
-const ResultModal = ({ item }) => {
+const ResultModal = ({ open, item, handleClose }) => {
     const has_download = item.download_url ? true : false;
     const data_set =
         item.data_set === 'NFI' ? 'FISE Content' : 'Forest Inventories';
@@ -59,14 +60,25 @@ const ResultModal = ({ item }) => {
     };
     return (
         <Modal
+            open={open}
             className="search-modal"
             centered={false}
-            trigger={<span className="block-headline" title={item.title}>{item.title}</span>}>
-            <BodyClass />
-            <Modal.Header style={{ border: "none", padding: "1.25rem 1.5rem 0 1.5rem" }}>
+            onClose={handleClose}
+        >
+            <div style={{display:"flex", justifyContent:"flex-end"}}>
+            <Icon
+                className="close-modal"
+                name={clearSVG}
+                size="35px"
+                color="#CD4200"
+                onClick={handleClose}
+            />
+            </div>
+            <Modal.Header style={{ border: "none", padding: "0 1.5rem 0 1.5rem" }}>
                 <p className="modal-header">
                     {item.title}
                 </p>
+
                 <div className="meta-data">
                     {item.resource_type && (
                         <React.Fragment>
@@ -104,7 +116,7 @@ const ResultModal = ({ item }) => {
                         )}
                     </div>
                     <hr className="nfi-hr" />
-                    {!has_download && (
+                    {has_download && (
                         <button
                             className="download-button"
                             onClick={() => console.log('will download')}

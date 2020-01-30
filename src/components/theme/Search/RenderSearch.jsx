@@ -3,14 +3,21 @@ import { BodyClass } from '@plone/volto/helpers';
 import ResultCard from '~/components/theme/Search/ResultCard';
 import RenderResultsBar from './RenderResultsBar.jsx';
 import RenderPagination from './RenderPagination.jsx';
+import ResultModal from './ResultModal';
+import { useState } from 'react';
+
 
 const RenderSearch = ({ data, pagination }) => {
+
+  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedItem, setSelectedItem] = useState('')
+
   let renderResultsBar, renderContent, renderFooter;
   renderResultsBar = <RenderResultsBar pagination={pagination} data={data} />;
   renderContent = '';
   if (data.items) {
     renderContent = data.items.map((item, index) => (
-      <ResultCard item={item} key={index} />
+      <ResultCard item={item} key={index} handleItemSelect={()=>{setSelectedItem(item), setModalOpen(true)}} />
     ));
   }
   if (data.id === 'portal') {
@@ -89,6 +96,10 @@ const RenderSearch = ({ data, pagination }) => {
     renderFooter = <RenderPagination pagination={pagination} />;
   }
 
+  const handleModalClose = () => {
+    setModalOpen(false)
+  }
+
   return (
     <article id="content">
       <BodyClass className="search-page" />
@@ -98,6 +109,7 @@ const RenderSearch = ({ data, pagination }) => {
       </header>
       <section id="content-core" className="mt-2">
         {renderContent}
+        <ResultModal item={selectedItem} open={modalOpen} handleClose={handleModalClose} />
       </section>
       <footer>{renderFooter}</footer>
     </article>

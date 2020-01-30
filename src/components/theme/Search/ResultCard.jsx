@@ -5,10 +5,9 @@ import globeSVG from '@plone/volto/icons/globe.svg';
 import tableSVG from '@plone/volto/icons/table.svg';
 import showBlocksSVG from '@plone/volto/icons/show-blocks.svg';
 import doumentDetailsSVG from '@plone/volto/icons/doument-details.svg';
-import ResultModal from './ResultModal';
 
 
-const ResultCard = ({ item, id }) => {
+const ResultCard = ({ item, id, handleItemSelect }) => {
   const has_download = item.download_url ? true : false;
   const data_set =
     item.data_set === 'NFI' ? 'FISE Content' : 'Forest Inventories';
@@ -60,7 +59,7 @@ const ResultCard = ({ item, id }) => {
   return (
     <div className="block-content">
       <article className="block-item" key={item['@id']}>
-        <ResultModal item={item} />
+        <span onClick={handleItemSelect} className="block-headline" title={item.title}>{item.title}</span>
         <div className="meta-data">
           {item.resource_type && (
             <React.Fragment>
