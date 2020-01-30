@@ -3,7 +3,7 @@ pipeline {
     registry = "eeacms/forests-frontend"
     registryCredential = 'eeajenkins'
     dockerImage = ''
-    tagName = $BRANCH_NAME
+    tagName = '$BRANCH_NAME'
   }
 
   agent any
@@ -14,7 +14,7 @@ pipeline {
       steps{
         script {
           checkout scm
-          if (env.BRANCH_NAME == 'master') {
+          if (tagName == 'master') {
             tagName = 'latest'
           }
           dockerImage = docker.build registry + ":" + tagName
@@ -34,10 +34,12 @@ pipeline {
 
     stage('Cleanup') {
       steps{
-          if (env.BRANCH_NAME == 'master') {
+        script {
+          if (tagName == 'master') {
             tagName = 'latest'
           }
-        sh "docker rmi $registry:$tagName"
+          sh "docker rmi $registry:$tagName"
+        }
       }
     }
 
