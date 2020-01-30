@@ -245,11 +245,18 @@ class View extends Component {
         </div>
 
         <div className="thematic-areas">
-          <div className="centered-content">
+          <div
+            style={{ padding: 'padding: 0 3rem' }}
+            className="centered-content"
+          >
             <h2>Topics</h2>
             <p>
-             Forests and their ecosystems are currently at the top of policy agenda and public attention in the context of the protection of biodiversity, climate change impacts, their adaptation and mitigation as well as renewable energy issues. 
-             Sustainable forest management is required to balance the environmental, social and economic pillars of sustainability.
+              Forests and their ecosystems are currently at the top of policy
+              agenda and public attention in the context of the protection of
+              biodiversity, climate change impacts, their adaptation and
+              mitigation as well as renewable energy issues. Sustainable forest
+              management is required to balance the environmental, social and
+              economic pillars of sustainability.
             </p>
           </div>
 
@@ -268,8 +275,8 @@ class View extends Component {
                 </h5>
               </div>
             </div>
-            
-           <div className="column area-section">
+
+            <div className="column area-section">
               <div className="area-image">
                 <Link to="/topics/forest-nature-and-biodiversity">
                   <img src={NatureIMG} alt="" />
@@ -283,8 +290,8 @@ class View extends Component {
                 </h5>
               </div>
             </div>
-            
-           <div className="column area-section">
+
+            <div className="column area-section">
               <div className="area-image">
                 <Link to="/topics/forest-and-climate-change">
                   <img src={ForestIMG} alt="" />
@@ -293,13 +300,13 @@ class View extends Component {
               <div className="area-content">
                 <h5 className="area-title">
                   <Link to="/topics/forest-and-climate-change">
-                   Forest and climate change
+                    Forest and climate change
                   </Link>
                 </h5>
               </div>
             </div>
-            
-           <div className="column area-section">
+
+            <div className="column area-section">
               <div className="area-image">
                 <Link to="/topics/forest-health-and-resilience">
                   <img src={ForestHealthIMG} alt="" />
@@ -313,9 +320,7 @@ class View extends Component {
                 </h5>
               </div>
             </div>
-            
-            
-            
+
             <div className="column area-section">
               <div className="area-image">
                 <Link to="/topics/forest-bioeconomy">
@@ -328,12 +333,6 @@ class View extends Component {
                 </h5>
               </div>
             </div>
-
-           
-
-        
-
-   
           </div>
         </div>
 
