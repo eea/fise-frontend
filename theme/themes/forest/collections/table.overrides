@@ -1,8 +1,16 @@
 .ui.table {
+  border: 1px double #d9d9d9;
+
   th.selected,
   td.selected {
     border: solid 1px rgba(120, 192, 215, 1) !important;
   }
+}
+
+.ui.table td,
+.ui.table th {
+  text-align: left;
+  padding: .6em;
 }
 
 /* Headers */
@@ -11,7 +19,7 @@
   // background: @headerBackground;
   text-align: @headerAlign;
   // color: @headerColor;
-  padding: @headerVerticalPadding @headerHorizontalPadding;
+  /* padding: @headerVerticalPadding @headerHorizontalPadding; */
   vertical-align: @headerVerticalAlign;
   font-style: @headerFontStyle;
   font-weight: @headerFontWeight;
@@ -23,8 +31,13 @@
   border-collapse: collapse;
 }
 
+.ui.table tr > th {
+  font-weight: 700;
+  background-color: #fafafa;
+}
+
 .ui.celled.table tr th, .ui.celled.table tr td {
-  border: 1px solid #eee;
+  border: 1px solid #d9d9d9;
 }
 
 .ui.table tr > th:first-child {

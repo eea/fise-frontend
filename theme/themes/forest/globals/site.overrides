@@ -1752,7 +1752,7 @@ body .ui.placeholder {
 #page-document .table table {
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid #e4e4e4;
+  border: 1px double #d9d9d9;
 }
 
 #page-document .table table td,
@@ -1760,10 +1760,34 @@ body .ui.placeholder {
   text-align: left;
   min-width: 2em;
   padding: .6em;
-  border: 1px solid #e4e4e4;
+  border: 1px solid #d9d9d9;
 }
 
 #page-document .table table th {
   font-weight: 700;
   background-color: #fafafa;
+}
+
+// ckeditor
+
+.ck-content .table table td,
+.ck-content .table table th {
+  text-align: left;
+  padding: .6em !important;
+}
+
+.ck-content {
+  ul {
+    list-style-type: none;
+    li {
+      &:before {
+        content: '►';
+        color: @headingColor;
+        font-size: .8rem;
+        margin-right: 7px;
+        margin-left: -1rem;
+        position: absolute;
+      }
+    }
+  }
 }
