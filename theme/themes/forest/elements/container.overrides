@@ -49,15 +49,11 @@
 
 
     .thematic-areas {
-      margin-left: -2rem;
-      margin-right: -2rem;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .sticky-outer-wrapper.active {
-      .logo {
-        // display: none;
-      }
-
       nav.navigation {
         top: 0;
         right: auto;
