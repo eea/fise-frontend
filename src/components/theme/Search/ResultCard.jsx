@@ -44,15 +44,15 @@ const ResultCard = ({ item, id, handleItemSelect, isPortal }) => {
             </div>
           )}
           {has_download && (
-            <div className="download-area">
-              <button
-                className="download-button"
-                onClick={() => console.log('will download')}
+            <div className="nif-download-area">
+              <a
+                className="nif-download-button"
+                href={item.download_url}
               >
                 <Icon name={collapseDownSVG} size="16px" color="#005555" />
-                <p className="download-text">Download</p>
+                <p className="nif-download-text">Download</p>
                 <p className="file-size">({item.file_size})</p>
-              </button>
+              </a>
             </div>
           )}
         </div>

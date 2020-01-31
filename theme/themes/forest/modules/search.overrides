@@ -58,18 +58,18 @@
         display: flex;
         flex-direction: column;
         flex: 0 0 100%;
-
-
     }
 
-    .download-area {
+    .nif-download-area {
+        position: relative;
         display: flex;
         align-self: flex-end;
         justify-content: center;
         align-items: center;
+        margin-left: 1.5em;
     }
 
-    .download-button {
+    .nif-download-button {
         display: flex;
         align-items: center;
         border: 1px solid #DDDDDD;
@@ -78,7 +78,7 @@
         padding: 7px;
     }
 
-    .download-text {
+    .nif-download-text {
         font-size: @standardFont;
         margin: 0;
 
