@@ -2,12 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 import ConnectedChart from 'volto-plotlycharts/ConnectedChart';
-// import ViewText from '@plone/volto/components/manage/Blocks/Text/View';
 import ViewConnectedValue from './ViewConnectedValue';
-import SourceView from 'volto-datablocks/theme/Blocks/SourceView';
+import { SourceView } from 'volto-datablocks/Sources';
 
 const EmbedChartView = props => {
-  // console.log('props in chart view', props);
   return (
     <div className="chartWrapperView">
       {props.data.block_title ? <h5>{props.data.block_title}</h5> : ''}

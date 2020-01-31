@@ -1,6 +1,6 @@
 import React from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
-import SourceView from 'volto-datablocks/theme/Blocks/SourceView';
+import { SourceView } from 'volto-datablocks/Sources';
 
 const View = props => {
   // console.log('block props', props);

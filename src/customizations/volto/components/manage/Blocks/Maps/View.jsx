@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Placeholder } from 'semantic-ui-react';
+import PrivacyProtection from '@package/components/theme/PrivacyProtection';
 
 const messages = defineMessages({
   EmbededGoogleMaps: {
@@ -25,7 +26,7 @@ const messages = defineMessages({
 
 const View = ({ data, intl }) => {
   const [visible, setVisibility] = useState(false);
-  // console.log('map', data);
+  console.log('map', data);
   // partialVisibility={true}
   return (
     <div
@@ -48,26 +49,27 @@ const View = ({ data, intl }) => {
       >
         <VisibilitySensor
           onChange={isVisible => {
-            console.log('is visible', isVisible, visible);
             !visible && isVisible && setVisibility(true);
           }}
           partialVisibility={true}
           offset={{ bottom: 200 }}
         >
-          {visible ? (
-            <iframe
-              title={intl.formatMessage(messages.EmbededGoogleMaps)}
-              src={data.url}
-              className="google-map"
-              frameBorder="0"
-              allowFullScreen
-              style={{ height: '45vh' }}
-            />
-          ) : (
-            <Placeholder style={{ height: '100%', width: '100%' }}>
-              <Placeholder.Image rectangular />
-            </Placeholder>
-          )}
+          <PrivacyProtection style={{ height: '100%' }} data={data}>
+            {visible ? (
+              <iframe
+                title={intl.formatMessage(messages.EmbededGoogleMaps)}
+                src={data.url}
+                className="google-map"
+                frameBorder="0"
+                allowFullScreen
+                style={{ height: '45vh' }}
+              />
+            ) : (
+              <Placeholder style={{ height: '100%', width: '100%' }}>
+                <Placeholder.Image rectangular />
+              </Placeholder>
+            )}
+          </PrivacyProtection>
         </VisibilitySensor>
       </div>
     </div>
