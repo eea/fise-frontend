@@ -253,8 +253,7 @@ class View extends Component {
             <p>
               Forests and their ecosystems are currently at the top of policy
               agenda and public attention in the context of the protection of
-              biodiversity, climate change impacts, their adaptation and
-              mitigation as well as renewable energy issues. Sustainable forest
+              biodiversity, adaptation and mitigation against climate change impacts, and renewable energy. Sustainable forest
               management is required to balance the environmental, social and
               economic pillars of sustainability.
             </p>
