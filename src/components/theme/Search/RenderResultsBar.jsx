@@ -44,7 +44,7 @@ const RenderResultsBar = ({ pagination, data }) => {
 
   renderResultsBar = (
     <div className="header-content">
-      <div className="results-bar">
+      <div className="results-bar mt-2">
           <div className="results-count">
             {renderResultsCount}
           </div>

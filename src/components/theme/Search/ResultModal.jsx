@@ -1,63 +1,14 @@
 import React, { Component } from 'react';
 import { Icon } from '@plone/volto/components';
 import { Modal } from 'semantic-ui-react'
-import { BodyClass } from '@plone/volto/helpers';
 import collapseDownSVG from '@plone/volto/icons/collapse-down.svg';
-import globeSVG from '@plone/volto/icons/globe.svg';
-import tableSVG from '@plone/volto/icons/table.svg';
-import showBlocksSVG from '@plone/volto/icons/show-blocks.svg';
-import doumentDetailsSVG from '@plone/volto/icons/doument-details.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
+import DataIcon from './DataIcon';
 
 const ResultModal = ({ open, item, handleClose }) => {
     const has_download = item.download_url ? true : false;
     const data_set =
         item.data_set === 'NFI' ? 'FISE Content' : 'Forest Inventories';
-
-    const DataIcon = () => {
-        switch (item.resource_type) {
-            case 'Tabular data':
-                return (
-                    <Icon
-                        className="format-icon"
-                        name={tableSVG}
-                        size="18px"
-                        color="white"
-                    />
-                );
-            case 'Article':
-                return (
-                    <Icon
-                        className="format-icon"
-                        name={globeSVG}
-                        size="18px"
-                        color="white"
-                    />
-                );
-            case 'Raster data':
-                return (
-                    <Icon
-                        className="format-icon"
-                        name={showBlocksSVG}
-                        size="18px"
-                        color="white"
-                    />
-                );
-            case 'Report':
-                return (
-                    <Icon
-                        className="format-icon"
-                        name={doumentDetailsSVG}
-                        size="18px"
-                        color="white"
-                    />
-                );
-            case 'PDF Document':
-                return <div className="format-icon">PDF</div>;
-            default:
-                return <div className="format-icon" />;
-        }
-    };
     return (
         <Modal
             open={open}
@@ -65,14 +16,14 @@ const ResultModal = ({ open, item, handleClose }) => {
             centered={false}
             onClose={handleClose}
         >
-            <div style={{display:"flex", justifyContent:"flex-end"}}>
-            <Icon
-                className="close-modal"
-                name={clearSVG}
-                size="35px"
-                color="#CD4200"
-                onClick={handleClose}
-            />
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <Icon
+                    className="close-modal"
+                    name={clearSVG}
+                    size="35px"
+                    color="#CD4200"
+                    onClick={handleClose}
+                />
             </div>
             <Modal.Header style={{ border: "none", padding: "0 1.5rem 0 1.5rem" }}>
                 <p className="modal-header">
@@ -82,7 +33,7 @@ const ResultModal = ({ open, item, handleClose }) => {
                 <div className="meta-data">
                     {item.resource_type && (
                         <React.Fragment>
-                            <DataIcon />
+                            <DataIcon type={item.resource_type} />
                             <div className="text-tab">
                                 <span className="format-text">Format: </span>
                                 <span className="format-type">{item.resource_type}</span>

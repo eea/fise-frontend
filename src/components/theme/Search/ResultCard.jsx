@@ -1,69 +1,23 @@
 import React, { Component } from 'react';
 import { Icon } from '@plone/volto/components';
 import collapseDownSVG from '@plone/volto/icons/collapse-down.svg';
-import globeSVG from '@plone/volto/icons/globe.svg';
-import tableSVG from '@plone/volto/icons/table.svg';
-import showBlocksSVG from '@plone/volto/icons/show-blocks.svg';
-import doumentDetailsSVG from '@plone/volto/icons/doument-details.svg';
+import { Link } from 'react-router-dom';
+import DataIcon from './DataIcon';
 
-
-const ResultCard = ({ item, id, handleItemSelect }) => {
+const ResultCard = ({ item, id, handleItemSelect, isPortal }) => {
   const has_download = item.download_url ? true : false;
   const data_set =
     item.data_set === 'NFI' ? 'FISE Content' : 'Forest Inventories';
-
-  const DataIcon = () => {
-    switch (item.resource_type) {
-      case 'Tabular data':
-        return (
-          <Icon
-            className="format-icon"
-            name={tableSVG}
-            size="18px"
-            color="white"
-          />
-        );
-      case 'Article':
-        return (
-          <Icon
-            className="format-icon"
-            name={globeSVG}
-            size="18px"
-            color="white"
-          />
-        );
-      case 'Raster data':
-        return (
-          <Icon
-            className="format-icon"
-            name={showBlocksSVG}
-            size="18px"
-            color="white"
-          />
-        );
-      case 'Report':
-        return (
-          <Icon
-            className="format-icon"
-            name={doumentDetailsSVG}
-            size="18px"
-            color="white"
-          />
-        );
-      case 'PDF Document':
-        return <div className="format-icon">PDF</div>;
-      default:
-        return <div className="format-icon" />;
-    }
-  };
+  
   return (
     <div className="block-content">
       <article className="block-item" key={item['@id']}>
-        <span onClick={handleItemSelect} className="block-headline" title={item.title}>{item.title}</span>
+        {!isPortal && <span onClick={handleItemSelect} className="block-headline" title={item.title}>{item.title}</span>}
+        {isPortal && <Link className="block-headline" to={item['@id']}>{item.title}</Link>}
         <div className="meta-data">
           {item.resource_type && (
             <React.Fragment>
-              <DataIcon />
+              <DataIcon type={item.resource_type} />
               <div className="text-tab">
                 <span className="format-text">Format: </span>
                 <span className="format-type">{item.resource_type}</span>

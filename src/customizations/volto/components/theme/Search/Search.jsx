@@ -45,42 +45,26 @@ const toSearchOptions = (searchableText, subject, path) => {
   };
 };
 
+const tabPanes = ['nfi_country', 'nfi_region'];
+
 const panes = context => {
-  return [
-    {
-      menuItem: `Portal data (${context.portalData.items.length})`,
+  return tabPanes.map((pane, index) => {
+    return {
+      menuItem: context[pane] ? context[pane].menuItem : `Tab ${index}`,
+      id: pane,
       render: () => {
+        if (!context[pane]) return ''
         return (
-          <RenderSearch
-            data={context.portalData}
-            pagination={context.pagination}
-          />
-        );
-      },
-    },
-    {
-      menuItem: `National Forest Inventories`,
-      render: () => {
-        return (
-          <RenderSearch
-            data={context.nfiData ? context.nfiData : {}}
-            pagination={context.pagination}
-          />
-        );
-      },
-    },
-    {
-      menuItem: 'Regional / International data',
-      render: () => {
-        return (
-          <RenderSearch
-            data={context.nfiData ? context.nfiData : {}}
-            pagination={context.pagination}
-          />
-        );
-      },
-    },
-  ];
+          <Tab.Pane className={pane}>
+            <RenderSearch
+              data={context[pane]}
+              pagination={context.pagination}
+            />
+          </Tab.Pane>
+        )
+      }
+    }
+  })
 };
 
 const queryParams = {
@@ -143,6 +127,7 @@ class Search extends Component {
     toggle: false,
     dataReady: true,
     activeTab: 0,
+    activeTabId: '',
     defaultRegions: ['EEA39', 'FAO234', 'SOEF46'],
     selectedKeywords: [],
     selectedFilters: {},
@@ -219,6 +204,9 @@ class Search extends Component {
    * @returns {undefined}
    */
   componentDidMount() {
+    this.setState({
+      activeTabId: tabPanes[0]
+    });
     this.initiateKeywords().then(() => {
       if (
         Object.keys(this.props.nfiSearch).length === 0 ||
@@ -419,12 +407,12 @@ class Search extends Component {
       keyword => keyword.value,
     );
 
-    if (this.state.activeTab === 1) {
+    if (this.state.activeTabId === 'nfi_country') {
       countries = this.state.nfiSelectedCountry;
       Object.keys(this.state.selectedFilters).forEach(filter => {
         customQuery += this.state.selectedFilters[filter];
       });
-    } else if (this.state.activeTab === 2) {
+    } else if (this.state.activeTabId === 'nfi_region') {
       countries = this.state.nfiSelectedRegion;
       Object.keys(this.state.selectedFilters).forEach(filter => {
         customQuery += this.state.selectedFilters[filter];
@@ -456,6 +444,7 @@ class Search extends Component {
     selectedFilters.country = '';
     this.setState({
       activeTab: data.activeIndex,
+      activeTabId: data.panes[data.activeIndex].id,
       nfiSelectedCountry: '',
       nfiSelectedRegion: '',
       selectedFilters,
@@ -484,14 +473,14 @@ class Search extends Component {
 
   // NFI
   handleCountrySelected = country => {
-    if (this.state.activeTab === 1) {
+    if (this.state.activeTabId === 'nfi_country') {
       this.setState(
         {
           nfiSelectedCountry: country,
         },
         this.handleNfiSearch,
       );
-    } else if (this.state.activeTab === 2) {
+    } else if (this.state.activeTabId === 'nfi_region') {
       this.setState(
         {
           nfiSelectedRegion: country,
@@ -612,8 +601,9 @@ class Search extends Component {
   render() {
     const context = {
       term: this.props.searchableText,
-      portalData: {
+      portal: {
         id: 'portal',
+        menuItem: `Portal data (${this.props.items.length})`,
         items: this.props.items,
         facets: this.state.facets,
         facetsData: this.state.facetsData,
@@ -621,37 +611,48 @@ class Search extends Component {
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
         toggleFilters: this.state.toggle,
-        handleToggle: this.handleToggle,
+        handleToggle: this.handleToggle
       },
-      nfiData: {
-        id: this.state.activeTab === 1 ? 'nfi_country' : 'nfi_region',
+      nfi_country: {
+        id: 'nfi_country',
+        menuItem: 'National Forest Inventories',
         items: this.props.nfiSearch.results,
+        selectedCountry: this.state.nfiSelectedCountry,
+        handleCountrySelected: this.handleCountrySelected,
         facets: this.state.facets,
         facetsData: this.state.facetsData,
-        selectedCountry: this.state.nfiSelectedCountry,
-        selectedRegion: this.state.nfiSelectedRegion,
         selectedFilters: this.state.selectedFilters,
+        handleFilterSelected: this.handleFilterSelected,
+        handleClearFilters: this.handleClearFilters,
+        toggleFilters: this.state.toggle,
+        handleToggle: this.handleToggle
+      },
+      nfi_region: {
+        id: 'nfi_region',
+        menuItem: 'Regional / International data',
+        items: this.props.nfiSearch.results,
+        selectedRegion: this.state.nfiSelectedRegion,
         handleCountrySelected: this.handleCountrySelected,
+        facets: this.state.facets,
+        facetsData: this.state.facetsData,
+        selectedFilters: this.state.selectedFilters,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
         toggleFilters: this.state.toggle,
         handleToggle: this.handleToggle,
       },
-      pagination:
-        this.state.activeTab > 0
-          ? {
-              ...this.state.pagination,
-              updateItemsPerPage: this.updateItemsPerPage,
-              updatePage: this.updatePage,
-            }
-          : null,
+      pagination: this.state.activeTabId !== 'portal'
+        ? {
+          ...this.state.pagination,
+          updateItemsPerPage: this.updateItemsPerPage,
+          updatePage: this.updatePage,
+        } : null,
     };
     const loader = <h1>Loading data...</h1>;
     let multiselect, searchFilters;
 
-    if (this.state.activeTab === 0) {
+    if (this.state.activeTabId === 'portal') {
       multiselect = '';
-      searchFilters = <SearchFilters data={context.portalData} />;
     } else {
       multiselect = (
         <div className="multiselect-container">
@@ -674,9 +675,12 @@ class Search extends Component {
           </Button>
         </div>
       );
-      searchFilters = <SearchFilters data={context.nfiData} />;
     }
-
+    if (context && context[this.state.activeTabId]) {
+      searchFilters = <SearchFilters data={context[this.state.activeTabId]} />;
+    } else {
+      searchFilters = '';
+    }
     const ui = (
       <Container>
         <Helmet title="Search" />
@@ -694,7 +698,6 @@ class Search extends Component {
             panes={panes(context)}
             onTabChange={this.handleTabChange}
           />
-
           {searchFilters}
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
