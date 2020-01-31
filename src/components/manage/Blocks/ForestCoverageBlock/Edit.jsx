@@ -24,7 +24,7 @@ const SCHEMA = {
 const Edit = props => {
   // data is like {provider_url: '', columns: {key: {value, format}}}
   return (
-    <div className="block-container">
+    <React.Fragment>
       <EditBlock
         onChange={data => {
           props.onChangeBlock(props.block, {
@@ -39,7 +39,7 @@ const Edit = props => {
         selected={props.selected}
       />
       <View {...props} />
-    </div>
+    </React.Fragment>
   );
 };
 
