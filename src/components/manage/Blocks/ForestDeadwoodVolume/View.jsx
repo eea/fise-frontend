@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
-import SourceView from 'volto-datablocks/theme/Blocks/SourceView';
+import { SourceView } from 'volto-datablocks/Sources';
 
 class View extends Component {
   render() {

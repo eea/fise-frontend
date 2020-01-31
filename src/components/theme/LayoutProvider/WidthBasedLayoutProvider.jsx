@@ -1,32 +1,67 @@
 import React from 'react';
 import componentQueries from 'react-component-queries';
 import { compose } from 'redux';
+// import mosaic_width from '../../../addons/volto-mosaic/src/reducers/mosaic_width';
+import { connect } from 'react-redux';
 
 const WidthBasedLayoutProvider = WrappedComponent => props => {
   return <WrappedComponent {...props} />;
 };
-/* 767        768-1199      1200-1599     1600+
-mobile     tablet         desktop       widescreen */
 
-export default compose(
-  componentQueries(({ width }) => ({
-    layout_type: (() => {
-      if (__SERVER__) {
-        return 'widescreen';
-      }
-      if (width > 1600 - 20) {
-        return 'widescreen';
-      }
-      if (width > 1200 - 20) {
-        return 'desktop';
-      }
-      if (width > 767 - 20) {
-        return 'tablet';
-      }
-      return 'phone';
-    })(),
+const connectedWidthProvider = compose(
+  connect(state => ({
+    mosaic_width: state.mosaic_width.items,
   })),
+  componentQueries({
+    queries: [
+      ({ width }, { mosaic_width }) => ({
+        layout_type: (() => {
+          // const width = 120
+          // windowWidth - gridLayoutWidth = margins
+          const mosaic_breakpoints = {
+            tablet: 767,
+            desktop: 1200,
+            widescreen: 1600,
+          };
+
+          // console.log('props in queries', width, mosaic_width);
+          const windowWidth = __CLIENT__ && window.innerWidth;
+          const margins = windowWidth - mosaic_width;
+          const breakpoint = screentype =>
+            windowWidth
+              ? mosaic_breakpoints[screentype] - margins - 20
+              : mosaic_breakpoints[screentype] - 20;
+
+          console.log(
+            'breakpoints',
+            width,
+            '====>',
+            'widescreen =>',
+            breakpoint('widescreen'),
+            'desktop =>',
+            breakpoint('desktop'),
+            'tablet =>',
+            breakpoint('tablet'),
+          );
+
+          if (__SERVER__) {
+            return 'widescreen';
+          }
+          if (width > breakpoint('widescreen')) {
+            return 'widescreen';
+          }
+          if (width > breakpoint('desktop')) {
+            return 'desktop';
+          }
+          if (width > breakpoint('tablet')) {
+            return 'tablet';
+          }
+          return 'phone';
+        })(),
+      }),
+    ],
+  }),
   WidthBasedLayoutProvider,
 );
 
-/* export const breakpoints = { lg: 1600, md: 1200, sm: 768, xs: 0, xxs: 0 }; */
+export default connectedWidthProvider;
