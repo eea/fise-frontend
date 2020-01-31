@@ -22,6 +22,11 @@ import {
   NFI_SEARCH,
 } from '~/constants/ActionTypes';
 
+const nfiApi = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:8000'
+  : 'https://demo-forests-p5.eea.europa.eu/searchapi';
+
+
 export function setLoader(value) {
   return {
     type: SET_LOADER,
@@ -133,7 +138,7 @@ export function getKeywords() {
     stateToChange: 'keyword',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/keyword/',
+      path: `${nfiApi}/api/facets/keyword/`,
       external: true,
     },
   };
@@ -145,7 +150,7 @@ export function getCountry() {
     stateToChange: 'country',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/country/',
+      path: `${nfiApi}/api/facets/country/`,
       external: true,
     },
   };
@@ -158,7 +163,7 @@ export function getDataSet() {
     stateToChange: 'data_set',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/data-set/',
+      path: `${nfiApi}/api/facets/data-set/`,
       external: true,
     },
   };
@@ -171,7 +176,7 @@ export function getDataType() {
     stateToChange: 'data_type',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/data-type/',
+      path: `${nfiApi}/api/facets/data-type/`,
       external: true,
     },
   };
@@ -184,7 +189,7 @@ export function getInfoLevel() {
     stateToChange: 'info_level',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/info-level/',
+      path: `${nfiApi}/api/facets/info-level/`,
       external: true,
     },
   };
@@ -197,7 +202,7 @@ export function getNutsLevel() {
     stateToChange: 'nuts_level',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/nuts-level/',
+      path: `${nfiApi}/api/facets/nuts-level/`,
       external: true,
     },
   };
@@ -210,7 +215,7 @@ export function getResourceType() {
     stateToChange: 'resource_type',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/resource-type/',
+      path: `${nfiApi}/api/facets/resource-type/`,
       external: true,
     },
   };
@@ -223,7 +228,7 @@ export function getTopicCategory() {
     stateToChange: 'topic_category',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/topic-category/',
+      path: `${nfiApi}/api/facets/topic-category/`,
       external: true,
     },
   };
@@ -236,7 +241,7 @@ export function getPublicationYears() {
     stateToChange: 'published_year',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/publication_years/',
+      path: `${nfiApi}/api/publication_years/`,
       external: true,
     },
   };
@@ -249,7 +254,7 @@ export function getColectionRange() {
     stateToChange: 'collections_range',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/collections_range/',
+      path: `${nfiApi}/api/collections_range/`,
       external: true,
     },
   };
@@ -262,7 +267,7 @@ export function getLanguage() {
     stateToChange: 'language',
     request: {
       op: 'get',
-      path: 'http://localhost:8000/api/facets/language/',
+      path: `${nfiApi}/api/facets/language/`,
       external: true,
     },
   };
@@ -321,7 +326,7 @@ export function doNfiSearch(
     stateToChange: 'search',
     request: {
       op: 'get',
-      path: `http://localhost:8000/api/search/${query}`,
+      path: `${nfiApi}/api/search/${query}`,
       external: true,
     },
   };
