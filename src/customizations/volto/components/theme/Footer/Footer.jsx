@@ -54,9 +54,9 @@ const Footer = ({ intl }) => (
           <div style={{ flexGrow: '1' }} className="column">
            <b>DISCLAIMER</b>
             <p>
-             The withdrawal of the United Kingdom from the European Union did not affect the production of this website.
-              Data reported by the United Kingdom are included in all analyses and assessments contained herein,
-              unless otherwise indicated.
+             Withdrawal of the United Kingdom from the European Union:
+              <i>Data reported by the United Kingdom are included in all analyses and assessments contained herein,
+              unless otherwise indicated.</i>
 
             </p>
           </div>
