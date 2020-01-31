@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import footerImage from './footer.png';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
-import eeaLogo from './ec.svg.png';
-import ecLogo from './eea.png';
+import ecLogo from './ec.png';
+import eeaLogo from './eea.png';
 
 const messages = defineMessages({
   copyright: {
@@ -54,10 +54,10 @@ const Footer = ({ intl }) => (
           <div style={{ flexGrow: '1' }} className="column">
            <b>DISCLAIMER</b>
             <p>
-             The withdrawal of the United Kingdom from the European Union did not affect the production of this website. 
-              Data reported by the United Kingdom are included in all analyses and assessments contained herein, 
-              unless otherwise indicated. 
-             
+             The withdrawal of the United Kingdom from the European Union did not affect the production of this website.
+              Data reported by the United Kingdom are included in all analyses and assessments contained herein,
+              unless otherwise indicated.
+
             </p>
           </div>
 
@@ -97,13 +97,13 @@ const Footer = ({ intl }) => (
             <b>PARTNERS</b>
             <div className="footerLogoWrapper">
               <a href="https://ec.europa.eu/" title="European Commission">
-                <img className="footerLogo" src={eeaLogo} alt="" />
+                <img className="footerLogo" src={ecLogo} alt="" />
               </a>
               <a
                 href="https://www.eea.europa.eu/"
                 title="European Environment Agency"
               >
-                <img className="footerLogo" src={ecLogo} alt="" />
+                <img className="footerLogo" src={eeaLogo} alt="" />
               </a>
             </div>
           </div>

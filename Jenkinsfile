@@ -1,16 +1,31 @@
 pipeline {
+  environment {
+    registry = "eeacms/forests-frontend"
+    registryCredential = 'eeajenkins'
+    dockerImage = ''
+    tagName = ''
+  }
+
   agent any
 
   stages {
-    stage('Build & Push') {
-      steps {
-        node(label: 'docker') {
+    stage('Build & Release') {
+      steps{
+        node(label: 'docker-host') {
           script {
+            checkout scm
+            if (env.BRANCH_NAME == 'master') {
+              tagName = 'latest'
+            } else {
+              tagName = "$BRANCH_NAME"
+            }
             try {
-              checkout scm
-              sh '''docker build -t eeacms/forests-frontend:$BRANCH_NAME . --build-arg MAX_OLD_SPACE_SIZE=8192'''
+              dockerImage = docker.build registry + ":" + tagName
+              docker.withRegistry( '', registryCredential ) {
+                dockerImage.push()
+              }
             } finally {
-              sh '''docker rmi eeacms/forests-frontend:$BRANCH_NAME'''
+              sh "docker rmi $registry:$tagName"
             }
           }
         }
