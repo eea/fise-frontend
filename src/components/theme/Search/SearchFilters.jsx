@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Checkbox, Dropdown } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Range, getTrackBackground } from 'react-range';
+import { Icon } from '@plone/volto/components';
+import aHeadSVG from '@plone/volto/icons/ahead.svg';
 
 const capitalize = s => {
   if (typeof s !== 'string') return '';
@@ -197,7 +199,14 @@ const SearchFilters = ({ data }) => {
   }
   return (
     <div style={data.toggleFilters ? { transform: 'translate(0)' } : {}} className='filters-container'>
-      <button className="filters-toggle" onClick={() => data.handleToggle()}>{data.toggleFilters ? "HIDE" : "FILTERS"}</button>
+      <button
+        className={data.toggleFilters ? "filters-toggle filters-open" : "filters-toggle"}
+        onClick={() => data.handleToggle()}>
+        {data.toggleFilters ?
+          <Icon
+            name={aHeadSVG}
+            size="24px" /> : "Filters"}
+      </button>
       <div className="filters-head">
         <h3 className="header">FILTERS</h3>
         <h5 className="clear-filters" onClick={data.handleClearFilters}>
