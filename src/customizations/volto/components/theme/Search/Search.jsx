@@ -17,6 +17,9 @@ import { BodyClass } from '@plone/volto/helpers';
 import { SearchTags, Toolbar } from '@plone/volto/components';
 import RenderSearch from '~/components/theme/Search/RenderSearch';
 import SearchFilters from '~/components/theme/Search/SearchFilters';
+import { Icon } from '@plone/volto/components';
+import filterSVG from '@plone/volto/icons/filter.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
 
 import { searchContent } from '@plone/volto/actions';
 import {
@@ -681,6 +684,22 @@ class Search extends Component {
     } else {
       searchFilters = '';
     }
+    const filtersToggler = (
+      <button
+        className="filters-toggle"
+        onClick={() => this.handleToggle()}>
+        {
+        this.state.toggle ?
+          <Icon
+            name={clearSVG}
+            size="20px"
+          /> : <Icon
+            name={filterSVG}
+            size="20px" 
+          />
+        }
+      </button>
+    );
     const ui = (
       <Container>
         <Helmet title="Search" />
@@ -698,6 +717,7 @@ class Search extends Component {
             panes={panes(context)}
             onTabChange={this.handleTabChange}
           />
+          {filtersToggler}
           {searchFilters}
         </div>
         <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
