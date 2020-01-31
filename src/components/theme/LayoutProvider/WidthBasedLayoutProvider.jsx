@@ -11,6 +11,9 @@ mobile     tablet         desktop       widescreen */
 export default compose(
   componentQueries(({ width }) => ({
     layout_type: (() => {
+      if (__SERVER__) {
+        return 'widescreen';
+      }
       if (width > 1600 - 20) {
         return 'widescreen';
       }

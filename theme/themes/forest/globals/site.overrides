@@ -1733,3 +1733,11 @@ body {
 body .ui.placeholder {
   max-width: unset;
 }
+
+.blurr-transition {
+  transition: filter 300ms;
+}
+
+.blurred {
+  filter: blur(4px);
+}
