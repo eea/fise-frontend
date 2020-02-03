@@ -112,6 +112,12 @@
       padding: 1rem;
     }
 
+    &.mosaic-view {
+      .content-area main {
+        padding: 0;
+      }
+    }
+
 
     .footerWrapper {
       .ui.grid {
