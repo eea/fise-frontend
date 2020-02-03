@@ -1040,7 +1040,10 @@ h5 {
       .slide-title {
         font-size: 3rem;
         font-weight: bold;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+        @media(min-width: 700px) {
+          margin-bottom: 3rem;
+        }
         line-height: 1.2;
 
         @media(max-width: 700px) {
@@ -1056,6 +1059,7 @@ h5 {
         // opacity    : 0.8;
         @media(max-width: 700px) {
           font-size: 1rem;
+          font-weight: 400;
         }
       }
     }

@@ -133,6 +133,9 @@
             .item.Countries--section-item {
                 display: inline-block !important;
                 width  : 33%;
+                @media(max-width: 768px) {
+                    width: 50%!important;
+                }
 
                 &:not(#Regions) {
                     a {
@@ -153,8 +156,10 @@
                     padding-bottom: .5rem;
                     margin-bottom : .5rem;
                     text-align    : center;
-
-                    a.secondLevel {
+                    @media(max-width: 768px) {
+                        width: 100%!important;
+                    }
+                    > div.secondLevel {
                         pointer-events: none;
                         border-top    : 1px solid #eee;
                         border-bottom : 1px solid #eee !important;
