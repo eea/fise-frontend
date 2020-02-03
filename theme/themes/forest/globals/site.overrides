@@ -16,6 +16,9 @@ body {
   align-items: baseline;
   margin-top: 1rem;
   padding: 0 2rem;
+  @media(max-width: 1200px) {
+    padding: 0 1rem;
+  }
 }
 
 
@@ -1749,18 +1752,27 @@ body .ui.placeholder {
   margin: 1em 0;
 }
 
+#page-document .table {
+  tr {
+    &:nth-child(odd) {
+      td {
+        background-color: #f4f4f2;
+      }
+    }
+  }
+}
+
 #page-document .table table {
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px double #d9d9d9;
 }
 
 #page-document .table table td,
 #page-document .table table th {
   text-align: left;
   min-width: 2em;
-  padding: .6em;
-  border: 1px solid #d9d9d9;
+  padding: 1.5rem 1rem;
+  border: none;
 }
 
 #page-document .table table th {
@@ -1789,5 +1801,12 @@ body .ui.placeholder {
         position: absolute;
       }
     }
+  }
+}
+
+
+@media(max-width: 1200px) {
+  .block.image.align.left {
+    margin-left: 0;
   }
 }
