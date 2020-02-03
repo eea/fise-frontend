@@ -13,9 +13,17 @@ const { echo, exec } = require('shelljs');
 const offendingPackages = [
   './node_modules/prepend-http',
   './node_modules/url-parse-lax',
+  // ... other offending packages you've might find
   './src/addons/volto-datablocks/node_modules/normalize-url',
   './src/addons/volto-plotlycharts/node_modules/normalize-url',
-  // ... other offending packages you've might find
+  './src/addons/volto-datablocks/node_modules/cacheable-request/node_modules/normalize-url',
+  // './node_modules/parse-url/node_modules/normalize-url',
+  // './node_modules/cacheable-request/node_modules/normalize-url',
+  // './node_modules/postcss-normalize-url/node_modules/normalize-url',
+  // './node_modules/get-urls/node_modules/normalize-url',
+  // './node_modules/ip-regex',
+  // './node_modules/npm/node_modules/ip-regex/',
+  // './node_modules/npm/node_modules/cidr-regex/',
 ];
 
 echo('\nPre-build transpiling to ES5 offending packages...\n');
