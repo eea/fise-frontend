@@ -1791,6 +1791,7 @@ body .ui.placeholder {
 .ck-content {
   ul {
     list-style-type: none;
+    padding-left: 15px;
     li {
       &:before {
         content: '►';
