@@ -53,12 +53,13 @@ const DefaultView = props => {
   // if (!shouldRenderRoutes) return <Spinner />;
   return (
     <Grid columns="equal" className="zero-margin">
-      {renderPortletManager('plone.leftcolumn', 3, { ...props })}
+      {renderPortletManager('plone.leftcolumn', 2, { ...props })}
       <Grid.Column
         style={{ position: 'static' }}
         tablet={12}
         largeScreen={6}
         widescreen={6}
+        computer={8}
       >
         {hasBlocksData(content) ? (
           <div id="page-document" className="ui container">

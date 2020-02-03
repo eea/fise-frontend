@@ -1527,10 +1527,13 @@ body {
 }
 
 #floatBarsG {
-  position: relative;
+  position: absolute;
   width: 120px;
   height: 14px;
   margin: auto;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 
 .floatBarsG {
@@ -1826,4 +1829,14 @@ body .ui.placeholder {
 
 body:not(.has-sidebar-collapsed) > #sidebar {
   position: absolute;
+}
+
+
+main {
+  .ui.grid {
+    padding: 0!important;
+    > .column {
+      padding: 0!important;
+    }
+  }
 }
