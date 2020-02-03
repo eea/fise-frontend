@@ -74,6 +74,7 @@ export function applyConfig(config) {
       '/manage-slider',
       '/sitemap',
     ],
+    ownDomain: 'forest.eea.europa.eu',
   };
 
   config.views = {

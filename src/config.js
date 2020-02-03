@@ -12,6 +12,7 @@ import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
 import { applyConfig as installSidebar } from 'volto-sidebar/config';
+import { applyConfig as installEmbed } from 'volto-embed/config';
 
 const config = [
   addonsConfig,
@@ -22,6 +23,7 @@ const config = [
   plotlyConfig,
   ckeditorConfig,
   mosaicConfig,
+  installEmbed,
   // installSearch,
   dataBlocksConfig,
   installFiseFrontend,

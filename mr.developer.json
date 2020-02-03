@@ -25,5 +25,8 @@
     },
     "volto-sidebar": {
       "url": "https://github.com/eea/volto-sidebar.git"
+    },
+    "volto-embed": {
+      "url": "https://github.com/eea/volto-embed.git"
     }
 }

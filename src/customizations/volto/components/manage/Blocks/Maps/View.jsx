@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Placeholder } from 'semantic-ui-react';
-import PrivacyProtection from '@package/components/theme/PrivacyProtection';
+import PrivacyProtection from 'volto-embed/PrivacyProtection';
 
 const messages = defineMessages({
   EmbededGoogleMaps: {
