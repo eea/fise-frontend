@@ -54,7 +54,7 @@ const Footer = ({ intl }) => (
           <div style={{ flexGrow: '1' }} className="column">
            <b>DISCLAIMER</b>
             <p>
-             Withdrawal of the United Kingdom from the European Union:
+             Withdrawal of the United Kingdom from the European Union: 
               <i>Data reported by the United Kingdom are included in all analyses and assessments contained herein,
               unless otherwise indicated.</i>
 
@@ -86,7 +86,7 @@ const Footer = ({ intl }) => (
                 </Link>
               </li>
               <li>
-                <a className="item" href={`mailto:fise@eea.europa.eu`}>
+                <a className="item" href={`mailto:info@eea.europa.eu`}>
                   Contact us
                 </a>
               </li>
