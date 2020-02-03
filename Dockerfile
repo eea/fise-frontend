@@ -24,7 +24,7 @@ RUN chown -R node /opt/frontend
 USER node
 
 RUN echo "prefix = \"/home/node\"\n" > /home/node/.npmrc
-RUN rm -rf node_modules .git
+RUN rm -rf node_modules .git package-lock.json
 
 RUN npm install mr-developer
 
@@ -32,8 +32,8 @@ RUN node_modules/.bin/mrdeveloper --config=jsconfig.json --no-config --output=ad
 
 RUN make activate-all
 
-RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm ci
-# RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install
+# RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm ci
+RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install
 
 RUN ./optimize_node_modules.sh
 
@@ -64,6 +64,7 @@ RUN chown -R node /opt/frontend
 
 USER node
 
+RUN rm -rf package-lock.json
 RUN NPM_CONFIG_REGISTRY=$NPM_CONFIG_REGISTRY npm install --production
 
 ENTRYPOINT ["/opt/frontend/entrypoint.sh"]
