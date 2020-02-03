@@ -52,7 +52,7 @@ const DefaultView = props => {
   //
   // if (!shouldRenderRoutes) return <Spinner />;
   return (
-    <Grid columns="equal">
+    <Grid columns="equal" className="zero-margin">
       {renderPortletManager('plone.leftcolumn', 3, { ...props })}
       <Grid.Column
         style={{ position: 'static' }}
