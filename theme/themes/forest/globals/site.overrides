@@ -870,9 +870,17 @@ h5 {
   margin: 0 auto !important;
 }
 
-.folderWithContent,
-.breadcrumbs {
+.folderWithContent {
   padding: 0 100px !important;
+}
+
+.breadcrumbs {
+  @media(min-width: 700px) {
+    padding: 0 100px !important;
+  }
+  @media(max-width: 700px) {
+    border-top-left-radius: 0!important;
+  }
 }
 
 .folderWithContent {
