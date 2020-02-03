@@ -154,7 +154,7 @@
                     margin-bottom : .5rem;
                     text-align    : center;
 
-                    a.secondLevel {
+                    > div.secondLevel {
                         pointer-events: none;
                         border-top    : 1px solid #eee;
                         border-bottom : 1px solid #eee !important;
