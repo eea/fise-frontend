@@ -109,7 +109,13 @@
     }
 
     .content-area main {
-      padding: 0;
+      padding: 1rem;
+    }
+
+    &.mosaic-view {
+      .content-area main {
+        padding: 0;
+      }
     }
 
 
