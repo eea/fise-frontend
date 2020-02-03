@@ -1840,3 +1840,17 @@ main {
     }
   }
 }
+
+
+.out-dated-message {
+  position: fixed!important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.overflow-hidden {
+  overflow: hidden!important;
+}
