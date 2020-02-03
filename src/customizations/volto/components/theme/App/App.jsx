@@ -16,7 +16,13 @@ import ViewletsRenderer from 'volto-addons/Viewlets/Render';
 
 import Error from '@plone/volto/error';
 
-import { Icon, Messages, Footer, Header } from '@plone/volto/components';
+import {
+  Icon,
+  Messages,
+  Footer,
+  Header,
+  OutdatedBrowser,
+} from '@plone/volto/components';
 import { BodyClass, getBaseUrl, getView } from '@plone/volto/helpers';
 import {
   getContent,
@@ -120,6 +126,7 @@ class App extends Component {
         <Segment basic className="content-area">
           <Container>
             <main>
+              <OutdatedBrowser />
               <Messages />
               <div className="editor-toolbar-wrapper" />
 
