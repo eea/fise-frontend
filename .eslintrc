@@ -66,10 +66,6 @@
                     [
                         "volto-plotlycharts", 
                         "./src/addons/volto-plotlycharts/src"
-                    ], 
-                    [
-                        "volto-nfisearch", 
-                        "./src/addons/volto-nfisearch/src"
                     ]
                 ]
             }, 

@@ -29,8 +29,8 @@ const connectedWidthProvider = compose(
           const margins = windowWidth - mosaic_width;
           const breakpoint = screentype =>
             windowWidth
-              ? mosaic_breakpoints[screentype] - margins - 20
-              : mosaic_breakpoints[screentype] - 20;
+              ? mosaic_breakpoints[screentype] - margins
+              : mosaic_breakpoints[screentype];
 
           console.log(
             'breakpoints',
@@ -42,6 +42,12 @@ const connectedWidthProvider = compose(
             breakpoint('desktop'),
             'tablet =>',
             breakpoint('tablet'),
+            'Window =>',
+            windowWidth,
+            'mosaic =>',
+            mosaic_width,
+            'margins =>',
+            margins,
           );
 
           if (__SERVER__) {
