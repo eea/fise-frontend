@@ -5,12 +5,12 @@
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_OPTIONS=--max-old-space-size=8192 razzle start",
+    "prebuild": "./prebuild-transpile.sh",
     "build": "razzle build",
     "test": "razzle test --env=jsdom --passWithNoTests",
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js",
-    "develop": "mrdeveloper --config=jsconfig.json --no-config --output=addons",
-    "prebuild": "node ./pre-build-transpiling.js"
+    "develop": "mrdeveloper --config=jsconfig.json --no-config --output=addons"
   },
   "jest": {
     "snapshotSerializers": [
