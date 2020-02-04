@@ -39,7 +39,6 @@ const Logo = ({ intl }) => (
       src={LogoImage}
       alt={intl.formatMessage(messages.plonesite)}
       title={intl.formatMessage(messages.plonesite)}
-      width={'100%'}
       visibleByDefault={true}
       placeholder={
         <Placeholder>
@@ -55,7 +54,6 @@ const Logo = ({ intl }) => (
       src={LogoImageSm}
       alt={intl.formatMessage(messages.plonesite)}
       title={intl.formatMessage(messages.plonesite)}
-      width={'100%'}
       visibleByDefault={true}
       placeholder={
         <Placeholder>
