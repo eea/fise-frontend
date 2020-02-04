@@ -1761,6 +1761,13 @@ body .ui.placeholder {
 }
 
 
+.block-container {
+  .ui.placeholder {
+    max-height: 200px;
+    margin: 2rem;
+  }
+}
+
 // table styling
 
 #page-document .table {
@@ -1786,7 +1793,7 @@ body .ui.placeholder {
 #page-document .table table th {
   text-align: left;
   min-width: 2em;
-  padding: 1.5rem 1rem;
+  padding: .7rem 1rem;
   border: none;
 }
 

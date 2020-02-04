@@ -240,7 +240,14 @@ class Navigation extends Component {
                   {(this.state.isMobileMenuOpen &&
                     this.state.tappedMenu === item.url) ||
                   !this.state.isMobileMenuOpen ? (
-                    <Dropdown.Menu className={`${item.title}--section`}>
+                    <Dropdown.Menu
+                      className={`${item.title}--section ${
+                        this.state.isMobileMenuOpen &&
+                        this.state.tappedMenu === item.url
+                          ? 'hovered'
+                          : ''
+                      }`}
+                    >
                       {item.items.map(subitem => (
                         <Dropdown.Item
                           className={`${item.title}--section-item`}

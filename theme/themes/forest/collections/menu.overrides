@@ -77,11 +77,11 @@
                     box-shadow: none !important;
 
                     >.menu {
-                        border    : none !important;
-                        margin-top: 1rem !important;
-                        width     : calc(100% + 3rem) !important;
-                        border-top: 1px solid #eee!important;
-                        border-bottom: 1px solid #eee!important;
+                        border       : none !important;
+                        margin-top   : 1rem !important;
+                        width        : calc(100% + 3rem) !important;
+                        border-top   : 1px solid #eee !important;
+                        border-bottom: 1px solid #eee !important;
                     }
                 }
             }
@@ -89,15 +89,16 @@
 
         // @media(min-width: 1200px) {
 
-            .item.firstLevel {
-                &:hover {
-                    color: @hoverColor  !important;
+        .item.firstLevel {
+            &:hover {
+                color: @hoverColor  !important;
 
-                    a.firstLevel {
-                        color: #cc4400 !important;
-                    }
+                a.firstLevel {
+                    color: #cc4400 !important;
                 }
             }
+        }
+
         // }
 
         div.item.firstLevel {
@@ -157,7 +158,7 @@
                         text-align : center;
 
                         &:hover {
-                            color: white !important;
+                            color: #cc4400 !important;
                         }
                     }
                 }
@@ -522,20 +523,30 @@
     margin: 0 !important;
 }
 
-@media(max-width: 1200px) {
-    .ui.pointing.secondary.stackable.open.firstLevel.menu {
-        z-index: 100;
+body {
+    @media(max-width: 1200px) {
+        .ui.pointing.secondary.stackable.open.firstLevel.menu {
+            z-index: 100;
+        }
+
+        .ui.simple.active.dropdown>.menu,
+        .ui.simple.dropdown:hover>.menu {
+            overflow: visible;
+            width   : auto;
+            position: relative;
+            height  : auto;
+            top     : initial !important;
+            opacity : 1;
+        }
+
+        .ui.simple.active.dropdown>.menu,
+        .ui.simple.dropdown>.menu.hovered {
+            overflow: visible;
+            width   : auto;
+            position: relative;
+            height  : auto;
+            top     : initial !important;
+            opacity : 1;
+        }
     }
-
-    // .ui.simple.active.dropdown>.menu,
-    // .ui.simple.dropdown:hover>.menu {
-    //     position: absolute;
-    //     display : block;
-    //     overflow: hidden;
-    //     top     : -9999px !important;
-    //     opacity : 0;
-    //     width   : 0;
-    //     height  : 0;
-    // }
 }
-
