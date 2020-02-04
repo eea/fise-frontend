@@ -770,6 +770,7 @@ ul.ui.list li:before,
 }
 
 .thematic-areas {
+  padding: 1rem;
   padding-top: 2rem;
   margin-right: -4rem;
   margin-left: -4rem;
