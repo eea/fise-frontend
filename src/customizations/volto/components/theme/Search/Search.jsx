@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { asyncConnect } from 'redux-connect';
 import { FormattedMessage } from 'react-intl';
 import { Portal } from 'react-portal';
-import { Container, Tab, Dropdown, Button, Grid } from 'semantic-ui-react';
+import { Container, Tab, Dropdown, Button, Loader, Dimmer } from 'semantic-ui-react';
 import qs from 'query-string';
 import { BodyClass } from '@plone/volto/helpers';
 import { SearchTags, Toolbar } from '@plone/volto/components';
@@ -651,7 +651,6 @@ class Search extends Component {
           updatePage: this.updatePage,
         } : null,
     };
-    const loader = <h1>Loading data...</h1>;
     let multiselect, searchFilters;
 
     if (this.state.activeTabId === 'portal') {
@@ -700,8 +699,14 @@ class Search extends Component {
         }
       </button>
     );
+    const loader = (
+      <Dimmer active={this.props.loader} inverted>
+        <Loader />
+      </Dimmer>
+    )
     const ui = (
       <Container>
+        {loader}
         <Helmet title="Search" />
         <div className="search-page-content">
           <BodyClass />
@@ -761,6 +766,7 @@ export default compose(
       })),
       nfi: state.nfi,
       nfiSearch: state.nfi.search,
+      loader: state.app.loader
     }),
     {
       searchContent,
