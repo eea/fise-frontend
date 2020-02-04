@@ -152,14 +152,14 @@
                 &:not(#Regions) {
                     a {
                         font-weight: 400 !important;
-                        color      : #564535 !important;
+                        color      : #564535;
                         font-size  : .9rem;
                         padding    : 0rem .5rem !important;
                         text-align : center;
 
-                        &:hover {
-                            color: #cc4400 !important;
-                        }
+                        // &:hover {
+                        //     color: #cc4400 !important;
+                        // }
                     }
                 }
 
@@ -179,10 +179,27 @@
                         border-top    : 1px solid #eee;
                         border-bottom : 1px solid #eee !important;
                     }
+
+                    a {
+                        padding    : 0rem .5rem !important;
+                        line-height: 2.5;
+                    }
+
+
+                    a:hover {
+                        background: @hoverColor  !important;
+                        color     : white !important;
+                        text-decoration: none;
+                    }
+
                 }
             }
         }
     }
+}
+
+.ui.secondary.menu .dropdown.item > .menu, .ui.text.menu .dropdown.item > .menu {
+    border-radius: 0;
 }
 
 // @media(max-width: 1200px) {
@@ -241,7 +258,7 @@
         @media(min-width: 1200px) {
             &:hover {
                 background: #cc4400;
-                color     : #fff;
+                color     : #fff !important;
             }
         }
     }
