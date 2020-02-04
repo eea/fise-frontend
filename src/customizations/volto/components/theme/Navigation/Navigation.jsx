@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /**
  * Navigation components.
  * @module components/theme/Navigation/Navigation
@@ -200,17 +201,19 @@ class Navigation extends Component {
               >
                 <React.Fragment>
                   {item.items && item.items.length ? (
+                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+                    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
                     <div
                       onClick={() => {
-                        if (
-                          this.state.isMobileMenuOpen &&
-                          this.state.tappedMenu === item.url
-                        ) {
-                          this.setState({ tappedMenu: null });
-                          return;
+                        if (this.state.isMobileMenuOpen) {
+                          if (this.state.tappedMenu === item.url) {
+                            this.setState({ tappedMenu: null });
+                            return;
+                          }
+                          if (this.state.tappedMenu !== item.url) {
+                            this.setState({ tappedMenu: item.url });
+                          }
                         }
-                        this.state.isMobileMenuOpen &&
-                          this.setState({ tappedMenu: item.url });
                       }}
                       className="firstLevel-title"
                     >
