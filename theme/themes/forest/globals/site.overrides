@@ -1868,8 +1868,8 @@ main {
 
 @media(max-width: 768px) { 
   .block.maps.align.full {
-    height: unset;
-    position: relative;
+    height: unset!important;
+    position: relative!important;
     .full-width-block {
       position: relative;
     }
