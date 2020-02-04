@@ -196,8 +196,6 @@ class Navigation extends Component {
                 // trigger={
 
                 // }
-                item
-                simple
               >
                 <React.Fragment>
                   {item.items && item.items.length ? (
