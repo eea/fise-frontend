@@ -1862,3 +1862,16 @@ main {
 .overflow-hidden {
   overflow: hidden!important;
 }
+
+
+//fix full width block
+
+@media(max-width: 768px) { 
+  .block.maps.align.full {
+    height: unset;
+    position: relative;
+    .full-width-block {
+      position: relative;
+    }
+  }
+}
