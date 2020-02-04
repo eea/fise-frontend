@@ -189,7 +189,7 @@
       }
     }
 
-    .ui.pointing.secondary.stackable.open.menu {
+    .ui.pointing.secondary.stackable.open.menu:not(.firstLevel) {
       position: absolute;
       background: white;
       left: 0;
