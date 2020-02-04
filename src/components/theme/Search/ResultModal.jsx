@@ -60,25 +60,27 @@ const ResultModal = ({ open, item, handleClose }) => {
                     <p >
                         {item.description}
                     </p>
-                    <div >
-                        <span className="result-tag">{data_set}</span>
-                        {item.published_year && (
-                            <span className="result-date"> · {item.published_year}</span>
+                    <div className="flex justify-space-between">
+                        <div>
+                            <span className="result-tag">{data_set}</span>
+                            {item.published_year && (
+                                <span className="result-date"> · {item.published_year}</span>
+                            )}
+                        </div>
+                        {has_download && (
+                            <div className="nif-download-area">
+                                <a
+                                    className="nif-download-button"
+                                    href={item.download_url}
+                                >
+                                    <Icon name={collapseDownSVG} size="16px" color="#005555" />
+                                    <p className="nif-download-text">Download</p>
+                                    <p className="file-size">({item.file_size})</p>
+                                </a>
+                            </div>
                         )}
                     </div>
                     <hr className="nfi-hr" />
-                    {has_download && (
-                        <div className="nif-download-area">
-                        <a
-                            className="nif-download-button"
-                            href={item.download_url}
-                        >
-                            <Icon name={collapseDownSVG} size="16px" color="#005555" />
-                            <p className="nif-download-text">Download</p>
-                            <p className="file-size">({item.file_size})</p>
-                        </a>
-                        </div>
-                    )}
                 </Modal.Description>
             </Modal.Content>
         </Modal>

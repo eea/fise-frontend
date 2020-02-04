@@ -360,7 +360,7 @@
 
 // BREAKPOINTS
 // Phones
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 767px) {
     .search-page-content {
         padding-top: 3rem;
         .multiselect-container {
@@ -418,9 +418,13 @@
             }
         }
     }
+
+    .ui.modal .content .description {
+        padding: 1rem 1rem !important;
+    }
 }
 // Tablets
-@media only screen and (min-width: 767px) and (max-width: 1199px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
     .search-page-content {
         padding-top: 3rem;
         .multiselect-container {
@@ -479,7 +483,7 @@
     }
 }
 // Desktop
-@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
     .search-page-content {
         .filters-toggle {
             display: none;
@@ -487,7 +491,7 @@
     }
 }
 // Widescreen
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1601px) {
     .search-page-content {
         .filters-toggle {
             display: none;
