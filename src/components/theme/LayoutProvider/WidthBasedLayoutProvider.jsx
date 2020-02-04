@@ -32,7 +32,7 @@ const connectedWidthProvider = compose(
               ? mosaic_breakpoints[screentype] - margins
               : mosaic_breakpoints[screentype];
 
-          console.log(
+          console.debug(
             'breakpoints',
             width,
             '====>',
