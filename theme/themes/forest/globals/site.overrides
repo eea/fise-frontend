@@ -1743,11 +1743,11 @@ body {
   max-width: 100%;
 }
 
-.full-width-block {
-  left: 0;
-  right: 0;
-  position: absolute;
-}
+// .full-width-block {
+//   left: 0;
+//   right: 0;
+//   position: absolute;
+// }
 
 body .ui.placeholder {
   max-width: unset;
@@ -1875,3 +1875,8 @@ main {
     }
   }
 }
+
+
+// 'full-width-block'
+// "chartWrapperView"
+//   "block-inner-wrapper"
