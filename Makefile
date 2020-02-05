@@ -17,7 +17,7 @@ activate:		## Activate an addon package for development
 			echo "Ex: make activate pkg=volto-datablocks";\
 		else \
 			./pkg_helper.py --target=${pkg} activate;\
-			echo "Running npm install in src/addons/${pkg}";\
+			echo "Running npm install in src/develop/${pkg}";\
 			cd "src/addons/$${pkg}";\
 			npm install;\
 			cd ../..;\
