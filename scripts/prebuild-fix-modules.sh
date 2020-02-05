@@ -9,11 +9,11 @@ ADDONS_DIR="./src/develop/"
 NODE_MODULES=./node_modules
 
 # declare remove inner packages as package.json:optimizeLiftPackages
-REMOVE_INNER_PACKAGES=`./print_key.js optimizeLiftPackages`
+REMOVE_INNER_PACKAGES=`./scripts/print_key.js optimizeLiftPackages`
 read -ra REMOVE_PKGS <<< "$REMOVE_INNER_PACKAGES"
 
 # declare remove inner packages as package.json:optimizeLiftPackages
-TRANSPILE_PACKAGES=`./print_key.js manuallyTranspile`
+TRANSPILE_PACKAGES=`./scripts/print_key.js manuallyTranspile`
 read -ra REMOVE_PKGS <<< "$REMOVE_INNER_PACKAGES"
 
 # Locate inner packages in ADDONS_DIR and NODE_MODULES, remove them

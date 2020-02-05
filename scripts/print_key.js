@@ -4,7 +4,7 @@
  * Prints array values from a given key in package.json
  */
 
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 
 const name = process.argv[2];
 
