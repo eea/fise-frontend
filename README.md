@@ -46,3 +46,26 @@ mrdeveloper --config=jsconfig.json
 
 Volto's latest razzle config will pay attention to your jsconfig.json file
 for any customizations.
+
+
+## Production
+
+We use [Docker](https://www.docker.com/), [Rancher](https://rancher.com/) and [Jenkins](https://jenkins.io/) to deploy this application in production.
+
+### Deploy
+
+* Within `Rancher > Catalog > EEA` deploy [Volto - Forests](https://github.com/eea/eea.rancher.catalog/tree/master/templates/volto-forests)
+
+### Release
+
+* Create a new release of this code via `git tag` command or [Draft new release](https://github.com/eea/forests-frontend/releases/new) on Github.
+  * A new Docker image is built and released automatically on [DockerHub](https://hub.docker.com/r/eeacms/forests-frontend) based on this tag.
+  * A new entry is automatically added to [Volto - Forests](https://github.com/eea/eea.rancher.catalog/tree/master/templates/volto-forests) `EEA Rancher Catalog`
+
+### Upgrade
+
+* Within your Rancher environment click on the `Upgrade available` yellow button next to your stack.
+
+* Confirm the upgrade
+
+* Or roll-back if something went wrong and abort the upgrade procedure.
