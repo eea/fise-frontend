@@ -55,6 +55,10 @@ const messages = defineMessages({
     id: 'Height',
     defaultMessage: 'Height',
   },
+  inLeftColumn: {
+    id: 'inLeftColumn',
+    defaultMessage: 'Display in left column',
+  },
 });
 
 const ImageSidebar = ({
@@ -191,6 +195,17 @@ const ImageSidebar = ({
                 onChangeBlock(block, {
                   ...data,
                   height: value,
+                });
+              }}
+            />
+            <CheckboxWidget
+              id="inLeftColumn"
+              title={intl.formatMessage(messages.inLeftColumn)}
+              value={data.inLeftColumn ? data.inLeftColumn : false}
+              onChange={(name, value) => {
+                onChangeBlock(block, {
+                  ...data,
+                  inLeftColumn: value,
                 });
               }}
             />

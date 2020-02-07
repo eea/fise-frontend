@@ -109,7 +109,14 @@
     }
 
     .content-area main {
-      padding: 0;
+      padding: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    &.mosaic-view {
+      .content-area main {
+        padding: 0;
+      }
     }
 
 
@@ -191,7 +198,7 @@
       flex-direction: column;
       right: 0;
       box-shadow: 1px 1px 3px #13131361;
-      margin-top: 0;
+      margin-top: 17px;
 
       >.item.firstLevel {
         width: 100%;

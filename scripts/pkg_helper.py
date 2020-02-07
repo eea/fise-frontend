@@ -25,7 +25,7 @@ def _get_base_dir():
 def activate(target):
     """ Activates a package: write the required files for this
     """
-    nm_folder = 'src/addons/{}/node_modules'.format(target)
+    nm_folder = 'src/develop/{}/node_modules'.format(target)
 
     if os.path.exists(nm_folder):
         shutil.rmtree(nm_folder)
@@ -43,10 +43,10 @@ def activate(target):
         sys.exit(137)
 
     if 'compilerOptions' not in o:
-        targetpath = "addons/{}/src".format(target)
+        targetpath = "develop/{}/src".format(target)
 
         if target == "@plone/volto":
-            targetpath = "addons/volto"
+            targetpath = "develop/volto"
 
         o['compilerOptions'] = {
             "paths": {
@@ -56,7 +56,7 @@ def activate(target):
         }
     else:
         paths = o['compilerOptions'].get('paths', {})
-        paths[target] = ["addons/{}/src".format(target)]
+        paths[target] = ["develop/{}/src".format(target)]
         o['compilerOptions']['paths'] = paths
 
     with open('jsconfig.json', 'w') as f:
@@ -84,7 +84,7 @@ def activate(target):
 
     fmap = j['settings']['import/resolver']['alias']['map']
     fmap = [x for x in fmap if x[0] != target]
-    fmap.append([target, "./src/addons/{}/src".format(target)])
+    fmap.append([target, "./src/develop/{}/src".format(target)])
     j['settings']['import/resolver']['alias']['map'] = fmap
 
     with open('.eslintrc', 'w') as f:
@@ -140,15 +140,15 @@ def deactivate(target):
 
 
 def activate_all():
-    """ Activates all packages in mr.developer.json
+    """ Activates all packages in mrs.developer.json
     """
 
-    if not os.path.exists('./mr.developer.json'):
+    if not os.path.exists('./mrs.developer.json'):
         print("No Volto addons declared, no activation step needed")
 
         return
 
-    with open('./mr.developer.json') as f:
+    with open('./mrs.developer.json') as f:
         j = json.load(f)
 
     for name in j.keys():
@@ -157,7 +157,7 @@ def activate_all():
         if name == "@plone/volto":
             continue
 
-        pkgdir = os.path.join('src/addons/', format(name))
+        pkgdir = os.path.join('src/develop/', format(name))
 
         if os.path.exists(pkgdir) and os.path.isdir(pkgdir):
             subprocess.call(['rm', 'package-lock.json'], cwd=pkgdir)
@@ -169,20 +169,20 @@ def list_addons():
     """ Prints a list of addons available
     """
 
-    if not os.path.exists('./mr.developer.json'):
+    if not os.path.exists('./mrs.developer.json'):
         return
 
-    with open('./mr.developer.json') as f:
+    with open('./mrs.developer.json') as f:
         j = json.load(f)
 
     print(" ".join(j.keys()))
 
 
 def _get_addons():
-    if not os.path.exists('./mr.developer.json'):
+    if not os.path.exists('./mrs.developer.json'):
         return {}
 
-    with open('./mr.developer.json') as f:
+    with open('./mrs.developer.json') as f:
         j = json.load(f)
 
     return j
@@ -206,7 +206,7 @@ class Addon:
         addon = cls(name)
 
         if name not in mrdeveloper:
-            print("{}: No {} addon defined in mr.developer.json".format(
+            print("{}: No {} addon defined in mrs.developer.json".format(
                 __file__, name))
             sys.exit(1)
 
@@ -217,7 +217,7 @@ class Addon:
         paths = jsconfig['compilerOptions']['paths']
 
         if name not in paths:
-            print("{}: No {} addon defined in mr.developer.json".format(
+            print("{}: No {} addon defined in mrs.developer.json".format(
                 __file__, name))
             sys.exit(1)
 
@@ -242,7 +242,7 @@ def develop():
     with open('./jsconfig.json') as jf:
         j = json.load(jf)
 
-    with open('./mr.developer.json') as mf:
+    with open('./mrs.developer.json') as mf:
         m = json.load(mf)
 
     addons = m.keys()

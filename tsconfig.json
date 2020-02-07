@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "paths": {
+            "volto-mosaic": [
+                "develop/volto-mosaic"
+            ],
+            "volto-datablocks": [
+                "develop/volto-datablocks"
+            ],
+            "volto-blocks": [
+                "develop/volto-blocks"
+            ],
+            "volto-addons": [
+                "develop/volto-addons"
+            ],
+            "volto-ckeditor": [
+                "develop/volto-ckeditor"
+            ],
+            "volto-drafteditor": [
+                "develop/volto-drafteditor"
+            ],
+            "volto-plotlycharts": [
+                "develop/volto-plotlycharts"
+            ],
+            "volto-corsproxy": [
+                "develop/volto-corsproxy"
+            ],
+            "volto-sidebar": [
+                "develop/volto-sidebar"
+            ],
+            "volto-embed": [
+                "develop/volto-embed"
+            ]
+        },
+        "baseUrl": "src"
+    }
+}

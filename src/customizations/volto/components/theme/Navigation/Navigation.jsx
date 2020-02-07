@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /**
  * Navigation components.
  * @module components/theme/Navigation/Navigation
@@ -180,93 +181,132 @@ class Navigation extends Component {
               ? 'open firstLevel'
               : 'computer large screen widescreen only'
           }
-          onClick={this.closeMobileMenu}
         >
           {navigation.map(item =>
             item.items && item.items.length ? (
-              <Dropdown
-                closeOnChange={true}
+              <div
+                // className="ui item simple dropdown item firstLevel"
+                // closeOnChange={true}
                 className={
                   this.isActive(item.url)
-                    ? 'item menuActive firstLevel'
-                    : 'item firstLevel'
+                    ? 'ui item simple dropdown item menuActive firstLevel'
+                    : 'ui item simple dropdown item firstLevel'
                 }
                 key={item.url}
-                onOpen={() =>
-                  this.state.isMobileMenuOpen &&
-                  this.setState({ tappedMenu: item.url })
-                }
-                trigger={
-                  <Link
-                    onClick={e =>
-                      item.items && item.items.length && e.preventDefault()
-                    }
-                    className="firstLevel"
-                    to={
-                      item.items && item.items.length
-                        ? ''
-                        : item.url === ''
-                        ? '/'
-                        : item.url
-                    }
-                    key={item.url}
-                  >
-                    {item.title}
-                  </Link>
-                }
-                item
-                simple
+                // trigger={
+
+                // }
               >
-                <Dropdown.Menu className={`${item.title}--section`}>
-                  <Dropdown.Header>
-                    {/* <div className="carretTop" /> */}
-                    {/* <Link to={item.url === '' ? '/' : item.url} key={item.url}> */}
-                    {/* {item.title} */}
-                    {/* </Link> */}
-                  </Dropdown.Header>
-                  {/* <Dropdown.Divider /> */}
-                  {item.items.map(subitem => (
-                    <Dropdown.Item
-                      className={`${item.title}--section-item`}
-                      id={subitem.title}
-                      key={subitem.url}
-                    >
-                      <Link
-                        to={subitem.url === '' ? '/' : subitem.url}
-                        key={subitem.url}
-                        className={
-                          this.isActive(subitem.url)
-                            ? 'item secondLevel menuActive'
-                            : 'item secondLevel'
+                <React.Fragment>
+                  {item.items && item.items.length ? (
+                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+                    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+                    <div
+                      onClick={() => {
+                        if (this.state.isMobileMenuOpen) {
+                          if (this.state.tappedMenu === item.url) {
+                            this.setState({ tappedMenu: null });
+                            return;
+                          }
+                          if (this.state.tappedMenu !== item.url) {
+                            this.setState({ tappedMenu: item.url });
+                          }
                         }
-                      >
-                        {subitem.title}
-                      </Link>
-                      {subitem.items && (
-                        <div className="submenu-wrapper">
-                          <div className="submenu">
-                            {subitem.items.map(subsubitem => (
-                              <Link
-                                to={
-                                  subsubitem.url === '' ? '/' : subsubitem.url
-                                }
-                                key={subsubitem.url}
-                                className={
-                                  this.isActive(subsubitem.url)
-                                    ? 'item thirdLevel menuActive'
-                                    : 'item thirdLevel'
-                                }
-                              >
-                                {subsubitem.title}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
+                      }}
+                      className="firstLevel-title"
+                    >
+                      {item.title}
+                    </div>
+                  ) : (
+                    <Link
+                      onClick={e =>
+                        item.items && item.items.length && e.preventDefault()
+                      }
+                      className="firstLevel"
+                      to={
+                        item.items && item.items.length
+                          ? ''
+                          : item.url === ''
+                          ? '/'
+                          : item.url
+                      }
+                      key={item.url}
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                  {(this.state.isMobileMenuOpen &&
+                    this.state.tappedMenu === item.url) ||
+                  !this.state.isMobileMenuOpen ? (
+                    <Dropdown.Menu
+                      className={`${item.title}--section ${
+                        this.state.isMobileMenuOpen &&
+                        this.state.tappedMenu === item.url
+                          ? 'hovered'
+                          : ''
+                      }`}
+                    >
+                      {item.items.map(subitem => (
+                        <Dropdown.Item
+                          className={`${item.title}--section-item`}
+                          id={subitem.title}
+                          key={subitem.url}
+                        >
+                          {item.title === 'Countries' &&
+                          subitem.title === 'Regions' ? (
+                            <div
+                              className={
+                                this.isActive(subitem.url)
+                                  ? 'item secondLevel menuActive'
+                                  : 'item secondLevel'
+                              }
+                            >
+                              {subitem.title}
+                            </div>
+                          ) : (
+                            <Link
+                              to={subitem.url === '' ? '/' : subitem.url}
+                              key={subitem.url}
+                              className={
+                                this.isActive(subitem.url)
+                                  ? 'item secondLevel menuActive'
+                                  : 'item secondLevel'
+                              }
+                            >
+                              {subitem.title}
+                            </Link>
+                          )}
+                          {subitem.items && (
+                            <div className="submenu-wrapper">
+                              <div className="submenu">
+                                {subitem.items.map(subsubitem => (
+                                  <Link
+                                    to={
+                                      subsubitem.url === ''
+                                        ? '/'
+                                        : subsubitem.url
+                                    }
+                                    key={subsubitem.url}
+                                    className={
+                                      this.isActive(subsubitem.url)
+                                        ? 'item thirdLevel menuActive'
+                                        : 'item thirdLevel'
+                                    }
+                                  >
+                                    {subsubitem.title}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  ) : (
+                    ''
+                  )}
+                </React.Fragment>
+              </div>
             ) : (
               <Link
                 // style={{ display: `${__CLIENT__ ? 'block' : 'none'}` }}

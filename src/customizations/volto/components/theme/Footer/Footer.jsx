@@ -11,6 +11,8 @@ import footerImage from './footer.png';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import ecLogo from './ec.png';
 import eeaLogo from './eea.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Placeholder } from 'semantic-ui-react';
 
 const messages = defineMessages({
   copyright: {
@@ -44,20 +46,33 @@ const Footer = ({ intl }) => (
               base in support of the EU Forest Strategy.{' '}
               {/* <a href="#">See more</a> */}
             </p>
-            <img
+            <LazyLoadImage
+              className="footerLogo"
               style={{ width: '250px', marginTop: '2rem' }}
+              effect="blur"
               src={LogoImage}
               alt="Forest"
+              title="FISE"
+              // alt={intl.formatMessage(messages.plonesite)}
+              // title={intl.formatMessage(messages.plonesite)}
+              width={'100%'}
+              visibleByDefault={true}
+              placeholder={
+                <Placeholder>
+                  <Placeholder.Image rectangular />
+                </Placeholder>
+              }
             />
           </div>
 
           <div style={{ flexGrow: '1' }} className="column">
-           <b>DISCLAIMER</b>
+            <b>DISCLAIMER</b>
             <p>
-             Withdrawal of the United Kingdom from the European Union:
-              <i>Data reported by the United Kingdom are included in all analyses and assessments contained herein,
-              unless otherwise indicated.</i>
-
+              Withdrawal of the United Kingdom from the European Union:{' '}
+              <i>
+                Data reported by the United Kingdom are included in all analyses
+                and assessments contained herein, unless otherwise indicated.
+              </i>
             </p>
           </div>
 
@@ -86,7 +101,7 @@ const Footer = ({ intl }) => (
                 </Link>
               </li>
               <li>
-                <a className="item" href={`mailto:fise@eea.europa.eu`}>
+                <a className="item" href={`mailto:info@eea.europa.eu`}>
                   Contact us
                 </a>
               </li>
@@ -97,13 +112,45 @@ const Footer = ({ intl }) => (
             <b>PARTNERS</b>
             <div className="footerLogoWrapper">
               <a href="https://ec.europa.eu/" title="European Commission">
-                <img className="footerLogo" src={ecLogo} alt="" />
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={ecLogo}
+                  alt="European Commission"
+                  title="European Commission"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
               </a>
               <a
                 href="https://www.eea.europa.eu/"
                 title="European Environment Agency"
               >
-                <img className="footerLogo" src={eeaLogo} alt="" />
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={eeaLogo}
+                  alt="European Environment Agency"
+                  title="European Environment Agency"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
               </a>
             </div>
           </div>

@@ -2,14 +2,15 @@
   "name": "fise-frontend",
   "description": "Frontend server for FISE",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
-    "start": "razzle start",
+    "start": "NODE_OPTIONS=--max-old-space-size=8192 razzle start",
+    "prebuild": "./scripts/prebuild-fix-modules.sh",
     "build": "razzle build",
     "test": "razzle test --env=jsdom --passWithNoTests",
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js",
-    "develop": "mrdeveloper --config=jsconfig.json --no-config --output=addons"
+    "develop": "missdev"
   },
   "jest": {
     "snapshotSerializers": [
@@ -75,27 +76,23 @@
       }
     ]
   },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ],
+  "resolutions": {
+    "browserslist": "4.8.3"
+  },
   "dependencies": {
-    "@babel/plugin-proposal-decorators": "7.8.3",
-    "@babel/plugin-proposal-do-expressions": "7.8.3",
-    "@babel/plugin-proposal-export-default-from": "7.8.3",
-    "@babel/plugin-proposal-export-namespace-from": "7.8.3",
-    "@babel/plugin-proposal-function-bind": "7.8.3",
-    "@babel/plugin-proposal-function-sent": "7.8.3",
-    "@babel/plugin-proposal-logical-assignment-operators": "7.8.3",
-    "@babel/plugin-proposal-numeric-separator": "7.8.3",
-    "@babel/plugin-proposal-pipeline-operator": "7.8.3",
-    "@babel/plugin-proposal-throw-expressions": "7.8.3",
-    "@babel/plugin-syntax-import-meta": "7.8.3",
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
     "@datapunt/matomo-tracker-react": "0.0.16",
     "@plone/volto": "github:tiberiuichim/volto#kitchen_sink",
-    "get-urls": "^9.2.0",
     "immutable": "^3.8.2",
     "less-loader": "5.0.0",
     "npm": "^6.13.7",
-    "razzle-plugin-forest-analyzer": "file:src/plugins",
     "react": "^16.12.0",
     "react-component-queries": "^2.3.0",
     "react-image-gallery": "^0.9.1",
@@ -116,10 +113,22 @@
     "webpack-bundle-analyzer": "^3.6.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-do-expressions": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
+    "@babel/plugin-proposal-function-bind": "^7.8.3",
+    "@babel/plugin-proposal-function-sent": "^7.8.3",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.8.3",
+    "@babel/plugin-proposal-numeric-separator": "^7.8.3",
+    "@babel/plugin-proposal-pipeline-operator": "^7.8.3",
+    "@babel/plugin-proposal-throw-expressions": "^7.8.3",
+    "@babel/plugin-syntax-import-meta": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-module-resolver": "^4.0.0",
     "compression-webpack-plugin": "^3.1.0",
     "cypress": "^3.6",
     "eslint": "^5.16.0",
@@ -134,6 +143,16 @@
     "postcss-overrides": "3.1.4",
     "prettier": "1.17.0",
     "prettier-eslint": "^9.0.0",
-    "prettier-stylelint": "0.4.2"
-  }
+    "prettier-stylelint": "0.4.2",
+    "shelljs": "^0.8.3"
+  },
+  "optimizeLiftPackages": [
+    "immutable"
+  ],
+  "manuallyTranspile": [
+    "prepend-http",
+    "normalize-url",
+    "cidr-regex",
+    "url-regex"
+  ]
 }

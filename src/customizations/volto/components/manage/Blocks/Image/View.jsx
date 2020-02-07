@@ -36,6 +36,11 @@ const View = ({ data, detached }) => (
               style={{
                 width: data.width ? data.width + 'px' : 'auto',
                 height: data.height ? data.height + 'px' : 'auto',
+                marginLeft:
+                  data.inLeftColumn && data.width
+                    ? `-${parseInt(data.width) + 10}px`
+                    : '0',
+                marginRight: data.inLeftColumn ? '0!important' : '1rem',
               }}
               src={
                 data.url.includes(settings.apiPath)

@@ -71,3 +71,5 @@ data
 *.old
 *~
 src/addons
+src/develop
+npm-cache

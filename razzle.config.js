@@ -227,12 +227,11 @@ module.exports = {
     jsxRule.exclude = [/src\/addons\/.+\/node_modules/];
     vc.module.rules[jsxIndex] = jsxRule;
 
-    console.log('aliases', vc.resolve.alias);
-    console.log('----');
-    console.log('rules', vc.module.rules);
-
     vc.plugins.push(new CompressionPlugin());
 
+    // console.log('aliases', vc.resolve.alias);
+    // console.log('----');
+    // console.log('rules', vc.module.rules);
     // vc.module.rules.forEach((rule, i) => {
     //   console.log('rule', i, '-----');
     //   console.log(rule);
@@ -241,8 +240,7 @@ module.exports = {
     // });
     // const hardSource = new HardSourceWebpackPlugin();
     // vc.plugins.push(hardSource);
-
-    console.log('config', vc);
+    // console.log('config', vc);
 
     return vc;
   },
