@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "eeacms/forests-frontend"
-    registryCredential = 'eeajenkins'
+    template = "templates/volto-forests"
     dockerImage = ''
     tagName = ''
   }
@@ -9,7 +9,7 @@ pipeline {
   agent any
 
   stages {
-    stage('Build & Release') {
+    stage('Build & Push') {
       steps{
         node(label: 'docker-host') {
           script {
@@ -21,7 +21,7 @@ pipeline {
             }
             try {
               dockerImage = docker.build registry + ":" + tagName
-              docker.withRegistry( '', registryCredential ) {
+              docker.withRegistry( '', 'eeajenkins' ) {
                 dockerImage.push()
               }
             } finally {
@@ -31,6 +31,20 @@ pipeline {
         }
       }
     }
+
+    stage('Release') {
+      when {
+        buildingTag()
+      }
+      steps{
+        node(label: 'docker') {
+          withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN')]) {
+           sh '''docker pull eeacms/gitflow; docker run -i --rm --name="${BUILD_TAG}-release" -e GIT_TOKEN="${GITHUB_TOKEN}" -e RANCHER_CATALOG_PATH="${template}" -e DOCKER_IMAGEVERSION="${BRANCH_NAME}" -e DOCKER_IMAGENAME="${registry}" --entrypoint /add_rancher_catalog_entry.sh eeacms/gitflow'''
+         }
+        }
+      }
+    }
+
   }
 
   post {
