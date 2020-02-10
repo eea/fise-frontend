@@ -240,7 +240,7 @@ module.exports = {
     // });
     // const hardSource = new HardSourceWebpackPlugin();
     // vc.plugins.push(hardSource);
-    // console.log('config', vc);
+    console.log('config', vc.resolve.alias);
 
     return vc;
   },

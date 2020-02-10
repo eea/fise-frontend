@@ -31,12 +31,6 @@ const config = [
 
 export const settings = {
   ...config.settings,
-  contentExpand: [
-    ...config.settings.contentExpand.filter(
-      content => content !== 'navigation',
-    ),
-    // ...['navigation', '&expand.navigation.depth=3'],
-  ],
 };
 
 export const views = {

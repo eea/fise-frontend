@@ -75,6 +75,13 @@ export function applyConfig(config) {
       '/sitemap',
     ],
     ownDomain: 'forest.eea.europa.eu',
+    contentExpand: [
+      ...config.settings.contentExpand.filter(
+        content => content !== 'navigation',
+      ),
+    ],
+    matomoSiteId: 46,
+    // ...['navigation', '&expand.navigation.depth=3'],
   };
 
   config.views = {
