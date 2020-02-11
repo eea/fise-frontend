@@ -9,12 +9,16 @@ const RenderPagination = ({ pagination }) => {
     if (pagination) {
         renderPagination = (
             <Pagination
-                defaultActivePage={1}
+                activePage={pagination.page}
                 firstItem={null}
                 lastItem={null}
                 siblingRange={1}
                 totalPages={Math.ceil(pagination.totalItems / pagination.selectedItemsPerPage)}
-                onPageChange={pagination.updatePage}
+                onPageChange={(event, data) => {
+                    const tabContainer = document.querySelector('.search-page-content .tabs-container');
+                    tabContainer.scrollIntoView({ behavior: "smooth" });
+                    pagination.updatePage(event, data);
+                }}
                 boundaryRange={isMobile? 0:1}
                 size={isMobile? 'small': ''}
                 ellipsisItem={isMobile? null: undefined}

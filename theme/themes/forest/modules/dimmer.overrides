@@ -2,7 +2,7 @@
          Theme Overrides
 *******************************/
 .ui.dimmer {
-  z-index: 10;
+  z-index: 9;
   justify-content: start;
   .content {
     position: fixed;

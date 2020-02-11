@@ -329,7 +329,6 @@ class Search extends Component {
   initiateSelectedFilters = () => {
     let selectedFilters = { ...this.state.selectedFilters };
     Object.keys(this.state.facetsData).forEach(key => {
-      console.log(key, selectedFilters[key])
       if (!selectedFilters[key]) {
         selectedFilters[key] = '';
       }
@@ -404,6 +403,16 @@ class Search extends Component {
     }
   };
 
+  handleSearchButtonClicked = () => {
+    const pagination = {
+      page: 1,
+      selectedItemsPerPage: 5,
+      totalItems: 0,
+      itemsPerPage: [5, 10, 25]
+    };
+    this.setState({ pagination }, this.handleNfiSearch);
+  }
+
   handleNfiSearch = (page = null, pageSize = null) => {
     let keywords = [];
     let searchTerms = [];
@@ -426,8 +435,13 @@ class Search extends Component {
     }
 
     this.state.selectedKeywords.forEach(selectedKeyword => {
-      const index = originalKeywords.indexOf(selectedKeyword);
-      if (index !== -1) {
+      let isKeyword = false;
+      originalKeywords.forEach(keyword => {
+        if (selectedKeyword.toLowerCase() === keyword.toLowerCase()) {
+          isKeyword = true;
+        }
+      })
+      if (isKeyword) {
         keywords.push(selectedKeyword);
       } else {
         searchTerms.push(selectedKeyword);
@@ -447,6 +461,12 @@ class Search extends Component {
 
   handleTabChange = (event, data) => {
     let selectedFilters = { ...this.state.selectedFilters };
+    const pagination = {
+      page: 1,
+      selectedItemsPerPage: 5,
+      totalItems: 0,
+      itemsPerPage: [5, 10, 25]
+    }
     selectedFilters.country = '';
     this.setState({
       activeTab: data.activeIndex,
@@ -454,7 +474,8 @@ class Search extends Component {
       nfiSelectedCountry: '',
       nfiSelectedRegion: '',
       selectedFilters,
-    });
+      pagination
+    }, this.handleClearFilters);
   };
 
   updateItemsPerPage = event => {
@@ -674,7 +695,7 @@ class Search extends Component {
           />
           <Button
             className="search-button darkOrange"
-            onClick={() => this.handleNfiSearch()}
+            onClick={() => this.handleSearchButtonClicked()}
           >
             Search
           </Button>

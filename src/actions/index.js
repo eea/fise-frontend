@@ -298,10 +298,10 @@ export function doNfiSearch(
   // Construct keywordsQuery
   if (Array.isArray(keywords) && keywords.length > 0) {
     keywords.forEach(keyword => {
-      keywordsQuery = keywordsQuery + `&search=${keyword}`;
+      keywordsQuery = keywordsQuery + `&keyword=${keyword}`;
     });
   } else if (keywords.length > 0) {
-    keywordsQuery = keywordsQuery + `&search=${keywords}`;
+    keywordsQuery = keywordsQuery + `&keyword=${keywords}`;
   }
   // Construct countriesQuery
   if (Array.isArray(countries) && countries.length > 0) {
