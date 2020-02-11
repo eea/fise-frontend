@@ -10,9 +10,14 @@ const capitalize = s => {
 
 const createCheckboxFacet = (data, facet) => {
   return Object.keys(data.facetsData[facet]).map(filter => {
-    const label = capitalize(data.facetsData[facet][filter].name);
-    const value = data.facetsData[facet][filter].name;
     const number = data.facetsData[facet][filter].number;
+    const label = (
+      <label className={facet}>
+        { capitalize(data.facetsData[facet][filter].name) + ' ' }
+        <span className="count">({number})</span>
+      </label>
+    )
+    const value = data.facetsData[facet][filter].name;
     const key = data.facetsData[facet][filter].id;
     return (
       <Checkbox

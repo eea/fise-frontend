@@ -327,9 +327,12 @@ class Search extends Component {
   };
 
   initiateSelectedFilters = () => {
-    let selectedFilters = {};
+    let selectedFilters = { ...this.state.selectedFilters };
     Object.keys(this.state.facetsData).forEach(key => {
-      selectedFilters[key] = '';
+      console.log(key, selectedFilters[key])
+      if (!selectedFilters[key]) {
+        selectedFilters[key] = '';
+      }
     });
     this.setState({ selectedFilters });
   };
@@ -439,7 +442,7 @@ class Search extends Component {
       keywords,
       countries,
       customQuery,
-    );
+    ).then(response => { this.makeFacets() })
   };
 
   handleTabChange = (event, data) => {
