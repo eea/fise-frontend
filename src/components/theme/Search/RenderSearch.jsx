@@ -99,7 +99,9 @@ const RenderSearch = ({ data, pagination }) => {
       </header>
       <section id="content-core" className="mt-2">
         {renderContent}
-        <ResultModal item={selectedItem} open={modalOpen} handleClose={handleModalClose} />
+        {data && data.handleKeywordChange && data.selectedKeywords && (
+          <ResultModal item={selectedItem} open={modalOpen} handleClose={handleModalClose} handleKeywordChange={data.handleKeywordChange} selectedKeywords={data.selectedKeywords} />
+        )}
       </section>
       <footer>{renderFooter}</footer>
     </article>

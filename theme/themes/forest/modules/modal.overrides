@@ -1,2 +1,5 @@
 /* make the modal taller */
 @scrollingContentMaxHeight: calc(100vh - 10em);
+.ui.modal {
+    border-radius: 0.4em;
+}

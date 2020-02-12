@@ -71,7 +71,6 @@ const createSliderFacet = (data, facet) => {
   const [values, setValues] = useState([MIN, MAX]);
 
   useEffect(() => {
-    console.log("USE EFFECT")
     if (data.facets[facet].queryParams.length === 2 && data.selectedFilters[facet] !== '') {
       setValues([
         data.selectedFilters[facet].substr(1).split('&')[0].split('=')[1],

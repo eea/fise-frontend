@@ -170,8 +170,8 @@ class Search extends Component {
           queryParams.data_collection_start_year,
         ],
         queryParams: [
-          queryParams.data_collection_start_year__lte,
           queryParams.data_collection_end_year__gte,
+          queryParams.data_collection_start_year__lte,
         ],
       },
       topic_category: {
@@ -635,10 +635,12 @@ class Search extends Component {
         facets: this.state.facets,
         facetsData: this.state.facetsData,
         selectedFilters: this.state.selectedFilters,
+        selectedKeywords: this.state.selectedKeywords,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
         toggleFilters: this.state.toggle,
-        handleToggle: this.handleToggle
+        handleToggle: this.handleToggle,
+        handleKeywordChange: this.handleChange
       },
       nfi_country: {
         id: 'nfi_country',
@@ -649,10 +651,12 @@ class Search extends Component {
         facets: this.state.facets,
         facetsData: this.state.facetsData,
         selectedFilters: this.state.selectedFilters,
+        selectedKeywords: this.state.selectedKeywords,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
         toggleFilters: this.state.toggle,
-        handleToggle: this.handleToggle
+        handleToggle: this.handleToggle,
+        handleKeywordChange: this.handleChange
       },
       nfi_region: {
         id: 'nfi_region',
@@ -663,10 +667,12 @@ class Search extends Component {
         facets: this.state.facets,
         facetsData: this.state.facetsData,
         selectedFilters: this.state.selectedFilters,
+        selectedKeywords: this.state.selectedKeywords,
         handleFilterSelected: this.handleFilterSelected,
         handleClearFilters: this.handleClearFilters,
         toggleFilters: this.state.toggle,
         handleToggle: this.handleToggle,
+        handleKeywordChange: this.handleChange
       },
       pagination: this.state.activeTabId !== 'portal'
         ? {

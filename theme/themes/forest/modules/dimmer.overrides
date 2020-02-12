@@ -1,7 +1,7 @@
 /*******************************
          Theme Overrides
 *******************************/
-.ui.dimmer {
+.ui.inverted.dimmer {
   z-index: 9;
   justify-content: start;
   .content {
