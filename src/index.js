@@ -3,7 +3,7 @@
  * @module index
  */
 
-import start from 'volto-corsproxy/start-server';
+import start from 'volto-base/start-server';
 
 const reloadServer = start();
 

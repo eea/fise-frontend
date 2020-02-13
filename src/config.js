@@ -31,12 +31,6 @@ const config = [
 
 export const settings = {
   ...config.settings,
-  contentExpand: [
-    ...config.settings.contentExpand.filter(
-      content => content !== 'navigation',
-    ),
-    // ...['navigation', '&expand.navigation.depth=3'],
-  ],
 };
 
 export const views = {
@@ -54,6 +48,7 @@ export const blocks = {
 // TODO: should we move custom stuff to settings variable?
 // It would make future adding new settings types easier, as this file wouldn't
 // have to be updated in all frontend implementations
+// console.log('config.js AddonReducers', config.addonReducers);
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
 

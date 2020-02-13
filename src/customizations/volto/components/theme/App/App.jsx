@@ -233,11 +233,11 @@ export default compose(
     (state, props) => ({
       folderHeader: state.folder_header.items,
       defaultHeaderImage: state.default_header_image.items?.[0],
-      pathname: props.location.pathname,
       // content: state.content.data,
       content: state.prefetch?.[props.location.pathname] || state.content.data,
       frontpage_slides: state.frontpage_slides.items,
       navigation: state.navigation.items,
+      pathname: state.router.location.pathname, //props.location.pathname,
 
       // loadingContent: state.content?.get,
       // search: state.search,

@@ -34,7 +34,7 @@ const reducers = {
   parent_folder_data,
   localnavigation,
   navSiteMap,
-  nfi
+  nfi,
 };
 
 export default reducers;
