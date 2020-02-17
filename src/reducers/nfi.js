@@ -60,10 +60,10 @@ export const nfi = (state = initialState, action = {}) => {
         loaded: true
       };
      if (action.stateToChange === 'published_year') {
-        newState[action.stateToChange] = action.result.map(item => { return { id: item, name: item + '' } });
+        newState[action.stateToChange] = action.result.filter(value => value).map(item => { return { id: item, name: item + '' } });
       } else if (action.stateToChange === 'collections_range') {
-        const max = action.result.max;
-        const min = action.result.min;
+        const max = action.result.max ? parseInt(action.result.max) : 0;
+        const min = action.result.min ? parseInt(action.result.min) : 0;
         const result = Array.from({ length: max + 1 - min }, (v, k) => { return { id: k + min, name: k + min + ''} });
 
         newState[action.stateToChange] = result;
