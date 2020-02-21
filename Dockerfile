@@ -26,7 +26,8 @@ RUN chown -R node /opt/frontend
 USER node
 
 RUN echo "prefix = \"/home/node\"\n" > /home/node/.npmrc
-RUN rm -rf node_modules .git package-lock.json
+RUN rm -rf node_modules .git
+#package-lock.json
 
 # RUN npm install mr-developer
 
@@ -56,8 +57,8 @@ WORKDIR /opt/frontend/
 COPY entrypoint-prod.sh /opt/frontend/entrypoint.sh
 RUN chmod +x entrypoint.sh
 
-COPY package.json .
-COPY package-lock.json .
+COPY --from=build /opt/frontend/package.json .
+COPY --from=build /opt/frontend/package-lock.json .
 
 COPY --from=build /opt/frontend/public ./public
 COPY --from=build /opt/frontend/build ./build
