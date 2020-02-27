@@ -70,7 +70,6 @@
 .ck-editor-toolbar {
   .ck-toolbar {
     font-size: 14px !important;
-    background-color: #F4F4F1 !important;
     display: flex;
     justify-content: center;
     border-radius: 4px !important;
@@ -85,12 +84,7 @@
     background-color: white !important;
   }
 
-  .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
-    border: none;
-  }
-
   .ck-focused {
-    border: none !important;
     box-shadow: none !important;
   }
 }
