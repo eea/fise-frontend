@@ -16,6 +16,7 @@ body {
   align-items: baseline;
   margin-top: 1rem;
   padding: 0 2rem;
+
   @media(max-width: 1200px) {
     padding: 0 1rem;
   }
@@ -109,6 +110,7 @@ body.has-toolbar {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   .header-image {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -119,6 +121,7 @@ body.has-toolbar {
     background-size: cover;
     background-position: center;
   }
+
   .header-image-overlay {
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
@@ -130,6 +133,7 @@ body.has-toolbar {
 
   .header-image-content {
     position: relative;
+
     h1,
     p {
       color: white;
@@ -460,14 +464,16 @@ body #page-document .imageAndRichText+p {
 .chartWrapperView {
   height: 100%;
   min-height: 100px;
+
   // padding: 10px;
   // .download-button {
-    // padding-right: 1.5rem;
+  // padding-right: 1.5rem;
   // }
   h5 {
     padding-left: 1rem;
-    padding-top:1rem;
+    padding-top: 1rem;
   }
+
   .sources {
     padding-left: 1rem;
   }
@@ -750,6 +756,7 @@ ul.ui.list li:before,
   // justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
   .footerLogo {
     height: 50px;
     width: auto;
@@ -879,8 +886,9 @@ h5 {
   @media(min-width: 700px) {
     padding: 0 100px !important;
   }
+
   @media(max-width: 700px) {
-    border-top-left-radius: 0!important;
+    border-top-left-radius: 0 !important;
   }
 }
 
@@ -969,9 +977,11 @@ h5 {
           margin: 1.5rem 1rem;
           transition: all 200ms;
           width: 190px;
+
           &:first-of-type {
             margin-top: 1rem;
           }
+
           &:last-of-type {
             margin-bottom: 1rem;
           }
@@ -1042,9 +1052,11 @@ h5 {
         font-size: 3rem;
         font-weight: bold;
         margin-bottom: 1rem;
+
         @media(min-width: 700px) {
           margin-bottom: 3rem;
         }
+
         line-height: 1.2;
 
         @media(max-width: 700px) {
@@ -1086,7 +1098,8 @@ h5 {
 .image-gallery-right-nav,
 .image-gallery-left-nav {
   font-size: 3rem;
-  z-index: 1!important;
+  z-index: 1 !important;
+
   @media(max-width: 600px) {
     bottom: 0;
   }
@@ -1815,6 +1828,7 @@ body .ui.placeholder {
   ul {
     list-style-type: none;
     padding-left: 15px;
+
     li {
       &:before {
         content: '►';
@@ -1830,28 +1844,29 @@ body .ui.placeholder {
 
 
 @media(max-width: 1100px) {
-  .block.image.align.left img{
-    margin-left: 0!important;
+  .block.image.align.left img {
+    margin-left: 0 !important;
   }
 }
 
-body:not(.has-sidebar-collapsed) > #sidebar {
+body:not(.has-sidebar-collapsed)>#sidebar {
   position: absolute;
 }
 
 
 main {
   .ui.grid {
-    padding: 0!important;
-    > .column {
-      padding: 0!important;
+    padding: 0 !important;
+
+    >.column {
+      padding: 0 !important;
     }
   }
 }
 
 
 .out-dated-message {
-  position: fixed!important;
+  position: fixed !important;
   top: 0;
   left: 0;
   bottom: 0;
@@ -1860,16 +1875,17 @@ main {
 }
 
 .overflow-hidden {
-  overflow: hidden!important;
+  overflow: hidden !important;
 }
 
 
 //fix full width block
 
-@media(max-width: 768px) { 
+@media(max-width: 768px) {
   .block.maps.align.full {
-    height: unset!important;
-    position: relative!important;
+    height: unset !important;
+    position: relative !important;
+
     .full-width-block {
       position: relative;
     }
@@ -1880,3 +1896,41 @@ main {
 // 'full-width-block'
 // "chartWrapperView"
 //   "block-inner-wrapper"
+
+@media print {
+
+  // .block-bg-grey {
+  //   padding: 0.2em 1.5em;
+  // }
+
+  .react-grid-item {
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 65% !important;
+    break-inside: avoid;
+    overflow: hidden !important;
+  }
+
+  .block-container .block.maps .video-inner,
+  .block-container .block.maps iframe {
+    min-height: 600px !important;
+  }
+
+  .react-grid-layout {
+    height: auto !important;
+  }
+
+  .header-wrapper {
+    display: none !important;
+  }
+
+  .footerWrapper {
+    display: none !important;
+  }
+
+  .recharts-responsive-container {
+    transform: scale(0.7);
+  }
+}
