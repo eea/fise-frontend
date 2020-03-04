@@ -31,7 +31,11 @@ class Unauthorized extends Component {
         return (
             <div className="ui container view-wrapper">
                 <p className="description">
-                Access is denied due to invalid credentials
+                    You are trying to access a protected resource, please
+                <a href="/login">
+                        {" "}login{" "}
+                    </a>
+                    first.
                     </p>
                 <p>
                     If you are certain you have the correct web address but are encountering an error, please contact the{" "}

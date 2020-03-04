@@ -89,7 +89,7 @@
     "@blueprintjs/core": "^3.18.0",
     "@blueprintjs/icons": "^3.10.0",
     "@datapunt/matomo-tracker-react": "0.0.16",
-    "@plone/volto": "github:tiberiuichim/volto#kitchen_sink",
+    "@plone/volto": "github:eea/volto#kitchen_sink",
     "immutable": "^3.8.2",
     "less-loader": "5.0.0",
     "npm": "^6.13.7",
