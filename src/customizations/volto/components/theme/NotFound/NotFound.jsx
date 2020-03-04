@@ -29,7 +29,7 @@ class NotFound extends Component {
     render() {
 
         return (
-            <div style={{ display: 'flex', flexDirection: "column", alignContent: 'center' }} className="ui container view-wrapper">
+            <div className="ui container view-wrapper">
                 <p className="description">
                     We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the links below to help you find what you are looking for.
                     </p>

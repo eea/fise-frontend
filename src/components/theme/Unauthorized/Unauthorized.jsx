@@ -29,7 +29,7 @@ class Unauthorized extends Component {
     render() {
 
         return (
-            <div style={{ display: 'flex', flexDirection: "column", alignContent: 'center' }} className="ui container view-wrapper">
+            <div className="ui container view-wrapper">
                 <p className="description">
                 Access is denied due to invalid credentials
                     </p>
@@ -62,7 +62,7 @@ class Unauthorized extends Component {
                                 )
                             }
                         >
-                            <h2 style={{ color: "white" }}>Unauthorized</h2>
+                            <h1 style={{ color: "white" }}>Unauthorized</h1>
                         </Portal>
                     )}
             </div>
