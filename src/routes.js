@@ -9,6 +9,7 @@ import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
 import { addonRoutes } from '~/config';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
+import Unauthorized from '~/components/theme/Unauthorized/Unauthorized';
 
 /**
  * Routes array.
@@ -31,7 +32,11 @@ const routes = [
         component: SiteMap,
         exact: true,
       },
-
+      {
+        path: '/unauthorized',
+        component: Unauthorized,
+        exact: true,
+      },
       // addon routes have a higher priority then default routes
       ...(addonRoutes || []),
 
