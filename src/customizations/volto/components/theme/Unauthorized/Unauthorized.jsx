@@ -39,7 +39,7 @@ class Unauthorized extends Component {
                     </p>
                 <p>
                     If you are certain you have the correct web address but are encountering an error, please contact the{" "}
-                    <a href="contact-form">
+                    <a href="mailto:info@eea.europa.eu">
                         Site Administration
                     </a>
                     .
