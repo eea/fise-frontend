@@ -5,6 +5,7 @@ import {
   installImageSlides,
   installPortlets,
   installTableau,
+  installNews,
 } from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
@@ -20,6 +21,7 @@ const config = [
   installPortlets,
   installImageSlides,
   installTableau,
+  installNews,
   plotlyConfig,
   ckeditorConfig,
   mosaicConfig,

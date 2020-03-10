@@ -7,6 +7,7 @@ import {
   GET_LOCALNAVIGATION,
   GET_CHART_DATA_FROM_VISUALIZATION,
   GET_NAVSITEMAP,
+  GET_NEWS
 } from '~/constants/ActionTypes';
 
 export function getFrontpageSlides() {
@@ -25,6 +26,16 @@ export function getDefaultHeaderImage() {
     request: {
       op: 'get',
       path: `/default_header_image?fullobjects`,
+    },
+  };
+}
+
+export function getNews() {
+  return {
+    type: GET_NEWS,
+    request: {
+      op: 'get',
+      path: `/news?fullobjects`,
     },
   };
 }
