@@ -88,21 +88,3 @@
     box-shadow: none !important;
   }
 }
-.ui.darkOrange.buttons .button, .ui.darkOrange.button {
-  background-color: #cd4200;
-  color: #FFFFFF;
-  text-shadow: none;
-  background-image: none;
-}
-
-.ui.darkOrange.buttons .button:hover, .ui.darkOrange.button:hover {
-  background-color: #cd4200;
-  color: #FFFFFF;
-  text-shadow: none;
-}
-
-.ui.darkOrange.buttons .button:active, .ui.darkOrange.button:active {
-  background-color: #c33e00;
-  color: #FFFFFF;
-  text-shadow: none;
-}
