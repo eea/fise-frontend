@@ -31,7 +31,6 @@ const routes = [
         component: SiteMap,
         exact: true,
       },
-
       // addon routes have a higher priority then default routes
       ...(addonRoutes || []),
 

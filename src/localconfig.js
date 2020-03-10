@@ -73,6 +73,7 @@ export function applyConfig(config) {
       ...config.settings.nonContentRoutes,
       '/manage-slider',
       '/sitemap',
+      '/unauthorized'
     ],
     ownDomain: 'forest.eea.europa.eu',
     contentExpand: [
