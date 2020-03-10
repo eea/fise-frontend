@@ -2,154 +2,67 @@
          Theme Overrides
 *******************************/
 
-// .ui.dropdown.right {
-//   float: right;
-// }
+.ui.dropdown.right {
+  float: right;
+}
 
-// // This fixes the special height of all Pastanaga inputs in tags widget
-// .ui.multiple.search.dropdown > input.search {
-//   height: initial;
-// }
+// This fixes the special height of all Pastanaga inputs in tags widget
+.ui.multiple.search.dropdown > input.search {
+  height: initial;
+}
 
-// .ui.selection.dropdown:not(.multiple):not(.search) > .dropdown.icon {
-//   position: static;
-//   // custom padding for dropdowns
-//   font-size: 2em;
-// }
-
-// .ui.selection.dropdown {
-//   border-bottom: 1px solid @borderColor;
-// }
-
-// .ui.selection.dropdown:not(.multiple) {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
-
-// .ui.active.selection.dropdown {
-//   border: none;
-//   border-bottom: 1px dotted #b8c6c8;
-// }
-
-// .ui.selection.active.dropdown .menu {
-//   margin-top: 1px;
-//   border: none;
-
-//   &:hover {
-//     border: none;
-//   }
-
-//   &:last-child {
-//     border-bottom: 1px solid @blue;
-//   }
-// }
-
-// .ui.form .ui.dropdown:not(.multiple):not(.search) .menu .selected.item:after {
-//   content: '\e929';
-//   float: right;
-//   font-family: 'Icons';
-// }
-
-// .ui.form .ui.dropdown .menu .item:hover:after {
-//   color: @dropdownTextColor;
-//   content: '\e929';
-//   float: right;
-//   font-family: 'Icons';
-// }
-
-// .ui.dropdown.multiple .menu .selected.item:hover {
-//   background: @subtleTransparentBlack;
-// }
-
-// .ui.dropdown .menu.left {
-//   right: 0;
-//   left: auto;
-// }
-
+.ui.selection.dropdown:not(.multiple):not(.search) > .dropdown.icon {
+  position: static;
+  // custom padding for dropdowns
+  font-size: 2em;
+}
 
 .ui.selection.dropdown {
-  border: 1px solid #C7D5D8;
-  border-radius: 0.25rem;
-  
-  &.active {
-    background: #fff !important;
+  border-bottom: 1px solid @borderColor;
+}
 
-    .visible.dropdown {
-      border-bottom: none;
-    }
+.ui.selection.dropdown:not(.multiple) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui.active.selection.dropdown {
+  border: none;
+  border-bottom: 1px dotted #b8c6c8;
+}
+
+.ui.selection.active.dropdown .menu {
+  margin-top: 1px;
+  border: none;
+
+  &:hover {
+    border: none;
   }
 
-  .menu {
-    border: 1px solid #C7D5D8;
-    border-radius: 0 0 0.25rem 0.25rem;
-  }
-
-  &.upward .menu {
-    border: 1px solid #C7D5D8;
-    border-radius: 0.25rem 0.25rem 0 0;
-  }
-
-  &.active.dropdown {
-    border: 1px solid #C7D5D8;
-    &:hover {
-      border-color: #96C8DA;
-
-      .menu {
-        border-color: #96C8DA;
-      }
-    }
-
-    .menu {
-      border: 1px solid #C7D5D8;
-      &:hover {
-        border: 1px solid #96C8DA;
-      }
-
-      &:last-child {
-        border: inherit;
-      }
-
-      .selected.item {
-        color: #96C8DA;
-      }
-    }
-  }
-  .default.text {
-    position: absolute;
-    top: 0;
-    left: 0.32em;
+  &:last-child {
+    border-bottom: 1px solid @blue;
   }
 }
 
-.ui.multiple.search.dropdown,
-.ui.selection.search.dropdown {
-  input.search {
-    padding-left: 0.32em;
-  }
+.ui.form .ui.dropdown:not(.multiple):not(.search) .menu .selected.item:after {
+  content: '\e929';
+  float: right;
+  font-family: 'Icons';
 }
 
-.ui.search.dropdown {
-  .text {
-    padding-left: 0.32em;
-  }
+.ui.form .ui.dropdown .menu .item:hover:after {
+  color: @dropdownTextColor;
+  content: '\e929';
+  float: right;
+  font-family: 'Icons';
 }
 
-.ui.dropdown {
-  .dropdown.icon {
-    &:before {
-      width: 15px;
-      height: 15px;
-      display: block;
-      color: #4A4A4A;
-      font-size: 15px;
-      line-height: 15px;
-    }
-  }
+.ui.dropdown.multiple .menu .selected.item:hover {
+  background: @subtleTransparentBlack;
 }
 
-.ui.selection.dropdown > .search.icon, .ui.selection.dropdown > .delete.icon, .ui.selection.dropdown > .dropdown.icon {
-  top: 50%;
-  right: 0px;
-  transform: translate(-50%, -50%);
+.ui.dropdown .menu.left {
+  right: 0;
+  left: auto;
 }

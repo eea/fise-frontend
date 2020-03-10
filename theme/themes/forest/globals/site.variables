@@ -170,7 +170,7 @@
 @darkGreen        : #225511;
 @darkerGreen      : #003311;
 @darkBrown        : #554433;
-@darkOrange       : #cd4200;
+@darkOrange       : #cc4400;
 
 // @textColor        : #002200;
 @textColor: #162A16;
