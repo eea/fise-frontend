@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { Icon } from '@plone/volto/components';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBasePath } from '~/helpers';
 
 import { settings } from '~/config';
 import user from '@plone/volto/icons/user.svg';
@@ -55,7 +55,7 @@ class Anontools extends Component {
             style={{ marginLeft: '.5rem' }}
             to={`/login${
               this.props.content
-                ? `?return_url=${getBaseUrl(this.props.content['@id'])
+                ? `?return_url=${getBasePath(this.props.content['@id'])
                     .replace(settings.apiPath, '')
                     .replace(settings.internalApiPath, '')}`
                 : ''
