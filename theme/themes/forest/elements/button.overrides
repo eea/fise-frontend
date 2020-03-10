@@ -10,7 +10,7 @@
   }
 }
 
-.searchbox.field > .ui.action.input > .icon.button {
+.searchbox.field>.ui.action.input>.icon.button {
   padding-top: 0;
   padding-right: 0;
   background: none;
@@ -48,7 +48,7 @@
 }
 
 .ui.basic.secondary.button {
-  color: @brown !important;
+  color: @brown  !important;
 }
 
 .ui.noborder.button {
@@ -63,7 +63,7 @@
   }
 }
 
-.ui.noborder.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+.ui.noborder.button:not(.icon)>.icon:not(.button):not(.dropdown) {
   margin: 0;
 }
 
@@ -84,4 +84,25 @@
   background-color: #c33e00;
   color: #FFFFFF;
   text-shadow: none;
+}
+.ck-editor-toolbar {
+  .ck-toolbar {
+    font-size: 14px !important;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px !important;
+    border: none !important;
+  }
+
+
+  .ck-rounded-corners .ck.ck-button,
+  .ck-rounded-corners a.ck.ck-button,
+  .ck.ck-button.ck-rounded-corners,
+  a.ck.ck-button.ck-rounded-corners {
+    background-color: white !important;
+  }
+
+  .ck-focused {
+    box-shadow: none !important;
+  }
 }

@@ -20,7 +20,7 @@ pipeline {
               tagName = "$BRANCH_NAME"
             }
             try {
-              dockerImage = docker.build registry + ":" + tagName
+              dockerImage = docker.build("$registry:$tagName", "--no-cache .")
               docker.withRegistry( '', 'eeajenkins' ) {
                 dockerImage.push()
               }
