@@ -1892,30 +1892,55 @@ main {
   }
 }
 
-
-// 'full-width-block'
-// "chartWrapperView"
-//   "block-inner-wrapper"
-
 @media print {
+  .ui.container {
+    width: 100%; 
+    margin: 0; 
+    float: none;
+  }
 
-  // .block-bg-grey {
-  //   padding: 0.2em 1.5em;
-  // }
+  @page {
+    margin: 2cm 0 ;
+  }
+
+  a {
+  page-break-inside: avoid
+  }
+  
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6 { 
+    page-break-after: avoid; 
+    page-break-inside: avoid;
+  }
+
+  img {
+    page-break-inside: avoid; 
+    page-break-after: avoid;
+  }
+
+  table, pre {
+    page-break-inside: avoid
+  }
+  
+  ul, ol, dl  {
+    page-break-before: avoid;
+  }
 
   .react-grid-item {
     height: auto !important;
     position: relative !important;
     top: auto !important;
     left: auto !important;
-    width: 65% !important;
+    width: 100% !important;
     break-inside: avoid;
-    overflow: hidden !important;
   }
 
   .block-container .block.maps .video-inner,
   .block-container .block.maps iframe {
-    min-height: 600px !important;
+    min-height: 600px;
   }
 
   .react-grid-layout {
@@ -1930,7 +1955,17 @@ main {
     display: none !important;
   }
 
-  .recharts-responsive-container {
-    transform: scale(0.7);
+  .thematic-areas {
+    page-break-before: always;
+  }
+
+  .element-grid {
+    div {
+      width: 100%;
+    }
+  }
+
+  .svg-container {
+    width: 100%;
   }
 }
