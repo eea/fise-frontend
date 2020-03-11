@@ -1893,30 +1893,54 @@ main {
 }
 
 @media print {
-  @page {
-    margin: 2cm 0.5cm;
+  .ui.container {
+    width: 100%; 
+    margin: 0; 
+    float: none;
   }
 
-  .react-grid-item {
-    page-break-inside: avoid;
+  @page {
+    margin: 2cm 0 ;
   }
 
   a {
-    page-break-inside: avoid
+  page-break-inside: avoid
   }
-
+  
   blockquote {
     page-break-inside: avoid;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid;
+  h1, h2, h3, h4, h5, h6 { 
+    page-break-after: avoid; 
     page-break-inside: avoid;
   }
 
   img {
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
     page-break-after: avoid;
+  }
+
+  table, pre {
+    page-break-inside: avoid
+  }
+  
+  ul, ol, dl  {
+    page-break-before: avoid;
+  }
+
+  .react-grid-item {
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    break-inside: avoid;
+  }
+
+  .block-container .block.maps .video-inner,
+  .block-container .block.maps iframe {
+    min-height: 600px;
   }
 
   table, pre {
