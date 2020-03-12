@@ -1893,18 +1893,59 @@ main {
 }
 
 @media print {
+
+  @page {
+    margin: 2cm 0 ;
+  }
+
   .ui.container {
     width: 100%; 
     margin: 0; 
     float: none;
   }
 
-  @page {
-    margin: 2cm 0 ;
+  .header-wrapper {
+    display: none !important;
+  }
+
+  .footerWrapper {
+    display: none !important;
+  }
+
+  .react-grid-layout {
+    width: 100% !important;
+    display: block !important;
+    height: auto !important;
+  }
+
+  .react-grid-item {
+    padding: 0 10px;
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  .block-container .block.maps .video-inner,
+  .block-container .block.maps iframe {
+    min-height: 840px !important;
+    width: 100% !important;
+  }
+
+  .element-grid {
+    display: block;
+    width: 100% !important;
+
+    div {
+      display: block;
+      width: 100%;
+    }
   }
 
   a {
-  page-break-inside: avoid
+    page-break-inside: avoid
   }
   
   blockquote {
@@ -1929,40 +1970,9 @@ main {
     page-break-before: avoid;
   }
 
-  .react-grid-item {
-    height: auto !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    break-inside: avoid;
-  }
-
-  .block-container .block.maps .video-inner,
-  .block-container .block.maps iframe {
-    min-height: 600px;
-  }
-
-  .react-grid-layout {
-    height: auto !important;
-  }
-
-  .header-wrapper {
-    display: none !important;
-  }
-
-  .footerWrapper {
-    display: none !important;
-  }
-
   .thematic-areas {
+    padding: 4rem;
     page-break-before: always;
-  }
-
-  .element-grid {
-    div {
-      width: 100%;
-    }
   }
 
   .svg-container {
