@@ -1898,30 +1898,24 @@ main {
     margin: 2cm 0 ;
   }
 
-  a {
-  page-break-inside: avoid
-  }
-  
-  blockquote {
-    page-break-inside: avoid;
+  .ui.container {
+    width: 100%; 
+    margin: 0; 
+    float: none;
   }
 
-  h1, h2, h3, h4, h5, h6 { 
-    page-break-after: avoid; 
-    page-break-inside: avoid;
+  .header-wrapper {
+    display: none !important;
   }
 
-  img {
-    page-break-inside: avoid; 
-    page-break-after: avoid;
+  .footerWrapper {
+    display: none !important;
   }
 
-  table, pre {
-    page-break-inside: avoid
-  }
-  
-  ul, ol, dl  {
-    page-break-before: avoid;
+  .react-grid-layout {
+    width: 100% !important;
+    display: block !important;
+    height: auto !important;
   }
 
   .react-grid-item {
