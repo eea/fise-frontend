@@ -5,11 +5,13 @@ import { compose } from 'redux';
 import { asyncConnect } from 'redux-connect';
 import { getNews } from '~/actions';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
-import { Container } from 'semantic-ui-react';
+import { Container, Popup } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import NewsItem from './NewsItem';
 import WidthBasedLayoutProvider from 'volto-base/components/theme/LayoutProvider/WidthBasedLayoutProvider';
 import downKey from '@plone/volto/icons/down-key.svg';
+import rss from '@plone/volto/icons/rss.svg';
+import { settings } from '~/config';
 
 class NewsView extends Component {
   static propTypes = {
@@ -44,6 +46,11 @@ class NewsView extends Component {
         <Helmet title="News" />
         <div className="news-page-content">
           <BodyClass />
+          <Popup content='RSS feed' trigger={
+            <a className="rss-feed" href={settings.apiPath + '/news/RSS'} target="_blank">
+              <Icon name={rss} size="30px" color="#005454" />
+            </a>
+          } />
           <div className={`news-wrapper-view ${this.props.layout_type}-${this.state.grid[this.props.layout_type]}`}>
             { this.props.items && this.props.items.map((item, index) => {
               if (index < this.state.show) return (<NewsItem key={item.id} item={item}  />)

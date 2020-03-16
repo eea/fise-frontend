@@ -17,7 +17,6 @@ const NewsItem = ({ item }) => {
     const url = new URL(urlString);
     return url.pathname.replace('/fise', '');
   }
-
   return (
     <article key={item.id}>
       <span className="article-headline" title={item.title}>
