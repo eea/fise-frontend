@@ -1934,3 +1934,152 @@ main {
     transform: scale(0.7);
   }
 }
+
+/**
+  * START NEWS STYLE
+  */
+.news-page-content .news-wrapper-view  {
+  span.divider {
+    width: 1px;
+    height: 14px;
+    background: #E7E7E7;
+    margin: 0 8px;
+  }
+  
+  .headline {
+    width: 100%;
+    display: block;
+    color: #1d5409;
+    font-size: 20px;
+    margin: 8px 0 !important;
+  }
+
+  article {
+    border-top: 1px solid #e6e6e6;
+    padding: 8px 0;
+
+    &:first-child {
+      border: none;
+    }
+
+    .article-headline {
+      display: flex;
+      align-items: center;
+      color: #005454;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 !important;
+
+      .icon {
+        margin-right: 8px;
+      }
+    }
+
+    .article-body {
+      max-height: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+      pointer-events: none;
+
+      &.expanded {
+        max-height: 200px;
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+      }
+
+      .meta-data {
+        padding: 0 24px;
+        font-size: 12px;
+
+        .format-text {
+          color: #9a9a9a;
+        }
+
+        .format-type {
+          color: #545454;
+        }
+      }
+
+      .article-content {
+        padding: 0 24px;
+        font-size: 14px;
+
+        .block {
+          margin: 0.3em 0;
+        }
+
+        .actions {
+          color: #005454;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.news-page-content {
+  position: relative;
+
+  article {
+    .article-headline {
+      display: inline-block;
+    }
+  }
+
+  a.rss-feed {
+    display: inline-block;
+    opacity: 0.7;
+    position: absolute;
+    left: 100%;
+    transform: translateX(-100%);
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.news-page-content .news-wrapper-view article .article-body {
+  .meta-data {
+    padding: 0;
+  }
+
+  .article-content {
+    padding: 0;
+    font-size: 14px;
+  }
+} 
+
+.news-expand-button {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.news-expand-button {
+  span {
+    width: 50%;
+    height: 1px;
+    background: #E7E7E7;
+  }
+
+  &:hover {
+    span {
+      background : #005454;
+    }
+    
+    .icon {
+      fill: #005454 !important;
+    }
+  }
+}
+/**
+  * END NEWS STYLE
+  */
