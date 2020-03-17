@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { asyncConnect } from 'redux-connect';
-import { getNews } from '~/actions';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
 import { Container, Popup } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
@@ -14,19 +13,8 @@ import rss from '@plone/volto/icons/rss.svg';
 import { settings } from '~/config';
 
 class NewsView extends Component {
-  static propTypes = {
-    getNews: PropTypes.func.isRequired,
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        type: PropTypes.string,
-        title: PropTypes.string,
-        description: PropTypes.string,
-      }),
-    ),
-  };
-
   state = {
+    items: [],
     limit: 3,
     show: 3,
     grid: {
@@ -37,10 +25,24 @@ class NewsView extends Component {
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    const items = this.props.content.items.map(item => ({
+      id: item['@id'],
+      date: item.created,
+      type: item['@type'],
+      title: item.title,
+      image: item.image ? item.image.download : null,
+      description: item.description,
+      text: item.text,
+      topics: item.topics
+    })).sort((a, b) => {
+      return new Date(b.date) - new Date(a.date) 
+    });
+    this.setState({ items })
+  }
 
   render() {
-    if (!this.props.items) return (<h1>Bye World!</h1>);
+    if (!this.state.items) return (<h1>News</h1>);
     return (
       <Container>
         <Helmet title="News" />
@@ -52,12 +54,12 @@ class NewsView extends Component {
             </a>
           } />
           <div className={`news-wrapper-view ${this.props.layout_type}-${this.state.grid[this.props.layout_type]}`}>
-            { this.props.items && this.props.items.map((item, index) => {
+            { this.state.items && this.state.items.map((item, index) => {
               if (index < this.state.show) return (<NewsItem key={item.id} item={item}  />)
             })}
           </div>
-          { this.state.show <= this.state.limit && (
-              <button className="news-expand-button" onClick={() => { this.setState({ show: this.props.items.length }) }}>
+          { this.state.items.length > this.state.limit && this.state.show <= this.state.limit && (
+              <button className="news-expand-button" onClick={() => { this.setState({ show: this.state.items.length }) }}>
                 <span />
                 <Icon name={downKey} size="60px" color="#E7E7E7" />
                 <span />
@@ -71,19 +73,4 @@ class NewsView extends Component {
   }
 }
 
-export default compose(
-  connect(
-    (state, props) => ({
-      items: state.news.items ? state.news.items : null, 
-    }),
-    {
-      getNews
-    },
-  ),
-  asyncConnect([
-    {
-      key: 'news',
-      promise: ({ location, store: { dispatch } }) => dispatch(getNews())
-    },
-  ]),
-)(WidthBasedLayoutProvider(NewsView));
+export default WidthBasedLayoutProvider(NewsView);
