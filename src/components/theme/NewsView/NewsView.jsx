@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { asyncConnect } from 'redux-connect';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
 import { Container, Popup } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
