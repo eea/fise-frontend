@@ -32,6 +32,8 @@ class NewsView extends Component {
       description: item.description,
       text: item.text,
       topics: item.topics,
+      blocks: item.blocks,
+      blocks_layout: item.blocks_layout
     })).sort((a, b) => {
       return new Date(b.date) - new Date(a.date) 
     });
