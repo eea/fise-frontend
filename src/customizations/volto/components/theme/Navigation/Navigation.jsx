@@ -141,7 +141,7 @@ class Navigation extends Component {
     // return <div>{JSON.stringify(this.props.navigation)}</div>
     return (
       <nav className="navigation">
-        <div className="hamburger-wrapper large screen hidden widescreen hidden">
+        <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
           <button
             className={cx('hamburger hamburger--collapse', {
               'is-active': this.state.isMobileMenuOpen,
