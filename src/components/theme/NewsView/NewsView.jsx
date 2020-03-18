@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
 import { Container, Popup } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
+import { Label } from 'semantic-ui-react';
 import NewsItem from './NewsItem';
 import WidthBasedLayoutProvider from 'volto-base/components/theme/LayoutProvider/WidthBasedLayoutProvider';
 import downKey from '@plone/volto/icons/down-key.svg';
@@ -30,7 +31,7 @@ class NewsView extends Component {
       image: item.image ? item.image.download : null,
       description: item.description,
       text: item.text,
-      topics: item.topics
+      topics: item.topics,
     })).sort((a, b) => {
       return new Date(b.date) - new Date(a.date) 
     });
@@ -44,11 +45,10 @@ class NewsView extends Component {
         <Helmet title="News" />
         <div className="news-page-content">
           <BodyClass />
-          <Popup content='RSS feed' trigger={
-            <a className="rss-feed" href={settings.apiPath + '/news/RSS'} target="_blank">
-              <Icon name={rss} size="30px" color="#005454" />
-            </a>
-          } />
+          <Label className="rss-feed" as='a' size="large" href={settings.apiPath + '/news/RSS'} target="_blank" color="teal">
+            <span>Subscribe to rss feed</span>
+            <Icon name={rss} size="14px" />
+          </Label>
           <div className={`news-wrapper-view ${this.props.layout_type}-${this.state.grid[this.props.layout_type]}`}>
             { this.state.items && this.state.items.map((item, index) => {
               if (index < this.state.show) return (<NewsItem key={item.id} item={item}  />)

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Image } from 'semantic-ui-react';
 
 const NewsItem = ({ item }) => {
   const prettyDate = (time) => {
@@ -19,9 +20,9 @@ const NewsItem = ({ item }) => {
   }
   return (
     <article key={item.id}>
-      <span className="article-headline" title={item.title}>
+      <Link className="article-headline" title={item.title} to={itemPath(item['id'])}>
         {item.title}
-      </span>
+      </Link>
       <div className={'expanded article-body'}>
         <div className={'meta-data'}>
           {item.date && (
@@ -35,14 +36,13 @@ const NewsItem = ({ item }) => {
           {item.description && (
             <div className="block">
               <span className="description">{item.description}</span>
+              {/* { item.image && (
+                <Image src={item.image} />
+              )} */}
             </div>
           )}
-          <div className="actions">
-            <Link to={itemPath(item.id)}>Read article</Link>
-          </div>
         </div>
       </div>
-
     </article>
   );
 };

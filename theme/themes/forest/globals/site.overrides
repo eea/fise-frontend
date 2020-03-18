@@ -1963,7 +1963,7 @@ main {
     }
 
     .article-headline {
-      display: flex;
+      display: inline-block;
       align-items: center;
       color: #005454;
       cursor: pointer;
@@ -2030,13 +2030,14 @@ main {
   }
 
   a.rss-feed {
-    display: inline-block;
-    opacity: 0.7;
+    display: flex;
+    align-items: center;
     position: absolute;
     left: 100%;
     transform: translateX(-100%);
-    &:hover {
-      opacity: 1;
+    white-space: nowrap;
+    .icon {
+      margin: 0 0 0 4px;
     }
   }
 }
