@@ -1976,13 +1976,11 @@ main {
     }
 
     .article-body {
-      max-height: 0;
       opacity: 0;
       transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
       pointer-events: none;
 
       &.expanded {
-        max-height: 200px;
         opacity: 1;
         pointer-events: auto;
         transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
