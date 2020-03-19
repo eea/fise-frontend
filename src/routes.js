@@ -6,7 +6,6 @@
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
-import Contents from '~/customizations/volto/components/theme/Contents/Contents';
 
 import { addonRoutes } from '~/config';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
@@ -31,14 +30,6 @@ const routes = [
         path: '/sitemap',
         component: SiteMap,
         exact: true,
-      },
-      {
-        path: '/contents',
-        component: Contents,
-      },
-      {
-        path: '/**/contents',
-        component: Contents,
       },
       // addon routes have a higher priority then default routes
       ...(addonRoutes || []),
