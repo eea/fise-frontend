@@ -6,7 +6,6 @@
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
-import NotFound from '~/customizations/volto/components/theme/NotFound/NotFound';
 import Contents from '~/customizations/volto/components/theme/Contents/Contents';
 
 import { addonRoutes } from '~/config';
