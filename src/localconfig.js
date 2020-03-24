@@ -100,7 +100,7 @@ export function applyConfig(config) {
 
   delete config.views.contentTypesViews['News Item']
 
-  
+
   // read @plone/volto/components/manage/Form/Field.jsx to understand this
   config.widgets = {
     ...config.widgets,
@@ -186,6 +186,12 @@ export function applyConfig(config) {
     { path: '/', component: ForestMetadata },
     ...(config.viewlets || []),
   ];
+
+
+  config.settings.plotlyCustomColors = [
+    { "title": "Forest Default", "colorscale": ["#215511", "#77BB12", "#CBEE66", "#ffffff", "#F4F4F1", "#000000"] },
+    { "title": "Forest Active", "colorscale": ["#CA4300 ", "#E0E1E2", "#E30166", "#074F7C", "#000000", "#ffffff"] },
+  ]
 
   return config;
 }
