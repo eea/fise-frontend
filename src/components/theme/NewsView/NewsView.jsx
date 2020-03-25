@@ -48,7 +48,7 @@ class NewsView extends Component {
         <div className="news-page-content">
           <BodyClass />
           <Label className="rss-feed" as='a' size="large" href={settings.apiPath + '/news/RSS'} target="_blank" color="teal">
-            <span>Subscribe to rss feed</span>
+            <span>Subscribe via RSS</span>
             <Icon name={rss} size="14px" />
           </Label>
           <div className={`news-wrapper-view ${this.props.layout_type}-${this.state.grid[this.props.layout_type]}`}>
