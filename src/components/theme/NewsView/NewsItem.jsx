@@ -47,7 +47,6 @@ const NewsItem = ({ item }) => {
           )}
         </div>
         <div className='article-content'>
-          <div className="block">
             {item.description && (
               <span className="description">{item.description}</span>
             )}
@@ -106,7 +105,6 @@ const NewsItem = ({ item }) => {
                 </Container>
               )}
           </div>
-        </div>
       </div>
     </article>
   );
