@@ -74,7 +74,7 @@ pipeline {
                          <p>Check console output at <a href="${url}">${env.JOB_BASE_NAME} - #${env.BUILD_NUMBER}</a></p>
                       """        
         withCredentials([string(credentialsId: 'n-team-address', variable: 'RECIPIENTS')]) {
-           emailext (subject: '$DEFAULT_SUBJECT', to: '$RECIPIENTS', body: details)
+          emailext (subject: '$DEFAULT_SUBJECT', to: "${RECIPIENTS}", body: details)
         }
       }
     }
