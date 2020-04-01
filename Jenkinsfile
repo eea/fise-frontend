@@ -2,6 +2,7 @@ pipeline {
   environment {
     registry = "eeacms/forests-frontend"
     template = "templates/volto-forests"
+    stack_id = "1st1821"
     dockerImage = ''
     tagName = ''
   }
@@ -44,7 +45,22 @@ pipeline {
         }
       }
     }
-
+    
+   stage('Upgrade demo') {
+      when {
+        buildingTag()
+      }
+      steps {
+        node(label: 'docker') {
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'Rancher_dev_token', usernameVariable: 'RANCHER_ACCESS', passwordVariable: 'RANCHER_SECRET'],string(credentialsId: 'Rancher_dev_url', variable: 'RANCHER_URL'),string(credentialsId: 'Rancher_dev_envid', variable: 'RANCHER_ENVID')]) {
+            sh '''wget -O rancher_upgrade.sh https://raw.githubusercontent.com/eea/eea.docker.gitflow/master/src/rancher_upgrade.sh'''
+            sh '''chmod 755 rancher_upgrade.sh'''
+            sh '''./rancher_upgrade.sh'''
+         }
+        }
+      }
+    }
+    
   }
 
   post {
@@ -64,7 +80,10 @@ pipeline {
         } else if (status == 'FAILURE') {
           color = '#FF0000'
         }
-        emailext (subject: '$DEFAULT_SUBJECT', to: '$DEFAULT_RECIPIENTS', body: details)
+        
+        withCredentials([string(credentialsId: 'n-team-address', variable: 'RECIPIENTS')]) {
+           emailext (subject: '$DEFAULT_SUBJECT', to: '$RECIPIENTS', body: details)
+        }
       }
     }
   }
