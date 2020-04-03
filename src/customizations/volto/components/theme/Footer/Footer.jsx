@@ -13,6 +13,11 @@ import ecLogo from './ec.png';
 import eeaLogo from './eea.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Placeholder } from 'semantic-ui-react';
+import climateAdaptLogo from './climateadapt.svg'
+import landMonitoringLogo from './landmonitoringservice.png'
+import {
+  BodyClass,
+} from '@plone/volto/helpers';
 
 const messages = defineMessages({
   copyright: {
@@ -38,13 +43,43 @@ const Footer = ({ intl }) => (
     <img className="footerImage" src={footerImage} alt="" />
     <Container>
       <div className="ui vertically divided grid">
-        <div className="four column row">
+        <div className="footerLinkBar">
+          <ul className="unlist">
+            <li>
+              <Link className="item" to="/legal_notice">
+                <FormattedMessage
+                  id="legal_notice"
+                  defaultMessage="Legal notice"
+                />
+              </Link>
+            </li>
+            <li>
+              <div className="vl"></div>
+            </li>
+            <li>
+              <Link className="item" to="/privacy_policy">
+                <FormattedMessage
+                  id="privacy_policy"
+                  defaultMessage="Privacy statement"
+                />
+              </Link>
+            </li>
+            <li>
+              <div className="vl"></div>
+            </li>
+            <li>
+              <a className="item" href={`mailto:info@eea.europa.eu`}>
+                Contact us
+                </a>
+            </li>
+          </ul>
+        </div>
+        <div className="two column row">
           <div className="column">
             <b>ABOUT</b>
             <p>
               FISE - Forest Information System for Europe is a forest knowledge
               base in support of the EU Forest Strategy.{' '}
-              {/* <a href="#">See more</a> */}
             </p>
             <LazyLoadImage
               className="footerLogo"
@@ -63,49 +98,6 @@ const Footer = ({ intl }) => (
                 </Placeholder>
               }
             />
-          </div>
-
-          <div style={{ flexGrow: '1' }} className="column">
-            <b>DISCLAIMER</b>
-            <p>
-              Withdrawal of the United Kingdom from the European Union:{' '}
-              <i>
-                Data reported by the United Kingdom are included in all analyses
-                and assessments contained herein, unless otherwise indicated.
-              </i>
-            </p>
-          </div>
-
-          <div
-            style={{ width: '200px!important' }}
-            className="column"
-            id="links_column"
-          >
-            <b>LINKS</b>
-            <ul className="unlist">
-              <li>
-                <Link className="item" to="/legal_notice">
-                  <FormattedMessage
-                    id="legal_notice"
-                    defaultMessage="Legal notice"
-                  />
-                </Link>
-              </li>
-
-              <li>
-                <Link className="item" to="/privacy_policy">
-                  <FormattedMessage
-                    id="privacy_policy"
-                    defaultMessage="Privacy statement"
-                  />
-                </Link>
-              </li>
-              <li>
-                <a className="item" href={`mailto:info@eea.europa.eu`}>
-                  Contact us
-                </a>
-              </li>
-            </ul>
           </div>
 
           <div className="column">
@@ -141,6 +133,50 @@ const Footer = ({ intl }) => (
                   src={eeaLogo}
                   alt="European Environment Agency"
                   title="European Environment Agency"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+              <a
+                href="https://climate-adapt.eea.europa.eu/"
+                title="Climate Adapt"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={climateAdaptLogo}
+                  alt="Climate Adapt"
+                  title="Climate Adapt"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+              <a
+                href="https://land.copernicus.eu/"
+                title="Land Monitoring Service"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={landMonitoringLogo}
+                  alt="Land Monitoring Service"
+                  title="Land Monitoring Service"
                   // alt={intl.formatMessage(messages.plonesite)}
                   // title={intl.formatMessage(messages.plonesite)}
                   width={'100%'}

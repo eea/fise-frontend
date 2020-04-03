@@ -249,7 +249,7 @@
     transition: transform 300ms linear;
     will-change: transform;
 
-    > * {
+    >* {
       // position: absolute;
       // width: 100%;
       // height: 100%;
@@ -270,7 +270,7 @@
       justify-content: flex-end;
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
-      & + .pusher {
+      &+.pusher {
         margin-right: 20px;
         transition: margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
       }
@@ -279,7 +279,7 @@
         width: 80px;
         height: 100%;
 
-        & + .pusher {
+        &+.pusher {
           margin-right: 80px;
           transition: margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
         }
@@ -394,7 +394,7 @@
     }
 
     .pusher-puller {
-      > * {
+      >* {
         // TODO: look how to standard for all devices
         width: 320px;
       }
@@ -521,6 +521,7 @@
 
   .personal-tools {
     header {
+
       .back,
       .vertical.divider {
         @media only screen and (min-width: @largestMobileScreen) {
@@ -636,6 +637,7 @@
     }
   }
 }
+
 // Orphaned CSS
 .ui.dropdown .menu.left {
   right: 0;
@@ -648,9 +650,11 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .ui.menu.stackable > .menu,
-  .ui.menu.stackable > .menu.right {
+
+  .ui.menu.stackable>.menu,
+  .ui.menu.stackable>.menu.right {
     display: block;
   }
 }
+
 // End Orphaned CSS
