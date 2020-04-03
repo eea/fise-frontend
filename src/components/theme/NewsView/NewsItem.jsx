@@ -74,7 +74,6 @@ const NewsItem = ({ item }) => {
                       ''
                     );
                 })}
-                <div id="forest-metadata-slot">{''}</div>
               </div>
             ) : (
                 <Container>
@@ -101,7 +100,6 @@ const NewsItem = ({ item }) => {
                       }}
                     />
                   )}
-                  <div id="forest-metadata-slot">{''}</div>
                 </Container>
               )}
           </div>
