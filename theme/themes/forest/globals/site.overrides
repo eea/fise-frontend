@@ -759,7 +759,7 @@ ul.ui.list li:before,
 }
 
 .footerLogo {
-  width: 150px;
+  width: 100px;
 }
 
 
@@ -770,7 +770,7 @@ ul.ui.list li:before,
   flex-wrap: wrap;
 
   .footerLogo {
-    height: 50px;
+    height: 35px;
     width: auto;
     margin: .5rem;
   }

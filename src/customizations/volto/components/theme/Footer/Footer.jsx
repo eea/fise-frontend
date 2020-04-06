@@ -15,6 +15,11 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Placeholder } from 'semantic-ui-react';
 import climateAdaptLogo from './climateadapt.svg'
 import landMonitoringLogo from './landmonitoringservice.png'
+import biseLogo from './biselogo.png'
+import wiseLogo from './WISE.png'
+import ccsLogo from './climateChange.svg'
+import drmkcLogo from './drmkc.png'
+
 import {
   BodyClass,
 } from '@plone/volto/helpers';
@@ -74,36 +79,19 @@ const Footer = ({ intl }) => (
             </li>
           </ul>
         </div>
-        <div className="two column row">
-          <div className="column">
+        <div className="three column row">
+          <div className="three wide column">
             <b>ABOUT</b>
             <p>
               FISE - Forest Information System for Europe is a forest knowledge
               base in support of the EU Forest Strategy.{' '}
             </p>
-            <LazyLoadImage
-              className="footerLogo"
-              style={{ width: '250px', marginTop: '2rem' }}
-              effect="blur"
-              src={LogoImage}
-              alt="Forest"
-              title="FISE"
-              // alt={intl.formatMessage(messages.plonesite)}
-              // title={intl.formatMessage(messages.plonesite)}
-              width={'100%'}
-              visibleByDefault={true}
-              placeholder={
-                <Placeholder>
-                  <Placeholder.Image rectangular />
-                </Placeholder>
-              }
-            />
           </div>
 
-          <div className="column">
+          <div className="three wide column">
             <b>PARTNERS</b>
             <div className="footerLogoWrapper">
-              <a href="https://ec.europa.eu/" title="European Commission">
+              <a target="_blank" href="https://ec.europa.eu/" title="European Commission">
                 <LazyLoadImage
                   className="footerLogo"
                   // height={80}
@@ -123,6 +111,7 @@ const Footer = ({ intl }) => (
                 />
               </a>
               <a
+                target="_blank"
                 href="https://www.eea.europa.eu/"
                 title="European Environment Agency"
               >
@@ -144,7 +133,14 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
+
+            </div>
+          </div>
+          <div className="six wide column">
+            <b>Other European Information Systems</b>
+            <div className="footerLogoWrapper">
               <a
+                target="_blank"
                 href="https://climate-adapt.eea.europa.eu/"
                 title="Climate Adapt"
               >
@@ -167,6 +163,99 @@ const Footer = ({ intl }) => (
                 />
               </a>
               <a
+                target="_blank"
+                href="https://biodiversity.europa.eu/"
+                title="Biodiversity Information Sistems for Europe"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={biseLogo}
+                  alt="Biodiversity Information Sistems for Europe"
+                  title="Biodiversity Information Sistems for Europe"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+              <a
+                target="_blank"
+                href="https://water.europa.eu/"
+                title="Water Information System for Europe"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={wiseLogo}
+                  alt="Water Information System for Europe"
+                  title="Water Information System for Europe"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+              <a
+                target="_blank"
+                href="https://climate.copernicus.eu/"
+                title="Climate Change Service"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={ccsLogo}
+                  alt="Climate Change Service"
+                  title="Climate Change Service"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+              <a
+                target="_blank"
+                href="https://drmkc.jrc.ec.europa.eu/"
+                title="Disaster Risk Management Knowledge Center"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={drmkcLogo}
+                  alt="Disaster Risk Management Knowledge Center"
+                  title="Disaster Risk Management Knowledge Center"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+              <a
+                target="_blank"
                 href="https://land.copernicus.eu/"
                 title="Land Monitoring Service"
               >
