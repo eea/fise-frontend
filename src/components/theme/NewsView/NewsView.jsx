@@ -25,7 +25,7 @@ class NewsView extends Component {
   componentDidMount() {
     const items = this.props.content.items.map(item => ({
       id: item['@id'],
-      date: item.created,
+      date: item.effective,
       type: item['@type'],
       title: item.title,
       image: item.image ? item.image.download : null,
