@@ -79,16 +79,16 @@ const Footer = ({ intl }) => (
             </li>
           </ul>
         </div>
-        <div className="three column row">
-          <div className="three wide column">
+        <Grid.Row columns={3}>
+          <Grid.Column mobile={12} tablet={3} computer={3}>
             <b>ABOUT</b>
             <p>
               FISE - Forest Information System for Europe is a forest knowledge
               base in support of the EU Forest Strategy.{' '}
             </p>
-          </div>
+          </Grid.Column>
 
-          <div className="three wide column">
+          <Grid.Column mobile={12} tablet={3} computer={3}>
             <b>PARTNERS</b>
             <div className="footerLogoWrapper">
               <a target="_blank" href="https://ec.europa.eu/" title="European Commission">
@@ -135,8 +135,8 @@ const Footer = ({ intl }) => (
               </a>
 
             </div>
-          </div>
-          <div className="six wide column">
+          </Grid.Column>
+          <Grid.Column mobile={12} tablet={6} computer={6}>
             <b>Other European Information Systems</b>
             <div className="footerLogoWrapper">
               <a
@@ -278,8 +278,8 @@ const Footer = ({ intl }) => (
                 />
               </a>
             </div>
-          </div>
-        </div>
+          </Grid.Column>
+        </Grid.Row>
       </div>
     </Container>
   </Segment>
