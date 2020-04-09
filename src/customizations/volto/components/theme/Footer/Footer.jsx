@@ -77,11 +77,19 @@ const Footer = ({ intl }) => (
                 Contact us
                 </a>
             </li>
+            <li>
+              <div className="vl"></div>
+            </li>
+            <li>
+              <a className="item" href={`https://status.eea.europa.eu/`} target="blank">
+               EEA Systems Status
+                </a>
+            </li>
           </ul>
         </div>
         <Grid.Row columns={3}>
           <Grid.Column mobile={12} tablet={3} computer={3}>
-            <b>ABOUT</b>
+            <b>About</b>
             <p>
               FISE - Forest Information System for Europe is a forest knowledge
               base in support of the EU Forest Strategy.{' '}
@@ -89,7 +97,7 @@ const Footer = ({ intl }) => (
           </Grid.Column>
 
           <Grid.Column mobile={12} tablet={3} computer={3}>
-            <b>PARTNERS</b>
+            <b>Partners</b>
             <div className="footerLogoWrapper">
               <a target="_blank" href="https://ec.europa.eu/" title="European Commission">
                 <LazyLoadImage
@@ -185,6 +193,31 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
+              
+               <a
+                target="_blank"
+                href="https://land.copernicus.eu/"
+                title="Land Monitoring Service"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={landMonitoringLogo}
+                  alt="Land Monitoring Service"
+                  title="Land Monitoring Service"
+                  // alt={intl.formatMessage(messages.plonesite)}
+                  // title={intl.formatMessage(messages.plonesite)}
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+              
               <a
                 target="_blank"
                 href="https://water.europa.eu/"
@@ -231,52 +264,8 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
-              <a
-                target="_blank"
-                href="https://drmkc.jrc.ec.europa.eu/"
-                title="Disaster Risk Management Knowledge Center"
-              >
-                <LazyLoadImage
-                  className="footerLogo"
-                  // height={80}
-                  effect="blur"
-                  src={drmkcLogo}
-                  alt="Disaster Risk Management Knowledge Center"
-                  title="Disaster Risk Management Knowledge Center"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
-                  width={'100%'}
-                  visibleByDefault={true}
-                  placeholder={
-                    <Placeholder>
-                      <Placeholder.Image rectangular />
-                    </Placeholder>
-                  }
-                />
-              </a>
-              <a
-                target="_blank"
-                href="https://land.copernicus.eu/"
-                title="Land Monitoring Service"
-              >
-                <LazyLoadImage
-                  className="footerLogo"
-                  // height={80}
-                  effect="blur"
-                  src={landMonitoringLogo}
-                  alt="Land Monitoring Service"
-                  title="Land Monitoring Service"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
-                  width={'100%'}
-                  visibleByDefault={true}
-                  placeholder={
-                    <Placeholder>
-                      <Placeholder.Image rectangular />
-                    </Placeholder>
-                  }
-                />
-              </a>
+             
+             
             </div>
           </Grid.Column>
         </Grid.Row>
