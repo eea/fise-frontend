@@ -51,7 +51,7 @@ const Footer = ({ intl }) => (
         <div className="footerLinkBar">
           <ul className="unlist">
             <li>
-              <Link className="item" to="/legal_notice">
+              <Link className="item separated" to="/legal_notice">
                 <FormattedMessage
                   id="legal_notice"
                   defaultMessage="Legal notice"
@@ -59,18 +59,12 @@ const Footer = ({ intl }) => (
               </Link>
             </li>
             <li>
-              <div className="vl"></div>
-            </li>
-            <li>
-              <Link className="item" to="/privacy_policy">
+              <Link className="item separated" to="/privacy_policy">
                 <FormattedMessage
                   id="privacy_policy"
                   defaultMessage="Privacy statement"
                 />
               </Link>
-            </li>
-            <li>
-              <div className="vl"></div>
             </li>
             <li>
               <a className="item" href={`mailto:info@eea.europa.eu`}>
@@ -81,7 +75,7 @@ const Footer = ({ intl }) => (
         </div>
         <Grid.Row columns={3}>
           <Grid.Column mobile={12} tablet={3} computer={3}>
-            <b>ABOUT</b>
+            <b>About</b>
             <p>
               FISE - Forest Information System for Europe is a forest knowledge
               base in support of the EU Forest Strategy.{' '}
@@ -89,7 +83,7 @@ const Footer = ({ intl }) => (
           </Grid.Column>
 
           <Grid.Column mobile={12} tablet={3} computer={3}>
-            <b>PARTNERS</b>
+            <b>Partners</b>
             <div className="footerLogoWrapper">
               <a target="_blank" href="https://ec.europa.eu/" title="European Commission">
                 <LazyLoadImage
@@ -99,8 +93,7 @@ const Footer = ({ intl }) => (
                   src={ecLogo}
                   alt="European Commission"
                   title="European Commission"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -122,8 +115,7 @@ const Footer = ({ intl }) => (
                   src={eeaLogo}
                   alt="European Environment Agency"
                   title="European Environment Agency"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -151,8 +143,7 @@ const Footer = ({ intl }) => (
                   src={climateAdaptLogo}
                   alt="Climate Adapt"
                   title="Climate Adapt"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -174,8 +165,7 @@ const Footer = ({ intl }) => (
                   src={biseLogo}
                   alt="Biodiversity Information Sistems for Europe"
                   title="Biodiversity Information Sistems for Europe"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -197,54 +187,7 @@ const Footer = ({ intl }) => (
                   src={wiseLogo}
                   alt="Water Information System for Europe"
                   title="Water Information System for Europe"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
-                  width={'100%'}
-                  visibleByDefault={true}
-                  placeholder={
-                    <Placeholder>
-                      <Placeholder.Image rectangular />
-                    </Placeholder>
-                  }
-                />
-              </a>
-              <a
-                target="_blank"
-                href="https://climate.copernicus.eu/"
-                title="Climate Change Service"
-              >
-                <LazyLoadImage
-                  className="footerLogo"
-                  // height={80}
-                  effect="blur"
-                  src={ccsLogo}
-                  alt="Climate Change Service"
-                  title="Climate Change Service"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
-                  width={'100%'}
-                  visibleByDefault={true}
-                  placeholder={
-                    <Placeholder>
-                      <Placeholder.Image rectangular />
-                    </Placeholder>
-                  }
-                />
-              </a>
-              <a
-                target="_blank"
-                href="https://drmkc.jrc.ec.europa.eu/"
-                title="Disaster Risk Management Knowledge Center"
-              >
-                <LazyLoadImage
-                  className="footerLogo"
-                  // height={80}
-                  effect="blur"
-                  src={drmkcLogo}
-                  alt="Disaster Risk Management Knowledge Center"
-                  title="Disaster Risk Management Knowledge Center"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -266,8 +209,7 @@ const Footer = ({ intl }) => (
                   src={landMonitoringLogo}
                   alt="Land Monitoring Service"
                   title="Land Monitoring Service"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -277,6 +219,29 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
+              <a
+                target="_blank"
+                href="https://climate.copernicus.eu/"
+                title="Climate Change Service"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={ccsLogo}
+                  alt="Climate Change Service"
+                  title="Climate Change Service"
+
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+
             </div>
           </Grid.Column>
         </Grid.Row>

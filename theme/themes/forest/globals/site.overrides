@@ -355,9 +355,9 @@ body.has-toolbar {
   background-color: #F6F6F4;
   padding: 20px;
 
-  .vl {
-    border-left: 2px solid green;
-    height: 10px;
+  .separated {
+    border-right: 1px solid grey;
+    padding-right: 15px;
   }
 
 }
