@@ -67,8 +67,13 @@ const Footer = ({ intl }) => (
               </Link>
             </li>
             <li>
-              <a className="item" href={`mailto:info@eea.europa.eu`}>
+              <a className="item separated" href={`mailto:info@eea.europa.eu`}>
                 Contact us
+                </a>
+            </li>
+            <li>
+              <a className="item" href={`https://status.eea.europa.eu/`} target="blank">
+                EEA Systems Status
                 </a>
             </li>
           </ul>
@@ -175,6 +180,7 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
+
               <a
                 target="_blank"
                 href="https://water.europa.eu/"
@@ -197,6 +203,7 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
+
               <a
                 target="_blank"
                 href="https://land.copernicus.eu/"
@@ -231,7 +238,6 @@ const Footer = ({ intl }) => (
                   src={ccsLogo}
                   alt="Climate Change Service"
                   title="Climate Change Service"
-
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -241,7 +247,6 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
-
             </div>
           </Grid.Column>
         </Grid.Row>
