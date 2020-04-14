@@ -51,7 +51,7 @@ const Footer = ({ intl }) => (
         <div className="footerLinkBar">
           <ul className="unlist">
             <li>
-              <Link className="item" to="/legal_notice">
+              <Link className="item separated" to="/legal_notice">
                 <FormattedMessage
                   id="legal_notice"
                   defaultMessage="Legal notice"
@@ -59,10 +59,7 @@ const Footer = ({ intl }) => (
               </Link>
             </li>
             <li>
-              <div className="vl"></div>
-            </li>
-            <li>
-              <Link className="item" to="/privacy_policy">
+              <Link className="item separated" to="/privacy_policy">
                 <FormattedMessage
                   id="privacy_policy"
                   defaultMessage="Privacy statement"
@@ -70,19 +67,13 @@ const Footer = ({ intl }) => (
               </Link>
             </li>
             <li>
-              <div className="vl"></div>
-            </li>
-            <li>
-              <a className="item" href={`mailto:info@eea.europa.eu`}>
+              <a className="item separated" href={`mailto:info@eea.europa.eu`}>
                 Contact us
                 </a>
             </li>
             <li>
-              <div className="vl"></div>
-            </li>
-            <li>
               <a className="item" href={`https://status.eea.europa.eu/`} target="blank">
-               EEA Systems Status
+                EEA Systems Status
                 </a>
             </li>
           </ul>
@@ -107,8 +98,7 @@ const Footer = ({ intl }) => (
                   src={ecLogo}
                   alt="European Commission"
                   title="European Commission"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -130,8 +120,7 @@ const Footer = ({ intl }) => (
                   src={eeaLogo}
                   alt="European Environment Agency"
                   title="European Environment Agency"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -159,8 +148,7 @@ const Footer = ({ intl }) => (
                   src={climateAdaptLogo}
                   alt="Climate Adapt"
                   title="Climate Adapt"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -182,8 +170,7 @@ const Footer = ({ intl }) => (
                   src={biseLogo}
                   alt="Biodiversity Information Sistems for Europe"
                   title="Biodiversity Information Sistems for Europe"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -193,31 +180,7 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
-              
-               <a
-                target="_blank"
-                href="https://land.copernicus.eu/"
-                title="Land Monitoring Service"
-              >
-                <LazyLoadImage
-                  className="footerLogo"
-                  // height={80}
-                  effect="blur"
-                  src={landMonitoringLogo}
-                  alt="Land Monitoring Service"
-                  title="Land Monitoring Service"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
-                  width={'100%'}
-                  visibleByDefault={true}
-                  placeholder={
-                    <Placeholder>
-                      <Placeholder.Image rectangular />
-                    </Placeholder>
-                  }
-                />
-              </a>
-              
+
               <a
                 target="_blank"
                 href="https://water.europa.eu/"
@@ -230,8 +193,30 @@ const Footer = ({ intl }) => (
                   src={wiseLogo}
                   alt="Water Information System for Europe"
                   title="Water Information System for Europe"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
+
+                  width={'100%'}
+                  visibleByDefault={true}
+                  placeholder={
+                    <Placeholder>
+                      <Placeholder.Image rectangular />
+                    </Placeholder>
+                  }
+                />
+              </a>
+
+              <a
+                target="_blank"
+                href="https://land.copernicus.eu/"
+                title="Land Monitoring Service"
+              >
+                <LazyLoadImage
+                  className="footerLogo"
+                  // height={80}
+                  effect="blur"
+                  src={landMonitoringLogo}
+                  alt="Land Monitoring Service"
+                  title="Land Monitoring Service"
+
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -253,8 +238,6 @@ const Footer = ({ intl }) => (
                   src={ccsLogo}
                   alt="Climate Change Service"
                   title="Climate Change Service"
-                  // alt={intl.formatMessage(messages.plonesite)}
-                  // title={intl.formatMessage(messages.plonesite)}
                   width={'100%'}
                   visibleByDefault={true}
                   placeholder={
@@ -264,8 +247,6 @@ const Footer = ({ intl }) => (
                   }
                 />
               </a>
-             
-             
             </div>
           </Grid.Column>
         </Grid.Row>
