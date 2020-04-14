@@ -2069,6 +2069,13 @@ main {
     .article-headline {
       display: inline-block;
     }
+  .thematic-areas {
+    padding: 4rem;
+    page-break-before: always;
+  }
+
+  .svg-container {
+    width: 100%;
   }
 
   a.rss-feed {
