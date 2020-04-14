@@ -1893,95 +1893,30 @@ main {
 }
 
 @media print {
-
   @page {
-    margin: 2cm 0 ;
-  }
-
-  .ui.container {
-    width: 100%; 
-    margin: 0; 
-    float: none;
-  }
-
-  .header-wrapper {
-    display: none !important;
-  }
-
-  .footerWrapper {
-    display: none !important;
-  }
-
-  .react-grid-layout {
-    width: 100% !important;
-    display: block !important;
-    height: auto !important;
+    margin: 2cm 0.5cm;
   }
 
   .react-grid-item {
-    padding: 0 10px;
-    height: auto !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
     page-break-inside: avoid;
-  }
-
-  .block-container .block.maps .video-inner,
-  .block-container .block.maps iframe {
-    min-height: 840px !important;
-    width: 100% !important;
-  }
-
-  .element-grid {
-    display: block;
-    width: 100% !important;
-
-    div {
-      display: block;
-      width: 100%;
-    }
   }
 
   a {
     page-break-inside: avoid
   }
-  
+
   blockquote {
     page-break-inside: avoid;
   }
 
-  h1, h2, h3, h4, h5, h6 { 
-    page-break-after: avoid; 
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
     page-break-inside: avoid;
   }
 
   img {
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
     page-break-after: avoid;
-  }
-
-  table, pre {
-    page-break-inside: avoid
-  }
-  
-  ul, ol, dl  {
-    page-break-before: avoid;
-  }
-
-  .react-grid-item {
-    height: auto !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    break-inside: avoid;
-  }
-
-  .block-container .block.maps .video-inner,
-  .block-container .block.maps iframe {
-    min-height: 600px;
   }
 
   table, pre {
@@ -1994,6 +1929,66 @@ main {
 
   .thematic-areas {
     page-break-before: always;
+  }
+}
+
+#main.print {
+  .ui.container {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    float: none !important;
+    display: block !important;
+    position: relative !important;
+  }
+
+  .header-wrapper {
+    display: none !important;
+  }
+
+  .footerWrapper {
+    display: none !important;
+  }
+
+  .react-grid-layout {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .react-grid-item {
+    padding: 0 !important;
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 756px !important;
+  }
+
+  .react-grid-item .block-container .block.maps .video-inner,
+  .react-grid-item .block-container .block.maps iframe {
+    height: 840px !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .element-grid {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    div {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .thematic-areas {
+    width: 756px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
   }
 }
 
