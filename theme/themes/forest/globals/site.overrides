@@ -2153,3 +2153,10 @@ main {
 /**
   * END NEWS STYLE
   */
+
+
+.ui.placeholder.header-image {
+  .rectangular {
+      padding-top: 45% !important;
+  }
+}
