@@ -72,7 +72,7 @@ class DatetimeWidget extends Component {
   constructor(props) {
     super(props);
 
-    let datetime = moment().utc();
+    let datetime = null;
 
     if (this.props.value) {
       // check if datetime has timezone, otherwise assumes it's UTC
