@@ -18,11 +18,8 @@ import landMonitoringLogo from './landmonitoringservice.png'
 import biseLogo from './biselogo.png'
 import wiseLogo from './WISE.png'
 import ccsLogo from './climateChange.svg'
-import drmkcLogo from './drmkc.png'
-
-import {
-  BodyClass,
-} from '@plone/volto/helpers';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 
 const messages = defineMessages({
   copyright: {
@@ -37,7 +34,7 @@ const messages = defineMessages({
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component
  */
-const Footer = ({ intl }) => (
+const Footer = ({ intl, token }) => (
   <Segment
     role="contentinfo"
     vertical
@@ -72,10 +69,20 @@ const Footer = ({ intl }) => (
                 </a>
             </li>
             <li>
-              <a className="item" href={`https://status.eea.europa.eu/`} target="blank">
+              <a className={`item ${token ? "" : "separated"}`} href={`https://status.eea.europa.eu/`} target="blank">
                 EEA Systems Status
                 </a>
             </li>
+            {!token &&
+              <li>
+                <Link className="item " to="/login">
+                  <FormattedMessage
+                    id="login"
+                    defaultMessage="Login"
+                  />
+                </Link>
+              </li>
+            }
           </ul>
         </div>
         <Grid.Row columns={3}>
@@ -266,4 +273,12 @@ Footer.propTypes = {
    */
 };
 
-export default injectIntl(Footer);
+
+export default compose(
+  injectIntl,
+  connect(
+    state => ({
+      token: state.userSession.token,
+    }),
+  ),
+)(Footer);
