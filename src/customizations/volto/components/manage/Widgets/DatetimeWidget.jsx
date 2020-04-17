@@ -82,6 +82,7 @@ class DatetimeWidget extends Component {
     }
 
     if (!this.props.value && this.props.dateOnly) {
+      datetime = moment().utc();
       datetime.set(defaultTimeDateOnly);
     }
 
@@ -100,14 +101,17 @@ class DatetimeWidget extends Component {
   onDateChange = date => {
     if (date)
       this.setState(
-        prevState => ({
-          datetime: prevState.datetime.set({
-            year: date.year(),
-            month: date.month(),
-            date: date.date(),
-            ...(this.props.dateOnly ? defaultTimeDateOnly : {}),
-          }),
-        }),
+        prevState => {
+          const datetime = prevState.datetime || moment().utc();
+          return {
+            datetime: datetime.set({
+              year: date.year(),
+              month: date.month(),
+              date: date.date(),
+              ...(this.props.dateOnly ? defaultTimeDateOnly : {}),
+            }),
+          };
+        },
         () => this.onDateTimeChange(),
       );
   };
@@ -120,13 +124,16 @@ class DatetimeWidget extends Component {
    */
   onTimeChange = time => {
     this.setState(
-      prevState => ({
-        datetime: prevState.datetime.set({
-          hours: time.hours(),
-          minutes: time.minutes(),
-          seconds: 0,
-        }),
-      }),
+      prevState => {
+        const datetime = prevState.datetime || moment().utc();
+        return {
+          datetime: datetime.set({
+            hours: time.hours(),
+            minutes: time.minutes(),
+            seconds: 0,
+          }),
+        };
+      },
       () => this.onDateTimeChange(),
     );
   };
