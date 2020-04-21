@@ -199,7 +199,7 @@ class View extends Component {
         // requested resource is 404, it returns undefined as status, then the
         // next statement will fail
         FoundView = views.errorViews['404'];
-      } else {
+      } else if (views.errorViews.hasOwnProperty(this.props.error.status)) {
         FoundView = views.errorViews[this.props.error.status.toString()];
       }
       if (!FoundView) {
