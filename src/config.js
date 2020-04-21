@@ -1,4 +1,6 @@
 import * as voltoConfig from '@plone/volto/config';
+import Forbidden from '@plone/volto/components/theme/Forbidden/Forbidden';
+import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
 
 import {
   applyConfig as addonsConfig,
@@ -37,6 +39,11 @@ export const settings = {
 
 export const views = {
   ...config.views,
+  errorViews: {
+    ...config.views.errorViews,
+    '403': Forbidden,
+    '401': Unauthorized,
+  }
 };
 
 export const widgets = {
