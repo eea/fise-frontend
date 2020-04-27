@@ -1990,66 +1990,6 @@ main {
     margin: 0 !important;
     background: #fff !important;
   }
-}
-
-#main.print {
-  .ui.container {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    float: none !important;
-    display: block !important;
-    position: relative !important;
-  }
-
-  .header-wrapper {
-    display: none !important;
-  }
-
-  .footerWrapper {
-    display: none !important;
-  }
-
-  .react-grid-layout {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .react-grid-item {
-    padding: 0 !important;
-    height: auto !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 756px !important;
-  }
-
-  .react-grid-item .block-container .block.maps .video-inner,
-  .react-grid-item .block-container .block.maps iframe {
-    height: 840px !important;
-    width: 100% !important;
-    padding: 0 !important;
-  }
-
-  .element-grid {
-    position: relative;
-    display: block;
-    width: 100%;
-
-    div {
-      position: relative;
-      display: block;
-      width: 100%;
-    }
-  }
-
-  .thematic-areas {
-    width: 756px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    background: #fff !important;
-  }
 
   .svg-container {
     width: 100%;
