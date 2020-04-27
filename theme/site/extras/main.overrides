@@ -2,14 +2,14 @@
             Theme
 *******************************/
 
-@type: 'extra';
-@element: 'main';
+// @type: 'extra';
+// @element: 'main';
 
-@import (multiple) '../../theme.config';
+// @import (multiple) '../../theme.config';
 
-// Extras (third party libs)
-@import (less) '~hamburgers/dist/hamburgers.css';
-@import (less) '~react-toastify/dist/ReactToastify.css';
+// // Extras (third party libs)
+// @import (less) '~hamburgers/dist/hamburgers.css';
+// @import (less) '~react-toastify/dist/ReactToastify.css';
 
 // General Styling
 
@@ -268,9 +268,9 @@ button {
 }
 
 // @import 'utils';
-@import 'toolbar';
-@import 'draftjs';
-@import 'blocks';
-@import 'sidebar';
+// @import 'toolbar';
+// @import 'draftjs';
+// @import 'blocks';
+// @import 'sidebar';
 
-.loadUIOverrides();
+// .loadUIOverrides();
