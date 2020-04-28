@@ -23,6 +23,7 @@
       position: relative;
       height: 105px;
       flex-grow: 1;
+      left: unset;
     }
   
     .slider-slide {
@@ -99,7 +100,7 @@
       // right: -50px;
       bottom: 0;
       width: 223px;
-  
+      display: block;
       .image-gallery-thumbnails {
         height: 100%;
         padding: 0;
