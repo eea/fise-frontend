@@ -567,3 +567,19 @@ body {
         }
     }
 }
+
+.navigation,
+.tools {
+  .ui.secondary.pointing.menu {
+    .item {
+      padding-top: @relativeBig;
+      margin: 0;
+      text-transform: uppercase;
+
+      @media only screen and (min-width: @largestTabletScreen) {
+        padding: .875em .8125em;
+        margin: 0;
+      }
+    }
+  }
+}
