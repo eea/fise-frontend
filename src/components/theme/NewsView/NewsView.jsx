@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
-import { Container } from 'semantic-ui-react';
+import { Container, Dropdown, Menu, Pagination } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import { Link } from 'react-router-dom'
 import NewsItem from './NewsItem';
@@ -37,8 +37,6 @@ const getTitle = (propsLocation) => {
 }
 
 const NewsView = (props) => {
-  const [show, setShow] = useState(3);
-  const limit = 3;
   const grid = {
     phone: 'twelve',
     tablet: 'twelve',
@@ -47,35 +45,115 @@ const NewsView = (props) => {
   };
   const title = getTitle(props.location);
   const items = getItems(props.content.items, title.lowerCase);
+  
+  if (!items) return (<h1>{ title.capitalized }</h1>);
+
   const rssButton = (
     <Link className="rss-feed" to='/rss' color="teal">
       <span>Subscribe via RSS</span>
       <Icon name={rss} size="14px" />
     </Link>
   );
-  if (!items) return (<h1>{ title.capitalized }</h1>);
+
+  const itemsByYear = {};
+  const yearOptions = [];
+
+  items.forEach(item => {
+    let year;
+    if (item.start) year = new Date(item.start).getFullYear();    //  For events
+    else if (item.date) year = new Date(item.date).getFullYear(); //  For news
+    if(!itemsByYear[year]) itemsByYear[year] = [];
+    itemsByYear[year].push(item)
+  })
+
+  Object.keys(itemsByYear).sort((a, b) => (b - a)).forEach((year, index) => {
+    yearOptions.push({key: index, text: year, value: year})
+  })
+  
+  const [state, setState] = useState({
+    selectedYear: yearOptions[0].value,
+    pagination: {
+      page: 1,
+      selectedItemsPerPage: 2,
+      totalItems: itemsByYear[yearOptions[0].value].length,
+      itemsPerPage: [
+        {key: 0, text: '2', value: 2},
+        {key: 1, text: '10', value: 10},
+        {key: 2, text: '25', value: 25}
+      ],
+    }
+  })
+
+  const onSelectedYearChange = (event, data) => {
+    const selectedYear = data.value
+    const pagination = {
+      ...state.pagination,
+      page: 1,
+      totalItems: itemsByYear[data.value].length
+    }
+    setState({selectedYear, pagination})
+  }
+
+  const onPageChange = (event, data) => {
+    const pagination = {
+      ...state.pagination,
+      page: data.activePage,
+    }
+    setState({
+      selectedYear: state.selectedYear,
+      pagination
+    })
+  }
+
+  const onSelectedItemsPerPageChange = (event, data) => {
+    const pagination = {
+      ...state.pagination,
+      selectedItemsPerPage: data.value,
+    }
+    setState({
+      selectedYear: state.selectedYear,
+      pagination
+    })
+  }
+
   return (
     <Container>
       <Helmet title={ title.capitalized } />
-      <div className="news-page-content">
-        <BodyClass />
-        { rssButton }
-        <div className={`news-wrapper-view ${props.layout_type}-${grid[props.layout_type]}`}>
-          { items && items.map((item, index) => {
-            if (index < show) return (<NewsItem key={item.id} item={item}  />)
+      <div className="news-wrapper-view">
+        <div className="toolbar">
+          Year: 
+          <Dropdown
+            value={state.selectedYear}
+            options={yearOptions}
+            onChange={onSelectedYearChange}
+            selection
+            compact
+          />
+          Items per page: 
+          <Dropdown
+            value={state.pagination.selectedItemsPerPage}
+            options={state.pagination.itemsPerPage}
+            onChange={onSelectedItemsPerPageChange}
+            selection
+            compact
+          />
+        </div>
+        <div className={`${props.layout_type}-${grid[props.layout_type]}`}>
+          { itemsByYear[state.selectedYear] && itemsByYear[state.selectedYear].map((item, index) => {
+            if (
+              index >= (state.pagination.page - 1) * state.pagination.selectedItemsPerPage
+              && index < state.pagination.page * state.pagination.selectedItemsPerPage
+            ) return (<NewsItem key={item.id} item={item}  />)
           })}
         </div>
-        { items.length > limit && show <= limit && (
-            <button className="news-expand-button" onClick={() => { setShow(items.length) }}>
-              <span />
-              <Icon name={downKey} size="60px" color="#E7E7E7" />
-              <span />
-            </button>
-          )
-        }
+        <Pagination
+          activePage={state.page}
+          totalPages={Math.ceil(state.pagination.totalItems / state.pagination.selectedItemsPerPage)}
+          onPageChange={onPageChange}
+        />
       </div>
     </Container>
-  );
+  )
 }
 
 export default WidthBasedLayoutProvider(NewsView);
