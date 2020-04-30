@@ -280,6 +280,13 @@
     }
   }
 
+  // Hotfix because we can't really do anything else for this situation
+  @media only screen and (min-width: 1200px) and (max-width: 1219px) {
+    .hamburger-wrapper.computer.hidden.large.screen.hidden.widescreen.hidden {
+      display: block!important;
+    }
+  }
+
   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
     .contentWidthMedia(@computerWidth, @computerGutter, -30px);
 
