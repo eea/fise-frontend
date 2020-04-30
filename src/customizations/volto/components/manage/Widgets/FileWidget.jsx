@@ -28,7 +28,7 @@ const FileWidget = ({
   fieldSet,
 }) => {
   const fileInput = React.useRef(null);
-    return ''
+
   return (
     <Form.Field
       inline
