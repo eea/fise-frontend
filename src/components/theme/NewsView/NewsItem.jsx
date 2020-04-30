@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Image, Container } from 'semantic-ui-react';
 import {
@@ -13,21 +13,22 @@ import { getBasePath } from '~/helpers';
 const NewsItem = ({ item }) => {
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
-  console.log(hasBlocksData(item));
-  console.log(hasBlocksData(item));
-  const prettyDate = time => {
-    let date = new Date(time);
-    const dtf = new Intl.DateTimeFormat('en', {
-      year: 'numeric',
-      month: 'short',
+
+  const prettyDate = (time) => {
+  let date = new Date(time)
+  const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit' })
+  const  [{ value: mo },,{ value: da },,{ value: ye }] = dtf.formatToParts(date)
+    return `${mo} ${da} ${ye}`
+  };
+
+  const prettyDateTime = (time) => {
+    return Intl.DateTimeFormat('en', {
+      weekday: 'short',
       day: '2-digit',
+      month: 'short',
       hour: '2-digit',
-    });
-    const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(
-      date,
-    );
-    console.log(dtf.formatToParts(date));
-    return `${mo} ${da} ${ye}`;
+      minute: '2-digit'
+    }).format(new Date(time));
   };
 
   const itemPath = urlString => {
@@ -48,10 +49,28 @@ const NewsItem = ({ item }) => {
           style={{ marginBottom: '1rem', marginTop: '-1rem' }}
           className={'meta-data'}
         >
-          {item.date && (
+          {item.date && !(item.start && item.end) && (
             <div className="text-tab">
               <span className="format-text">Published: </span>
               <span className="format-type">{prettyDate(item.date)}</span>
+            </div>
+          )}
+          {item.start && item.end && (
+            <div className="event-dates">
+              <div className="text-tab">
+                <span className="format-text">Starting: </span>
+                <span className="format-type">{prettyDateTime(item.start)}</span>
+              </div>
+              <div className="text-tab">
+                <span className="format-text">Ending: </span>
+                <span className="format-type">{prettyDateTime(item.end)}</span>
+              </div>
+            </div>
+          )}
+          {item.location && (
+            <div className="text-tab">
+              <span className="format-text">Location: </span>
+              <span className="format-type">{item.location}</span>
             </div>
           )}
         </div>
