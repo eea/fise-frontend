@@ -48,7 +48,6 @@ class Header extends Component {
     folderHeader: PropTypes.any,
     defaultHeaderImage: PropTypes.any,
     frontPageSlides: PropTypes.array,
-    // getFrontpageSlides: PropTypes.func.isRequired,
   };
 
   /**
@@ -95,12 +94,6 @@ class Header extends Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   this.setState({
-  //     isHomepage: false
-  //   })
-  // }
-
   /**
    * Render method.
    * @method render
@@ -108,11 +101,7 @@ class Header extends Component {
    */
   render() {
     const defaultHeaderImage = this.props.defaultHeaderImage;
-    // this.props.defaultHeaderImage &&
-    // this.props.defaultHeaderImage.length &&
-    // this.props.defaultHeaderImage[0].image;
     let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
-    // console.log(defaultHeaderImage)
     return (
       <div className="header-wrapper" role="banner">
         <Sticky enabled={true} top={0}>
@@ -144,7 +133,7 @@ class Header extends Component {
           <div
             className={`header-bg ${
               this.state.isHomepage ? 'homepage' : 'contentpage'
-            }`}
+              }`}
           >
             <img src={HeaderBackground} alt="" />
           </div>
@@ -152,37 +141,23 @@ class Header extends Component {
           {this.state.isHomepage ? (
             <HomepageSlider items={this.props.frontpage_slides} />
           ) : (
-            <div style={{ position: 'relative' }}>
-              <Breadcrumbs pathname={this.props.pathname} />
+              <div style={{ position: 'relative' }}>
+                <Breadcrumbs pathname={this.props.pathname} />
 
-              <HeaderImage url={headerImageUrl} />
-            </div>
-          )}
+                <HeaderImage url={headerImageUrl} />
+              </div>
+            )}
         </Container>
-        {!this.props.token && (
-          <Portal node={__CLIENT__ && document.querySelector('#links_column')}>
-            <div className="tools">
-              <Anontools />
-            </div>
-          </Portal>
-        )}
       </div>
     );
   }
 }
 
-// export default connect((state) => ({
-//   token: state.userSession.token,
-// }))(Header);
-
 export default compose(
   connect(
     state => ({
-      // frontPageSlides: state.frontpage_slides.items,
       token: state.userSession.token,
-      // defaultHeaderImage: state.default_header_image.items,
       folder_header: state.folder_header.items,
     }),
-    // { getFrontpageSlides },
   ),
 )(Header);
