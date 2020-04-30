@@ -14,6 +14,7 @@ const getItems = (propsItems, type = null) => {
     date: item.effective,
     start: item.start,
     end: item.end,
+    location: item.location,
     type: item['@type'],
     title: item.title,
     image: item.image ? item.image.download : null,

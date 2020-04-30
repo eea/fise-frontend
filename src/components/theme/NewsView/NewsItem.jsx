@@ -55,16 +55,22 @@ const NewsItem = ({ item }) => {
               <span className="format-type">{prettyDate(item.date)}</span>
             </div>
           )}
-          {item.start && (
-            <div className="text-tab">
-              <span className="format-text">Starting: </span>
-              <span className="format-type">{prettyDateTime(item.start)}</span>
+          {item.start && item.end && (
+            <div className="event-dates">
+              <div className="text-tab">
+                <span className="format-text">Starting: </span>
+                <span className="format-type">{prettyDateTime(item.start)}</span>
+              </div>
+              <div className="text-tab">
+                <span className="format-text">Ending: </span>
+                <span className="format-type">{prettyDateTime(item.end)}</span>
+              </div>
             </div>
           )}
-          {item.end && (
+          {item.location && (
             <div className="text-tab">
-              <span className="format-text">Ending: </span>
-              <span className="format-type">{prettyDateTime(item.end)}</span>
+              <span className="format-text">Location: </span>
+              <span className="format-type">{item.location}</span>
             </div>
           )}
         </div>
