@@ -22,7 +22,7 @@ import {
   Footer,
   Header,
   OutdatedBrowser,
-  AppExtras
+  AppExtras,
 } from '@plone/volto/components';
 import { BodyClass, getBaseUrl, getView } from '@plone/volto/helpers';
 import {
@@ -114,8 +114,8 @@ class App extends Component {
   render() {
     const path = getBaseUrl(this.props.pathname);
     const action = getView(this.props.pathname);
-    const headerImage = this.props.defaultHeaderImage;
-    // console.log('navigation in appjsx', this.props.navigation)
+    const headerImage =
+      this.props.content.image?.download || this.props.defaultHeaderImage;
     return (
       <Fragment>
         <BodyClass className={`view-${action}view`} />
@@ -161,7 +161,7 @@ class App extends Component {
             />
           }
         />
-         <AppExtras />
+        <AppExtras />
       </Fragment>
     );
   }
