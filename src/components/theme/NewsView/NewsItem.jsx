@@ -73,6 +73,12 @@ const NewsItem = ({ item }) => {
               <span className="format-type">{item.location}</span>
             </div>
           )}
+          {item.year && (
+            <div className="text-tab">
+              <span className="format-text">Year: </span>
+              <span className="format-type">{item.year}</span>
+            </div>
+          )}
         </div>
         <div className="article-content">
           {item.description && (
