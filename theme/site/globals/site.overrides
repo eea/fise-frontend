@@ -1839,6 +1839,49 @@ main {
     }
   }
 }
+
+.news-page-content .news-wrapper-view article .article-body {
+  .meta-data {
+    padding: 0;
+  }
+
+  .article-content {
+    padding: 0;
+    font-size: 14px;
+  }
+} 
+
+.news-expand-button {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.news-expand-button {
+  span {
+    width: 50%;
+    height: 1px;
+    background: #E7E7E7;
+  }
+
+  &:hover {
+    span {
+      background : #005454;
+    }
+
+    .icon {
+      fill: #005454 !important;
+    }
+  }
+}
+.text-center {
+  text-align: center;
+}
 /**
   * END NEWS STYLE
   */
