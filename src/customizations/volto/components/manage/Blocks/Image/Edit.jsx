@@ -23,6 +23,7 @@ import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-ima
 import clearSVG from '@plone/volto/icons/clear.svg';
 import navTreeSVG from '@plone/volto/icons/nav.svg';
 import aheadSVG from '@plone/volto/icons/ahead.svg';
+import uploadSVG from '@plone/volto/icons/upload.svg';
 
 const messages = defineMessages({
   ImageBlockInputPlaceholder: {
@@ -187,6 +188,27 @@ class Edit extends Component {
     });
   };
 
+  onUploadImage = ({target}) => {
+   const file = target.files[0];
+    this.setState({
+      uploading: true,
+    });
+    readAsDataURL(file).then(data => {
+      const fields = data.match(/^data:(.*);(.*),(.*)$/);
+      this.props.createContent(getBaseUrl(this.props.pathname), {
+        '@type': 'Image',
+        title: file.name,
+        image: {
+          data: fields[3],
+          encoding: fields[2],
+          'content-type': fields[1],
+          filename: file.name,
+        },
+      });
+    });
+
+  }
+
   /**
    * Keydown handler on Variant Menu Form
    * This is required since the ENTER key is already mapped to a onKeyDown
@@ -230,10 +252,7 @@ class Edit extends Component {
         {data.url ? (
           <img
             className={cx({ 'full-width': data.align === 'full' })}
-            style={{
-              width: data.width ? data.width + 'px' : 'auto',
-              height: data.height ? data.height + 'px' : 'auto',
-            }}
+           
             src={
               data.url.includes(settings.apiPath)
                 ? `${flattenToAppURL(data.url)}/@@images/image`
@@ -242,76 +261,89 @@ class Edit extends Component {
             alt={data.alt || ''}
           />
         ) : (
-          <div>
-            <Dropzone onDrop={this.onDrop} className="dropzone">
-              <Message>
-                {this.state.uploading && (
-                  <Dimmer active>
-                    <Loader indeterminate>Uploading image</Loader>
-                  </Dimmer>
-                )}
-                <center>
-                  <img src={imageBlockSVG} alt="" />
-                  <div className="toolbar-inner">
-                    <Button.Group>
-                      <Button
-                        basic
-                        icon
-                        onClick={e => {
-                          e.stopPropagation();
-                          this.props.openObjectBrowser();
-                        }}
-                      >
-                        <Icon name={navTreeSVG} size="24px" />
-                      </Button>
-                    </Button.Group>
-                    <Input
-                      onKeyDown={this.onKeyDownVariantMenuForm}
-                      onChange={this.onChangeUrl}
-                      placeholder={this.props.intl.formatMessage(
-                        messages.ImageBlockInputPlaceholder,
-                      )}
-                      value={this.state.url}
-                      // Prevents propagation to the Dropzone and the opening
-                      // of the upload browser dialog
-                      onClick={e => e.stopPropagation()}
-                    />
-                    {this.state.url && (
+            <div>
+              <Dropzone disableClick onDrop={this.onDrop}  className="dropzone">
+                <Message>
+                  {this.state.uploading && (
+                    <Dimmer active>
+                      <Loader indeterminate>Uploading image</Loader>
+                    </Dimmer>
+                  )}
+                  <center>
+                    <img src={imageBlockSVG} alt="" />
+                    <div className="toolbar-inner">
                       <Button.Group>
                         <Button
                           basic
-                          className="cancel"
+                          icon
                           onClick={e => {
                             e.stopPropagation();
-                            this.setState({ url: '' });
+                            this.props.openObjectBrowser();
                           }}
                         >
-                          <Icon name={clearSVG} size="30px" />
+                          <Icon name={navTreeSVG} size="24px" />
                         </Button>
                       </Button.Group>
-                    )}
-                    <Button.Group>
-                      <Button
-                        basic
-                        primary
-                        onClick={e => {
-                          e.stopPropagation();
-                          this.onSubmitUrl();
-                        }}
-                      >
-                        <Icon name={aheadSVG} size="30px" />
-                      </Button>
-                    </Button.Group>
-                  </div>
-                </center>
-              </Message>
-            </Dropzone>
-          </div>
-        )}
+                      <Button.Group>
+                        <label className="ui button basic icon">
+
+                          <Icon name={uploadSVG} size="24px" />
+                          <input
+                            type="file"
+                            onChange={this.onUploadImage}
+                            style={{ display: 'none' }}
+                          />
+
+                        </label>
+                      </Button.Group>
+                      <Input
+                        onKeyDown={this.onKeyDownVariantMenuForm}
+                        onChange={this.onChangeUrl}
+                        placeholder={this.props.intl.formatMessage(
+                          messages.ImageBlockInputPlaceholder,
+                        )}
+                        value={this.state.url}
+                        // Prevents propagation to the Dropzone and the opening
+                        // of the upload browser dialog
+                        onClick={e => e.stopPropagation()}
+                      />
+                      {this.state.url && (
+                        <Button.Group>
+                          <Button
+                            basic
+                            className="cancel"
+                            onClick={e => {
+                              e.stopPropagation();
+                              this.setState({ url: '' });
+                            }}
+                          >
+                            <Icon name={clearSVG} size="30px" />
+                          </Button>
+                        </Button.Group>
+                      )}
+                      <Button.Group>
+                        <Button
+                          basic
+                          primary
+                          onClick={e => {
+                            e.stopPropagation();
+                            this.onSubmitUrl();
+                          }}
+                        >
+                          <Icon name={aheadSVG} size="30px" />
+                        </Button>
+                      </Button.Group>
+                    </div>
+                  </center>
+                </Message>
+              </Dropzone>
+            </div>
+          )
+        }
         <SidebarPortal selected={this.props.selected}>
           <ImageSidebar {...this.props} resetSubmitUrl={this.resetSubmitUrl} />
         </SidebarPortal>
-      </div>
+      </div >
     );
   }
 }
