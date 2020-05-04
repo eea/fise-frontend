@@ -16,71 +16,77 @@ import { flattenToAppURL } from '@plone/volto/helpers';
  * @class View
  * @extends Component
  */
-const View = ({ data, detached }) => (
-  <p
-    className={cx(
-      'block image align',
-      {
-        center: !Boolean(data.align),
-        detached,
-      },
-      data.align,
-    )}
-  >
-    {data.url && (
-      <>
-        {(() => {
-          const image = (
-            <img
-              className={cx({ 'full-width': data.align === 'full' })}
-              style={{
-                width: data.width ? data.width + 'px' : 'auto',
-                height: data.height ? data.height + 'px' : 'auto',
-                marginLeft:
-                  data.inLeftColumn && data.width
-                    ? `-${parseInt(data.width) + 10}px`
-                    : '0',
-                marginRight: data.inLeftColumn ? '0!important' : '1rem',
-              }}
-              src={
-                data.url.includes(settings.apiPath)
-                  ? `${flattenToAppURL(data.url)}/@@images/image`
-                  : data.url
+const View = ({ data, detached }) => {
+
+  const imgWidth = () => {
+    if (data.align === "full") { return "100%" }
+    if (data.width) { return data.width + "px" } else { return 'auto' }
+  }
+
+  return (
+    <React.Fragment>
+
+      {data.url && (
+        <>
+          {(() => {
+            const image = (
+              <img
+                className={cx('block image align',
+                  {
+                    center: !Boolean(data.align),
+                    detached,
+                  },
+                  data.align,
+                )}
+                style={{
+                  width: imgWidth(),
+                  height: data.height ? data.height + 'px' : 'auto',
+                  display: "block",
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  float: data.align === 'center' ? 'none' : data.align,
+                }}
+                src={
+                  data.url.includes(settings.apiPath)
+                    ? `${flattenToAppURL(data.url)}/@@images/image`
+                    : data.url
+                }
+                alt={data.alt || ''}
+              />
+            );
+            if (data.href) {
+              if (
+                (data.href.startsWith('http') || data.href.startsWith('https')) &&
+                !data.href.includes(settings.apiPath)
+              ) {
+                return (
+                  <a
+                    target={data.openLinkInNewTab ? '_blank' : null}
+                    href={data.href}
+                  >
+                    {image}
+                  </a>
+                );
+              } else {
+                return (
+                  <Link
+                    to={data.href.replace(settings.apiPath, '')}
+                    target={data.openLinkInNewTab ? '_blank' : null}
+                  >
+                    {image}
+                  </Link>
+                );
               }
-              alt={data.alt || ''}
-            />
-          );
-          if (data.href) {
-            if (
-              (data.href.startsWith('http') || data.href.startsWith('https')) &&
-              !data.href.includes(settings.apiPath)
-            ) {
-              return (
-                <a
-                  target={data.openLinkInNewTab ? '_blank' : null}
-                  href={data.href}
-                >
-                  {image}
-                </a>
-              );
             } else {
-              return (
-                <Link
-                  to={data.href.replace(settings.apiPath, '')}
-                  target={data.openLinkInNewTab ? '_blank' : null}
-                >
-                  {image}
-                </Link>
-              );
+              return image;
             }
-          } else {
-            return image;
-          }
-        })()}
-      </>
-    )}
-  </p>
-);
+          })()}
+        </>
+      )}
+    </React.Fragment>
+
+  )
+};
 
 /**
  * Property types.

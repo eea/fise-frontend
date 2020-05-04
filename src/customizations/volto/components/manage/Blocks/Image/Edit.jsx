@@ -188,8 +188,8 @@ class Edit extends Component {
     });
   };
 
-  onUploadImage = ({target}) => {
-   const file = target.files[0];
+  onUploadImage = ({ target }) => {
+    const file = target.files[0];
     this.setState({
       uploading: true,
     });
@@ -231,6 +231,12 @@ class Edit extends Component {
 
   node = React.createRef();
 
+   getImgWidth = () => {
+     const data = this.props.data;
+    if (data.align === "full") { return "100%" }
+    if (data.width) { return data.width + "px" } else { return 'auto' }
+  }
+
   /**
    * Render method.
    * @method render
@@ -240,21 +246,21 @@ class Edit extends Component {
     const { data } = this.props;
 
     return (
-      <div
-        className={cx(
-          'block image align',
-          {
-            center: !Boolean(data.align),
-          },
-          data.align,
-        )}
-      >
+      <React.Fragment>
         {data.url ? (
           <img
-            className={cx({ 'full-width': data.align === 'full' })}
-            style={{	
-              width: data.width ? data.width + 'px' : 'auto',	
-              height: data.height ? data.height + 'px' : 'auto',	
+            className={cx('block image align',
+              {
+                center: !Boolean(data.align),
+              },
+              data.align)}
+            style={{
+              width: this.getImgWidth(),
+              height: data.height ? data.height + 'px' : 'auto',
+              float: data.align === 'center' ? 'none' : data.align,
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto'
             }}
             src={
               data.url.includes(settings.apiPath)
@@ -265,7 +271,7 @@ class Edit extends Component {
           />
         ) : (
             <div>
-              <Dropzone disableClick onDrop={this.onDrop}  className="dropzone">
+              <Dropzone disableClick onDrop={this.onDrop} className="dropzone">
                 <Message>
                   {this.state.uploading && (
                     <Dimmer active>
@@ -273,7 +279,10 @@ class Edit extends Component {
                     </Dimmer>
                   )}
                   <center>
-                    <img src={imageBlockSVG} alt="" />
+                    <img style={{
+                      float: "left",
+                      marginRight: "10px"
+                    }} src={imageBlockSVG} alt="" />
                     <div className="toolbar-inner">
                       <Button.Group>
                         <Button
@@ -346,7 +355,7 @@ class Edit extends Component {
         <SidebarPortal selected={this.props.selected}>
           <ImageSidebar {...this.props} resetSubmitUrl={this.resetSubmitUrl} />
         </SidebarPortal>
-      </div >
+      </React.Fragment >
     );
   }
 }
