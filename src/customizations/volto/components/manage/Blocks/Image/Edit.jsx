@@ -252,7 +252,10 @@ class Edit extends Component {
         {data.url ? (
           <img
             className={cx({ 'full-width': data.align === 'full' })}
-           
+            style={{	
+              width: data.width ? data.width + 'px' : 'auto',	
+              height: data.height ? data.height + 'px' : 'auto',	
+            }}
             src={
               data.url.includes(settings.apiPath)
                 ? `${flattenToAppURL(data.url)}/@@images/image`
