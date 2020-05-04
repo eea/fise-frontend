@@ -43,8 +43,8 @@ const getTitle = propsLocation => {
 };
 
 const NewsView = props => {
-  const [show, setShow] = useState(3);
-  const limit = 3;
+  const [show, setShow] = useState(6);
+  const limit = 6;
   const grid = {
     phone: 'twelve',
     tablet: 'twelve',
