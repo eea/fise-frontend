@@ -91,19 +91,20 @@ const NewsView = props => {
             Object.keys(itemsByYear)
               .sort((a, b) => b - a)
               .map((year, yearIndex) => {
-                return (
-                  <React.Fragment>
-                    {year < new Date().getFullYear() && show > limit ? (
-                      <h2 className="text-center">{year}</h2>
-                    ) : (
-                      ''
-                    )}
-                    {itemsByYear[year].map((item, index) => {
-                      if (item.initial_index < show)
-                        return <NewsItem key={item.id} item={item} />;
-                    })}
-                  </React.Fragment>
-                );
+                return itemsByYear[year].map((item, index) => {
+                  if (item.initial_index < show) {
+                    return (
+                      <React.Fragment>
+                        {index === 0 ? (
+                          <h2 className="text-center">{year}</h2>
+                        ) : (
+                          ''
+                        )}
+                        <NewsItem key={item.id} item={item} />
+                      </React.Fragment>
+                    );
+                  }
+                });
               })}
         </div>
         {items.length > limit && show <= limit && (
