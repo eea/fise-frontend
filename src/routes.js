@@ -32,11 +32,6 @@ const routes = [
         component: SiteMap,
         exact: true,
       },
-      {
-        path: '/rss',
-        component: RssView,
-        exact: true,
-      },
       // addon routes have a higher priority then default routes
       ...(addonRoutes || []),
 
