@@ -9,7 +9,6 @@ import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
 import { addonRoutes } from '~/config';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
-import RssView from '~/components/theme/RssView/RssView';
 
 /**
  * Routes array.
