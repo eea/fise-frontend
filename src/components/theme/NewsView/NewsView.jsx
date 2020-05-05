@@ -57,7 +57,7 @@ const NewsView = props => {
   if (!items) return <h1>{title.capitalized}</h1>;
 
   const rssButton = (
-    <Link className="rss-feed" to="/rss" color="teal">
+    <Link className="rss-feed" to="rss-feed" color="teal">
       <span>Subscribe via RSS</span>
       <Icon name={rss} size="14px" />
     </Link>
