@@ -1894,7 +1894,7 @@ main {
 
 @media print {
   @page {
-    margin: 0 0.5cm 1cm 0.5cm;
+    margin: 1.5cm 0.5cm 1.5cm 0.5cm;
   }
 
   #toolbar {
@@ -1940,21 +1940,42 @@ main {
   .ui.container {
     width: 100% !important;
     height: 100% !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 0 !important;
     float: none !important;
     display: block !important;
     position: relative !important;
   }
+  .ui.content-area {
+    width: 756px !important;
+  }
   .header-wrapper {
     background: transparent;
-    display: block !important;
-    .header-bg.contentpage, .ui.breadcrumbs {
+    padding: 0 1rem !important;
+    width: 756px !important;
+    display: flex !important;
+    flex-flow: row !important;
+    background: #fff !important;
+    .ui.container {
+      height: auto !important;
+    }
+    > * {
+      padding: 0 10px !important;
+    }
+    > .ui.container {
+      align-self: stretch;
+      align-items: center;
+      display: flex !important;
+      padding: 0 10px !important;
+      justify-content: flex-end;
+      background: #fff;
+    }
+    .header-bg.contentpage, .ui.breadcrumbs, .placeholder.header-image {
       display: none !important;
     }
     .header-image-wrapper {
       align-items: start;
-      padding: 36px;
+      padding: 0 36px;
       height: auto;
       .header-image {
         width: 756px;
@@ -1990,12 +2011,12 @@ main {
         .navigation {
           display: none;
         }
+        .logo-nav-wrapper {
+          margin-top: 0;
+          padding: 0;
+        }
       }
     }
-  }
-
-  .logo-nav-wrapper {
-    margin-top: 0;
   }
 
   .footerWrapper {
