@@ -1954,7 +1954,7 @@ main {
     padding: 0 1rem !important;
     width: 756px !important;
     display: flex !important;
-    flex-flow: row !important;
+    flex-flow: column !important;
     background: #fff !important;
     .ui.container {
       height: auto !important;
@@ -1967,7 +1967,7 @@ main {
       align-items: center;
       display: flex !important;
       padding: 0 10px !important;
-      justify-content: flex-end;
+      justify-content: flex-start;
       background: #fff;
     }
     .header-bg.contentpage, .ui.breadcrumbs, .placeholder.header-image {
@@ -1975,7 +1975,7 @@ main {
     }
     .header-image-wrapper {
       align-items: start;
-      padding: 0 36px;
+      padding: 0 10px;
       height: auto;
       .header-image {
         width: 756px;
