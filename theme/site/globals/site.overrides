@@ -1979,11 +1979,13 @@ main {
         h1 {
           color: #000!important;
           margin: 0!important;
+          text-align: left!important;
         }
 
         p {
           color: #000!important;
           margin: 0!important;
+          text-align: left!important;
         }
       }
     }
