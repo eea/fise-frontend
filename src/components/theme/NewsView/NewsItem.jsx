@@ -14,21 +14,48 @@ const NewsItem = ({ item }) => {
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
 
-  const prettyDate = (time) => {
-  let date = new Date(time)
-  const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit' })
-  const  [{ value: mo },,{ value: da },,{ value: ye }] = dtf.formatToParts(date)
-    return `${mo} ${da} ${ye}`
+  const prettyDate = time => {
+    let date = new Date(time);
+    const dtf = new Intl.DateTimeFormat('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+    const [{ value: da }, , { value: mo }, , { value: ye }] = dtf.formatToParts(
+      date,
+    );
+    return `${da} ${mo} ${ye}`;
   };
 
-  const prettyDateTime = (time) => {
-    return Intl.DateTimeFormat('en', {
-      weekday: 'short',
-      day: '2-digit',
-      month: 'short',
-      hour: '2-digit',
-      minute: '2-digit'
-    }).format(new Date(time));
+  const prettyDateTime = time => {
+    const dtf = Intl.DateTimeFormat('en-GB', {
+      // weekday: 'short',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false,
+      timeZone: 'Europe/Copenhagen',
+      timeZoneName: 'short',
+    });
+
+    const [
+      { value: da },
+      ,
+      { value: mo },
+      ,
+      { value: ye },
+      ,
+      { value: hh },
+      ,
+      { value: mm },
+      ,
+      { value: tz },
+      ,
+    ] = dtf.formatToParts(new Date(time));
+
+    return `${da} ${mo} ${ye} ${hh}:${mm} ${tz}`;
   };
 
   const itemPath = urlString => {
@@ -59,7 +86,9 @@ const NewsItem = ({ item }) => {
             <div className="event-dates">
               <div className="text-tab">
                 <span className="format-text">Starting: </span>
-                <span className="format-type">{prettyDateTime(item.start)}</span>
+                <span className="format-type">
+                  {prettyDateTime(item.start)}
+                </span>
               </div>
               <div className="text-tab">
                 <span className="format-text">Ending: </span>
