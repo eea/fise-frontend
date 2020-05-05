@@ -43,8 +43,8 @@ const getTitle = propsLocation => {
 };
 
 const NewsView = props => {
-  const [show, setShow] = useState(3);
-  const limit = 3;
+  const [show, setShow] = useState(6);
+  const limit = 6;
   const grid = {
     phone: 'twelve',
     tablet: 'twelve',
@@ -57,7 +57,7 @@ const NewsView = props => {
   if (!items) return <h1>{title.capitalized}</h1>;
 
   const rssButton = (
-    <Link className="rss-feed" to="/rss" color="teal">
+    <Link className="rss-feed" to="rss-feed" color="teal">
       <span>Subscribe via RSS</span>
       <Icon name={rss} size="14px" />
     </Link>

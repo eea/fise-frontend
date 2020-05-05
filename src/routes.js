@@ -9,7 +9,6 @@ import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
 import { addonRoutes } from '~/config';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
-import RssView from '~/components/theme/RssView/RssView';
 
 /**
  * Routes array.
@@ -30,11 +29,6 @@ const routes = [
       {
         path: '/sitemap',
         component: SiteMap,
-        exact: true,
-      },
-      {
-        path: '/rss',
-        component: RssView,
         exact: true,
       },
       // addon routes have a higher priority then default routes
