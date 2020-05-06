@@ -1906,7 +1906,11 @@ main {
 
 @media print {
   @page {
-    margin: 2cm 0.5cm;
+    margin: 1.5cm 0.5cm 1.5cm 0.5cm;
+  }
+
+  #toolbar {
+    display: none;
   }
 
   .react-grid-item {
@@ -1948,15 +1952,83 @@ main {
   .ui.container {
     width: 100% !important;
     height: 100% !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 0 !important;
     float: none !important;
     display: block !important;
     position: relative !important;
   }
-
+  .ui.content-area {
+    width: 756px !important;
+  }
   .header-wrapper {
-    display: none !important;
+    background: transparent;
+    padding: 0 1rem !important;
+    width: 756px !important;
+    display: flex !important;
+    flex-flow: column !important;
+    background: #fff !important;
+    .ui.container {
+      height: auto !important;
+    }
+    > * {
+      padding: 0 10px !important;
+    }
+    > .ui.container {
+      align-self: stretch;
+      align-items: center;
+      display: flex !important;
+      padding: 0 10px !important;
+      justify-content: flex-start;
+      background: #fff;
+    }
+    .header-bg.contentpage, .ui.breadcrumbs, .placeholder.header-image {
+      display: none !important;
+    }
+    .header-image-wrapper {
+      align-items: start;
+      padding: 0 10px;
+      height: auto;
+      .header-image {
+        width: 756px;
+        background-image: none !important;
+      }
+      .header-image-overlay {
+        background-color: #fff;
+      }
+      .header-image-content {
+        h1 {
+          color: #000!important;
+          margin: 0!important;
+          text-align: left!important;
+        }
+
+        p {
+          color: #000!important;
+          margin: 0!important;
+          text-align: left!important;
+        }
+      }
+    }
+    .sticky-outer-wrapper, .sticky-inner-wrapper {
+      background: transparent;
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      box-shadow: none;
+    }
+    .sticky-inner-wrapper {
+      .header {
+        background: #fff;
+        .navigation {
+          display: none;
+        }
+        .logo-nav-wrapper {
+          margin-top: 0;
+          padding: 0;
+        }
+      }
+    }
   }
 
   .footerWrapper {
