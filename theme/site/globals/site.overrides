@@ -352,9 +352,17 @@ body.has-toolbar {
 
 
 .footerLinkBar {
-  background-color: #F6F6F4;
+  background-color: transparent;
   padding: 20px;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  .release-info {
+    width: 100%;
+    text-align: right;
+    font-size: 0.9rem;
+  }
   .separated {
     border-right: 1px solid grey;
     padding-right: 15px;
