@@ -69,7 +69,7 @@ export default api => ({ dispatch, getState }) => next => action => {
               data: item.data,
               type: item.type,
               headers: item.headers,
-              external: item.external
+              external: item.external,
             }),
           ),
         )
@@ -77,7 +77,7 @@ export default api => ({ dispatch, getState }) => next => action => {
           data: request.data,
           type: request.type,
           headers: request.headers,
-          external: request.external
+          external: request.external,
         });
     actionPromise.then(
       result => {
