@@ -14,13 +14,15 @@ import { views } from '~/config';
 // import { Grid } from 'semantic-ui-react';
 import Spinner from 'volto-mosaic/components/theme/Spinner';
 
-import { Comments, Tags, Toolbar } from '@plone/volto/components';
+import { Comments, Tags, Toolbar, Icon } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
 import {
   BodyClass,
   // getBaseUrl,
   getLayoutFieldname,
 } from '@plone/volto/helpers';
+import printer from '@plone/volto/icons/printer.svg';
+import screen from '@plone/volto/icons/screen.svg';
 
 // import renderPortletManager from 'volto-addons/Portlets/utils';
 
@@ -186,6 +188,13 @@ class View extends Component {
       .replace(')', '')
       .toLowerCase();
 
+  printDocument = () => {
+    document.getElementById('main').classList.add('print')
+    setTimeout(() => {
+      window.print()
+    }, 1000)
+    window.onafterprint = () => document.getElementById('main').classList.remove('print')
+  }
   /**
    * Render method.
    * @method render
@@ -247,6 +256,9 @@ class View extends Component {
           token={this.props.token}
           history={this.props.history}
         />
+        <div className="print-button">
+          <Icon onClick={this.printDocument} name={printer} size="32px" />
+        </div>
 
         {this.props.content.subjects &&
           this.props.content.subjects.length > 0 && (

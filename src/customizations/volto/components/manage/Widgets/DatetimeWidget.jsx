@@ -77,12 +77,12 @@ class DatetimeWidget extends Component {
     if (this.props.value) {
       // check if datetime has timezone, otherwise assumes it's UTC
       datetime = this.props.value.match(/T(.)*(-|\+|Z)/g)
-        ? moment(this.props.value).utc()
-        : moment(`${this.props.value}Z`).utc();
+        ? moment(this.props.value).utcOffset(2)
+        : moment(`${this.props.value}Z`).utcOffset(2);
     }
 
     if (!this.props.value && this.props.dateOnly) {
-      datetime = moment().utc();
+      datetime = moment().utcOffset(2);
       datetime.set(defaultTimeDateOnly);
     }
 
@@ -102,7 +102,7 @@ class DatetimeWidget extends Component {
     if (date)
       this.setState(
         prevState => {
-          const datetime = prevState.datetime || moment().utc();
+          const datetime = prevState.datetime || moment().utcOffset(2);
           return {
             datetime: datetime.set({
               year: date.year(),
@@ -125,7 +125,7 @@ class DatetimeWidget extends Component {
   onTimeChange = time => {
     this.setState(
       prevState => {
-        const datetime = prevState.datetime || moment().utc();
+        const datetime = prevState.datetime || moment().utcOffset(2);
         return {
           datetime: datetime.set({
             hours: time.hours(),

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Image, Container } from 'semantic-ui-react';
 import {
@@ -13,21 +13,49 @@ import { getBasePath } from '~/helpers';
 const NewsItem = ({ item }) => {
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
-  console.log(hasBlocksData(item));
-  console.log(hasBlocksData(item));
+
   const prettyDate = time => {
     let date = new Date(time);
-    const dtf = new Intl.DateTimeFormat('en', {
+    const dtf = new Intl.DateTimeFormat('en-GB', {
+      day: 'numeric',
+      month: 'long',
       year: 'numeric',
-      month: 'short',
-      day: '2-digit',
-      hour: '2-digit',
     });
-    const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(
+    const [{ value: da }, , { value: mo }, , { value: ye }] = dtf.formatToParts(
       date,
     );
-    console.log(dtf.formatToParts(date));
-    return `${mo} ${da} ${ye}`;
+    return `${da} ${mo} ${ye}`;
+  };
+
+  const prettyDateTime = time => {
+    const dtf = Intl.DateTimeFormat('en-GB', {
+      // weekday: 'short',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false,
+      timeZone: 'Europe/Copenhagen',
+      timeZoneName: 'short',
+    });
+
+    const [
+      { value: da },
+      ,
+      { value: mo },
+      ,
+      { value: ye },
+      ,
+      { value: hh },
+      ,
+      { value: mm },
+      ,
+      { value: tz },
+      ,
+    ] = dtf.formatToParts(new Date(time));
+
+    return `${da} ${mo} ${ye} ${hh}:${mm} ${tz}`;
   };
 
   const itemPath = urlString => {
@@ -48,10 +76,36 @@ const NewsItem = ({ item }) => {
           style={{ marginBottom: '1rem', marginTop: '-1rem' }}
           className={'meta-data'}
         >
-          {item.date && (
+          {item.date && !(item.start && item.end) && (
             <div className="text-tab">
               <span className="format-text">Published: </span>
               <span className="format-type">{prettyDate(item.date)}</span>
+            </div>
+          )}
+          {item.start && item.end && (
+            <div className="event-dates">
+              <div className="text-tab">
+                <span className="format-text">Starting: </span>
+                <span className="format-type">
+                  {prettyDateTime(item.start)}
+                </span>
+              </div>
+              <div className="text-tab">
+                <span className="format-text">Ending: </span>
+                <span className="format-type">{prettyDateTime(item.end)}</span>
+              </div>
+            </div>
+          )}
+          {item.location && (
+            <div className="text-tab">
+              <span className="format-text">Location: </span>
+              <span className="format-type">{item.location}</span>
+            </div>
+          )}
+          {item.year && (
+            <div className="text-tab">
+              <span className="format-text">Year: </span>
+              <span className="format-type">{item.year}</span>
             </div>
           )}
         </div>
