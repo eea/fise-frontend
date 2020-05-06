@@ -39,17 +39,22 @@ class Api {
    */
   constructor() {
     methods.forEach(method => {
-      this[method] = (path, { params, data, type, headers = {}, external = false } = {}) => {
+      this[method] = (
+        path,
+        { params, data, type, headers = {}, external = false } = {},
+      ) => {
         let request;
         let promise = new Promise((resolve, reject) => {
-          request = !external ? superagent[method](formatUrl(path)) : superagent[method](path);
+          request = !external
+            ? superagent[method](formatUrl(path))
+            : superagent[method](path);
 
           if (params) {
             request.query(params);
           }
 
           const authToken = cookie.load('auth_token');
-          if (authToken) {
+          if (authToken && !external) {
             request.set('Authorization', `Bearer ${authToken}`);
           }
 
