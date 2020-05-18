@@ -1,5 +1,4 @@
 import {
-  GET_LATEST_RELEASE,
   GET_FRONTPAGESLIDES,
   // SET_FOLDER_HEADER,
   GET_DEFAULT_HEADER_IMAGE,
@@ -103,16 +102,5 @@ export function getNavSiteMap(url, depth) {
       path: `${url}/@navigation?expand.navigation.depth=${depth || 3}`,
     },
 
-  };
-}
-
-export function getLatestRelease() {
-  return {
-    type: GET_LATEST_RELEASE,
-    request: {
-      op: 'get',
-      path: "https://api.github.com/repos/eea/forests-frontend/releases/latest",
-      external: true
-    },
   };
 }

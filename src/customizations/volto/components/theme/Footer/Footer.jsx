@@ -20,7 +20,7 @@ import wiseLogo from './WISE.png'
 import ccsLogo from './climateChange.svg'
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { getLatestRelease } from '~/actions';
+import { settings } from '~/config';
 
 const messages = defineMessages({
   copyright: {
@@ -35,9 +35,11 @@ const messages = defineMessages({
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component
  */
-const Footer = ({ intl, token, release, getLatestRelease }) => {
+const Footer = ({ intl, token }) => {
   const [state, setState] = useState({
-    published_at: ''
+    version: '',
+    version_url: '',
+    published_at: '',
   })
   const dtf = new Intl.DateTimeFormat('en', {
     day: '2-digit',
@@ -45,13 +47,15 @@ const Footer = ({ intl, token, release, getLatestRelease }) => {
     year: 'numeric'
   })
   useEffect(() => {
-    getLatestRelease();
-    if (release.published_at) {
-      const published_at = dtf.format(new Date(Date.parse(release.published_at)))
-      setState({ published_at })
-    }
-  }, [release.published_at]);
-
+    const version = settings.frontendMeta.version ? settings.frontendMeta.version : '0.0'
+    const version_url = settings.frontendMeta.version_url ? settings.frontendMeta.version_url : ''
+    const published_at = dtf.format(new Date(settings.frontendMeta.published_at))
+    setState({
+      version,
+      version_url,
+      published_at
+    })
+  }, []);
   return (
     <Segment
       role="contentinfo"
@@ -102,7 +106,7 @@ const Footer = ({ intl, token, release, getLatestRelease }) => {
                 </li>
               }
             </ul>
-            <p className="release-info">v. <a href={release.html_url} target="_blank">{release.tag_name}</a>,  last updated {state.published_at}</p>
+            <p className="release-info">v. <a href={state.version_url} target="_blank">{state.version}</a>,  last updated {state.published_at}</p>
           </div>
           <Grid.Row columns={3}>
             <Grid.Column mobile={12} tablet={3} computer={3}>
@@ -298,10 +302,6 @@ export default compose(
   connect(
     state => ({
       token: state.userSession.token,
-      release: state.release.data
     }),
-    {
-      getLatestRelease
-    }
   ),
 )(Footer);
