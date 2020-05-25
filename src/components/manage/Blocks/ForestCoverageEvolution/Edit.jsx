@@ -9,7 +9,7 @@ import { Segment, Form as UiForm } from 'semantic-ui-react';
 import { Field } from '@plone/volto/components'; // EditBlock
 import { SidebarPortal } from '@plone/volto/components';
 
-import { changeSidebarState } from 'volto-sidebar/actions';
+import { changeSidebarState } from 'volto-addons/actions';
 
 import MultiValuesEdit from 'volto-datablocks/DataConnectedBlock/MultiValuesEdit';
 

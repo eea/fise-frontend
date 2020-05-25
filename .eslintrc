@@ -70,10 +70,6 @@
                     [
                         "volto-embed", 
                         "./src/develop/volto-embed/src"
-                    ], 
-                    [
-                        "volto-sidebar", 
-                        "./src/develop/volto-sidebar/src"
                     ]
                 ]
             }, 

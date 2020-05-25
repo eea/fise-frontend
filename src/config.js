@@ -14,12 +14,10 @@ import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
-import { applyConfig as installSidebar } from 'volto-sidebar/config';
 import { applyConfig as installEmbed } from 'volto-embed/config';
 
 const config = [
   addonsConfig,
-  installSidebar,
   installPortlets,
   installImageSlides,
   installTableau,
