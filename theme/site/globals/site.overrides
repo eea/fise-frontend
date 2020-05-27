@@ -2325,3 +2325,52 @@ main {
       padding-top: 45% !important;
   }
 }
+/**
+  * SIDEBAR STYLE
+*/
+body:not(.has-sidebar-collapsed) > #sidebar {
+    position: relative !important;
+}
+
+body.has-sidebar #layout-preview-lg {
+    width: auto !important;
+}
+
+#sidebar .sidebar-container .tabs-wrapper {
+    padding: 0;
+}
+
+#sidebar .sidebar-container #sidebar-properties {
+    padding: 20px;
+}
+
+#sidebar .sidebar-container #sidebar-properties > div {
+    height: auto !important;
+}
+
+#sidebar .sidebar-container .ui.raised.segments {
+    height: auto;
+}
+
+#visual-form,
+#sidebar-metadata,
+#sidebar-metadata > form > .segment {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#sidebar-metadata > form > .secondary.segment {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#sidebar-metadata > form > .segment .field:not(:last-child) {
+    margin-bottom: 2.5rem;
+}
+
+#sidebar-metadata > form > .segment .field-file-name {
+    padding-bottom: 0;
+}
+/**
+  * END SIDEBAR STYLE
+*/

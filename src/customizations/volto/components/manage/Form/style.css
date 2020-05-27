@@ -1,0 +1,7 @@
+.tabs-wrapper {
+    padding: 0 1em;
+}
+
+.tabs-wrapper .ui.secondary.pointing.menu {
+    border-bottom: 4px solid #eaeaea !important;
+}
