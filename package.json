@@ -92,6 +92,7 @@
     "@plone/volto": "github:eea/volto#kitchen_sink",
     "immutable": "^3.8.2",
     "less-loader": "5.0.0",
+    "moment-timezone": "^0.5.31",
     "npm": "^6.13.7",
     "react": "^16.13.0",
     "react-component-queries": "^2.3.0",

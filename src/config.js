@@ -35,6 +35,7 @@ const config = [
 
 export const settings = {
   ...config.settings,
+  timezone: 'Etc/GMT-2'
 };
 
 export const views = {
