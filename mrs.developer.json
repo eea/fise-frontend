@@ -13,7 +13,8 @@
     },
     "volto-addons": {
       "url": "https://github.com/eea/volto-addons.git",
-      "path": "src"
+      "path": "src",
+      "branch": "news_items_may"
     },
     "volto-ckeditor": {
       "url": "https://github.com/eea/volto-ckeditor.git",
@@ -25,10 +26,6 @@
     },
     "volto-plotlycharts": {
       "url": "https://github.com/eea/volto-plotlycharts.git",
-      "path": "src"
-    },
-    "volto-sidebar": {
-      "url": "https://github.com/eea/volto-sidebar.git",
       "path": "src"
     },
     "volto-base": {

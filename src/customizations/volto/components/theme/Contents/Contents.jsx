@@ -926,7 +926,6 @@ class Contents extends Component {
     const editPermission = find(this.props.objectActions, { id: 'edit' });
     const selected = this.state.selected.length > 0;
     const path = getBaseUrl(this.props.pathname);
-    console.log(editPermission);
     return (
       <Container id="page-contents">
         {this.props.objectActions.length > 0 && (

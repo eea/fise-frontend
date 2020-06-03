@@ -99,7 +99,7 @@ export function applyConfig(config) {
   };
 
   delete config.views.contentTypesViews['News Item']
-
+  delete config.views.contentTypesViews['Event'];
 
   // read @plone/volto/components/manage/Form/Field.jsx to understand this
   config.widgets = {

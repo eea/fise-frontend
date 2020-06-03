@@ -115,7 +115,7 @@ class App extends Component {
     const path = getBaseUrl(this.props.pathname);
     const action = getView(this.props.pathname);
     const headerImage =
-      this.props.content.image?.download || this.props.defaultHeaderImage;
+      this.props.content?.image?.download || this.props.defaultHeaderImage;
     return (
       <Fragment>
         <BodyClass className={`view-${action}view`} />

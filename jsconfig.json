@@ -7,8 +7,7 @@
         "volto-datablocks", 
         "volto-drafteditor", 
         "volto-mosaic", 
-        "volto-plotlycharts", 
-        "volto-sidebar"
+        "volto-plotlycharts"
     ], 
     "compilerOptions": {
         "baseUrl": "src", 
@@ -39,9 +38,6 @@
             ], 
             "volto-plotlycharts": [
                 "develop/volto-plotlycharts/src"
-            ], 
-            "volto-sidebar": [
-                "develop/volto-sidebar/src"
             ]
         }
     }

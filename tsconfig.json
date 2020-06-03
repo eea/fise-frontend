@@ -27,9 +27,6 @@
             "volto-corsproxy": [
                 "develop/volto-corsproxy"
             ],
-            "volto-sidebar": [
-                "develop/volto-sidebar"
-            ],
             "volto-embed": [
                 "develop/volto-embed"
             ]

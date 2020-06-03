@@ -61,14 +61,13 @@
       }
     }
 
-    .image-gallery-left-nav,
-    .image-gallery-right-nav {
-      bottom: 0 !important;
-    }
+    // .image-gallery-left-nav,
+    // .image-gallery-right-nav {
+    //   bottom: 0 !important;
+    // }
 
 
     .searchbox {
-
       svg,
       .accountIcon {
         height: 24px !important;
@@ -138,13 +137,13 @@
     .image-gallery-left-nav {
       left: unset;
       right: 5rem;
-      bottom: -3.5rem;
+      bottom: -3.5rem!important;
     }
 
     .image-gallery-right-nav {
       left: unset;
       right: 1rem;
-      bottom: -3.5rem;
+      bottom: -3.5rem!important;
     }
 
     .searchInput {
@@ -280,12 +279,7 @@
     }
   }
 
-  // Hotfix because we can't really do anything else for this situation
-  @media only screen and (min-width: 1200px) and (max-width: 1219px) {
-    .hamburger-wrapper.computer.hidden.large.screen.hidden.widescreen.hidden {
-      display: block!important;
-    }
-  }
+
 
   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
     .contentWidthMedia(@computerWidth, @computerGutter, -30px);
@@ -414,3 +408,19 @@ body.view-editview {
 
 
 }
+
+
+
+  // Hotfix because we can't really do anything else for this situation
+  @media only screen and (min-width: 1200px) and (max-width: 1219px) {
+    body.has-toolbar-collapsed .hamburger-wrapper.computer.hidden.large.screen.hidden.widescreen.hidden {
+       display: block!important;
+     }
+   }
+
+   @media only screen and (min-width: 1200px) and (max-width: 1279px) {
+    body.has-toolbar .hamburger-wrapper.computer.hidden.large.screen.hidden.widescreen.hidden {
+       display: block!important;
+     }
+   }
+

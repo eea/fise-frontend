@@ -8,9 +8,11 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { Form, Grid, Label } from 'semantic-ui-react';
 import { map } from 'lodash';
-import moment from 'moment';
+import { settings } from '~/config'
+import moment from 'moment-timezone';
 import { SingleDatePicker } from 'react-dates';
 import TimePicker from 'rc-time-picker';
+import cx from 'classnames';
 import leftKey from '@plone/volto/icons/left-key.svg';
 import rightKey from '@plone/volto/icons/right-key.svg';
 import { Icon } from '@plone/volto/components';
@@ -72,23 +74,26 @@ class DatetimeWidget extends Component {
   constructor(props) {
     super(props);
 
+    const timezone = settings.timezone || 'UTC'
     let datetime = null;
 
     if (this.props.value) {
       // check if datetime has timezone, otherwise assumes it's UTC
       datetime = this.props.value.match(/T(.)*(-|\+|Z)/g)
-        ? moment(this.props.value).utc()
-        : moment(`${this.props.value}Z`).utc();
+        ? moment.tz(this.props.value, timezone)
+        : moment.tz(`${this.props.value}Z`, timezone);
     }
 
     if (!this.props.value && this.props.dateOnly) {
-      datetime = moment().utc();
+      datetime = moment.tz(timezone);
       datetime.set(defaultTimeDateOnly);
     }
 
     this.state = {
       focused: false,
+      isDefault: datetime ? datetime.toISOString() === moment().utc().toISOString() : false,
       datetime,
+      timezone
     };
   }
 
@@ -98,20 +103,18 @@ class DatetimeWidget extends Component {
    * @param {Object} date updated momentjs Object for date
    * @returns {undefined}
    */
-  onDateChange = date => {
+  onDateChange = (date) => {
     if (date)
       this.setState(
-        prevState => {
-          const datetime = prevState.datetime || moment().utc();
-          return {
-            datetime: datetime.set({
-              year: date.year(),
-              month: date.month(),
-              date: date.date(),
-              ...(this.props.dateOnly ? defaultTimeDateOnly : {}),
-            }),
-          };
-        },
+        (prevState) => ({
+          datetime: prevState.datetime ? prevState.datetime.set({
+            year: date.year(),
+            month: date.month(),
+            date: date.date(),
+            ...(this.props.dateOnly ? defaultTimeDateOnly : {}),
+          }) : moment.tz(date.toISOString(), this.state.timezone),
+          isDefault: false,
+        }),
         () => this.onDateTimeChange(),
       );
   };
@@ -122,18 +125,16 @@ class DatetimeWidget extends Component {
    * @param {Object} time updated momentjs Object for time
    * @returns {undefined}
    */
-  onTimeChange = time => {
+  onTimeChange = (time) => {
     this.setState(
-      prevState => {
-        const datetime = prevState.datetime || moment().utc();
-        return {
-          datetime: datetime.set({
-            hours: time.hours(),
-            minutes: time.minutes(),
-            seconds: 0,
-          }),
-        };
-      },
+      (prevState) => ({
+        datetime: prevState.datetime ? prevState.datetime.set({
+          hours: time.hours(),
+          minutes: time.minutes(),
+          seconds: 0,
+        }) : moment.tz(date.toISOString(), this.state.timezone),
+        isDefault: false,
+      }),
       () => this.onDateTimeChange(),
     );
   };
@@ -144,7 +145,7 @@ class DatetimeWidget extends Component {
    * @returns {undefined}
    */
   onDateTimeChange = () => {
-    this.props.onChange(this.props.id, this.state.datetime.toISOString());
+    this.props.onChange(this.props.id, this.state.datetime.toISOString(true));
   };
 
   /**
@@ -164,10 +165,10 @@ class DatetimeWidget extends Component {
       error,
       fieldSet,
       dateOnly,
+      noPastDates,
       intl,
     } = this.props;
-    const { datetime, focused } = this.state;
-
+    const { datetime, isDefault, focused } = this.state;
     return (
       <Form.Field
         inline
@@ -185,13 +186,17 @@ class DatetimeWidget extends Component {
             </Grid.Column>
             <Grid.Column width="8">
               <div>
-                <div className="ui input date-input">
+                <div
+                  className={cx('ui input date-input', {
+                    'default-date': isDefault,
+                  })}
+                >
                   <SingleDatePicker
                     date={datetime}
                     onDateChange={this.onDateChange}
                     focused={focused}
-                    isOutsideRange={() => false}
                     numberOfMonths={1}
+                    {...(noPastDates ? {} : { isOutsideRange: () => false })}
                     onFocusChange={this.onFocusChange}
                     noBorder
                     displayFormat={moment
@@ -202,8 +207,12 @@ class DatetimeWidget extends Component {
                     id={`${id}-date`}
                   />
                 </div>
-                {!dateOnly && (
-                  <div className="ui input time-input">
+                {!dateOnly && datetime && (
+                  <div
+                    className={cx('ui input time-input', {
+                      'default-date': isDefault,
+                    })}
+                  >
                     <TimePicker
                       defaultValue={datetime}
                       onChange={this.onTimeChange}
@@ -219,7 +228,7 @@ class DatetimeWidget extends Component {
                   </div>
                 )}
               </div>
-              {map(error, message => (
+              {map(error, (message) => (
                 <Label key={message} basic color="red" pointing>
                   {message}
                 </Label>
@@ -251,6 +260,7 @@ DatetimeWidget.propTypes = {
   required: PropTypes.bool,
   error: PropTypes.arrayOf(PropTypes.string),
   dateOnly: PropTypes.bool,
+  noPastDates: PropTypes.bool,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
@@ -265,6 +275,7 @@ DatetimeWidget.defaultProps = {
   required: false,
   error: [],
   dateOnly: false,
+  noPastDates: false,
   value: null,
 };
 
