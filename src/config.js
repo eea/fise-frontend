@@ -35,6 +35,7 @@ const config = [
 
 export const settings = {
   ...config.settings,
+  timezone: 'CET'
 };
 
 export const views = {
