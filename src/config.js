@@ -33,7 +33,12 @@ const config = [
 
 export const settings = {
   ...config.settings,
-  timezone: 'CET'
+  frontendMeta: {
+    version: process.env.RAZZLE_FRONTEND_VERSION || null,
+    version_url: process.env.RAZZLE_FRONTEND_VERSION_URL || null,
+    published_at: process.env.RAZZLE_FRONTEND_PUBLISHED_AT || null
+  },
+  timezone: 'CET',
 };
 
 export const views = {
