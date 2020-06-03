@@ -14,7 +14,7 @@
     },
     "volto-addons": {
       "url": "https://github.com/eea/volto-addons.git",
-      "path": "src",
+      "path": "src"
     },
     "volto-ckeditor": {
       "url": "https://github.com/eea/volto-ckeditor.git",
