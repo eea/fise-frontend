@@ -33,7 +33,6 @@
 
 .ui.table tr > th {
   font-weight: 700;
-  background-color: #fafafa;
 }
 
 .ui.celled.table tr th, .ui.celled.table tr td {
