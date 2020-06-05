@@ -6,6 +6,7 @@ import CountryView from '~/components/theme/CountryView/CountryView';
 // import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
 import NewsView from '~/components/theme/NewsView/NewsView';
+import RefreshView from '~/components/theme/RefreshView/RefreshView';
 
 import chartIcon from '@plone/volto/icons/world.svg';
 
@@ -74,7 +75,7 @@ export function applyConfig(config) {
       ...config.settings.nonContentRoutes,
       '/manage-slider',
       '/sitemap',
-      '/unauthorized'
+      '/unauthorized',
     ],
     ownDomain: 'forest.eea.europa.eu',
     contentExpand: [
@@ -95,10 +96,11 @@ export function applyConfig(config) {
       homepage_view: HomepageView,
       // ...layoutViews,
       news_item_listing_view: NewsView,
+      refresh_view: RefreshView,
     },
   };
 
-  delete config.views.contentTypesViews['News Item']
+  delete config.views.contentTypesViews['News Item'];
   delete config.views.contentTypesViews['Event'];
 
   // read @plone/volto/components/manage/Form/Field.jsx to understand this
@@ -187,11 +189,30 @@ export function applyConfig(config) {
     ...(config.viewlets || []),
   ];
 
-
   config.settings.plotlyCustomColors = [
-    { "title": "Forest Default", "colorscale": ["#215511", "#77BB12", "#CBEE66", "#ffffff", "#F4F4F1", "#000000"] },
-    { "title": "Forest Active", "colorscale": ["#CA4300 ", "#E0E1E2", "#E30166", "#074F7C", "#000000", "#ffffff"] },
-  ]
+    {
+      title: 'Forest Default',
+      colorscale: [
+        '#215511',
+        '#77BB12',
+        '#CBEE66',
+        '#ffffff',
+        '#F4F4F1',
+        '#000000',
+      ],
+    },
+    {
+      title: 'Forest Active',
+      colorscale: [
+        '#CA4300 ',
+        '#E0E1E2',
+        '#E30166',
+        '#074F7C',
+        '#000000',
+        '#ffffff',
+      ],
+    },
+  ];
 
   return config;
 }
