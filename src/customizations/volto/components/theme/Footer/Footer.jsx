@@ -13,11 +13,11 @@ import ecLogo from './ec.png';
 import eeaLogo from './eea.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Placeholder } from 'semantic-ui-react';
-import climateAdaptLogo from './climateadapt.svg'
-import landMonitoringLogo from './landmonitoringservice.png'
-import biseLogo from './biselogo.png'
-import wiseLogo from './WISE.png'
-import ccsLogo from './climateChange.svg'
+import climateAdaptLogo from './climateadapt.svg';
+import landMonitoringLogo from './landmonitoringservice.png';
+import biseLogo from './biselogo.png';
+import wiseLogo from './WISE.png';
+import ccsLogo from './climateChange.svg';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { settings } from '~/config';
@@ -36,26 +36,21 @@ const messages = defineMessages({
  * @returns {string} Markup of the component
  */
 const Footer = ({ intl, token }) => {
-  const [state, setState] = useState({
-    version: '',
-    version_url: '',
-    published_at: '',
-  })
   const dtf = new Intl.DateTimeFormat('en', {
     day: '2-digit',
     month: '2-digit',
-    year: 'numeric'
-  })
-  useEffect(() => {
-    const version = settings.frontendMeta.version ? settings.frontendMeta.version : '0.0'
-    const version_url = settings.frontendMeta.version_url ? settings.frontendMeta.version_url : ''
-    const published_at = dtf.format(new Date(settings.frontendMeta.published_at))
-    setState({
-      version,
-      version_url,
-      published_at
-    })
-  }, []);
+    year: 'numeric',
+  });
+  const published_at = dtf.format(new Date(settings.frontendMeta.published_at)),
+    version_url = settings.frontendMeta.version_url
+      ? settings.frontendMeta.version_url
+      : '',
+    version = settings.frontendMeta.version
+      ? settings.frontendMeta.version
+      : '0.0';
+
+  console.log('settings in footer', settings);
+
   return (
     <Segment
       role="contentinfo"
@@ -86,41 +81,55 @@ const Footer = ({ intl, token }) => {
                 </Link>
               </li>
               <li>
-                <a className="item separated" href={`mailto:info@eea.europa.eu`}>
+                <a
+                  className="item separated"
+                  href={`mailto:info@eea.europa.eu`}
+                >
                   Contact us
-                  </a>
+                </a>
               </li>
               <li>
-                <a className={`item ${token ? "" : "separated"}`} href={`https://status.eea.europa.eu/`} target="blank">
+                <a
+                  className={`item ${token ? '' : 'separated'}`}
+                  href={`https://status.eea.europa.eu/`}
+                  target="blank"
+                >
                   EEA Systems Status
-                  </a>
+                </a>
               </li>
-              {!token &&
+              {!token && (
                 <li>
                   <Link className="item " to="/login">
-                    <FormattedMessage
-                      id="login"
-                      defaultMessage="Login"
-                    />
+                    <FormattedMessage id="login" defaultMessage="Login" />
                   </Link>
                 </li>
-              }
+              )}
             </ul>
-            <p className="release-info">v. <a href={state.version_url} target="_blank">{state.version}</a>,  last updated {state.published_at}</p>
+            <p className="release-info">
+              v.{' '}
+              <a href={version_url} target="_blank">
+                {version}
+              </a>
+              , last updated {published_at}
+            </p>
           </div>
           <Grid.Row columns={3}>
             <Grid.Column mobile={12} tablet={3} computer={3}>
               <b>About</b>
               <p>
-                FISE - Forest Information System for Europe is a forest knowledge
-                base in support of the EU Forest Strategy.{' '}
+                FISE - Forest Information System for Europe is a forest
+                knowledge base in support of the EU Forest Strategy.{' '}
               </p>
             </Grid.Column>
 
             <Grid.Column mobile={12} tablet={3} computer={3}>
               <b>Partners</b>
               <div className="footerLogoWrapper">
-                <a target="_blank" href="https://ec.europa.eu/" title="European Commission">
+                <a
+                  target="_blank"
+                  href="https://ec.europa.eu/"
+                  title="European Commission"
+                >
                   <LazyLoadImage
                     className="footerLogo"
                     // height={80}
@@ -128,7 +137,6 @@ const Footer = ({ intl, token }) => {
                     src={ecLogo}
                     alt="European Commission"
                     title="European Commission"
-
                     width={'100%'}
                     visibleByDefault={true}
                     placeholder={
@@ -150,7 +158,6 @@ const Footer = ({ intl, token }) => {
                     src={eeaLogo}
                     alt="European Environment Agency"
                     title="European Environment Agency"
-
                     width={'100%'}
                     visibleByDefault={true}
                     placeholder={
@@ -160,7 +167,6 @@ const Footer = ({ intl, token }) => {
                     }
                   />
                 </a>
-
               </div>
             </Grid.Column>
             <Grid.Column mobile={12} tablet={6} computer={6}>
@@ -178,7 +184,6 @@ const Footer = ({ intl, token }) => {
                     src={climateAdaptLogo}
                     alt="Climate Adapt"
                     title="Climate Adapt"
-
                     width={'100%'}
                     visibleByDefault={true}
                     placeholder={
@@ -200,7 +205,6 @@ const Footer = ({ intl, token }) => {
                     src={biseLogo}
                     alt="Biodiversity Information Sistems for Europe"
                     title="Biodiversity Information Sistems for Europe"
-
                     width={'100%'}
                     visibleByDefault={true}
                     placeholder={
@@ -223,7 +227,6 @@ const Footer = ({ intl, token }) => {
                     src={wiseLogo}
                     alt="Water Information System for Europe"
                     title="Water Information System for Europe"
-
                     width={'100%'}
                     visibleByDefault={true}
                     placeholder={
@@ -246,7 +249,6 @@ const Footer = ({ intl, token }) => {
                     src={landMonitoringLogo}
                     alt="Land Monitoring Service"
                     title="Land Monitoring Service"
-
                     width={'100%'}
                     visibleByDefault={true}
                     placeholder={
@@ -284,7 +286,7 @@ const Footer = ({ intl, token }) => {
       </Container>
     </Segment>
   );
-}
+};
 /**
  * Property types.
  * @property {Object} propTypes Property types.
@@ -296,12 +298,9 @@ Footer.propTypes = {
    */
 };
 
-
 export default compose(
   injectIntl,
-  connect(
-    state => ({
-      token: state.userSession.token,
-    }),
-  ),
+  connect(state => ({
+    token: state.userSession.token,
+  })),
 )(Footer);
