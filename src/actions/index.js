@@ -11,6 +11,7 @@ import {
 } from '~/constants/ActionTypes';
 
 export function setCurrentVersion(payload) {
+  console.log('---------- setting current version', payload)
   return {
     type: SET_CURRENT_VERSION,
     payload: payload,

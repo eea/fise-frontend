@@ -316,6 +316,6 @@ export default compose(
       token: state.userSession.token,
       currentVersion: state.current_version?.items,
     }),
-    setCurrentVersion,
+    { setCurrentVersion },
   ),
 )(Footer);
