@@ -1,128 +1,58 @@
 import React, { Component } from 'react';
-import { Form as UiForm } from 'semantic-ui-react';
-import { Field } from '@plone/volto/components'; // EditBlock
+import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
+import View from './View';
 
-class Edit extends Component {
-  constructor(props) {
-    super(props);
-
-    const blockData = props.data;
-
-    this.state = {
-      ...blockData,
-    };
-
-    this.onSubmit = this.onSubmit.bind(this);
-    this.updateData = this.updateData.bind(this);
+const SCHEMA = {
+  eu28_total: {
+    title: 'EU28 volume column',
+    defaultformat: 'compactnumber',
+  },
+  eu28_total_text: {
+    title: 'EU28 volume text',
+    defaultformat: 'compactnumber',
+    static: true,
+  },
+  eu28_total_unit: {
+    title: 'EU28 volume unit',
+    defaultformat: 'compactnumber',
+    static: true,
+  },
+  eea39_total: {
+    title: 'EEA39 volume column',
+    defaultformat: 'compactnumber',
+  },
+  eea39_total_text: {
+    title: 'EEA39 volume text',
+    defaultformat: 'compactnumber',
+    static: true,
+  },
+  eea39_total_unit: {
+    title: 'EEA39 volume unit',
+    defaultformat: 'compactnumber',
+    static: true,
   }
+};
 
-  updateData(obj) {
-    this.setState(obj, this.onSubmit);
-  }
 
-  onSubmit() {
-    this.props.onChangeBlock(this.props.block, {
-      ...this.props.data,
-      ...this.state,
-    });
-  }
-
-  render() {
-    return (
-      <div className="block selected">
-        <div className="block-inner-wrapper">
-          <UiForm>
-            <Field
-              id="europe-block-title"
-              title="Title"
-              type="text"
-              value={this.state.europe_block_title}
-              required={false}
-              onChange={(e, d) => this.updateData({ europe_block_title: d })}
-            />
-
-            <Field
-              id="europe-forest-p-eu28"
-              title="Forest area in EU28"
-              type="text"
-              value={this.state.europe_forest_p_eu28}
-              required={false}
-              onChange={(e, d) => this.updateData({ europe_forest_p_eu28: d })}
-            />
-
-            <Field
-              id="europe-forest-p-eu28-text"
-              title="Forest area in EU28 TEXT"
-              type="text"
-              value={this.state.europe_forest_p_eu28_text}
-              required={false}
-              onChange={(e, d) =>
-                this.updateData({ europe_forest_p_eu28_text: d })
-              }
-            />
-
-            <Field
-              id="europe-forest-l-eu28"
-              title="Total forest area in EU28"
-              type="text"
-              value={this.state.europe_forest_l_eu28}
-              required={false}
-              onChange={(e, d) => this.updateData({ europe_forest_l_eu28: d })}
-            />
-
-            <Field
-              id="europe-forest-p-eea39"
-              title="Forest area in EEA39"
-              type="text"
-              value={this.state.europe_forest_p_eea39}
-              required={false}
-              onChange={(e, d) => this.updateData({ europe_forest_p_eea39: d })}
-            />
-
-            <Field
-              id="europe-forest-p-eea39-text"
-              title="Forest area in EEA39 TEXT"
-              type="text"
-              value={this.state.europe_forest_p_eea39_text}
-              required={false}
-              onChange={(e, d) =>
-                this.updateData({ europe_forest_p_eea39_text: d })
-              }
-            />
-
-            <Field
-              id="europe-forest-l-eea39"
-              title="Total forest area in EEA39"
-              type="text"
-              value={this.state.europe_forest_l_eea39}
-              required={false}
-              onChange={(e, d) => this.updateData({ europe_forest_l_eea39: d })}
-            />
-
-            <Field
-              id="europe-source"
-              title="Source"
-              type="text"
-              value={this.state.europe_text_attribution}
-              required={false}
-              onChange={(e, d) =>
-                this.updateData({ europe_text_attribution: d })
-              }
-            />
-
-            <Field
-              id="europe-block-link"
-              title="Source link"
-              type="text"
-              value={this.state.europe_block_link}
-              required={false}
-              onChange={(e, d) => this.updateData({ europe_block_link: d })}
-            />
-          </UiForm>
-        </div>
-      </div>
-    );
-  }
+const Edit = props => {
+  return (
+    <div>
+      <EditBlock
+        onChange={data => {
+          props.onChangeBlock(props.block, {
+            ...props.data,
+            ...data,
+          });
+        }}
+        schema={SCHEMA}
+        block="data-entity"
+        data={props.data}
+        title="Volume block"
+        selected={props.selected}
+      />
+      <View {...props} />
+    </div>
+  );
 }
 
 export default Edit;

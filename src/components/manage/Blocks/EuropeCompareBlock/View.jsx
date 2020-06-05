@@ -1,35 +1,60 @@
 import React, { Component } from 'react';
-// import TableauReport from '~/components/theme/TableauView/TableauReport';
+import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
+import { SourceView } from 'volto-datablocks/Sources';
 
-class View extends Component {
-  render() {
+const View  = props => {
     return (
-      <div className="forest-block-wrapper">
-        <div className="forest-specific-block forest-comparation">
-          <h5>{this.props.data.europe_block_title}</h5>
-          <div className="land-data-wrapper">
-            <div className="land-data">
-              <span>{this.props.data.europe_forest_area}</span>
-            </div>
-            <div className="land-data-content">of Europe's land surface</div>
+    <div className="forest-block-wrapper">
+      <div className="forest-specific-block forest-area-block">
+        {props.data?.europe_block_title ? (
+          <h5>{props.data.europe_block_title}</h5>
+        ) : (
+          ''
+        )}
+
+        <div className="land-data-wrapper">
+          <div className="land-data">
+            <span>
+              {props.data.provider_url &&
+                props.data.columns?.total && (
+                  <DataConnectedValue
+                    url={props.data.provider_url}
+                    column={props.data.columns.total.value}
+                    format={props.data.columns.total.format}
+                    placeholder="_"
+                  />
+                )
+              }
+            </span>
           </div>
-          <div className="ui bulleted list">
-            <div className="item">
-              {this.props.data.europe_data_1_name}
-              <span>{this.props.data.europe_data_1_value}</span>
-            </div>
-            <div className="item">
-              {this.props.data.europe_data_2_name}
-              <span>{this.props.data.europe_data_2_value}</span>
-            </div>
+          <div className="land-data-content">
+            <span>{props.data?.columns?.totalUnit?.value}</span>
+            {props.data?.columns?.totalText?.value}
           </div>
-          <a className="discreet" href={this.props.data.europe_block_link}>
-            {this.props.data.europe_text_attribution}
-          </a>
+        </div>
+
+        <div className="ui bulleted list">
+          <div className="item">
+            {props.data?.columns?.data1Text?.value}
+            <span>{props.data?.columns?.data1Quantity?.value}</span>
+          </div>
+          <div className="item">
+            {props.data?.columns?.data2Text?.value}
+            <span>{props.data?.columns?.data2Quantity?.value}</span>
+          </div>
+        </div>
+
+        <div>
+          <SourceView
+            initialSource={props.data.chart_source}
+            initialSourceLink={props.data.chart_source_link}
+            multipleSources={props.data.chartSources}
+            providerUrl={props.data.provider_url}
+          />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default View;
