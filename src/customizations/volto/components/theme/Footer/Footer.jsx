@@ -117,7 +117,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
               )}
             </ul>
             <p className="release-info">
-              v.{' '}
+              Software version{' '}
               <a href={version_url} target="_blank">
                 {version}
               </a>
