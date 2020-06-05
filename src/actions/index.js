@@ -6,8 +6,16 @@ import {
   GET_PARENT_FOLDER_DATA,
   GET_LOCALNAVIGATION,
   GET_CHART_DATA_FROM_VISUALIZATION,
-  GET_NAVSITEMAP
+  GET_NAVSITEMAP,
+  SET_CURRENT_VERSION,
 } from '~/constants/ActionTypes';
+
+export function setCurrentVersion(payload) {
+  return {
+    type: SET_CURRENT_VERSION,
+    payload: payload,
+  };
+}
 
 export function getFrontpageSlides() {
   return {
@@ -101,6 +109,5 @@ export function getNavSiteMap(url, depth) {
       op: 'get',
       path: `${url}/@navigation?expand.navigation.depth=${depth || 3}`,
     },
-
   };
 }

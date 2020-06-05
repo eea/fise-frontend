@@ -21,6 +21,7 @@ import ccsLogo from './climateChange.svg';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { settings } from '~/config';
+import { setCurrentVersion } from '~/actions';
 
 const messages = defineMessages({
   copyright: {
@@ -35,20 +36,30 @@ const messages = defineMessages({
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component
  */
-const Footer = ({ intl, token }) => {
+const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
   const dtf = new Intl.DateTimeFormat('en', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
   });
-  const published_at = dtf.format(new Date(settings.frontendMeta.published_at)),
+  const published_at = dtf.format(
+      new Date(
+        settings.frontendMeta.published_at || currentVersion.published_at,
+      ),
+    ),
     version_url = settings.frontendMeta.version_url
       ? settings.frontendMeta.version_url
-      : '',
+      : currentVersion.version_url,
     version = settings.frontendMeta.version
       ? settings.frontendMeta.version
-      : '0.0';
-
+      : currentVersion.version;
+  if (
+    settings.frontendMeta.published_at &&
+    settings.frontendMeta.version_url &&
+    settings.frontendMeta.version
+  ) {
+    setCurrentVersion(settings.frontendMeta);
+  }
   console.log('settings in footer', settings);
 
   return (
@@ -300,7 +311,11 @@ Footer.propTypes = {
 
 export default compose(
   injectIntl,
-  connect(state => ({
-    token: state.userSession.token,
-  })),
+  connect(
+    state => ({
+      token: state.userSession.token,
+      currentVersion: state.current_version?.items,
+    }),
+    setCurrentVersion,
+  ),
 )(Footer);
