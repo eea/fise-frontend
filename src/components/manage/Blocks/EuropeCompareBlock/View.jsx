@@ -1,13 +1,37 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
 import { SourceView } from 'volto-datablocks/Sources';
 
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+
+import { getBasePath } from 'volto-datablocks/helpers';
+import {
+  setConnectedDataParameters,
+} from 'volto-datablocks/actions';
+
+const objectHasData = (obj) => {
+  return typeof obj === 'object' && obj !== null && Object.keys(obj).length > 0
+}
+
 const View  = props => {
+    useEffect(() => {
+      if (
+        !objectHasData(props.connected_data_parameters).byProviderPath &&
+        !objectHasData(props.connected_data_parameters).byContextPath &&
+        !objectHasData(props.connected_data_parameters).byPath &&
+        props?.data?.columns?.i?.value &&
+        props?.data?.columns?.v?.value
+      ) {
+        const path = getBasePath(props.pathname)
+        props.dispatch(setConnectedDataParameters(path, [{ i: props.data.columns.i.value, v: props.data.columns.v.value.split(',')}]))
+      }
+    }, [props?.data?.columns?.i, props?.data?.columns?.v])
     return (
     <div className="forest-block-wrapper">
       <div className="forest-specific-block forest-area-block">
-        {props.data?.europe_block_title ? (
-          <h5>{props.data.europe_block_title}</h5>
+        {props.data?.block_title ? (
+          <h5>{props.data.block_title}</h5>
         ) : (
           ''
         )}
@@ -57,4 +81,11 @@ const View  = props => {
   );
 }
 
-export default View;
+export default compose(
+  connect(
+    (state, props) => ({
+      connected_data_parameters: state.connected_data_parameters,
+      pathname: state.router.location.pathname
+    }),
+  ),
+)(View);

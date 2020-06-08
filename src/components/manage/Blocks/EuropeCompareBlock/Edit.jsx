@@ -2,12 +2,15 @@ import React from 'react';
 import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
 import View from './View';
 
-const SCHEMA = {
-  block_title: {
-    title: 'Title',
-    defaultformat: 'compactnumber',
-    static: true,
-  },
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+
+import { getBasePath } from 'volto-datablocks/helpers';
+import {
+  setConnectedDataParameters,
+} from 'volto-datablocks/actions';
+
+let SCHEMA = {
   total: {
     title: 'Volume column',
     defaultformat: 'compactnumber',
@@ -45,11 +48,43 @@ const SCHEMA = {
 };
 
 const Edit = props => {
-  // data is like {provider_url: '', columns: {key: {value, format}}}
+  if (
+    Object.keys(props.connected_data_parameters.byContextPath).length == 0
+    && Object.keys(props.connected_data_parameters.byProviderPath).length == 0
+  ) {
+    SCHEMA = {
+      ...SCHEMA,
+      i: {
+        title: 'Key',
+        defaultformat: 'compactnumber',
+        static: true,
+      },
+      v: {
+        title: 'For',
+        defaultformat: 'compactnumber',
+        static: true,
+      }
+    }
+  }
   return (
     <div>
       <EditBlock
         onChange={data => {
+          if (data?.columns?.i?.value && data?.columns?.v?.value) {
+            const path = getBasePath(props.pathname)
+            const byPath = props?.connected_data_parameters?.byPath
+            const connected_data_parameters = byPath && byPath[path]?.override.length > 0 ? byPath[path]?.override[0] : null
+            if (connected_data_parameters === null ||
+              (connected_data_parameters?.i !== data.columns.i.value || connected_data_parameters?.v.join(',') !== data.columns.v.value)
+            ) {
+              const parameters = [{
+                  i: data.columns.i.value || '',
+                  o: "plone.app.querystring.operation.selection.any",
+                  v: data.columns.v.value.split(',') || ''
+              }]
+              props.dispatch(setConnectedDataParameters(path.replace('/edit', ''), parameters))
+            }
+          }
           props.onChangeBlock(props.block, {
             ...props.data,
             ...data,
@@ -64,125 +99,13 @@ const Edit = props => {
       <View {...props} />
     </div>
   );
-};
+}
 
-export default Edit;
-
-
-
-// import React, { Component } from 'react';
-// import { Form as UiForm } from 'semantic-ui-react';
-// import { Field } from '@plone/volto/components'; // EditBlock
-
-// class Edit extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     const blockData = props.data;
-
-//     this.state = {
-//       ...blockData,
-//     };
-
-//     this.onSubmit = this.onSubmit.bind(this);
-//     this.updateData = this.updateData.bind(this);
-//   }
-
-//   updateData(obj) {
-//     this.setState(obj, this.onSubmit);
-//   }
-
-//   onSubmit() {
-//     this.props.onChangeBlock(this.props.block, {
-//       ...this.props.data,
-//       ...this.state,
-//     });
-//   }
-
-//   render() {
-//     return (
-//       <div className="block selected">
-//         <div className="block-inner-wrapper">
-//           <UiForm>
-//             <Field
-//               id="europe-block-title"
-//               title="Title"
-//               type="text"
-//               value={this.state.europe_block_title}
-//               required={false}
-//               onChange={(e, d) => this.updateData({ europe_block_title: d })}
-//             />
-//             <Field
-//               id="europe-forest-area"
-//               title="Total forest land"
-//               type="text"
-//               value={this.state.europe_forest_area}
-//               required={false}
-//               onChange={(e, d) => this.updateData({ europe_forest_area: d })}
-//             />
-
-//             <UiForm.Group widths="equal">
-//               <Field
-//                 id="europe-data-1-name"
-//                 title="Data"
-//                 type="text"
-//                 value={this.state.europe_data_1_name}
-//                 required={false}
-//                 onChange={(e, d) => this.updateData({ europe_data_1_name: d })}
-//               />
-//               <Field
-//                 id="europe-data-1-value"
-//                 title="Value"
-//                 type="text"
-//                 value={this.state.europe_data_1_value}
-//                 required={false}
-//                 onChange={(e, d) => this.updateData({ europe_data_1_value: d })}
-//               />
-//             </UiForm.Group>
-
-//             <UiForm.Group widths="equal">
-//               <Field
-//                 id="europe-data-2-name"
-//                 title="Data"
-//                 type="text"
-//                 value={this.state.europe_data_2_name}
-//                 required={false}
-//                 onChange={(e, d) => this.updateData({ europe_data_2_name: d })}
-//               />
-//               <Field
-//                 id="europe-country-2-value"
-//                 title="Value"
-//                 type="text"
-//                 value={this.state.europe_data_2_value}
-//                 required={false}
-//                 onChange={(e, d) => this.updateData({ europe_data_2_value: d })}
-//               />
-//             </UiForm.Group>
-
-//             <Field
-//               id="europe-block-source"
-//               title="Source"
-//               type="text"
-//               value={this.state.europe_text_attribution}
-//               required={false}
-//               onChange={(e, d) =>
-//                 this.updateData({ europe_text_attribution: d })
-//               }
-//             />
-
-//             <Field
-//               id="europe-block-link"
-//               title="Source link"
-//               type="text"
-//               value={this.state.europe_block_link}
-//               required={false}
-//               onChange={(e, d) => this.updateData({ europe_block_link: d })}
-//             />
-//           </UiForm>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Edit;
+export default compose(
+  connect(
+    (state, props) => ({
+      connected_data_parameters: state.connected_data_parameters,
+      pathname: state.router.location.pathname
+    }),
+  ),
+)(Edit);
