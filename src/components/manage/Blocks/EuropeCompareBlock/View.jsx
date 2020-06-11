@@ -108,7 +108,7 @@ const View = props => {
         </div>
 
         <div>
-          {/* {props?.data?.chart_source &&
+          {props?.data?.chart_source &&
             props?.data?.chart_source_link &&
             props?.data?.chartSources &&
             props?.data?.providers &&
@@ -119,7 +119,7 @@ const View = props => {
                 multipleSources={props.data.chartSources}
                 providerUrl={props?.data?.providers['data_provider']}
               />
-            )} */}
+            )}
         </div>
       </div>
     </div>
