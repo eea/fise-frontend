@@ -8,6 +8,10 @@ export function getBasePath(url) {
     .replace(settings.internalApiPath, '');
 }
 
+export const objectHasData = obj => {
+  return typeof obj === 'object' && obj !== null && Object.keys(obj).length > 0;
+};
+
 export const getSchemaWithDataQuery = props => {
   if (!props.schema) return {};
   let schemaWithDataQuery = {};
@@ -15,8 +19,8 @@ export const getSchemaWithDataQuery = props => {
     Object.keys(props.schema).forEach(element => {
       if (props.schema[element].type === 'data-provider') {
         if (
-          !Object.keys(props.connected_data_parameters.byContextPath).length &&
-          !Object.keys(props.connected_data_parameters.byProviderPath).length
+          !objectHasData(props.connected_data_parameters.byProviderPath) &&
+          !objectHasData(props.connected_data_parameters.byContextPath)
         ) {
           const dataQuery = {};
           dataQuery[element + '_data_query'] = {
@@ -67,8 +71,4 @@ export const updateConnectedDataParameters = props => {
         }
       }
     });
-};
-
-export const objectHasData = obj => {
-  return typeof obj === 'object' && obj !== null && Object.keys(obj).length > 0;
 };

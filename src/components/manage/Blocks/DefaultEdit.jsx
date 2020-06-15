@@ -12,10 +12,15 @@ const DefaultEdit = props => {
   const [state, setState] = useState({
     schemaWithDataQuery: null,
   });
-  if (!state.schemaWithDataQuery) {
+  if (
+    !state.schemaWithDataQuery &&
+    props.schema &&
+    props?.connected_data_parameters?.byContextPath &&
+    props?.connected_data_parameters?.byProviderPath
+  ) {
     const schemaWithDataQuery = getSchemaWithDataQuery({
       schema: props.schema,
-      connected_data_props: props.connected_data_parameters,
+      connected_data_parameters: props.connected_data_parameters,
     });
     setState({ ...state, schemaWithDataQuery });
   }

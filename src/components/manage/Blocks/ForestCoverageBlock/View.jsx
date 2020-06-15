@@ -18,30 +18,34 @@ const View = props => {
         <div className="land-data-wrapper eu28-data">
           <div className="land-data">
             <span>
-              {props?.data?.providers?.['data_provider_i']?.path &&
-                props?.data?.columns?.total_i && (
-                  <DataConnectedValue
-                    filterIndex={state.ids?.[0] || 0}
-                    url={props.data.providers['data_provider_i'].path}
-                    column={props.data.columns.total_i.value}
-                    format={props.data.columns.total_i.format}
-                    placeholder="_"
-                  />
-                )}
+              {props?.data?.columns?.total_i && (
+                <DataConnectedValue
+                  filterIndex={state.ids?.[0] || 0}
+                  url={
+                    props?.data?.providers?.['data_provider_i']?.path ||
+                    props?.data?.provider_url
+                  }
+                  column={props.data.columns.total_i.value}
+                  format={props.data.columns.total_i.format}
+                  placeholder="_"
+                />
+              )}
             </span>
           </div>
           <div className="land-data-content">
             <span>
-              {props?.data?.providers?.['data_provider_ii']?.path &&
-                props?.data?.columns?.total_ii && (
-                  <DataConnectedValue
-                    filterIndex={state.ids?.[1] || 0}
-                    url={props.data.providers['data_provider_ii'].path}
-                    column={props.data?.columns?.total_ii?.value}
-                    format={props.data?.columns?.total_ii?.format}
-                    placeholder="_"
-                  />
-                )}
+              {props?.data?.columns?.total_ii && (
+                <DataConnectedValue
+                  filterIndex={state.ids?.[1] || 0}
+                  url={
+                    props?.data?.providers?.['data_provider_ii']?.path ||
+                    props?.data?.provider_url
+                  }
+                  column={props.data?.columns?.total_ii?.value}
+                  format={props.data?.columns?.total_ii?.format}
+                  placeholder="_"
+                />
+              )}
               {props.data?.columns?.total_unit?.value}
             </span>
             {props.data?.columns?.total_text?.value}

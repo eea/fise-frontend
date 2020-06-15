@@ -19,17 +19,18 @@ const View = props => {
         <div className="land-data-wrapper">
           <div className="land-data">
             <span>
-              {props.data.providers &&
-                props.data.providers['data_provider'] &&
-                props.data.columns?.total && (
-                  <DataConnectedValue
-                    filterIndex={state.ids?.[0] || 0}
-                    url={props.data.providers['data_provider']?.path}
-                    column={props.data.columns.total.value}
-                    format={props.data.columns.total.format}
-                    placeholder="_"
-                  />
-                )}
+              {props.data.columns?.total && (
+                <DataConnectedValue
+                  filterIndex={state.ids?.[0] || 0}
+                  url={
+                    props.data.providers['data_provider']?.path ||
+                    props?.data?.provider_url
+                  }
+                  column={props.data.columns.total.value}
+                  format={props.data.columns.total.format}
+                  placeholder="_"
+                />
+              )}
             </span>
           </div>
           <div className="land-data-content">
@@ -53,8 +54,7 @@ const View = props => {
           {props?.data?.chart_source &&
             props?.data?.chart_source_link &&
             props?.data?.chartSources &&
-            props?.data?.providers &&
-            props?.data?.providers['data_provider'] && (
+            props?.data?.providers?.['data_provider'] && (
               <SourceView
                 initialSource={props.data.chart_source}
                 initialSourceLink={props.data.chart_source_link}

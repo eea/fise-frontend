@@ -20,11 +20,13 @@ const DefaultView = props => {
   });
   const id = props.id || state.id;
   const path = getBasePath(props.pathname);
-  if (!state.schemaWithDataQuery) {
-    const schemaWithDataQuery = getSchemaWithDataQuery({
-      schema: props.schema,
-      connected_data_parameters: props.connected_data_parameters,
-    });
+  if (
+    !state.schemaWithDataQuery &&
+    props.schema &&
+    props?.connected_data_parameters?.byContextPath &&
+    props?.connected_data_parameters?.byProviderPath
+  ) {
+    const schemaWithDataQuery = getSchemaWithDataQuery(props);
     setState({ ...state, schemaWithDataQuery });
   }
   if (state.schemaWithDataQuery && !state.dataQueryKeys) {
@@ -43,8 +45,8 @@ const DefaultView = props => {
     state.dataQueryKeys &&
     state.dataQueryKeys.forEach((key, index) => {
       if (
-        !objectHasData(props.connected_data_parameters).byProviderPath &&
-        !objectHasData(props.connected_data_parameters).byContextPath &&
+        !objectHasData(props.connected_data_parameters.byProviderPath) &&
+        !objectHasData(props.connected_data_parameters.byContextPath) &&
         !props.connected_data_parameters?.byPath?.[path]?.override?.[
           state.ids[index]
         ] &&
