@@ -1,46 +1,18 @@
 import React, { useState } from 'react';
 import _uniqueId from 'lodash/uniqueId';
-import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
+import DefaultEdit from '../DefaultEdit';
 import View from './View';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import { getSchema } from './schema';
-
-import { updateConnectedDataParameters } from '~/helpers';
-
+const schema = require('./schema.json');
 const Edit = props => {
-  const [state, setState] = useState({
-    schemaWithDataQuery: null,
+  const [state] = useState({
     id: _uniqueId('block_'),
   });
-  if (!state.schemaWithDataQuery) {
-    const schemaWithDataQuery = getSchema(props.connected_data_parameters);
-    setState({ ...state, schemaWithDataQuery });
-  }
   return (
     <div>
-      <EditBlock
-        onChange={data => {
-          props.onChangeBlock(props.block, {
-            ...props.data,
-            ...data,
-          });
-          updateConnectedDataParameters({
-            ...props,
-            newData: {
-              ...data,
-            },
-            schema: state.schemaWithDataQuery,
-            id: `block_${state.id}`,
-          });
-        }}
-        schema={state.schemaWithDataQuery}
-        block="data-entity"
-        data={props.data}
-        title="Volume block"
-        selected={props.selected}
-      />
+      <DefaultEdit {...props} id={state.id} schema={schema} />
       <View {...props} id={state.id} />
     </div>
   );

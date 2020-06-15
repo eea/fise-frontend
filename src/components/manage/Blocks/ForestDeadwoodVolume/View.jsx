@@ -1,48 +1,62 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
 import { SourceView } from 'volto-datablocks/Sources';
 
-class View extends Component {
-  render() {
-    return (
-      <div className="forest-block-wrapper">
-        <div className="forest-specific-block forest-area-block">
-          {this.props.data?.block_title ? (
-            <h5>{this.props.data.block_title}</h5>
-          ) : (
-            ''
-          )}
+import DefaultView from '../DefaultView';
 
-          <div className="land-data-wrapper eu28-data purple">
-            <div className="land-data">
-              <span>
-                {this.props.data.provider_url &&
-                  this.props.data.columns?.total && (
-                    <DataConnectedValue
-                      url={this.props.data.provider_url}
-                      column={this.props.data.columns.total.value}
-                      format={this.props.data.columns.total.format}
-                    />
-                  )}
-              </span>
-            </div>
-            <div className="land-data-content">
-              <span>{this.props.data?.columns?.totalUnit?.value}</span>
-              {this.props.data?.columns?.totalText?.value}
-            </div>
+const schema = require('./schema.json');
+const View = props => {
+  const [state, setState] = useState({
+    onChange: newState => {
+      setState({ ...state, ...newState });
+    },
+  });
+  const view = (
+    <div className="forest-block-wrapper">
+      <div className="forest-specific-block forest-area-block">
+        {props.data?.block_title ? <h5>{props.data.block_title}</h5> : ''}
+
+        <div className="land-data-wrapper eu28-data purple">
+          <div className="land-data">
+            <span>
+              {props?.data?.providers?.['data_provider']?.path &&
+                props?.data?.columns?.total && (
+                  <DataConnectedValue
+                    url={props.data.providers['data_provider'].path}
+                    column={props.data.columns.total.value}
+                    format={props.data.columns.total.format}
+                  />
+                )}
+            </span>
           </div>
-          <div>
-            <SourceView
-              initialSource={this.props.data.chart_source}
-              initialSourceLink={this.props.data.chart_source_link}
-              multipleSources={this.props.data.chartSources}
-              providerUrl={this.props.data.provider_url}
-            />
+          <div className="land-data-content">
+            <span>{props.data?.columns?.total_unit?.value}</span>
+            {props.data?.columns?.total_text?.value}
           </div>
         </div>
+        <div>
+          {props?.data?.chart_source &&
+            props?.data?.chart_source_link &&
+            props?.data?.providers?.['data_provider_i'] && (
+              <SourceView
+                initialSource={props.data.chart_source}
+                initialSourceLink={props.data.chart_source_link}
+                multipleSources={props.data.chartSources}
+                providerUrl={props.data.provider_url}
+              />
+            )}
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+  return (
+    <DefaultView
+      {...props}
+      schema={schema}
+      view={view}
+      onChange={state.onChange}
+    />
+  );
+};
 
 export default View;

@@ -1,0 +1,43 @@
+{
+  "data_provider": {
+    "title": "Data provider",
+    "defaultformat": "compactnumber",
+    "type": "data-provider"
+  },
+  "total": {
+    "title": "Volume column",
+    "defaultformat": "compactnumber",
+    "type": "data-provider-entity",
+    "provider": "data_provider"
+  },
+  "total_text": {
+    "title": "Volume text",
+    "defaultformat": "compactnumber",
+    "static": true
+  },
+  "total_unit": {
+    "title": "Volume unit",
+    "defaultformat": "compactnumber",
+    "static": true
+  },
+  "data_1_text": {
+    "title": "Data 1 text",
+    "defaultformat": "compactnumber",
+    "static": true
+  },
+  "data_1_quantity": {
+    "title": "Data 1 quantity",
+    "defaultformat": "compactnumber",
+    "static": true
+  },
+  "data_2_text": {
+    "title": "Data 2 text",
+    "defaultformat": "compactnumber",
+    "static": true
+  },
+  "data_2_quantity": {
+    "title": "Data 2 quantity",
+    "defaultformat": "compactnumber",
+    "static": true
+  }
+}

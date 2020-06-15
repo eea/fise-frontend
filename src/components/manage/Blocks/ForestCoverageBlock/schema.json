@@ -1,0 +1,34 @@
+{
+  "data_provider_i": {
+    "title": "Data provider",
+    "defaultformat": "compactnumber",
+    "type": "data-provider"
+  },
+  "total_i": {
+    "title": "Volume column",
+    "defaultformat": "percentage",
+    "type": "data-provider-entity",
+    "provider": "data_provider_i"
+  },
+  "data_provider_ii": {
+    "title": "Data provider",
+    "defaultformat": "compactnumber",
+    "type": "data-provider"
+  },
+  "total_ii": {
+    "title": "Volume column",
+    "defaultformat": "percentage",
+    "type": "data-provider-entity",
+    "provider": "data_provider_ii"
+  },
+  "total_text": {
+    "title": "Total Area column",
+    "defaultformat": "compactnumber",
+    "static": true
+  },
+  "total_unit": {
+    "title": "Measurement unit for total area",
+    "defaultformat": "compactnumber",
+    "static": true
+  }
+}
