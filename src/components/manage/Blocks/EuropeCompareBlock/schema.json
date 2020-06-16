@@ -10,12 +10,12 @@
     "type": "data-provider-entity",
     "provider": "data_provider"
   },
-  "total_text": {
+  "totalText": {
     "title": "Volume text",
     "defaultformat": "compactnumber",
     "static": true
   },
-  "total_unit": {
+  "totalUnit": {
     "title": "Volume unit",
     "defaultformat": "compactnumber",
     "static": true

@@ -10,13 +10,13 @@
     "type": "data-provider-entity",
     "provider": "data_provider"
   },
-  "total_text": {
-    "title": "Total Area column",
+  "totalText": {
+    "title": "Volume text",
     "defaultformat": "compactnumber",
     "static": true
   },
-  "total_unit": {
-    "title": "Measurement unit for total area",
+  "totalUnit": {
+    "title": "Volume unit",
     "defaultformat": "compactnumber",
     "static": true
   }

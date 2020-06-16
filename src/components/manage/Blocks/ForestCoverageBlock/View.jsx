@@ -18,15 +18,15 @@ const View = props => {
         <div className="land-data-wrapper eu28-data">
           <div className="land-data">
             <span>
-              {props?.data?.columns?.total_i && (
+              {props?.data?.columns?.perc && (
                 <DataConnectedValue
                   filterIndex={state.ids?.[0] || 0}
                   url={
-                    props?.data?.providers?.['data_provider_i']?.path ||
+                    props?.data?.providers?.['data_provider']?.path ||
                     props?.data?.provider_url
                   }
-                  column={props.data.columns.total_i.value}
-                  format={props.data.columns.total_i.format}
+                  column={props.data.columns.perc.value}
+                  format={props.data.columns.perc.format}
                   placeholder="_"
                 />
               )}
@@ -34,35 +34,42 @@ const View = props => {
           </div>
           <div className="land-data-content">
             <span>
-              {props?.data?.columns?.total_ii && (
+              {props?.data?.columns?.perc && (
                 <DataConnectedValue
                   filterIndex={state.ids?.[1] || 0}
                   url={
                     props?.data?.providers?.['data_provider_ii']?.path ||
                     props?.data?.provider_url
                   }
-                  column={props.data?.columns?.total_ii?.value}
-                  format={props.data?.columns?.total_ii?.format}
+                  column={
+                    props.data?.columns?.perc_ii?.value ||
+                    props.data?.columns?.totalArea?.value
+                  }
+                  format={
+                    props.data?.columns?.perc_ii?.format ||
+                    props.data?.columns?.totalArea?.format
+                  }
                   placeholder="_"
                 />
               )}
-              {props.data?.columns?.total_unit?.value}
+              {' ' + props.data?.columns?.totalAreaUnit?.value}
             </span>
-            {props.data?.columns?.total_text?.value}
+            {' ' + props.data?.columns?.percText?.value}
           </div>
         </div>
 
         <div>
-          {props?.data?.chart_source &&
-            props?.data?.chart_source_link &&
-            props?.data?.providers?.['data_provider_i'] && (
-              <SourceView
-                initialSource={props.data.chart_source}
-                initialSourceLink={props.data.chart_source_link}
-                multipleSources={props.data.chartSources}
-                providerUrl={props.data.providers['data_provider_i'].path}
-              />
-            )}
+          {props?.data?.chart_source && props?.data?.chart_source_link && (
+            <SourceView
+              initialSource={props.data.chart_source}
+              initialSourceLink={props.data.chart_source_link}
+              multipleSources={props.data.chartSources}
+              providerUrl={
+                props.data.providers?.['data_provider']?.path ||
+                props.data.provider_url
+              }
+            />
+          )}
         </div>
       </div>
     </div>

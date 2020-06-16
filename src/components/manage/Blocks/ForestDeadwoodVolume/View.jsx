@@ -27,26 +27,28 @@ const View = props => {
                   }
                   column={props.data.columns.total.value}
                   format={props.data.columns.total.format}
+                  placeholder="_"
                 />
               )}
             </span>
           </div>
           <div className="land-data-content">
-            <span>{props.data?.columns?.total_unit?.value}</span>
-            {props.data?.columns?.total_text?.value}
+            <span>{props.data?.columns?.totalUnit?.value}</span>
+            {props.data?.columns?.totalText?.value}
           </div>
         </div>
         <div>
-          {props?.data?.chart_source &&
-            props?.data?.chart_source_link &&
-            props?.data?.providers?.['data_provider_i'] && (
-              <SourceView
-                initialSource={props.data.chart_source}
-                initialSourceLink={props.data.chart_source_link}
-                multipleSources={props.data.chartSources}
-                providerUrl={props.data.provider_url}
-              />
-            )}
+          {props?.data?.chart_source && props?.data?.chart_source_link && (
+            <SourceView
+              initialSource={props.data.chart_source}
+              initialSourceLink={props.data.chart_source_link}
+              multipleSources={props.data.chartSources}
+              providerUrl={
+                props.data?.providers?.['data_provider'] ||
+                props.data.provider_url
+              }
+            />
+          )}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -24,6 +24,31 @@ const DefaultEdit = props => {
     });
     setState({ ...state, schemaWithDataQuery });
   }
+  //  Set default provider_url on mount
+  useEffect(() => {
+    if (
+      __CLIENT__ &&
+      props.data.provider_url &&
+      state.schemaWithDataQuery &&
+      !props.data.providers
+    ) {
+      const newData = { ...JSON.parse(JSON.stringify(props.data)) };
+      if (!newData.providers) newData.providers = {};
+      Object.keys(state.schemaWithDataQuery).forEach(element => {
+        if (state.schemaWithDataQuery[element].type === 'data-provider') {
+          if (!newData.providers[element]) newData.providers[element] = {};
+          if (!newData.providers[element].path) {
+            newData.providers[element].path = props.data.provider_url;
+          }
+        }
+      });
+      props.onChangeBlock(props.block, {
+        ...props.data,
+        ...newData,
+      });
+    }
+    /* eslint-disable-next-line */
+  }, []);
   return (
     <div>
       <EditBlock
