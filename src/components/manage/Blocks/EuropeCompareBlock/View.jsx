@@ -13,7 +13,7 @@ const View = props => {
   });
   const view = (
     <div className="forest-block-wrapper">
-      <div className="forest-specific-block forest-area-block">
+      <div className="forest-specific-block forest-comparation">
         {props.data?.block_title ? <h5>{props.data.block_title}</h5> : ''}
 
         <div className="land-data-wrapper">
