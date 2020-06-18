@@ -63,7 +63,7 @@ const DefaultEdit = props => {
               ...data,
             },
             schema: state.schemaWithDataQuery,
-            id: `block_${props.id}`,
+            id: `${props.id}`,
           });
         }}
         schema={state.schemaWithDataQuery}
