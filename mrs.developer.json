@@ -26,7 +26,8 @@
     },
     "volto-plotlycharts": {
       "url": "https://github.com/eea/volto-plotlycharts.git",
-      "path": "src"
+      "path": "src",
+      "branch": "fixes_plotly"
     },
     "volto-base": {
       "url": "https://github.com/eea/volto-base.git",
