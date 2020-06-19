@@ -6,24 +6,20 @@ import { compose } from 'redux';
 import {
   getSchemaWithDataQuery,
   updateConnectedDataParameters,
+  getBasePath,
 } from '~/helpers';
 
 const DefaultEdit = props => {
   const [state, setState] = useState({
     schemaWithDataQuery: null,
   });
-  if (
-    !state.schemaWithDataQuery &&
-    props.schema &&
-    props?.connected_data_parameters?.byContextPath &&
-    props?.connected_data_parameters?.byProviderPath
-  ) {
-    const schemaWithDataQuery = getSchemaWithDataQuery({
-      schema: props.schema,
-      connected_data_parameters: props.connected_data_parameters,
-    });
+  const path = getBasePath(props.pathname);
+  useEffect(() => {
+    //  Set schema adding data_query if needed
+    const schemaWithDataQuery = getSchemaWithDataQuery({ ...props, path });
     setState({ ...state, schemaWithDataQuery });
-  }
+    /* eslint-disable-next-line */
+  }, [props.connected_data_parameters?.byContextPath, props.connected_data_parameters?.byProviderPath]);
   //  Set default provider_url on mount
   useEffect(() => {
     if (
@@ -65,6 +61,9 @@ const DefaultEdit = props => {
             schema: state.schemaWithDataQuery,
             id: `${props.id}`,
           });
+        }}
+        onChangeBlock={() => {
+          return;
         }}
         schema={state.schemaWithDataQuery}
         block="data-entity"

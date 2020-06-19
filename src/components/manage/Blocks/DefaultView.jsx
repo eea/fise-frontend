@@ -15,43 +15,48 @@ const DefaultView = props => {
   const [state, setState] = useState({
     id: _uniqueId('block_'),
     schemaWithDataQuery: null,
-    dataQueryKeys: null,
+    dataQueryKeys: [],
     ids: [],
   });
   const id = props.id || state.id;
   const path = getBasePath(props.pathname);
-  if (
-    !state.schemaWithDataQuery &&
-    props.schema &&
-    props?.connected_data_parameters?.byContextPath &&
-    props?.connected_data_parameters?.byProviderPath
-  ) {
-    const schemaWithDataQuery = getSchemaWithDataQuery(props);
+  useEffect(() => {
+    //  Set schema adding data_query if needed
+    const schemaWithDataQuery = getSchemaWithDataQuery({ ...props, path });
     setState({ ...state, schemaWithDataQuery });
-  }
-  if (state.schemaWithDataQuery && !state.dataQueryKeys) {
-    const dataQueryKeys = [];
-    const ids = [...state.ids];
-    Object.keys(state.schemaWithDataQuery).forEach(element => {
-      if (state.schemaWithDataQuery[element].type === 'data-query') {
-        dataQueryKeys.push(element);
-        ids.push(`${id}_${element}`);
-      }
-    });
-    setState({ ...state, dataQueryKeys, ids });
-  }
+    /* eslint-disable-next-line */
+  }, [props.connected_data_parameters?.byContextPath, props.connected_data_parameters?.byProviderPath]);
+
+  useEffect(() => {
+    //  Set data_query keys and ids
+    if (state.schemaWithDataQuery) {
+      const dataQueryKeys = [];
+      const ids = [];
+      Object.keys(state.schemaWithDataQuery).forEach(element => {
+        if (state.schemaWithDataQuery[element].type === 'data-query') {
+          dataQueryKeys.push(element);
+          ids.push(`${id}_${element}`);
+        }
+      });
+      setState({ ...state, dataQueryKeys, ids });
+    }
+    /* eslint-disable-next-line */
+  }, [state.schemaWithDataQuery]);
   //  Update connected_data_parameters if data_query available in data.columns
   __CLIENT__ &&
-    state.dataQueryKeys &&
     state.dataQueryKeys.forEach((key, index) => {
       if (
-        !objectHasData(props.connected_data_parameters.byProviderPath) &&
-        !objectHasData(props.connected_data_parameters.byContextPath) &&
+        !objectHasData(
+          props.connected_data_parameters?.byProviderPath?.[path],
+        ) &&
+        !objectHasData(
+          props.connected_data_parameters?.byContextPath?.[path],
+        ) &&
         !props.connected_data_parameters?.byPath?.[path]?.override?.[
           state.ids[index]
         ] &&
-        props?.data?.columns?.[key]?.value?.i &&
-        props?.data?.columns?.[key]?.value?.v
+        props.data?.columns?.[key]?.value?.i &&
+        props.data?.columns?.[key]?.value?.v
       ) {
         props.dispatch(
           setConnectedDataParameters(
@@ -65,6 +70,7 @@ const DefaultView = props => {
   useEffect(() => {
     props.onChange && props.onChange(state);
     return () => {
+      //  Delete connected data parrameters on Unmount
       __CLIENT__ &&
         state.dataQueryKeys &&
         state.dataQueryKeys.forEach((key, index) => {

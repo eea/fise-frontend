@@ -19,18 +19,16 @@ const View = props => {
         <div className="land-data-wrapper eu28-data">
           <div className="land-data">
             <span>
-              {props?.data?.columns?.eu28_total && (
-                <DataConnectedValue
-                  filterIndex={state.ids?.[0] || 0}
-                  url={
-                    props.data.providers['eu28_data_provider']?.path ||
-                    props?.data?.provider_url
-                  }
-                  column={props.data.columns.eu28_total.value}
-                  format={props.data.columns.eu28_total.format}
-                  placeholder="_"
-                />
-              )}
+              <DataConnectedValue
+                filterIndex={state.ids?.[0] || 0}
+                url={
+                  props.data?.providers?.['eu28_data_provider']?.path ||
+                  props.data?.provider_url
+                }
+                column={props.data?.columns?.eu28_total?.value}
+                format={props.data?.columns?.eu28_total?.format}
+                placeholder="_"
+              />
             </span>
           </div>
           <div className="land-data-content">
@@ -42,20 +40,18 @@ const View = props => {
         <div className="land-data-wrapper eea39-data">
           <div className="land-data">
             <span>
-              {props?.data?.columns?.eea39_total && (
-                <div>
-                  <DataConnectedValue
-                    filterIndex={state.ids?.[1] || 1}
-                    url={
-                      props.data.providers['eea39_data_provider'].path ||
-                      props?.data?.provider_url
-                    }
-                    column={props.data.columns.eea39_total.value}
-                    format={props.data.columns.eea39_total.format}
-                    placeholder="_"
-                  />
-                </div>
-              )}
+              <div>
+                <DataConnectedValue
+                  filterIndex={state.ids?.[1] || 0}
+                  url={
+                    props.data?.providers?.['eea39_data_provider']?.path ||
+                    props.data?.provider_url
+                  }
+                  column={props.data?.columns?.eea39_total?.value}
+                  format={props.data?.columns?.eea39_total?.format}
+                  placeholder="_"
+                />
+              </div>
             </span>
           </div>
           <div className="land-data-content">

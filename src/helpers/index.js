@@ -15,24 +15,27 @@ export const objectHasData = obj => {
 export const getSchemaWithDataQuery = props => {
   if (!props.schema) return {};
   let schemaWithDataQuery = {};
-  props?.schema &&
-    Object.keys(props.schema).forEach(element => {
-      if (props.schema[element].type === 'data-provider') {
-        if (
-          !objectHasData(props.connected_data_parameters.byProviderPath) &&
-          !objectHasData(props.connected_data_parameters.byContextPath)
-        ) {
-          const dataQuery = {};
-          dataQuery[element + '_data_query'] = {
-            defaultformat: 'compactnumber',
-            type: 'data-query',
-          };
-          schemaWithDataQuery[element] = props.schema[element];
-          schemaWithDataQuery = { ...schemaWithDataQuery, ...dataQuery };
-        }
+  Object.keys(props.schema).forEach(element => {
+    if (props.schema[element].type === 'data-provider') {
+      if (
+        !objectHasData(
+          props?.connected_data_parameters?.byProviderPath?.[props.path],
+        ) &&
+        !objectHasData(
+          props?.connected_data_parameters?.byContextPath?.[props.path],
+        )
+      ) {
+        const dataQuery = {};
+        dataQuery[element + '_data_query'] = {
+          defaultformat: 'compactnumber',
+          type: 'data-query',
+        };
+        schemaWithDataQuery[element] = props.schema[element];
+        schemaWithDataQuery = { ...schemaWithDataQuery, ...dataQuery };
       }
-      schemaWithDataQuery[element] = props.schema[element];
-    });
+    }
+    schemaWithDataQuery[element] = props.schema[element];
+  });
   return schemaWithDataQuery;
 };
 

@@ -19,17 +19,15 @@ const View = props => {
         <div className="land-data-wrapper eu28-data purple">
           <div className="land-data">
             <span>
-              {props?.data?.columns?.total && (
-                <DataConnectedValue
-                  url={
-                    props?.data?.providers?.['data_provider']?.path ||
-                    props?.data?.provider_url
-                  }
-                  column={props.data.columns.total.value}
-                  format={props.data.columns.total.format}
-                  placeholder="_"
-                />
-              )}
+              <DataConnectedValue
+                filterIndex={state.ids?.[0] || 0}
+                url={
+                  props.data?.providers?.['data_provider']?.path ||
+                  props.data?.provider_url
+                }
+                column={props.data?.columns?.total?.value}
+                format={props.data?.columns?.total?.format}
+              />
             </span>
           </div>
           <div className="land-data-content">
