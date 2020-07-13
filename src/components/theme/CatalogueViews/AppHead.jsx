@@ -9,7 +9,7 @@ import { Footer } from '@plone/volto/components';
 
 class App extends Component {
   render() {
-    return <Footer />;
+    return '';
   }
 }
 

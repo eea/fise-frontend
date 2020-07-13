@@ -11,6 +11,7 @@ import { addonRoutes } from '~/config';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
 import Header from '~/components/theme/CatalogueViews/AppHeader.jsx';
 import Footer from '~/components/theme/CatalogueViews/AppFooter.jsx';
+import Head from '~/components/theme/CatalogueViews/AppHead.jsx';
 
 /**
  * Routes array.
@@ -25,6 +26,10 @@ const routes = [
   {
     path: '/footer',
     component: Footer,
+  },
+  {
+    path: '/head',
+    component: Head,
   },
   {
     path: '/',
