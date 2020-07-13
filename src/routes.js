@@ -9,6 +9,8 @@ import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
 import { addonRoutes } from '~/config';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
+import Header from '~/components/theme/CatalogueViews/AppHeader.jsx';
+import Footer from '~/components/theme/CatalogueViews/AppFooter.jsx';
 
 /**
  * Routes array.
@@ -16,6 +18,14 @@ import SiteMap from '~/components/theme/SiteMap/SiteMap';
  * @returns {array} Routes.
  */
 const routes = [
+  {
+    path: '/header',
+    component: Header,
+  },
+  {
+    path: '/footer',
+    component: Footer,
+  },
   {
     path: '/',
     component: App, // Change this if you want a different component
