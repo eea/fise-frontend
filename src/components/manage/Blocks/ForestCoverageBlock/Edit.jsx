@@ -1,46 +1,18 @@
-import React from 'react';
-import EditBlock from 'volto-datablocks/DataConnectedBlock/EditBlock';
+import React, { useState } from 'react';
+import _uniqueId from 'lodash/uniqueId';
+import DefaultEdit from '../DefaultEdit';
 import View from './View';
 
-const SCHEMA = {
-  perc: {
-    title: 'Percentage column',
-    defaultformat: 'percentage',
-  },
-  totalArea: {
-    title: 'Total Area column',
-    defaultformat: 'compactnumber',
-  },
-  percText: {
-    title: 'Text for percentage column',
-    static: true,
-  },
-  totalAreaUnit: {
-    title: 'Measurement unit for total area',
-    static: true,
-  },
-};
-
+const schema = require('./schema.json');
 const Edit = props => {
-  // data is like {provider_url: '', columns: {key: {value, format}}}
+  const [state] = useState({
+    id: _uniqueId('block_'),
+  });
   return (
-    <React.Fragment>
-      <EditBlock
-        onChange={data => {
-          props.onChangeBlock(props.block, {
-            ...props.data,
-            ...data,
-          });
-        }}
-        schema={SCHEMA}
-        block={props.block}
-        data={props.data}
-        title="Forest Coverage block"
-        selected={props.selected}
-      />
-      <View {...props} />
-    </React.Fragment>
+    <div>
+      <DefaultEdit {...props} id={state.id} schema={schema} />
+      <View {...props} id={state.id} />
+    </div>
   );
 };
-
 export default Edit;

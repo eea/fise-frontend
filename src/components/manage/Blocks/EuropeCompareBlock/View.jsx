@@ -1,35 +1,87 @@
-import React, { Component } from 'react';
-// import TableauReport from '~/components/theme/TableauView/TableauReport';
+import React, { useState } from 'react';
+import DataConnectedValue from 'volto-datablocks/DataConnectedValue';
+import { SourceView } from 'volto-datablocks/Sources';
 
-class View extends Component {
-  render() {
-    return (
-      <div className="forest-block-wrapper">
-        <div className="forest-specific-block forest-comparation">
-          <h5>{this.props.data.europe_block_title}</h5>
-          <div className="land-data-wrapper">
-            <div className="land-data">
-              <span>{this.props.data.europe_forest_area}</span>
-            </div>
-            <div className="land-data-content">of Europe's land surface</div>
+import DefaultView from '../DefaultView';
+
+const schema = require('./schema.json');
+const View = props => {
+  const [state, setState] = useState({
+    onChange: newState => {
+      setState({ ...state, ...newState });
+    },
+  });
+  const view = (
+    <div className="forest-block-wrapper">
+      <div className="forest-specific-block forest-comparation">
+        {props.data?.block_title ? <h5>{props.data.block_title}</h5> : ''}
+
+        <div className="land-data-wrapper">
+          <div className="land-data">
+            <span>
+              <DataConnectedValue
+                filterIndex={state.ids?.[0] || 0}
+                url={
+                  props.data?.providers?.['data_provider']?.path ||
+                  props.data?.provider_url
+                }
+                column={props.data?.columns?.total?.value}
+                format={props.data?.columns?.total?.format}
+                placeholder="_"
+              />
+            </span>
           </div>
-          <div className="ui bulleted list">
-            <div className="item">
-              {this.props.data.europe_data_1_name}
-              <span>{this.props.data.europe_data_1_value}</span>
-            </div>
-            <div className="item">
-              {this.props.data.europe_data_2_name}
-              <span>{this.props.data.europe_data_2_value}</span>
-            </div>
+          <div className="land-data-content">
+            <span>{props.data?.columns?.totalUnit?.value}</span>
+            {' ' + (props.data?.columns?.totalText?.value || '')}
           </div>
-          <a className="discreet" href={this.props.data.europe_block_link}>
-            {this.props.data.europe_text_attribution}
-          </a>
+        </div>
+
+        <div className="ui bulleted list">
+          <div className="item">
+            {props.data?.columns?.data_1_text?.value ||
+              props.data?.europe_data_1_name}
+            <span>
+              {props.data?.columns?.data_1_quantity?.value ||
+                props.data?.europe_data_1_value}
+            </span>
+          </div>
+          <div className="item">
+            {props.data?.columns?.data_2_text?.value ||
+              props.data?.europe_data_2_name}
+            <span>
+              {props.data?.columns?.data_2_quantity?.value ||
+                props.data?.europe_data_2_value}
+            </span>
+          </div>
+        </div>
+
+        <div>
+          {props.data?.chart_source &&
+            props.data?.chart_source_link &&
+            props.data?.chartSources && (
+              <SourceView
+                initialSource={props.data.chart_source}
+                initialSourceLink={props.data.chart_source_link}
+                multipleSources={props.data.chartSources}
+                providerUrl={
+                  props?.data?.providers?.['data_provider']?.path ||
+                  props?.data?.provider_url
+                }
+              />
+            )}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+  return (
+    <DefaultView
+      {...props}
+      schema={schema}
+      view={view}
+      onChange={state.onChange}
+    />
+  );
+};
 
 export default View;

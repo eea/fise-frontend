@@ -1,0 +1,23 @@
+{
+  "data_provider": {
+    "title": "Data provider",
+    "defaultformat": "compactnumber",
+    "type": "data-provider"
+  },
+  "total": {
+    "title": "Volume column",
+    "defaultformat": "percentage",
+    "type": "data-provider-entity",
+    "provider": "data_provider"
+  },
+  "totalText": {
+    "title": "Volume text",
+    "defaultformat": "compactnumber",
+    "static": true
+  },
+  "totalUnit": {
+    "title": "Volume unit",
+    "defaultformat": "compactnumber",
+    "static": true
+  }
+}
