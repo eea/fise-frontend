@@ -30,7 +30,8 @@
     },
     "volto-base": {
       "url": "https://github.com/eea/volto-base.git",
-      "path": "src"
+      "path": "src",
+      "branch": "118372_header_footer_view"
     },
     "volto-embed": {
       "url": "https://github.com/eea/volto-embed.git",
