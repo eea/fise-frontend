@@ -19,7 +19,7 @@ const DefaultView = props => {
     ids: [],
   });
   const id = props.id || state.id;
-  const path = getBasePath(props.pathname);
+  let path = getBasePath(props.content['@id']);
   useEffect(() => {
     //  Set schema adding data_query if needed
     const schemaWithDataQuery = getSchemaWithDataQuery({ ...props, path });
@@ -85,6 +85,6 @@ const DefaultView = props => {
 export default compose(
   connect((state, props) => ({
     connected_data_parameters: state.connected_data_parameters,
-    pathname: state.router.location.pathname,
+    content: state.content.data,
   })),
 )(DefaultView);
