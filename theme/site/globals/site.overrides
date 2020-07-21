@@ -2382,3 +2382,31 @@ body.has-sidebar #layout-preview-lg {
 /**
   * END SIDEBAR STYLE
 */
+body.has-sidebar {
+  .ui.modal {
+    width: calc(100% - 400px) !important;
+    left: 1rem !important;
+    transform: none !important;
+    top: auto;
+  }
+}
+.ui.modal {
+  width: 95% !important;
+  left: auto !important;
+  transform: none !important;
+  top: auto;
+}
+
+.ui.icon.input + button.data-provider-widget-button {
+  background-color: #4296B2;
+  color: #fff !important;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: #387a91 !important;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
