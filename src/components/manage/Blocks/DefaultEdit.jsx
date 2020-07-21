@@ -19,7 +19,7 @@ const DefaultEdit = props => {
     const schemaWithDataQuery = getSchemaWithDataQuery({ ...props, path });
     setState({ ...state, schemaWithDataQuery });
     /* eslint-disable-next-line */
-  }, [props.connected_data_parameters?.byContextPath, props.connected_data_parameters?.byProviderPath]);
+  }, [props.schema, props.connected_data_parameters?.byContextPath, props.connected_data_parameters?.byProviderPath]);
   //  Set default provider_url on mount
   useEffect(() => {
     if (
