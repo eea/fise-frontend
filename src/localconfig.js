@@ -24,9 +24,6 @@ import ForestDeadwoodVolumeView from '~/components/manage/Blocks/ForestDeadwoodV
 import ForestCoverageEvolutionEdit from '~/components/manage/Blocks/ForestCoverageEvolution/Edit';
 import ForestCoverageEvolutionView from '~/components/manage/Blocks/ForestCoverageEvolution/View';
 
-import DiscodataConnectorBlockEdit from '~/components/manage/Blocks/DiscodataConnectorBlock/Edit';
-import DiscodataConnectorBlockView from '~/components/manage/Blocks/DiscodataConnectorBlock/View';
-
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 
 defineMessages({
@@ -181,14 +178,6 @@ export function applyConfig(config) {
         title: 'Forest patch size distribution block',
         view: ForestCoverageEvolutionView,
         edit: ForestCoverageEvolutionEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      discodata_connector_block: {
-        id: 'discodata_connector_block',
-        title: 'Discodata connector block',
-        view: DiscodataConnectorBlockView,
-        edit: DiscodataConnectorBlockEdit,
         icon: chartIcon,
         group: 'forests_specific',
       },
