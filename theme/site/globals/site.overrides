@@ -11,7 +11,7 @@ body {
   margin-top: 2rem;
 }
 
-.header .logo-nav-wrapper .navigation  {
+.header .logo-nav-wrapper .navigation {
   .ui.menu {
     flex-wrap: wrap;
   }
@@ -2590,6 +2590,7 @@ article.tileItem {
   //   background-color: transparent;
   // }
   margin-bottom: 2rem;
+
   button.expendButton {
     background: transparent;
     border: none;
@@ -2597,9 +2598,11 @@ article.tileItem {
     margin: 1rem 0;
     color: #047A79;
     cursor: pointer;
+
     &:hover {
       color: #055251;
     }
+
     &:focus {
       outline: none;
     }

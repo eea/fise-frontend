@@ -4,27 +4,18 @@
  */
 
 import React, { Component } from 'react';
-import { Container, Segment } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Portal } from 'react-portal';
 
-import {
-  Anontools,
-  Logo,
-  Navigation,
-  SearchWidget,
-  Breadcrumbs,
-} from '@plone/volto/components';
+import { Logo, Navigation, Breadcrumbs } from '@plone/volto/components';
 
 import HeaderImage from '~/components/theme/Header/HeaderImage';
 import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
 import HeaderBackground from './header-bg.png';
-
-import SearchBlock from 'volto-addons/SearchBlock/View';
 
 class Header extends Component {
   constructor(props) {
