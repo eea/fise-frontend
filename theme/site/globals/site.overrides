@@ -11,9 +11,15 @@ body {
   margin-top: 2rem;
 }
 
+.header .logo-nav-wrapper .navigation  {
+  .ui.menu {
+    flex-wrap: wrap;
+  }
+}
+
 .logo-nav-wrapper {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   margin-top: 1rem;
   padding: 0 2rem;
 
@@ -168,6 +174,22 @@ body.has-toolbar {
 //     margin-right: -1.5rem;
 //   }
 // }
+
+.search {
+  &.mobileSearch {
+    padding: 0.875em 0.8125em;
+  }
+}
+
+
+
+.search-meta {
+  span {
+    color: #333;
+    margin-right: 2rem;
+    font-size: 0.9rem;
+  }
+}
 
 @media only screen and (min-width: 1440px) {
   body .ui.container {
@@ -2529,5 +2551,57 @@ body.has-sidebar {
 
   &:focus {
     outline: none !important;
+  }
+}
+
+.mb-0,
+h2.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1,
+h2.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2,
+h2.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-3,
+h2.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+mark.highlight.green {
+  color: #3B5705;
+  background-color: transparent;
+}
+
+article.tileItem {
+  // mark.highlight {
+  //   color: #3B5705;
+  //   font-weight: bold;
+  //   background-color: transparent;
+  // }
+  margin-bottom: 2rem;
+  button.expendButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 1rem 0;
+    color: #047A79;
+    cursor: pointer;
+    &:hover {
+      color: #055251;
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }

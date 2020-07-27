@@ -22,8 +22,9 @@ import HeaderImage from '~/components/theme/Header/HeaderImage';
 import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
-
 import HeaderBackground from './header-bg.png';
+
+import SearchBlock from 'volto-addons/SearchBlock/View';
 
 class Header extends Component {
   constructor(props) {
@@ -121,11 +122,6 @@ class Header extends Component {
                   pathname={this.props.pathname}
                 />
               </div>
-              <div className="nav-actions tablet or lower hidden">
-                <div className="search">
-                  <SearchWidget pathname={this.props.pathname} />
-                </div>
-              </div>
             </div>
           </Container>
         </Sticky>
@@ -133,7 +129,7 @@ class Header extends Component {
           <div
             className={`header-bg ${
               this.state.isHomepage ? 'homepage' : 'contentpage'
-              }`}
+            }`}
           >
             <img src={HeaderBackground} alt="" />
           </div>
@@ -141,12 +137,12 @@ class Header extends Component {
           {this.state.isHomepage ? (
             <HomepageSlider items={this.props.frontpage_slides} />
           ) : (
-              <div style={{ position: 'relative' }}>
-                <Breadcrumbs pathname={this.props.pathname} />
+            <div style={{ position: 'relative' }}>
+              <Breadcrumbs pathname={this.props.pathname} />
 
-                <HeaderImage url={headerImageUrl} />
-              </div>
-            )}
+              <HeaderImage url={headerImageUrl} />
+            </div>
+          )}
         </Container>
       </div>
     );
@@ -154,10 +150,8 @@ class Header extends Component {
 }
 
 export default compose(
-  connect(
-    state => ({
-      token: state.userSession.token,
-      folder_header: state.folder_header.items,
-    }),
-  ),
+  connect(state => ({
+    token: state.userSession.token,
+    folder_header: state.folder_header.items,
+  })),
 )(Header);
