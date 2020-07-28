@@ -26,6 +26,15 @@ const messages = defineMessages({
   },
 });
 
+const getChildPath = (parent, child) => {
+  if (!parent && child) return child.url === '' ? '/' : child.url;
+  if (!child) return parent.url === '' ? '/' : parent.url;
+  if (!parent) return '/';
+  if (parent.title === 'Countries' && child.items?.length > 0)
+    return child.items[0].url === '' ? '/' : child.items[0].url;
+  return child.url === '' ? '/' : child.url;
+};
+
 /**
  * Navigation container class.
  * @class Navigation
@@ -262,7 +271,7 @@ class Navigation extends Component {
                               </div>
                             ) : (
                               <Link
-                                to={subitem.url === '' ? '/' : subitem.url}
+                                to={getChildPath(item, subitem)}
                                 key={subitem.url}
                                 className={
                                   this.isActive(subitem.url)
@@ -273,7 +282,7 @@ class Navigation extends Component {
                                 {subitem.title}
                               </Link>
                             )}
-                            {subitem.items && (
+                            {item.title !== 'Countries' && subitem.items && (
                               <div className="submenu-wrapper">
                                 <div className="submenu">
                                   {subitem.items.map(subsubitem => (

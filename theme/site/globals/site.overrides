@@ -2608,3 +2608,57 @@ article.tileItem {
     }
   }
 }
+
+/* Tabs view nav */
+.tabs-view-menu {
+  padding: 0 10px;
+  padding-bottom: 1rem;
+  .ui.menu {
+    .active.item {
+      background: #CD4200;
+      color: #fff;
+      &:hover {
+        background: #CD4200;
+        color: #fff;
+      }
+    }
+  }
+  @media (max-width: 1279px) {
+    padding: 2rem 0 1rem 0;
+  }
+  @media(max-width: 600px) {
+    .ui.menu {
+      flex-flow: column;
+      .item {
+        width: 100% !important;
+        border: none;
+        border-bottom: 1px solid #C7D5D8;
+        &.active {
+          border: none;
+        }
+        &:first-child {
+          border-top: none;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+body.mosaic-view .content-area main {
+  .tabs-view-menu {
+    padding: 0 10px;
+  }
+  @media (max-width: 1279px) {
+    .tabs-view-menu {
+      padding: 3rem 10px 0 10px;
+    }
+  }
+  @media(max-width: 600px) {
+    .tabs-view-menu {
+      padding: 3rem 10px 0 10px;
+    }
+  }
+}
