@@ -108,7 +108,7 @@
     }
 
     .content-area main {
-      padding: 1rem;
+      padding: 1rem 10px;
       padding-bottom: 2rem;
     }
 

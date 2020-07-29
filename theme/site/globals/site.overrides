@@ -11,9 +11,26 @@ body {
   margin-top: 2rem;
 }
 
+.header .logo-nav-wrapper .navigation {
+  .mobile-nav-wrapper {
+    display: flex;
+    align-items: center;
+    .searchIcon {
+      fill: rgb(1, 86, 16) !important;
+      path {
+        stroke: rgb(1, 86, 16);
+        stroke-width: 1px;
+      }
+    }
+  }
+  .ui.menu {
+    flex-wrap: wrap;
+  }
+}
+
 .logo-nav-wrapper {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   margin-top: 1rem;
   padding: 0 2rem;
 
@@ -160,14 +177,82 @@ body.has-toolbar {
   }
 }
 
+.search {
+  display: flex;
+  justify-content: flex-end;
+  &.mobileSearch {
+    padding: 0.875em 0.8125em;
+    &.open {
+      position: absolute;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      margin-top: 17px;
+      box-shadow: 1px 1px 3px #13131361;
+      > div {
+        width: 100%;
+      }
+    }
+  }
+  .searchIcon {
+    left: unset;
+    right: 0;
+    margin-right: 0.5rem;
+    fill: #075E1A !important;
+  }
+  .clearIcon {
+    display: none;
+    pointer-events: none;
+  }
+  .searchbox {
+    .floating_search_results {
+      padding: 1rem 0.5rem;
+    }
+    div.input {
+      border: none;
+      border-radius: 5px;
+      background-color: #F2F1EE;
+      min-width: 276px;
+      padding: 0 0.5rem;
+      input{
+        &::placeholder {
+        color: #9A9A9A;
+        font-weight: 400;
+        opacity: 1;
+        }
+      }
+    }
+  }
+}
 
-// body.has-toolbar {
-//   .header-image {
-//     max-width   : calc(100% + 3rem);
-//     margin-left : -1.5rem;
-//     margin-right: -1.5rem;
-//   }
-// }
+.sticky-outer-wrapper.active {
+  .search {
+    float: right;
+    padding: 0.275em 0.8125em;
+    .searchbox {
+      div.input {
+        background-color: #fff;
+        input{
+          &::placeholder {
+          color: #9A9A9A;
+          font-weight: 400;
+          opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.search-meta {
+  span {
+    color: #333;
+    margin-right: 2rem;
+    font-size: 0.9rem;
+  }
+}
 
 @media only screen and (min-width: 1440px) {
   body .ui.container {
@@ -267,14 +352,9 @@ body.has-toolbar {
   justify-content: space-between;
 }
 
-
 @media only screen and (min-width: 768px) {
   .navigation .ui.menu>.item {
     padding: .5rem;
-
-    &:last-child {
-      margin-right: 1rem !important;
-    }
   }
 }
 
@@ -477,6 +557,7 @@ body #page-document .imageAndRichText+p {
 }
 
 .download-button {
+  cursor: pointer;
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -2529,5 +2610,114 @@ body.has-sidebar {
 
   &:focus {
     outline: none !important;
+  }
+}
+
+.mb-0,
+h2.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1,
+h2.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2,
+h2.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-3,
+h2.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+mark.highlight.green {
+  color: #3B5705;
+  background-color: transparent;
+}
+
+article.tileItem {
+  // mark.highlight {
+  //   color: #3B5705;
+  //   font-weight: bold;
+  //   background-color: transparent;
+  // }
+  margin-bottom: 2rem;
+
+  button.expendButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 1rem 0;
+    color: #047A79;
+    cursor: pointer;
+
+    &:hover {
+      color: #055251;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* Tabs view nav */
+.tabs-view-menu {
+  padding: 0 10px;
+  padding-bottom: 1rem;
+  .ui.menu {
+    .active.item {
+      background: #CD4200;
+      color: #fff;
+      &:hover {
+        background: #CD4200;
+        color: #fff;
+      }
+    }
+  }
+  @media (max-width: 1279px) {
+    padding: 2rem 0 1rem 0;
+  }
+  @media(max-width: 600px) {
+    .ui.menu {
+      flex-flow: column;
+      .item {
+        width: 100% !important;
+        border: none;
+        border-bottom: 1px solid #C7D5D8;
+        &.active {
+          border: none;
+        }
+        &:first-child {
+          border-top: none;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+body.mosaic-view .content-area main {
+  .tabs-view-menu {
+    padding: 0 10px;
+  }
+  @media (max-width: 1279px) {
+    .tabs-view-menu {
+      padding: 3rem 10px 0 10px;
+    }
+  }
+  @media(max-width: 600px) {
+    .tabs-view-menu {
+      padding: 3rem 10px 0 10px;
+    }
   }
 }

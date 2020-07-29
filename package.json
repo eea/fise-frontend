@@ -96,6 +96,7 @@
     "npm": "^6.14.6",
     "react": "^16.13.0",
     "react-component-queries": "^2.3.0",
+    "react-highlight-words": "^0.16.0",
     "react-image-gallery": "^0.9.1",
     "react-infinite-scroll-component": "^5.0.4",
     "react-lazy-load-image-component": "^1.5.0",

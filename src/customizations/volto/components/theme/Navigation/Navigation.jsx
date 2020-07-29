@@ -13,6 +13,9 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { Menu, Dropdown } from 'semantic-ui-react';
 import cx from 'classnames';
 import { getBasePath } from '~/helpers';
+import SearchBlock from 'volto-addons/SearchBlock/View';
+import { Icon } from '@plone/volto/components';
+import zoomSVG from '@plone/volto/icons/zoom.svg';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -24,6 +27,15 @@ const messages = defineMessages({
     defaultMessage: 'Open menu',
   },
 });
+
+const getChildPath = (parent, child) => {
+  if (!parent && child) return child.url === '' ? '/' : child.url;
+  if (!child) return parent.url === '' ? '/' : parent.url;
+  if (!parent) return '/';
+  if (parent.title === 'Countries' && child.items?.length > 0)
+    return child.items[0].url === '' ? '/' : child.items[0].url;
+  return child.url === '' ? '/' : child.url;
+};
 
 /**
  * Navigation container class.
@@ -57,6 +69,7 @@ class Navigation extends Component {
   constructor(props) {
     super(props);
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.state = {
       isMobileMenuOpen: false,
@@ -112,8 +125,12 @@ class Navigation extends Component {
    * @method toggleMobileMenu
    * @returns {undefined}
    */
-  toggleMobileMenu() {
+  toggleMobileMenu(e) {
     this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen });
+  }
+
+  toggleMobileSearch(e) {
+    this.setState({ isMobileSearchOpen: !this.state.isMobileSearchOpen });
   }
 
   /**
@@ -141,36 +158,84 @@ class Navigation extends Component {
     // return <div>{JSON.stringify(this.props.navigation)}</div>
     return (
       <nav className="navigation">
-        <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
-          <button
-            className={cx('hamburger hamburger--collapse', {
-              'is-active': this.state.isMobileMenuOpen,
-            })}
-            aria-label={
-              this.state.isMobileMenuOpen
-                ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
-                : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
-            }
-            title={
-              this.state.isMobileMenuOpen
-                ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
-                : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
-            }
-            type="button"
-            onClick={this.toggleMobileMenu}
-          >
-            <span className="hamburger-box">
-              <span className="hamburger-inner" />
-            </span>
-          </button>
+        <div className="mobile-nav-wrapper">
+          <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
+            <button
+              className={cx('hamburger hamburger--collapse', {
+                'is-active': this.state.isMobileMenuOpen,
+              })}
+              type="button"
+              onClick={this.toggleMobileSearch}
+            >
+              <Icon
+                className="searchIcon"
+                onClick={this.onSubmit}
+                name={zoomSVG}
+                size="32px"
+              />
+            </button>
+          </div>
+
+          <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
+            <button
+              className={cx('hamburger hamburger--collapse', {
+                'is-active': this.state.isMobileMenuOpen,
+              })}
+              aria-label={
+                this.state.isMobileMenuOpen
+                  ? this.props.intl.formatMessage(messages.closeMobileMenu, {
+                      type: this.props.type,
+                    })
+                  : this.props.intl.formatMessage(messages.openMobileMenu, {
+                      type: this.props.type,
+                    })
+              }
+              title={
+                this.state.isMobileMenuOpen
+                  ? this.props.intl.formatMessage(messages.closeMobileMenu, {
+                      type: this.props.type,
+                    })
+                  : this.props.intl.formatMessage(messages.openMobileMenu, {
+                      type: this.props.type,
+                    })
+              }
+              type="button"
+              onClick={this.toggleMobileMenu}
+            >
+              <span className="hamburger-box">
+                <span className="hamburger-inner" />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          className={
+            this.state.isMobileSearchOpen
+              ? 'search open mobileSearch'
+              : 'search computer large screen widescreen only'
+          }
+        >
+          <SearchBlock
+            data={{
+              title: { value: 'Site results' },
+              query: {
+                value: {
+                  properties: {
+                    portal_type: {
+                      value: [
+                        'Event',
+                        'News Item',
+                        'Document',
+                        'templated_country_factsheet',
+                      ],
+                    },
+                  },
+                },
+              },
+              placeholder: { value: 'Search website' },
+              searchButton: { value: false },
+            }}
+          />
         </div>
         <Menu
           stackable
@@ -185,17 +250,12 @@ class Navigation extends Component {
           {navigation.map(item =>
             item.items && item.items.length ? (
               <div
-                // className="ui item simple dropdown item firstLevel"
-                // closeOnChange={true}
                 className={
                   this.isActive(item.url)
                     ? 'ui item simple dropdown item menuActive firstLevel'
                     : 'ui item simple dropdown item firstLevel'
                 }
                 key={item.url}
-                // trigger={
-
-                // }
               >
                 <React.Fragment>
                   {item.items && item.items.length ? (
@@ -265,7 +325,7 @@ class Navigation extends Component {
                             </div>
                           ) : (
                             <Link
-                              to={subitem.url === '' ? '/' : subitem.url}
+                              to={getChildPath(item, subitem)}
                               key={subitem.url}
                               className={
                                 this.isActive(subitem.url)
@@ -276,7 +336,7 @@ class Navigation extends Component {
                               {subitem.title}
                             </Link>
                           )}
-                          {subitem.items && (
+                          {item.title !== 'Countries' && subitem.items && (
                             <div className="submenu-wrapper">
                               <div className="submenu">
                                 {subitem.items.map(subsubitem => (

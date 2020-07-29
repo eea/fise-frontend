@@ -189,27 +189,29 @@ class View extends Component {
       .toLowerCase();
 
   sortHtmlCollectionByPosition = (collection, patterns) => {
-    const first = [];   //  ~follow the pattern
+    const first = []; //  ~follow the pattern
     const seccond = []; //   follow the pattern
     if (collection && !collection.classList.contains('__sorted')) {
       Array.prototype.forEach.call(collection.children, child => {
         patterns.forEach(pattern => {
-          if (pattern.requirement === 'has' && child.classList.contains(pattern.class)) {
+          if (
+            pattern.requirement === 'has' &&
+            child.classList.contains(pattern.class)
+          ) {
             seccond.push({
               item: child,
               offsetTop: child.offsetTop,
-              offsetHeight: child.offsetHeight
+              offsetHeight: child.offsetHeight,
             });
-          }
-          else first.push(child);
-        })
+          } else first.push(child);
+        });
       });
-      seccond.sort((a, b) => a.offsetTop - b.offsetTop)
+      seccond.sort((a, b) => a.offsetTop - b.offsetTop);
       for (let i = 0; i < seccond.length - 1; i++) {
         for (let j = 0; j < seccond.length - 1 - i; j++) {
           if (
-            seccond[j].offsetHeight > seccond[j + 1].offsetTop
-            && seccond[j].offsetTop < seccond[j + 1].offsetTop
+            seccond[j].offsetHeight > seccond[j + 1].offsetTop &&
+            seccond[j].offsetTop < seccond[j + 1].offsetTop
           ) {
             let tmp = seccond[j];
             seccond[j] = seccond[j + 1];
@@ -224,21 +226,26 @@ class View extends Component {
       seccond.forEach(data => {
         collection.appendChild(data.item);
       });
-      collection.classList.add('__sorted')
-      return true
+      collection.classList.add('__sorted');
+      return true;
     }
-    return false
-  }
+    return false;
+  };
 
   printDocument = () => {
-    const mosaicView = document.querySelector('#mosaic-view .mosaic_view .react-grid-layout');
-    this.sortHtmlCollectionByPosition(mosaicView, [{class: 'react-grid-item', requirement: 'has'}]);
+    const mosaicView = document.querySelector(
+      '#mosaic-view .mosaic_view .react-grid-layout',
+    );
+    this.sortHtmlCollectionByPosition(mosaicView, [
+      { class: 'react-grid-item', requirement: 'has' },
+    ]);
     document.getElementById('main').classList.add('print');
     setTimeout(() => {
       window.print();
-    }, 1000)
-    window.onafterprint = () => document.getElementById('main').classList.remove('print');
-  }
+    }, 1000);
+    window.onafterprint = () =>
+      document.getElementById('main').classList.remove('print');
+  };
   /**
    * Render method.
    * @method render
