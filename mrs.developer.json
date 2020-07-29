@@ -1,11 +1,11 @@
 {
     "volto-mosaic": {
-        "url": "https://github.com/eea/volto-mosaic.git",
-        "path": "src"
+      "url": "https://github.com/eea/volto-mosaic.git",
+      "path": "src"
     },
     "volto-datablocks": {
-        "url": "https://github.com/eea/volto-datablocks.git",
-        "path": "src"
+      "url": "https://github.com/eea/volto-datablocks.git",
+      "path": "src"
     },
     "volto-blocks": {
       "url": "https://github.com/eea/volto-blocks.git",
@@ -34,6 +34,10 @@
     },
     "volto-embed": {
       "url": "https://github.com/eea/volto-embed.git",
+      "path": "src"
+    },
+    "volto-tabsview": {
+      "url": "https://github.com/eea/volto-tabsview.git",
       "path": "src"
     }
 }

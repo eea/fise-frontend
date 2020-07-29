@@ -12,6 +12,17 @@ body {
 }
 
 .header .logo-nav-wrapper .navigation {
+  .mobile-nav-wrapper {
+    display: flex;
+    align-items: center;
+    .searchIcon {
+      fill: rgb(1, 86, 16) !important;
+      path {
+        stroke: rgb(1, 86, 16);
+        stroke-width: 1px;
+      }
+    }
+  }
   .ui.menu {
     flex-wrap: wrap;
   }
@@ -166,18 +177,70 @@ body.has-toolbar {
   }
 }
 
-
-// body.has-toolbar {
-//   .header-image {
-//     max-width   : calc(100% + 3rem);
-//     margin-left : -1.5rem;
-//     margin-right: -1.5rem;
-//   }
-// }
-
 .search {
+  display: flex;
+  justify-content: flex-end;
   &.mobileSearch {
     padding: 0.875em 0.8125em;
+    &.open {
+      position: absolute;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      margin-top: 17px;
+      box-shadow: 1px 1px 3px #13131361;
+      > div {
+        width: 100%;
+      }
+    }
+  }
+  .searchIcon {
+    left: unset;
+    right: 0;
+    margin-right: 0.5rem;
+    fill: #075E1A !important;
+  }
+  .clearIcon {
+    display: none;
+    pointer-events: none;
+  }
+  .searchbox {
+    .floating_search_results {
+      padding: 1rem 0.5rem;
+    }
+    div.input {
+      border: none;
+      border-radius: 5px;
+      background-color: #F2F1EE;
+      min-width: 276px;
+      padding: 0 0.5rem;
+      input{
+        &::placeholder {
+        color: #9A9A9A;
+        font-weight: 400;
+        opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.sticky-outer-wrapper.active {
+  .search {
+    float: right;
+    padding: 0.275em 0.8125em;
+    .searchbox {
+      div.input {
+        background-color: #fff;
+        input{
+          &::placeholder {
+          color: #9A9A9A;
+          font-weight: 400;
+          opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -289,14 +352,9 @@ body.has-toolbar {
   justify-content: space-between;
 }
 
-
 @media only screen and (min-width: 768px) {
   .navigation .ui.menu>.item {
     padding: .5rem;
-
-    &:last-child {
-      margin-right: 1rem !important;
-    }
   }
 }
 
@@ -499,6 +557,7 @@ body #page-document .imageAndRichText+p {
 }
 
 .download-button {
+  cursor: pointer;
   position: absolute;
   top: 1rem;
   right: 1rem;

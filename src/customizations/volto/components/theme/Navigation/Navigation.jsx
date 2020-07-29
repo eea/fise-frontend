@@ -14,6 +14,8 @@ import { Menu, Dropdown } from 'semantic-ui-react';
 import cx from 'classnames';
 import { getBasePath } from '~/helpers';
 import SearchBlock from 'volto-addons/SearchBlock/View';
+import { Icon } from '@plone/volto/components';
+import zoomSVG from '@plone/volto/icons/zoom.svg';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -67,6 +69,7 @@ class Navigation extends Component {
   constructor(props) {
     super(props);
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.state = {
       isMobileMenuOpen: false,
@@ -126,6 +129,10 @@ class Navigation extends Component {
     this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen });
   }
 
+  toggleMobileSearch(e) {
+    this.setState({ isMobileSearchOpen: !this.state.isMobileSearchOpen });
+  }
+
   /**
    * Close mobile menu
    * @method closeMobileMenu
@@ -151,36 +158,84 @@ class Navigation extends Component {
     // return <div>{JSON.stringify(this.props.navigation)}</div>
     return (
       <nav className="navigation">
-        <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
-          <button
-            className={cx('hamburger hamburger--collapse', {
-              'is-active': this.state.isMobileMenuOpen,
-            })}
-            aria-label={
-              this.state.isMobileMenuOpen
-                ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
-                : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
-            }
-            title={
-              this.state.isMobileMenuOpen
-                ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
-                : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
-            }
-            type="button"
-            onClick={this.toggleMobileMenu}
-          >
-            <span className="hamburger-box">
-              <span className="hamburger-inner" />
-            </span>
-          </button>
+        <div className="mobile-nav-wrapper">
+          <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
+            <button
+              className={cx('hamburger hamburger--collapse', {
+                'is-active': this.state.isMobileMenuOpen,
+              })}
+              type="button"
+              onClick={this.toggleMobileSearch}
+            >
+              <Icon
+                className="searchIcon"
+                onClick={this.onSubmit}
+                name={zoomSVG}
+                size="32px"
+              />
+            </button>
+          </div>
+
+          <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
+            <button
+              className={cx('hamburger hamburger--collapse', {
+                'is-active': this.state.isMobileMenuOpen,
+              })}
+              aria-label={
+                this.state.isMobileMenuOpen
+                  ? this.props.intl.formatMessage(messages.closeMobileMenu, {
+                      type: this.props.type,
+                    })
+                  : this.props.intl.formatMessage(messages.openMobileMenu, {
+                      type: this.props.type,
+                    })
+              }
+              title={
+                this.state.isMobileMenuOpen
+                  ? this.props.intl.formatMessage(messages.closeMobileMenu, {
+                      type: this.props.type,
+                    })
+                  : this.props.intl.formatMessage(messages.openMobileMenu, {
+                      type: this.props.type,
+                    })
+              }
+              type="button"
+              onClick={this.toggleMobileMenu}
+            >
+              <span className="hamburger-box">
+                <span className="hamburger-inner" />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          className={
+            this.state.isMobileSearchOpen
+              ? 'search open mobileSearch'
+              : 'search computer large screen widescreen only'
+          }
+        >
+          <SearchBlock
+            data={{
+              title: { value: 'Site results' },
+              query: {
+                value: {
+                  properties: {
+                    portal_type: {
+                      value: [
+                        'Event',
+                        'News Item',
+                        'Document',
+                        'templated_country_factsheet',
+                      ],
+                    },
+                  },
+                },
+              },
+              placeholder: { value: 'Search website' },
+              searchButton: { value: false },
+            }}
+          />
         </div>
         <Menu
           stackable
@@ -192,170 +247,141 @@ class Navigation extends Component {
               : 'computer large screen widescreen only'
           }
         >
-          <>
-            {navigation.map(item =>
-              item.items && item.items.length ? (
-                <div
-                  className={
-                    this.isActive(item.url)
-                      ? 'ui item simple dropdown item menuActive firstLevel'
-                      : 'ui item simple dropdown item firstLevel'
-                  }
-                  key={item.url}
-                >
-                  <React.Fragment>
-                    {item.items && item.items.length ? (
-                      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-                      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-                      <div
-                        onClick={() => {
-                          if (this.state.isMobileMenuOpen) {
-                            if (this.state.tappedMenu === item.url) {
-                              this.setState({ tappedMenu: null });
-                              return;
-                            }
-                            if (this.state.tappedMenu !== item.url) {
-                              this.setState({ tappedMenu: item.url });
-                            }
+          {navigation.map(item =>
+            item.items && item.items.length ? (
+              <div
+                className={
+                  this.isActive(item.url)
+                    ? 'ui item simple dropdown item menuActive firstLevel'
+                    : 'ui item simple dropdown item firstLevel'
+                }
+                key={item.url}
+              >
+                <React.Fragment>
+                  {item.items && item.items.length ? (
+                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+                    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+                    <div
+                      onClick={() => {
+                        if (this.state.isMobileMenuOpen) {
+                          if (this.state.tappedMenu === item.url) {
+                            this.setState({ tappedMenu: null });
+                            return;
                           }
-                        }}
-                        className="firstLevel-title"
-                      >
-                        {item.title}
-                      </div>
-                    ) : (
-                      <Link
-                        onClick={e =>
-                          item.items && item.items.length && e.preventDefault()
+                          if (this.state.tappedMenu !== item.url) {
+                            this.setState({ tappedMenu: item.url });
+                          }
                         }
-                        className="firstLevel"
-                        to={
-                          item.items && item.items.length
-                            ? ''
-                            : item.url === ''
-                            ? '/'
-                            : item.url
-                        }
-                        key={item.url}
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                    {(this.state.isMobileMenuOpen &&
-                      this.state.tappedMenu === item.url) ||
-                    !this.state.isMobileMenuOpen ? (
-                      <Dropdown.Menu
-                        className={`${item.title}--section ${
-                          this.state.isMobileMenuOpen &&
-                          this.state.tappedMenu === item.url
-                            ? 'hovered'
-                            : ''
-                        }`}
-                      >
-                        {item.items.map(subitem => (
-                          <Dropdown.Item
-                            className={`${item.title}--section-item`}
-                            id={subitem.title}
-                            key={subitem.url}
-                          >
-                            {item.title === 'Countries' &&
-                            subitem.title === 'Regions' ? (
-                              <div
-                                className={
-                                  this.isActive(subitem.url)
-                                    ? 'item secondLevel menuActive'
-                                    : 'item secondLevel'
-                                }
-                              >
-                                {subitem.title}
+                      }}
+                      className="firstLevel-title"
+                    >
+                      {item.title}
+                    </div>
+                  ) : (
+                    <Link
+                      onClick={e =>
+                        item.items && item.items.length && e.preventDefault()
+                      }
+                      className="firstLevel"
+                      to={
+                        item.items && item.items.length
+                          ? ''
+                          : item.url === ''
+                          ? '/'
+                          : item.url
+                      }
+                      key={item.url}
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                  {(this.state.isMobileMenuOpen &&
+                    this.state.tappedMenu === item.url) ||
+                  !this.state.isMobileMenuOpen ? (
+                    <Dropdown.Menu
+                      className={`${item.title}--section ${
+                        this.state.isMobileMenuOpen &&
+                        this.state.tappedMenu === item.url
+                          ? 'hovered'
+                          : ''
+                      }`}
+                    >
+                      {item.items.map(subitem => (
+                        <Dropdown.Item
+                          className={`${item.title}--section-item`}
+                          id={subitem.title}
+                          key={subitem.url}
+                        >
+                          {item.title === 'Countries' &&
+                          subitem.title === 'Regions' ? (
+                            <div
+                              className={
+                                this.isActive(subitem.url)
+                                  ? 'item secondLevel menuActive'
+                                  : 'item secondLevel'
+                              }
+                            >
+                              {subitem.title}
+                            </div>
+                          ) : (
+                            <Link
+                              to={getChildPath(item, subitem)}
+                              key={subitem.url}
+                              className={
+                                this.isActive(subitem.url)
+                                  ? 'item secondLevel menuActive'
+                                  : 'item secondLevel'
+                              }
+                            >
+                              {subitem.title}
+                            </Link>
+                          )}
+                          {item.title !== 'Countries' && subitem.items && (
+                            <div className="submenu-wrapper">
+                              <div className="submenu">
+                                {subitem.items.map(subsubitem => (
+                                  <Link
+                                    to={
+                                      subsubitem.url === ''
+                                        ? '/'
+                                        : subsubitem.url
+                                    }
+                                    key={subsubitem.url}
+                                    className={
+                                      this.isActive(subsubitem.url)
+                                        ? 'item thirdLevel menuActive'
+                                        : 'item thirdLevel'
+                                    }
+                                  >
+                                    {subsubitem.title}
+                                  </Link>
+                                ))}
                               </div>
-                            ) : (
-                              <Link
-                                to={getChildPath(item, subitem)}
-                                key={subitem.url}
-                                className={
-                                  this.isActive(subitem.url)
-                                    ? 'item secondLevel menuActive'
-                                    : 'item secondLevel'
-                                }
-                              >
-                                {subitem.title}
-                              </Link>
-                            )}
-                            {item.title !== 'Countries' && subitem.items && (
-                              <div className="submenu-wrapper">
-                                <div className="submenu">
-                                  {subitem.items.map(subsubitem => (
-                                    <Link
-                                      to={
-                                        subsubitem.url === ''
-                                          ? '/'
-                                          : subsubitem.url
-                                      }
-                                      key={subsubitem.url}
-                                      className={
-                                        this.isActive(subsubitem.url)
-                                          ? 'item thirdLevel menuActive'
-                                          : 'item thirdLevel'
-                                      }
-                                    >
-                                      {subsubitem.title}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            )}
-                          </Dropdown.Item>
-                        ))}
-                      </Dropdown.Menu>
-                    ) : (
-                      ''
-                    )}
-                  </React.Fragment>
-                </div>
-              ) : (
-                <Link
-                  // style={{ display: `${__CLIENT__ ? 'block' : 'none'}` }}
-                  to={item.url === '' ? '/' : item.url}
-                  key={item.url}
-                  className={
-                    this.isActive(item.url)
-                      ? 'item menuActive firstLevel'
-                      : 'item firstLevel'
-                  }
-                >
-                  {item.title}
-                </Link>
-              ),
-            )}
-            <div
-              className={`search ${
-                this.state.isMobileMenuOpen ? 'mobileSearch' : ''
-              }`}
-            >
-              <SearchBlock
-                data={{
-                  title: { value: 'Site results' },
-                  query: {
-                    value: {
-                      properties: {
-                        portal_type: {
-                          value: [
-                            'Event',
-                            'News Item',
-                            'Document',
-                            'templated_country_factsheet',
-                          ],
-                        },
-                      },
-                    },
-                  },
-                  placeholder: { value: 'Search site' },
-                  searchButton: { value: false },
-                }}
-              />
-            </div>
-          </>
+                            </div>
+                          )}
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  ) : (
+                    ''
+                  )}
+                </React.Fragment>
+              </div>
+            ) : (
+              <Link
+                // style={{ display: `${__CLIENT__ ? 'block' : 'none'}` }}
+                to={item.url === '' ? '/' : item.url}
+                key={item.url}
+                className={
+                  this.isActive(item.url)
+                    ? 'item menuActive firstLevel'
+                    : 'item firstLevel'
+                }
+              >
+                {item.title}
+              </Link>
+            ),
+          )}
         </Menu>
       </nav>
     );
