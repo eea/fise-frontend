@@ -194,19 +194,19 @@ body.has-toolbar {
       }
     }
   }
-  .searchIcon {
-    left: unset;
-    right: 0;
-    margin-right: 0.5rem;
-    fill: #075E1A !important;
-  }
-  .clearIcon {
-    display: none;
-    pointer-events: none;
-  }
   .searchbox {
     .floating_search_results {
       padding: 1rem 0.5rem;
+    }
+    .searchIcon {
+      left: unset;
+      right: 0;
+      margin-right: 0.5rem;
+      fill: #075E1A !important;
+    }
+    .clearIcon {
+      display: none;
+      pointer-events: none;
     }
     div.input {
       border: none;
@@ -2670,7 +2670,6 @@ article.tileItem {
 
 /* Tabs view nav */
 .tabs-view-menu {
-  padding: 0 10px;
   padding-bottom: 1rem;
   .ui.menu {
     .active.item {
@@ -2682,7 +2681,8 @@ article.tileItem {
       }
     }
   }
-  @media (max-width: 1279px) {
+  
+  @media (max-width: 1199px) {
     padding: 2rem 0 1rem 0;
   }
   @media(max-width: 600px) {
@@ -2706,18 +2706,23 @@ article.tileItem {
   }
 }
 
+body .content-area main {
+  @media (min-width: 1200px) {
+    padding: 3rem calc(1rem + 10px);
+  }
+}
+
 body.mosaic-view .content-area main {
   .tabs-view-menu {
     padding: 0 10px;
   }
-  @media (max-width: 1279px) {
-    .tabs-view-menu {
-      padding: 3rem 10px 0 10px;
-    }
+  @media (min-width: 1200px) {
+    padding: 3rem 1rem;
   }
-  @media(max-width: 600px) {
-    .tabs-view-menu {
-      padding: 3rem 10px 0 10px;
+  @media (max-width: 1199px) {
+    div.tabs-view-menu {
+      padding: 3rem 10px 1rem 10px;
     }
   }
 }
+
