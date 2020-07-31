@@ -561,7 +561,7 @@ body #page-document .imageAndRichText+p {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 20px;
+  width: 20px !important;
 }
 
 .chartWrapperView {
