@@ -4,15 +4,41 @@
   "license": "MIT",
   "version": "1.0.1",
   "scripts": {
-    "start": "NODE_OPTIONS=--max-old-space-size=8192 razzle start",
-    "prebuild": "./scripts/prebuild-fix-modules.sh",
+    "start": "razzle start",
+    "postinstall": "yarn omelette && yarn patches",
+    "omelette": "ln -sf node_modules/@plone/volto/ omelette",
+    "patches": "/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true",
     "build": "razzle build",
-    "test": "razzle test --env=jsdom --passWithNoTests",
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js",
+    "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=develop",
     "develop": "missdev --config=jsconfig.json --output=develop"
   },
+  "workspaces": [
+    "src/develop/volto-addons",
+    "src/develop/volto-datablocks",
+    "src/develop/volto-mosaic",
+    "src/develop/volto-addons",
+    "src/develop/volto-ckeditor",
+    "src/develop/volto-plotlycharts",
+    "src/develop/volto-base",
+    "src/develop/volto-embed",
+    "src/develop/volto-tabsview"
+  ],
+  "addons": [
+    "volto-addons",
+    "volto-datablocks",
+    "volto-mosaic",
+    "volto-ckeditor",
+    "volto-plotlycharts",
+    "volto-base",
+    "volto-embed",
+    "volto-tabsview"
+  ],
   "jest": {
+    "modulePathIgnorePatterns": [
+      "api"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
@@ -28,6 +54,7 @@
       "/node_modules/(?!@plone/volto).+\\.js$"
     ],
     "moduleNameMapper": {
+      "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
       "@package/(.*)$": "<rootDir>/src/$1",
       "~/(.*)$": "<rootDir>/src/$1"
@@ -42,7 +69,10 @@
     },
     "setupFiles": [
       "@plone/volto/test-setup.js"
-    ]
+    ],
+    "globals": {
+      "__DEV__": true
+    }
   },
   "customizationPaths": [
     "src/customizations/volto/"
@@ -50,17 +80,43 @@
   "addonsCustomizationPath": "src/customizations",
   "prettier": {
     "trailingComma": "all",
-    "singleQuote": true
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.overrides",
+        "options": {
+          "parser": "less"
+        }
+      }
+    ]
   },
   "stylelint": {
     "extends": [
       "stylelint-config-standard",
       "stylelint-config-idiomatic-order",
       "./node_modules/prettier-stylelint/config.js"
-    ]
+    ],
+    "plugins": [
+      "stylelint-prettier"
+    ],
+    "rules": {
+      "prettier/prettier": true,
+      "rule-empty-line-before": [
+        "always-multi-line",
+        {
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ]
+        }
+      ]
+    },
+    "ignoreFiles": "theme/themes/default/**/*.overrides"
   },
   "engines": {
-    "node": "^8 || ^10"
+    "node": "^10 || ^12"
   },
   "bundlesize": [
     {
@@ -89,7 +145,7 @@
     "@blueprintjs/core": "^3.30.0",
     "@blueprintjs/icons": "^3.19.0",
     "@datapunt/matomo-tracker-react": "0.0.16",
-    "@plone/volto": "github:eea/volto#5.2-eea",
+    "@plone/volto": "github:eea/volto#8.0.0-beta.10",
     "immutable": "^3.8.2",
     "less-loader": "5.0.0",
     "moment-timezone": "^0.5.31",

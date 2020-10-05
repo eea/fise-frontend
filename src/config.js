@@ -1,4 +1,5 @@
-import * as voltoConfig from '@plone/volto/config';
+import * as config from '@plone/volto/config';
+
 import Forbidden from '@plone/volto/components/theme/Forbidden/Forbidden';
 import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
 
@@ -8,7 +9,7 @@ import {
   installPortlets,
   installTableau,
   installNews,
-} from 'volto-addons/config';
+} from 'volto-addons';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
@@ -17,7 +18,16 @@ import { applyConfig as tabsViewConfig } from 'volto-tabsview/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
 import { applyConfig as installEmbed } from 'volto-embed/config';
 
-const config = [
+const consoleError = console.error.bind(console);
+// eslint-disable-next-line
+console.error = (message, ...args) => {
+  if (typeof message === 'string' && message.startsWith('[React Intl]')) {
+    return;
+  }
+  consoleError(message, ...args);
+};
+
+const addonConfig = [
   addonsConfig,
   installPortlets,
   installImageSlides,
@@ -44,7 +54,9 @@ export const settings = {
 };
 
 export const views = {
-  ...config.views,
+  // ...config.views,
+  ...addonConfig.views,
+
   errorViews: {
     ...config.views.errorViews,
     '403': Forbidden,
@@ -52,27 +64,23 @@ export const views = {
   },
 };
 
+export const viewlets = [...(addonsConfig.viewlets || [])];
+
 export const widgets = {
-  ...config.widgets,
+  ...addonConfig.widgets,
 };
 
 export const blocks = {
-  ...config.blocks,
+  ...addonConfig.blocks,
 };
 
-// TODO: should we move custom stuff to settings variable?
-// It would make future adding new settings types easier, as this file wouldn't
-// have to be updated in all frontend implementations
-// console.log('config.js AddonReducers', config.addonReducers);
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
 
-export const viewlets = [...(config.viewlets || [])];
-
 export const portlets = {
-  ...config.portlets,
+  ...addonConfig.portlets,
 };
 
 export const editForms = {
-  ...config.editForms,
+  ...addonConfig.portlets,
 };

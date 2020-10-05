@@ -1,48 +1,25 @@
 {
-    "addons": [
-        "volto-addons",
-        "volto-blocks",
-        "volto-ckeditor",
-        "volto-corsproxy",
-        "volto-datablocks",
-        "volto-drafteditor",
-        "volto-mosaic",
-        "volto-plotlycharts",
-        "volto-tabsview"
-    ],
-    "compilerOptions": {
-        "baseUrl": "src",
-        "paths": {
-            "volto-mosaic": [
-                "develop/volto-mosaic/src"
-            ],
-            "volto-datablocks": [
-                "develop/volto-datablocks/src"
-            ],
-            "volto-blocks": [
-                "develop/volto-blocks/src"
-            ],
-            "volto-addons": [
-                "develop/volto-addons/src"
-            ],
-            "volto-ckeditor": [
-                "develop/volto-ckeditor/src"
-            ],
-            "volto-drafteditor": [
-                "develop/volto-drafteditor/src"
-            ],
-            "volto-plotlycharts": [
-                "develop/volto-plotlycharts/src"
-            ],
-            "volto-base": [
-                "develop/volto-base/src"
-            ],
-            "volto-embed": [
-                "develop/volto-embed/src"
-            ],
-            "volto-tabsview": [
-                "develop/volto-tabsview/src"
-            ]
-        }
+  "addons": [
+    "volto-addons",
+    "volto-ckeditor",
+    "volto-corsproxy",
+    "volto-datablocks",
+    "volto-drafteditor",
+    "volto-mosaic",
+    "volto-plotlycharts",
+    "volto-tabsview"
+  ],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "volto-mosaic": ["develop/volto-mosaic/src"],
+      "volto-datablocks": ["develop/volto-datablocks/src"],
+      "volto-addons": ["develop/volto-addons/src"],
+      "volto-ckeditor": ["develop/volto-ckeditor/src"],
+      "volto-plotlycharts": ["develop/volto-plotlycharts/src"],
+      "volto-base": ["develop/volto-base/src"],
+      "volto-embed": ["develop/volto-embed/src"],
+      "volto-tabsview": ["develop/volto-tabsview/src"]
     }
+  }
 }

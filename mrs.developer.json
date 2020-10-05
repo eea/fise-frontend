@@ -6,29 +6,21 @@
   "volto-datablocks": {
     "url": "https://github.com/eea/volto-datablocks.git",
     "path": "src",
-    "branch": "4221eb3c03a4a25ecbd582f3ca2e9cfa401dc409"
-  },
-  "volto-blocks": {
-    "url": "https://github.com/eea/volto-blocks.git",
-    "path": "src"
+    "branch": "master"
   },
   "volto-addons": {
     "url": "https://github.com/eea/volto-addons.git",
     "path": "src",
-    "branch": "a6e6be2163e78654e813312fdcd2876339c795c3"
+    "branch": "volto_7"
   },
   "volto-ckeditor": {
     "url": "https://github.com/eea/volto-ckeditor.git",
     "path": "src"
   },
-  "volto-drafteditor": {
-    "url": "https://github.com/eea/volto-drafteditor.git",
-    "path": "src"
-  },
   "volto-plotlycharts": {
     "url": "https://github.com/eea/volto-plotlycharts.git",
     "path": "src",
-    "branch": "1b24c5e86e9e33cb171b5218303f01cf15eb42cd"
+    "branch": "master"
   },
   "volto-base": {
     "url": "https://github.com/eea/volto-base.git",
@@ -38,11 +30,11 @@
   "volto-embed": {
     "url": "https://github.com/eea/volto-embed.git",
     "path": "src",
-    "branch": "901582891981f54105d1d5eac36a348f2f0ebe38"
+    "branch": "master"
   },
   "volto-tabsview": {
     "url": "https://github.com/eea/volto-tabsview.git",
     "path": "src",
-    "branch": "f6ea07186b0fbaf7283ad7b6a7a81ba5b6143180"
+    "branch": "master"
   }
 }

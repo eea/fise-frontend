@@ -1,5 +1,4 @@
 const baseCfg = require('@plone/volto/babel');
-// "react-loadable/babel"
 
 module.exports = function(api) {
   const voltoConfig = baseCfg(api);
