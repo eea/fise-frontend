@@ -278,7 +278,7 @@ class Search extends Component {
                 {this.props.search?.items_total ? (
                   <span>{this.props.search.items_total} results</span>
                 ) : (
-                  ''
+                  <h2>No results found</h2>
                 )}
               </div>
             </header>
@@ -290,7 +290,16 @@ class Search extends Component {
                   id={`article_${item['@id']}`}
                 >
                   <Link to={item['@id']}>
-                    <h2 className="tileHeadline mb-1">{item.title}</h2>
+                    <h2 className="tileHeadline mb-1">
+                      <Highlighter
+                        highlightClassName="highlight"
+                        searchWords={
+                          this.props.searchableText?.split(' ') || []
+                        }
+                        autoEscape={true}
+                        textToHighlight={item.title}
+                      />
+                    </h2>
                   </Link>
                   <div className="tileBody">
                     <div className="description">

@@ -217,7 +217,7 @@ class Navigation extends Component {
         >
           <SearchBlock
             data={{
-              title: { value: 'Site results' },
+              title: { value: 'Search results' },
               query: {
                 value: {
                   properties: {
