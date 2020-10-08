@@ -60,7 +60,6 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
   ) {
     setCurrentVersion(settings.frontendMeta);
   }
-  console.log('settings in footer', settings);
 
   return (
     <Segment
