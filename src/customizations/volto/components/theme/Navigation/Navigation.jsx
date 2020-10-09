@@ -156,7 +156,8 @@ class Navigation extends Component {
   render() {
     const navigation = this.formatNavUrl(
       this.props.navigation.filter(
-        item => !['/header', '/head', '/footer'].includes(item.title),
+        item =>
+          !['header', 'head', 'footer'].includes(item.title?.toLowerCase()),
       ),
     );
     // return <div>{JSON.stringify(this.props.navigation)}</div>
