@@ -154,8 +154,16 @@ class Navigation extends Component {
   };
 
   render() {
-    const navigation = this.formatNavUrl(this.props.navigation);
+    const navigation = this.formatNavUrl(
+      this.props.navigation.filter(
+        item => !['/header', '/head', '/footer'].includes(item.title),
+      ),
+    );
     // return <div>{JSON.stringify(this.props.navigation)}</div>
+    console.log('props nav', this.props.navigation);
+    const pathName = this.props.pathname;
+    const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
+
     return (
       <nav className="navigation">
         <div className="mobile-nav-wrapper">
@@ -215,27 +223,29 @@ class Navigation extends Component {
               : 'search computer large screen widescreen only'
           }
         >
-          <SearchBlock
-            data={{
-              title: { value: 'Search results' },
-              query: {
-                value: {
-                  properties: {
-                    portal_type: {
-                      value: [
-                        'Event',
-                        'News Item',
-                        'Document',
-                        'templated_country_factsheet',
-                      ],
+          {!hideSearch ? (
+            <SearchBlock
+              data={{
+                title: { value: 'Search results' },
+                query: {
+                  value: {
+                    properties: {
+                      portal_type: {
+                        value: [
+                          'Event',
+                          'News Item',
+                          'Document',
+                          'templated_country_factsheet',
+                        ],
+                      },
                     },
                   },
                 },
-              },
-              placeholder: { value: 'Search website' },
-              searchButton: { value: false },
-            }}
-          />
+                placeholder: { value: 'Search website' },
+                searchButton: { value: false },
+              }}
+            />
+          ) : null}
         </div>
         <Menu
           stackable
