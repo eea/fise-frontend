@@ -347,7 +347,7 @@ class Navigation extends Component {
                               {subitem.title}
                             </Link>
                           )}
-                          {item.title !== 'Countries' && subitem.items && (
+                          {subitem.items && (
                             <div className="submenu-wrapper">
                               <div className="submenu">
                                 {subitem.items.map(subsubitem => (
@@ -364,7 +364,7 @@ class Navigation extends Component {
                                         : 'item thirdLevel'
                                     }
                                   >
-                                    {subsubitem.title}
+                                   {subsubitem.title}
                                   </Link>
                                 ))}
                               </div>
