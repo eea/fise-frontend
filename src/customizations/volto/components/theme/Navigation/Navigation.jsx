@@ -347,29 +347,30 @@ class Navigation extends Component {
                               {subitem.title}
                             </Link>
                           )}
-                          {subitem.items && (
-                            <div className="submenu-wrapper">
-                              <div className="submenu">
-                                {subitem.items.map(subsubitem => (
-                                  <Link
-                                    to={
-                                      subsubitem.url === ''
-                                        ? '/'
-                                        : subsubitem.url
-                                    }
-                                    key={subsubitem.url}
-                                    className={
-                                      this.isActive(subsubitem.url)
-                                        ? 'item thirdLevel menuActive'
-                                        : 'item thirdLevel'
-                                    }
-                                  >
-                                   {subsubitem.title}
-                                  </Link>
-                                ))}
+                          {subitem.items &&
+                            subitem.title.toLowerCase() === 'regions' && (
+                              <div className="submenu-wrapper">
+                                <div className="submenu">
+                                  {subitem.items.map(subsubitem => (
+                                    <Link
+                                      to={
+                                        subsubitem.url === ''
+                                          ? '/'
+                                          : subsubitem.url
+                                      }
+                                      key={subsubitem.url}
+                                      className={
+                                        this.isActive(subsubitem.url)
+                                          ? 'item thirdLevel menuActive'
+                                          : 'item thirdLevel'
+                                      }
+                                    >
+                                      {subsubitem.title}
+                                    </Link>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
-                          )}
+                            )}
                         </Dropdown.Item>
                       ))}
                     </Dropdown.Menu>
