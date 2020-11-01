@@ -4,7 +4,7 @@ import { Container, Dropdown, Menu, Pagination } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import { Link } from 'react-router-dom';
 import NewsItem from './NewsItem';
-import WidthBasedLayoutProvider from 'volto-base/components/theme/LayoutProvider/WidthBasedLayoutProvider';
+import WidthBasedLayoutProvider from 'volto-plotlycharts/LayoutProvider/WidthBasedLayoutProvider';
 import downKey from '@plone/volto/icons/down-key.svg';
 import rss from '@plone/volto/icons/rss.svg';
 
@@ -34,7 +34,7 @@ const getItems = (propsItems, type = null) => {
     }));
 };
 
-const getTitle = propsLocation => {
+const getTitle = (propsLocation) => {
   const title = propsLocation.pathname.split('/')[1].toLowerCase();
   return {
     lowerCase: title,
@@ -42,7 +42,7 @@ const getTitle = propsLocation => {
   };
 };
 
-const NewsView = props => {
+const NewsView = (props) => {
   const [show, setShow] = useState(6);
   const limit = 6;
   const grid = {
@@ -66,7 +66,7 @@ const NewsView = props => {
   const itemsByYear = {};
   // const yearOptions = [];
 
-  items.forEach(item => {
+  items.forEach((item) => {
     let year;
     if (item.start) year = new Date(item.start).getFullYear();
     //  For events

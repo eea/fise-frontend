@@ -1,5 +1,4 @@
-import * as config from '@plone/volto/config';
-
+import * as voltoConfig from '@plone/volto/config';
 import Forbidden from '@plone/volto/components/theme/Forbidden/Forbidden';
 import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
 
@@ -9,8 +8,9 @@ import {
   installPortlets,
   installTableau,
   installNews,
-} from 'volto-addons';
+} from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
+import { installBlocks } from 'volto-plotlycharts';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
@@ -18,16 +18,7 @@ import { applyConfig as tabsViewConfig } from 'volto-tabsview/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
 import { applyConfig as installEmbed } from 'volto-embed/config';
 
-const consoleError = console.error.bind(console);
-// eslint-disable-next-line
-console.error = (message, ...args) => {
-  if (typeof message === 'string' && message.startsWith('[React Intl]')) {
-    return;
-  }
-  consoleError(message, ...args);
-};
-
-const addonConfig = [
+const config = [
   addonsConfig,
   installPortlets,
   installImageSlides,
@@ -38,6 +29,7 @@ const addonConfig = [
   mosaicConfig,
   tabsViewConfig,
   installEmbed,
+  installBlocks,
   // installSearch,
   dataBlocksConfig,
   installFiseFrontend,
@@ -54,9 +46,7 @@ export const settings = {
 };
 
 export const views = {
-  // ...config.views,
-  ...addonConfig.views,
-
+  ...config.views,
   errorViews: {
     ...config.views.errorViews,
     '403': Forbidden,
@@ -64,23 +54,27 @@ export const views = {
   },
 };
 
-export const viewlets = [...(addonsConfig.viewlets || [])];
-
 export const widgets = {
-  ...addonConfig.widgets,
+  ...config.widgets,
 };
 
 export const blocks = {
-  ...addonConfig.blocks,
+  ...config.blocks,
 };
 
+// TODO: should we move custom stuff to settings variable?
+// It would make future adding new settings types easier, as this file wouldn't
+// have to be updated in all frontend implementations
+// console.log('config.js AddonReducers', config.addonReducers);
 export const addonReducers = { ...config.addonReducers };
 export const addonRoutes = [...(config.addonRoutes || [])];
 
+export const viewlets = [...(config.viewlets || [])];
+
 export const portlets = {
-  ...addonConfig.portlets,
+  ...config.portlets,
 };
 
 export const editForms = {
-  ...addonConfig.portlets,
+  ...config.editForms,
 };

@@ -4,29 +4,29 @@ services:
   frontend:
     image: eeacms/ims-frontend
     ports:
-      - '${FRONTEND:-8000}:3000'
+    - "${FRONTEND:-8000}:3000"
     depends_on:
-      - ploneapi
+    - ploneapi
     environment:
-      API_PATH: 'http://localhost:${BACKEND:-8080}/Plone'
-      INTERNAL_API_PATH: 'http://ploneapi:${BACKEND:-8080}/Plone'
+      API_PATH: "http://localhost:${BACKEND:-8080}/Plone"
+      INTERNAL_API_PATH: "http://ploneapi:${BACKEND:-8080}/Plone"
 
   ploneapi:
     image: eeacms/plonesaas-devel
     ports:
-      - '${BACKEND:-8080}:8080'
+    - "${BACKEND:-8080}:8080"
     environment:
-      CORS_ALLOW_ORIGIN: 'http://localhost:3000,http://127.0.0.1:3000,http://localhost:${FRONTEND:-8000},http://127.0.0.1:${FRONTEND:-8000}'
+      CORS_ALLOW_ORIGIN: "http://localhost:3000,http://127.0.0.1:3000,http://localhost:${FRONTEND:-8000},http://127.0.0.1:${FRONTEND:-8000}"
     depends_on:
-      - memcached
+    - memcached
     volumes:
-      - data:/data
+    - data:/data
 
   memcached:
     image: memcached
     command:
-      - '-m'
-      - '512'
+    - "-m"
+    - "512"
 
 volumes:
   data:

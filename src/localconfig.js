@@ -51,7 +51,7 @@ defineMessages({
 
 function addCustomGroup(config) {
   const hasCustomGroup = config.blocks.groupBlocksOrder.filter(
-    el => el.id === 'custom_addons',
+    (el) => el.id === 'custom_addons',
   );
   if (hasCustomGroup.length === 0) {
     config.blocks.groupBlocksOrder.push({
@@ -63,6 +63,14 @@ function addCustomGroup(config) {
 
 export function applyConfig(config) {
   addCustomGroup(config);
+  const contentExpand = [];
+  if (config.settings.contentExpand) {
+    contentExpand = [
+      ...config.settings.contentExpand.filter(
+        (content) => content !== 'navigation',
+      ),
+    ];
+  }
 
   config.settings = {
     ...config.settings,
@@ -78,11 +86,7 @@ export function applyConfig(config) {
       '/unauthorized',
     ],
     ownDomain: 'forest.eea.europa.eu',
-    contentExpand: [
-      ...config.settings.contentExpand.filter(
-        content => content !== 'navigation',
-      ),
-    ],
+    contentExpand: contentExpand,
     matomoSiteId: 46,
     // ...['navigation', '&expand.navigation.depth=3'],
   };
@@ -121,7 +125,7 @@ export function applyConfig(config) {
       { id: 'common_blocks', title: 'Common blocks' },
       { id: 'forests_specific', title: 'Forests Specific Blocks' },
       ...config.blocks.groupBlocksOrder.filter(
-        block => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
+        (block) => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
       ),
     ],
 

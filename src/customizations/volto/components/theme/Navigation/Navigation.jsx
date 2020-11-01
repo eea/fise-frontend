@@ -145,8 +145,8 @@ class Navigation extends Component {
     this.setState({ isMobileMenuOpen: false });
   }
 
-  formatNavUrl = nav => {
-    return nav.map(navItem => ({
+  formatNavUrl = (nav) => {
+    return nav.map((navItem) => ({
       ...navItem,
       url: navItem.url ? getBasePath(navItem.url) : '',
       items: navItem.items ? this.formatNavUrl(navItem.items) : false,
@@ -154,8 +154,16 @@ class Navigation extends Component {
   };
 
   render() {
-    const navigation = this.formatNavUrl(this.props.navigation);
+    const navigation = this.formatNavUrl(
+      this.props.navigation.filter(
+        (item) =>
+          !['header', 'head', 'footer'].includes(item.title?.toLowerCase()),
+      ),
+    );
     // return <div>{JSON.stringify(this.props.navigation)}</div>
+    const pathName = this.props.pathname;
+    const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
+
     return (
       <nav className="navigation">
         <div className="mobile-nav-wrapper">
@@ -215,27 +223,29 @@ class Navigation extends Component {
               : 'search computer large screen widescreen only'
           }
         >
-          <SearchBlock
-            data={{
-              title: { value: 'Search results' },
-              query: {
-                value: {
-                  properties: {
-                    portal_type: {
-                      value: [
-                        'Event',
-                        'News Item',
-                        'Document',
-                        'templated_country_factsheet',
-                      ],
+          {!hideSearch ? (
+            <SearchBlock
+              data={{
+                title: { value: 'Search results' },
+                query: {
+                  value: {
+                    properties: {
+                      portal_type: {
+                        value: [
+                          'Event',
+                          'News Item',
+                          'Document',
+                          'templated_country_factsheet',
+                        ],
+                      },
                     },
                   },
                 },
-              },
-              placeholder: { value: 'Search website' },
-              searchButton: { value: false },
-            }}
-          />
+                placeholder: { value: 'Search website' },
+                searchButton: { value: false },
+              }}
+            />
+          ) : null}
         </div>
         <Menu
           stackable
@@ -247,7 +257,7 @@ class Navigation extends Component {
               : 'computer large screen widescreen only'
           }
         >
-          {navigation.map(item =>
+          {navigation.map((item) =>
             item.items && item.items.length ? (
               <div
                 className={
@@ -279,7 +289,7 @@ class Navigation extends Component {
                     </div>
                   ) : (
                     <Link
-                      onClick={e =>
+                      onClick={(e) =>
                         item.items && item.items.length && e.preventDefault()
                       }
                       className="firstLevel"
@@ -306,7 +316,7 @@ class Navigation extends Component {
                           : ''
                       }`}
                     >
-                      {item.items.map(subitem => (
+                      {item.items.map((subitem) => (
                         <Dropdown.Item
                           className={`${item.title}--section-item`}
                           id={subitem.title}
@@ -336,29 +346,30 @@ class Navigation extends Component {
                               {subitem.title}
                             </Link>
                           )}
-                          {item.title !== 'Countries' && subitem.items && (
-                            <div className="submenu-wrapper">
-                              <div className="submenu">
-                                {subitem.items.map(subsubitem => (
-                                  <Link
-                                    to={
-                                      subsubitem.url === ''
-                                        ? '/'
-                                        : subsubitem.url
-                                    }
-                                    key={subsubitem.url}
-                                    className={
-                                      this.isActive(subsubitem.url)
-                                        ? 'item thirdLevel menuActive'
-                                        : 'item thirdLevel'
-                                    }
-                                  >
-                                    {subsubitem.title}
-                                  </Link>
-                                ))}
+                          {subitem.items &&
+                            subitem.title.toLowerCase() === 'regions' && (
+                              <div className="submenu-wrapper">
+                                <div className="submenu">
+                                  {subitem.items.map((subsubitem) => (
+                                    <Link
+                                      to={
+                                        subsubitem.url === ''
+                                          ? '/'
+                                          : subsubitem.url
+                                      }
+                                      key={subsubitem.url}
+                                      className={
+                                        this.isActive(subsubitem.url)
+                                          ? 'item thirdLevel menuActive'
+                                          : 'item thirdLevel'
+                                      }
+                                    >
+                                      {subsubitem.title}
+                                    </Link>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
-                          )}
+                            )}
                         </Dropdown.Item>
                       ))}
                     </Dropdown.Menu>

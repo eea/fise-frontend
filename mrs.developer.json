@@ -1,20 +1,7 @@
 {
-  "volto-mosaic": {
-    "url": "https://github.com/eea/volto-mosaic.git",
-    "path": "src"
-  },
-  "volto-datablocks": {
-    "url": "https://github.com/eea/volto-datablocks.git",
-    "path": "src",
-    "branch": "master"
-  },
-  "volto-addons": {
-    "url": "https://github.com/eea/volto-addons.git",
-    "path": "src",
-    "branch": "volto_7"
-  },
-  "volto-ckeditor": {
-    "url": "https://github.com/eea/volto-ckeditor.git",
+  "volto-tabsview": {
+    "url": "https://github.com/eea/volto-tabsview.git",
+    "branch": "master",
     "path": "src"
   },
   "volto-plotlycharts": {
@@ -22,19 +9,50 @@
     "path": "src",
     "branch": "master"
   },
-  "volto-base": {
-    "url": "https://github.com/eea/volto-base.git",
+  "volto-grid-block": {
+    "url": "https://github.com/eea/volto-grid-block.git",
+    "branch": "master",
     "path": "src",
-    "branch": "118372_header_footer_view"
+    "package": "@eeacms/volto-grid-block"
+  },
+  "volto-datablocks": {
+    "url": "https://github.com/eea/volto-datablocks.git",
+    "branch": "master",
+    "path": "src"
+  },
+  "volto-addons": {
+    "url": "https://github.com/eea/volto-addons.git",
+    "branch": "volto_7",
+    "path": "src"
   },
   "volto-embed": {
     "url": "https://github.com/eea/volto-embed.git",
-    "path": "src",
-    "branch": "master"
+    "branch": "generic_protection_wrapper",
+    "path": "src"
   },
-  "volto-tabsview": {
-    "url": "https://github.com/eea/volto-tabsview.git",
+  "volto-tabs-block": {
+    "url": "https://github.com/eea/volto-tabs-block.git",
+    "branch": "develop",
     "path": "src",
-    "branch": "master"
+    "package": "@eeacms/volto-tabs-block"
+  },
+  "volto-slate-metadata-mentions": {
+    "url": "https://github.com/eea/volto-slate-metadata-mentions.git",
+    "branch": "develop",
+    "path": "src",
+    "package": "@eeacms/volto-slate-metadata-mentions"
+  },
+  "volto-slate": {
+    "url": "https://github.com/eea/volto-slate.git",
+    "branch": "develop",
+    "path": "src"
+  },
+  "volto-ckeditor": {
+    "url": "https://github.com/eea/volto-ckeditor.git",
+    "path": "src"
+  },
+  "volto-mosaic": {
+    "url": "https://github.com/eea/volto-mosaic.git",
+    "path": "src"
   }
 }

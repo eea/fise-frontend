@@ -160,9 +160,9 @@ def activate_all():
         pkgdir = os.path.join('src/develop/', format(name))
 
         if os.path.exists(pkgdir) and os.path.isdir(pkgdir):
-            subprocess.call(['rm', 'package-lock.json'], cwd=pkgdir)
-            subprocess.call(['npm', 'install'], cwd=pkgdir)
-            subprocess.call(['rm', 'package-lock.json'], cwd=pkgdir)
+            # subprocess.call(['rm', 'package-lock.json'], cwd=pkgdir)
+            subprocess.call(['yarn'], cwd=pkgdir)
+            # subprocess.call(['rm', 'package-lock.json'], cwd=pkgdir)
 
 
 def list_addons():

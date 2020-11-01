@@ -37,7 +37,7 @@ class Header extends Component {
     token: PropTypes.string,
     pathname: PropTypes.string.isRequired,
     actualPathName: PropTypes.string.isRequired,
-    folderHeader: PropTypes.any,
+    // folderHeader: PropTypes.any,
     defaultHeaderImage: PropTypes.any,
     frontPageSlides: PropTypes.array,
   };
@@ -55,17 +55,6 @@ class Header extends Component {
     if (nextProps.actualPathName !== this.props.actualPathName) {
       this.setState({
         isHomepage: nextProps.actualPathName === '/',
-      });
-    }
-    if (
-      JSON.stringify(nextProps.folderHeader.url) !==
-      JSON.stringify(this.props.folderHeader.url)
-    ) {
-      this.setState({
-        url: nextProps.folderHeader.url,
-        description: nextProps.folderHeader.description,
-        title: nextProps.folderHeader.title,
-        image: nextProps.folderHeader.image,
       });
     }
 
@@ -94,6 +83,8 @@ class Header extends Component {
   render() {
     const defaultHeaderImage = this.props.defaultHeaderImage;
     let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
+    const pathName = this.props.pathname;
+    const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
     return (
       <div className="header-wrapper" role="banner">
         <Sticky enabled={true} top={0}>
@@ -103,11 +94,13 @@ class Header extends Component {
                 <div className="logo">
                   <Logo />
                 </div>
-                <div className="nav-actions-mobile large screen hidden">
-                  <div className="search">
-                    <MobileSearchWidget pathname={this.props.pathname} />
+                {!hideSearch ? (
+                  <div className="nav-actions-mobile large screen hidden">
+                    <div className="search">
+                      <MobileSearchWidget pathname={this.props.pathname} />
+                    </div>
                   </div>
-                </div>
+                ) : null}
                 <Navigation
                   navigation={this.props.navigationItems}
                   pathname={this.props.pathname}
@@ -141,8 +134,7 @@ class Header extends Component {
 }
 
 export default compose(
-  connect(state => ({
+  connect((state) => ({
     token: state.userSession.token,
-    folder_header: state.folder_header.items,
   })),
 )(Header);

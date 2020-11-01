@@ -41,7 +41,7 @@ class App extends Component {
   static propTypes = {
     pathname: PropTypes.string.isRequired,
     purgeMessages: PropTypes.func.isRequired,
-    folderHeader: PropTypes.any,
+    // folderHeader: PropTypes.any,
     // getDefaultHeaderImage: PropTypes.func.isRequired,
     // defaultHeaderImage: PropTypes.object.isRequired,
   };
@@ -120,7 +120,7 @@ class App extends Component {
       <Fragment>
         <BodyClass className={`view-${action}view`} />
         <Header
-          folderHeader={this.props.folderHeader}
+          // folderHeader={this.props.folderHeader}
           actualPathName={this.props.pathname}
           pathname={path}
           defaultHeaderImage={headerImage}
@@ -236,7 +236,7 @@ export default compose(
   ]),
   connect(
     (state, props) => ({
-      folderHeader: state.folder_header.items,
+      // folderHeader: state.folder_header.items,
       defaultHeaderImage: state.default_header_image.items?.[0],
       // content: state.content.data,
       content: state.prefetch?.[props.location.pathname] || state.content.data,
