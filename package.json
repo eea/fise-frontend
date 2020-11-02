@@ -10,7 +10,8 @@
     "src/develop/volto-datablocks",
     "src/develop/volto-plotlycharts",
     "src/develop/volto-ckeditor",
-    "src/develop/volto-mosaic"
+    "src/develop/volto-mosaic",
+    "src/develop/volto-tabsview"
   ],
   "addons": [
     "volto-slate:asDefault",
@@ -26,7 +27,8 @@
     "volto-datablocks",
     "volto-plotlycharts",
     "volto-ckeditor",
-    "volto-mosaic"
+    "volto-mosaic",
+    "volto-tabsview"
   ],
   "scripts": {
     "start": "razzle start",
