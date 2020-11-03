@@ -19,6 +19,7 @@ import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   hasBlocksData,
+  getBaseUrl,
 } from '@plone/volto/helpers';
 // import { samePath } from 'volto-mosaic/helpers';
 import { connect } from 'react-redux';
@@ -37,12 +38,13 @@ import { connect } from 'react-redux';
  * @param {Object} content Content object.
  * @returns {string} Markup of the component.
  */
-const DefaultView = props => {
+const DefaultView = (props) => {
   const { content } = props;
+  const { location } = props;
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
-  // console.log('default view props', props);
+  console.log('default view props', props);
 
   // const currentUrl = content?.['@id'];
   // const shouldRenderRoutes =
@@ -64,10 +66,10 @@ const DefaultView = props => {
         {hasBlocksData(content) ? (
           <div id="page-document" className="ui container">
             <Helmet title={content.title} />
-            {map(content[blocksLayoutFieldname].items, block => {
+            {map(content[blocksLayoutFieldname].items, (block) => {
               const Block =
                 blocks.blocksConfig[
-                  (content[blocksFieldname]?.[block]?.['@type'])
+                  content[blocksFieldname]?.[block]?.['@type']
                 ]?.['view'] || null;
               return Block !== null &&
                 content[blocksFieldname][block]['@type'] !== 'title' ? (
@@ -76,6 +78,7 @@ const DefaultView = props => {
                   id={block}
                   properties={content}
                   data={content[blocksFieldname][block]}
+                  path={getBaseUrl(location?.pathname || '')}
                 />
               ) : (
                 //   <div key={block}>
