@@ -2706,10 +2706,24 @@ body.mosaic-view .content-area main {
     overflow: auto;
 }
 
+div:not(.sticky-outer-wrapper.active) {
+
 .searchbox div.input:not(.glossary) {
-   border: none;
+   border: none!important;
     border-radius: 5px;
-    background-color: #f2f1ee;
+    background-color: #f2f1ee!important;
     min-width: 276px;
-    padding: 0 .5rem;
+    padding: 0 .5rem!important;
+}
+}
+
+.sticky-outer-wrapper.active {
+
+.searchbox div.input:not(.glossary) {
+   border: none!important;
+    border-radius: 5px;
+    background-color: #fff!important;
+    min-width: 276px;
+    padding: 0 .5rem!important;
+}
 }
