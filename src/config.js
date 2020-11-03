@@ -3,7 +3,7 @@ import Forbidden from '@plone/volto/components/theme/Forbidden/Forbidden';
 import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
 
 import {
-  applyConfig as addonsConfig,
+  // applyConfig as addonsConfig,
   installImageSlides,
   installPortlets,
   installTableau,
@@ -19,7 +19,7 @@ import { applyConfig as installFiseFrontend } from './localconfig';
 import { applyConfig as installEmbed } from 'volto-embed/config';
 
 const config = [
-  addonsConfig,
+  // addonsConfig,
   installPortlets,
   installImageSlides,
   installTableau,

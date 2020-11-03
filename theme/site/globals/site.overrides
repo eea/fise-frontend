@@ -2687,5 +2687,29 @@ body.mosaic-view .content-area main {
 .block-wrapper.type-data_connected_embed {
   > div {
     height: 100%;
+    > div {
+      height: 100%;
+    }
   }
+}
+
+.block.maps {
+  > div {
+    > div {
+      height: 100%;
+    }
+  }
+}
+
+.blocks-chooser {
+      max-height: 700px;
+    overflow: auto;
+}
+
+.searchbox div.input:not(.glossary) {
+   border: none;
+    border-radius: 5px;
+    background-color: #f2f1ee;
+    min-width: 276px;
+    padding: 0 .5rem;
 }
