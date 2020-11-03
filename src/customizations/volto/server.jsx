@@ -128,7 +128,7 @@ server
       req.path.match(/(.*)\/@@images\/(.*)/) ||
       req.path.match(/(.*)\/@@download\/(.*)/) ||
       req.path.match(/(.*)\/@@rdf\/(.*)/) ||
-      req.path.match(/(.*)\/@@RSS\/(.*)/)
+      req.path.match(/(.*)\/RSS(.*)/)
     ) {
       getAPIResourceWithAuth(req).then((resource) => {
         function forwardHeaders(headers) {
