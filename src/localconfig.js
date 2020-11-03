@@ -130,21 +130,6 @@ export function applyConfig(config) {
     ],
 
     blocksConfig: {
-      ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
-        if (
-          ['text', 'mostUsed', 'media', 'common'].includes(
-            config.blocks.blocksConfig[blockKey].group,
-          )
-        ) {
-          acc[blockKey] = {
-            ...config.blocks.blocksConfig[blockKey],
-            group: 'common_blocks',
-          };
-        } else {
-          acc[blockKey] = config.blocks.blocksConfig[blockKey];
-        }
-        return acc;
-      }, {}),
       europe_compare_block: {
         id: 'europe_compare_block',
         title: 'Europe Compare Block',
@@ -185,6 +170,21 @@ export function applyConfig(config) {
         icon: chartIcon,
         group: 'forests_specific',
       },
+      ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
+        if (
+          ['text', 'mostUsed', 'media', 'common'].includes(
+            config.blocks.blocksConfig[blockKey].group,
+          )
+        ) {
+          acc[blockKey] = {
+            ...config.blocks.blocksConfig[blockKey],
+            group: 'common_blocks',
+          };
+        } else {
+          acc[blockKey] = config.blocks.blocksConfig[blockKey];
+        }
+        return acc;
+      }, {}),
     },
   };
 
