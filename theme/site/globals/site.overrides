@@ -2708,7 +2708,7 @@ body.mosaic-view .content-area main {
 
 div:not(.sticky-outer-wrapper.active) {
 
-.searchbox div.input:not(.glossary) {
+.searchbox div.input {
    border: none!important;
     border-radius: 5px;
     background-color: #f2f1ee!important;
@@ -2719,7 +2719,7 @@ div:not(.sticky-outer-wrapper.active) {
 
 .sticky-outer-wrapper.active {
 
-.searchbox div.input:not(.glossary) {
+.searchbox div.input {
    border: none!important;
     border-radius: 5px;
     background-color: #fff!important;
