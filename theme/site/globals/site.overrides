@@ -2702,28 +2702,24 @@ body.mosaic-view .content-area main {
 }
 
 .blocks-chooser {
-      max-height: 700px;
-    overflow: auto;
+  max-height: 700px;
+  overflow: auto;
 }
-
-div:not(.sticky-outer-wrapper.active) {
 
 .searchbox div.input {
-   border: none!important;
-    border-radius: 5px;
-    background-color: #f2f1ee!important;
-    min-width: 276px;
-    padding: 0 .5rem!important;
-}
+  border: none !important;
+  border-radius: 5px;
+  background-color: #f2f1ee !important;
+  min-width: 276px;
+  padding: 0 0.5rem !important;
 }
 
 .sticky-outer-wrapper.active {
-
-.searchbox div.input {
-   border: none!important;
+  .searchbox div.input {
+    border: none !important;
     border-radius: 5px;
-    background-color: #fff!important;
+    background-color: #fff !important;
     min-width: 276px;
-    padding: 0 .5rem!important;
-}
+    padding: 0 0.5rem !important;
+  }
 }
