@@ -23,6 +23,8 @@ export const getAPIResourceWithAuth = (req) =>
     const apiUrl = parseUrl(settings.apiPath);
     const port = apiUrl.port ? apiUrl.port : scheme === 'http:' ? 443 : 80;
     const scheme = apiUrl.protocol.slice(0, apiUrl.protocol.length - 1);
+    
+    console.log('scheme', scheme);
 
     const path = `/VirtualHostBase/${scheme}/${apiUrl.hostname}:${port}${apiUrl.path}/VirtualHostRoot${req.path}`;
     const url = `${internalApiUrl.hostname}:${internalApiUrl.port}${path}`;
