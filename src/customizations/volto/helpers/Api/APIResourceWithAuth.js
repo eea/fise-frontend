@@ -24,7 +24,7 @@ export const getAPIResourceWithAuth = (req) =>
     const port = apiUrl.port ? apiUrl.port : scheme === 'https:' ? 443 : 80;
     const scheme = apiUrl.protocol.slice(0, apiUrl.protocol.length - 1);
     const path = `/VirtualHostBase/${scheme}/${apiUrl.hostname}:${
-      port === 80 ? '' : port
+      port === 80 || 6081 ? '' : port
     }/fise/VirtualHostRoot${req.path}`;
     const url = `${internalApiUrl.hostname}:${internalApiUrl.port}${path}`;
     const request = superagent.get(url).responseType('blob');
