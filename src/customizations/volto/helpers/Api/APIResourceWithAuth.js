@@ -26,7 +26,9 @@ export const getAPIResourceWithAuth = (req) =>
     const path = `/VirtualHostBase/${scheme}/${apiUrl.hostname}:${
       port === 80 || 6081 ? '' : port
     }/fise/VirtualHostRoot${req.path}`;
-    const url = `${internalApiUrl.hostname}:${internalApiUrl.port}${path}`;
+    const url = `${internalApiUrl.hostname}:${
+      internalApiUrl.port === 6081 ? '' : internalApiUrl.port
+    }${path}`;
     const request = superagent.get(url).responseType('blob');
     const authToken = cookie.load('auth_token');
     if (authToken) {
