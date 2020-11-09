@@ -35,7 +35,18 @@ export const getAPIResourceWithAuth = (req) =>
       internalApiUrl,
     );
 
-    const path = `/VirtualHostBase/${scheme}/${apiUrl.hostname}:${port}/fise/VirtualHostRoot${req.path}`;
+    const path = `/VirtualHostBase/${scheme}/${apiUrl.hostname}${
+      ['80', 80].includes(port) ? '' : ':' + port
+    }/fise/VirtualHostRoot${req.path}`;
+    console.log(
+      `path => /VirtualHostBase/ + ${scheme} + / + ${apiUrl.hostname} + ${
+        ['80', 80].includes(port) ? '' : ':' + port
+      } + /fise/VirtualHostRoot + ${req.path}`,
+    );
+
+    console.log(
+      `url => ${internalApiUrl.hostname} + : + ${internalApiUrl.port} + ${path}`,
+    );
     const url = `${internalApiUrl.hostname}:${internalApiUrl.port}${path}`;
     const request = superagent.get(url).responseType('blob');
     const authToken = cookie.load('auth_token');
