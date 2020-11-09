@@ -47,11 +47,7 @@ export const getAPIResourceWithAuth = (req) =>
     console.log(
       `url => ${internalApiUrl.hostname} + : + ${internalApiUrl.port} + ${path}`,
     );
-    const url = `${internalApiUrl.hostname}${
-      [6081, '6081'].includes(internalApiUrl.port)
-        ? ''
-        : ':' + internalApiUrl.port
-    }${path}`;
+    const url = `${internalApiUrl.hostname}:${internalApiUrl.port}${path}`;
     const request = superagent.get(url).responseType('blob');
     const authToken = cookie.load('auth_token');
     if (authToken) {
