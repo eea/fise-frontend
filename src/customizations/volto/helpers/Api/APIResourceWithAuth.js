@@ -23,12 +23,20 @@ export const getAPIResourceWithAuth = (req) =>
     const apiUrl = parseUrl(settings.apiPath);
     const port = apiUrl.port ? apiUrl.port : scheme === 'https:' ? 443 : 80;
     const scheme = apiUrl.protocol.slice(0, apiUrl.protocol.length - 1);
-    const path = `/VirtualHostBase/${scheme}/${apiUrl.hostname}:${
-      port === 80 || 6081 ? '' : port
-    }/fise/VirtualHostRoot${req.path}`;
-    const url = `${internalApiUrl.hostname}:${
-      ["6081", 6081].includes(internalApiUrl.port) ? '' : internalApiUrl.port
-    }${path}`;
+
+    console.log(
+      'apiurl',
+      apiUrl,
+      'port',
+      port,
+      'scheme',
+      scheme,
+      'internalApiUrl',
+      internalApiUrl,
+    );
+
+    const path = `/VirtualHostBase/${scheme}/${apiUrl.hostname}:${port}/fise/VirtualHostRoot${req.path}`;
+    const url = `${internalApiUrl.hostname}:${internalApiUrl.port}${path}`;
     const request = superagent.get(url).responseType('blob');
     const authToken = cookie.load('auth_token');
     if (authToken) {
