@@ -2675,9 +2675,20 @@ body.mosaic-view .content-area main {
       display: flex;
       flex-wrap: wrap;
       .listing-item {
-        width: 33%;
+        width: calc(33% - 10px);
+        border: 1px solid #eee;
+        margin: 5px;
+        padding: 10px;
+        transition: background-color 200ms ease-in;
+        &:hover {
+          background-color: #eee;
+        }
         img {
           display: none;
+        }
+        h3 {
+          margin-top: 0;
+          font-size: 1rem;
         }
       }
     }
