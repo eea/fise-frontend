@@ -29,7 +29,8 @@
     "volto-ckeditor",
     "volto-mosaic",
     "volto-tabsview",
-    "@eeacms/volto-columns-block"
+    "@eeacms/volto-columns-block",
+    "@eeacms/volto-matomo"
   ],
   "scripts": {
     "start": "razzle start",

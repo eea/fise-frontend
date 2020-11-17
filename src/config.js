@@ -43,7 +43,10 @@ export const settings = {
     published_at: process.env.RAZZLE_FRONTEND_PUBLISHED_AT || null,
   },
   timezone: 'CET',
+  matomoSiteId: 46,
 };
+
+// RAZZLE_MATOMO_SITE_ID
 
 export const views = {
   ...config.views,
