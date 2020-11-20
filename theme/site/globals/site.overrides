@@ -943,10 +943,10 @@ h5 {
   }
 }
 
-#page-document {
-  max-width: 800px !important;
-  margin: 0 auto !important;
-}
+// #page-document {
+//   max-width: 800px !important;
+//   margin: 0 auto !important;
+// }
 
 .folderWithContent {
   padding: 0 100px !important;

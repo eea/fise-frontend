@@ -1,22 +1,44 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "paths": {
-      "volto-tabsview": ["develop/volto-tabsview/src"],
-      "volto-plotlycharts": ["develop/volto-plotlycharts/src"],
-      "@eeacms/volto-grid-block": ["develop/volto-grid-block/src"],
-      "volto-datablocks": ["develop/volto-datablocks/src"],
-      "volto-addons": ["develop/volto-addons/src"],
-      "volto-embed": ["develop/volto-embed/src"],
-      "@eeacms/volto-tabs-block": ["develop/volto-tabs-block/src"],
-      "@eeacms/volto-slate-metadata-mentions": [
-        "develop/volto-slate-metadata-mentions/src"
-      ],
-      "volto-slate": ["develop/volto-slate/src"],
-      "volto-ckeditor": ["develop/volto-ckeditor/src"],
-      "volto-mosaic": ["develop/volto-mosaic/src"],
-      "@eeacms/volto-matomo": ["addons/volto-matomo/src"]
-    },
-    "baseUrl": "src"
-  }
+    "compilerOptions": {
+        "jsx": "react",
+        "paths": {
+            "volto-tabsview": [
+                "develop/volto-tabsview/src"
+            ],
+            "volto-plotlycharts": [
+                "develop/volto-plotlycharts/src"
+            ],
+            "@eeacms/volto-grid-block": [
+                "develop/volto-grid-block/src"
+            ],
+            "volto-datablocks": [
+                "develop/volto-datablocks/src"
+            ],
+            "volto-addons": [
+                "develop/volto-addons/src"
+            ],
+            "volto-embed": [
+                "develop/volto-embed/src"
+            ],
+            "@eeacms/volto-tabs-block": [
+                "develop/volto-tabs-block/src"
+            ],
+            "@eeacms/volto-slate-metadata-mentions": [
+                "develop/volto-slate-metadata-mentions/src"
+            ],
+            "volto-slate": [
+                "develop/volto-slate/src"
+            ],
+            "volto-ckeditor": [
+                "develop/volto-ckeditor/src"
+            ],
+            "volto-mosaic": [
+                "develop/volto-mosaic/src"
+            ],
+            "@eeacms/volto-block-style": [
+                "develop/volto-block-style/src"
+            ]
+        },
+        "baseUrl": "src"
+    }
 }

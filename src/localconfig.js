@@ -21,6 +21,9 @@ import ForestCoverageBlockView from '~/components/manage/Blocks/ForestCoverageBl
 import ForestDeadwoodVolumeEdit from '~/components/manage/Blocks/ForestDeadwoodVolume/Edit';
 import ForestDeadwoodVolumeView from '~/components/manage/Blocks/ForestDeadwoodVolume/View';
 
+import DefaultViewWide from '~/components/theme/DefaultViewWide/DefaultViewWide';
+import DefaultView from '~/customizations/volto/components/theme/View/DefaultView';
+
 import ForestCoverageEvolutionEdit from '~/components/manage/Blocks/ForestCoverageEvolution/Edit';
 import ForestCoverageEvolutionView from '~/components/manage/Blocks/ForestCoverageEvolution/View';
 
@@ -101,6 +104,8 @@ export function applyConfig(config) {
       // ...layoutViews,
       news_item_listing_view: NewsView,
       refresh_view: RefreshView,
+      document_view_wide: DefaultViewWide,
+      document_view: DefaultView,
     },
   };
 

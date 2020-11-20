@@ -30,7 +30,7 @@
     "volto-mosaic",
     "volto-tabsview",
     "@eeacms/volto-columns-block",
-    "@eeacms/volto-matomo"
+    "@eeacms/volto-block-style"
   ],
   "scripts": {
     "start": "razzle start",
