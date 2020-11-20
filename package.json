@@ -11,7 +11,8 @@
     "src/develop/volto-plotlycharts",
     "src/develop/volto-ckeditor",
     "src/develop/volto-mosaic",
-    "src/develop/volto-tabsview"
+    "src/develop/volto-tabsview",
+    "src/develop/volto-block-style"
   ],
   "addons": [
     "volto-slate:asDefault",
