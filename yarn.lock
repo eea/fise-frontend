@@ -2172,15 +2172,21 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.0.16"
 
+"@eeacms/volto-blocks-form@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-blocks-form/-/volto-blocks-form-1.0.1.tgz#b7a6022a52a34666be258529e560171c7f595e96"
+  integrity sha512-0yf7x8QNxhUelDPdMzpQRgBrqTsvBiGOOvBSt+C9W2bzw5D9rJvj4NUVeo3tEIPWKJHHxBgh83Av1EquQjxsTw==
+
 "@eeacms/volto-blocks-form@github:eea/volto-blocks-form#0.5.2":
   version "0.5.0"
   resolved "https://codeload.github.com/eea/volto-blocks-form/tar.gz/f75fc97a7642d1d28dedcc2da7ea9d007114c8cd"
 
-"@eeacms/volto-columns-block@github:eea/volto-columns-block#0.2.0":
-  version "0.2.0"
-  resolved "https://codeload.github.com/eea/volto-columns-block/tar.gz/c87710a1273de4baeccef183b07c9f77d5299de7"
+"@eeacms/volto-columns-block@github:eea/volto-columns-block#1.0.0":
+  version "1.0.0"
+  resolved "https://codeload.github.com/eea/volto-columns-block/tar.gz/b43224465fc15096fd41c61eee3f4cadffaed57f"
   dependencies:
-    react-color "2.18.1"
+    "@eeacms/volto-blocks-form" "^1.0.0"
+    react-color "~2.18.1"
 
 "@eeacms/volto-metadata-block@github:eea/volto-metadata-block#1.0.1":
   version "1.0.1"
@@ -18441,18 +18447,6 @@ react-chart-editor@^0.41.0:
     styled-components "^5.1.1"
     tinycolor2 "^1.4.1"
 
-react-color@2.18.1:
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.18.1.tgz#2cda8cc8e06a9e2c52ad391a30ddad31972472f4"
-  integrity sha512-X5XpyJS6ncplZs74ak0JJoqPi+33Nzpv5RYWWxn17bslih+X7OlgmfpmGC1fNvdkK7/SGWYf1JJdn7D2n5gSuQ==
-  dependencies:
-    "@icons/material" "^0.2.4"
-    lodash "^4.17.11"
-    material-colors "^1.2.1"
-    prop-types "^15.5.10"
-    reactcss "^1.2.0"
-    tinycolor2 "^1.4.1"
-
 react-color@^2.18.1:
   version "2.19.3"
   resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.19.3.tgz#ec6c6b4568312a3c6a18420ab0472e146aa5683d"
@@ -18461,6 +18455,18 @@ react-color@^2.18.1:
     "@icons/material" "^0.2.4"
     lodash "^4.17.15"
     lodash-es "^4.17.15"
+    material-colors "^1.2.1"
+    prop-types "^15.5.10"
+    reactcss "^1.2.0"
+    tinycolor2 "^1.4.1"
+
+react-color@~2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.18.1.tgz#2cda8cc8e06a9e2c52ad391a30ddad31972472f4"
+  integrity sha512-X5XpyJS6ncplZs74ak0JJoqPi+33Nzpv5RYWWxn17bslih+X7OlgmfpmGC1fNvdkK7/SGWYf1JJdn7D2n5gSuQ==
+  dependencies:
+    "@icons/material" "^0.2.4"
+    lodash "^4.17.11"
     material-colors "^1.2.1"
     prop-types "^15.5.10"
     reactcss "^1.2.0"

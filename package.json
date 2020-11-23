@@ -120,7 +120,7 @@
   },
   "dependencies": {
     "@eeacms/volto-blocks-form": "github:eea/volto-blocks-form#0.5.2",
-    "@eeacms/volto-columns-block": "github:eea/volto-columns-block#0.2.0",
+    "@eeacms/volto-columns-block": "github:eea/volto-columns-block#1.0.0",
     "@eeacms/volto-metadata-block": "github:eea/volto-metadata-block#1.0.1",
     "@eeacms/volto-object-widget": "github:eea/volto-object-widget#0.2.3",
     "@eeacms/volto-widget-toggle": "github:eea/volto-widget-toggle#0.1.0",
