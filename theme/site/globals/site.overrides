@@ -2780,3 +2780,9 @@ body.mosaic-view .content-area main {
     padding: 0 0.5rem !important;
   }
 }
+
+
+.view-editview .block .block.selected:before, .view-editview .block .block.selected:hover:before {
+  z-index: 1;
+  pointer-events: none;
+}
