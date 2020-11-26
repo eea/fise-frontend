@@ -10,7 +10,7 @@ import {
   installNews,
 } from 'volto-addons/config';
 import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
-import { installBlocks } from 'volto-plotlycharts';
+// import { installBlocks } from 'volto-plotlycharts';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
@@ -20,6 +20,7 @@ import { applyConfig as installEmbed } from 'volto-embed/config';
 
 const config = [
   // addonsConfig,
+  // installBlocks,
   installPortlets,
   installImageSlides,
   installTableau,
@@ -29,7 +30,6 @@ const config = [
   mosaicConfig,
   tabsViewConfig,
   installEmbed,
-  installBlocks,
   // installSearch,
   dataBlocksConfig,
   installFiseFrontend,

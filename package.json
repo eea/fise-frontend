@@ -26,14 +26,14 @@
     "@eeacms/volto-grid-block",
     "volto-addons",
     "volto-datablocks",
-    "volto-plotlycharts",
+    "volto-plotlycharts:installBlocks",
     "volto-ckeditor",
     "volto-mosaic",
     "volto-tabsview",
     "@eeacms/volto-columns-block",
-    "@eeacms/volto-block-style",
     "@eeacms/volto-middleware-rdf",
-    "@eeacms/volto-group-block"
+    "@eeacms/volto-group-block",
+    "@eeacms/volto-block-style"
   ],
   "scripts": {
     "start": "razzle start",
