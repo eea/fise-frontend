@@ -2088,6 +2088,13 @@
     "@eeacms/volto-blocks-form" "^1.0.0"
     react-color "~2.18.1"
 
+"@eeacms/volto-group-block@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-group-block/-/volto-group-block-1.0.0.tgz#b786343a8c2928437281e3d0b77df823661f3c70"
+  integrity sha512-WNuPzGpGbhKNBzVTpmqhO6gpDD7CeSoOm86QfimsCO462YnY9OrYf5IC709n8SAltHMojlOxYD/Gtht+C1Qn6Q==
+  dependencies:
+    "@eeacms/volto-blocks-form" "^1.0.0"
+
 "@eeacms/volto-metadata-block@github:eea/volto-metadata-block#1.0.1":
   version "1.0.1"
   resolved "https://codeload.github.com/eea/volto-metadata-block/tar.gz/3623f2947ed2dc0287525c8c31af9e06a6b2fc1a"

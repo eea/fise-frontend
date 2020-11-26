@@ -32,7 +32,8 @@
     "volto-tabsview",
     "@eeacms/volto-columns-block",
     "@eeacms/volto-block-style",
-    "@eeacms/volto-middleware-rdf"
+    "@eeacms/volto-middleware-rdf",
+    "@eeacms/volto-group-block"
   ],
   "scripts": {
     "start": "razzle start",
@@ -123,6 +124,7 @@
     "@blueprintjs/core": "^3.30.0",
     "@blueprintjs/icons": "^3.19.0",
     "@datapunt/matomo-tracker-react": "0.0.16",
+    "@eeacms/volto-group-block": "^1.0.0",
     "@eeacms/volto-blocks-form": "github:eea/volto-blocks-form#0.5.2",
     "@eeacms/volto-columns-block": "github:eea/volto-columns-block#1.0.0",
     "@eeacms/volto-metadata-block": "github:eea/volto-metadata-block#1.0.1",
