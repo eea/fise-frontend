@@ -2786,3 +2786,10 @@ body.mosaic-view .content-area main {
   z-index: 1;
   pointer-events: none;
 }
+
+.sidebar-container {
+
+.ui.segment.form {
+  padding: 1rem;
+}
+}
