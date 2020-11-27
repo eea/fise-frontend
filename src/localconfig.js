@@ -223,5 +223,29 @@ export function applyConfig(config) {
     },
   ];
 
+  // border-tile
+  config.settings.pluggableStyles = [
+    ...(config.settings.pluggableStyles || []),
+    {
+      id: 'borderBlock',
+      title: 'Border block',
+      cssClass: 'border-block',
+    },
+  ];
+  // {
+  //   id: 'blueShade',
+  //   title: 'Blue Shade',
+  //   cssClass: 'blue-demo-box',
+  //   previewComponent: (props) => (
+  //     <div className={`${props.className} preview-blue-demo-box`}>
+  //       {props.children}
+  //     </div>
+  //   ),
+  //   viewComponent: (props) => (
+  //     <div className="blue-demo-box">{props.children}</div>
+  //   ),
+  //   // TODO: support also editComponent ?
+  // },
+
   return config;
 }
