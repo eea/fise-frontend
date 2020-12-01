@@ -55,6 +55,11 @@
     "url": "https://github.com/eea/volto-mosaic.git",
     "path": "src"
   },
+  "volto-matomo": {
+    "url": "https://github.com/eea/volto-matomo.git",
+    "path": "src",
+    "package": "@eeacms/volto-matomo"
+  },
   "volto-block-style": {
     "url": "https://github.com/eea/volto-block-style.git",
     "path": "src",

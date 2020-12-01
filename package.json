@@ -33,6 +33,7 @@
     "@eeacms/volto-columns-block",
     "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",
+    "@eeacms/volto-matomo",
     "@eeacms/volto-block-style"
   ],
   "scripts": {
