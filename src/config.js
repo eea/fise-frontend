@@ -13,7 +13,7 @@ import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
 // import { installBlocks } from 'volto-plotlycharts';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
-import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
+// import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 import { applyConfig as tabsViewConfig } from 'volto-tabsview/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
 import { applyConfig as installEmbed } from 'volto-embed/config';
@@ -31,7 +31,7 @@ const config = [
   tabsViewConfig,
   installEmbed,
   // installSearch,
-  dataBlocksConfig,
+  // dataBlocksConfig,
   installFiseFrontend,
 ].reduce((acc, apply) => apply(acc), voltoConfig);
 

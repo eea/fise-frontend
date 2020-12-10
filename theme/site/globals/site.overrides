@@ -2816,3 +2816,11 @@ body.mosaic-view .content-area main {
     }
   }
 }
+
+.margin-block-10 {
+  margin: 10px;
+}
+
+.padding-block-10 {
+  padding: 10px;
+}

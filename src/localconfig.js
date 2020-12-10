@@ -231,6 +231,21 @@ export function applyConfig(config) {
       title: 'Border block',
       cssClass: 'border-block',
     },
+    {
+      id: 'marginBlock10',
+      title: 'Margin block 10',
+      cssClass: 'margin-block-10 border-block',
+    },
+    {
+      id: 'paddingBlock10',
+      title: 'Padding block 10',
+      cssClass: 'padding-block-10 border-block',
+    },
+    {
+      id: 'paddingMarginBlock10',
+      title: 'Padding margin block 10',
+      cssClass: 'padding-block-10 margin-block-10 border-block',
+    },
   ];
   // {
   //   id: 'blueShade',
