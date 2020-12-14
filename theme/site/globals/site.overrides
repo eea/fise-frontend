@@ -1375,7 +1375,8 @@ span.float-right {
 }
 
 // Europe forest specific blocks
-.block-container {
+.block-container,
+.columns-view {
   h5 {
     color: @darkBrown;
     text-transform: uppercase;
