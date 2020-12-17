@@ -58,6 +58,7 @@
   "volto-matomo": {
     "url": "https://github.com/eea/volto-matomo.git",
     "path": "src",
+    "branch": "volto8",
     "package": "@eeacms/volto-matomo"
   },
   "volto-block-style": {
