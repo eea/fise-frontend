@@ -2825,3 +2825,8 @@ body.mosaic-view .content-area main {
 .padding-block-10 {
   padding: 10px;
 }
+
+
+.columns-view .ui.twelve.column.grid.column-grid {
+    margin: 0;
+}

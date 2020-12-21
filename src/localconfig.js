@@ -233,18 +233,23 @@ export function applyConfig(config) {
     },
     {
       id: 'marginBlock10',
-      title: 'Margin block 10',
+      title: 'Margin border',
       cssClass: 'margin-block-10 border-block',
     },
     {
       id: 'paddingBlock10',
-      title: 'Padding block 10',
+      title: 'Padding border',
       cssClass: 'padding-block-10 border-block',
     },
     {
       id: 'paddingMarginBlock10',
-      title: 'Padding margin block 10',
+      title: 'Padding margin border',
       cssClass: 'padding-block-10 margin-block-10 border-block',
+    },
+    {
+      id: 'marginOnly10',
+      title: 'Margin only',
+      cssClass: 'margin-block-10',
     },
   ];
   // {
