@@ -15,9 +15,7 @@
     "src/develop/volto-block-style"
   ],
   "addons": [
-    "volto-slate:asDefault",
     "@eeacms/volto-widgets-view",
-    "@eeacms/volto-slate-metadata-mentions",
     "@eeacms/volto-metadata-block",
     "@eeacms/volto-tabs-block",
     "@eeacms/volto-widget-toggle",
@@ -131,7 +129,6 @@
     "@eeacms/volto-metadata-block": "github:eea/volto-metadata-block#1.0.1",
     "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf.git",
     "@eeacms/volto-object-widget": "github:eea/volto-object-widget#0.2.3",
-    "@eeacms/volto-slate-metadata-mentions": "github:eea/volto-slate-metadata-mentions#0.4.2",
     "@eeacms/volto-widget-toggle": "github:eea/volto-widget-toggle#0.1.0",
     "@eeacms/volto-widgets-view": "github:eea/volto-widgets-view#1.0.1",
     "@material/react-linear-progress": "^0.15.0",
@@ -165,7 +162,6 @@
     "semantic-ui-css": "^2.4.1",
     "slick-carousel": "^1.8.1",
     "start": "^5.1.0",
-    "volto-slate": "github:eea/volto-slate#0.9.0-beta.4",
     "webpack-bundle-analyzer": "^3.6.0"
   },
   "devDependencies": {
