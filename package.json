@@ -125,7 +125,7 @@
     "@datapunt/matomo-tracker-react": "0.0.16",
     "@eeacms/volto-group-block": "^1.0.0",
     "@eeacms/volto-blocks-form": "github:eea/volto-blocks-form#0.5.2",
-    "@eeacms/volto-columns-block": "github:eea/volto-columns-block#1.0.0",
+    "@eeacms/volto-columns-block": "github:eea/volto-columns-block#1.0.4",
     "@eeacms/volto-metadata-block": "github:eea/volto-metadata-block#1.0.1",
     "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf.git",
     "@eeacms/volto-object-widget": "github:eea/volto-object-widget#0.2.3",
