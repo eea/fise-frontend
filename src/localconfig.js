@@ -251,6 +251,26 @@ export function applyConfig(config) {
       title: 'Margin only',
       cssClass: 'margin-block-10',
     },
+    {
+      id: 'dropShadow',
+      title: 'Drop shadow',
+      cssClass: 'drop-shadow-tile',
+    },
+    {
+      id: 'dropShadowMargin',
+      title: 'Drop shadow margin',
+      cssClass: 'drop-shadow-tile margin-block-10',
+    },
+    {
+      id: 'dropShadowPadding',
+      title: 'Drop shadow padding',
+      cssClass: 'drop-shadow-tile padding-block-10',
+    },
+    {
+      id: 'dropShadowPaddingMargin',
+      title: 'Drop shadow padding margin',
+      cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
+    },
   ];
   // {
   //   id: 'blueShade',
