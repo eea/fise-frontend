@@ -144,7 +144,6 @@
     "performant-array-to-tree": "^1.7.1",
     "raven-js": "3.27.2",
     "react": "^16.13.1",
-    "react-beautiful-dnd": "^13.0.0",
     "react-component-queries": "^2.3.0",
     "react-dom": "^16.13.1",
     "react-highlight-words": "^0.16.0",

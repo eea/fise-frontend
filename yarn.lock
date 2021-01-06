@@ -17571,7 +17571,7 @@ react-animate-height@2.0.17:
     classnames "^2.2.5"
     prop-types "^15.6.1"
 
-react-beautiful-dnd@13.0.0, react-beautiful-dnd@^13.0.0:
+react-beautiful-dnd@13.0.0:
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/react-beautiful-dnd/-/react-beautiful-dnd-13.0.0.tgz#f70cc8ff82b84bc718f8af157c9f95757a6c3b40"
   integrity sha512-87It8sN0ineoC3nBW0SbQuTFXM6bUqM62uJGY4BtTf0yzPl8/3+bHMWkgIe0Z6m8e+gJgjWxefGRVfpE3VcdEg==
