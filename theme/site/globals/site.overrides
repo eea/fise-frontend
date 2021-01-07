@@ -2830,3 +2830,6 @@ body.mosaic-view .content-area main {
 .columns-view .ui.twelve.column.grid.column-grid {
     margin: 0;
 }
+.block-toolbar {
+  z-index: 1;
+}
