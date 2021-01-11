@@ -2077,9 +2077,11 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-blocks-form/-/volto-blocks-form-1.0.1.tgz#b7a6022a52a34666be258529e560171c7f595e96"
   integrity sha512-0yf7x8QNxhUelDPdMzpQRgBrqTsvBiGOOvBSt+C9W2bzw5D9rJvj4NUVeo3tEIPWKJHHxBgh83Av1EquQjxsTw==
 
-"@eeacms/volto-blocks-form@github:eea/volto-blocks-form#0.5.2":
-  version "0.5.0"
-  resolved "https://codeload.github.com/eea/volto-blocks-form/tar.gz/f75fc97a7642d1d28dedcc2da7ea9d007114c8cd"
+"@eeacms/volto-blocks-form@github:eea/volto-blocks-form#1.0.3":
+  version "1.0.3"
+  resolved "https://codeload.github.com/eea/volto-blocks-form/tar.gz/78d8fd37b1548c26a921fc2059a67339ca059fa3"
+  dependencies:
+    react-beautiful-dnd "13.0.0"
 
 "@eeacms/volto-columns-block@github:eea/volto-columns-block#1.0.4":
   version "1.0.4"
@@ -2095,25 +2097,34 @@
   dependencies:
     "@eeacms/volto-blocks-form" "^1.0.0"
 
-"@eeacms/volto-metadata-block@github:eea/volto-metadata-block#1.0.1":
-  version "1.0.1"
-  resolved "https://codeload.github.com/eea/volto-metadata-block/tar.gz/3623f2947ed2dc0287525c8c31af9e06a6b2fc1a"
+"@eeacms/volto-metadata-block@github:eea/volto-metadata-block#1.0.4":
+  version "1.0.4"
+  resolved "https://codeload.github.com/eea/volto-metadata-block/tar.gz/762d57b4e7debd2a65a4ce8ed3ff17734b607b01"
+  dependencies:
+    "@eeacms/volto-widgets-view" "^1.0.3"
 
 "@eeacms/volto-middleware-rdf@eea/volto-middleware-rdf.git":
   version "0.1.0"
   resolved "https://codeload.github.com/eea/volto-middleware-rdf/tar.gz/db0404fd351b8a3a548a48891f7ce46f25807c27"
 
-"@eeacms/volto-object-widget@github:eea/volto-object-widget#0.2.3":
-  version "0.1.0"
-  resolved "https://codeload.github.com/eea/volto-object-widget/tar.gz/ca7b1944000adbba2ecf09ac31dd3c7bb1b9a46e"
+"@eeacms/volto-object-widget@github:eea/volto-object-widget#1.0.3":
+  version "1.0.3"
+  resolved "https://codeload.github.com/eea/volto-object-widget/tar.gz/65381d93145c3e71c15874194d0afaa94711917d"
+  dependencies:
+    "@eeacms/volto-blocks-form" "^1.0.0"
 
-"@eeacms/volto-widget-toggle@github:eea/volto-widget-toggle#0.1.0":
-  version "0.1.0"
-  resolved "https://codeload.github.com/eea/volto-widget-toggle/tar.gz/e5f0fc1e6a42fdc9e64da274f4781d73bfd270e2"
+"@eeacms/volto-widget-toggle@github:eea/volto-widget-toggle#1.0.0":
+  version "1.0.0"
+  resolved "https://codeload.github.com/eea/volto-widget-toggle/tar.gz/9298d3d68642670c7b16e31ede0c9299e84c8b65"
 
-"@eeacms/volto-widgets-view@github:eea/volto-widgets-view#1.0.1":
-  version "1.0.1"
-  resolved "https://codeload.github.com/eea/volto-widgets-view/tar.gz/1d7954c758cfc03e8e3d896c49233d47b509d56c"
+"@eeacms/volto-widgets-view@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-widgets-view/-/volto-widgets-view-1.0.3.tgz#6c2385c39bccc613152332c181f17633fb0dbd72"
+  integrity sha512-vrIg7Sox0ZXu8xwRdjAlIoPAadXddpGCUaOPr4L8XuR6dW+qFi5efxqgecKNJUuvswpB0MW+i+4b2KFb8PXcSw==
+
+"@eeacms/volto-widgets-view@github:eea/volto-widgets-view#1.0.3":
+  version "1.0.3"
+  resolved "https://codeload.github.com/eea/volto-widgets-view/tar.gz/3afd126992b28e91d1ba5e559ffa5f4cb6959584"
 
 "@emotion/babel-utils@^0.6.4":
   version "0.6.10"

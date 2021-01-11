@@ -2534,7 +2534,7 @@ body.has-sidebar #layout-preview-lg {
 }
 
 #sidebar .sidebar-container #sidebar-properties {
-  padding: 20px;
+  // padding: 20px;
 }
 
 #sidebar .sidebar-container #sidebar-properties > div {
@@ -2832,4 +2832,14 @@ body.mosaic-view .content-area main {
 }
 .block-toolbar {
   z-index: 1;
+}
+
+.object-list-modal {
+  .ui.menu {
+    flex-wrap: wrap;
+  }
+}
+
+.ui.accordion .title {
+  cursor: auto !important;
 }

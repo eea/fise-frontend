@@ -18,6 +18,8 @@ import { applyConfig as tabsViewConfig } from 'volto-tabsview/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
 import { applyConfig as installEmbed } from 'volto-embed/config';
 
+import ObjectListInlineWidget from './components/manage/Widgets/ObjectListInlineWidget';
+
 const config = [
   // addonsConfig,
   // installBlocks,
@@ -59,6 +61,10 @@ export const views = {
 
 export const widgets = {
   ...config.widgets,
+  widget: {
+    ...config.widgets.widget,
+    object_list_inline: ObjectListInlineWidget,
+  },
 };
 
 export const blocks = {
