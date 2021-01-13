@@ -29,6 +29,9 @@ import ForestCoverageEvolutionView from '~/components/manage/Blocks/ForestCovera
 
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 
+import NavigationBlockEdit from '~/components/manage/Blocks/NavigationBlock/Edit';
+import NavigationBlockView from '~/components/manage/Blocks/NavigationBlock/View';
+
 defineMessages({
   custom_addons: {
     id: 'custom_addons',
@@ -135,6 +138,15 @@ export function applyConfig(config) {
     ],
 
     blocksConfig: {
+      navigation_tabs_block: {
+        id: 'navigation_tabs_block',
+        title: 'Navigation tabs block',
+        view: NavigationBlockView,
+        edit: NavigationBlockEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      },
+
       europe_compare_block: {
         id: 'europe_compare_block',
         title: 'Europe Compare Block',
@@ -192,6 +204,8 @@ export function applyConfig(config) {
       }, {}),
     },
   };
+
+  console.log('cblocks', config.blocks);
 
   config.viewlets = [
     { path: '/', component: ForestMetadata },

@@ -20,9 +20,6 @@
             "volto-embed": [
                 "develop/volto-embed/src"
             ],
-            "@eeacms/volto-tabs-block": [
-                "develop/volto-tabs-block/src"
-            ],
             "@eeacms/volto-slate-metadata-mentions": [
                 "develop/volto-slate-metadata-mentions/src"
             ],

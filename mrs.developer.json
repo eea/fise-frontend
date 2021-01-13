@@ -30,12 +30,6 @@
     "branch": "generic_protection_wrapper",
     "path": "src"
   },
-  "volto-tabs-block": {
-    "url": "https://github.com/eea/volto-tabs-block.git",
-    "branch": "develop",
-    "path": "src",
-    "package": "@eeacms/volto-tabs-block"
-  },
   "volto-slate-metadata-mentions": {
     "url": "https://github.com/eea/volto-slate-metadata-mentions.git",
     "branch": "develop",

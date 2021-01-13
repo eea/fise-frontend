@@ -17,7 +17,6 @@
   "addons": [
     "@eeacms/volto-widgets-view",
     "@eeacms/volto-metadata-block",
-    "@eeacms/volto-tabs-block",
     "@eeacms/volto-widget-toggle",
     "@eeacms/volto-blocks-form",
     "@eeacms/volto-object-widget",
@@ -132,7 +131,7 @@
     "@eeacms/volto-widget-toggle": "github:eea/volto-widget-toggle#1.0.0",
     "@eeacms/volto-widgets-view": "github:eea/volto-widgets-view#1.0.3",
     "@material/react-linear-progress": "^0.15.0",
-    "@plone/volto": "github:eea/volto#8.7.1-eea-beta.3",
+    "@plone/volto": "10.4.3",
     "@sentry/node": "5.12.3",
     "axios": "^0.20.0",
     "immutable": "^3.8.2",

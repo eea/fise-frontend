@@ -2826,9 +2826,8 @@ body.mosaic-view .content-area main {
   padding: 10px;
 }
 
-
 .columns-view .ui.twelve.column.grid.column-grid {
-    margin: 0;
+  margin: 0;
 }
 .block-toolbar {
   z-index: 1;
@@ -2842,4 +2841,176 @@ body.mosaic-view .content-area main {
 
 .ui.accordion .title {
   cursor: auto !important;
+}
+
+.tabs-view-menu {
+  padding-bottom: 0;
+  height: 100%;
+  .scroll-container {
+    height: 100%;
+    .ui.menu {
+      height: 100%;
+    }
+  }
+  .ui.menu {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    border-bottom: none !important;
+    // &.red-menu {
+    //   min-height: unset !important;
+    //   &.item {
+    //     flex-wrap: nowrap !important;
+    //     .item {
+    //       font-size: 14px !important;
+    //       font-weight: bold !important;
+    //       color: #d63d27 !important;
+    //       background-color: transparent !important;
+    //       padding: 10px 30px !important;
+    //       border-radius: 22px;
+    //       border: 1px solid #d63d27;
+    //       margin-right: 0 !important;
+    //       margin-left: 0 !important;
+    //       flex: 1;
+    //       &:before {
+    //         width: 0;
+    //         background-color: transparent !important;
+    //       }
+    //       &.sibling-on-left {
+    //         border-top-left-radius: 0;
+    //         border-bottom-left-radius: 0;
+    //         margin-left: -1px !important;
+    //       }
+    //       &.sibling-on-right {
+    //         border-top-right-radius: 0;
+    //         border-bottom-right-radius: 0;
+    //       }
+    //     }
+    //     .active.item {
+    //       color: #fff !important;
+    //       padding: 10px 40px !important;
+    //       border-radius: 22px;
+    //       background-color: #d63d27 !important;
+    //       border: 1px solid #d63d27 !important;
+    //       &:hover {
+    //         background-color: #d63d27 !important;
+    //         color: #fff !important;
+    //       }
+    //       &:before {
+    //         width: 0;
+    //         background: transparent !important;
+    //         background-color: transparent !important;
+    //       }
+    //       &.sibling-on-left {
+    //         border-top-left-radius: 0;
+    //         border-bottom-left-radius: 0;
+    //         margin-left: -1px !important;
+    //       }
+    //       &.sibling-on-right {
+    //         border-top-right-radius: 0;
+    //         border-bottom-right-radius: 0;
+    //       }
+    //     }
+    //   }
+    //   font-weight: bold;
+    //   @media (max-width: 768px) {
+    //     &.item {
+    //       .item {
+    //         flex: 1 0 0;
+    //       }
+    //     }
+    //   }
+    // }
+    // &.grey-menu {
+    //   background-color: #ededed !important;
+    //   // &.item {
+    //   //   align-items: stretch !important;
+    //   // }
+    //   .item {
+    //     color: #000 !important;
+    //     &:before {
+    //       width: 0;
+    //       background-color: transparent !important;
+    //     }
+    //     // &:first-child {
+    //     //   margin-left: 0 !important;
+    //     // }
+    //   }
+    //   .active.item {
+    //     background-color: transparent !important;
+    //     color: #4296b3 !important;
+    //     font-weight: bold;
+    //     border-bottom: 2px solid #4296b3 !important;
+    //     border-radius: 0;
+    //     &:hover {
+    //       background: transparent;
+    //       color: #3b849e !important;
+    //     }
+    //   }
+    // }
+    // &.item {
+    //   flex-wrap: wrap !important;
+    //   text-align: left !important;
+    //   justify-content: start !important;
+    //   margin-left: auto !important;
+    //   margin-right: auto !important;
+    //   font-size: 18px;
+    //   align-items: stretch;
+    //   &:before {
+    //     display: none;
+    //   }
+    //   &::-webkit-scrollbar {
+    //     height: 6px;
+    //   }
+    //   &::-webkit-scrollbar-track {
+    //     border-radius: 10em;
+    //   }
+    //   &::-webkit-scrollbar-thumb {
+    //     background-color: darkgrey;
+    //     outline: 1px solid slategrey;
+    //   }
+    //   .item {
+    //     width: fit-content !important;
+    //     margin-right: 1rem !important;
+    //     margin-left: 1rem !important;
+    //     padding-top: 0.5rem;
+    //     padding-bottom: 0.5rem;
+    //   }
+    // }
+    // .active.item {
+    //   background-color: transparent !important;
+    //   color: #4296b3 !important;
+    //   font-weight: bold !important;
+    //   border-bottom: 2px solid #4296b3 !important;
+    //   border-radius: 0;
+    //   &:hover {
+    //     background: transparent !important;
+    //     color: #3b849e !important;
+    //   }
+    // }
+  }
+}
+
+.factsheet.menu {
+  // > .ui.container {
+  //   padding: 0 !important;
+  // }
+  // .tabular.menu {
+  //   border-bottom: none;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1) !important;
+  .item {
+    border: 1px solid #e0e1e0 !important;
+    font-weight: 300;
+    color: #554433 !important;
+    &.active {
+      background-color: #cc4400 !important;
+      color: white !important;
+      margin-bottom: 0 !important;
+      border-radius: 0 !important;
+    }
+  }
+  // }
 }
