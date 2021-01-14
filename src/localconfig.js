@@ -10,22 +10,8 @@ import RefreshView from '~/components/theme/RefreshView/RefreshView';
 
 import chartIcon from '@plone/volto/icons/world.svg';
 
-import EuropeCompareBlockEdit from './components/manage/Blocks/EuropeCompareBlock/Edit';
-import EuropeCompareBlockView from './components/manage/Blocks/EuropeCompareBlock/View';
-import EuropeForestBlockEdit from './components/manage/Blocks/EuropeForestBlock/Edit';
-import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/View';
-
-import ForestCoverageBlockEdit from '~/components/manage/Blocks/ForestCoverageBlock/Edit';
-import ForestCoverageBlockView from '~/components/manage/Blocks/ForestCoverageBlock/View';
-
-import ForestDeadwoodVolumeEdit from '~/components/manage/Blocks/ForestDeadwoodVolume/Edit';
-import ForestDeadwoodVolumeView from '~/components/manage/Blocks/ForestDeadwoodVolume/View';
-
 import DefaultViewWide from '~/components/theme/DefaultViewWide/DefaultViewWide';
 import DefaultView from '~/customizations/volto/components/theme/View/DefaultView';
-
-import ForestCoverageEvolutionEdit from '~/components/manage/Blocks/ForestCoverageEvolution/Edit';
-import ForestCoverageEvolutionView from '~/components/manage/Blocks/ForestCoverageEvolution/View';
 
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 
@@ -146,47 +132,6 @@ export function applyConfig(config) {
         icon: chartIcon,
         group: 'forests_specific',
       },
-
-      europe_compare_block: {
-        id: 'europe_compare_block',
-        title: 'Europe Compare Block',
-        view: EuropeCompareBlockView,
-        edit: EuropeCompareBlockEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      europe_forest_block: {
-        id: 'europe_forest_block',
-        title: 'Europe Forest Area Block',
-        view: EuropeForestBlockView,
-        edit: EuropeForestBlockEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      forest_coverage_block: {
-        id: 'forest_coverage_block',
-        title: 'Forest coverage block',
-        view: ForestCoverageBlockView,
-        edit: ForestCoverageBlockEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      forest_deadwood_volume_block: {
-        id: 'forest_deadwood_volume_block',
-        title: 'Forest deadwood volume block',
-        view: ForestDeadwoodVolumeView,
-        edit: ForestDeadwoodVolumeEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      forest_coverage_evolution_block: {
-        id: 'forest_coverage_evolution_block',
-        title: 'Forest patch size distribution block',
-        view: ForestCoverageEvolutionView,
-        edit: ForestCoverageEvolutionEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
       ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
         if (
           ['text', 'mostUsed', 'media', 'common'].includes(
@@ -286,20 +231,6 @@ export function applyConfig(config) {
       cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
     },
   ];
-  // {
-  //   id: 'blueShade',
-  //   title: 'Blue Shade',
-  //   cssClass: 'blue-demo-box',
-  //   previewComponent: (props) => (
-  //     <div className={`${props.className} preview-blue-demo-box`}>
-  //       {props.children}
-  //     </div>
-  //   ),
-  //   viewComponent: (props) => (
-  //     <div className="blue-demo-box">{props.children}</div>
-  //   ),
-  //   // TODO: support also editComponent ?
-  // },
 
   return config;
 }
