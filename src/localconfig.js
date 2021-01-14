@@ -150,8 +150,6 @@ export function applyConfig(config) {
     },
   };
 
-  console.log('cblocks', config.blocks);
-
   config.viewlets = [
     { path: '/', component: ForestMetadata },
     ...(config.viewlets || []),

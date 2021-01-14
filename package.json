@@ -12,7 +12,8 @@
     "src/develop/volto-ckeditor",
     "src/develop/volto-mosaic",
     "src/develop/volto-tabsview",
-    "src/develop/volto-block-style"
+    "src/develop/volto-block-style",
+    "src/develop/volto-slate"
   ],
   "addons": [
     "@eeacms/volto-widgets-view",
@@ -27,6 +28,7 @@
     "volto-ckeditor",
     "volto-mosaic",
     "volto-tabsview",
+    "volto-slate",
     "@eeacms/volto-columns-block",
     "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",
