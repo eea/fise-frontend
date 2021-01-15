@@ -16,6 +16,10 @@ const getSchema = (props) => {
       title: 'Classname',
       type: 'text',
     },
+    navFromParent: {
+      title: 'Show navigation from parent',
+      type: 'boolean',
+    },
     pages: {
       title: 'Specific pages',
       type: 'schema',

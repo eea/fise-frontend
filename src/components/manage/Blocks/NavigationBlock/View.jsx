@@ -18,7 +18,9 @@ const View = ({ content, ...props }) => {
   });
   const [navigationItems, setNavigationItems] = useState([]);
   const [pages, setPages] = useState([]);
-  const parent = data.parent?.value;
+  const parent = data?.navFromParent?.value
+    ? getBasePath(props.properties.parent['@id'])
+    : data.parent?.value;
   const history = useHistory();
 
   useEffect(() => {
@@ -113,7 +115,9 @@ export default compose(
       flags: state.flags,
       navigation: getNavigationByParent(
         state.navigation.items,
-        props.data?.parent?.value,
+        props.data?.navFromParent?.value
+          ? getBasePath(props.properties.parent['@id'])
+          : props.data?.parent?.value,
       ),
     }),
     { deleteQueryParam, setQueryParam },
