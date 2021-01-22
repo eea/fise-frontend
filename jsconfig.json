@@ -2,9 +2,6 @@
     "compilerOptions": {
         "jsx": "react",
         "paths": {
-            "volto-tabsview": [
-                "develop/volto-tabsview/src"
-            ],
             "volto-plotlycharts": [
                 "develop/volto-plotlycharts/src"
             ],
@@ -13,9 +10,6 @@
             ],
             "volto-datablocks": [
                 "develop/volto-datablocks/src"
-            ],
-            "volto-addons": [
-                "develop/volto-addons/src"
             ],
             "volto-embed": [
                 "develop/volto-embed/src"
@@ -37,6 +31,9 @@
             ],
             "@eeacms/volto-block-style": [
                 "develop/volto-block-style/src"
+            ],
+            "@eeacms/volto-addons-forest": [
+                "develop/volto-addons-forest/src"
             ]
         },
         "baseUrl": "src"

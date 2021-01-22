@@ -13,7 +13,6 @@ import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 
 import { settings, blocks } from '~/config';
-import renderPortletManager from 'volto-addons/Portlets/utils';
 
 import {
   getBlocksFieldname,

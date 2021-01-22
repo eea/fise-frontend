@@ -1,9 +1,4 @@
 {
-  "volto-tabsview": {
-    "url": "https://github.com/eea/volto-tabsview.git",
-    "branch": "master",
-    "path": "src"
-  },
   "volto-plotlycharts": {
     "url": "https://github.com/eea/volto-plotlycharts.git",
     "path": "src",
@@ -20,11 +15,7 @@
     "branch": "master",
     "path": "src"
   },
-  "volto-addons": {
-    "url": "https://github.com/eea/volto-addons.git",
-    "branch": "volto_7",
-    "path": "src"
-  },
+
   "volto-embed": {
     "url": "https://github.com/eea/volto-embed.git",
     "branch": "generic_protection_wrapper",
@@ -59,5 +50,10 @@
     "url": "https://github.com/eea/volto-block-style.git",
     "path": "src",
     "package": "@eeacms/volto-block-style"
+  },
+  "volto-addons-forest": {
+    "url": "https://github.com/eea/volto-addons-forest.git",
+    "path": "src",
+    "package": "@eeacms/volto-addons-forest"
   }
 }

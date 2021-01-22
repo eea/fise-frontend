@@ -24,8 +24,6 @@ import {
 import printer from '@plone/volto/icons/printer.svg';
 import screen from '@plone/volto/icons/screen.svg';
 
-// import renderPortletManager from 'volto-addons/Portlets/utils';
-
 /**
  * View container class.
  * @class View
@@ -182,18 +180,15 @@ class View extends Component {
    * @param  {string} dirtyDisplayName The displayName
    * @returns {string} Clean displayName (no Connect(...)).
    */
-  cleanViewName = dirtyDisplayName =>
-    dirtyDisplayName
-      .replace('Connect(', '')
-      .replace(')', '')
-      .toLowerCase();
+  cleanViewName = (dirtyDisplayName) =>
+    dirtyDisplayName.replace('Connect(', '').replace(')', '').toLowerCase();
 
   sortHtmlCollectionByPosition = (collection, patterns) => {
     const first = []; //  ~follow the pattern
     const seccond = []; //   follow the pattern
     if (collection && !collection.classList.contains('__sorted')) {
-      Array.prototype.forEach.call(collection.children, child => {
-        patterns.forEach(pattern => {
+      Array.prototype.forEach.call(collection.children, (child) => {
+        patterns.forEach((pattern) => {
           if (
             pattern.requirement === 'has' &&
             child.classList.contains(pattern.class)
@@ -220,10 +215,10 @@ class View extends Component {
         }
       }
       collection.innerHTML = '';
-      first.forEach(item => {
+      first.forEach((item) => {
         collection.appendChild(item);
       });
-      seccond.forEach(data => {
+      seccond.forEach((data) => {
         collection.appendChild(data.item);
       });
       collection.classList.add('__sorted');

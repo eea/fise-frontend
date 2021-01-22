@@ -20,7 +20,6 @@ import { Helmet } from '@plone/volto/helpers';
 import { searchContent } from '@plone/volto/actions';
 import { Toolbar, Icon } from '@plone/volto/components';
 import Highlighter from 'react-highlight-words';
-import SearchBlock from 'volto-addons/SearchBlock/View';
 
 import paginationLeftSVG from '@plone/volto/icons/left-key.svg';
 import paginationRightSVG from '@plone/volto/icons/right-key.svg';
@@ -36,7 +35,7 @@ const toSearchOptions = (searchableText, subject, queryOptions) => {
   };
 };
 
-const getQueryOptions = query => {
+const getQueryOptions = (query) => {
   const options = {};
   isObject(query) &&
     Object.entries(query).forEach(([key, value]) => {
@@ -45,11 +44,11 @@ const getQueryOptions = query => {
   return options;
 };
 
-const getText = block => {
+const getText = (block) => {
   let text = '';
   if (block.text && typeof block.text === 'string') text = block.text;
   if (block.text && block.text.blocks && isArray(block.text.blocks)) {
-    block.text.blocks.forEach(block => {
+    block.text.blocks.forEach((block) => {
       text += getText(block);
     });
   }
@@ -70,7 +69,7 @@ const matchedText = (text, searchableText) => {
   return matchedText;
 };
 
-const smallText = text => {
+const smallText = (text) => {
   if (text.length > 256) return `[...${text.substring(0, 256)}...]`;
   return text;
 };
@@ -174,7 +173,7 @@ class Search extends Component {
    * @param {Object} nextProps Next properties
    * @returns {undefined}
    */
-  UNSAFE_componentWillReceiveProps = nextProps => {
+  UNSAFE_componentWillReceiveProps = (nextProps) => {
     if (
       nextProps.searchableText !== this.props.searchableText ||
       nextProps.subject !== this.props.subject
@@ -307,9 +306,7 @@ class Search extends Component {
                         ? item.summary.fullSummary.length > 0
                           ? item.summary.fullSummary.map((paragraph, index) => (
                               <React.Fragment
-                                key={`summary_paragraph_${
-                                  item['@id']
-                                }_${index}}`}
+                                key={`summary_paragraph_${item['@id']}_${index}}`}
                               >
                                 {paragraph}
                               </React.Fragment>
@@ -411,7 +408,7 @@ export default compose(
   connect(
     (state, props) => ({
       searchableText: qs.parse(props.location.search).SearchableText,
-      items: state.search.items.map(item => {
+      items: state.search.items.map((item) => {
         return {
           ...item,
           '@id': item['@id'].replace(settings.apiPath, ''),
