@@ -32,7 +32,7 @@ import {
   purgeMessages,
 } from '@plone/volto/actions';
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
-import { getPortlets } from 'volto-addons-forest/actions';
+import { getPortlets } from '@eeacms/volto-addons-forest/actions';
 
 class App extends Component {
   static propTypes = {

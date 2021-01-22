@@ -78,9 +78,9 @@ export const addonRoutes = [...(config.addonRoutes || [])];
 
 export const viewlets = [...(config.viewlets || [])];
 
-export const portlets = {
-  ...config.portlets,
-};
+// export const portlets = {
+//   ...config.portlets,
+// };
 
 export const editForms = {
   ...config.editForms,
