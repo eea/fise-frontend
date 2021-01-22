@@ -11,7 +11,6 @@
     "src/develop/volto-ckeditor",
     "src/develop/volto-mosaic",
     "src/develop/volto-block-style",
-    "src/develop/volto-slate",
     "src/develop/volto-addons-forest"
   ],
   "addons": [
@@ -25,7 +24,6 @@
     "volto-plotlycharts:installBlocks",
     "volto-ckeditor",
     "volto-mosaic",
-    "volto-slate",
     "@eeacms/volto-columns-block",
     "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",

@@ -14,12 +14,6 @@
             "volto-embed": [
                 "develop/volto-embed/src"
             ],
-            "@eeacms/volto-slate-metadata-mentions": [
-                "develop/volto-slate-metadata-mentions/src"
-            ],
-            "volto-slate": [
-                "develop/volto-slate/src"
-            ],
             "volto-ckeditor": [
                 "develop/volto-ckeditor/src"
             ],

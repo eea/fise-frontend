@@ -15,21 +15,9 @@
     "branch": "master",
     "path": "src"
   },
-
   "volto-embed": {
     "url": "https://github.com/eea/volto-embed.git",
     "branch": "generic_protection_wrapper",
-    "path": "src"
-  },
-  "volto-slate-metadata-mentions": {
-    "url": "https://github.com/eea/volto-slate-metadata-mentions.git",
-    "branch": "develop",
-    "path": "src",
-    "package": "@eeacms/volto-slate-metadata-mentions"
-  },
-  "volto-slate": {
-    "url": "https://github.com/eea/volto-slate.git",
-    "branch": "develop",
     "path": "src"
   },
   "volto-ckeditor": {
