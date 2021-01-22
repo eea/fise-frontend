@@ -66,9 +66,22 @@ const Edit = (props) => {
     /* eslint-disable-next-line */
   }, [state.item, props.data.components]);
   return (
-    <div>
+    <div
+      style={{
+        position: 'relative',
+      }}
+    >
       <RenderFields schema={state.schema} {...props} title="Navigation block" />
       <View {...props} id={state.id} mode="edit" />
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+        }}
+      ></div>
     </div>
   );
 };
