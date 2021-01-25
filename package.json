@@ -140,6 +140,7 @@
     "raven-js": "3.27.2",
     "react-component-queries": "^2.3.0",
     "react-highlight-words": "^0.16.0",
+    "react-image-gallery": "1.0.8",
     "react-lazy-load-image-component": "^1.5.0",
     "react-sizeme": "^2.6.12",
     "react-slick": "^0.24.0",
