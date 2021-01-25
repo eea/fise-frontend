@@ -1,7 +1,7 @@
 # Based on https://github.com/plone/volto/blob/master/entrypoint.sh
 FROM node:12-stretch-slim as build
 
-ENV NODE_OPTIONS=--max_old_space_size=$MAX_OLD_SPACE_SIZE
+ENV NODE_OPTIONS=--max_old_space_size=4096
 
 RUN apt-get update -y \
  && apt-get install -y git bsdmainutils vim-nox mc \
