@@ -11,7 +11,8 @@
     "src/develop/volto-ckeditor",
     "src/develop/volto-mosaic",
     "src/develop/volto-block-style",
-    "src/develop/volto-addons-forest"
+    "src/develop/volto-addons-forest",
+    "src/develop/volto-columns-block"
   ],
   "addons": [
     "@eeacms/volto-widgets-view",
@@ -24,12 +25,12 @@
     "volto-plotlycharts:installBlocks",
     "volto-ckeditor",
     "volto-mosaic",
-    "@eeacms/volto-columns-block",
     "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",
     "@eeacms/volto-matomo",
     "@eeacms/volto-block-style",
-    "@eeacms/volto-addons-forest"
+    "@eeacms/volto-addons-forest",
+    "@eeacms/volto-columns-block"
   ],
   "scripts": {
     "start": "razzle start",
@@ -127,7 +128,6 @@
     "@blueprintjs/icons": "^3.19.0",
     "@datapunt/matomo-tracker-react": "0.0.16",
     "@eeacms/volto-blocks-form": "github:eea/volto-blocks-form#1.0.3",
-    "@eeacms/volto-columns-block": "github:eea/volto-columns-block#1.0.4",
     "@eeacms/volto-group-block": "^1.0.0",
     "@eeacms/volto-metadata-block": "github:eea/volto-metadata-block#1.0.4",
     "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf.git",

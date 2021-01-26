@@ -28,6 +28,9 @@
             ],
             "@eeacms/volto-addons-forest": [
                 "develop/volto-addons-forest/src"
+            ],
+            "@eeacms/volto-columns-block": [
+                "develop/volto-columns-block/src"
             ]
         },
         "baseUrl": "src"
