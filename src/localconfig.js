@@ -18,6 +18,8 @@ import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
 import NavigationBlockEdit from '~/components/manage/Blocks/NavigationBlock/Edit';
 import NavigationBlockView from '~/components/manage/Blocks/NavigationBlock/View';
 
+import RedirectView from '~/components/theme/View/RedirectView';
+
 defineMessages({
   custom_addons: {
     id: 'custom_addons',
@@ -95,6 +97,7 @@ export function applyConfig(config) {
       refresh_view: RefreshView,
       document_view_wide: DefaultViewWide,
       document_view: DefaultView,
+      redirect_view: RedirectView,
     },
   };
 
