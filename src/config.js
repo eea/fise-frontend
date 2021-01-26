@@ -9,8 +9,8 @@ import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorize
 // installTableau,
 // installNews,
 // } from 'volto-addons/config';
-import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
-// import { installBlocks } from 'volto-plotlycharts';
+// import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
+import { installBlocks } from 'volto-plotlycharts';
 import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 // import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
@@ -21,12 +21,12 @@ import ObjectListInlineWidget from './components/manage/Widgets/ObjectListInline
 
 const config = [
   // addonsConfig,
-  // installBlocks,
+  installBlocks,
   // installPortlets,
   // installImageSlides,
   // installTableau,
   // installNews,
-  plotlyConfig,
+  // plotlyConfig,
   ckeditorConfig,
   mosaicConfig,
   installEmbed,

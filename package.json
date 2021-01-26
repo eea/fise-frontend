@@ -22,7 +22,7 @@
     "@eeacms/volto-object-widget",
     "@eeacms/volto-grid-block",
     "volto-datablocks",
-    "volto-plotlycharts:installBlocks",
+    "volto-plotlycharts",
     "volto-ckeditor",
     "volto-mosaic",
     "@eeacms/volto-middleware-rdf",
