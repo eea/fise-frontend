@@ -57,7 +57,7 @@ class HomepageSlider extends Component {
     ),
   };
 
-  renderThumbnail = item => {
+  renderThumbnail = (item) => {
     return (
       <div className="slider-thumbnail" key={getBasePath(item.original)}>
         {/* <img src={item.original} /> */}
@@ -70,7 +70,7 @@ class HomepageSlider extends Component {
     );
   };
 
-  renderSlide = item => {
+  renderSlide = (item) => {
     return (
       <div className="slider-slide">
         {/* <div
@@ -187,7 +187,7 @@ class HomepageSlider extends Component {
           renderItem={this.renderSlide}
           renderThumbInner={this.renderThumbnail}
           slideDuration={300}
-          slideInterval={10000}
+          slideInterval={90000}
         />
       </div>
     );
