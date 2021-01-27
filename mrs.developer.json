@@ -43,5 +43,10 @@
     "url": "https://github.com/eea/volto-addons-forest.git",
     "path": "src",
     "package": "@eeacms/volto-addons-forest"
+  },
+  "volto-columns-block": {
+    "url": "https://github.com/eea/volto-columns-block.git",
+    "path": "src",
+    "package": "@eeacms/volto-columns-block"
   }
 }

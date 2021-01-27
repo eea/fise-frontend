@@ -10,8 +10,9 @@
     "src/develop/volto-plotlycharts",
     "src/develop/volto-ckeditor",
     "src/develop/volto-mosaic",
-    "src/develop/volto-block-style",
-    "src/develop/volto-addons-forest"
+    "src/develop/volto-addons-forest",
+    "src/develop/volto-columns-block",
+    "src/develop/volto-block-style"
   ],
   "addons": [
     "@eeacms/volto-widgets-view",
@@ -26,10 +27,10 @@
     "volto-mosaic",
     "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",
-    "@eeacms/volto-matomo",
-    "@eeacms/volto-block-style",
     "@eeacms/volto-addons-forest",
-    "@eeacms/volto-columns-block"
+    "@eeacms/volto-columns-block",
+    "@eeacms/volto-matomo",
+    "@eeacms/volto-block-style"
   ],
   "scripts": {
     "start": "razzle start",
@@ -133,7 +134,6 @@
     "@eeacms/volto-object-widget": "github:eea/volto-object-widget#1.0.3",
     "@eeacms/volto-widget-toggle": "github:eea/volto-widget-toggle#1.0.0",
     "@eeacms/volto-widgets-view": "github:eea/volto-widgets-view#1.0.3",
-    "@eeacms/volto-columns-block": "^1.0.6",
     "@plone/volto": "10.4.3",
     "@sentry/node": "5.12.3",
     "moment-timezone": "^0.5.31",
