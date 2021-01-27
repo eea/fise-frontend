@@ -18,9 +18,10 @@ const View = ({ content, ...props }) => {
   });
   const [navigationItems, setNavigationItems] = useState([]);
   const [pages, setPages] = useState([]);
-  const parent = data?.navFromParent?.value
-    ? getBasePath(props.properties.parent['@id'])
-    : data.parent?.value;
+  const parent =
+    data?.navFromParent?.value && props.properties?.parent
+      ? getBasePath(props.properties.parent['@id'])
+      : data.parent?.value;
   const history = useHistory();
 
   useEffect(() => {
@@ -113,14 +114,16 @@ export default compose(
       pathname: state.router.location.pathname,
       discodata_query: state.discodata_query,
       discodata_resources: state.discodata_resources,
-      navItems: state.navigation.items,
+      navItems: state.navigation?.items,
       flags: state.flags,
-      navigation: getNavigationByParent(
-        state.navigation.items,
-        props.data?.navFromParent?.value
-          ? getBasePath(props.properties.parent['@id'])
-          : props.data?.parent?.value,
-      ),
+      navigation: props.properties?.parent
+        ? getNavigationByParent(
+            state.navigation?.items,
+            props.data?.navFromParent?.value
+              ? getBasePath(props.properties?.parent?.['@id'])
+              : props.data?.parent?.value,
+          )
+        : {},
     }),
     { deleteQueryParam, setQueryParam },
   ),
