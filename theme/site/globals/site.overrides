@@ -2822,7 +2822,6 @@ body.mosaic-view .content-area main {
 
 .tabs-view-menu {
   padding-bottom: 0;
-  height: 100%;
   .scroll-container {
     height: 100%;
     .ui.menu {
