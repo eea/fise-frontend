@@ -1303,6 +1303,14 @@
   dependencies:
     react-beautiful-dnd "13.0.0"
 
+"@eeacms/volto-columns-block@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-1.0.4.tgz#8b5c02408818cf96f391355d549bf635bb52ec97"
+  integrity sha512-yV1FiyyU+itXu7jllQk4OZQcImJ+ozULLE7TKKp9N+gwmJ0bQTIYf825i9c5cisBaBzQfs20TAP5B65zzDvTsA==
+  dependencies:
+    "@eeacms/volto-blocks-form" "^1.0.0"
+    react-color "~2.18.1"
+
 "@eeacms/volto-group-block@^1.0.0":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-group-block/-/volto-group-block-1.0.3.tgz#8191f2b0ec399d1a6d84faa10c34228b1f2b9e39"
