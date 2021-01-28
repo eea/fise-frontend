@@ -14,7 +14,7 @@ const NewsItem = ({ item }) => {
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
 
-  const prettyDate = time => {
+  const prettyDate = (time) => {
     let date = new Date(time);
     const dtf = new Intl.DateTimeFormat('en-GB', {
       day: 'numeric',
@@ -27,7 +27,7 @@ const NewsItem = ({ item }) => {
     return `${da} ${mo} ${ye}`;
   };
 
-  const prettyDateTime = time => {
+  const prettyDateTime = (time) => {
     const dtf = Intl.DateTimeFormat('en-GB', {
       // weekday: 'short',
       day: 'numeric',
@@ -58,7 +58,7 @@ const NewsItem = ({ item }) => {
     return `${da} ${mo} ${ye} ${hh}:${mm} ${tz}`;
   };
 
-  const itemPath = urlString => {
+  const itemPath = (urlString) => {
     const url = new URL(urlString);
     return url.pathname.replace('/fise', '');
   };
@@ -115,10 +115,10 @@ const NewsItem = ({ item }) => {
           )}
           {hasBlocksData(item) ? (
             <div>
-              {map(item[blocksLayoutFieldname].items, block => {
+              {item?.[blocksLayoutFieldname]?.items?.map((block) => {
                 const Block =
                   blocks.blocksConfig[
-                    (item[blocksFieldname]?.[block]?.['@type'])
+                    item[blocksFieldname]?.[block]?.['@type']
                   ]?.['view'] || null;
                 return Block !== null &&
                   item[blocksFieldname][block]['@type'] !== 'title' ? (

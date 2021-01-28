@@ -44,6 +44,11 @@
     "path": "src",
     "package": "@eeacms/volto-addons-forest"
   },
+  "volto-slate": {
+    "url": "https://github.com/eea/volto-slate.git",
+    "path": "src",
+    "branch": "master"
+  },
   "volto-columns-block": {
     "url": "https://github.com/eea/volto-columns-block.git",
     "path": "src",

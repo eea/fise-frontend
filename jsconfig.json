@@ -29,6 +29,9 @@
             "@eeacms/volto-addons-forest": [
                 "develop/volto-addons-forest/src"
             ],
+            "volto-slate": [
+                "develop/volto-slate/src"
+            ],
             "@eeacms/volto-columns-block": [
                 "develop/volto-columns-block/src"
             ]

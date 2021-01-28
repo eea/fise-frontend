@@ -65,7 +65,6 @@ const NewsView = (props) => {
 
   const itemsByYear = {};
   // const yearOptions = [];
-
   items.forEach((item) => {
     let year;
     if (item.start) year = new Date(item.start).getFullYear();
@@ -96,7 +95,9 @@ const NewsView = (props) => {
                     return (
                       <React.Fragment>
                         {index === 0 ? (
-                          <h2 className="text-center">{year}</h2>
+                          <h2 className="text-center">
+                            {year !== 'undefined' ? year : ''}
+                          </h2>
                         ) : (
                           ''
                         )}
