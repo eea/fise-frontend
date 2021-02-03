@@ -228,12 +228,12 @@ class View extends Component {
   };
 
   printDocument = () => {
-    const mosaicView = document.querySelector(
-      '#mosaic-view .mosaic_view .react-grid-layout',
-    );
-    this.sortHtmlCollectionByPosition(mosaicView, [
-      { class: 'react-grid-item', requirement: 'has' },
-    ]);
+    // const mosaicView = document.querySelector(
+    //   '#mosaic-view .mosaic_view .react-grid-layout',
+    // );
+    // this.sortHtmlCollectionByPosition(mosaicView, [
+    //   { class: 'react-grid-item', requirement: 'has' },
+    // ]);
     document.getElementById('main').classList.add('print');
     setTimeout(() => {
       window.print();

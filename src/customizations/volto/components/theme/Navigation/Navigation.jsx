@@ -335,7 +335,7 @@ class Navigation extends Component {
                             </div>
                           ) : (
                             <Link
-                              to={getChildPath(item, subitem)}
+                              to={subitem.url}
                               key={subitem.url}
                               className={
                                 this.isActive(subitem.url)

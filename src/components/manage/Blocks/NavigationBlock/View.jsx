@@ -33,7 +33,6 @@ const View = ({ content, ...props }) => {
     setPages(newPages);
     setNavigationItems([...(props.navigation?.items || []), ...newPages]);
   }, [props.navigation, data.pages?.value]);
-  console.log('pages', navigationItems);
 
   if (navigationItems.length < 2 && props.mode !== 'edit') return null;
   return (props.navigation?.items?.length && parent) || pages.length ? (

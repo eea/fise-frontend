@@ -42,9 +42,7 @@ export const deepSearch = ({ inputArray = [], location, depth, start = 1 }) => {
   // if (inputArray[0]?.url?.contains('http')) {
   inputArray = formatNavUrl(inputArray);
   // }
-  console.log('inputArray', inputArray);
 
-  console.log('inputarrayafter', inputArray);
   for (let index = 0; index < inputArray.length; index++) {
     if (
       depth === 1 &&

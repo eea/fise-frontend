@@ -2102,14 +2102,33 @@ main {
     position: relative !important;
   }
 
+  .columns-view {
+    .grid.column-grid {
+      display: block;
+      width: 100% !important;
+    }
+  }
+  .column-blocks-wrapper {
+    width: 100% !important;
+  }
   .ui.content-area {
     width: 756px !important;
+  }
+
+  .border-block,
+  .border-tile {
+    border: none;
+  }
+
+  .chartWrapperView,
+  .block-inner-wrapper {
+    page-break-inside: avoid;
   }
 
   .header-wrapper {
     background: transparent;
     padding: 0 1rem !important;
-    width: 756px !important;
+    // width: 756px !important;
     display: flex !important;
     flex-flow: column !important;
     background: #fff !important;
@@ -3167,3 +3186,27 @@ body.mosaic-view .content-area main {
 // .image-gallery-thumbnails-wrapper {
 //   display: none;
 // }
+
+.columns-view {
+  > .grid.column-grid {
+    > .column.column-blocks-wrapper {
+      display: flex;
+      flex-direction: column;
+      > div {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        > div {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}
+
+.discreet.block_source {
+  color: #999;
+  font-size: 12px;
+  line-height: normal;
+  margin-top: auto;
+}
