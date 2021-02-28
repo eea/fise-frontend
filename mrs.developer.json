@@ -34,24 +34,9 @@
     "branch": "volto8",
     "package": "@eeacms/volto-matomo"
   },
-  "volto-block-style": {
-    "url": "https://github.com/eea/volto-block-style.git",
-    "path": "src",
-    "package": "@eeacms/volto-block-style"
-  },
   "volto-addons-forest": {
     "url": "https://github.com/eea/volto-addons-forest.git",
     "path": "src",
     "package": "@eeacms/volto-addons-forest"
-  },
-  "volto-slate": {
-    "url": "https://github.com/eea/volto-slate.git",
-    "path": "src",
-    "branch": "master"
-  },
-  "volto-columns-block": {
-    "url": "https://github.com/eea/volto-columns-block.git",
-    "path": "src",
-    "package": "@eeacms/volto-columns-block"
   }
 }

@@ -5,15 +5,7 @@
   "version": "0.4.1",
   "private": true,
   "workspaces": [
-    "src/develop/volto-grid-block",
-    "src/develop/volto-datablocks",
-    "src/develop/volto-plotlycharts",
-    "src/develop/volto-ckeditor",
-    "src/develop/volto-mosaic",
-    "src/develop/volto-addons-forest",
-    "src/develop/volto-columns-block",
-    "src/develop/volto-slate",
-    "src/develop/volto-block-style"
+    "src/develop/*"
   ],
   "addons": [
     "volto-slate:asDefault",
@@ -32,6 +24,7 @@
     "@eeacms/volto-addons-forest",
     "@eeacms/volto-columns-block",
     "@eeacms/volto-matomo",
+    "volto-embed",
     "@eeacms/volto-block-style"
   ],
   "scripts": {
@@ -129,14 +122,17 @@
     "@blueprintjs/core": "^3.30.0",
     "@blueprintjs/icons": "^3.19.0",
     "@datapunt/matomo-tracker-react": "0.0.16",
-    "@eeacms/volto-blocks-form": "github:eea/volto-blocks-form#1.0.3",
+    "@eeacms/volto-block-style": "^1.1.0",
+    "@eeacms/volto-blocks-form": "1.0.4",
+    "@eeacms/volto-columns-block": "1.0.6",
+
     "@eeacms/volto-group-block": "^1.0.0",
     "@eeacms/volto-metadata-block": "github:eea/volto-metadata-block#1.0.4",
     "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf.git",
     "@eeacms/volto-object-widget": "github:eea/volto-object-widget#1.0.3",
     "@eeacms/volto-widget-toggle": "github:eea/volto-widget-toggle#1.0.0",
     "@eeacms/volto-widgets-view": "github:eea/volto-widgets-view#1.0.3",
-    "@plone/volto": "10.4.3",
+    "@plone/volto": "11.1.0",
     "@sentry/node": "5.12.3",
     "moment-timezone": "^0.5.31",
     "raven-js": "3.27.2",
@@ -151,7 +147,8 @@
     "react-tooltip": "^4.2.9",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
-    "webpack-bundle-analyzer": "^3.6.0"
+    "webpack-bundle-analyzer": "^3.6.0",
+    "volto-slate": "1.1.0"
   },
   "devDependencies": {
     "mrs-developer": "^1.4.0"
