@@ -17,6 +17,8 @@ import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 
+import {settings} from  "~/config"
+
 const messages = defineMessages({
   closeMobileMenu: {
     id: 'Close menu',
@@ -231,12 +233,7 @@ class Navigation extends Component {
                   value: {
                     properties: {
                       portal_type: {
-                        value: [
-                          'Event',
-                          'News Item',
-                          'Document',
-                          'templated_country_factsheet',
-                        ],
+                        value: settings.search_portal_types
                       },
                     },
                   },

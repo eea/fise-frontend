@@ -232,6 +232,6 @@ export function applyConfig(config) {
       cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
     },
   ];
-
-  return config;
+  config.settings.search_portal_types = ['Event', 'News Item', 'Document','templated_country_factsheet', 'basic_data_factsheet']
+  return config;S
 }
