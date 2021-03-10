@@ -2,7 +2,7 @@
   "volto-plotlycharts": {
     "url": "https://github.com/eea/volto-plotlycharts.git",
     "path": "src",
-    "branch": "master"
+    "branch": "11.x"
   },
   "volto-grid-block": {
     "url": "https://github.com/eea/volto-grid-block.git",
