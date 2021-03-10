@@ -12,12 +12,13 @@
   },
   "volto-datablocks": {
     "url": "https://github.com/eea/volto-datablocks.git",
-    "branch": "master",
+    "branch": "11.x",
     "path": "src"
   },
   "volto-embed": {
     "url": "https://github.com/eea/volto-embed.git",
-    "path": "src"
+    "path": "src",
+    "branch": "11.x"
   },
   "volto-ckeditor": {
     "url": "https://github.com/eea/volto-ckeditor.git",
