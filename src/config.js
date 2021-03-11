@@ -15,7 +15,7 @@ import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 // import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
-import { applyConfig as installEmbed } from 'volto-embed/config';
+// import { applyConfig as installEmbed } from 'volto-embed/config';
 
 import ObjectListInlineWidget from './components/manage/Widgets/ObjectListInlineWidget';
 
@@ -29,7 +29,7 @@ const config = [
   // plotlyConfig,
   ckeditorConfig,
   mosaicConfig,
-  installEmbed,
+  // installEmbed,
   // installSearch,
   // dataBlocksConfig,
   installFiseFrontend,
