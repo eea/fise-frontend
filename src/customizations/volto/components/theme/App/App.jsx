@@ -183,7 +183,7 @@ export default compose(
           location.pathname,
           settings.pathsWithFullobjects,
         )
-          ? '?metadata_fields=_all'
+          ? '?fullobjects'
           : '';
         dispatch(getContent(`${getBaseUrl(location.pathname)}${fullobjects}`));
       },
