@@ -6,7 +6,6 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
-import { map } from 'lodash';
 import { settings, blocks } from '~/config';
 import { getBasePath } from '~/helpers';
 

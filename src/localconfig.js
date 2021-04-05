@@ -57,7 +57,7 @@ function addCustomGroup(config) {
 
 export function applyConfig(config) {
   addCustomGroup(config);
-  const contentExpand = [];
+  let contentExpand = [];
   if (config.settings.contentExpand) {
     contentExpand = [
       ...config.settings.contentExpand.filter(
@@ -232,6 +232,12 @@ export function applyConfig(config) {
       cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
     },
   ];
-  config.settings.search_portal_types = ['Event', 'News Item', 'Document','templated_country_factsheet', 'basic_data_factsheet']
-  return config;S
+  config.settings.search_portal_types = [
+    'Event',
+    'News Item',
+    'Document',
+    'templated_country_factsheet',
+    'basic_data_factsheet',
+  ];
+  return config;
 }

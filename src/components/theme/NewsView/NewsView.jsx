@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
-import { Container, Dropdown, Menu, Pagination } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
+import { getBaseUrl } from '@plone/volto/helpers';
+import { getContent } from '@plone/volto/actions';
 import { Link } from 'react-router-dom';
 import NewsItem from './NewsItem';
 import WidthBasedLayoutProvider from 'volto-plotlycharts/LayoutProvider/WidthBasedLayoutProvider';
@@ -54,6 +56,13 @@ const NewsView = (props) => {
   const title = getTitle(props.location);
   const items = getItems(props.content.items, title.lowerCase);
 
+  // useEffect(() => {
+  //   props.dispatch(
+  //     getContent(`${getBaseUrl(props.location.pathname)}?metadata_fields=_all`),
+  //   );
+  //   /* eslint-disable-next-line */
+  // }, []);
+
   if (!items) return <h1>{title.capitalized}</h1>;
 
   const rssButton = (
@@ -73,7 +82,6 @@ const NewsView = (props) => {
     if (!itemsByYear[year]) itemsByYear[year] = [];
     itemsByYear[year].push(item);
   });
-  console.log(itemsByYear);
 
   return (
     <Container>

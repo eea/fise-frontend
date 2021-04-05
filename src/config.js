@@ -44,9 +44,8 @@ export const settings = {
   },
   timezone: 'CET',
   matomoSiteId: 46,
+  pathsWithFullobjects: ['/news', '/events'],
 };
-
-// RAZZLE_MATOMO_SITE_ID
 
 export const views = {
   ...config.views,

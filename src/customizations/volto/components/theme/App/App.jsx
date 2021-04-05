@@ -4,6 +4,7 @@
  */
 
 import React, { Component, Fragment } from 'react';
+import { matchPath } from 'react-router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -33,6 +34,7 @@ import {
   purgeMessages,
 } from '@plone/volto/actions';
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
+import { settings } from '~/config';
 import { getPortlets } from '@eeacms/volto-addons-forest/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
@@ -161,7 +163,7 @@ class App extends Component {
             />
           }
         />
-        <AppExtras />
+        <AppExtras {...this.props} />
       </Fragment>
     );
   }
@@ -176,8 +178,15 @@ export default compose(
   asyncConnect([
     {
       key: 'content',
-      promise: ({ location, store: { dispatch } }) =>
-        dispatch(getContent(getBaseUrl(location.pathname))),
+      promise: ({ location, store: { dispatch } }) => {
+        const fullobjects = matchPath(
+          location.pathname,
+          settings.pathsWithFullobjects,
+        )
+          ? '?metadata_fields=_all'
+          : '';
+        dispatch(getContent(`${getBaseUrl(location.pathname)}${fullobjects}`));
+      },
     },
     {
       key: 'frontpage_slides',
