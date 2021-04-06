@@ -178,15 +178,17 @@ export default compose(
   asyncConnect([
     {
       key: 'content',
-      promise: ({ location, store: { dispatch } }) => {
-        const fullobjects = matchPath(
-          location.pathname,
-          settings.pathsWithFullobjects,
-        )
-          ? '?fullobjects'
-          : '';
-        dispatch(getContent(`${getBaseUrl(location.pathname)}${fullobjects}`));
-      },
+      promise: ({ location, store: { dispatch } }) =>
+        dispatch(
+          getContent(
+            getBaseUrl(location.pathname),
+            null,
+            null,
+            null,
+            matchPath(location.pathname, settings.pathsWithFullobjects)
+              ?.isExact,
+          ),
+        ),
     },
     {
       key: 'frontpage_slides',
