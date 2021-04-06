@@ -45,6 +45,10 @@ export const settings = {
   timezone: 'CET',
   matomoSiteId: 46,
   pathsWithFullobjects: ['/news', '/events'],
+  pathsWithExtraParameters: {
+    '/news': { b_start: 0, b_size: 1000 },
+    '/events': { b_start: 0, b_size: 1000 },
+  },
 };
 
 export const views = {
