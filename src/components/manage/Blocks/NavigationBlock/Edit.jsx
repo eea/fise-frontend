@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import _uniqueId from 'lodash/uniqueId';
 import RenderFields from 'volto-datablocks/Utils/RenderFields';
 import View from './View';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 
 const getSchema = (props) => {
   return {
@@ -53,7 +53,7 @@ const getSchema = (props) => {
 
 const Edit = (props) => {
   const [state, setState] = useState({
-    schema: getSchema({ ...props, providerUrl: settings.providerUrl }),
+    schema: getSchema({ ...props, providerUrl: config.settings.providerUrl }),
     id: _uniqueId('block_'),
   });
   useEffect(() => {

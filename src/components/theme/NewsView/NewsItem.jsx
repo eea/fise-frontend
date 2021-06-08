@@ -6,7 +6,7 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
-import { settings, blocks } from '~/config';
+import config from '@plone/volto/registry';
 import { getBasePath } from '~/helpers';
 
 const NewsItem = ({ item }) => {
@@ -116,7 +116,7 @@ const NewsItem = ({ item }) => {
             <div>
               {item?.[blocksLayoutFieldname]?.items?.map((block) => {
                 const Block =
-                  blocks.blocksConfig[
+                  config.blocks.blocksConfig[
                     item[blocksFieldname]?.[block]?.['@type']
                   ]?.['view'] || null;
                 return Block !== null &&
@@ -149,15 +149,15 @@ const NewsItem = ({ item }) => {
               {item.remoteUrl && (
                 <span>
                   The link address is:
-                  <a href={item.remoteUrl}>{content.remoteUrl}</a>
+                  <a href={item.remoteUrl}>{item.remoteUrl}</a>
                 </span>
               )}
               {item.text && (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: content.text.data.replace(
+                    __html: item.text.data.replace(
                       /a href="([^"]*\.[^"]*)"/g,
-                      `a href="${settings.apiPath}$1/download/file"`,
+                      `a href="${config.settings.apiPath}$1/download/file"`,
                     ),
                   }}
                 />

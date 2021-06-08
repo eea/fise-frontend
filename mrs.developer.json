@@ -1,8 +1,7 @@
 {
   "volto-plotlycharts": {
     "url": "https://github.com/eea/volto-plotlycharts.git",
-    "path": "src",
-    "branch": "11.x"
+    "path": "src"
   },
   "volto-grid-block": {
     "url": "https://github.com/eea/volto-grid-block.git",
@@ -12,16 +11,10 @@
   },
   "volto-datablocks": {
     "url": "https://github.com/eea/volto-datablocks.git",
-    "branch": "11.x",
     "path": "src"
   },
   "volto-embed": {
     "url": "https://github.com/eea/volto-embed.git",
-    "path": "src",
-    "branch": "11.x"
-  },
-  "volto-ckeditor": {
-    "url": "https://github.com/eea/volto-ckeditor.git",
     "path": "src"
   },
   "volto-mosaic": {
@@ -31,7 +24,6 @@
   "volto-matomo": {
     "url": "https://github.com/eea/volto-matomo.git",
     "path": "src",
-    "branch": "volto8",
     "package": "@eeacms/volto-matomo"
   },
   "volto-addons-forest": {

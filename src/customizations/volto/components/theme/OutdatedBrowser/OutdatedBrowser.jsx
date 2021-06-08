@@ -2,13 +2,13 @@ import React from 'react';
 import { Message, Container } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'react-redux';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { BodyClass } from '@plone/volto/helpers';
 
 const OutdatedBrowser = () => {
-  const browserdetect = useSelector(state => state.browserdetect);
+  const browserdetect = useSelector((state) => state.browserdetect);
   return (
-    settings.notSupportedBrowsers.includes(browserdetect.name) && (
+    config.settings.notSupportedBrowsers.includes(browserdetect.name) && (
       <Container style={{ marginBottom: '20px' }}>
         <BodyClass className="overflow-hidden" />
         <Message className="out-dated-message" negative>

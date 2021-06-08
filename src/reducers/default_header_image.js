@@ -4,7 +4,6 @@
  */
 
 import { map } from 'lodash';
-import { settings } from '~/config';
 
 import { GET_DEFAULT_HEADER_IMAGE } from '~/constants/ActionTypes';
 
@@ -38,7 +37,7 @@ export default function default_header_image(
       return {
         ...state,
         error: null,
-        items: map(action.result.items, item => ({
+        items: map(action.result.items, (item) => ({
           title: item.title,
           image: item.image.download,
           description: item.description,

@@ -4,7 +4,6 @@
  */
 
 import { map } from 'lodash';
-import { settings } from '~/config';
 
 import { GET_FRONTPAGESLIDES } from '~/constants/ActionTypes';
 
@@ -35,7 +34,7 @@ export default function frontpage_slides(state = initialState, action = {}) {
       return {
         ...state,
         error: null,
-        items: map(action.result.items, item => ({
+        items: map(action.result.items, (item) => ({
           title: item.title,
           image: item.image.download,
           description: item.description,

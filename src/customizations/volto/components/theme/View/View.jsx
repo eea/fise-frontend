@@ -10,7 +10,7 @@ import { compose } from 'redux';
 import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
-import { views } from '~/config';
+import config from '@plone/volto/registry';
 // import { Grid } from 'semantic-ui-react';
 import Spinner from 'volto-mosaic/components/theme/Spinner';
 
@@ -153,7 +153,7 @@ class View extends Component {
    * @method getViewDefault
    * @returns {string} Markup for component.
    */
-  getViewDefault = () => views.defaultView;
+  getViewDefault = () => config.views.defaultView;
 
   /**
    * Get view by content type
@@ -161,7 +161,7 @@ class View extends Component {
    * @returns {string} Markup for component.
    */
   getViewByType = () =>
-    views.contentTypesViews[this.props.content['@type']] || null;
+    config.views.contentTypesViews[this.props.content['@type']] || null;
 
   /**
    * Get view by content layout property
@@ -169,7 +169,7 @@ class View extends Component {
    * @returns {string} Markup for component.
    */
   getViewByLayout = () =>
-    views.layoutViews[
+    config.views.layoutViews[
       this.props.content[getLayoutFieldname(this.props.content)]
     ] || null;
 
@@ -253,12 +253,14 @@ class View extends Component {
         // For some reason, while development and if CORS is in place and the
         // requested resource is 404, it returns undefined as status, then the
         // next statement will fail
-        FoundView = views.errorViews['404'];
-      } else if (views.errorViews.hasOwnProperty(this.props.error.status)) {
-        FoundView = views.errorViews[this.props.error.status.toString()];
+        FoundView = config.views.errorViews['404'];
+      } else if (
+        config.views.errorViews.hasOwnProperty(this.props.error.status)
+      ) {
+        FoundView = config.views.errorViews[this.props.error.status.toString()];
       }
       if (!FoundView) {
-        FoundView = views.errorViews['404']; // default to 404
+        FoundView = config.views.errorViews['404']; // default to 404
       }
       return (
         <div id="view">

@@ -12,7 +12,7 @@ import { Grid } from 'semantic-ui-react';
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 
-import { settings, blocks } from '~/config';
+import config from '@plone/volto/registry';
 import renderPortletManager from '@eeacms/volto-addons-forest/Portlets/utils';
 
 import {
@@ -66,7 +66,7 @@ const DefaultView = (props) => {
             <Helmet title={content.title} />
             {map(content[blocksLayoutFieldname].items, (block) => {
               const Block =
-                blocks.blocksConfig[
+                config.blocks.blocksConfig[
                   content[blocksFieldname]?.[block]?.['@type']
                 ]?.['view'] || null;
               return Block !== null &&
@@ -114,7 +114,7 @@ const DefaultView = (props) => {
                 dangerouslySetInnerHTML={{
                   __html: content.text.data.replace(
                     /a href="([^"]*\.[^"]*)"/g,
-                    `a href="${settings.apiPath}$1/download/file"`,
+                    `a href="${config.settings.apiPath}$1/download/file"`,
                   ),
                 }}
               />

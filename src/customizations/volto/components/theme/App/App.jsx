@@ -14,6 +14,7 @@ import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import ViewletsRenderer from '@eeacms/volto-addons-forest/Viewlets/Render';
 import loadable from '@loadable/component';
+import { PluggablesProvider } from '@plone/volto/components/manage/Pluggable';
 
 import Error from '@plone/volto/error';
 
@@ -34,7 +35,7 @@ import {
   purgeMessages,
 } from '@plone/volto/actions';
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { getPortlets } from '@eeacms/volto-addons-forest/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
@@ -119,52 +120,54 @@ class App extends Component {
     const headerImage =
       this.props.content?.image?.download || this.props.defaultHeaderImage;
     return (
-      <Fragment>
-        <BodyClass className={`view-${action}view`} />
-        <Header
-          // folderHeader={this.props.folderHeader}
-          actualPathName={this.props.pathname}
-          pathname={path}
-          defaultHeaderImage={headerImage}
-          navigationItems={this.props.navigation}
-          frontpage_slides={this.props.frontpage_slides}
-        />
-        <Segment basic className="content-area">
-          <Container>
-            <main>
-              <OutdatedBrowser />
-              <Messages />
-              <div className="editor-toolbar-wrapper" />
+      <PluggablesProvider>
+        <Fragment>
+          <BodyClass className={`view-${action}view`} />
+          <Header
+            // folderHeader={this.props.folderHeader}
+            actualPathName={this.props.pathname}
+            pathname={path}
+            defaultHeaderImage={headerImage}
+            navigationItems={this.props.navigation}
+            frontpage_slides={this.props.frontpage_slides}
+          />
+          <Segment basic className="content-area">
+            <Container>
+              <main>
+                <OutdatedBrowser />
+                <Messages />
+                <div className="editor-toolbar-wrapper" />
 
-              {this.state.hasError ? (
-                <Error
-                  message={this.state.error.message}
-                  stackTrace={this.state.errorInfo.componentStack}
-                />
-              ) : (
-                <>
-                  {renderRoutes(this.props.route.routes)}
-                  <ViewletsRenderer {...this.props} />
-                </>
-              )}
-            </main>
-          </Container>
-        </Segment>
-        <Footer />
-        <ToastContainer
-          position={toast.POSITION.BOTTOM_CENTER}
-          hideProgressBar
-          transition={Slide}
-          closeButton={
-            <Icon
-              className="toast-dismiss-action"
-              name={clearSVG}
-              size="18px"
-            />
-          }
-        />
-        <AppExtras {...this.props} />
-      </Fragment>
+                {this.state.hasError ? (
+                  <Error
+                    message={this.state.error.message}
+                    stackTrace={this.state.errorInfo.componentStack}
+                  />
+                ) : (
+                  <>
+                    {renderRoutes(this.props.route.routes)}
+                    <ViewletsRenderer {...this.props} />
+                  </>
+                )}
+              </main>
+            </Container>
+          </Segment>
+          <Footer />
+          <ToastContainer
+            position={toast.POSITION.BOTTOM_CENTER}
+            hideProgressBar
+            transition={Slide}
+            closeButton={
+              <Icon
+                className="toast-dismiss-action"
+                name={clearSVG}
+                size="18px"
+              />
+            }
+          />
+          <AppExtras {...this.props} />
+        </Fragment>
+      </PluggablesProvider>
     );
   }
 }
@@ -181,11 +184,12 @@ export default compose(
       promise: ({ location, store: { dispatch } }) => {
         const withFullObjects = matchPath(
           location.pathname,
-          settings.pathsWithFullobjects,
+          config.settings.pathsWithFullobjects,
         )?.isExact;
-        const extraParameters = {
-          ...(settings.pathsWithExtraParameters[location.pathname] || {}),
-        };
+        // const extraParameters = {
+        //   ...(config.settings.pathsWithExtraParameters[location.pathname] ||
+        //     {}),
+        // };
         dispatch(
           getContent(
             getBaseUrl(location.pathname),
@@ -193,7 +197,7 @@ export default compose(
             null,
             null,
             withFullObjects,
-            extraParameters,
+            // extraParameters, we don't have this in Volto 13
           ),
         );
       },

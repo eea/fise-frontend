@@ -13,7 +13,7 @@ import {
   UPDATECOLUMNS_CONTENT,
 } from '@plone/volto/constants/ActionTypes';
 import { nestContent } from '@plone/volto/helpers';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 
 /**
  * Create content function.
@@ -129,6 +129,7 @@ export function getContent(
   fullobjects = false,
   extraParameters = {},
 ) {
+  const { settings } = config;
   const query = Object.assign(
     extraParameters,
     fullobjects || settings.bbb_getContentFetchesFullobjects

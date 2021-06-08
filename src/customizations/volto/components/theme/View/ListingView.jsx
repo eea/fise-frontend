@@ -12,7 +12,7 @@ import { getBaseUrl } from '@plone/volto/helpers'; // , flattenToAppURL
 import { Container, Image } from 'semantic-ui-react'; // , Grid
 import { map } from 'lodash';
 
-import { settings, blocks } from '~/config';
+import config from '@plone/volto/registry';
 import { asyncConnect } from 'redux-connect';
 
 import {
@@ -82,7 +82,7 @@ class ListingView extends Component {
       (this.props.localNavigation &&
         this.props.localNavigation.items &&
         this.props.localNavigation.items.filter(
-          item => item.title !== 'Home',
+          (item) => item.title !== 'Home',
         )) ||
       [];
 
@@ -97,10 +97,10 @@ class ListingView extends Component {
     let pageTemplate = hasBlocksData(content) ? (
       <div id="page-document">
         <Helmet title={content.title} />
-        {map(content[blocksLayoutFieldname].items, block => {
+        {map(content[blocksLayoutFieldname].items, (block) => {
           const Block =
-            blocks.blocksConfig[
-              (content[blocksFieldname]?.[block]?.['@type'])
+            config.blocks.blocksConfig[
+              content[blocksFieldname]?.[block]?.['@type']
             ]?.['view'] || null;
           return Block !== null &&
             content[blocksFieldname][block]['@type'] !== 'title' ? (
@@ -145,7 +145,7 @@ class ListingView extends Component {
             dangerouslySetInnerHTML={{
               __html: content.text.data.replace(
                 /a href="([^"]*\.[^"]*)"/g,
-                `a href="${settings.apiPath}$1/download/file"`,
+                `a href="${config.settings.apiPath}$1/download/file"`,
               ),
             }}
           />
@@ -156,10 +156,10 @@ class ListingView extends Component {
       pageTemplate = hasBlocksData(content) ? (
         <div id="page-document">
           <Helmet title={content.title} />
-          {map(content[blocksLayoutFieldname].items, block => {
+          {map(content[blocksLayoutFieldname].items, (block) => {
             const Block =
-              blocks.blocksConfig[
-                (content[blocksFieldname]?.[block]?.['@type'])
+              config.blocks.blocksConfig[
+                content[blocksFieldname]?.[block]?.['@type']
               ]?.['view'] || null;
             return Block !== null &&
               content[blocksFieldname][block]['@type'] !== 'title' ? (
@@ -203,7 +203,7 @@ class ListingView extends Component {
               dangerouslySetInnerHTML={{
                 __html: content.text.data.replace(
                   /a href="([^"]*\.[^"]*)"/g,
-                  `a href="${settings.apiPath}$1/download/file"`,
+                  `a href="${config.settings.apiPath}$1/download/file"`,
                 ),
               }}
             />

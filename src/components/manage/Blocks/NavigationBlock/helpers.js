@@ -1,7 +1,7 @@
 /* PLUGINS */
 import { isMatch } from 'lodash';
 /* ROOT */
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 /* PLONE VOLTO */
 import { getBaseUrl } from '@plone/volto/helpers';
 
@@ -84,6 +84,6 @@ export function removeValue(arr) {
 
 export function getBasePath(url) {
   return getBaseUrl(url)
-    .replace(settings.apiPath, '')
-    .replace(settings.internalApiPath, '');
+    .replace(config.settings.apiPath, '')
+    .replace(config.settings.internalApiPath, '');
 }

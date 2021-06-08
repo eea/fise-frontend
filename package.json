@@ -12,13 +12,11 @@
     "@eeacms/volto-widgets-view",
     "@eeacms/volto-metadata-block",
     "@eeacms/volto-widget-toggle",
-    "@eeacms/volto-blocks-form",
     "@eeacms/volto-object-widget",
     "@eeacms/volto-grid-block",
     "volto-datablocks",
-    "volto-plotlycharts",
-    "volto-ckeditor",
     "volto-mosaic",
+    "volto-plotlycharts",
     "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",
     "@eeacms/volto-addons-forest",
@@ -31,17 +29,19 @@
     "@blueprintjs/core": "^3.30.0",
     "@blueprintjs/icons": "^3.19.0",
     "@datapunt/matomo-tracker-react": "0.0.16",
-    "@eeacms/volto-block-style": "^1.1.0",
-    "@eeacms/volto-blocks-form": "1.0.4",
-    "@eeacms/volto-columns-block": "1.0.6",
-
-    "@eeacms/volto-group-block": "^1.0.0",
-    "@eeacms/volto-metadata-block": "github:eea/volto-metadata-block#1.0.4",
+    "@eeacms/volto-block-style": "^3.3.0",
+    "@eeacms/volto-columns-block": "4.4.3",
+    "@eeacms/volto-group-block": "^4.2.3",
+    "@eeacms/volto-metadata-block": "3.0.1",
     "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf.git",
-    "@eeacms/volto-object-widget": "github:eea/volto-object-widget#1.0.4",
-    "@eeacms/volto-widget-toggle": "github:eea/volto-widget-toggle#1.0.0",
-    "@eeacms/volto-widgets-view": "github:eea/volto-widgets-view#1.0.3",
-    "@plone/volto": "11.1.0",
+    "@eeacms/volto-addons-forest": "github:eea/volto-addons-forest#develop",
+    "@eeacms/volto-object-widget": "2.2.3",
+    "@eeacms/volto-grid-block": "1.1.1",
+    "@eeacms/volto-widget-toggle": "2.2.2",
+    "@eeacms/volto-widgets-view": "2.1.2",
+    "volto-mosaic": "github:eea/volto-mosaic",
+    "volto-plotlycharts": "github:eea/volto-plotlycharts",
+    "@plone/volto": "13.1.2",
     "@sentry/node": "5.12.3",
     "moment-timezone": "^0.5.31",
     "raven-js": "3.27.2",
@@ -57,7 +57,7 @@
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
     "webpack-bundle-analyzer": "^3.6.0",
-    "volto-slate": "1.1.0"
+    "volto-slate": "2.6.2"
   },
   "devDependencies": {
     "mrs-developer": "^1.4.0"
@@ -103,7 +103,8 @@
       }
     },
     "setupFiles": [
-      "@plone/volto/test-setup.js"
+      "@plone/volto/test-setup-globals.js",
+      "@plone/volto/test-setup-config.js"
     ],
     "globals": {
       "__DEV__": true

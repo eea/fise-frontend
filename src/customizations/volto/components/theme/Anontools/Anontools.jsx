@@ -11,7 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import { Icon } from '@plone/volto/components';
 import { getBaseUrl } from '@plone/volto/helpers';
 
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import user from '@plone/volto/icons/user.svg';
 
 // import { List, Popup } from 'semantic-ui-react';
@@ -56,8 +56,8 @@ class Anontools extends Component {
             to={`/login${
               this.props.content
                 ? `?return_url=${getBaseUrl(this.props.content['@id'])
-                    .replace(settings.apiPath, '')
-                    .replace(settings.internalApiPath, '')}`
+                    .replace(config.settings.apiPath, '')
+                    .replace(config.settings.internalApiPath, '')}`
                 : ''
             }`}
           >
