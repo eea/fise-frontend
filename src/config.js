@@ -39,8 +39,10 @@ import '@plone/volto/config';
 
 export default function applyConfig(config) {
   // Add here your project's configuration here by modifying `config` accordingly
-  config = installFiseFrontend(config);
-  config = installBlocks(config);
+  config = [installBlocks, installFiseFrontend].reduce(
+    (acc, apply) => apply(acc),
+    config,
+  );
 
   config.settings = {
     ...config.settings,
