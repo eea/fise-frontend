@@ -21556,22 +21556,11 @@ vm-browserify@^1.0.0, vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-datablocks@eea/volto-datablocks#master:
-  version "2.0.3"
-  resolved "https://codeload.github.com/eea/volto-datablocks/tar.gz/929c3c03f3c0ce41f4fe31be5a69f9e40e7bf46e"
-  dependencies:
-    "@eeacms/volto-embed" "^2.0.1"
-    humanize-plus "^1.8.2"
-    performant-array-to-tree "^1.7.1"
-    plotly.js "1.57.0"
-    react-plotly.js "~2.5.0"
-    sanitize-html "^2.3.3"
-    slate "0.63.0"
-
-"volto-plotlycharts@github:eea/volto-plotlycharts":
+"volto-plotlycharts@github:eea/volto-plotlycharts#develop":
   version "2.0.0"
-  resolved "https://codeload.github.com/eea/volto-plotlycharts/tar.gz/28ec9ad652dd0948bbd7c7bc8303869c14b258a6"
+  resolved "https://codeload.github.com/eea/volto-plotlycharts/tar.gz/09a662f70d3fb02a6a0b4a70e2faeed6d0608d48"
   dependencies:
+    "@eeacms/volto-datablocks" "^2.0.2"
     plotly.js "^1.51.2"
     react-chart-editor "^0.41.0"
     react-component-queries "2.3.0"
@@ -21580,7 +21569,6 @@ volto-datablocks@eea/volto-datablocks#master:
     react-resize-detector "^4.2.1"
     react-sizeme "3.0.1"
     react-visibility-sensor "^5.1.1"
-    volto-datablocks eea/volto-datablocks#master
 
 volto-slate@2.6.2:
   version "2.6.2"
