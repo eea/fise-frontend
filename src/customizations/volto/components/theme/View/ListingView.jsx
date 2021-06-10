@@ -20,8 +20,8 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
-import { samePath } from 'volto-mosaic/helpers';
-import Spinner from 'volto-mosaic/components/theme/Spinner';
+import { samePath } from '../../../../../helpers';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 class ListingView extends Component {
   static propTypes = {
@@ -92,7 +92,12 @@ class ListingView extends Component {
       samePath(currentUrl, this.props.pathname)
         ? true
         : false;
-    if (!shouldRenderRoutes) return <Spinner />;
+    if (!shouldRenderRoutes)
+      return (
+        <Dimmer active inverted>
+          <Loader size="massive" />
+        </Dimmer>
+      );
 
     let pageTemplate = hasBlocksData(content) ? (
       <div id="page-document">

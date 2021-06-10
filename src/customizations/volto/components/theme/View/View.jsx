@@ -12,7 +12,7 @@ import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import config from '@plone/volto/registry';
 // import { Grid } from 'semantic-ui-react';
-import Spinner from 'volto-mosaic/components/theme/Spinner';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 import { Comments, Tags, Toolbar, Icon } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
@@ -296,7 +296,11 @@ class View extends Component {
           }
         />
 
-        {this.props.loading && <Spinner />}
+        {this.props.loading && (
+          <Dimmer active inverted>
+            <Loader size="massive" />
+          </Dimmer>
+        )}
 
         <RenderedView
           content={this.props.content}

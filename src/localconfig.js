@@ -4,7 +4,7 @@ import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 import CountryView from '~/components/theme/CountryView/CountryView';
 // import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
-import HomepageView from '~/components/theme/HomepageView/HomepageView';
+//import HomepageView from '~/components/theme/HomepageView/HomepageView';
 import NewsView from '~/components/theme/NewsView/NewsView';
 import RefreshView from '~/components/theme/RefreshView/RefreshView';
 
@@ -91,7 +91,7 @@ export function applyConfig(config) {
       ...config.views.layoutViews,
       full_view: CountryView,
       // country_tab_view: CountryPageView,
-      homepage_view: HomepageView,
+      //homepage_view: HomepageView,
       // ...layoutViews,
       news_item_listing_view: NewsView,
       refresh_view: RefreshView,
