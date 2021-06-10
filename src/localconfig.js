@@ -19,6 +19,7 @@ import NavigationBlockEdit from '~/components/manage/Blocks/NavigationBlock/Edit
 import NavigationBlockView from '~/components/manage/Blocks/NavigationBlock/View';
 
 import RedirectView from '~/components/theme/View/RedirectView';
+import { uniqBy } from 'lodash';
 
 defineMessages({
   custom_addons: {
@@ -121,7 +122,7 @@ export function applyConfig(config) {
     groupBlocksOrder: [
       { id: 'common_blocks', title: 'Common blocks' },
       { id: 'forests_specific', title: 'Forests Specific Blocks' },
-      ...config.blocks.groupBlocksOrder.filter(
+      ...uniqBy(config.blocks.groupBlocksOrder, 'id').filter(
         (block) => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
       ),
     ],
