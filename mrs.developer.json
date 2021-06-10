@@ -17,10 +17,6 @@
     "url": "https://github.com/eea/volto-embed.git",
     "path": "src"
   },
-  "volto-mosaic": {
-    "url": "https://github.com/eea/volto-mosaic.git",
-    "path": "src"
-  },
   "volto-matomo": {
     "url": "https://github.com/eea/volto-matomo.git",
     "path": "src",
@@ -29,6 +25,7 @@
   "volto-addons-forest": {
     "url": "https://github.com/eea/volto-addons-forest.git",
     "path": "src",
-    "package": "@eeacms/volto-addons-forest"
+    "package": "@eeacms/volto-addons-forest",
+    "branch": "develop"
   }
 }
