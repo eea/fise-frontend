@@ -58,17 +58,15 @@ function addCustomGroup(config) {
 
 export function applyConfig(config) {
   addCustomGroup(config);
-  let contentExpand = [];
-  if (config.settings.contentExpand) {
-    contentExpand = [
-      ...config.settings.contentExpand.filter(
-        (content) => content !== 'navigation',
-      ),
-    ];
-  }
-
   config.settings = {
     ...config.settings,
+    apiExpanders: [
+      ...config.settings.apiExpanders,
+      {
+        match: '/',
+        GET_CONTENT: ['actions', 'breadcrumbs', 'workflow', 'types'],
+      },
+    ],
     richTextEditorInlineToolbarButtons: [
       // Underline,
       ...config.settings.richTextEditorInlineToolbarButtons,
@@ -81,7 +79,6 @@ export function applyConfig(config) {
       '/unauthorized',
     ],
     ownDomain: 'forest.eea.europa.eu',
-    contentExpand: contentExpand,
     matomoSiteId: 46,
     // ...['navigation', '&expand.navigation.depth=3'],
   };
@@ -233,12 +230,12 @@ export function applyConfig(config) {
       cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
     },
   ];
-  config.settings.search_portal_types = [
-    'Event',
-    'News Item',
-    'Document',
-    'templated_country_factsheet',
-    'basic_data_factsheet',
-  ];
+  // config.settings.search_portal_types = [
+  //   'Event',
+  //   'News Item',
+  //   'Document',
+  //   'templated_country_factsheet',
+  //   'basic_data_factsheet',
+  // ];
   return config;
 }
