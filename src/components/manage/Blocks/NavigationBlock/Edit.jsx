@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import _uniqueId from 'lodash/uniqueId';
-import RenderFields from 'volto-datablocks/Utils/RenderFields';
+import RenderFields from '@eeacms/volto-datablocks/Utils/RenderFields';
 import View from './View';
 import config from '@plone/volto/registry';
 

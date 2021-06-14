@@ -1,6 +1,6 @@
 import config from '@plone/volto/registry';
 import { getBaseUrl } from '@plone/volto/helpers';
-import { setConnectedDataParameters } from 'volto-datablocks/actions';
+import { setConnectedDataParameters } from '@eeacms/volto-datablocks/actions';
 
 export function getBasePath(url) {
   return getBaseUrl(url)

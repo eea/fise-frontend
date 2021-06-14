@@ -8,7 +8,10 @@ import { Menu } from 'semantic-ui-react';
 /* HELPERS */
 import cx from 'classnames';
 import { isActive, getNavigationByParent, getBasePath } from './helpers';
-import { deleteQueryParam, setQueryParam } from 'volto-datablocks/actions';
+import {
+  deleteQueryParam,
+  setQueryParam,
+} from '@eeacms/volto-datablocks/actions';
 import { useEffect } from 'react';
 
 const View = ({ content, ...props }) => {

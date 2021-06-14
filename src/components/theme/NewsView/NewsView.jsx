@@ -4,7 +4,7 @@ import { Container } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import { Link } from 'react-router-dom';
 import NewsItem from './NewsItem';
-import WidthBasedLayoutProvider from 'volto-plotlycharts/LayoutProvider/WidthBasedLayoutProvider';
+import WidthBasedLayoutProvider from '@eeacms/volto-plotlycharts/LayoutProvider/WidthBasedLayoutProvider';
 import downKey from '@plone/volto/icons/down-key.svg';
 import rss from '@plone/volto/icons/rss.svg';
 

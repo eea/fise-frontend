@@ -9,7 +9,7 @@ import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorize
 // installNews,
 // } from 'volto-addons/config';
 // import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
-import { installBlocks } from 'volto-plotlycharts';
+import { installBlocks } from '@eeacms/volto-plotlycharts';
 // import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
 // import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
 // import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
