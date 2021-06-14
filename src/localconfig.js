@@ -4,27 +4,22 @@ import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 import CountryView from '~/components/theme/CountryView/CountryView';
 // import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
-import HomepageView from '~/components/theme/HomepageView/HomepageView';
+//import HomepageView from '~/components/theme/HomepageView/HomepageView';
 import NewsView from '~/components/theme/NewsView/NewsView';
 import RefreshView from '~/components/theme/RefreshView/RefreshView';
 
 import chartIcon from '@plone/volto/icons/world.svg';
 
-import EuropeCompareBlockEdit from './components/manage/Blocks/EuropeCompareBlock/Edit';
-import EuropeCompareBlockView from './components/manage/Blocks/EuropeCompareBlock/View';
-import EuropeForestBlockEdit from './components/manage/Blocks/EuropeForestBlock/Edit';
-import EuropeForestBlockView from './components/manage/Blocks/EuropeForestBlock/View';
-
-import ForestCoverageBlockEdit from '~/components/manage/Blocks/ForestCoverageBlock/Edit';
-import ForestCoverageBlockView from '~/components/manage/Blocks/ForestCoverageBlock/View';
-
-import ForestDeadwoodVolumeEdit from '~/components/manage/Blocks/ForestDeadwoodVolume/Edit';
-import ForestDeadwoodVolumeView from '~/components/manage/Blocks/ForestDeadwoodVolume/View';
-
-import ForestCoverageEvolutionEdit from '~/components/manage/Blocks/ForestCoverageEvolution/Edit';
-import ForestCoverageEvolutionView from '~/components/manage/Blocks/ForestCoverageEvolution/View';
+import DefaultViewWide from '~/components/theme/DefaultViewWide/DefaultViewWide';
+import DefaultView from '~/customizations/volto/components/theme/View/DefaultView';
 
 import ForestMetadata from '~/components/theme/Viewlets/ForestMetadata';
+
+import NavigationBlockEdit from '~/components/manage/Blocks/NavigationBlock/Edit';
+import NavigationBlockView from '~/components/manage/Blocks/NavigationBlock/View';
+
+import RedirectView from '~/components/theme/View/RedirectView';
+import { uniqBy } from 'lodash';
 
 defineMessages({
   custom_addons: {
@@ -51,7 +46,7 @@ defineMessages({
 
 function addCustomGroup(config) {
   const hasCustomGroup = config.blocks.groupBlocksOrder.filter(
-    el => el.id === 'custom_addons',
+    (el) => el.id === 'custom_addons',
   );
   if (hasCustomGroup.length === 0) {
     config.blocks.groupBlocksOrder.push({
@@ -63,9 +58,15 @@ function addCustomGroup(config) {
 
 export function applyConfig(config) {
   addCustomGroup(config);
-
   config.settings = {
     ...config.settings,
+    apiExpanders: [
+      ...config.settings.apiExpanders,
+      {
+        match: '/',
+        GET_CONTENT: ['actions', 'breadcrumbs', 'workflow', 'types'],
+      },
+    ],
     richTextEditorInlineToolbarButtons: [
       // Underline,
       ...config.settings.richTextEditorInlineToolbarButtons,
@@ -78,11 +79,6 @@ export function applyConfig(config) {
       '/unauthorized',
     ],
     ownDomain: 'forest.eea.europa.eu',
-    contentExpand: [
-      ...config.settings.contentExpand.filter(
-        content => content !== 'navigation',
-      ),
-    ],
     matomoSiteId: 46,
     // ...['navigation', '&expand.navigation.depth=3'],
   };
@@ -93,10 +89,13 @@ export function applyConfig(config) {
       ...config.views.layoutViews,
       full_view: CountryView,
       // country_tab_view: CountryPageView,
-      homepage_view: HomepageView,
+      //homepage_view: HomepageView,
       // ...layoutViews,
       news_item_listing_view: NewsView,
       refresh_view: RefreshView,
+      document_view_wide: DefaultViewWide,
+      document_view: DefaultView,
+      redirect_view: RedirectView,
     },
   };
 
@@ -120,12 +119,20 @@ export function applyConfig(config) {
     groupBlocksOrder: [
       { id: 'common_blocks', title: 'Common blocks' },
       { id: 'forests_specific', title: 'Forests Specific Blocks' },
-      ...config.blocks.groupBlocksOrder.filter(
-        block => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
+      ...uniqBy(config.blocks.groupBlocksOrder, 'id').filter(
+        (block) => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
       ),
     ],
 
     blocksConfig: {
+      navigation_tabs_block: {
+        id: 'navigation_tabs_block',
+        title: 'Navigation tabs block',
+        view: NavigationBlockView,
+        edit: NavigationBlockEdit,
+        icon: chartIcon,
+        group: 'forests_specific',
+      },
       ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
         if (
           ['text', 'mostUsed', 'media', 'common'].includes(
@@ -141,46 +148,6 @@ export function applyConfig(config) {
         }
         return acc;
       }, {}),
-      europe_compare_block: {
-        id: 'europe_compare_block',
-        title: 'Europe Compare Block',
-        view: EuropeCompareBlockView,
-        edit: EuropeCompareBlockEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      europe_forest_block: {
-        id: 'europe_forest_block',
-        title: 'Europe Forest Area Block',
-        view: EuropeForestBlockView,
-        edit: EuropeForestBlockEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      forest_coverage_block: {
-        id: 'forest_coverage_block',
-        title: 'Forest coverage block',
-        view: ForestCoverageBlockView,
-        edit: ForestCoverageBlockEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      forest_deadwood_volume_block: {
-        id: 'forest_deadwood_volume_block',
-        title: 'Forest deadwood volume block',
-        view: ForestDeadwoodVolumeView,
-        edit: ForestDeadwoodVolumeEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
-      forest_coverage_evolution_block: {
-        id: 'forest_coverage_evolution_block',
-        title: 'Forest patch size distribution block',
-        view: ForestCoverageEvolutionView,
-        edit: ForestCoverageEvolutionEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
     },
   };
 
@@ -214,5 +181,61 @@ export function applyConfig(config) {
     },
   ];
 
+  // border-tile
+  config.settings.pluggableStyles = [
+    ...(config.settings.pluggableStyles || []),
+    {
+      id: 'borderBlock',
+      title: 'Border block',
+      cssClass: 'border-block',
+    },
+    {
+      id: 'marginBlock10',
+      title: 'Margin border',
+      cssClass: 'margin-block-10 border-block',
+    },
+    {
+      id: 'paddingBlock10',
+      title: 'Padding border',
+      cssClass: 'padding-block-10 border-block',
+    },
+    {
+      id: 'paddingMarginBlock10',
+      title: 'Padding margin border',
+      cssClass: 'padding-block-10 margin-block-10 border-block',
+    },
+    {
+      id: 'marginOnly10',
+      title: 'Margin only',
+      cssClass: 'margin-block-10',
+    },
+    {
+      id: 'dropShadow',
+      title: 'Drop shadow',
+      cssClass: 'drop-shadow-tile',
+    },
+    {
+      id: 'dropShadowMargin',
+      title: 'Drop shadow margin',
+      cssClass: 'drop-shadow-tile margin-block-10',
+    },
+    {
+      id: 'dropShadowPadding',
+      title: 'Drop shadow padding',
+      cssClass: 'drop-shadow-tile padding-block-10',
+    },
+    {
+      id: 'dropShadowPaddingMargin',
+      title: 'Drop shadow padding margin',
+      cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
+    },
+  ];
+  // config.settings.search_portal_types = [
+  //   'Event',
+  //   'News Item',
+  //   'Document',
+  //   'templated_country_factsheet',
+  //   'basic_data_factsheet',
+  // ];
   return config;
 }

@@ -12,13 +12,14 @@ import { Grid } from 'semantic-ui-react';
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 
-import { settings, blocks } from '~/config';
-import renderPortletManager from 'volto-addons/Portlets/utils';
+import config from '@plone/volto/registry';
+import renderPortletManager from '@eeacms/volto-addons-forest/Portlets/utils';
 
 import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   hasBlocksData,
+  getBaseUrl,
 } from '@plone/volto/helpers';
 // import { samePath } from 'volto-mosaic/helpers';
 import { connect } from 'react-redux';
@@ -37,12 +38,11 @@ import { connect } from 'react-redux';
  * @param {Object} content Content object.
  * @returns {string} Markup of the component.
  */
-const DefaultView = props => {
+const DefaultView = (props) => {
   const { content } = props;
+  const { location } = props;
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
-
-  // console.log('default view props', props);
 
   // const currentUrl = content?.['@id'];
   // const shouldRenderRoutes =
@@ -64,10 +64,10 @@ const DefaultView = props => {
         {hasBlocksData(content) ? (
           <div id="page-document" className="ui container">
             <Helmet title={content.title} />
-            {map(content[blocksLayoutFieldname].items, block => {
+            {map(content[blocksLayoutFieldname].items, (block) => {
               const Block =
-                blocks.blocksConfig[
-                  (content[blocksFieldname]?.[block]?.['@type'])
+                config.blocks.blocksConfig[
+                  content[blocksFieldname]?.[block]?.['@type']
                 ]?.['view'] || null;
               return Block !== null &&
                 content[blocksFieldname][block]['@type'] !== 'title' ? (
@@ -76,6 +76,7 @@ const DefaultView = props => {
                   id={block}
                   properties={content}
                   data={content[blocksFieldname][block]}
+                  path={getBaseUrl(location?.pathname || '')}
                 />
               ) : (
                 //   <div key={block}>
@@ -113,7 +114,7 @@ const DefaultView = props => {
                 dangerouslySetInnerHTML={{
                   __html: content.text.data.replace(
                     /a href="([^"]*\.[^"]*)"/g,
-                    `a href="${settings.apiPath}$1/download/file"`,
+                    `a href="${config.settings.apiPath}$1/download/file"`,
                   ),
                 }}
               />

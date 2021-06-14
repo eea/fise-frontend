@@ -15,12 +15,11 @@ import { Container, Pagination } from 'semantic-ui-react';
 import qs from 'query-string';
 import moment from 'moment';
 import { isArray, isObject } from 'lodash';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { Helmet } from '@plone/volto/helpers';
 import { searchContent } from '@plone/volto/actions';
 import { Toolbar, Icon } from '@plone/volto/components';
 import Highlighter from 'react-highlight-words';
-import SearchBlock from 'volto-addons/SearchBlock/View';
 
 import paginationLeftSVG from '@plone/volto/icons/left-key.svg';
 import paginationRightSVG from '@plone/volto/icons/right-key.svg';
@@ -36,7 +35,7 @@ const toSearchOptions = (searchableText, subject, queryOptions) => {
   };
 };
 
-const getQueryOptions = query => {
+const getQueryOptions = (query) => {
   const options = {};
   isObject(query) &&
     Object.entries(query).forEach(([key, value]) => {
@@ -45,11 +44,11 @@ const getQueryOptions = query => {
   return options;
 };
 
-const getText = block => {
+const getText = (block) => {
   let text = '';
   if (block.text && typeof block.text === 'string') text = block.text;
   if (block.text && block.text.blocks && isArray(block.text.blocks)) {
-    block.text.blocks.forEach(block => {
+    block.text.blocks.forEach((block) => {
       text += getText(block);
     });
   }
@@ -70,7 +69,7 @@ const matchedText = (text, searchableText) => {
   return matchedText;
 };
 
-const smallText = text => {
+const smallText = (text) => {
   if (text.length > 256) return `[...${text.substring(0, 256)}...]`;
   return text;
 };
@@ -174,7 +173,7 @@ class Search extends Component {
    * @param {Object} nextProps Next properties
    * @returns {undefined}
    */
-  UNSAFE_componentWillReceiveProps = nextProps => {
+  UNSAFE_componentWillReceiveProps = (nextProps) => {
     if (
       nextProps.searchableText !== this.props.searchableText ||
       nextProps.subject !== this.props.subject
@@ -225,7 +224,7 @@ class Search extends Component {
 
       this.props.searchContent('', {
         ...options,
-        b_start: (this.state.currentPage - 1) * settings.defaultPageSize,
+        b_start: (this.state.currentPage - 1) * config.settings.defaultPageSize,
       });
     });
   };
@@ -307,9 +306,7 @@ class Search extends Component {
                         ? item.summary.fullSummary.length > 0
                           ? item.summary.fullSummary.map((paragraph, index) => (
                               <React.Fragment
-                                key={`summary_paragraph_${
-                                  item['@id']
-                                }_${index}}`}
+                                key={`summary_paragraph_${item['@id']}_${index}}`}
                               >
                                 {paragraph}
                               </React.Fragment>
@@ -357,7 +354,8 @@ class Search extends Component {
                   <Pagination
                     activePage={this.state.currentPage}
                     totalPages={Math.ceil(
-                      this.props.search.items_total / settings.defaultPageSize,
+                      this.props.search.items_total /
+                        config.settings.defaultPageSize,
                     )}
                     onPageChange={this.handleQueryPaginationChange}
                     firstItem={null}
@@ -411,10 +409,10 @@ export default compose(
   connect(
     (state, props) => ({
       searchableText: qs.parse(props.location.search).SearchableText,
-      items: state.search.items.map(item => {
+      items: state.search.items.map((item) => {
         return {
           ...item,
-          '@id': item['@id'].replace(settings.apiPath, ''),
+          '@id': item['@id'].replace(config.settings.apiPath, ''),
           summary: getSummary(
             item,
             qs.parse(props.location.search).SearchableText,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Placeholder } from 'semantic-ui-react';
-import { getBasePath } from 'volto-datablocks/helpers';
+import { getBasePath } from '@eeacms/volto-datablocks/helpers';
 
 function HeaderImage(props) {
   return props.url ? (

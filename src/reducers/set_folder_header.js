@@ -3,9 +3,6 @@
  * @module reducers/frontpage_slides
  */
 
-import { map } from 'lodash';
-import { settings } from '~/config';
-
 import { SET_FOLDER_HEADER } from '~/constants/ActionTypes';
 
 const initialState = {

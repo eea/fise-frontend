@@ -9,6 +9,7 @@ import { Helmet } from '@plone/volto/helpers';
 import serialize from 'serialize-javascript';
 import { join } from 'lodash';
 import { BodyClass } from '@plone/volto/helpers';
+import { runtimeConfig } from '@plone/volto/runtime_config';
 
 /**
  * Html class.
@@ -59,7 +60,6 @@ class Html extends Component {
     const { extractor, markup, store } = this.props;
     const head = Helmet.rewind();
     const bodyClass = join(BodyClass.rewind(), ' ');
-
     const pathName = store.getState()?.router.location.pathname;
     const renderScripts = ['/header', '/head', '/footer'].includes(pathName);
     return (
@@ -72,13 +72,19 @@ class Html extends Component {
           {!renderScripts && head.link.toComponent()}
           {!renderScripts && head.script.toComponent()}
 
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.env = ${serialize(runtimeConfig)};`,
+            }}
+          />
+
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="generator" content="Volto - http://plone.org" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           {/* Add the crossorigin while in development */}
           {!renderScripts &&
-            extractor.getLinkElements().map(elem =>
+            extractor.getLinkElements().map((elem) =>
               React.cloneElement(elem, {
                 crossOrigin:
                   process.env.NODE_ENV === 'production' ? undefined : 'true',
@@ -101,17 +107,17 @@ class Html extends Component {
             charSet="UTF-8"
           />
           {/* Add the crossorigin while in development */}
-          {!renderScripts &&
-            extractor.getScriptElements().map(elem =>
-              React.cloneElement(elem, {
-                crossOrigin:
-                  process.env.NODE_ENV === 'production' ? undefined : 'true',
-              }),
-            )}
+          {!renderScripts && this.props.extractScripts !== false
+            ? extractor.getScriptElements().map((elem) =>
+                React.cloneElement(elem, {
+                  crossOrigin:
+                    process.env.NODE_ENV === 'production' ? undefined : 'true',
+                }),
+              )
+            : ''}
         </body>
       </html>
     );
   }
 }
-
 export default Html;

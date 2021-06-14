@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -26,7 +27,7 @@ import {
   getParentFolderData,
 } from '~/actions';
 
-import { settings, blocks } from '~/config';
+import config from '@plone/volto/registry';
 
 import {
   getBlocksFieldname,
@@ -175,7 +176,7 @@ class CountryPageView extends Component {
       const description = nextProps.parent.description;
       const image =
         nextProps.parent.items &&
-        nextProps.parent.items.find(c => c['@type'] === 'Image');
+        nextProps.parent.items.find((c) => c['@type'] === 'Image');
       const url = image && image.image.download;
       const inCountryFolder = true;
       // this.props.setFolderHeader({ title, description, url, inCountryFolder });
@@ -183,14 +184,14 @@ class CountryPageView extends Component {
       pathArr.length = 3;
       const path = pathArr.join('/');
       const tabsItems = nextProps.parent.items
-        .map(i => {
+        .map((i) => {
           return {
             url: `${path}/${i.id}`,
             title: i.title,
             '@type': i['@type'],
           };
         })
-        .filter(i => i.title !== 'folder_info');
+        .filter((i) => i.title !== 'folder_info');
       this.props.setFolderTabs(tabsItems);
     }
   }
@@ -385,10 +386,10 @@ class CountryPageView extends Component {
         </div>
 
         <div className="country-page-content-wrapper">
-          {map(content[blocksLayoutFieldname].items, block => {
+          {map(content[blocksLayoutFieldname].items, (block) => {
             let Block = null;
             Block =
-              blocks.defaultBlocksViewMap[
+              config.blocks.defaultBlocksViewMap[
                 content[blocksFieldname][block]['@type']
               ];
             return Block !== null ? (
@@ -492,7 +493,7 @@ class CountryPageView extends Component {
             dangerouslySetInnerHTML={{
               __html: content.text.data.replace(
                 /a href="([^"]*\.[^"]*)"/g,
-                `a href="${settings.apiPath}$1/download/file"`,
+                `a href="${config.settings.apiPath}$1/download/file"`,
               ),
             }}
           />
@@ -503,7 +504,7 @@ class CountryPageView extends Component {
 }
 
 export default connect(
-  state => ({
+  (state) => ({
     tabs: state.folder_tabs.items,
     parent: state.parent_folder_data.items,
   }),

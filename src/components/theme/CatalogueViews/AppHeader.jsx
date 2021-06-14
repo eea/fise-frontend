@@ -11,7 +11,6 @@ import { asyncConnect } from 'redux-connect';
 import { Segment, Container } from 'semantic-ui-react';
 import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
-import ViewletsRenderer from 'volto-addons/Viewlets/Render';
 import loadable from '@loadable/component';
 
 import Error from '@plone/volto/error';
@@ -33,9 +32,7 @@ import {
   purgeMessages,
 } from '@plone/volto/actions';
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
-import { getPortlets } from 'volto-addons/actions';
-
-import clearSVG from '@plone/volto/icons/clear.svg';
+import { getPortlets } from '@eeacms/volto-addons-forest/actions';
 
 class App extends Component {
   static propTypes = {

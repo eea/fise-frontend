@@ -5,9 +5,9 @@
 
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
-import HomepageView from '~/components/theme/HomepageView/HomepageView';
+// import HomepageView from '~/components/theme/HomepageView/HomepageView';
 
-import { addonRoutes } from '~/config';
+import config from '@plone/volto/registry';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
 import Header from '~/components/theme/CatalogueViews/AppHeader.jsx';
 import Footer from '~/components/theme/CatalogueViews/AppFooter.jsx';
@@ -36,18 +36,14 @@ const routes = [
     component: App, // Change this if you want a different component
     routes: [
       // Add your routes here
-      {
-        path: '/',
-        component: HomepageView,
-        exact: true,
-      },
+
       {
         path: '/sitemap',
         component: SiteMap,
         exact: true,
       },
       // addon routes have a higher priority then default routes
-      ...(addonRoutes || []),
+      ...(config.addonRoutes || []),
 
       ...defaultRoutes,
     ],

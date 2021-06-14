@@ -1,10 +1,2 @@
 User-agent: *
 
-Disallow: demo-forests
-Disallow: /api
-Disallow: /fise
-Disallow: /frontpage_slides
-Disallow: /data
-Disallow: /factsheet
-
-Sitemap: https://forest.eea.europa.eu/sitemap.xml.gz

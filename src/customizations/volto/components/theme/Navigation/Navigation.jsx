@@ -13,9 +13,11 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { Menu, Dropdown } from 'semantic-ui-react';
 import cx from 'classnames';
 import { getBasePath } from '~/helpers';
-import SearchBlock from 'volto-addons/SearchBlock/View';
+import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
+
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -145,8 +147,8 @@ class Navigation extends Component {
     this.setState({ isMobileMenuOpen: false });
   }
 
-  formatNavUrl = nav => {
-    return nav.map(navItem => ({
+  formatNavUrl = (nav) => {
+    return nav.map((navItem) => ({
       ...navItem,
       url: navItem.url ? getBasePath(navItem.url) : '',
       items: navItem.items ? this.formatNavUrl(navItem.items) : false,
@@ -156,12 +158,11 @@ class Navigation extends Component {
   render() {
     const navigation = this.formatNavUrl(
       this.props.navigation.filter(
-        item =>
+        (item) =>
           !['header', 'head', 'footer'].includes(item.title?.toLowerCase()),
       ),
     );
     // return <div>{JSON.stringify(this.props.navigation)}</div>
-    console.log('props nav', this.props.navigation);
     const pathName = this.props.pathname;
     const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
 
@@ -232,12 +233,7 @@ class Navigation extends Component {
                   value: {
                     properties: {
                       portal_type: {
-                        value: [
-                          'Event',
-                          'News Item',
-                          'Document',
-                          'templated_country_factsheet',
-                        ],
+                        value: config.settings.search_portal_types,
                       },
                     },
                   },
@@ -258,7 +254,7 @@ class Navigation extends Component {
               : 'computer large screen widescreen only'
           }
         >
-          {navigation.map(item =>
+          {navigation.map((item) =>
             item.items && item.items.length ? (
               <div
                 className={
@@ -290,7 +286,7 @@ class Navigation extends Component {
                     </div>
                   ) : (
                     <Link
-                      onClick={e =>
+                      onClick={(e) =>
                         item.items && item.items.length && e.preventDefault()
                       }
                       className="firstLevel"
@@ -317,7 +313,7 @@ class Navigation extends Component {
                           : ''
                       }`}
                     >
-                      {item.items.map(subitem => (
+                      {item.items.map((subitem) => (
                         <Dropdown.Item
                           className={`${item.title}--section-item`}
                           id={subitem.title}
@@ -336,7 +332,7 @@ class Navigation extends Component {
                             </div>
                           ) : (
                             <Link
-                              to={getChildPath(item, subitem)}
+                              to={subitem.url}
                               key={subitem.url}
                               className={
                                 this.isActive(subitem.url)
@@ -351,7 +347,7 @@ class Navigation extends Component {
                             subitem.title.toLowerCase() === 'regions' && (
                               <div className="submenu-wrapper">
                                 <div className="submenu">
-                                  {subitem.items.map(subsubitem => (
+                                  {subitem.items.map((subsubitem) => (
                                     <Link
                                       to={
                                         subsubitem.url === ''

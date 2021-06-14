@@ -1,78 +1,98 @@
-import * as voltoConfig from '@plone/volto/config';
 import Forbidden from '@plone/volto/components/theme/Forbidden/Forbidden';
 import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
 
-import {
-  applyConfig as addonsConfig,
-  installImageSlides,
-  installPortlets,
-  installTableau,
-  installNews,
-} from 'volto-addons/config';
-import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
-import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
-import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
-import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
-import { applyConfig as tabsViewConfig } from 'volto-tabsview/config';
+// import {
+// applyConfig as addonsConfig,
+// installImageSlides,
+// installPortlets,
+// installTableau,
+// installNews,
+// } from 'volto-addons/config';
+// import { applyConfig as plotlyConfig } from 'volto-plotlycharts/config';
+import { installBlocks } from '@eeacms/volto-plotlycharts';
+// import { applyConfig as ckeditorConfig } from 'volto-ckeditor/config';
+// import { applyConfig as mosaicConfig } from 'volto-mosaic/config';
+// import { applyConfig as dataBlocksConfig } from 'volto-datablocks/config';
 import { applyConfig as installFiseFrontend } from './localconfig';
-import { applyConfig as installEmbed } from 'volto-embed/config';
+// import { applyConfig as installEmbed } from 'volto-embed/config';
 
-const config = [
-  addonsConfig,
-  installPortlets,
-  installImageSlides,
-  installTableau,
-  installNews,
-  plotlyConfig,
-  ckeditorConfig,
-  mosaicConfig,
-  tabsViewConfig,
-  installEmbed,
-  // installSearch,
-  dataBlocksConfig,
-  installFiseFrontend,
-].reduce((acc, apply) => apply(acc), voltoConfig);
+import ObjectListInlineWidget from './components/manage/Widgets/ObjectListInlineWidget';
+import reducers from '~/reducers';
 
-export const settings = {
-  ...config.settings,
-  frontendMeta: {
-    version: process.env.RAZZLE_FRONTEND_VERSION || null,
-    version_url: process.env.RAZZLE_FRONTEND_VERSION_URL || null,
-    published_at: process.env.RAZZLE_FRONTEND_PUBLISHED_AT || null,
-  },
-  timezone: 'CET',
-};
+// const config = [
+//   // addonsConfig,
+//   installBlocks,
+//   // installPortlets,
+//   // installImageSlides,
+//   // installTableau,
+//   // installNews,
+//   // plotlyConfig,
+//   ckeditorConfig,
+//   mosaicConfig,
+//   // installEmbed,
+//   // installSearch,
+//   // dataBlocksConfig,
+//   installFiseFrontend,
+// ].reduce((acc, apply) => apply(acc), voltoConfig);
 
-export const views = {
-  ...config.views,
-  errorViews: {
-    ...config.views.errorViews,
-    '403': Forbidden,
-    '401': Unauthorized,
-  },
-};
+import '@plone/volto/config';
 
-export const widgets = {
-  ...config.widgets,
-};
+export default function applyConfig(config) {
+  // Add here your project's configuration here by modifying `config` accordingly
+  config = [installBlocks, installFiseFrontend].reduce(
+    (acc, apply) => apply(acc),
+    config,
+  );
 
-export const blocks = {
-  ...config.blocks,
-};
+  config.settings = {
+    ...config.settings,
+    frontendMeta: {
+      version: process.env.RAZZLE_FRONTEND_VERSION || null,
+      version_url: process.env.RAZZLE_FRONTEND_VERSION_URL || null,
+      published_at: process.env.RAZZLE_FRONTEND_PUBLISHED_AT || null,
+    },
+    timezone: 'CET',
+    matomoSiteId: 46,
+    pathsWithFullobjects: ['/news', '/events'],
+    pathsWithExtraParameters: {
+      '/news': { b_start: 0, b_size: 1000 },
+      '/events': { b_start: 0, b_size: 1000 },
+    },
+  };
 
-// TODO: should we move custom stuff to settings variable?
-// It would make future adding new settings types easier, as this file wouldn't
-// have to be updated in all frontend implementations
-// console.log('config.js AddonReducers', config.addonReducers);
-export const addonReducers = { ...config.addonReducers };
-export const addonRoutes = [...(config.addonRoutes || [])];
+  config.views = {
+    ...config.views,
+    errorViews: {
+      ...config.views.errorViews,
+      '403': Forbidden,
+      '401': Unauthorized,
+    },
+  };
 
-export const viewlets = [...(config.viewlets || [])];
+  config.widgets = {
+    ...config.widgets,
+    widget: {
+      ...config.widgets.widget,
+      object_list_inline: ObjectListInlineWidget,
+    },
+  };
 
-export const portlets = {
-  ...config.portlets,
-};
+  // // TODO: should we move custom stuff to settings variable?
+  // // It would make future adding new settings types easier, as this file wouldn't
+  // // have to be updated in all frontend implementations
+  // // console.log('config.js AddonReducers', config.addonReducers);
+  // export const addonReducers = { ...config.addonReducers };
+  // export const addonRoutes = [...(config.addonRoutes || [])];
 
-export const editForms = {
-  ...config.editForms,
-};
+  config.viewlets = [...(config.viewlets || [])];
+  config.addonReducers = { ...config.addonReducers, ...reducers };
+
+  // export const portlets = {
+  //   ...config.portlets,
+  // };
+
+  config.editForms = {
+    ...config.editForms,
+  };
+  return config;
+}

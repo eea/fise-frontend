@@ -4,7 +4,7 @@
  */
 
 import { map } from 'lodash';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 
 //import { GET_NAVIGATION } from '../../constants/ActionTypes';
 import { GET_NAVSITEMAP } from '../constants/ActionTypes';
@@ -25,9 +25,9 @@ const initialState = {
  */
 function getRecursiveItems(items) {
   console.log('recursive items', items);
-  return map(items, item => ({
+  return map(items, (item) => ({
     title: item.title,
-    url: item['@id'].replace(settings.apiPath, ''),
+    url: item['@id'].replace(config.settings.apiPath, ''),
     ...(item.items && { items: getRecursiveItems(item.items) }),
   }));
 }

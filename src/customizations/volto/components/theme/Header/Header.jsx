@@ -16,7 +16,6 @@ import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
 import HeaderBackground from './header-bg.png';
-
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +36,7 @@ class Header extends Component {
     token: PropTypes.string,
     pathname: PropTypes.string.isRequired,
     actualPathName: PropTypes.string.isRequired,
-    folderHeader: PropTypes.any,
+    // folderHeader: PropTypes.any,
     defaultHeaderImage: PropTypes.any,
     frontPageSlides: PropTypes.array,
   };
@@ -55,17 +54,6 @@ class Header extends Component {
     if (nextProps.actualPathName !== this.props.actualPathName) {
       this.setState({
         isHomepage: nextProps.actualPathName === '/',
-      });
-    }
-    if (
-      JSON.stringify(nextProps.folderHeader.url) !==
-      JSON.stringify(this.props.folderHeader.url)
-    ) {
-      this.setState({
-        url: nextProps.folderHeader.url,
-        description: nextProps.folderHeader.description,
-        title: nextProps.folderHeader.title,
-        image: nextProps.folderHeader.image,
       });
     }
 
@@ -145,8 +133,7 @@ class Header extends Component {
 }
 
 export default compose(
-  connect(state => ({
+  connect((state) => ({
     token: state.userSession.token,
-    folder_header: state.folder_header.items,
   })),
 )(Header);

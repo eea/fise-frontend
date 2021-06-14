@@ -4,6 +4,7 @@
  */
 
 import React, { Component, Fragment } from 'react';
+import { matchPath } from 'react-router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -11,8 +12,9 @@ import { asyncConnect } from 'redux-connect';
 import { Segment, Container } from 'semantic-ui-react';
 import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
-import ViewletsRenderer from 'volto-addons/Viewlets/Render';
+import ViewletsRenderer from '@eeacms/volto-addons-forest/Viewlets/Render';
 import loadable from '@loadable/component';
+import { PluggablesProvider } from '@plone/volto/components/manage/Pluggable';
 
 import Error from '@plone/volto/error';
 
@@ -33,7 +35,8 @@ import {
   purgeMessages,
 } from '@plone/volto/actions';
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
-import { getPortlets } from 'volto-addons/actions';
+import config from '@plone/volto/registry';
+import { getPortlets } from '@eeacms/volto-addons-forest/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 
@@ -41,7 +44,7 @@ class App extends Component {
   static propTypes = {
     pathname: PropTypes.string.isRequired,
     purgeMessages: PropTypes.func.isRequired,
-    folderHeader: PropTypes.any,
+    // folderHeader: PropTypes.any,
     // getDefaultHeaderImage: PropTypes.func.isRequired,
     // defaultHeaderImage: PropTypes.object.isRequired,
   };
@@ -117,52 +120,54 @@ class App extends Component {
     const headerImage =
       this.props.content?.image?.download || this.props.defaultHeaderImage;
     return (
-      <Fragment>
-        <BodyClass className={`view-${action}view`} />
-        <Header
-          folderHeader={this.props.folderHeader}
-          actualPathName={this.props.pathname}
-          pathname={path}
-          defaultHeaderImage={headerImage}
-          navigationItems={this.props.navigation}
-          frontpage_slides={this.props.frontpage_slides}
-        />
-        <Segment basic className="content-area">
-          <Container>
-            <main>
-              <OutdatedBrowser />
-              <Messages />
-              <div className="editor-toolbar-wrapper" />
+      <PluggablesProvider>
+        <Fragment>
+          <BodyClass className={`view-${action}view`} />
+          <Header
+            // folderHeader={this.props.folderHeader}
+            actualPathName={this.props.pathname}
+            pathname={path}
+            defaultHeaderImage={headerImage}
+            navigationItems={this.props.navigation}
+            frontpage_slides={this.props.frontpage_slides}
+          />
+          <Segment basic className="content-area">
+            <Container>
+              <main>
+                <OutdatedBrowser />
+                <Messages />
+                <div className="editor-toolbar-wrapper" />
 
-              {this.state.hasError ? (
-                <Error
-                  message={this.state.error.message}
-                  stackTrace={this.state.errorInfo.componentStack}
-                />
-              ) : (
-                <>
-                  {renderRoutes(this.props.route.routes)}
-                  <ViewletsRenderer {...this.props} />
-                </>
-              )}
-            </main>
-          </Container>
-        </Segment>
-        <Footer />
-        <ToastContainer
-          position={toast.POSITION.BOTTOM_CENTER}
-          hideProgressBar
-          transition={Slide}
-          closeButton={
-            <Icon
-              className="toast-dismiss-action"
-              name={clearSVG}
-              size="18px"
-            />
-          }
-        />
-        <AppExtras />
-      </Fragment>
+                {this.state.hasError ? (
+                  <Error
+                    message={this.state.error.message}
+                    stackTrace={this.state.errorInfo.componentStack}
+                  />
+                ) : (
+                  <>
+                    {renderRoutes(this.props.route.routes)}
+                    <ViewletsRenderer {...this.props} />
+                  </>
+                )}
+              </main>
+            </Container>
+          </Segment>
+          <Footer />
+          <ToastContainer
+            position={toast.POSITION.BOTTOM_CENTER}
+            hideProgressBar
+            transition={Slide}
+            closeButton={
+              <Icon
+                className="toast-dismiss-action"
+                name={clearSVG}
+                size="18px"
+              />
+            }
+          />
+          <AppExtras {...this.props} />
+        </Fragment>
+      </PluggablesProvider>
     );
   }
 }
@@ -176,8 +181,26 @@ export default compose(
   asyncConnect([
     {
       key: 'content',
-      promise: ({ location, store: { dispatch } }) =>
-        dispatch(getContent(getBaseUrl(location.pathname))),
+      promise: ({ location, store: { dispatch } }) => {
+        const withFullObjects = matchPath(
+          location.pathname,
+          config.settings.pathsWithFullobjects,
+        )?.isExact;
+        // const extraParameters = {
+        //   ...(config.settings.pathsWithExtraParameters[location.pathname] ||
+        //     {}),
+        // };
+        dispatch(
+          getContent(
+            getBaseUrl(location.pathname),
+            null,
+            null,
+            null,
+            withFullObjects,
+            // extraParameters, we don't have this in Volto 13
+          ),
+        );
+      },
     },
     {
       key: 'frontpage_slides',
@@ -236,7 +259,7 @@ export default compose(
   ]),
   connect(
     (state, props) => ({
-      folderHeader: state.folder_header.items,
+      // folderHeader: state.folder_header.items,
       defaultHeaderImage: state.default_header_image.items?.[0],
       // content: state.content.data,
       content: state.prefetch?.[props.location.pathname] || state.content.data,

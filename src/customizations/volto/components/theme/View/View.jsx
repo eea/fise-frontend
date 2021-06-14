@@ -10,9 +10,9 @@ import { compose } from 'redux';
 import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
-import { views } from '~/config';
+import config from '@plone/volto/registry';
 // import { Grid } from 'semantic-ui-react';
-import Spinner from 'volto-mosaic/components/theme/Spinner';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 import { Comments, Tags, Toolbar, Icon } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
@@ -23,8 +23,6 @@ import {
 } from '@plone/volto/helpers';
 import printer from '@plone/volto/icons/printer.svg';
 import screen from '@plone/volto/icons/screen.svg';
-
-// import renderPortletManager from 'volto-addons/Portlets/utils';
 
 /**
  * View container class.
@@ -155,7 +153,7 @@ class View extends Component {
    * @method getViewDefault
    * @returns {string} Markup for component.
    */
-  getViewDefault = () => views.defaultView;
+  getViewDefault = () => config.views.defaultView;
 
   /**
    * Get view by content type
@@ -163,7 +161,7 @@ class View extends Component {
    * @returns {string} Markup for component.
    */
   getViewByType = () =>
-    views.contentTypesViews[this.props.content['@type']] || null;
+    config.views.contentTypesViews[this.props.content['@type']] || null;
 
   /**
    * Get view by content layout property
@@ -171,7 +169,7 @@ class View extends Component {
    * @returns {string} Markup for component.
    */
   getViewByLayout = () =>
-    views.layoutViews[
+    config.views.layoutViews[
       this.props.content[getLayoutFieldname(this.props.content)]
     ] || null;
 
@@ -182,18 +180,15 @@ class View extends Component {
    * @param  {string} dirtyDisplayName The displayName
    * @returns {string} Clean displayName (no Connect(...)).
    */
-  cleanViewName = dirtyDisplayName =>
-    dirtyDisplayName
-      .replace('Connect(', '')
-      .replace(')', '')
-      .toLowerCase();
+  cleanViewName = (dirtyDisplayName) =>
+    dirtyDisplayName.replace('Connect(', '').replace(')', '').toLowerCase();
 
   sortHtmlCollectionByPosition = (collection, patterns) => {
     const first = []; //  ~follow the pattern
     const seccond = []; //   follow the pattern
     if (collection && !collection.classList.contains('__sorted')) {
-      Array.prototype.forEach.call(collection.children, child => {
-        patterns.forEach(pattern => {
+      Array.prototype.forEach.call(collection.children, (child) => {
+        patterns.forEach((pattern) => {
           if (
             pattern.requirement === 'has' &&
             child.classList.contains(pattern.class)
@@ -220,10 +215,10 @@ class View extends Component {
         }
       }
       collection.innerHTML = '';
-      first.forEach(item => {
+      first.forEach((item) => {
         collection.appendChild(item);
       });
-      seccond.forEach(data => {
+      seccond.forEach((data) => {
         collection.appendChild(data.item);
       });
       collection.classList.add('__sorted');
@@ -233,12 +228,12 @@ class View extends Component {
   };
 
   printDocument = () => {
-    const mosaicView = document.querySelector(
-      '#mosaic-view .mosaic_view .react-grid-layout',
-    );
-    this.sortHtmlCollectionByPosition(mosaicView, [
-      { class: 'react-grid-item', requirement: 'has' },
-    ]);
+    // const mosaicView = document.querySelector(
+    //   '#mosaic-view .mosaic_view .react-grid-layout',
+    // );
+    // this.sortHtmlCollectionByPosition(mosaicView, [
+    //   { class: 'react-grid-item', requirement: 'has' },
+    // ]);
     document.getElementById('main').classList.add('print');
     setTimeout(() => {
       window.print();
@@ -258,12 +253,14 @@ class View extends Component {
         // For some reason, while development and if CORS is in place and the
         // requested resource is 404, it returns undefined as status, then the
         // next statement will fail
-        FoundView = views.errorViews['404'];
-      } else if (views.errorViews.hasOwnProperty(this.props.error.status)) {
-        FoundView = views.errorViews[this.props.error.status.toString()];
+        FoundView = config.views.errorViews['404'];
+      } else if (
+        config.views.errorViews.hasOwnProperty(this.props.error.status)
+      ) {
+        FoundView = config.views.errorViews[this.props.error.status.toString()];
       }
       if (!FoundView) {
-        FoundView = views.errorViews['404']; // default to 404
+        FoundView = config.views.errorViews['404']; // default to 404
       }
       return (
         <div id="view">
@@ -299,7 +296,11 @@ class View extends Component {
           }
         />
 
-        {this.props.loading && <Spinner />}
+        {this.props.loading && (
+          <Dimmer active inverted>
+            <Loader size="massive" />
+          </Dimmer>
+        )}
 
         <RenderedView
           content={this.props.content}

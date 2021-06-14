@@ -1,18 +1,16 @@
-const path = require('path');
+/**
+ * Replace with custom razzle config when needed.
+ * @module razzle.config
+ */
 
-// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-// const autoprefixer = require('autoprefixer');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
-// const projectRootPath = path.resolve('.');
-// const voltoConfig = require(`${voltoPath}/razzle.config`);
-// const voltoPath = base.resolveVoltoPath('.');
-const base = require('./src/develop/volto-base/src').razzle;
+const jsConfig = require('./jsconfig').compilerOptions;
 
-const config = base.BaseConfig(path.resolve('.'));
-const razzleModify = config.modify;
+const pathsConfig = jsConfig.paths;
+let voltoPath = './node_modules/@plone/volto';
+Object.keys(pathsConfig).forEach((pkg) => {
+  if (pkg === '@plone/volto') {
+    voltoPath = `./${jsConfig.baseUrl}/${pathsConfig[pkg][0]}`;
+  }
+});
 
-module.exports = {
-  plugins: base.defaultPlugins,
-  modify: razzleModify,
-};
+module.exports = require(`${voltoPath}/razzle.config`);

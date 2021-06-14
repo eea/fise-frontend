@@ -6,15 +6,14 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers';
-import { map } from 'lodash';
-import { settings, blocks } from '~/config';
+import config from '@plone/volto/registry';
 import { getBasePath } from '~/helpers';
 
 const NewsItem = ({ item }) => {
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
 
-  const prettyDate = time => {
+  const prettyDate = (time) => {
     let date = new Date(time);
     const dtf = new Intl.DateTimeFormat('en-GB', {
       day: 'numeric',
@@ -27,7 +26,7 @@ const NewsItem = ({ item }) => {
     return `${da} ${mo} ${ye}`;
   };
 
-  const prettyDateTime = time => {
+  const prettyDateTime = (time) => {
     const dtf = Intl.DateTimeFormat('en-GB', {
       // weekday: 'short',
       day: 'numeric',
@@ -58,7 +57,7 @@ const NewsItem = ({ item }) => {
     return `${da} ${mo} ${ye} ${hh}:${mm} ${tz}`;
   };
 
-  const itemPath = urlString => {
+  const itemPath = (urlString) => {
     const url = new URL(urlString);
     return url.pathname.replace('/fise', '');
   };
@@ -115,10 +114,10 @@ const NewsItem = ({ item }) => {
           )}
           {hasBlocksData(item) ? (
             <div>
-              {map(item[blocksLayoutFieldname].items, block => {
+              {item?.[blocksLayoutFieldname]?.items?.map((block) => {
                 const Block =
-                  blocks.blocksConfig[
-                    (item[blocksFieldname]?.[block]?.['@type'])
+                  config.blocks.blocksConfig[
+                    item[blocksFieldname]?.[block]?.['@type']
                   ]?.['view'] || null;
                 return Block !== null &&
                   item[blocksFieldname][block]['@type'] !== 'title' ? (
@@ -150,15 +149,15 @@ const NewsItem = ({ item }) => {
               {item.remoteUrl && (
                 <span>
                   The link address is:
-                  <a href={item.remoteUrl}>{content.remoteUrl}</a>
+                  <a href={item.remoteUrl}>{item.remoteUrl}</a>
                 </span>
               )}
               {item.text && (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: content.text.data.replace(
+                    __html: item.text.data.replace(
                       /a href="([^"]*\.[^"]*)"/g,
-                      `a href="${settings.apiPath}$1/download/file"`,
+                      `a href="${config.settings.apiPath}$1/download/file"`,
                     ),
                   }}
                 />

@@ -1,1 +1,1 @@
-tiberiuichim/fise-frontend:4.2-1.41
+eeacms/forests-frontend:2.1.11
