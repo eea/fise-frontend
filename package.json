@@ -42,7 +42,7 @@
     "@eeacms/volto-embed": "2.0.1",
     "@eeacms/volto-widgets-view": "2.1.2",
     "@eeacms/volto-tableau": "1.2.3",
-    "@eeacms/volto-plotlycharts": "2.0.1",
+    "@eeacms/volto-plotlycharts": "github:eea/volto-plotlycharts#develop",
     "@plone/volto": "13.1.2",
     "raven-js": "3.27.2",
     "react-highlight-words": "^0.16.0",
