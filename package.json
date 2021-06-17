@@ -1,8 +1,8 @@
 {
-  "name": "ims-frontend",
-  "description": "IMS: Volto Frontend",
+  "name": "forest-frontend",
+  "description": "Forest frontend",
   "license": "MIT",
-  "version": "0.4.1",
+  "version": "2.3.0",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -28,30 +28,31 @@
   "dependencies": {
     "@blueprintjs/core": "^3.30.0",
     "@blueprintjs/icons": "^3.19.0",
-    "@eeacms/volto-block-style": "^3.3.0",
+    "@eeacms/volto-block-style": "^3.3.1",
     "@eeacms/volto-columns-block": "4.4.3",
-    "@eeacms/volto-matomo": "2.0.1",
+    "@eeacms/volto-matomo": "2.0.2",
     "@eeacms/volto-group-block": "^4.2.3",
     "@eeacms/volto-metadata-block": "3.0.1",
-    "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf.git",
-    "@eeacms/volto-addons-forest": "github:eea/volto-addons-forest#develop",
-    "@eeacms/volto-datablocks": "2.0.3",
+    "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf#1.0.0",
     "@eeacms/volto-object-widget": "2.2.3",
-    "@eeacms/volto-grid-block": "1.1.1",
+    "@eeacms/volto-grid-block": "1.1.2",
     "@eeacms/volto-widget-toggle": "2.2.2",
-    "@eeacms/volto-embed": "2.0.1",
     "@eeacms/volto-widgets-view": "2.1.2",
     "@eeacms/volto-tableau": "1.2.3",
+    "@eeacms/volto-embed": "2.0.1",
     "@eeacms/volto-plotlycharts": "github:eea/volto-plotlycharts#develop",
+    "@eeacms/volto-datablocks": "github:eea/volto-datablocks#develop",
+    "@eeacms/volto-addons-forest": "github:eea/volto-addons-forest#develop",
     "@plone/volto": "13.1.2",
+    "release-it": "14.7.0",
     "raven-js": "3.27.2",
     "react-highlight-words": "^0.16.0",
     "react-image-gallery": "1.0.8",
     "react-lazy-load-image-component": "^1.5.0",
     "react-stickynode": "^2.1.1",
     "react-toastify": "^5.3.2",
-    "webpack-bundle-analyzer": "^3.6.0",
-    "volto-slate": "2.6.2"
+    "volto-slate": "2.6.2",
+    "webpack-bundle-analyzer": "^3.6.0"
   },
   "devDependencies": {
     "mrs-developer": "^1.4.0"
