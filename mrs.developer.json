@@ -1,31 +1,43 @@
 {
-  "volto-plotlycharts": {
-    "url": "https://github.com/eea/volto-plotlycharts.git",
-    "path": "src"
-  },
-  "volto-grid-block": {
-    "url": "https://github.com/eea/volto-grid-block.git",
-    "branch": "master",
+  "volto-addons-forest": {
+    "branch": "develop",
+    "develop": true,
+    "package": "@eeacms/volto-addons-forest",
     "path": "src",
-    "package": "@eeacms/volto-grid-block"
+    "url": "https://github.com/eea/volto-addons-forest.git"
   },
   "volto-datablocks": {
-    "url": "https://github.com/eea/volto-datablocks.git",
-    "path": "src"
+    "branch": "develop",
+    "develop": true,
+    "package": "@eeacms/volto-datablocks",
+    "path": "src",
+    "url": "https://github.com/eea/volto-datablocks.git"
   },
-  "volto-embed": {
-    "url": "https://github.com/eea/volto-embed.git",
-    "path": "src"
+  "volto-grid-block": {
+    "branch": "master",
+    "develop": false,
+    "package": "@eeacms/volto-grid-block",
+    "path": "src",
+    "url": "https://github.com/eea/volto-grid-block.git"
   },
   "volto-matomo": {
-    "url": "https://github.com/eea/volto-matomo.git",
+    "develop": false,
+    "package": "@eeacms/volto-matomo",
     "path": "src",
-    "package": "@eeacms/volto-matomo"
+    "url": "https://github.com/eea/volto-matomo.git"
   },
-  "volto-addons-forest": {
-    "url": "https://github.com/eea/volto-addons-forest.git",
+  "volto-plotlycharts": {
+    "branch": "develop",
+    "develop": true,
+    "package": "@eeacms/volto-plotlycharts",
     "path": "src",
-    "package": "@eeacms/volto-addons-forest",
-    "branch": "develop"
+    "url": "https://github.com/eea/volto-plotlycharts.git"
+  },
+  "volto-tableau": {
+    "branch": "develop",
+    "develop": true,
+    "package": "@eeacms/volto-tableau",
+    "path": "src",
+    "url": "https://github.com/eea/volto-tableau.git"
   }
 }
