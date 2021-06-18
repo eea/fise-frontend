@@ -20129,10 +20129,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.7.0.tgz#8e5fb3f67021d8d94c3ddc4caab0bf5f72b925b5"
-  integrity sha512-YTOUA3KzL1wDUTsibHGTyTRAVjF3N6ABQd6ykP8wEnLatRdKvs6CbOCU+bQduirr715LFBoarrIbihwZjp7s7A==
+volto-slate@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.7.1.tgz#d82766cd0d33cc3954227741bd4979d4e0a26da7"
+  integrity sha512-Pwx2dpRbVT6keyTb3Lf0LEclR1MGSpc3CxfZ6QbAW15tUl3IJrUKNp+qR1ZQae5eeJzQcIKg0ZuoJxYU5+2xZg==
   dependencies:
     "@eeacms/volto-object-widget" "^2.0.0"
     classnames "2.2.6"
