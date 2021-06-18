@@ -1397,13 +1397,6 @@
     react-sizeme "3.0.1"
     redraft "^0.10.2"
 
-"@eeacms/volto-block-style@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-3.3.1.tgz#4053b34e859cde0bfa3b3447b285df635bf32bf3"
-  integrity sha512-2pNDpXWBSyu8OJnAwdIEm4SGYvmI70pBjRSUfpKAEcWYpTrWzGjkHoEAE2qoavf1s0nvZ9lLeGCKTevohZfq9w==
-  dependencies:
-    react-color "~2.18.1"
-
 "@eeacms/volto-columns-block@4.4.3":
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.3.tgz#426190aa50026f31fa4c74e3b97ba5e7bcdb0a3d"
@@ -1411,25 +1404,10 @@
   dependencies:
     react-color "~2.18.1"
 
-"@eeacms/volto-grid-block@1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-grid-block/-/volto-grid-block-1.1.2.tgz#4507be1e832b2843f5b44fa5ec7504140011b35c"
-  integrity sha512-DcMF/cLAMQ+40vequStTTv2KtpBrVaVyutl77eMIic8MPyKiA7cT4z85JrkXtoa8RL5/uYqXnTut8uhQsxDh2g==
-  dependencies:
-    css-to-react-native "3.0.0"
-    react-color "^2.18.1"
-
 "@eeacms/volto-group-block@^4.2.3":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-group-block/-/volto-group-block-4.2.3.tgz#bc8d47559d5c6f74c00dd1436bddc666b23ff62d"
   integrity sha512-IEVFXdfI2pTjHgOJqjTKrZFZiYfBWYKU4hfxokCuBWDF8GkK/umKtlnsrDP2bZoIOUyed0kGqQFhGijQ+Ycz5g==
-
-"@eeacms/volto-matomo@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-matomo/-/volto-matomo-2.0.2.tgz#2dcf14fbde90439694286514f0a0419ae13c7ce2"
-  integrity sha512-LEzpiUjRHw/SWvZz8M8FJZc1ENDzOrfGho0GJO1KgJmkeheiLVC18epEZU254aGJEH7IMcY53ZJF8WYAPYv8Mw==
-  dependencies:
-    "@datapunt/matomo-tracker-react" "0.3.1"
 
 "@eeacms/volto-metadata-block@3.0.1":
   version "3.0.1"
@@ -1438,7 +1416,7 @@
   dependencies:
     "@eeacms/volto-widgets-view" "^2.0.0"
 
-"@eeacms/volto-middleware-rdf@eea/volto-middleware-rdf#1.0.0":
+"@eeacms/volto-middleware-rdf@eea/volto-middleware-rdf.git":
   version "1.0.0"
   resolved "https://codeload.github.com/eea/volto-middleware-rdf/tar.gz/cfd934e51f8dc657564a75c2df7e4f663d384d3f"
 
@@ -1446,6 +1424,21 @@
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-object-widget/-/volto-object-widget-2.2.3.tgz#38f3bff8d71486d97fa99f0ca5912ad4141a2033"
   integrity sha512-u4xLyASXvSrsG2b0QTRitOjuIfNoXjMRuaAo0oNyJLETuLj73qyLR3TsSDG//2VmBIklB/ca/7Xl7ncHaaJF1A==
+
+"@eeacms/volto-plotlycharts@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-2.0.1.tgz#44c224a87e3a0550702cd09826e6cdc497bbc0ad"
+  integrity sha512-aa2MW15HPGJIzgXrgFIGptACzGdPE92xcvqDsrOlwVpioHKgeJfMG0vSEfydIgm1G5D8ODPYiMym57LEl4nPSw==
+  dependencies:
+    "@eeacms/volto-datablocks" "^2.0.2"
+    plotly.js "^1.51.2"
+    react-chart-editor "^0.41.0"
+    react-component-queries "2.3.0"
+    react-inspector "^5.0.1"
+    react-plotly.js "^2.3.0"
+    react-resize-detector "^4.2.1"
+    react-sizeme "3.0.1"
+    react-visibility-sensor "^5.1.1"
 
 "@eeacms/volto-resize-helper@^0.1.1":
   version "0.1.1"
@@ -2154,10 +2147,10 @@
   dependencies:
     "@octokit/openapi-types" "^7.3.2"
 
-"@plone/volto@13.1.2":
-  version "13.1.2"
-  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-13.1.2.tgz#14c98b2f6060e00f731ed71283a7b5ead593c61f"
-  integrity sha512-2uCxKEyq+4rqbgVFiaAVWUDzpESB8Px4QdFI0WgmDRdgi6TC2SdPfj1pMk3YywEqKReOzpDTY6mcewDOHXFJYQ==
+"@plone/volto@13.2.1":
+  version "13.2.1"
+  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-13.2.1.tgz#be7d496ce60cd7684240affad89c79cbcf3e9470"
+  integrity sha512-8h6dqJ1SlSqYrbbVjpbg9w5cyrBb2CU5o+/l0UohKcqUfmvZUsbzgmBXHSgOM2lzlsKj0QPeSBwdBpl2Zwming==
   dependencies:
     "@babel/plugin-proposal-export-default-from" "7.10.4"
     "@babel/plugin-proposal-export-namespace-from" "7.10.4"
@@ -2618,40 +2611,40 @@
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
 "@turf/area@^6.0.1":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@turf/area/-/area-6.3.0.tgz#cdd02f8ca51da2889dfc90a3c9e8fef5d1e04dca"
-  integrity sha512-Y1cYyAQ2fk94npdgOeMF4msc2uabHY1m7A7ntixf1I8rkyDd6/iHh1IMy1QsM+VZXAEwDwsXhu+ZFYd3Jkeg4A==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@turf/area/-/area-6.4.0.tgz#de2edbedf9b66f95debc8700b66ae2d094d18083"
+  integrity sha512-zJxRZX8UUCHlKuk0oRfYUnEMKw6+TiNDJHJ3R4q7/AC+yz/Wh3m+CkEoTryiXJ8+VoMiPFXrseleUHidfOOZzQ==
   dependencies:
-    "@turf/helpers" "^6.3.0"
-    "@turf/meta" "^6.3.0"
+    "@turf/helpers" "^6.4.0"
+    "@turf/meta" "^6.4.0"
 
 "@turf/bbox@^6.0.1":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-6.3.0.tgz#0e1a9b59f32d6a2a40c806f54cbaa73575bead25"
-  integrity sha512-N4ue5Xopu1qieSHP2MA/CJGWHPKaTrVXQJjzHRNcY1vtsO126xbSaJhWUrFc5x5vVkXp0dcucGryO0r5m4o/KA==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@turf/bbox/-/bbox-6.4.0.tgz#aeca4ce9e5146cddbc133d8bbb9884b058d8c653"
+  integrity sha512-eASq6Op3sGAA293Qo3gTwuQAvdoQCKah4rgA5FZkQ2xvkYquQnkUhV2U18bFgw58aSP1g2Y+rpmSEPHDFX6/6g==
   dependencies:
-    "@turf/helpers" "^6.3.0"
-    "@turf/meta" "^6.3.0"
+    "@turf/helpers" "^6.4.0"
+    "@turf/meta" "^6.4.0"
 
 "@turf/centroid@^6.0.2":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@turf/centroid/-/centroid-6.3.0.tgz#e86611e1e171fb0a38ade30453351a00e04956a3"
-  integrity sha512-7KTyqhUEqXDoyR/nf/jAXiW8ZVszEnrp5XZkgYyrf2GWdSovSO0iCN1J3bE2jkJv7IWyeDmGYL61GGzuTSZS2Q==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@turf/centroid/-/centroid-6.4.0.tgz#4624a07c0b7eca9f0c2b4eb8e45bc6f88306626a"
+  integrity sha512-p78MVeJ3InVZzkBP4rpoWTUspsRqsW6a/fGuigfjizHz+YqTRXyG7HDkqoR8IwLwpQC83Nlw5kyacgMlgEbN+Q==
   dependencies:
-    "@turf/helpers" "^6.3.0"
-    "@turf/meta" "^6.3.0"
+    "@turf/helpers" "^6.4.0"
+    "@turf/meta" "^6.4.0"
 
-"@turf/helpers@^6.3.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-6.3.0.tgz#87f90f806c3f8ad6385ef8d2041d3662bf3c9fb1"
-  integrity sha512-kr6KuD4Z0GZ30tblTEvi90rvvVNlKieXuMC8CTzE/rVQb0/f/Cb29zCXxTD7giQTEQY/P2nRW23wEqqyNHulCg==
+"@turf/helpers@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-6.4.0.tgz#e263d960ab1caed3bfe86a7f2f4b2096dbbf0635"
+  integrity sha512-7vVpWZwHP0Qn8DDSlM++nhs3/6zfPt+GODjvLVZ+sWIG4S3vOtUUOfO5eIjRzxsUHHqhgiIL0QA17u79uLM+mQ==
 
-"@turf/meta@^6.3.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@turf/meta/-/meta-6.3.0.tgz#f3e280ab29641f21e4f99310ce77f9c8394ae394"
-  integrity sha512-qBJjaAJS9H3ap0HlGXyF/Bzfl0qkA9suafX/jnDsZvWMfVLt+s+o6twKrXOGk5t7nnNON2NFRC8+czxpu104EQ==
+"@turf/meta@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@turf/meta/-/meta-6.4.0.tgz#6f6ff110199063c8eee3ee036ede2c1e52d12a04"
+  integrity sha512-fMra6vMskwz1knn0/tb22ppOeE8CCmpvOvTIxLdV1WYWAoC4bJ4WdXKvZRsJKpHOX5iFehx4DT8aaGdROA4Y3Q==
   dependencies:
-    "@turf/helpers" "^6.3.0"
+    "@turf/helpers" "^6.4.0"
 
 "@types/aria-query@^4.2.0":
   version "4.2.1"
@@ -18111,40 +18104,6 @@ release-it@14.2.1:
     yaml "1.10.0"
     yargs-parser "20.2.3"
 
-release-it@14.7.0:
-  version "14.7.0"
-  resolved "https://registry.yarnpkg.com/release-it/-/release-it-14.7.0.tgz#57c63bee1ea668e5186f7fd018d88fbd01120ada"
-  integrity sha512-g8z6BR7qsO1r0HtS4rquRU5PmwHrIZ5jYTuaaa1ZSLrh91Nm23PBpHR/0jsA549Qzujj4W/mkeskoAAIvHugWQ==
-  dependencies:
-    "@iarna/toml" "2.2.5"
-    "@octokit/rest" "18.5.3"
-    async-retry "1.3.1"
-    chalk "4.1.1"
-    cosmiconfig "7.0.0"
-    debug "4.3.1"
-    deprecated-obj "2.0.0"
-    execa "5.0.0"
-    find-up "5.0.0"
-    form-data "4.0.0"
-    git-url-parse "11.4.4"
-    globby "11.0.3"
-    got "11.8.2"
-    import-cwd "3.0.0"
-    inquirer "8.1.0"
-    is-ci "3.0.0"
-    lodash "4.17.21"
-    mime-types "2.1.30"
-    ora "5.4.0"
-    os-name "4.0.0"
-    parse-json "5.2.0"
-    semver "7.3.5"
-    shelljs "0.8.4"
-    update-notifier "5.1.0"
-    url-join "4.0.1"
-    uuid "8.3.2"
-    yaml "1.10.2"
-    yargs-parser "20.2.7"
-
 release-zalgo@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/release-zalgo/-/release-zalgo-1.0.0.tgz#09700b7e5074329739330e535c5a90fb67851730"
@@ -21334,10 +21293,10 @@ vm-browserify@^1.0.0, vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.6.2.tgz#61da0b0d30b5d4f0461edb78cfab32326fcb56f9"
-  integrity sha512-zdiSIOQfIz3F3b29s9ZbvHIheto0rvtOpOqJoQFZnASssIpdMHcgpGrbknR1+g/hdSN817UuXcB0AusHenYwCQ==
+volto-slate@2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.7.0.tgz#8e5fb3f67021d8d94c3ddc4caab0bf5f72b925b5"
+  integrity sha512-YTOUA3KzL1wDUTsibHGTyTRAVjF3N6ABQd6ykP8wEnLatRdKvs6CbOCU+bQduirr715LFBoarrIbihwZjp7s7A==
   dependencies:
     "@eeacms/volto-object-widget" "^2.0.0"
     classnames "2.2.6"
