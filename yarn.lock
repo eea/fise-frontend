@@ -1291,7 +1291,7 @@
   version "1.0.0"
   resolved "https://codeload.github.com/eea/volto-middleware-rdf/tar.gz/cfd934e51f8dc657564a75c2df7e4f663d384d3f"
 
-"@eeacms/volto-object-widget@2.2.3", "@eeacms/volto-object-widget@^2.0.0":
+"@eeacms/volto-object-widget@2.2.3", "@eeacms/volto-object-widget@>=2.2.3":
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-object-widget/-/volto-object-widget-2.2.3.tgz#38f3bff8d71486d97fa99f0ca5912ad4141a2033"
   integrity sha512-u4xLyASXvSrsG2b0QTRitOjuIfNoXjMRuaAo0oNyJLETuLj73qyLR3TsSDG//2VmBIklB/ca/7Xl7ncHaaJF1A==
@@ -20129,12 +20129,12 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.7.1.tgz#d82766cd0d33cc3954227741bd4979d4e0a26da7"
-  integrity sha512-Pwx2dpRbVT6keyTb3Lf0LEclR1MGSpc3CxfZ6QbAW15tUl3IJrUKNp+qR1ZQae5eeJzQcIKg0ZuoJxYU5+2xZg==
+volto-slate@2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.7.2.tgz#ed464af9369389f6c798cf5165b75711dd288d24"
+  integrity sha512-TaOF23KELXUQV93gcakhqS61pn4/YaUFY5NLctG6Qp0gHRRwutiXIT/7/cmZRQ/SlrSItwWjyqWO4bYYMcq9gg==
   dependencies:
-    "@eeacms/volto-object-widget" "^2.0.0"
+    "@eeacms/volto-object-widget" ">=2.2.3"
     classnames "2.2.6"
     image-extensions "1.1.0"
     is-url "1.2.4"
