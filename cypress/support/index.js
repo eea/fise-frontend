@@ -38,10 +38,10 @@ export const setupBeforeEach = () => {
     path: 'cypress',
   });
   cy.visit('/cypress/my-page');
-  cy.waitForResourceToLoad('@navigation');
+  //cy.waitForResourceToLoad('@navigation');
   cy.waitForResourceToLoad('@breadcrumbs');
   cy.waitForResourceToLoad('@actions');
-  cy.waitForResourceToLoad('@types');
+  //cy.waitForResourceToLoad('@types');
   cy.waitForResourceToLoad('my-page');
   cy.navigate('/cypress/my-page/edit');
   cy.get(`.block.title [data-contents]`);
