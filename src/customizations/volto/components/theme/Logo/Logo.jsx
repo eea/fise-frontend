@@ -6,7 +6,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Image } from 'semantic-ui-react';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import LogoImageSm from './Logo-sm.svg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';

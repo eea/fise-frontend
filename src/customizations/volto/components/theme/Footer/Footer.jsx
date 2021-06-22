@@ -3,12 +3,11 @@
  * @module components/theme/Footer/Footer
  */
 
-import React, { useState, useEffect } from 'react';
-import { Container, List, Segment, Grid } from 'semantic-ui-react';
+import React from 'react';
+import { Container, Segment, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import footerImage from './footer.png';
-import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import ecLogo from './ec.png';
 import eeaLogo from './eea.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -22,13 +21,6 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import config from '@plone/volto/registry';
 import { setCurrentVersion } from '~/actions';
-
-const messages = defineMessages({
-  copyright: {
-    id: 'Copyright',
-    defaultMessage: 'Copyright',
-  },
-});
 
 /**
  * Component to display the footer.
@@ -119,7 +111,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
             </ul>
             <p className="release-info">
               Software version{' '}
-              <a href={version_url} target="_blank">
+              <a rel="noreferrer" target="_blank" href={version_url}>
                 {version}
               </a>
               , last updated {published_at}
@@ -138,6 +130,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
               <b>Partners</b>
               <div className="footerLogoWrapper">
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href="https://ec.europa.eu/"
                   title="European Commission"
@@ -159,6 +152,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
                   />
                 </a>
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href="https://www.eea.europa.eu/"
                   title="European Environment Agency"
@@ -185,6 +179,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
               <b>Other European Information Systems</b>
               <div className="footerLogoWrapper">
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href="https://climate-adapt.eea.europa.eu/"
                   title="Climate Adapt"
@@ -206,6 +201,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
                   />
                 </a>
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href="https://biodiversity.europa.eu/"
                   title="Biodiversity Information Sistems for Europe"
@@ -228,6 +224,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
                 </a>
 
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href="https://water.europa.eu/"
                   title="Water Information System for Europe"
@@ -250,6 +247,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
                 </a>
 
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href="https://land.copernicus.eu/"
                   title="Land Monitoring Service"
@@ -271,6 +269,7 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
                   />
                 </a>
                 <a
+                  rel="noreferrer"
                   target="_blank"
                   href="https://climate.copernicus.eu/"
                   title="Climate Change Service"

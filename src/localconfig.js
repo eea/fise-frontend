@@ -60,6 +60,7 @@ export function applyConfig(config) {
   addCustomGroup(config);
   config.settings = {
     ...config.settings,
+    navDepth: 2,
     richTextEditorInlineToolbarButtons: [
       // Underline,
       ...config.settings.richTextEditorInlineToolbarButtons,
