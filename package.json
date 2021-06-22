@@ -31,7 +31,7 @@
     "@eeacms/volto-addons-forest": "github:eea/volto-addons-forest#develop",
     "@eeacms/volto-block-style": "^3.3.0",
     "@eeacms/volto-columns-block": "4.4.3",
-    "@eeacms/volto-datablocks": "2.0.4",
+    "@eeacms/volto-datablocks": "2.0.5",
     "@eeacms/volto-embed": "2.0.1",
     "@eeacms/volto-grid-block": "1.1.1",
     "@eeacms/volto-group-block": "^4.2.3",

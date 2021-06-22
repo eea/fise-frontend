@@ -1240,7 +1240,20 @@
   dependencies:
     react-color "~2.18.1"
 
-"@eeacms/volto-datablocks@2.0.4", "@eeacms/volto-datablocks@^2.0.2":
+"@eeacms/volto-datablocks@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-2.0.5.tgz#33e9aa4a6e646bb35675cd4066901fe6004f401e"
+  integrity sha512-aSEK04yNPXj+5Kn18bhYfy6ImT/2DkzQwGXg2HQBIX6mZ3a76HPWH58jaFztAEeskDSil1DprtNDwKogodZLxQ==
+  dependencies:
+    "@eeacms/volto-embed" "^2.0.1"
+    humanize-plus "^1.8.2"
+    performant-array-to-tree "^1.7.1"
+    plotly.js "1.57.0"
+    react-plotly.js "~2.5.0"
+    sanitize-html "^2.3.3"
+    slate "0.63.0"
+
+"@eeacms/volto-datablocks@^2.0.2":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-2.0.4.tgz#8ef2a2c78947e3ed0d74fb997a3f83308528c6e8"
   integrity sha512-ZhUV7ylUwPxnYjfXQ5F9yXB1qF2ORQpfGJIa12PHvEXSxLaIFAM5fi0ztl/N09EtfqWFhw2kCgjN3X17VZyhnw==
