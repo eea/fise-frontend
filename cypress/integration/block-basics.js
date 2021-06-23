@@ -13,7 +13,7 @@ describe('Blocks Tests', () => {
     // Save
     save('/cypress/my-page');
     // then the page view should contain our changes
-    //cy.contains('My Add-on Page');
+    cy.contains('My Add-on Page');
     cy.get('.block.image');
   });
 });
