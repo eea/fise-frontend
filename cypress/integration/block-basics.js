@@ -1,5 +1,5 @@
 import { setupBeforeEach, tearDownAfterEach } from '../support';
-import { addBlock, save } from '../helpers';
+import { changePageTitle, addBlock, save } from '../helpers';
 
 describe('Blocks Tests', () => {
   beforeEach(setupBeforeEach);
@@ -7,12 +7,13 @@ describe('Blocks Tests', () => {
 
   it('Add Block: Empty', () => {
     // Change page title
+    changePageTitle('My Add-on Page');
     // Add block
     addBlock('Common blocks', 'common_blocks', 'image');
     // Save
     save('/cypress/my-page');
     // then the page view should contain our changes
-    cy.contains('My Page');
+    cy.contains('My Add-on Page');
     cy.get('.block.image');
   });
 });
