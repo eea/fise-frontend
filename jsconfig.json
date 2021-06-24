@@ -2,16 +2,16 @@
     "compilerOptions": {
         "jsx": "react",
         "paths": {
-            "volto-plotlycharts": [
+            "@eeacms/volto-plotlycharts": [
                 "develop/volto-plotlycharts/src"
             ],
             "@eeacms/volto-grid-block": [
                 "develop/volto-grid-block/src"
             ],
-            "volto-datablocks": [
+            "@eeacms/volto-datablocks": [
                 "develop/volto-datablocks/src"
             ],
-            "volto-embed": [
+            "@eeacms/volto-embed": [
                 "develop/volto-embed/src"
             ],
             "@eeacms/volto-matomo": [

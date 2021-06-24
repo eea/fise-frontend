@@ -944,11 +944,6 @@ a {
   line-height: 1;
 }
 
-.blocks-chooser {
-  top: initial !important;
-  bottom: 9px;
-}
-
 .hiddenWidget {
   display: none;
 }
@@ -2751,11 +2746,6 @@ body.mosaic-view .content-area main {
       height: 100%;
     }
   }
-}
-
-.blocks-chooser {
-  max-height: 700px;
-  overflow: auto;
 }
 
 .sticky-outer-wrapper:not(.active) {
