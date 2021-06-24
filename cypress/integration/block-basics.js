@@ -1,5 +1,5 @@
 import { setupBeforeEach, tearDownAfterEach } from '../support';
-import { changePageTitle, addBlock, save } from '../helpers';
+//import { addBlock, save } from '../helpers';
 
 describe('Blocks Tests', () => {
   beforeEach(setupBeforeEach);
@@ -7,11 +7,27 @@ describe('Blocks Tests', () => {
 
   it('Add Block: Empty', () => {
     // Change page title
-    changePageTitle('My Add-on Page');
+    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block')
+      .clear()
+      .type('My Add-on Page')
+      .get('.documentFirstHeading span[data-text]')
+      .contains('My Add-on Page');
+
+    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block').type(
+      '{enter}',
+    );
+
     // Add block
-    addBlock('Common blocks', 'common_blocks', 'image');
+    cy.get('.ui.basic.icon.button.block-add-button').first().click();
+    //cy.get('.blocks-chooser .title').contains('Common blocks').click();
+    cy.get('.content.active.common_blocks .button.image')
+      .contains('Image')
+      .click();
+
     // Save
-    save('/cypress/my-page');
+    cy.get('#toolbar-save').click();
+    cy.url().should('eq', Cypress.config().baseUrl + '/cypress/my-page');
+
     // then the page view should contain our changes
     cy.contains('My Add-on Page');
     cy.get('.block.image');
