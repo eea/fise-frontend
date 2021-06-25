@@ -1416,6 +1416,13 @@
     react-plotly.js "~2.5.0"
     sanitize-html "^2.3.3"
     slate "0.63.0"
+"@eeacms/volto-grid-block@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-grid-block/-/volto-grid-block-1.1.1.tgz#9230d8b8646478d435eb4d54c03fd94dce1be808"
+  integrity sha512-D8V3fGrOv2KO0+gwEuS58CPWg/Rb4Fho695ZBGM9mZAOQOofcSxalGf6WJVxgOV1FxwCmVEGGgwAkye5X2E63A==
+  dependencies:
+    css-to-react-native "3.0.0"
+    react-color "^2.18.1"
 
 "@eeacms/volto-group-block@^4.2.3":
   version "4.2.3"
@@ -1459,6 +1466,7 @@
   integrity sha512-bxxjzYzsOpd4JnbmHSBZpewQgXEs+1MIGdFAJ+mv+uAFYx57ordKpsEm/f32BowIvs/8uECgeKsHkIsTkfw0Gw==
 
 "@eeacms/volto-resize-helper@^0.2.2":
+"@eeacms/volto-resize-helper@>=0.2.2", "@eeacms/volto-resize-helper@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-resize-helper/-/volto-resize-helper-0.2.2.tgz#5fa899acc4116f2a31cc753bb3737b1ceb30238a"
   integrity sha512-MevcfCFta+A79esQbGq0dVwZHHp5zbkguQ3j8nORGtZEmnYOUCE+HTUoWVAGmQLDFbrfy7lttwmiwFXxC0COxw==
@@ -2077,6 +2085,11 @@
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-7.3.2.tgz#065ce49b338043ec7f741316ce06afd4d459d944"
   integrity sha512-oJhK/yhl9Gt430OrZOzAl2wJqR0No9445vmZ9Ey8GjUZUpwuu/vmEFP0TDhDXdpGDoxD6/EIFHJEcY8nHXpDTA==
 
+"@octokit/openapi-types@^7.3.4":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-7.3.4.tgz#9f075e263d1d3c1ba7a789e0085a5ed75d6daad1"
+  integrity sha512-binmLrMQWBG0CvUE/jS3/XXrZbX3oN/6gF7ocSsb/ZJ0xfox2isJN4ZhGeL91SDJVzFK7XuUYBm2mlIDedkxsg==
+
 "@octokit/plugin-paginate-rest@^2.2.0", "@octokit/plugin-paginate-rest@^2.6.2":
   version "2.13.5"
   resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-2.13.5.tgz#e459f9b5dccbe0a53f039a355d5b80c0a2b0dc57"
@@ -2159,6 +2172,13 @@
   integrity sha512-UxhWCdSzloULfUyamfOg4dJxV9B+XjgrIZscI0VCbp4eNrjmorGEw+4qdwcpTsu6DIrm9tQsFQS2pK5QkqQ04A==
   dependencies:
     "@octokit/openapi-types" "^7.3.2"
+
+"@octokit/types@^6.16.2":
+  version "6.16.6"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-6.16.6.tgz#c113a0408a799ccb93c8749806733ad5d3edd142"
+  integrity sha512-PrEGjMnEhLlNttsuLadEWqXdMYJX3icHHaRs/ChJebRT79VDh/cNkk8bURx05BEEwr7QvaLsRzjt3hNxUJZfXA==
+  dependencies:
+    "@octokit/openapi-types" "^7.3.4"
 
 "@plone/volto@13.2.2":
   version "13.2.2"
@@ -21267,10 +21287,10 @@ vm-browserify@^1.0.0, vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.7.2.tgz#ed464af9369389f6c798cf5165b75711dd288d24"
-  integrity sha512-TaOF23KELXUQV93gcakhqS61pn4/YaUFY5NLctG6Qp0gHRRwutiXIT/7/cmZRQ/SlrSItwWjyqWO4bYYMcq9gg==
+volto-slate@2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.8.0.tgz#a898677772f47c201446071092e815748b9258c4"
+  integrity sha512-dqdT849CNtNVSh4yajOKFwypeHyklI4Opl5NxYMnEw4O4guhkknRYoSMFTViNtJ0qWyyf/GNner/9/8y7K8Ueg==
   dependencies:
     "@eeacms/volto-object-widget" ">=2.2.3"
     classnames "2.2.6"
