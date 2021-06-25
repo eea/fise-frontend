@@ -60,13 +60,8 @@ export function applyConfig(config) {
   addCustomGroup(config);
   config.settings = {
     ...config.settings,
-    apiExpanders: [
-      ...config.settings.apiExpanders,
-      {
-        match: '/',
-        GET_CONTENT: ['actions', 'breadcrumbs', 'workflow', 'types'],
-      },
-    ],
+    navDepth: 2,
+    repo: 'eea/forests-frontend',
     richTextEditorInlineToolbarButtons: [
       // Underline,
       ...config.settings.richTextEditorInlineToolbarButtons,

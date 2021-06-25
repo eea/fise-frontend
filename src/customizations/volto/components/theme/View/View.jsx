@@ -9,20 +9,19 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
+import { Helmet } from '@plone/volto/helpers';
 import qs from 'query-string';
 import config from '@plone/volto/registry';
-// import { Grid } from 'semantic-ui-react';
 import { Dimmer, Loader } from 'semantic-ui-react';
 
 import { Comments, Tags, Toolbar, Icon } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
 import {
   BodyClass,
-  // getBaseUrl,
+  getBaseUrl,
   getLayoutFieldname,
 } from '@plone/volto/helpers';
 import printer from '@plone/volto/icons/printer.svg';
-import screen from '@plone/volto/icons/screen.svg';
 
 /**
  * View container class.
@@ -110,19 +109,16 @@ class View extends Component {
 
   state = {
     hasObjectButtons: null,
+    isClient: false,
   };
 
-  /**
-   * Component will mount
-   * @method componentWillMount
-   * @returns {undefined}
-   */
-  UNSAFE_componentWillMount() {
-    // this.props.listActions(getBaseUrl(this.props.pathname));
-    // this.props.getContent(
-    //   getBaseUrl(this.props.pathname),
-    //   this.props.versionId,
-    // );
+  componentDidMount() {
+    this.props.listActions(getBaseUrl(this.props.pathname));
+    this.props.getContent(
+      getBaseUrl(this.props.pathname),
+      this.props.versionId,
+    );
+    this.setState({ isClient: true });
   }
 
   /**
@@ -132,13 +128,13 @@ class View extends Component {
    * @returns {undefined}
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
-    // if (nextProps.pathname !== this.props.pathname) {
-    //   this.props.listActions(getBaseUrl(nextProps.pathname));
-    //   this.props.getContent(
-    //     getBaseUrl(nextProps.pathname),
-    //     this.props.versionId,
-    //   );
-    // }
+    if (nextProps.pathname !== this.props.pathname) {
+      this.props.listActions(getBaseUrl(nextProps.pathname));
+      this.props.getContent(
+        getBaseUrl(nextProps.pathname),
+        this.props.versionId,
+      );
+    }
 
     if (nextProps.actions.object_buttons) {
       const objectButtons = nextProps.actions.object_buttons;
@@ -181,7 +177,12 @@ class View extends Component {
    * @returns {string} Clean displayName (no Connect(...)).
    */
   cleanViewName = (dirtyDisplayName) =>
-    dirtyDisplayName.replace('Connect(', '').replace(')', '').toLowerCase();
+    dirtyDisplayName
+      .replace('Connect(', '')
+      .replace('injectIntl(', '')
+      .replace(')', '')
+      .replace('connect(', '')
+      .toLowerCase();
 
   sortHtmlCollectionByPosition = (collection, patterns) => {
     const first = []; //  ~follow the pattern
@@ -247,24 +248,24 @@ class View extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    if (this.props.error) {
+    const { views } = config;
+
+    if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
       if (this.props.error.status === undefined) {
         // For some reason, while development and if CORS is in place and the
         // requested resource is 404, it returns undefined as status, then the
         // next statement will fail
-        FoundView = config.views.errorViews['404'];
-      } else if (
-        config.views.errorViews.hasOwnProperty(this.props.error.status)
-      ) {
-        FoundView = config.views.errorViews[this.props.error.status.toString()];
+        FoundView = views.errorViews.corsError;
+      } else {
+        FoundView = views.errorViews[this.props.error.status.toString()];
       }
       if (!FoundView) {
-        FoundView = config.views.errorViews['404']; // default to 404
+        FoundView = views.errorViews['404']; // default to 404
       }
       return (
         <div id="view">
-          <FoundView />
+          <FoundView {...this.props} />
         </div>
       );
     }
@@ -274,28 +275,23 @@ class View extends Component {
     const RenderedView =
       this.getViewByType() || this.getViewByLayout() || this.getViewDefault();
 
-    //  <div>
-    //    {renderPortletManager('plone.footerportlets', false, {
-    //      ...this.props,
-    //    })}
-    //  </div>
-
     return (
       <div id="view">
+        <Helmet>
+          {this.props.content.language && (
+            <html lang={this.props.content.language.token} />
+          )}
+          <title>{this.props.content.title}</title>
+          <meta name="description" content={this.props.content.description} />
+        </Helmet>
         {/* Body class if displayName in component is set */}
-
         <BodyClass
           className={
             RenderedView.displayName
-              ? `view-${this.cleanViewName(
-                  RenderedView.displayName
-                    .replace('injectIntl(', '')
-                    .toLowerCase(),
-                )}`
+              ? `view-${this.cleanViewName(RenderedView.displayName)}`
               : null
           }
         />
-
         {this.props.loading && (
           <Dimmer active inverted>
             <Loader size="massive" />
@@ -326,10 +322,11 @@ class View extends Component {
         {this.props.content.allow_discussion && (
           <Comments pathname={this.props.pathname} />
         )}
-
-        <Portal node={__CLIENT__ && document.getElementById('toolbar')}>
-          <Toolbar pathname={this.props.pathname} inner={<span />} />
-        </Portal>
+        {this.state.isClient && (
+          <Portal node={document.getElementById('toolbar')}>
+            <Toolbar pathname={this.props.pathname} inner={<span />} />
+          </Portal>
+        )}
 
         {__CLIENT__ &&
           document.querySelector(
@@ -358,13 +355,15 @@ export default compose(
     (state, props) => ({
       actions: state.actions.actions,
       token: state.userSession.token,
-      content: state.prefetch?.[props.location.pathname] || state.content.data,
+      content: state.content.data,
       error: state.content.get.error,
+      apiError: state.apierror.error,
+      connectionRefused: state.apierror.connectionRefused,
       pathname: props.location.pathname,
       loading: state.content.get?.loading,
       versionId:
         qs.parse(props.location.search) &&
-        qs.parse(props.location.search).version_id,
+        qs.parse(props.location.search).version,
     }),
     {
       listActions,

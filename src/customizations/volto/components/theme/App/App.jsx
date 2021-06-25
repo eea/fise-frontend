@@ -3,30 +3,36 @@
  * @module components/theme/App/App
  */
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { matchPath } from 'react-router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { asyncConnect } from 'redux-connect';
+import { asyncConnect } from '@plone/volto/helpers';
 import { Segment, Container } from 'semantic-ui-react';
 import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
-import ViewletsRenderer from '@eeacms/volto-addons-forest/Viewlets/Render';
-import loadable from '@loadable/component';
+import split from 'lodash/split';
+import join from 'lodash/join';
+import trim from 'lodash/trim';
+import cx from 'classnames';
+import config from '@plone/volto/registry';
 import { PluggablesProvider } from '@plone/volto/components/manage/Pluggable';
 
 import Error from '@plone/volto/error';
 
+import ViewletsRenderer from '@eeacms/volto-addons-forest/Viewlets/Render';
+
 import {
-  Icon,
-  Messages,
   Footer,
   Header,
+  Icon,
   OutdatedBrowser,
   AppExtras,
+  SkipLinks,
+  Messages,
 } from '@plone/volto/components';
-import { BodyClass, getBaseUrl, getView } from '@plone/volto/helpers';
+import { BodyClass, getBaseUrl, getView, isCmsUi } from '@plone/volto/helpers';
 import {
   getContent,
   getNavigation,
@@ -35,18 +41,25 @@ import {
   purgeMessages,
 } from '@plone/volto/actions';
 import { getFrontpageSlides, getDefaultHeaderImage } from '~/actions';
-import config from '@plone/volto/registry';
 import { getPortlets } from '@eeacms/volto-addons-forest/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
+import * as Sentry from '@sentry/browser';
 
+/**
+ * @export
+ * @class App
+ * @extends {Component}
+ */
 class App extends Component {
+  /**
+   * Property types.
+   * @property {Object} propTypes Property types.
+   * @static
+   */
   static propTypes = {
     pathname: PropTypes.string.isRequired,
     purgeMessages: PropTypes.func.isRequired,
-    // folderHeader: PropTypes.any,
-    // getDefaultHeaderImage: PropTypes.func.isRequired,
-    // defaultHeaderImage: PropTypes.object.isRequired,
   };
 
   state = {
@@ -56,38 +69,13 @@ class App extends Component {
   };
 
   /**
-   * ComponentDidMount
-   * @method ComponentDidMount
-   * @param {string} error  The error
-   * @param {string} info The info
-   * @returns {undefined}
-   */
-  componentDidMount() {
-    // this.props.getDefaultHeaderImage();
-    if (__CLIENT__ && process.env.SENTRY_DSN) {
-      const Raven = loadable(() => import('raven-js'));
-
-      Raven.config(process.env.SENTRY_DSN).install();
-    }
-  }
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (nextProps.loadingContent.loading || nextProps.search.loading) {
-  //     console.log('dont load');
-  //     return false;
-  //   }
-  //   console.log('load:', nextProps.loadingContent);
-  //   return true;
-  // }
-  //
-  /**
    * @method componentWillReceiveProps
    * @param {Object} nextProps Next properties
    * @returns {undefined}
    */
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
       this.props.purgeMessages();
-
       if (this.state.hasError) {
         this.setState({ hasError: false });
       }
@@ -103,9 +91,10 @@ class App extends Component {
    */
   componentDidCatch(error, info) {
     this.setState({ hasError: true, error, errorInfo: info });
-    if (__CLIENT__ && process.env.SENTRY_DSN) {
-      const Raven = loadable(() => import('raven-js'));
-      Raven.captureException(error, { extra: info });
+    if (__CLIENT__) {
+      if (window?.env?.RAZZLE_SENTRY_DSN || __SENTRY__?.SENTRY_DSN) {
+        Sentry.captureException(error);
+      }
     }
   }
 
@@ -115,65 +104,99 @@ class App extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
+    const { views } = config;
     const path = getBaseUrl(this.props.pathname);
     const action = getView(this.props.pathname);
+    const isCmsUI = isCmsUi(this.props.pathname);
+    const ConnectionRefusedView = views.errorViews.ECONNREFUSED;
     const headerImage =
       this.props.content?.image?.download || this.props.defaultHeaderImage;
+
     return (
       <PluggablesProvider>
-        <Fragment>
-          <BodyClass className={`view-${action}view`} />
-          <Header
-            // folderHeader={this.props.folderHeader}
-            actualPathName={this.props.pathname}
-            pathname={path}
-            defaultHeaderImage={headerImage}
-            navigationItems={this.props.navigation}
-            frontpage_slides={this.props.frontpage_slides}
-          />
-          <Segment basic className="content-area">
-            <Container>
-              <main>
-                <OutdatedBrowser />
-                <Messages />
-                <div className="editor-toolbar-wrapper" />
+        <BodyClass className={`view-${action}view`} />
 
-                {this.state.hasError ? (
-                  <Error
-                    message={this.state.error.message}
-                    stackTrace={this.state.errorInfo.componentStack}
-                  />
-                ) : (
-                  <>
-                    {renderRoutes(this.props.route.routes)}
-                    <ViewletsRenderer {...this.props} />
-                  </>
-                )}
-              </main>
-            </Container>
-          </Segment>
-          <Footer />
-          <ToastContainer
-            position={toast.POSITION.BOTTOM_CENTER}
-            hideProgressBar
-            transition={Slide}
-            closeButton={
-              <Icon
-                className="toast-dismiss-action"
-                name={clearSVG}
-                size="18px"
-              />
-            }
+        {/* Body class depending on content type */}
+        {this.props.content && this.props.content['@type'] && (
+          <BodyClass
+            className={`contenttype-${this.props.content['@type']
+              .replace(' ', '-')
+              .toLowerCase()}`}
           />
-          <AppExtras {...this.props} />
-        </Fragment>
+        )}
+
+        {/* Body class depending on sections */}
+        <BodyClass
+          className={cx({
+            [trim(join(split(this.props.pathname, '/'), ' section-'))]:
+              this.props.pathname !== '/',
+            siteroot: this.props.pathname === '/',
+            'is-authenticated': !!this.props.token,
+            'is-anonymous': !this.props.token,
+            'cms-ui': isCmsUI,
+            'public-ui': !isCmsUI,
+          })}
+        />
+        <SkipLinks />
+        <Header
+          actualPathName={this.props.pathname}
+          pathname={path}
+          defaultHeaderImage={headerImage}
+          navigationItems={this.props.navigation}
+          frontpage_slides={this.props.frontpage_slides}
+        />
+        <Segment basic className="content-area">
+          <Container>
+            <main>
+              <OutdatedBrowser />
+              <Messages />
+              <div className="editor-toolbar-wrapper" />
+              {this.props.connectionRefused ? (
+                <ConnectionRefusedView />
+              ) : this.state.hasError ? (
+                <Error
+                  message={this.state.error.message}
+                  stackTrace={this.state.errorInfo.componentStack}
+                />
+              ) : (
+                <>
+                  {renderRoutes(this.props.route.routes, {
+                    staticContext: this.props.staticContext,
+                  })}
+                  <ViewletsRenderer {...this.props} />
+                </>
+              )}
+            </main>
+          </Container>
+        </Segment>
+        <Footer />
+        <ToastContainer
+          position={toast.POSITION.BOTTOM_CENTER}
+          hideProgressBar
+          transition={Slide}
+          autoClose={5000}
+          closeButton={
+            <Icon
+              className="toast-dismiss-action"
+              name={clearSVG}
+              size="18px"
+            />
+          }
+        />
+        <AppExtras {...this.props} />
       </PluggablesProvider>
     );
   }
 }
 
 export const __test__ = connect(
-  (state, props) => ({ pathname: props.location.pathname }),
+  (state, props) => ({
+    pathname: props.location.pathname,
+    token: state.userSession.token,
+    content: state.content.data,
+    apiError: state.apierror.error,
+    connectionRefused: state.apierror.connectionRefused,
+  }),
   { purgeMessages },
 )(App);
 
@@ -186,10 +209,6 @@ export default compose(
           location.pathname,
           config.settings.pathsWithFullobjects,
         )?.isExact;
-        // const extraParameters = {
-        //   ...(config.settings.pathsWithExtraParameters[location.pathname] ||
-        //     {}),
-        // };
         dispatch(
           getContent(
             getBaseUrl(location.pathname),
@@ -197,7 +216,6 @@ export default compose(
             null,
             null,
             withFullObjects,
-            // extraParameters, we don't have this in Volto 13
           ),
         );
       },
@@ -215,7 +233,13 @@ export default compose(
     {
       key: 'navigation',
       promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getNavigation(getBaseUrl(location.pathname))),
+        __SERVER__ &&
+        dispatch(
+          getNavigation(
+            getBaseUrl(location.pathname),
+            config.settings.navDepth,
+          ),
+        ),
     },
     {
       key: 'types',
@@ -259,16 +283,14 @@ export default compose(
   ]),
   connect(
     (state, props) => ({
-      // folderHeader: state.folder_header.items,
+      pathname: props.location.pathname,
+      token: state.userSession.token,
+      content: state.content.data,
+      apiError: state.apierror.error,
+      connectionRefused: state.apierror.connectionRefused,
       defaultHeaderImage: state.default_header_image.items?.[0],
-      // content: state.content.data,
-      content: state.prefetch?.[props.location.pathname] || state.content.data,
       frontpage_slides: state.frontpage_slides.items,
       navigation: state.navigation.items,
-      pathname: state.router.location.pathname, //props.location.pathname,
-
-      // loadingContent: state.content?.get,
-      // search: state.search,
     }),
     { purgeMessages },
   ),

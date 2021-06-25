@@ -22,12 +22,14 @@ import qs from 'query-string';
 import { withRouter } from 'react-router-dom';
 
 import { Icon } from '@plone/volto/components';
-import { login } from '@plone/volto/actions';
+import { getNavigation, login } from '@plone/volto/actions';
 import { toast } from 'react-toastify';
 import { Toast } from '@plone/volto/components';
 
 import aheadSVG from '@plone/volto/icons/ahead.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
+
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   login: {
@@ -63,6 +65,14 @@ const messages = defineMessages({
       'Both email address and password are case sensitive, check that caps lock is not enabled.',
     defaultMessage:
       'Both email address and password are case sensitive, check that caps lock is not enabled.',
+  },
+  register: {
+    id: 'Register',
+    defaultMessage: 'Register',
+  },
+  forgotPassword: {
+    id: 'box_forgot_password_option',
+    defaultMessage: 'Forgot your password?',
   },
 });
 
@@ -147,7 +157,21 @@ class Login extends Component {
     }
   }
 
+  UNSAFE_componentWillMount() {
+    if (config.settings.isMultilingual) {
+      this.props.getNavigation(`/${this.props.lang}`, config.settings.navDepth);
+    } else {
+      this.props.getNavigation('/', config.settings.navDepth);
+    }
+  }
+
   componentWillUnmount() {
+    if (config.settings.isMultilingual) {
+      this.props.getNavigation(`/${this.props.lang}`, config.settings.navDepth);
+    } else {
+      this.props.getNavigation('/', config.settings.navDepth);
+    }
+
     if (toast.isActive('loginFailed')) {
       toast.dismiss('loginFailed');
     }
@@ -180,7 +204,7 @@ class Login extends Component {
           <Form method="post" onSubmit={this.onLogin}>
             <Segment.Group raised>
               <Segment className="primary">
-                <FormattedMessage id="Log In" defaultMessage="Login Name" />
+                <FormattedMessage id="Log In" defaultMessage="Login" />
               </Segment>
               <Segment secondary>
                 <FormattedMessage
@@ -271,10 +295,9 @@ class Login extends Component {
                             values={{
                               forgotpassword: (
                                 <Link to="/password-reset">
-                                  <FormattedMessage
-                                    id="we can send you a new one"
-                                    defaultMessage="we can send you a new one"
-                                  />
+                                  {this.props.intl.formatMessage(
+                                    messages.forgotPassword,
+                                  )}
                                 </Link>
                               ),
                             }}
@@ -325,14 +348,17 @@ export default compose(
   injectIntl,
   connect(
     (state, props) => ({
+      lang: state.intl.locale,
       error: state.userSession.login.error,
       loading: state.userSession.login.loading,
       token: state.userSession.token,
       returnUrl:
         qs.parse(props.location.search).return_url ||
-        props.location.pathname.replace('/login', '') ||
+        props.location.pathname
+          .replace(/\/login$/, '')
+          .replace(/\/logout$/, '') ||
         '/',
     }),
-    { login },
+    { login, getNavigation },
   ),
 )(Login);

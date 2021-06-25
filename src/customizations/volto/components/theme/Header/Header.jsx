@@ -7,7 +7,6 @@ import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 
 import { Logo, Navigation, Breadcrumbs } from '@plone/volto/components';
 
@@ -16,6 +15,12 @@ import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
 import HeaderBackground from './header-bg.png';
+
+/**
+ * Header component class.
+ * @class Header
+ * @extends Component
+ */
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +41,6 @@ class Header extends Component {
     token: PropTypes.string,
     pathname: PropTypes.string.isRequired,
     actualPathName: PropTypes.string.isRequired,
-    // folderHeader: PropTypes.any,
     defaultHeaderImage: PropTypes.any,
     frontPageSlides: PropTypes.array,
   };
@@ -131,9 +135,6 @@ class Header extends Component {
     );
   }
 }
-
-export default compose(
-  connect((state) => ({
-    token: state.userSession.token,
-  })),
-)(Header);
+export default connect((state) => ({
+  token: state.userSession.token,
+}))(Header);

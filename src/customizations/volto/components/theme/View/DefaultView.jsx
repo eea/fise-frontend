@@ -5,15 +5,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from '@plone/volto/helpers';
 import { injectIntl } from 'react-intl'; // defineMessages,
 import { Grid } from 'semantic-ui-react';
 
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
-
 import config from '@plone/volto/registry';
-import renderPortletManager from '@eeacms/volto-addons-forest/Portlets/utils';
 
 import {
   getBlocksFieldname,
@@ -21,9 +18,8 @@ import {
   hasBlocksData,
   getBaseUrl,
 } from '@plone/volto/helpers';
-// import { samePath } from 'volto-mosaic/helpers';
-import { connect } from 'react-redux';
-// import Spinner from 'volto-mosaic/components/theme/Spinner';
+
+import renderPortletManager from '@eeacms/volto-addons-forest/Portlets/utils';
 
 // const messages = defineMessages({
 //   unknownBlock: {
@@ -39,18 +35,10 @@ import { connect } from 'react-redux';
  * @returns {string} Markup of the component.
  */
 const DefaultView = (props) => {
-  const { content } = props;
-  const { location } = props;
+  const { content, location } = props;
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
-  // const currentUrl = content?.['@id'];
-  // const shouldRenderRoutes =
-  //   typeof currentUrl !== 'undefined' && samePath(currentUrl, props.pathname)
-  //     ? true
-  //     : false;
-  //
-  // if (!shouldRenderRoutes) return <Spinner />;
   return (
     <Grid columns="equal" className="zero-margin">
       {renderPortletManager('plone.leftcolumn', 2, { ...props })}
@@ -63,7 +51,6 @@ const DefaultView = (props) => {
       >
         {hasBlocksData(content) ? (
           <div id="page-document" className="ui container">
-            <Helmet title={content.title} />
             {map(content[blocksLayoutFieldname].items, (block) => {
               const Block =
                 config.blocks.blocksConfig[
@@ -91,11 +78,6 @@ const DefaultView = (props) => {
           </div>
         ) : (
           <Container id="page-document">
-            {/* <Helmet title={content.title} />
-      <h1 className="documentFirstHeading">{content.title}</h1>
-      {content.description && (
-        <p className="documentDescription">{content.description}</p>
-      )} */}
             {content.image && (
               <Image
                 className="document-image"
@@ -159,8 +141,4 @@ DefaultView.propTypes = {
   }).isRequired,
 };
 
-// export default injectIntl(DefaultView);
-
-export default connect((state, props) => ({
-  pathname: state.router.location.pathname, //props.location.pathname,
-}))(injectIntl(DefaultView));
+export default injectIntl(DefaultView);
