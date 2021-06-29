@@ -23,13 +23,13 @@ const View = ({ content, ...props }) => {
   const [pages, setPages] = useState([]);
   const parent =
     data?.navFromParent?.value && props.properties?.parent
-      ? getBasePath(props.properties.parent['@id'])
+      ? getBasePath(props.properties?.parent?.['@id'])
       : data.parent?.value;
   const history = useHistory();
 
   useEffect(() => {
     const pagesProperties = data.pages?.value
-      ? JSON.parse(data.pages?.value)?.properties || {}
+      ? data.pages?.value?.properties || {}
       : {};
     const newPages =
       Object.keys(pagesProperties).map((page) => pagesProperties[page]) || [];
@@ -111,8 +111,7 @@ export default compose(
   connect(
     (state, props) => ({
       query: state.router.location.search,
-      content:
-        state.prefetch?.[state.router.location.pathname] || state.content.data,
+      content: state.content.data,
       pathname: state.router.location.pathname,
       discodata_query: state.discodata_query,
       discodata_resources: state.discodata_resources,
