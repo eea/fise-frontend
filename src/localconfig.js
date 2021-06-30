@@ -60,6 +60,7 @@ export function applyConfig(config) {
   addCustomGroup(config);
   config.settings = {
     ...config.settings,
+    navDepth: 4,
     repo: 'eea/forests-frontend',
     richTextEditorInlineToolbarButtons: [
       // Underline,
