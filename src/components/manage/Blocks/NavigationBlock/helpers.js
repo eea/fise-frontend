@@ -83,7 +83,10 @@ export function removeValue(arr) {
 }
 
 export function getBasePath(url) {
-  return getBaseUrl(url)
-    .replace(config.settings.apiPath, '')
-    .replace(config.settings.internalApiPath, '');
+  return (
+    url &&
+    getBaseUrl(url)
+      .replace(config.settings.apiPath, '')
+      .replace(config.settings.internalApiPath, '')
+  );
 }
