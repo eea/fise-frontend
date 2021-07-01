@@ -7,7 +7,8 @@
       "@eeacms/volto-datablocks": ["develop/volto-datablocks/src"],
       "@eeacms/volto-embed": ["develop/volto-embed/src"],
       "@eeacms/volto-matomo": ["develop/volto-matomo/src"],
-      "@eeacms/volto-addons-forest": ["develop/volto-addons-forest/src"]
+      "@eeacms/volto-addons-forest": ["develop/volto-addons-forest/src"],
+      "@eeacms/volto-widget-toggle": ["develop/volto-widget-toggle/src"]
     },
     "baseUrl": "src"
   }
