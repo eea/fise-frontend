@@ -22,12 +22,10 @@ pipeline {
                   sh '''docker pull eeacms/volto-project-ci; docker run -i --name="$BUILD_TAG-cypress" --link $BUILD_TAG-plone:plone -e DEBUG="cypress:*" -e RAZZLE_FRONTEND_VERSION=$registry -e RAZZLE_FRONTEND_PUBLISHED_AT=\$(date +%F'T'%T'Z') -e GIT_NAME=$GIT_NAME -e TIMEOUT=480000 -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" eeacms/volto-project-ci cypress'''
                 } finally {
                   try {
-                    sh '''rm -rf cypress-reports cypress-results cypress-screenshots'''
-                    sh '''mkdir -p cypress-reports cypress-results cypress-screenshots'''
+                    sh '''rm -rf cypress-reports cypress-results'''
+                    sh '''mkdir -p cypress-reports cypress-results'''
                     sh '''docker cp $BUILD_TAG-cypress:/opt/frontend/my-volto-project/cypress/videos cypress-reports/'''
                     sh '''docker cp $BUILD_TAG-cypress:/opt/frontend/my-volto-project/cypress/reports cypress-results/'''
-                    sh '''docker cp $BUILD_TAG-cypress:/opt/frontend/my-volto-project/cypress/screenshots cypress-screenshots/'''
-                    archiveArtifacts artifacts: 'cypress-screenshots/**/*', fingerprint: true
                     archiveArtifacts artifacts: 'cypress-reports/videos/*.mp4', fingerprint: true
                   }
                   finally {
