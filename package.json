@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Forest frontend",
   "license": "MIT",
-  "version": "2.3.10",
+  "version": "2.4.2",
   "private": true,
   "workspaces": [
     "src/develop/*"
