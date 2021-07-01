@@ -18,8 +18,8 @@ pipeline {
             node(label: 'docker') {
               script {
                 try {
-                  sh '''docker pull eeacms/plonesaas; docker run -d --name="$BUILD_TAG-plone" -e SITE="fise" -e PROFILES="profile-plone.restapi:blocks" eeacms/plonesaas fg'''
-                  sh '''docker pull eeacms/volto-project-ci; docker run -i --name="$BUILD_TAG-cypress" --link $BUILD_TAG-plone:plone -e DEBUG="cypress:*" -e RAZZLE_FRONTEND_VERSION=$registry -e RAZZLE_FRONTEND_PUBLISHED_AT=\$(date +%F'T'%T'Z') -e RAZZLE_API_PATH=http://plone:8080/fise -e GIT_NAME=$GIT_NAME -e TIMEOUT=480000 -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" eeacms/volto-project-ci cypress'''
+                  sh '''docker pull plone; docker run -d --name="$BUILD_TAG-plone" -e SITE="Plone" -e PROFILES="profile-plone.restapi:blocks" plone fg'''
+                  sh '''docker pull eeacms/volto-project-ci; docker run -i --name="$BUILD_TAG-cypress" --link $BUILD_TAG-plone:plone -e DEBUG="cypress:*" -e RAZZLE_FRONTEND_VERSION=$registry -e RAZZLE_FRONTEND_PUBLISHED_AT=\$(date +%F'T'%T'Z') -e GIT_NAME=$GIT_NAME -e TIMEOUT=480000 -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" eeacms/volto-project-ci cypress'''
                 } finally {
                   try {
                     sh '''rm -rf cypress-reports cypress-results cypress-screenshots'''
