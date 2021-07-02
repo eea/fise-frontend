@@ -7,6 +7,7 @@ pipeline {
     dockerImage = ''
     tagName = ''
     GIT_NAME = "forests-frontend"
+    SONARQUBE_TAG = "forest.eea.europa.eu"
   }
 
   agent any
@@ -94,6 +95,21 @@ pipeline {
       }
     }
 
+    stage('Update SonarQube Tags') {
+      when {
+        buildingTag()
+      }
+      steps{
+        node(label: 'docker') {  
+          withSonarQubeEnv('Sonarqube') {
+            withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GIT_TOKEN')]) { 
+              sh '''docker pull eeacms/gitflow'''
+              sh '''docker run -i --rm --name="${BUILD_TAG}-sonar" -e GIT_NAME=${GIT_NAME} -e GIT_TOKEN="${GIT_TOKEN}" -e SONARQUBE_TAG=${SONARQUBE_TAG} -e SONARQUBE_TOKEN=${SONAR_AUTH_TOKEN} -e SONAR_HOST_URL=${SONAR_HOST_URL}  eeacms/gitflow /update_sonarqube_tags.sh'''
+            }
+          }
+        } 
+      }
+    }   
   }
 
   post {
