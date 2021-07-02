@@ -1188,9 +1188,10 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.3.1"
 
-"@eeacms/volto-addons-forest@github:eea/volto-addons-forest#develop":
+"@eeacms/volto-addons-forest@0.1.1":
   version "0.1.1"
-  resolved "https://codeload.github.com/eea/volto-addons-forest/tar.gz/e82fde78768e7cef35b77257b2ddd0fe8e0ce904"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.1.tgz#eedbeac9be511564eb2f55c009d22dfd2203e124"
+  integrity sha512-qSX/aj11wsTlZww+BwGoAGU04l0BuaaTKbP5GmjugiUqEqIxvJydsGpl7C8qIHOUjB+gGw1DSUo6pTHlGXO16g==
   dependencies:
     dompurify "^2.0.12"
     draft-js-alignment-plugin "^2.0.6"
