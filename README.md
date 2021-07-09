@@ -1,6 +1,6 @@
 # Forest: Volto Frontend
 
-[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=forests%2Fforests-frontend%2Fmaster&subject=pipeline)](https://ci.eionet.europa.eu/view/Github/job/forests/job/forests-frontend/job/master/display/redirect)
+[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2Fmaster&subject=pipeline)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/master/display/redirect)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/eea/forests-frontend?sort=semver)](https://github.com/eea/forests-frontend/releases)
 
 Below is a list of commands you will probably find useful.

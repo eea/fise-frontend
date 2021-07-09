@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Forest frontend",
   "license": "MIT",
-  "version": "2.3.10",
+  "version": "2.4.2",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -28,7 +28,7 @@
   "dependencies": {
     "@blueprintjs/core": "^3.30.0",
     "@blueprintjs/icons": "^3.19.0",
-    "@eeacms/volto-addons-forest": "github:eea/volto-addons-forest#develop",
+    "@eeacms/volto-addons-forest": "0.1.1",
     "@eeacms/volto-block-style": "^3.3.0",
     "@eeacms/volto-columns-block": "4.4.3",
     "@eeacms/volto-grid-block": "1.1.1",
@@ -38,7 +38,7 @@
     "@eeacms/volto-middleware-rdf": "eea/volto-middleware-rdf.git",
     "@eeacms/volto-object-widget": "2.2.3",
     "@eeacms/volto-tableau": "1.2.3",
-    "@eeacms/volto-widget-toggle": "2.2.2",
+    "@eeacms/volto-widget-toggle": "2.2.3",
     "@eeacms/volto-widgets-view": "2.1.2",
     "@plone/volto": "13.2.2",
     "raven-js": "3.27.2",
@@ -47,7 +47,7 @@
     "react-lazy-load-image-component": "^1.5.0",
     "react-stickynode": "^2.1.1",
     "react-toastify": "^5.3.2",
-    "volto-slate": "2.8.0",
+    "volto-slate": "2.8.1",
     "webpack-bundle-analyzer": "^3.6.0"
   },
   "devDependencies": {
@@ -62,7 +62,9 @@
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js",
     "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=develop",
-    "develop": "missdev --config=jsconfig.json --output=develop"
+    "develop": "missdev --config=jsconfig.json --output=develop",
+    "cypress:run": "./node_modules/cypress/bin/cypress run",
+    "cypress:open": "./node_modules/cypress/bin/cypress open"
   },
   "jest": {
     "modulePathIgnorePatterns": [
