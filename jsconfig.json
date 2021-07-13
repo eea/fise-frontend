@@ -19,6 +19,9 @@
             ],
             "@eeacms/volto-addons-forest": [
                 "develop/volto-addons-forest/src"
+            ],
+            "@eeacms/volto-widget-toggle": [
+                "develop/volto-widget-toggle/src"
             ]
         },
         "baseUrl": "src"
