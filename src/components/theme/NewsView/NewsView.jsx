@@ -44,6 +44,7 @@ const getTitle = (propsLocation) => {
 
 const NewsView = (props) => {
   const [show, setShow] = useState(6);
+  const [itemsByYear, setItemsByYear] = useState({});
   const limit = 6;
   const grid = {
     phone: 'twelve',
@@ -51,10 +52,24 @@ const NewsView = (props) => {
     desktop: 'twelve',
     widescreen: 'twelve',
   };
-  const title = getTitle(props.location);
-  const items = getItems(props.content.items, title.lowerCase);
 
-  if (!items) return <h1>{title.capitalized}</h1>;
+  React.useEffect(() => {
+    const title = getTitle(props.location);
+    const items = getItems(props.content.items, title.lowerCase);
+    const itemsByYear = {};
+    // const yearOptions = [];
+    items.forEach((item) => {
+      let year;
+      if (item.start) year = new Date(item.start).getFullYear();
+      //  For events
+      else if (item.date) year = new Date(item.date).getFullYear(); //  For news
+      if (!itemsByYear[year]) itemsByYear[year] = [];
+      itemsByYear[year].push(item);
+    });
+    setItemsByYear(itemsByYear);
+  }, [itemsByYear]);
+
+  // if (!props.content.items) return <h1>{title.capitalized}</h1>;
 
   const rssButton = (
     <Link className="rss-feed" to="rss-feed" color="teal">
@@ -63,20 +78,9 @@ const NewsView = (props) => {
     </Link>
   );
 
-  const itemsByYear = {};
-  // const yearOptions = [];
-  items.forEach((item) => {
-    let year;
-    if (item.start) year = new Date(item.start).getFullYear();
-    //  For events
-    else if (item.date) year = new Date(item.date).getFullYear(); //  For news
-    if (!itemsByYear[year]) itemsByYear[year] = [];
-    itemsByYear[year].push(item);
-  });
-
   return (
     <Container>
-      <Helmet title={title.capitalized} />
+      <Helmet title={getTitle(props.location).capitalized} />
       <div className="news-page-content">
         <BodyClass />
         {rssButton}
@@ -107,11 +111,11 @@ const NewsView = (props) => {
                 });
               })}
         </div>
-        {items.length > limit && show <= limit && (
+        {props.content.items.length > limit && show <= limit && (
           <button
             className="news-expand-button"
             onClick={() => {
-              setShow(items.length);
+              setShow(props.content.items.length);
             }}
           >
             <span />
