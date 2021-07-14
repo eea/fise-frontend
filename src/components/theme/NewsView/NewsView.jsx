@@ -1,37 +1,44 @@
-import React, { useState } from 'react';
-import { Helmet, BodyClass } from '@plone/volto/helpers';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { matchPath } from 'react-router';
+import { Helmet, BodyClass, getBaseUrl } from '@plone/volto/helpers';
+import { getContent } from '@plone/volto/actions';
 import { Container } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import { Link } from 'react-router-dom';
+import config from '@plone/volto/registry';
 import NewsItem from './NewsItem';
 import WidthBasedLayoutProvider from '@eeacms/volto-plotlycharts/LayoutProvider/WidthBasedLayoutProvider';
 import downKey from '@plone/volto/icons/down-key.svg';
 import rss from '@plone/volto/icons/rss.svg';
 
 const getItems = (propsItems, type = null) => {
-  return propsItems
-    .sort((a, b) => {
-      return new Date(b.start) - new Date(a.start);
-    })
-    .sort((a, b) => {
-      return new Date(b.effective) - new Date(a.effective);
-    })
-    .map((item, index) => ({
-      id: item['@id'],
-      date: item.effective,
-      start: item.start,
-      end: item.end,
-      location: item.location,
-      type: item['@type'],
-      title: item.title,
-      image: item.image ? item.image.download : null,
-      description: item.description,
-      text: item.text,
-      initial_index: index,
-      topics: item.topics,
-      blocks: item.blocks,
-      blocks_layout: item.blocks_layout,
-    }));
+  return (
+    propsItems &&
+    propsItems
+      .sort((a, b) => {
+        return new Date(b.start) - new Date(a.start);
+      })
+      .sort((a, b) => {
+        return new Date(b.effective) - new Date(a.effective);
+      })
+      .map((item, index) => ({
+        id: item['@id'],
+        date: item.effective,
+        start: item.start,
+        end: item.end,
+        location: item.location,
+        type: item['@type'],
+        title: item.title,
+        image: item.image ? item.image.download : null,
+        description: item.description,
+        text: item.text,
+        initial_index: index,
+        topics: item.topics,
+        blocks: item.blocks,
+        blocks_layout: item.blocks_layout,
+      }))
+  );
 };
 
 const getTitle = (propsLocation) => {
@@ -44,7 +51,6 @@ const getTitle = (propsLocation) => {
 
 const NewsView = (props) => {
   const [show, setShow] = useState(6);
-  const [itemsByYear, setItemsByYear] = useState({});
   const limit = 6;
   const grid = {
     phone: 'twelve',
@@ -52,25 +58,28 @@ const NewsView = (props) => {
     desktop: 'twelve',
     widescreen: 'twelve',
   };
+  const title = getTitle(props.location);
+  const items = getItems(props.content.items, title.lowerCase);
+  const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    const title = getTitle(props.location);
-    const items = getItems(props.content.items, title.lowerCase);
-    const itemsByYear = {};
-    // const yearOptions = [];
-    items.forEach((item) => {
-      let year;
-      if (item.start) year = new Date(item.start).getFullYear();
-      //  For events
-      else if (item.date) year = new Date(item.date).getFullYear(); //  For news
-      if (!itemsByYear[year]) itemsByYear[year] = [];
-      itemsByYear[year].push(item);
-    });
-    setItemsByYear(itemsByYear);
-  }, [itemsByYear]);
+  useEffect(() => {
+    const withFullObjects = matchPath(
+      props.location.pathname,
+      config.settings.pathsWithFullobjects,
+    )?.isExact;
+    dispatch(
+      getContent(
+        getBaseUrl(props.location.pathname),
+        null,
+        null,
+        null,
+        withFullObjects,
+      ),
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // if (!props.content.items) return <h1>{title.capitalized}</h1>;
-
+  if (!items) return <h1>{title.capitalized}</h1>;
   const rssButton = (
     <Link className="rss-feed" to="rss-feed" color="teal">
       <span>Subscribe via RSS</span>
@@ -78,9 +87,20 @@ const NewsView = (props) => {
     </Link>
   );
 
+  const itemsByYear = {};
+  // const yearOptions = [];
+  items.forEach((item) => {
+    let year;
+    if (item.start) year = new Date(item.start).getFullYear();
+    //  For events
+    else if (item.date) year = new Date(item.date).getFullYear(); //  For news
+    if (!itemsByYear[year]) itemsByYear[year] = [];
+    itemsByYear[year].push(item);
+  });
+
   return (
     <Container>
-      <Helmet title={getTitle(props.location).capitalized} />
+      <Helmet title={title.capitalized} />
       <div className="news-page-content">
         <BodyClass />
         {rssButton}
@@ -111,11 +131,11 @@ const NewsView = (props) => {
                 });
               })}
         </div>
-        {props.content.items.length > limit && show <= limit && (
+        {items?.length > limit && show <= limit && (
           <button
             className="news-expand-button"
             onClick={() => {
-              setShow(props.content.items.length);
+              setShow(items?.length);
             }}
           >
             <span />
