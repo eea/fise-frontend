@@ -74,6 +74,7 @@ const NewsView = (props) => {
         null,
         null,
         withFullObjects,
+        config.settings.pathsWithExtraParameters['/news'],
       ),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
