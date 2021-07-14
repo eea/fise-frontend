@@ -209,14 +209,17 @@ export default compose(
           location.pathname,
           config.settings.pathsWithFullobjects,
         )?.isExact;
-        dispatch(
-          getContent(
-            getBaseUrl(location.pathname),
-            null,
-            null,
-            null,
-            withFullObjects,
-          ),
+        return (
+          __SERVER__ &&
+          dispatch(
+            getContent(
+              getBaseUrl(location.pathname),
+              null,
+              null,
+              null,
+              withFullObjects,
+            ),
+          )
         );
       },
     },
