@@ -11,7 +11,6 @@ const RedirectView = (props) => {
   const [redirect, setRedirect] = useState(false);
   const currentPage = props.content?.['@id'];
   const redirectPage = props.content?.items?.[0]?.['@id'];
-  console.log('in redirect', props.content, redirectPage);
   useEffect(() => {
     setMounted(true);
     /* eslint-disable-next-line */

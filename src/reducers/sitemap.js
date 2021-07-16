@@ -24,7 +24,6 @@ const initialState = {
  * @returns {*} The navigation items object (recursive)
  */
 function getRecursiveItems(items) {
-  console.log('recursive items', items);
   return map(items, (item) => ({
     title: item.title,
     url: item['@id'].replace(config.settings.apiPath, ''),
@@ -50,7 +49,6 @@ export default function navSiteMap(state = initialState, action = {}) {
       };
 
     case `${GET_NAVSITEMAP}_SUCCESS`:
-      console.log('goingthru su', action);
       return {
         ...state,
         error: null,

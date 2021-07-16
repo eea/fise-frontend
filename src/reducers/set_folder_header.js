@@ -21,8 +21,6 @@ const initialState = {
  */
 export default function folder_header(state = initialState, action = {}) {
   if (action.type === SET_FOLDER_HEADER) {
-    console.log('in reducer', action);
-    console.log(state);
     return {
       ...state,
       error: null,
