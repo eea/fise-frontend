@@ -18,7 +18,7 @@
   }
 }
 
-body .ui.vertical.segment.breadcrumbs {
+body .ui.vertical.segment.breadcrumbs:not(aside .ui.vertical.segment.breadcrumbs ) {
   background            : none;
   padding               : 0;
   border-bottom         : none;

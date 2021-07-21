@@ -22,6 +22,9 @@
             ],
             "@eeacms/volto-widget-toggle": [
                 "develop/volto-widget-toggle/src"
+            ],
+            "@eeacms/volto-slate": [
+                "develop/volto-slate/src"
             ]
         },
         "baseUrl": "src"

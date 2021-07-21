@@ -991,7 +991,7 @@ h5 {
   padding: 0 100px !important;
 }
 
-.breadcrumbs {
+.breadcrumbs:not(aside .breadcrumbs) {
   @media (min-width: 700px) {
     padding: 0 100px !important;
   }
