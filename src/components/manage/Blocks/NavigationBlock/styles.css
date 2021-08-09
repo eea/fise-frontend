@@ -1,0 +1,13 @@
+.sticky-tabs {
+  position: sticky;
+  top: 110px;
+  background: white;
+  z-index: 9;
+  padding-top: 0 !important;
+  margin-top: 25px;
+}
+
+.nav-tab-item:hover {
+  background: #cd4200 !important;
+  color: #fff !important;
+}

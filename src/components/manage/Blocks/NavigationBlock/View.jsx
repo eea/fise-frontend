@@ -13,6 +13,7 @@ import {
   setQueryParam,
 } from '@eeacms/volto-datablocks/actions';
 import { useEffect } from 'react';
+import './styles.css';
 
 const View = ({ content, ...props }) => {
   const { data } = props;
@@ -37,9 +38,17 @@ const View = ({ content, ...props }) => {
     setNavigationItems([...(props.navigation?.items || []), ...newPages]);
   }, [props.navigation, data.pages?.value]);
 
+  const isSticky = props.stickyTabs;
+
+  const handleNavigate = (url) => {
+    if (props.mode !== 'edit') {
+      history.push(`${url}${props.query}`);
+    }
+  };
+
   if (navigationItems.length < 2 && props.mode !== 'edit') return null;
   return (props.navigation?.items?.length && parent) || pages.length ? (
-    <div className="tabs-view-menu">
+    <div className={`tabs-view-menu ${isSticky ? 'sticky-tabs' : ''}`}>
       <Menu
         widths={
           navigationItems.length ||
@@ -79,6 +88,7 @@ const View = ({ content, ...props }) => {
               className={cx(
                 index > 0 ? 'sibling-on-left' : '',
                 index < navigationItems.length - 1 ? 'sibling-on-right' : '',
+                'nav-tab-item',
               )}
               name={name}
               key={url}
@@ -89,9 +99,7 @@ const View = ({ content, ...props }) => {
                   ? isActive(url, props.pathname)
                   : false
               }
-              onClick={() => {
-                history.push(`${url}${props.query}`);
-              }}
+              onClick={() => handleNavigate(url)}
             />
           );
         })}
@@ -117,6 +125,7 @@ export default compose(
       discodata_resources: state.discodata_resources,
       navItems: state.navigation?.items,
       flags: state.flags,
+      stickyTabs: props.data?.stickyTabs?.value,
       navigation: props.properties?.parent
         ? getNavigationByParent(
             state.navigation?.items,

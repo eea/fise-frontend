@@ -16,6 +16,10 @@ const getSchema = (props) => {
       title: 'Classname',
       type: 'text',
     },
+    stickyTabs: {
+      title: 'Make navigation tabs sticky',
+      type: 'boolean',
+    },
     navFromParent: {
       title: 'Show navigation from parent',
       type: 'boolean',
