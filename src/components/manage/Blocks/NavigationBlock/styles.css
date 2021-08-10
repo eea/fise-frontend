@@ -4,10 +4,17 @@
   background: white;
   z-index: 9;
   padding-top: 0 !important;
-  margin-top: 25px;
+  margin: 25px 0;
+
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 0.25rem !important;
 }
 
 .nav-tab-item:hover {
   background: #cd4200 !important;
   color: #fff !important;
+}
+
+.active-nav-tab {
+  border-radius: 0.25rem !important;
 }

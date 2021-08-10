@@ -22,12 +22,14 @@ const View = ({ content, ...props }) => {
   });
   const [navigationItems, setNavigationItems] = useState([]);
   const [pages, setPages] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [expand, setExpand] = useState(false);
+
   const parent =
     data?.navFromParent?.value && props.properties?.parent
       ? getBasePath(props.properties?.parent?.['@id'])
       : data.parent?.value;
   const history = useHistory();
-
   useEffect(() => {
     const pagesProperties = data.pages?.value
       ? data.pages?.value?.properties || {}
@@ -36,11 +38,26 @@ const View = ({ content, ...props }) => {
       Object.keys(pagesProperties).map((page) => pagesProperties[page]) || [];
     setPages(newPages);
     setNavigationItems([...(props.navigation?.items || []), ...newPages]);
+
+    const width = window && window.innerWidth ? window.innerWidth : '';
+    if (width && width <= 600) {
+      setIsMobile(true);
+    }
   }, [props.navigation, data.pages?.value]);
 
   const isSticky = props.stickyTabs;
 
+  const getActiveItemName = () => {
+    const activeItem = navigationItems.filter(
+      (i) => getBasePath(i.url) === props.pathname,
+    );
+    const name = activeItem && activeItem[0] ? activeItem[0].title : '';
+
+    return name;
+  };
+
   const handleNavigate = (url) => {
+    setExpand(false);
     if (props.mode !== 'edit') {
       history.push(`${url}${props.query}`);
     }
@@ -59,50 +76,113 @@ const View = ({ content, ...props }) => {
           props.data.className?.value ? props.data.className.value : ''
         }
       >
-        {navigationItems.map((item, index) => {
-          const url = getBasePath(item.url);
-          const name = item.title;
-          if (
-            props.navigation?.items?.filter(
-              (navItem) => navItem.title === item.title,
-            ).length
-          ) {
-            if (isActive(url, props.pathname) && url !== state.activeItem) {
-              setState({
-                ...state,
-                activeItem: url,
-              });
-            } else if (
-              !isActive(url, props.pathname) &&
-              url === state.activeItem
-            ) {
-              setState({
-                ...state,
-                activeItem: '',
-              });
-            }
-          }
+        {isMobile ? (
+          <React.Fragment>
+            {expand ? (
+              navigationItems.map((item, index) => {
+                const url = getBasePath(item.url);
+                const name = item.title;
+                if (
+                  props.navigation?.items?.filter(
+                    (navItem) => navItem.title === item.title,
+                  ).length
+                ) {
+                  if (
+                    isActive(url, props.pathname) &&
+                    url !== state.activeItem
+                  ) {
+                    setState({
+                      ...state,
+                      activeItem: url,
+                    });
+                  } else if (
+                    !isActive(url, props.pathname) &&
+                    url === state.activeItem
+                  ) {
+                    setState({
+                      ...state,
+                      activeItem: '',
+                    });
+                  }
+                }
 
-          return (
-            <Menu.Item
-              className={cx(
-                index > 0 ? 'sibling-on-left' : '',
-                index < navigationItems.length - 1 ? 'sibling-on-right' : '',
-                'nav-tab-item',
-              )}
-              name={name}
-              key={url}
-              active={
-                state.activeItem
-                  ? state.activeItem === url
-                  : !url
-                  ? isActive(url, props.pathname)
-                  : false
+                return (
+                  <Menu.Item
+                    className={cx(
+                      index > 0 ? 'sibling-on-left' : '',
+                      index < navigationItems.length - 1
+                        ? 'sibling-on-right'
+                        : '',
+                      'nav-tab-item',
+                    )}
+                    name={name}
+                    key={url}
+                    active={
+                      state.activeItem
+                        ? state.activeItem === url
+                        : !url
+                        ? isActive(url, props.pathname)
+                        : false
+                    }
+                    onClick={() => handleNavigate(url)}
+                  />
+                );
+              })
+            ) : (
+              <Menu.Item
+                className={'nav-tab-item active-nav-tab'}
+                name={getActiveItemName()}
+                active={true}
+                onClick={() => setExpand(true)}
+              />
+            )}
+          </React.Fragment>
+        ) : (
+          navigationItems.map((item, index) => {
+            const url = getBasePath(item.url);
+            const name = item.title;
+            if (
+              props.navigation?.items?.filter(
+                (navItem) => navItem.title === item.title,
+              ).length
+            ) {
+              if (isActive(url, props.pathname) && url !== state.activeItem) {
+                setState({
+                  ...state,
+                  activeItem: url,
+                });
+              } else if (
+                !isActive(url, props.pathname) &&
+                url === state.activeItem
+              ) {
+                setState({
+                  ...state,
+                  activeItem: '',
+                });
               }
-              onClick={() => handleNavigate(url)}
-            />
-          );
-        })}
+            }
+
+            return (
+              <Menu.Item
+                className={cx(
+                  index > 0 ? 'sibling-on-left' : '',
+                  index < navigationItems.length - 1 ? 'sibling-on-right' : '',
+                  'nav-tab-item',
+                )}
+                name={name}
+                key={url}
+                active={
+                  state.activeItem
+                    ? state.activeItem === url
+                    : !url
+                    ? isActive(url, props.pathname)
+                    : false
+                }
+                onClick={() => handleNavigate(url)}
+              />
+            );
+          })
+        )}
       </Menu>
     </div>
   ) : props.mode === 'edit' ? (
