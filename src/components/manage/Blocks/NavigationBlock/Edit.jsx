@@ -16,8 +16,8 @@ const getSchema = (props) => {
       title: 'Classname',
       type: 'text',
     },
-    stickyTabs: {
-      title: 'Sticky navigation',
+    fixedTabs: {
+      title: 'Fixed navigation',
       type: 'boolean',
     },
     navFromParent: {

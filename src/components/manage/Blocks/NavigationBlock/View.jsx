@@ -45,7 +45,7 @@ const View = ({ content, ...props }) => {
     }
   }, [props.navigation, data.pages?.value]);
 
-  const isSticky = props.stickyTabs;
+  const isFixed = props.fixedTabs;
 
   const getActiveItemName = () => {
     const activeItem = navigationItems.filter(
@@ -65,7 +65,7 @@ const View = ({ content, ...props }) => {
 
   if (navigationItems.length < 2 && props.mode !== 'edit') return null;
   return (props.navigation?.items?.length && parent) || pages.length ? (
-    <div className={`tabs-view-menu ${isSticky ? 'sticky-tabs' : ''}`}>
+    <div className={`tabs-view-menu ${isFixed ? '' : 'sticky-tabs'}`}>
       <Menu
         widths={
           navigationItems.length ||
@@ -205,7 +205,7 @@ export default compose(
       discodata_resources: state.discodata_resources,
       navItems: state.navigation?.items,
       flags: state.flags,
-      stickyTabs: props.data?.stickyTabs?.value,
+      fixedTabs: props.data?.fixedTabs?.value,
       navigation: props.properties?.parent
         ? getNavigationByParent(
             state.navigation?.items,
