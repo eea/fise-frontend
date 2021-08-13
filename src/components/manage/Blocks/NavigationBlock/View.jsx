@@ -43,6 +43,9 @@ const View = ({ content, ...props }) => {
     if (width && width <= 600) {
       setIsMobile(true);
     }
+    if (width && width > 600) {
+      setIsMobile(false);
+    }
   }, [props.navigation, data.pages?.value]);
 
   const isFixed = props.fixedTabs;
@@ -58,7 +61,7 @@ const View = ({ content, ...props }) => {
 
   const handleNavigate = (url) => {
     setExpand(false);
-    if (props.mode !== 'edit') {
+    if (props.mode !== 'edit' && url !== history.location.pathname) {
       history.push(`${url}${props.query}`);
     }
   };
