@@ -7,9 +7,11 @@
 }
 
 .modern-tabs {
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 1px 6px 0 #c7d5d8;
   margin-bottom: 25px;
   background-color: #f1f0ee;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
 }
 
 .nav-tab-item:hover {
