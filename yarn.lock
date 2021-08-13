@@ -1219,10 +1219,10 @@
     "@eeacms/volto-resize-helper" "*"
     react-color "~2.18.1"
 
-"@eeacms/volto-columns-block@4.4.4":
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.4.tgz#136cbb1c490c13b697469c4e9087360dff2ac55b"
-  integrity sha512-JbSjcwWDFHrjuJVaIdkt7/1AaOw1Ex7OiNWFCsINg5DwD+LcJWq8fiKTy6tppGuUgI8W80xyx/YGwITkYlrjYA==
+"@eeacms/volto-columns-block@4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.5.tgz#f32b3e8b8b76d765e2ccec2cac9d141d74e61870"
+  integrity sha512-62PBqpUiO2Wxvz8Q4xlcJRtbq2tfesCL2NLywvIDpStqa1Zau7Y6X1t+T6qimo12P6/yrne0hUbkLVwcsloFfw==
   dependencies:
     react-color "~2.18.1"
 
