@@ -15,6 +15,9 @@ import {
 import { useEffect } from 'react';
 import './styles.css';
 import cookie from 'react-cookie';
+import { Icon } from '@plone/volto/components';
+import downIcon from '@plone/volto/icons/down-key.svg';
+import closeIcon from '@plone/volto/icons/clear.svg';
 
 const View = ({ content, ...props }) => {
   const { data } = props;
@@ -89,62 +92,78 @@ const View = ({ content, ...props }) => {
         {isMobile ? (
           <React.Fragment>
             {expand ? (
-              navigationItems.map((item, index) => {
-                const url = getBasePath(item.url);
-                const name = item.title;
-                if (
-                  props.navigation?.items?.filter(
-                    (navItem) => navItem.title === item.title,
-                  ).length
-                ) {
+              <div style={{ position: 'relative' }}>
+                {navigationItems.map((item, index) => {
+                  const url = getBasePath(item.url);
+                  const name = item.title;
                   if (
-                    isActive(url, props.pathname) &&
-                    url !== state.activeItem
+                    props.navigation?.items?.filter(
+                      (navItem) => navItem.title === item.title,
+                    ).length
                   ) {
-                    setState({
-                      ...state,
-                      activeItem: url,
-                    });
-                  } else if (
-                    !isActive(url, props.pathname) &&
-                    url === state.activeItem
-                  ) {
-                    setState({
-                      ...state,
-                      activeItem: '',
-                    });
-                  }
-                }
-
-                return (
-                  <Menu.Item
-                    className={cx(
-                      index > 0 ? 'sibling-on-left' : '',
-                      index < navigationItems.length - 1
-                        ? 'sibling-on-right'
-                        : '',
-                      'nav-tab-item',
-                    )}
-                    name={name}
-                    key={url}
-                    active={
-                      state.activeItem
-                        ? state.activeItem === url
-                        : !url
-                        ? isActive(url, props.pathname)
-                        : false
+                    if (
+                      isActive(url, props.pathname) &&
+                      url !== state.activeItem
+                    ) {
+                      setState({
+                        ...state,
+                        activeItem: url,
+                      });
+                    } else if (
+                      !isActive(url, props.pathname) &&
+                      url === state.activeItem
+                    ) {
+                      setState({
+                        ...state,
+                        activeItem: '',
+                      });
                     }
-                    onClick={() => handleNavigate(url)}
-                  />
-                );
-              })
+                  }
+
+                  return (
+                    <Menu.Item
+                      className={cx(
+                        index > 0 ? 'sibling-on-left' : '',
+                        index < navigationItems.length - 1
+                          ? 'sibling-on-right'
+                          : '',
+                        'nav-tab-item',
+                      )}
+                      name={name}
+                      key={url}
+                      active={
+                        state.activeItem
+                          ? state.activeItem === url
+                          : !url
+                          ? isActive(url, props.pathname)
+                          : false
+                      }
+                      onClick={() => handleNavigate(url)}
+                    />
+                  );
+                })}
+                <Icon
+                  className="mobile-nav-icon"
+                  name={closeIcon}
+                  size="30px"
+                  onClick={() => setExpand(false)}
+                />
+              </div>
             ) : (
-              <Menu.Item
-                className={'nav-tab-item active-nav-tab'}
-                name={getActiveItemName()}
-                active={true}
-                onClick={() => setExpand(true)}
-              />
+              <div style={{ position: 'relative' }}>
+                <Menu.Item
+                  className={'nav-tab-item active-nav-tab'}
+                  name={getActiveItemName()}
+                  active={true}
+                  onClick={() => setExpand(true)}
+                />
+                <Icon
+                  className="mobile-nav-icon"
+                  name={downIcon}
+                  size="35px"
+                  onClick={() => setExpand(true)}
+                />
+              </div>
             )}
           </React.Fragment>
         ) : (

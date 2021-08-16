@@ -29,6 +29,14 @@
   color: #554535;
 }
 
+.mobile-nav-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  fill: white !important;
+  cursor: pointer;
+}
+
 /* media queries  */
 
 @media screen and (max-width: 1578px) {
