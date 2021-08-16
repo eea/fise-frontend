@@ -52,4 +52,7 @@
   .sticky-tabs {
     top: 79px;
   }
+  .mobile-authenticated-sticky {
+    top: 101px;
+  }
 }

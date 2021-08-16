@@ -14,6 +14,7 @@ import {
 } from '@eeacms/volto-datablocks/actions';
 import { useEffect } from 'react';
 import './styles.css';
+import cookie from 'react-cookie';
 
 const View = ({ content, ...props }) => {
   const { data } = props;
@@ -24,6 +25,8 @@ const View = ({ content, ...props }) => {
   const [pages, setPages] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const [expand, setExpand] = useState(false);
+
+  const isLoggedIn = cookie.load('auth_token');
 
   const parent =
     data?.navFromParent?.value && props.properties?.parent
@@ -69,7 +72,9 @@ const View = ({ content, ...props }) => {
   if (navigationItems.length < 2 && props.mode !== 'edit') return null;
   return (props.navigation?.items?.length && parent) || pages.length ? (
     <div
-      className={`tabs-view-menu modern-tabs ${isFixed ? '' : 'sticky-tabs'}`}
+      className={`tabs-view-menu modern-tabs ${isFixed ? '' : 'sticky-tabs'} ${
+        !isFixed && isLoggedIn ? 'mobile-authenticated-sticky' : ''
+      }`}
     >
       <Menu
         widths={
