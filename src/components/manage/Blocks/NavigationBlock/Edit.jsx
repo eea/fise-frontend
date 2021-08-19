@@ -16,6 +16,10 @@ const getSchema = (props) => {
       title: 'Classname',
       type: 'text',
     },
+    fixedTabs: {
+      title: 'Fixed navigation',
+      type: 'boolean',
+    },
     navFromParent: {
       title: 'Show navigation from parent',
       type: 'boolean',
