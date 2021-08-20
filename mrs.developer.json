@@ -40,5 +40,12 @@
     "branch": "develop",
     "path": "src",
     "develop": true
+  },
+  "volto-forests-theme": {
+    "url": "https://github.com/eea/volto-forests-theme.git",
+    "package": "@eeacms/volto-forests-theme",
+    "branch": "develop",
+    "path": "src",
+    "develop": true
   }
 }
