@@ -1583,6 +1583,37 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.3.1"
 
+"@eeacms/volto-addons-forest@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.1.tgz#eedbeac9be511564eb2f55c009d22dfd2203e124"
+  integrity sha512-qSX/aj11wsTlZww+BwGoAGU04l0BuaaTKbP5GmjugiUqEqIxvJydsGpl7C8qIHOUjB+gGw1DSUo6pTHlGXO16g==
+  dependencies:
+    dompurify "^2.0.12"
+    draft-js-alignment-plugin "^2.0.6"
+    draft-js-focus-plugin "^3.0.1"
+    draft-js-import-html "^1.4.1"
+    draft-js-inline-toolbar-plugin "^2.0.3"
+    draft-js-modifiers "^0.2.2"
+    draft-js-plugins-editor "^3.0.0"
+    draft-js-resizeable-plugin "^2.0.9"
+    draft-js-video-plugin "^2.0.2"
+    esri-loader "^2.14.0"
+    react-component-queries "2.3.0"
+    react-highlight-words "^0.16.0"
+    react-image-gallery "^1.0.7"
+    react-lazy-load-image-component "^1.4.3"
+    react-pdf-js "^5.1.0"
+    react-sizeme "3.0.1"
+    redraft "^0.10.2"
+
+"@eeacms/volto-block-style@^3.3.0":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-3.4.2.tgz#e88169adc126f919ec3c6243dcb15ce9eae206dc"
+  integrity sha512-vw95A5cH3EJEJXyYTY2cngEyevz6jBntYeo8OyPo96BBvtSBWb7YGIPG0hu/WhiTN/N1nmXAkfNMCqcjnvWl2Q==
+  dependencies:
+    "@eeacms/volto-resize-helper" "*"
+    react-color "~2.18.1"
+
 "@eeacms/volto-columns-block@4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.5.tgz#f32b3e8b8b76d765e2ccec2cac9d141d74e61870"
@@ -21693,6 +21724,11 @@ volto-slate@2.9.1:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.9.1.tgz#d4ed326470570a5b81c3dbd65e2aa9acf936184e"
   integrity sha512-ZCqMnIv+qHOsMgespqLwDKvAqSbrflGXF1MFTABbCgpEAA7dw/9SGaCR1Sa5uZbYs8kb24PR7esBCKs2JszQkg==
+
+volto-slate@2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.9.2.tgz#9874dbce05de9bd833ce93c22514c0f2ef0ee51d"
+  integrity sha512-6eaWvOgz/aOQ63zeJ8qE538M3SQA6CONtAxEf5dDLw+88ZCiAWqFnjDNG/Q+ILdWWAtiocETp51s3Wa8auT81Q==
   dependencies:
     "@eeacms/volto-object-widget" ">=2.2.3"
     classnames "2.2.6"
