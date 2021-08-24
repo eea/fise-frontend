@@ -1219,16 +1219,10 @@
     "@eeacms/volto-resize-helper" "*"
     react-color "~2.18.1"
 
-"@eeacms/volto-columns-block@4.4.4":
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.4.tgz#136cbb1c490c13b697469c4e9087360dff2ac55b"
-  integrity sha512-JbSjcwWDFHrjuJVaIdkt7/1AaOw1Ex7OiNWFCsINg5DwD+LcJWq8fiKTy6tppGuUgI8W80xyx/YGwITkYlrjYA==
-
 "@eeacms/volto-columns-block@4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.5.tgz#f32b3e8b8b76d765e2ccec2cac9d141d74e61870"
   integrity sha512-62PBqpUiO2Wxvz8Q4xlcJRtbq2tfesCL2NLywvIDpStqa1Zau7Y6X1t+T6qimo12P6/yrne0hUbkLVwcsloFfw==
-
   dependencies:
     react-color "~2.18.1"
 
@@ -16829,10 +16823,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.9.1.tgz#d4ed326470570a5b81c3dbd65e2aa9acf936184e"
-  integrity sha512-ZCqMnIv+qHOsMgespqLwDKvAqSbrflGXF1MFTABbCgpEAA7dw/9SGaCR1Sa5uZbYs8kb24PR7esBCKs2JszQkg==
+volto-slate@2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.9.2.tgz#9874dbce05de9bd833ce93c22514c0f2ef0ee51d"
+  integrity sha512-6eaWvOgz/aOQ63zeJ8qE538M3SQA6CONtAxEf5dDLw+88ZCiAWqFnjDNG/Q+ILdWWAtiocETp51s3Wa8auT81Q==
   dependencies:
     "@eeacms/volto-object-widget" ">=2.2.3"
     classnames "2.2.6"
