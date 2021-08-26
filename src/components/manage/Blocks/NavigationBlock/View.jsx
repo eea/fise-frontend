@@ -121,33 +121,37 @@ const View = ({ content, ...props }) => {
                   }
 
                   return (
-                    <Menu.Item
-                      className={cx(
-                        index > 0 ? 'sibling-on-left' : '',
-                        index < navigationItems.length - 1
-                          ? 'sibling-on-right'
-                          : '',
-                        'nav-tab-item',
+                    <div style={{ position: 'relative' }}>
+                      <Menu.Item
+                        className={cx(
+                          index > 0 ? 'sibling-on-left' : '',
+                          index < navigationItems.length - 1
+                            ? 'sibling-on-right'
+                            : '',
+                          'nav-tab-item',
+                        )}
+                        name={name}
+                        key={url}
+                        active={
+                          state.activeItem
+                            ? state.activeItem === url
+                            : !url
+                            ? isActive(url, props.pathname)
+                            : false
+                        }
+                        onClick={() => handleNavigate(url)}
+                      ></Menu.Item>
+                      {isActive(url, props.pathname) && (
+                        <Icon
+                          className="mobile-nav-icon"
+                          name={closeIcon}
+                          size="30px"
+                          onClick={() => setExpand(false)}
+                        />
                       )}
-                      name={name}
-                      key={url}
-                      active={
-                        state.activeItem
-                          ? state.activeItem === url
-                          : !url
-                          ? isActive(url, props.pathname)
-                          : false
-                      }
-                      onClick={() => handleNavigate(url)}
-                    />
+                    </div>
                   );
                 })}
-                <Icon
-                  className="mobile-nav-icon"
-                  name={closeIcon}
-                  size="30px"
-                  onClick={() => setExpand(false)}
-                />
               </div>
             ) : (
               <div style={{ position: 'relative' }}>
