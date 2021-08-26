@@ -24,11 +24,13 @@
     "@eeacms/volto-columns-block",
     "@eeacms/volto-matomo",
     "@eeacms/volto-embed",
-    "@eeacms/volto-block-style"
+    "@eeacms/volto-block-style",
+    "@eeacms/volto-accordion-block"
   ],
   "dependencies": {
     "@blueprintjs/core": "^3.30.0",
     "@blueprintjs/icons": "^3.19.0",
+    "@eeacms/volto-accordion-block": "3.2.4",
     "@eeacms/volto-addons-forest": "0.1.1",
     "@eeacms/volto-block-style": "^3.3.0",
     "@eeacms/volto-columns-block": "4.4.5",
