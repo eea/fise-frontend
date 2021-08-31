@@ -710,7 +710,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
-"@babel/plugin-syntax-jsx@^7.12.13", "@babel/plugin-syntax-jsx@^7.14.5":
+"@babel/plugin-syntax-jsx@^7.14.5":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.14.5.tgz#000e2e25d8673cce49300517a3eda44c263e4201"
   integrity sha512-ohuFIsOMXJnbOMRfX7/w7LocdR6R7whhuRD4ax8IipLcLPlZGJKkBxgHp++U4N/vKyU16/YDQr2f5seajD3jIw==
@@ -1369,14 +1369,14 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.0.0":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.0":
   version "7.15.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
   integrity sha512-OvwMLqNXkCXSz1kSm58sEsNuhqOx/fKpnUnKnFB5v8uDda5bLNEHNgKPvhDN6IU0LDcnHQ90LlJ0Q6jnyBSIBA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.14.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
   integrity sha512-/PCB2uJ7oM44tz8YhC4Z/6PeOKXp4K588f+5M3clr1M4zbqztlo0XEfJ2LEzj/FgwfgGcIdl8n7YYjTCI0BYwg==
@@ -1583,37 +1583,6 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.3.1"
 
-"@eeacms/volto-addons-forest@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.1.tgz#eedbeac9be511564eb2f55c009d22dfd2203e124"
-  integrity sha512-qSX/aj11wsTlZww+BwGoAGU04l0BuaaTKbP5GmjugiUqEqIxvJydsGpl7C8qIHOUjB+gGw1DSUo6pTHlGXO16g==
-  dependencies:
-    dompurify "^2.0.12"
-    draft-js-alignment-plugin "^2.0.6"
-    draft-js-focus-plugin "^3.0.1"
-    draft-js-import-html "^1.4.1"
-    draft-js-inline-toolbar-plugin "^2.0.3"
-    draft-js-modifiers "^0.2.2"
-    draft-js-plugins-editor "^3.0.0"
-    draft-js-resizeable-plugin "^2.0.9"
-    draft-js-video-plugin "^2.0.2"
-    esri-loader "^2.14.0"
-    react-component-queries "2.3.0"
-    react-highlight-words "^0.16.0"
-    react-image-gallery "^1.0.7"
-    react-lazy-load-image-component "^1.4.3"
-    react-pdf-js "^5.1.0"
-    react-sizeme "3.0.1"
-    redraft "^0.10.2"
-
-"@eeacms/volto-block-style@^3.3.0":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-3.4.2.tgz#e88169adc126f919ec3c6243dcb15ce9eae206dc"
-  integrity sha512-vw95A5cH3EJEJXyYTY2cngEyevz6jBntYeo8OyPo96BBvtSBWb7YGIPG0hu/WhiTN/N1nmXAkfNMCqcjnvWl2Q==
-  dependencies:
-    "@eeacms/volto-resize-helper" "*"
-    react-color "~2.18.1"
-
 "@eeacms/volto-columns-block@4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.5.tgz#f32b3e8b8b76d765e2ccec2cac9d141d74e61870"
@@ -1647,10 +1616,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-object-widget/-/volto-object-widget-2.2.3.tgz#38f3bff8d71486d97fa99f0ca5912ad4141a2033"
   integrity sha512-u4xLyASXvSrsG2b0QTRitOjuIfNoXjMRuaAo0oNyJLETuLj73qyLR3TsSDG//2VmBIklB/ca/7Xl7ncHaaJF1A==
 
-"@eeacms/volto-resize-helper@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-resize-helper/-/volto-resize-helper-0.1.1.tgz#7148b2560b2a34297183f235ed2f580a72d469dd"
-  integrity sha512-bxxjzYzsOpd4JnbmHSBZpewQgXEs+1MIGdFAJ+mv+uAFYx57ordKpsEm/f32BowIvs/8uECgeKsHkIsTkfw0Gw==
+"@eeacms/volto-resize-helper@*":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-resize-helper/-/volto-resize-helper-0.2.4.tgz#5a8a963eb52e95fda4e1af5ac1fe5d8b3f02f71a"
+  integrity sha512-y+Neu8YQV8trITJvlt52qQCgPkXnZK9sbPSGUQsWXETIZfEEfAbMnsnbMYmB47IZsGP0VD4Hd8qCp8h0+ExxAA==
 
 "@eeacms/volto-resize-helper@^0.2.2":
   version "0.2.2"
@@ -1667,24 +1636,6 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-widgets-view/-/volto-widgets-view-2.1.2.tgz#4e5ea7006ac980b3684566d02c497c47bd06ba65"
   integrity sha512-nIvDHJjSQM8opmopSTy0+UXVsOiAhr5ZgPQRC+srPkjSj7PZjdYliYQjd+4dt5ddrQutPIQnrV7BUV7yUJDRiA==
 
-"@emotion/babel-plugin@^11.0.0":
-  version "11.3.0"
-  resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.3.0.tgz#3a16850ba04d8d9651f07f3fb674b3436a4fb9d7"
-  integrity sha512-UZKwBV2rADuhRp+ZOGgNWg2eYgbzKzQXfQPtJbu/PLy8onurxlNCLvxMQEvlr1/GudguPI5IU9qIY1+2z1M5bA==
-  dependencies:
-    "@babel/helper-module-imports" "^7.12.13"
-    "@babel/plugin-syntax-jsx" "^7.12.13"
-    "@babel/runtime" "^7.13.10"
-    "@emotion/hash" "^0.8.0"
-    "@emotion/memoize" "^0.7.5"
-    "@emotion/serialize" "^1.0.2"
-    babel-plugin-macros "^2.6.1"
-    convert-source-map "^1.5.0"
-    escape-string-regexp "^4.0.0"
-    find-root "^1.1.0"
-    source-map "^0.5.7"
-    stylis "^4.0.3"
-
 "@emotion/babel-utils@^0.6.4":
   version "0.6.10"
   resolved "https://registry.yarnpkg.com/@emotion/babel-utils/-/babel-utils-0.6.10.tgz#83dbf3dfa933fae9fc566e54fbb45f14674c6ccc"
@@ -1697,7 +1648,7 @@
     find-root "^1.1.0"
     source-map "^0.7.2"
 
-"@emotion/cache@^11.0.0", "@emotion/cache@^11.1.3", "@emotion/cache@^11.4.0":
+"@emotion/cache@^11.4.0":
   version "11.4.0"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.4.0.tgz#293fc9d9a7a38b9aad8e9337e5014366c3b09ac0"
   integrity sha512-Zx70bjE7LErRO9OaZrhf22Qye1y4F7iDl+ITjet0J+i+B88PrAOBkKvaAWhxsZf72tDLajwCgfCjJ2dvH77C3g==
@@ -1707,17 +1658,6 @@
     "@emotion/utils" "^1.0.0"
     "@emotion/weak-memoize" "^0.2.5"
     stylis "^4.0.3"
-
-"@emotion/css@^11.0.0":
-  version "11.1.3"
-  resolved "https://registry.yarnpkg.com/@emotion/css/-/css-11.1.3.tgz#9ed44478b19e5d281ccbbd46d74d123d59be793f"
-  integrity sha512-RSQP59qtCNTf5NWD6xM08xsQdCZmVYnX/panPYvB6LQAPKQB6GL49Njf0EMbS3CyDtrlWsBcmqBtysFvfWT3rA==
-  dependencies:
-    "@emotion/babel-plugin" "^11.0.0"
-    "@emotion/cache" "^11.1.3"
-    "@emotion/serialize" "^1.0.0"
-    "@emotion/sheet" "^1.0.0"
-    "@emotion/utils" "^1.0.0"
 
 "@emotion/hash@^0.6.2", "@emotion/hash@^0.6.6":
   version "0.6.6"
@@ -1746,7 +1686,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.6.6.tgz#004b98298d04c7ca3b4f50ca2035d4f60d2eed1b"
   integrity sha512-h4t4jFjtm1YV7UirAFuSuFGyLa+NNxjdkq6DpFLANNQY5rHueFZHVY+8Cu1HYVP6DrheB0kv4m5xPjo7eKT7yQ==
 
-"@emotion/memoize@^0.7.4", "@emotion/memoize@^0.7.5":
+"@emotion/memoize@^0.7.4":
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
@@ -1774,7 +1714,7 @@
     "@emotion/unitless" "^0.6.7"
     "@emotion/utils" "^0.8.2"
 
-"@emotion/serialize@^1.0.0", "@emotion/serialize@^1.0.2":
+"@emotion/serialize@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.0.2.tgz#77cb21a0571c9f68eb66087754a65fa97bfcd965"
   integrity sha512-95MgNJ9+/ajxU7QIAruiOAdYNjxZX7G2mhgrtDWswA21VviYIRP1R5QilZ/bDY42xiKsaktP4egJb3QdYQZi1A==
@@ -2384,10 +2324,10 @@
   dependencies:
     "@octokit/openapi-types" "^9.5.0"
 
-"@plone/volto@13.8.0":
-  version "13.8.0"
-  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-13.8.0.tgz#12446fd8a629fbe80c054978c10eebe5881d5578"
-  integrity sha512-w1KglNMUdRorm2R8IrnQftYGPXWjs/5TMZKCtENq/EOzV2f88djsN+13R22i2bGtdOGGFqrdPJ5mUCNSWGiFxg==
+"@plone/volto@13.12.0":
+  version "13.12.0"
+  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-13.12.0.tgz#d29367ae07c7ca83d7c452927aaf22caf746efcc"
+  integrity sha512-UXCKwO7BP09T3iDhvBN3IwbV051yXBwuNbRJRycnp2yTo8HQInHl+WzADyHJU1z0lF8CyEs9B2j1qgaIfXx53g==
   dependencies:
     "@babel/plugin-proposal-export-default-from" "7.10.4"
     "@babel/plugin-proposal-export-namespace-from" "7.10.4"
@@ -2504,8 +2444,8 @@
     react-router "5.2.0"
     react-router-config "5.1.1"
     react-router-dom "5.2.0"
-    react-select "4.0.2"
-    react-select-async-paginate "0.3.10"
+    react-select "4.3.1"
+    react-select-async-paginate "0.5.3"
     react-share "2.3.1"
     react-side-effect "2.1.0"
     react-simple-code-editor "0.7.1"
@@ -2734,6 +2674,11 @@
   integrity sha512-8XiUNcr+HbF/Cz2lkI71+42fPNIc/ZJdU+jVWAaspP4ZwjkYSs54E3I2+7wPaqEetfObAunsQxVeFARnYms/aw==
   dependencies:
     "@sentry/cli" "^1.55.0"
+
+"@seznam/compose-react-refs@^1.0.5":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@seznam/compose-react-refs/-/compose-react-refs-1.0.6.tgz#6ec4e70bdd6e32f8e70b4100f27267cf306bd8df"
+  integrity sha512-izzOXQfeQLonzrIQb8u6LQ8dk+ymz3WXTIXjvOlTXHq6sbzROg3NWU+9TTAOpEoK9Bth24/6F/XrfHJ5yR5n6Q==
 
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
@@ -4347,7 +4292,7 @@ babel-plugin-lodash@3.3.4:
     lodash "^4.17.10"
     require-package-name "^2.0.1"
 
-babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.6.1:
+babel-plugin-macros@^2.0.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.8.0.tgz#0f958a7cc6556b1e65344465d99111a1e5e10138"
   integrity sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==
@@ -17644,6 +17589,11 @@ react-intl@3.8.0:
     invariant "^2.1.1"
     shallow-equal "^1.1.0"
 
+react-is-mounted-hook@^1.0.3:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-is-mounted-hook/-/react-is-mounted-hook-1.1.2.tgz#0e57d237c0ed60f6a8dc0520634608a80ae864ff"
+  integrity sha512-yjq3Tj34CiFcdVOS/h6JerWLOLdJqEGKMNpTHc4kWebzz2YtIpgqMRrqxdmQhewM1KJREojdAV2tsNvBsUWyhA==
+
 react-is@^16.12.0, react-is@^16.13.1, react-is@^16.6.0, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -17801,22 +17751,23 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-select-async-paginate@0.3.10:
-  version "0.3.10"
-  resolved "https://registry.yarnpkg.com/react-select-async-paginate/-/react-select-async-paginate-0.3.10.tgz#c6e552b5ec660f55913871fe7c18d16b2abfd363"
-  integrity sha512-p/MBs5g7XCdXVxPIc/5hGaGLeDyCm+F8BZRO9bCEJ4vlzmhDj4EUzGuK0RV4PolRwYJBQmVvnGNBiE8sTCQ+Rw==
+react-select-async-paginate@0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/react-select-async-paginate/-/react-select-async-paginate-0.5.3.tgz#c5e6e27ee887078c52653d3214214c81f7e62cc8"
+  integrity sha512-SWX1twi/jzViDpQa1nS+xyjrFtn9RBezbL4aIjcJXCABKMY+8JhH4iAKqAW3pryZbm439/DaMtQeZADH17v7bQ==
   dependencies:
-    "@babel/runtime" "^7.6.3"
-    prop-types "^15.7.2"
+    "@babel/runtime" "^7.12.5"
+    "@seznam/compose-react-refs" "^1.0.5"
+    react-is-mounted-hook "^1.0.3"
+    sleep-promise "^9.1.0"
 
-react-select@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-4.0.2.tgz#4dcca9f38d6a41e01f2dc7673e244a325e3b4e0e"
-  integrity sha512-BiihrRpRIBBvNqofNZIBpo08Kw8DBHb/kgpIDW4bxgkttk50Sxf0alEIKobns3U7UJXk/CA4rsFUueQEg9Pm5A==
+react-select@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-4.3.1.tgz#389fc07c9bc7cf7d3c377b7a05ea18cd7399cb81"
+  integrity sha512-HBBd0dYwkF5aZk1zP81Wx5UsLIIT2lSvAY2JiJo199LjoLHoivjn9//KsmvQMEFGNhe58xyuOITjfxKCcGc62Q==
   dependencies:
-    "@babel/runtime" "^7.4.4"
-    "@emotion/cache" "^11.0.0"
-    "@emotion/css" "^11.0.0"
+    "@babel/runtime" "^7.12.0"
+    "@emotion/cache" "^11.4.0"
     "@emotion/react" "^11.1.1"
     memoize-one "^5.0.0"
     prop-types "^15.6.0"
@@ -19518,6 +19469,11 @@ slate@^0.62.0:
     is-plain-object "^3.0.0"
     lodash "^4.17.4"
     tiny-warning "^1.0.3"
+
+sleep-promise@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/sleep-promise/-/sleep-promise-9.1.0.tgz#101ebe65700bcd184709da95d960967b02b79d03"
+  integrity sha512-UHYzVpz9Xn8b+jikYSD6bqvf754xL2uBUzDFwiU6NcdZeifPr6UfgU43xpkPu67VMS88+TI2PSI7Eohgqf2fKA==
 
 slice-ansi@0.0.4:
   version "0.0.4"
@@ -21702,33 +21658,10 @@ vm-browserify@^1.0.0, vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@2.8.3:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.8.3.tgz#dc6f5ead18d1d2e8077e56ba0ebb04a751c8e9a6"
-  integrity sha512-zANTE3H6EBlrlW5ecz7RqBIk2wOBuhP3ELEaDVS1Ex0PQHCCzdl3araHvBzxi8Wm5UFLQKBCSbKGV4UTP/2bAA==
-  dependencies:
-    "@eeacms/volto-object-widget" ">=2.2.3"
-    classnames "2.2.6"
-    image-extensions "1.1.0"
-    is-url "1.2.4"
-    jsdom "16.2.2"
-    react-intersection-observer "^8.32.0"
-    react-visibility-sensor "5.1.1"
-    slate "^0.62.0"
-    slate-history "^0.62.0"
-    slate-hyperscript "^0.62.0"
-    slate-react "^0.62.0"
-    weak-key "^1.0.2"
-
 volto-slate@2.9.1:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.9.1.tgz#d4ed326470570a5b81c3dbd65e2aa9acf936184e"
   integrity sha512-ZCqMnIv+qHOsMgespqLwDKvAqSbrflGXF1MFTABbCgpEAA7dw/9SGaCR1Sa5uZbYs8kb24PR7esBCKs2JszQkg==
-
-volto-slate@2.9.2:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.9.2.tgz#9874dbce05de9bd833ce93c22514c0f2ef0ee51d"
-  integrity sha512-6eaWvOgz/aOQ63zeJ8qE538M3SQA6CONtAxEf5dDLw+88ZCiAWqFnjDNG/Q+ILdWWAtiocETp51s3Wa8auT81Q==
   dependencies:
     "@eeacms/volto-object-widget" ">=2.2.3"
     classnames "2.2.6"
