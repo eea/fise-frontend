@@ -8,10 +8,9 @@
       "@eeacms/volto-embed": ["develop/volto-embed/src"],
       "@eeacms/volto-matomo": ["develop/volto-matomo/src"],
       "@eeacms/volto-addons-forest": ["develop/volto-addons-forest/src"],
-      "@eeacms/volto-slate": ["develop/volto-slate/src"],
+      "volto-slate": ["develop/volto-slate/src"],
       "@eeacms/volto-accordion-block": ["develop/volto-accordion-block/src"],
       "@eeacms/volto-block-style": ["develop/volto-block-style/src"]
-      
     },
     "baseUrl": "src"
   }
