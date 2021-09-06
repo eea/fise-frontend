@@ -73,6 +73,7 @@ class Navigation extends Component {
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
     this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
+    this.handleSearchClose = this.handleSearchClose.bind(this);
     this.state = {
       isMobileMenuOpen: false,
       tappedMenu: null,
@@ -99,6 +100,7 @@ class Navigation extends Component {
     if (nextProps.pathname !== this.props.pathname) {
       // this.props.getNavigation(getBaseUrl(nextProps.pathname), 2);
       this.closeMobileMenu();
+      // this.handleSearchClose();
     }
   }
 
@@ -120,6 +122,15 @@ class Navigation extends Component {
     if (__CLIENT__ && document.querySelector('body')) {
       document.querySelector('body').click();
     }
+  }
+
+  /**
+   * Close mobile menu
+   * @method handleSearchClose
+   * @returns {undefined}
+   */
+  handleSearchClose() {
+    this.setState({ isMobileSearchOpen: false });
   }
 
   /**
@@ -227,6 +238,7 @@ class Navigation extends Component {
         >
           {!hideSearch ? (
             <SearchBlock
+              handleClose={this.handleSearchClose}
               data={{
                 title: { value: 'Search results' },
                 query: {
