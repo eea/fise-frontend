@@ -48,7 +48,7 @@ const Logo = ({ intl }) => (
     <LazyLoadImage
       className="logoImageSm"
       // alt={image.alt}
-      height={80}
+      height={65}
       effect="blur"
       src={LogoImageSm}
       alt={intl.formatMessage(messages.plonesite)}
