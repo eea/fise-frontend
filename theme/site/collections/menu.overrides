@@ -395,6 +395,18 @@
     display: none !important;
 }
 
+@media(max-width: 600px) {
+    .logoImage {
+        height: 65px !important;
+    }
+}
+
+@media(max-width: 450px) {
+    .logoImage {
+        height: 55px !important;
+    }
+}
+
 .sticky-outer-wrapper.active {
     .logoImage {
         display: none !important;
@@ -481,10 +493,22 @@
             .logoImageSm {
                 height: 63px !important;
             }
+            @media(max-width: 600px) {
+                .logoImageSm {
+                    height: 51px !important;
+                }
+            }
+            @media(max-width: 450px) {
+                .logoImageSm {
+                    height: 45px !important;
+                }
+            }
         }
 
     }
 }
+
+
 
 
 

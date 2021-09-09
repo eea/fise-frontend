@@ -224,6 +224,11 @@ export function applyConfig(config) {
       title: 'Drop shadow padding margin',
       cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
     },
+    {
+      id: 'sourceFormatting',
+      title: 'Source formatting',
+      cssClass: 'discreet block_source source_format',
+    },
   ];
   // config.settings.search_portal_types = [
   //   'Event',

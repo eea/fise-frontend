@@ -1,9 +1,5 @@
-/* PLUGINS */
 import { isMatch } from 'lodash';
-/* ROOT */
-import config from '@plone/volto/registry';
-/* PLONE VOLTO */
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers';
 
 export const isActive = (url, pathname) => {
   return (
@@ -83,10 +79,5 @@ export function removeValue(arr) {
 }
 
 export function getBasePath(url) {
-  return (
-    url &&
-    getBaseUrl(url)
-      .replace(config.settings.apiPath, '')
-      .replace(config.settings.internalApiPath, '')
-  );
+  return url && flattenToAppURL(getBaseUrl(url));
 }

@@ -1,11 +1,8 @@
-import config from '@plone/volto/registry';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers';
 import { setConnectedDataParameters } from '@eeacms/volto-datablocks/actions';
 
 export function getBasePath(url) {
-  return getBaseUrl(url)
-    .replace(config.settings.apiPath, '')
-    .replace(config.settings.internalApiPath, '');
+  return flattenToAppURL(getBaseUrl(url));
 }
 
 export const objectHasData = (obj) => {
@@ -60,9 +57,7 @@ export function getLocation(href) {
 export function samePath(url, path) {
   // returns true if the router path is equal to the given url path
   const parsed = getLocation(url);
-  const clean = url
-    .replace(config.settings.apiPath, '')
-    .replace(config.settings.internalApiPath, '')
+  const clean = getBasePath(url)
     .replace(parsed.hash, '')
     .replace(parsed.search, '')
     .replace(/\/$/, '');
