@@ -5,7 +5,8 @@ import { setConnectedDataParameters } from '@eeacms/volto-datablocks/actions';
 export function getBasePath(url) {
   return getBaseUrl(url)
     .replace(config.settings.apiPath, '')
-    .replace(config.settings.internalApiPath, '');
+    .replace(config.settings.internalApiPath, '')
+    .replace('https://demo-forest.devel4cph.eea.europa.eu/', '');
 }
 
 export const objectHasData = (obj) => {
