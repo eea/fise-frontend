@@ -19,18 +19,21 @@ const RedirectView = (props) => {
   useEffect(() => {
     if (redirect) {
       history.push(getBasePath(redirectPage));
+      console.log(getBasePath(redirectPage));
     }
   }, [redirect]);
 
-  if (mounted && !redirect && !props.navigation.loading) {
-    if (redirectPage) {
-      const currentPath = getBasePath(currentPage);
-      const redirectPath = getBasePath(redirectPage);
-      if (currentPath !== redirectPath) {
-        setRedirect(true);
+  useEffect(() => {
+    if (mounted && !redirect && !props.navigation.loading) {
+      if (redirectPage) {
+        const currentPath = getBasePath(currentPage);
+        const redirectPath = getBasePath(redirectPage);
+        if (currentPath !== redirectPath) {
+          setRedirect(true);
+        }
       }
     }
-  }
+  }, [mounted, redirectPage]);
 
   return (
     <Dimmer active inverted className="redirect-loader">
