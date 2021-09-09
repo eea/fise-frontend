@@ -1,7 +1,7 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Placeholder } from 'semantic-ui-react';
-import { getBasePath } from '@eeacms/volto-datablocks/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 function HeaderImage(props) {
   return props.url ? (
@@ -11,7 +11,7 @@ function HeaderImage(props) {
         // alt={image.alt}
         height={280}
         effect="blur"
-        style={{ backgroundImage: `url(${getBasePath(props.url)})` }}
+        style={{ backgroundImage: `url(${flattenToAppURL(props.url)})` }}
         width={'100%'}
         visibleByDefault={true}
         placeholder={

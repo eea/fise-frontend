@@ -8,21 +8,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { asyncConnect } from 'redux-connect';
-import { Segment, Container } from 'semantic-ui-react';
-import { renderRoutes } from 'react-router-config';
-import { Slide, ToastContainer, toast } from 'react-toastify';
 import loadable from '@loadable/component';
 
-import Error from '@plone/volto/error';
-
-import {
-  Icon,
-  Messages,
-  Footer,
-  Header,
-  OutdatedBrowser,
-  AppExtras,
-} from '@plone/volto/components';
+import { Header } from '@plone/volto/components';
 import { BodyClass, getBaseUrl, getView } from '@plone/volto/helpers';
 import {
   getContent,
