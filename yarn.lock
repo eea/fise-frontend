@@ -1226,12 +1226,12 @@
   dependencies:
     "@datapunt/matomo-tracker-react" "0.3.1"
 
-"@eeacms/volto-metadata-block@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-metadata-block/-/volto-metadata-block-3.3.0.tgz#d7ee1a762ed2a78769639196d99659e27498035d"
-  integrity sha512-JFumAQN6QF1O6e1szIEgR5gPvWKeUWAnsn4V04m3a4CDAQpirESO1pK4rgsQZyYTs3nSkC4oAIwayCdnHv7R5g==
+"@eeacms/volto-metadata-block@3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-metadata-block/-/volto-metadata-block-3.3.1.tgz#eee7671db4c13a17d60506b416ee2b05fa0f94dc"
+  integrity sha512-lSa+OrjcehTbeeLfb+bLXI7ejDdc5RSdMZUV+9wJ+3lU8gEYdWlLXqsiRFqnaYoi4f4oggwndsPRmX0GlWE2Gg==
   dependencies:
-    "@eeacms/volto-widgets-view" ">=2.1.2"
+    "@eeacms/volto-widgets-view" "*"
 
 "@eeacms/volto-middleware-rdf@eea/volto-middleware-rdf.git":
   version "1.0.0"
@@ -1260,7 +1260,7 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-toggle/-/volto-widget-toggle-2.2.3.tgz#44200a3560d8d4359fb2a4e91075742b3300d08c"
   integrity sha512-EeIzoSKH2hlwn7cLsHp4TwCmblUqtQsz2xIE2RrU9MbgeYJ5MTXn715AL2+qQVss/RcxEnvICUpwEsDAAJjA8A==
 
-"@eeacms/volto-widgets-view@3.0.0", "@eeacms/volto-widgets-view@>=2.1.2":
+"@eeacms/volto-widgets-view@*", "@eeacms/volto-widgets-view@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-widgets-view/-/volto-widgets-view-3.0.0.tgz#0a1ac5b4817a1c2c6e064a71796521ca17cf21d8"
   integrity sha512-+xtU0+tiCrxkGzrlOQilIRV7j1eHxAb3+tQRLQ5x3UUxeY3VVt/PK8oSMiAs8YE466fad6ev2lNWpN1UZRIZBQ==
