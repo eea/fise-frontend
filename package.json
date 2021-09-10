@@ -18,7 +18,6 @@
     "@eeacms/volto-tableau",
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
-    "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",
     "@eeacms/volto-addons-forest",
     "@eeacms/volto-columns-block",
@@ -26,7 +25,7 @@
     "@eeacms/volto-embed",
     "@eeacms/volto-block-style",
     "@eeacms/volto-accordion-block",
-    "@eeacms/volto-middleware-rdf"
+    "@eeacms/volto-middleware-vh"
   ],
   "dependencies": {
     "@blueprintjs/core": "^3.30.0",

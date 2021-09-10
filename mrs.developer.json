@@ -48,9 +48,9 @@
     "path": "src",
     "develop": true
   },
-  "volto-middleware-rdf": {
-    "url": "https://github.com/eea/volto-middleware-rdf.git",
-    "package": "@eeacms/volto-middleware-rdf",
+  "volto-middleware-vh": {
+    "url": "https://github.com/eea/volto-middleware-vh.git",
+    "package": "@eeacms/volto-middleware-vh",
     "branch": "develop",
     "path": "src",
     "develop": true

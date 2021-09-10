@@ -23,8 +23,8 @@
             "@eeacms/volto-block-style": [
                 "develop/volto-block-style/src"
             ],
-            "@eeacms/volto-middleware-rdf": [
-                "develop/volto-middleware-rdf/src"
+            "@eeacms/volto-middleware-vh": [
+                "develop/volto-middleware-vh/src"
             ]
         },
         "baseUrl": "src"
