@@ -69,7 +69,10 @@
     "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=develop",
     "develop": "missdev --config=jsconfig.json --output=develop",
     "cypress:run": "./node_modules/cypress/bin/cypress run",
-    "cypress:open": "./node_modules/cypress/bin/cypress open"
+    "cypress:open": "./node_modules/cypress/bin/cypress open",
+    "release": "release-it",
+    "release-major-beta": "release-it major --preRelease=beta",
+    "release-beta": "release-it --preRelease=beta"
   },
   "jest": {
     "modulePathIgnorePatterns": [
