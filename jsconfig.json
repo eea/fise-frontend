@@ -1,32 +1,16 @@
 {
-    "compilerOptions": {
-        "jsx": "react",
-        "paths": {
-            "@eeacms/volto-plotlycharts": [
-                "develop/volto-plotlycharts/src"
-            ],
-            "@eeacms/volto-grid-block": [
-                "develop/volto-grid-block/src"
-            ],
-            "@eeacms/volto-datablocks": [
-                "develop/volto-datablocks/src"
-            ],
-            "@eeacms/volto-embed": [
-                "develop/volto-embed/src"
-            ],
-            "@eeacms/volto-matomo": [
-                "develop/volto-matomo/src"
-            ],
-            "@eeacms/volto-addons-forest": [
-                "develop/volto-addons-forest/src"
-            ],
-            "@eeacms/volto-block-style": [
-                "develop/volto-block-style/src"
-            ],
-            "@eeacms/volto-middleware-vh": [
-                "develop/volto-middleware-vh/src"
-            ]
-        },
-        "baseUrl": "src"
-    }
+  "compilerOptions": {
+    "jsx": "react",
+    "paths": {
+      "@eeacms/volto-plotlycharts": ["develop/volto-plotlycharts/src"],
+      "@eeacms/volto-grid-block": ["develop/volto-grid-block/src"],
+      "@eeacms/volto-datablocks": ["develop/volto-datablocks/src"],
+      "@eeacms/volto-embed": ["develop/volto-embed/src"],
+      "@eeacms/volto-matomo": ["develop/volto-matomo/src"],
+      "@eeacms/volto-addons-forest": ["develop/volto-addons-forest/src"],
+      "@eeacms/volto-block-style": ["develop/volto-block-style/src"],
+      "@eeacms/volto-middleware-vh": ["develop/volto-middleware-vh/src"]
+    },
+    "baseUrl": "src"
+  }
 }
