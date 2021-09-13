@@ -23,9 +23,9 @@
     "@eeacms/volto-columns-block",
     "@eeacms/volto-matomo",
     "@eeacms/volto-embed",
-    "@eeacms/volto-block-style",
     "@eeacms/volto-accordion-block",
-    "@eeacms/volto-middleware-vh"
+    "@eeacms/volto-middleware-vh",
+    "@eeacms/volto-block-style"
   ],
   "dependencies": {
     "@blueprintjs/core": "^3.30.0",
