@@ -16,7 +16,7 @@
   "volto-datablocks": {
     "url": "https://github.com/eea/volto-datablocks.git",
     "package": "@eeacms/volto-datablocks",
-    "branch": "develop",
+    "branch": "fix_volto_13",
     "path": "src",
     "develop": true
   },
