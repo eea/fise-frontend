@@ -1361,6 +1361,42 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.3.1"
 
+"@eeacms/volto-accordion-block@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.1.tgz#67e1becb5b0c9e0846575a42c97f69908a6c0d02"
+  integrity sha512-V48b9x1YtR/yFbe+jtswfDY/k3MvVE/az7pfNrRtTMxlCH9JQcaIMHG+6HYJPnPcTXhUuh63yrvpwKwUlgrObA==
+
+"@eeacms/volto-addons-forest@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.2.tgz#cd9cd988b3bf4d9f0c3f432a1e48a8e4f56cd28e"
+  integrity sha512-hDDNI4jWLTOpNOOMjZnR8uCy5Ya4KCWog0EBGmiYishshSlo5kNXoVYb3SAIWbVBud4pa8fAT3IJZCWOK2+YlA==
+  dependencies:
+    dompurify "^2.0.12"
+    draft-js-alignment-plugin "^2.0.6"
+    draft-js-focus-plugin "^3.0.1"
+    draft-js-import-html "^1.4.1"
+    draft-js-inline-toolbar-plugin "^2.0.3"
+    draft-js-modifiers "^0.2.2"
+    draft-js-plugins-editor "^3.0.0"
+    draft-js-resizeable-plugin "^2.0.9"
+    draft-js-video-plugin "^2.0.2"
+    esri-loader "^2.14.0"
+    react-component-queries "2.3.0"
+    react-highlight-words "^0.16.0"
+    react-image-gallery "^1.0.7"
+    react-lazy-load-image-component "^1.4.3"
+    react-pdf-js "^5.1.0"
+    react-sizeme "3.0.1"
+    redraft "^0.10.2"
+
+"@eeacms/volto-block-style@^3.3.0":
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-3.4.5.tgz#8f4dda1b42aea18fde745d2c85fcbf8cfc7cfebc"
+  integrity sha512-dnvMfNt1HnTA3CAAare1ftme6ozPbaA+JBGugvxH8BoXRtjHsJnEp7g5B6rXW7dmH2hlVg8TJ/IzS1ltvVfQtQ==
+  dependencies:
+    "@eeacms/volto-resize-helper" "*"
+    react-color "~2.18.1"
+
 "@eeacms/volto-columns-block@4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-columns-block/-/volto-columns-block-4.4.5.tgz#f32b3e8b8b76d765e2ccec2cac9d141d74e61870"
@@ -1404,7 +1440,7 @@
   version "1.0.0"
   resolved "https://codeload.github.com/eea/volto-middleware-rdf/tar.gz/cfd934e51f8dc657564a75c2df7e4f663d384d3f"
 
-"@eeacms/volto-object-widget@*", "@eeacms/volto-object-widget@3.0.0", "@eeacms/volto-object-widget@>=2.2.3":
+"@eeacms/volto-object-widget@*", "@eeacms/volto-object-widget@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-object-widget/-/volto-object-widget-3.0.0.tgz#caf99ec54bb39481a99937985f362f086c1c5fd5"
   integrity sha512-8ByONF12U35HKnsO6gKAxCxSe4xfSintAU7zE8zWEKgdtcIb+Jx78wpi6cy3p0C0YLUTnd2BGIXLqDSftKI+WA==
@@ -21407,12 +21443,12 @@ vm-browserify@^1.0.0, vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-2.9.1.tgz#d4ed326470570a5b81c3dbd65e2aa9acf936184e"
-  integrity sha512-ZCqMnIv+qHOsMgespqLwDKvAqSbrflGXF1MFTABbCgpEAA7dw/9SGaCR1Sa5uZbYs8kb24PR7esBCKs2JszQkg==
+volto-slate@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-3.1.0.tgz#2c5ca83ed882edc130607163b4e1327839d0bc09"
+  integrity sha512-kIWor1HxxYF/UpkbJZZzxvxJlK+KOhwgm4mo1LfUsQcOWxG+F9VIaxCsiUTPpkT1ZTB+Z25UNM2IxihjKw2A4A==
   dependencies:
-    "@eeacms/volto-object-widget" ">=2.2.3"
+    "@eeacms/volto-object-widget" "*"
     classnames "2.2.6"
     image-extensions "1.1.0"
     is-url "1.2.4"
