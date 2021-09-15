@@ -47,12 +47,5 @@
     "branch": "develop",
     "path": "src",
     "develop": true
-  },
-  "volto-middleware-vh": {
-    "url": "https://github.com/eea/volto-middleware-vh.git",
-    "package": "@eeacms/volto-middleware-vh",
-    "branch": "develop",
-    "path": "src",
-    "develop": true
   }
 }
