@@ -1158,10 +1158,10 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.3.1"
 
-"@eeacms/volto-accordion-block@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.1.tgz#67e1becb5b0c9e0846575a42c97f69908a6c0d02"
-  integrity sha512-V48b9x1YtR/yFbe+jtswfDY/k3MvVE/az7pfNrRtTMxlCH9JQcaIMHG+6HYJPnPcTXhUuh63yrvpwKwUlgrObA==
+"@eeacms/volto-accordion-block@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.2.tgz#75f16013583813962e0aa075140f0142fed4ccd9"
+  integrity sha512-pUkZEnyEbvTFjfTXXeB0XlVqTVkB8+4Pklc+yEQFJq7AkVGDJiksoC6Q2JNdwKzniDydRUYdgkAHne7x34Bl4w==
 
 "@eeacms/volto-addons-forest@0.1.2":
   version "0.1.2"
