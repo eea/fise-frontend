@@ -2298,6 +2298,11 @@ main {
       border: none;
     }
 
+    .article-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .article-headline {
       display: inline-block;
       align-items: center;
@@ -2349,6 +2354,16 @@ main {
           justify-content: flex-end;
           align-items: center;
         }
+      }
+    }
+  }
+
+  &:not(.portlet) {
+    article {
+      padding: 2rem 0;
+
+      .article-body .meta-data {
+        margin-bottom: 1rem;
       }
     }
   }

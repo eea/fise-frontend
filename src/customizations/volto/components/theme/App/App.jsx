@@ -4,7 +4,6 @@
  */
 
 import React, { Component } from 'react';
-import { matchPath } from 'react-router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -204,24 +203,8 @@ export default compose(
   asyncConnect([
     {
       key: 'content',
-      promise: ({ location, store: { dispatch } }) => {
-        const withFullObjects = matchPath(
-          location.pathname,
-          config.settings.pathsWithFullobjects,
-        )?.isExact;
-        return (
-          __SERVER__ &&
-          dispatch(
-            getContent(
-              getBaseUrl(location.pathname),
-              null,
-              null,
-              null,
-              withFullObjects,
-            ),
-          )
-        );
-      },
+      promise: ({ location, store: { dispatch } }) =>
+        __SERVER__ && dispatch(getContent(getBaseUrl(location.pathname))),
     },
     {
       key: 'frontpage_slides',
