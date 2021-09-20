@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import LogoImageSm from './Logo-sm.svg';
+import LogoImageWithoutText from './LogoImg.svg';
+import LogoImageSmWithoutText from './LogoImg-sm.svg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Placeholder } from 'semantic-ui-react';
 
@@ -29,9 +31,11 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const Logo = ({ intl }) => (
+
   <Link to="/" title={intl.formatMessage(messages.site)}>
+
     <LazyLoadImage
-      className="logoImage"
+      className="logoImage computer large screen widescreen only"
       // alt={image.alt}
       height={80}
       effect="blur"
@@ -46,11 +50,41 @@ const Logo = ({ intl }) => (
       }
     />
     <LazyLoadImage
-      className="logoImageSm"
+      className="logoImageSm computer large screen widescreen only"
       // alt={image.alt}
       height={65}
       effect="blur"
       src={LogoImageSm}
+      alt={intl.formatMessage(messages.plonesite)}
+      title={intl.formatMessage(messages.plonesite)}
+      visibleByDefault={true}
+      placeholder={
+        <Placeholder>
+          <Placeholder.Image rectangular />
+        </Placeholder>
+      }
+    />
+    <LazyLoadImage
+      className="logoImage computer hidden large screen hidden widescreen hidden"
+      // alt={image.alt}
+      height={80}
+      effect="blur"
+      src={LogoImageWithoutText}
+      alt={intl.formatMessage(messages.plonesite)}
+      title={intl.formatMessage(messages.plonesite)}
+      visibleByDefault={true}
+      placeholder={
+        <Placeholder>
+          <Placeholder.Image rectangular />
+        </Placeholder>
+      }
+    />
+    <LazyLoadImage
+      className="logoImageSm computer hidden large screen hidden widescreen hidden"
+      // alt={image.alt}
+      height={65}
+      effect="blur"
+      src={LogoImageSmWithoutText}
       alt={intl.formatMessage(messages.plonesite)}
       title={intl.formatMessage(messages.plonesite)}
       visibleByDefault={true}

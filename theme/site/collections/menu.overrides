@@ -58,7 +58,7 @@
             //     }
             // }
 
-            @media(max-width:1200px) {
+            @media(max-width:800px) {
                 border-color : transparent !important;
                 border-radius: 0 !important;
 
@@ -106,7 +106,7 @@
             border-bottom: 1px solid transparent !important;
 
             &:hover {
-                @media(min-width: 1200px) {
+                @media(min-width: 800px) {
 
                     border-color: #eee !important;
 
@@ -231,7 +231,7 @@
 
     .item.thirdLevel {
 
-        @media (max-width: 1200px) {
+        @media (max-width: 800px) {
             padding-left: 2.5rem;
             font-weight : 400;
         }
@@ -247,7 +247,7 @@
         border-bottom-style: none;
 
 
-        @media (max-width: 1200px) {
+        @media (max-width: 800px) {
             font-weight: 400;
         }
 
@@ -255,7 +255,7 @@
             border: none;
         }
 
-        @media(min-width: 1200px) {
+        @media(min-width: 800px) {
             &:hover {
                 background: #cc4400;
                 color     : #fff !important;
@@ -305,7 +305,7 @@
         display    : block;
         column-span: all; // ignore two column layout by default
 
-        @media(min-width: 1200px) {
+        @media(min-width: 800px) {
 
             &:hover {
                 color          : @darkOrange  !important;
@@ -330,7 +330,7 @@
 .navigation .menu>.dropdown.item>.menu {
     box-shadow: none;
 
-    @media(min-width: 1200px) {
+    @media(min-width: 800px) {
         margin-top: -3px !important;
     }
 
@@ -383,10 +383,6 @@
     }
 }
 
-.sticky-outer-wrapper.active .sticky-inner-wrapper .navigation .ui.secondary.pointing.menu>.item.firstLevel {
-    margin: 0 12px;
-}
-
 .sticky-inner-wrapper {
     z-index: 10;
 }
@@ -423,7 +419,7 @@
     .sticky-inner-wrapper {
         background: @stickyMenuColor;
 
-        @media (max-width: 1200px) {
+        @media (max-width: 800px) {
             background: white;
         }
 
@@ -461,18 +457,12 @@
         }
 
         .navigation .ui.secondary.pointing.menu>.item {
-            &.firstLevel {
-                @media(min-width: 1200px) {
-                    margin: 0 .5rem;
-                }
-            }
-
             >a {
                 padding: 0;
             }
         }
 
-        @media(max-width: 1200px) {
+        @media(max-width: 800px) {
 
             .ui.pointing.secondary.stackable.open.menu {
                 margin-top: 0 !important;
@@ -551,7 +541,7 @@
 }
 
 
-@media(min-width: 1200px) {
+@media(min-width: 800px) {
     .firstLevel:active {
         a.firstLevel {
             pointer-events: none;
@@ -565,7 +555,7 @@
 }
 
 body {
-    @media(max-width: 1200px) {
+    @media(max-width: 800px) {
         .ui.pointing.secondary.stackable.open.firstLevel.menu {
             z-index: 100;
         }
