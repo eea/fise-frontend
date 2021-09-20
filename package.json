@@ -68,6 +68,8 @@
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js",
     "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=develop",
     "develop": "missdev --config=jsconfig.json --output=develop",
+    "update": "./scripts/update.sh",
+    "test": "./node_modules/jest/bin/jest.js --env=jsdom --passWithNoTests src/addons --verbose",
     "cypress:run": "./node_modules/cypress/bin/cypress run",
     "cypress:open": "./node_modules/cypress/bin/cypress open",
     "release": "release-it",
