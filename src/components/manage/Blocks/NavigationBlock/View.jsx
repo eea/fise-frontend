@@ -72,7 +72,7 @@ const View = ({ content, ...props }) => {
     }
   };
 
-  if (navigationItems.length < 2 && props.mode !== 'edit') return null;
+  if (navigationItems.length === 0 && props.mode !== 'edit') return null;
   return (props.navigation?.items?.length && parent) || pages.length ? (
     <div
       className={`tabs-view-menu modern-tabs ${isFixed ? '' : 'sticky-tabs'} ${
