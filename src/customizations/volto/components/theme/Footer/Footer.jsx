@@ -28,7 +28,7 @@ import { setCurrentVersion } from '~/actions';
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component
  */
-const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
+const Footer = ({ intl, token, setCurrentVersion, currentVersion, navItems }) => {
   const { settings } = config;
   const dtf = new Intl.DateTimeFormat('en', {
     day: '2-digit',
@@ -53,6 +53,12 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
     settings.frontendMeta.version
   ) {
     setCurrentVersion(settings.frontendMeta);
+  }
+
+  const aboutUsItems = navItems.filter((item) => item.title?.toLowerCase().includes("about us"));
+  let aboutUsItem;
+  if (aboutUsItems.length > 0) {
+    aboutUsItem = aboutUsItems[0];
   }
 
   return (
@@ -92,6 +98,16 @@ const Footer = ({ intl, token, setCurrentVersion, currentVersion }) => {
                   Contact us
                 </a>
               </li>
+              { aboutUsItem !== undefined && (
+                <li>
+                  <a
+                    className="item separated"
+                    href={aboutUsItem.url}
+                  >
+                    {aboutUsItem.title}
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   className={`item ${token ? '' : 'separated'}`}
@@ -315,6 +331,7 @@ export default compose(
     (state) => ({
       token: state.userSession.token,
       currentVersion: state.current_version?.items,
+      navItems: state.navigation.items,
     }),
     { setCurrentVersion },
   ),

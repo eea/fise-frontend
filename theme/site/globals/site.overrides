@@ -187,8 +187,42 @@ body.has-toolbar {
       > div {
         width: 100%;
       }
+
+      @media(max-width: 1300px) and (min-width: @largestMobileScreen){
+        margin-top: 75px;
+      }
     }
   }
+
+  &.bigSearch {
+    @media(max-width: 1300px) {
+      display: none !important;
+    }
+  }
+
+  &.smallSearch {
+    float:right;
+
+    > svg {
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      position: relative;
+      margin-top: 10px;
+      @media (max-width: 1200px) {
+        margin-top: 15px;
+      }
+    }
+
+    @media(min-width: 1300px) {
+      display: none !important;
+    }
+
+    @media(max-width: @largestMobileScreen) {
+      display: none !important;
+    }
+  }
+
   .searchbox {
     .floating_search_results {
       padding: 1rem 0.5rem;
