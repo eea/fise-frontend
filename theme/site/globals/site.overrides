@@ -1574,6 +1574,10 @@ span.float-right {
     margin-top: auto;
   }
 
+  a > span.discreet {
+    color: #047a79 !important;
+  }
+
   .map-wrapper {
     border: 1px solid @darkGreen;
     border-radius: 5px;
