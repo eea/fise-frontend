@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Forest frontend",
   "license": "MIT",
-  "version": "2.7.0-12",
+  "version": "2.7.0-beta.22",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -18,15 +18,14 @@
     "@eeacms/volto-tableau",
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
-    "@eeacms/volto-middleware-rdf",
     "@eeacms/volto-group-block",
     "@eeacms/volto-addons-forest",
     "@eeacms/volto-columns-block",
     "@eeacms/volto-matomo",
     "@eeacms/volto-embed",
-    "@eeacms/volto-block-style",
     "@eeacms/volto-accordion-block",
-    "@eeacms/volto-middleware-rdf"
+    "@eeacms/volto-block-style",
+    "@eeacms/volto-middleware-vh"
   ],
   "dependencies": {
     "@blueprintjs/core": "^3.30.0",
@@ -45,6 +44,7 @@
     "@eeacms/volto-tableau": "1.2.3",
     "@eeacms/volto-widget-toggle": "2.2.3",
     "@eeacms/volto-widgets-view": "3.0.0",
+    "@eeacms/volto-middleware-vh": "1.0.1",
     "@plone/volto": "13.15.0",
     "raven-js": "3.27.2",
     "react-highlight-words": "^0.16.0",
@@ -68,8 +68,13 @@
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js",
     "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=develop",
     "develop": "missdev --config=jsconfig.json --output=develop",
+    "update": "./scripts/update.sh",
+    "test": "./node_modules/jest/bin/jest.js --env=jsdom --passWithNoTests src/addons --verbose",
     "cypress:run": "./node_modules/cypress/bin/cypress run",
-    "cypress:open": "./node_modules/cypress/bin/cypress open"
+    "cypress:open": "./node_modules/cypress/bin/cypress open",
+    "release": "release-it",
+    "release-major-beta": "release-it major --preRelease=beta",
+    "release-beta": "release-it --preRelease=beta"
   },
   "jest": {
     "modulePathIgnorePatterns": [

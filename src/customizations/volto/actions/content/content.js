@@ -2,7 +2,7 @@
  * Content actions.
  * @module actions/content/content
  */
-
+import { matchPath } from 'react-router';
 import {
   CREATE_CONTENT,
   DELETE_CONTENT,
@@ -126,13 +126,25 @@ export function getContent(
   version = null,
   subrequest = null,
   page = null,
-  fullobjects = false,
-  extraParameters = {},
+  fullobjects = null,
+  parameters = null,
 ) {
   const { settings } = config;
+  const { pathsWithFullobjects, pathsWithExtraParameters } = settings;
+  const withFullObjects =
+    fullobjects ?? matchPath(url, pathsWithFullobjects)?.isExact;
+  const extraParametersPath = matchPath(
+    url,
+    Object.keys(pathsWithExtraParameters || {}),
+  );
+  const extraParameters =
+    parameters ??
+    (extraParametersPath
+      ? pathsWithExtraParameters[extraParametersPath.path]
+      : {});
   const query = Object.assign(
     extraParameters,
-    fullobjects || settings.bbb_getContentFetchesFullobjects
+    withFullObjects || settings.bbb_getContentFetchesFullobjects
       ? { fullobjects: true }
       : {},
     page

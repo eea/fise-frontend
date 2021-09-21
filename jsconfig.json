@@ -22,9 +22,6 @@
             ],
             "@eeacms/volto-block-style": [
                 "develop/volto-block-style/src"
-            ],
-            "@eeacms/volto-middleware-rdf": [
-                "develop/volto-middleware-rdf/src"
             ]
         },
         "baseUrl": "src"

@@ -1,21 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { matchPath } from 'react-router';
-import { Helmet, BodyClass, getBaseUrl } from '@plone/volto/helpers';
-import { getContent } from '@plone/volto/actions';
+import React, { useState } from 'react';
+import { Helmet, BodyClass } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import { Link } from 'react-router-dom';
-import config from '@plone/volto/registry';
 import NewsItem from './NewsItem';
-import WidthBasedLayoutProvider from '@eeacms/volto-plotlycharts/LayoutProvider/WidthBasedLayoutProvider';
 import downKey from '@plone/volto/icons/down-key.svg';
 import rss from '@plone/volto/icons/rss.svg';
 
-const getItems = (propsItems, type = null) => {
+const getItems = (items) => {
   return (
-    propsItems &&
-    propsItems
+    items &&
+    items
       .sort((a, b) => {
         return new Date(b.start) - new Date(a.start);
       })
@@ -23,14 +18,14 @@ const getItems = (propsItems, type = null) => {
         return new Date(b.effective) - new Date(a.effective);
       })
       .map((item, index) => ({
-        id: item['@id'],
+        '@id': item['@id'],
+        '@type': item['@type'],
         date: item.effective,
         start: item.start,
         end: item.end,
         location: item.location,
-        type: item['@type'],
         title: item.title,
-        image: item.image ? item.image.download : null,
+        image: item.image,
         description: item.description,
         text: item.text,
         initial_index: index,
@@ -59,26 +54,7 @@ const NewsView = (props) => {
     widescreen: 'twelve',
   };
   const title = getTitle(props.location);
-  const items = getItems(props.content.items, title.lowerCase);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const withFullObjects = matchPath(
-      props.location.pathname,
-      config.settings.pathsWithFullobjects,
-    )?.isExact;
-    dispatch(
-      getContent(
-        getBaseUrl(props.location.pathname),
-        null,
-        null,
-        null,
-        withFullObjects,
-        config.settings.pathsWithExtraParameters['/news'],
-      ),
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const items = getItems(props.content.items);
 
   if (!items) return <h1>{title.capitalized}</h1>;
   const rssButton = (
@@ -89,12 +65,12 @@ const NewsView = (props) => {
   );
 
   const itemsByYear = {};
-  // const yearOptions = [];
   items.forEach((item) => {
     let year;
-    if (item.start) year = new Date(item.start).getFullYear();
     //  For events
-    else if (item.date) year = new Date(item.date).getFullYear(); //  For news
+    if (item.start) year = new Date(item.start).getFullYear();
+    //  For news
+    else if (item.date) year = new Date(item.date).getFullYear();
     if (!itemsByYear[year]) itemsByYear[year] = [];
     itemsByYear[year].push(item);
   });
@@ -129,6 +105,7 @@ const NewsView = (props) => {
                       </React.Fragment>
                     );
                   }
+                  return '';
                 });
               })}
         </div>
@@ -149,4 +126,4 @@ const NewsView = (props) => {
   );
 };
 
-export default WidthBasedLayoutProvider(NewsView);
+export default NewsView;

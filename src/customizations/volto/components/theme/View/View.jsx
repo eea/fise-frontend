@@ -9,18 +9,25 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
-import { Helmet } from '@plone/volto/helpers';
 import qs from 'query-string';
-import config from '@plone/volto/registry';
 import { Dimmer, Loader } from 'semantic-ui-react';
 
-import { Comments, Tags, Toolbar, Icon } from '@plone/volto/components';
+import {
+  ContentMetadataTags,
+  Comments,
+  Tags,
+  Toolbar,
+  Icon,
+} from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
 import {
   BodyClass,
   getBaseUrl,
   getLayoutFieldname,
 } from '@plone/volto/helpers';
+
+import config from '@plone/volto/registry';
+
 import printer from '@plone/volto/icons/printer.svg';
 
 /**
@@ -249,7 +256,6 @@ class View extends Component {
    */
   render() {
     const { views } = config;
-
     if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
       if (this.props.error.status === undefined) {
@@ -277,13 +283,7 @@ class View extends Component {
 
     return (
       <div id="view">
-        <Helmet>
-          {this.props.content.language && (
-            <html lang={this.props.content.language.token} />
-          )}
-          <title>{this.props.content.title}</title>
-          <meta name="description" content={this.props.content.description} />
-        </Helmet>
+        <ContentMetadataTags content={this.props.content} />
         {/* Body class if displayName in component is set */}
         <BodyClass
           className={

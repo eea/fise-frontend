@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from '@plone/volto/helpers';
-// import { Link } from 'react-router-dom';
 import { getLocalnavigation } from '~/actions';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getBaseUrl } from '@plone/volto/helpers'; // , flattenToAppURL
-
-// import { injectIntl } from 'react-intl'; // defineMessages,
 
 import { Container, Image } from 'semantic-ui-react'; // , Grid
 import { map } from 'lodash';
@@ -47,35 +44,8 @@ class ListingView extends Component {
     }).isRequired,
   };
 
-  // constructor(props) {
-  //   super(props);
-  //
-  //   const url = props.content['@id']
-  //     .replace(settings.apiPath, '')
-  //     .replace(settings.internalApiPath, '');
-  //
-  //   // this.props.getLocalnavigation(url);
-  // }
-
-  // componentDidMount() {
-  //   const url = this.props.content['@id']
-  //     .replace(settings.apiPath, '')
-  //     .replace(settings.internalApiPath, '');
-  //
-  //   this.props.getLocalnavigation(url);
-  // }
-  //
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.pathname !== this.props.pathname) {
-  //     const url = this.props.pathname;
-  //     this.props.getLocalnavigation(url);
-  //   }
-  // }
-
   render() {
-    // console.log('asynclocalnav prop', this.props);
     const content = this.props.content;
-    // const intl = this.props.intl;
     const blocksFieldname = getBlocksFieldname(content);
     const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
     const localNavigation =
@@ -116,11 +86,6 @@ class ListingView extends Component {
               data={content[blocksFieldname][block]}
             />
           ) : (
-            //   <div key={block}>
-            //     {intl.formatMessage(messages.unknownBlock, {
-            //       block: content[blocksFieldname]?.[block]?.['@type'],
-            //     })}
-            //   </div>
             ''
           );
         })}
@@ -128,10 +93,6 @@ class ListingView extends Component {
     ) : (
       <Container id="page-document">
         <Helmet title={content.title} />
-        {/* <h1 className="documentFirstHeading">{content.title}</h1>
-              {content.description && (
-                <p className="documentDescription">{content.description}</p>
-              )} */}
         {content.image && (
           <Image
             className="document-image"
@@ -175,11 +136,6 @@ class ListingView extends Component {
                 data={content[blocksFieldname][block]}
               />
             ) : (
-              //   <div key={block}>
-              //     {intl.formatMessage(messages.unknownBlock, {
-              //       block: content[blocksFieldname]?.[block]?.['@type'],
-              //     })}
-              //   </div>
               ''
             );
           })}
