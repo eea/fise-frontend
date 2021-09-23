@@ -9,7 +9,6 @@
   ],
   "addons": [
     "@eeacms/volto-eea-kitkat",
-    "@eeacms/volto-grid-block",
     "@eeacms/volto-tableau",
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
@@ -23,7 +22,6 @@
     "@eeacms/volto-eea-kitkat": "2.0.2",
     "@eeacms/volto-addons-forest": "0.1.2",
     "@eeacms/volto-datablocks": "2.0.12",
-    "@eeacms/volto-grid-block": "1.1.1",
     "@eeacms/volto-plotlycharts": "2.0.5",
     "@eeacms/volto-tableau": "1.2.3",
     "@eeacms/volto-middleware-vh": "1.0.1",
