@@ -14,8 +14,14 @@ pipeline {
 
   stages {
 
-    stage('Integration tests') {
-      steps {
+ 
+   stage('Integration tests') {
+      parallel {
+        stage('Cypress') {
+          when {
+            environment name: 'CHANGE_ID', value: ''           
+          }
+          steps {
             node(label: 'docker') {
               script {
                 try {
@@ -40,9 +46,39 @@ pipeline {
                 }
               }
             }
+          }
         }
+        
+        stage("Docker test build") {
+             when {
+               not {
+                environment name: 'CHANGE_ID', value: ''
+               }
+               not {
+                 buildingTag()
+               }
+               environment name: 'CHANGE_TARGET', value: 'master'
+             }
+             environment {
+              IMAGE_NAME = BUILD_TAG.toLowerCase()
+             }
+             steps {
+               node(label: 'docker-host') {
+                 script {
+                   checkout scm
+                   try {
+                     dockerImage = docker.build("${IMAGE_NAME}", "--no-cache .")
+                   } finally {
+                     sh script: "docker rmi ${IMAGE_NAME}", returnStatus: true
+                   }
+                 }
+               }
+             }
+          }
+          
+        
+      }
     }
-
 
     
     stage('Pull Request') {
@@ -104,7 +140,7 @@ pipeline {
                 dockerImage.push()
               }
             } finally {
-              sh "docker rmi $registry:$tagName"
+              sh script: "docker rmi $registry:$tagName", returnStatus: true
             }
           }
         }
@@ -119,7 +155,7 @@ pipeline {
         node(label: 'docker') {
           withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN'),  usernamePassword(credentialsId: 'jekinsdockerhub', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
            sh '''docker pull eeacms/gitflow; docker run -i --rm --name="$BUILD_TAG-release"  -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" -e DOCKERHUB_REPO="$registry" -e GIT_TOKEN="$GITHUB_TOKEN" -e DOCKERHUB_USER="$DOCKERHUB_USER" -e DOCKERHUB_PASS="$DOCKERHUB_PASS"  -e RANCHER_CATALOG_PATHS="$template" -e GITFLOW_BEHAVIOR="RUN_ON_TAG" eeacms/gitflow'''
-         }
+          }
         }
       }
     }
@@ -147,16 +183,16 @@ pipeline {
         buildingTag()
       }
       steps{
-        node(label: 'docker') {  
+        node(label: 'docker') {
           withSonarQubeEnv('Sonarqube') {
-            withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GIT_TOKEN')]) { 
+            withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GIT_TOKEN')]) {
               sh '''docker pull eeacms/gitflow'''
               sh '''docker run -i --rm --name="${BUILD_TAG}-sonar" -e GIT_NAME=${GIT_NAME} -e GIT_TOKEN="${GIT_TOKEN}" -e SONARQUBE_TAG=${SONARQUBE_TAG} -e SONARQUBE_TOKEN=${SONAR_AUTH_TOKEN} -e SONAR_HOST_URL=${SONAR_HOST_URL}  eeacms/gitflow /update_sonarqube_tags.sh'''
             }
           }
-        } 
+        }
       }
-    }   
+    }
   }
 
   post {
