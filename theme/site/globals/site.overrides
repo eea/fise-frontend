@@ -188,7 +188,7 @@ body.has-toolbar {
         width: 100%;
       }
 
-      @media(max-width: 1300px) and (min-width: @largestMobileScreen){
+      @media(min-width: @largestMobileScreen){
         margin-top: 75px;
       }
     }

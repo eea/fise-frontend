@@ -74,6 +74,10 @@ class Navigation extends Component {
     this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.handleSearchClose = this.handleSearchClose.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+
+    this.searchBarRef = React.createRef();
+    this.searchButtonRef = React.createRef();
     this.state = {
       isMobileMenuOpen: false,
       tappedMenu: null,
@@ -121,6 +125,25 @@ class Navigation extends Component {
     // this hack prevents menu from staying open on route change
     if (__CLIENT__ && document.querySelector('body')) {
       document.querySelector('body').click();
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  handleClickOutside(e) {
+    if (
+      this.searchBarRef &&
+      this.searchButtonRef &&
+      !this.searchBarRef.current.contains(e.target) &&
+      !this.searchButtonRef.current.contains(e.target)
+    ) {
+      this.handleSearchClose();
     }
   }
 
@@ -187,6 +210,7 @@ class Navigation extends Component {
               })}
               type="button"
               onClick={this.toggleMobileSearch}
+              ref={this.searchButtonRef}
             >
               <Icon
                 className="searchIcon"
@@ -229,7 +253,7 @@ class Navigation extends Component {
             </button>
           </div>
         </div>
-        <div className="search smallSearch">
+        <div className="search smallSearch" ref={this.searchButtonRef}>
               <Icon
                 className="searchIcon"
                 onClick={this.toggleMobileSearch}
@@ -243,6 +267,7 @@ class Navigation extends Component {
               ? 'search open mobileSearch'
               : 'search bigSearch'
           }
+          ref={this.searchBarRef}
         >
           {!hideSearch ? (
             <SearchBlock
