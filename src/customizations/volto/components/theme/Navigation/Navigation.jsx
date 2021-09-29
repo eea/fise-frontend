@@ -16,6 +16,7 @@ import { getBasePath } from '~/helpers';
 import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
+import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 
 import config from '@plone/volto/registry';
 
@@ -76,8 +77,6 @@ class Navigation extends Component {
     this.handleSearchClose = this.handleSearchClose.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
 
-    this.searchBarRef = React.createRef();
-    this.searchButtonRef = React.createRef();
     this.state = {
       isMobileMenuOpen: false,
       tappedMenu: null,
@@ -140,8 +139,8 @@ class Navigation extends Component {
     if (
       this.searchBarRef &&
       this.searchButtonRef &&
-      !this.searchBarRef.current.contains(e.target) &&
-      !this.searchButtonRef.current.contains(e.target)
+      !doesNodeContainClick(this.searchBarRef, e) &&
+      !doesNodeContainClick(this.searchButtonRef, e)
     ) {
       this.handleSearchClose();
     }
@@ -210,7 +209,7 @@ class Navigation extends Component {
               })}
               type="button"
               onClick={this.toggleMobileSearch}
-              ref={this.searchButtonRef}
+              ref={(node) => (this.searchButtonRef = node)}
             >
               <Icon
                 className="searchIcon"
@@ -267,7 +266,7 @@ class Navigation extends Component {
               ? 'search open mobileSearch'
               : 'search bigSearch'
           }
-          ref={this.searchBarRef}
+          ref={(node) => (this.searchBarRef = node)}
         >
           {!hideSearch ? (
             <SearchBlock
