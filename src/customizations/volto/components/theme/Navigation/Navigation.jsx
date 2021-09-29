@@ -170,7 +170,7 @@ class Navigation extends Component {
     const navigation = this.formatNavUrl(
       this.props.navigation.filter(
         (item) =>
-          !['header', 'head', 'footer'].includes(item.title?.toLowerCase()),
+          !['header', 'head', 'footer', 'about us'].includes(item.title?.toLowerCase()),
       ),
     );
     // return <div>{JSON.stringify(this.props.navigation)}</div>
@@ -180,7 +180,7 @@ class Navigation extends Component {
     return (
       <nav className="navigation">
         <div className="mobile-nav-wrapper">
-          <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
+          <div className="hamburger-wrapper mobile only">
             <button
               className={cx('hamburger hamburger--collapse', {
                 'is-active': this.state.isMobileMenuOpen,
@@ -197,7 +197,7 @@ class Navigation extends Component {
             </button>
           </div>
 
-          <div className="hamburger-wrapper computer hidden large screen hidden widescreen hidden">
+          <div className="hamburger-wrapper mobile only">
             <button
               className={cx('hamburger hamburger--collapse', {
                 'is-active': this.state.isMobileMenuOpen,
@@ -229,11 +229,19 @@ class Navigation extends Component {
             </button>
           </div>
         </div>
+        <div className="search smallSearch">
+              <Icon
+                className="searchIcon"
+                onClick={this.toggleMobileSearch}
+                name={zoomSVG}
+                size="32px"
+              />
+        </div>
         <div
           className={
             this.state.isMobileSearchOpen
               ? 'search open mobileSearch'
-              : 'search computer large screen widescreen only'
+              : 'search bigSearch'
           }
         >
           {!hideSearch ? (
@@ -255,6 +263,7 @@ class Navigation extends Component {
               }}
             />
           ) : null}
+
         </div>
         <Menu
           stackable
@@ -263,7 +272,7 @@ class Navigation extends Component {
           className={
             this.state.isMobileMenuOpen
               ? 'open firstLevel'
-              : 'computer large screen widescreen only'
+              : 'mobile hidden'
           }
         >
           {navigation.map((item) =>
