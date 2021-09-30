@@ -170,7 +170,9 @@ class Navigation extends Component {
     const navigation = this.formatNavUrl(
       this.props.navigation.filter(
         (item) =>
-          !['header', 'head', 'footer', 'about us'].includes(item.title?.toLowerCase()),
+          !['header', 'head', 'footer', 'about us'].includes(
+            item.title?.toLowerCase(),
+          ),
       ),
     );
     // return <div>{JSON.stringify(this.props.navigation)}</div>
@@ -229,19 +231,19 @@ class Navigation extends Component {
             </button>
           </div>
         </div>
-        <div className="search smallSearch">
-              <Icon
-                className="searchIcon"
-                onClick={this.toggleMobileSearch}
-                name={zoomSVG}
-                size="32px"
-              />
+        <div className="search-widget smallSearch">
+          <Icon
+            className="searchIcon"
+            onClick={this.toggleMobileSearch}
+            name={zoomSVG}
+            size="32px"
+          />
         </div>
         <div
           className={
             this.state.isMobileSearchOpen
-              ? 'search open mobileSearch'
-              : 'search bigSearch'
+              ? 'search-widget open mobileSearch'
+              : 'search-widget bigSearch'
           }
         >
           {!hideSearch ? (
@@ -263,16 +265,13 @@ class Navigation extends Component {
               }}
             />
           ) : null}
-
         </div>
         <Menu
           stackable
           pointing
           secondary
           className={
-            this.state.isMobileMenuOpen
-              ? 'open firstLevel'
-              : 'mobile hidden'
+            this.state.isMobileMenuOpen ? 'open firstLevel' : 'mobile hidden'
           }
         >
           {navigation.map((item) =>
