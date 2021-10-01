@@ -16,6 +16,7 @@ import { getBasePath } from '~/helpers';
 import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
+import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 
 import config from '@plone/volto/registry';
 
@@ -74,6 +75,8 @@ class Navigation extends Component {
     this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.handleSearchClose = this.handleSearchClose.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+
     this.state = {
       isMobileMenuOpen: false,
       tappedMenu: null,
@@ -121,6 +124,25 @@ class Navigation extends Component {
     // this hack prevents menu from staying open on route change
     if (__CLIENT__ && document.querySelector('body')) {
       document.querySelector('body').click();
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  handleClickOutside(e) {
+    if (
+      this.searchBarRef &&
+      this.searchButtonRef &&
+      !doesNodeContainClick(this.searchBarRef, e) &&
+      !doesNodeContainClick(this.searchButtonRef, e)
+    ) {
+      this.handleSearchClose();
     }
   }
 
@@ -189,6 +211,7 @@ class Navigation extends Component {
               })}
               type="button"
               onClick={this.toggleMobileSearch}
+              ref={(node) => (this.searchButtonRef = node)}
             >
               <Icon
                 className="searchIcon"
@@ -231,7 +254,7 @@ class Navigation extends Component {
             </button>
           </div>
         </div>
-        <div className="search-widget smallSearch">
+        <div className="search-widget smallSearch" ref={this.searchButtonRef}>
           <Icon
             className="searchIcon"
             onClick={this.toggleMobileSearch}
@@ -245,6 +268,7 @@ class Navigation extends Component {
               ? 'search-widget open mobileSearch'
               : 'search-widget bigSearch'
           }
+          ref={(node) => (this.searchBarRef = node)}
         >
           {!hideSearch ? (
             <SearchBlock
