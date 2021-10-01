@@ -19,7 +19,7 @@
   "dependencies": {
     "@eeacms/volto-addons-forest": "0.1.2",
     "@eeacms/volto-datablocks": "2.0.12",
-    "@eeacms/volto-eea-kitkat": "4.0.0",
+    "@eeacms/volto-eea-kitkat": "4.0.1",
     "@eeacms/volto-embed": "2.0.4",
     "@eeacms/volto-middleware-vh": "1.0.1",
     "@eeacms/volto-plotlycharts": "2.0.5",
