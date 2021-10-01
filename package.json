@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.8.0",
+  "version": "2.7.2",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -17,15 +17,13 @@
     "@eeacms/volto-middleware-vh"
   ],
   "dependencies": {
-    "@blueprintjs/core": "^3.30.0",
-    "@blueprintjs/icons": "^3.19.0",
-    "@eeacms/volto-eea-kitkat": "2.0.2",
     "@eeacms/volto-addons-forest": "0.1.2",
     "@eeacms/volto-datablocks": "2.0.12",
+    "@eeacms/volto-eea-kitkat": "4.0.1",
+    "@eeacms/volto-embed": "2.0.4",
+    "@eeacms/volto-middleware-vh": "1.0.1",
     "@eeacms/volto-plotlycharts": "2.0.5",
     "@eeacms/volto-tableau": "1.2.3",
-    "@eeacms/volto-middleware-vh": "1.0.1",
-    "@eeacms/volto-embed": "2.0.3",
     "@plone/volto": "13.15.0",
     "raven-js": "3.27.2",
     "react-highlight-words": "^0.16.0",

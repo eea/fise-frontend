@@ -99,7 +99,7 @@ class Header extends Component {
                 </div>
                 {!hideSearch ? (
                   <div className="nav-actions-mobile large screen hidden">
-                    <div className="search">
+                    <div className="search-widget">
                       <MobileSearchWidget pathname={this.props.pathname} />
                     </div>
                   </div>

@@ -172,7 +172,7 @@ body.has-toolbar {
   }
 }
 
-.search {
+.search-widget {
   display: flex;
   justify-content: flex-end;
   &.mobileSearch {
