@@ -16,6 +16,7 @@ import { getBasePath } from '~/helpers';
 import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
+import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 
 import config from '@plone/volto/registry';
 
@@ -74,6 +75,8 @@ class Navigation extends Component {
     this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.handleSearchClose = this.handleSearchClose.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+
     this.state = {
       isMobileMenuOpen: false,
       tappedMenu: null,
@@ -124,6 +127,25 @@ class Navigation extends Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  handleClickOutside(e) {
+    if (
+      this.searchBarRef &&
+      this.searchButtonRef &&
+      !doesNodeContainClick(this.searchBarRef, e) &&
+      !doesNodeContainClick(this.searchButtonRef, e)
+    ) {
+      this.handleSearchClose();
+    }
+  }
+
   /**
    * Close mobile menu
    * @method handleSearchClose
@@ -170,7 +192,9 @@ class Navigation extends Component {
     const navigation = this.formatNavUrl(
       this.props.navigation.filter(
         (item) =>
-          !['header', 'head', 'footer', 'about us'].includes(item.title?.toLowerCase()),
+          !['header', 'head', 'footer', 'about us'].includes(
+            item.title?.toLowerCase(),
+          ),
       ),
     );
     // return <div>{JSON.stringify(this.props.navigation)}</div>
@@ -187,6 +211,7 @@ class Navigation extends Component {
               })}
               type="button"
               onClick={this.toggleMobileSearch}
+              ref={(node) => (this.searchButtonRef = node)}
             >
               <Icon
                 className="searchIcon"
@@ -229,20 +254,21 @@ class Navigation extends Component {
             </button>
           </div>
         </div>
-        <div className="search smallSearch">
-              <Icon
-                className="searchIcon"
-                onClick={this.toggleMobileSearch}
-                name={zoomSVG}
-                size="32px"
-              />
+        <div className="search-widget smallSearch" ref={this.searchButtonRef}>
+          <Icon
+            className="searchIcon"
+            onClick={this.toggleMobileSearch}
+            name={zoomSVG}
+            size="32px"
+          />
         </div>
         <div
           className={
             this.state.isMobileSearchOpen
-              ? 'search open mobileSearch'
-              : 'search bigSearch'
+              ? 'search-widget open mobileSearch'
+              : 'search-widget bigSearch'
           }
+          ref={(node) => (this.searchBarRef = node)}
         >
           {!hideSearch ? (
             <SearchBlock
@@ -263,16 +289,13 @@ class Navigation extends Component {
               }}
             />
           ) : null}
-
         </div>
         <Menu
           stackable
           pointing
           secondary
           className={
-            this.state.isMobileMenuOpen
-              ? 'open firstLevel'
-              : 'mobile hidden'
+            this.state.isMobileMenuOpen ? 'open firstLevel' : 'mobile hidden'
           }
         >
           {navigation.map((item) =>

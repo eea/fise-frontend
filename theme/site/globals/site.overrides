@@ -172,7 +172,7 @@ body.has-toolbar {
   }
 }
 
-.search {
+.search-widget {
   display: flex;
   justify-content: flex-end;
   &.mobileSearch {
@@ -188,7 +188,7 @@ body.has-toolbar {
         width: 100%;
       }
 
-      @media(max-width: 1300px) and (min-width: @largestMobileScreen){
+      @media(min-width: @largestMobileScreen){
         margin-top: 75px;
       }
     }
@@ -1608,7 +1608,7 @@ span.float-right {
     margin-top: auto;
   }
 
-  a > span.discreet {
+  a:nth-of-type(1) span.discreet {
     color: #047a79 !important;
   }
 

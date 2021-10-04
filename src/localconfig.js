@@ -176,16 +176,6 @@ export function applyConfig(config) {
     },
   ];
 
-  config.settings.slate = config.settings.slate || {};
-  config.settings.slate.styleMenu = config.settings.slate.styleMenu || {};
-  config.settings.slate.styleMenu.inlineStyles = [
-    ...(config.settings.slate.styleMenu?.inlineStyles || []),
-    {
-      cssClass: 'discreet block_source',
-      label: 'Source formatting',
-    },
-  ];
-
   // border-tile
   config.settings.pluggableStyles = [
     ...(config.settings.pluggableStyles || []),
@@ -233,6 +223,16 @@ export function applyConfig(config) {
       id: 'dropShadowPaddingMargin',
       title: 'Drop shadow padding margin',
       cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
+    },
+  ];
+
+  config.settings.slate = config.settings.slate || {};
+  config.settings.slate.styleMenu = config.settings.slate.styleMenu || {};
+  config.settings.slate.styleMenu.inlineStyles = [
+    ...(config.settings.slate.styleMenu?.inlineStyles || []),
+    {
+      cssClass: 'discreet block_source',
+      label: 'Source formatting',
     },
   ];
   // config.settings.search_portal_types = [
