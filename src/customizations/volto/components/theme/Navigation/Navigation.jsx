@@ -75,7 +75,7 @@ class Navigation extends Component {
     this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.handleSearchClose = this.handleSearchClose.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
+    // this.handleClickOutside = this.handleClickOutside.bind(this);
 
     this.state = {
       isMobileMenuOpen: false,
@@ -128,23 +128,23 @@ class Navigation extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside, false);
+   // document.addEventListener('mousedown', this.handleClickOutside, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside, false);
+    //document.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
-  handleClickOutside(e) {
-    if (
-      this.searchBarRef &&
-      this.searchButtonRef &&
-      !doesNodeContainClick(this.searchBarRef, e) &&
-      !doesNodeContainClick(this.searchButtonRef, e)
-    ) {
-      this.handleSearchClose();
-    }
-  }
+  // handleClickOutside(e) {
+  //   if (
+  //     this.searchBarRef &&
+  //     this.searchButtonRef &&
+  //     !doesNodeContainClick(this.searchBarRef, e) &&
+  //     !doesNodeContainClick(this.searchButtonRef, e)
+  //   ) {
+  //     this.handleSearchClose();
+  //   }
+  // }
 
   /**
    * Close mobile menu
