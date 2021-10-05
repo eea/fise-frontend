@@ -77,8 +77,6 @@ class Navigation extends Component {
     this.handleClickOutside = this.handleClickOutside.bind(this);
 
     this.searchBarRef = React.createRef();
-    this.searchButtonRef = React.createRef();
-
     this.state = {
       isMobileMenuOpen: false,
       tappedMenu: null,
@@ -137,16 +135,11 @@ class Navigation extends Component {
     document.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
-   handleClickOutside(e) {
-     if (
-       this.searchBarRef &&
-       this.searchButtonRef &&
-       !this.searchBarRef.current.contains(e.target) &&
-       !this.searchButtonRef.current.contains(e.target)
-     ) {
-       this.handleSearchClose();
-     }
-   }
+  handleClickOutside(e) {
+    if (this.searchBarRef && !this.searchBarRef.current.contains(e.target)) {
+      this.handleSearchClose();
+    }
+  }
 
   /**
    * Close mobile menu
@@ -215,7 +208,6 @@ class Navigation extends Component {
               })}
               type="button"
               onClick={this.toggleMobileSearch}
-              ref={this.searchButtonRef}
             >
               <Icon
                 className="searchIcon"
@@ -258,7 +250,7 @@ class Navigation extends Component {
             </button>
           </div>
         </div>
-        <div className="search-widget smallSearch" ref={this.searchButtonRef}>
+        <div className="search-widget smallSearch">
           <Icon
             className="searchIcon"
             onClick={this.toggleMobileSearch}
