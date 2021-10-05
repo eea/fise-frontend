@@ -16,7 +16,6 @@ import { getBasePath } from '~/helpers';
 import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
-import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 
 import config from '@plone/volto/registry';
 
@@ -75,7 +74,10 @@ class Navigation extends Component {
     this.toggleMobileSearch = this.toggleMobileSearch.bind(this);
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.handleSearchClose = this.handleSearchClose.bind(this);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+
+    this.searchBarRef = React.createRef();
+    this.searchButtonRef = React.createRef();
 
     this.state = {
       isMobileMenuOpen: false,
@@ -128,23 +130,23 @@ class Navigation extends Component {
   }
 
   componentDidMount() {
-   // document.addEventListener('mousedown', this.handleClickOutside, false);
+    document.addEventListener('mousedown', this.handleClickOutside, false);
   }
 
   componentWillUnmount() {
-    //document.removeEventListener('mousedown', this.handleClickOutside, false);
+    document.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
-  // handleClickOutside(e) {
-  //   if (
-  //     this.searchBarRef &&
-  //     this.searchButtonRef &&
-  //     !doesNodeContainClick(this.searchBarRef, e) &&
-  //     !doesNodeContainClick(this.searchButtonRef, e)
-  //   ) {
-  //     this.handleSearchClose();
-  //   }
-  // }
+   handleClickOutside(e) {
+     if (
+       this.searchBarRef &&
+       this.searchButtonRef &&
+       !this.searchBarRef.current.contains(e.target) &&
+       !this.searchButtonRef.current.contains(e.target)
+     ) {
+       this.handleSearchClose();
+     }
+   }
 
   /**
    * Close mobile menu
@@ -152,7 +154,9 @@ class Navigation extends Component {
    * @returns {undefined}
    */
   handleSearchClose() {
-    this.setState({ isMobileSearchOpen: false });
+    if (this.state.isMobileSearchOpen) {
+      this.setState({ isMobileSearchOpen: false });
+    }
   }
 
   /**
@@ -211,7 +215,7 @@ class Navigation extends Component {
               })}
               type="button"
               onClick={this.toggleMobileSearch}
-              ref={(node) => (this.searchButtonRef = node)}
+              ref={this.searchButtonRef}
             >
               <Icon
                 className="searchIcon"
@@ -268,7 +272,7 @@ class Navigation extends Component {
               ? 'search-widget open mobileSearch'
               : 'search-widget bigSearch'
           }
-          ref={(node) => (this.searchBarRef = node)}
+          ref={this.searchBarRef}
         >
           {!hideSearch ? (
             <SearchBlock
