@@ -195,6 +195,7 @@ body.has-toolbar {
   }
 
   &.bigSearch {
+    padding-top:20px;
     @media(max-width: 1300px) {
       display: none !important;
     }
