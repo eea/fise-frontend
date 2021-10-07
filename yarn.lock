@@ -1219,7 +1219,7 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-corsproxy/-/volto-corsproxy-2.1.2.tgz#eb1b50a7382e4da9601128ee972d3249a29ce939"
   integrity sha512-5j2ETMD8XRUk8hs4qqpd6F9SSlmTw0eqwNKPlouF78cdql/vJ5Pc4cgdZDh1Qldum1CcFnqdLxGABzQkfE3SDQ==
 
-"@eeacms/volto-datablocks@2.0.13", "@eeacms/volto-datablocks@^2.0.13":
+"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@2.0.13", "@eeacms/volto-datablocks@^2.0.13":
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-2.0.13.tgz#fcc5b0bc82d218361a63ea15ca94ff60f5c69b76"
   integrity sha512-FdsKMEZq+dPYNM2HLRyrOdt7KjyhxCufWoT/UnwPhiZQgvfLdaZAdLatmBD9eDRIgscqsotiVAK51xYPF+5RGQ==
@@ -1270,12 +1270,13 @@
     "@eeacms/volto-widgets-view" "3.0.0"
     volto-slate "4.0.3"
 
-"@eeacms/volto-embed@2.0.4", "@eeacms/volto-embed@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-2.0.4.tgz#8c8d926945c629f225d32d644d28c7e25fc088c2"
-  integrity sha512-TTjol+c5MADHGO1sHK4PbTkSOeQPFEqaiPmjpkA64eTJWDv08vCLAGNgDfX8YviXxjWSMwm5hDXZCXUmSau2yQ==
+"@eeacms/volto-embed@2.0.5", "@eeacms/volto-embed@^2.0.4":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-2.0.5.tgz#3f3d65cee5e19360ae8e8977f75b2cbfe5944891"
+  integrity sha512-/aO1aDrsJEE5YgIyjqk9W714eoP9prw/IsfBedIyISvPtmulVyG5vx/Lg12QSn+Q9kfJ41EWBaOtiINcOeRUaQ==
   dependencies:
     "@eeacms/volto-corsproxy" "2.1.2"
+    "@eeacms/volto-datablocks" "*"
     react-visibility-sensor "5.1.1"
     volto-slate "2.9.1"
 
