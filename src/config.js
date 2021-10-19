@@ -24,7 +24,6 @@ export default function applyConfig(config) {
       published_at: process.env.RAZZLE_FRONTEND_PUBLISHED_AT || null,
     },
     timezone: 'CET',
-    matomoSiteId: 46,
     pathsWithFullobjects: ['/news', '/events'],
     pathsWithExtraParameters: {
       '/news': { b_start: 0, b_size: 100000, metadatafields: '_all' },
