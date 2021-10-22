@@ -10,12 +10,29 @@ import { connect } from 'react-redux';
 
 import { Logo, Navigation, Breadcrumbs } from '@plone/volto/components';
 
+import { getBaseUrl } from '@plone/volto/helpers';
+
 import HeaderImage from '~/components/theme/Header/HeaderImage';
 import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
 import HeaderBackground from './header-bg.png';
+import axios from 'axios';
 
+// export function getParentData(url) {
+//   return axios
+//     .get(url, {
+//       headers: {
+//         accept: 'application/json',
+//       },
+//     })
+//     .then((response) => {
+//       return response.data;
+//     })
+//     .catch((error) => {
+//       return error;
+//     });
+// }
 /**
  * Header component class.
  * @class Header
@@ -30,6 +47,8 @@ class Header extends Component {
       description: null,
       title: null,
       frontPageSlides: null,
+      inheritedImage: '',
+      inheritedText: '',
     };
   }
   /**
@@ -53,6 +72,35 @@ class Header extends Component {
   static defaultProps = {
     token: null,
   };
+
+  componentDidMount() {
+    const { inheritLeadingData, parentData } = this.props.extraData;
+    if (inheritLeadingData) {
+      const parentUrl = parentData['@id'];
+      axios
+        .get(parentUrl, {
+          headers: {
+            accept: 'application/json',
+          },
+        })
+        .then((response) => {
+          const parentImage =
+            response.data && response.data.image && response.data.image.download
+              ? response.data.image.download
+              : '';
+
+          const parentText =
+            response.data && response.data.text && response.data.text.data
+              ? response.data.text.data
+              : '';
+          this.setState({ inheritedImage: parentImage });
+          this.setState({ inheritedText: parentText });
+        })
+        .catch((error) => {
+          return error;
+        });
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.actualPathName !== this.props.actualPathName) {
@@ -88,6 +136,9 @@ class Header extends Component {
     let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
     const pathName = this.props.pathname;
     const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
+
+    const { bigLeading, inheritLeadingData, parentData } = this.props.extraData;
+
     return (
       <div className="header-wrapper" role="banner">
         <Sticky enabled={true} top={0}>
@@ -127,7 +178,15 @@ class Header extends Component {
             <div style={{ position: 'relative' }}>
               <Breadcrumbs pathname={this.props.pathname} />
 
-              <HeaderImage url={headerImageUrl} />
+              <HeaderImage
+                bigImage={bigLeading}
+                metadata={inheritLeadingData ? this.state.inheritedText : ''}
+                url={
+                  inheritLeadingData
+                    ? this.state.inheritedImage
+                    : headerImageUrl
+                }
+              />
             </div>
           )}
         </Container>

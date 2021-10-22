@@ -116,6 +116,19 @@ body.has-toolbar {
   }
 }
 
+.header-image-big {
+  height: 600px !important;
+}
+
+.header-meta-data {
+  z-index: 1;
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  background: lightgrey;
+  padding: 5px 15px;
+}
+
 .header-image-wrapper {
   position: relative;
   height: 280px;
