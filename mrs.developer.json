@@ -190,44 +190,44 @@
   },
   "volto-tableau": {
     "url": "https://github.com/eea/volto-tableau.git",
+    "https": "https://github.com/eea/volto-tableau.git",
     "package": "@eeacms/volto-tableau",
     "branch": "develop",
-    "path": "src",
-    "develop": true
+    "path": "src"
   },
   "volto-plotlycharts": {
     "url": "https://github.com/eea/volto-plotlycharts.git",
+    "https": "https://github.com/eea/volto-plotlycharts.git",
     "package": "@eeacms/volto-plotlycharts",
     "branch": "develop",
-    "path": "src",
-    "develop": true
+    "path": "src"
   },
   "volto-middleware-vh": {
     "url": "https://github.com/eea/volto-middleware-vh.git",
+    "https": "https://github.com/eea/volto-middleware-vh.git",
     "package": "@eeacms/volto-middleware-vh",
     "branch": "develop",
-    "path": "src",
-    "develop": true
+    "path": "src"
   },
   "volto-embed": {
     "url": "https://github.com/eea/volto-embed.git",
+    "https": "https://github.com/eea/volto-embed.git",
     "package": "@eeacms/volto-embed",
     "branch": "develop",
-    "path": "src",
-    "develop": true
+    "path": "src"
   },
   "volto-datablocks": {
     "url": "https://github.com/eea/volto-datablocks.git",
+    "https": "https://github.com/eea/volto-datablocks.git",
     "package": "@eeacms/volto-datablocks",
     "branch": "develop",
-    "path": "src",
-    "develop": true
+    "path": "src"
   },
   "volto-addons-forest": {
     "url": "https://github.com/eea/volto-addons-forest.git",
+    "https": "https://github.com/eea/volto-addons-forest.git",
     "package": "@eeacms/volto-addons-forest",
     "branch": "develop",
-    "path": "src",
-    "develop": true
+    "path": "src"
   }
 }
