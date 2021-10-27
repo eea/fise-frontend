@@ -123,10 +123,17 @@ class App extends Component {
         ? this.props.content.inherit_leading_data
         : false;
 
+    const leadNavigation =
+      this.props.content?.lead_navigation &&
+      this.props.content.lead_navigation !== null
+        ? this.props.content.lead_navigation
+        : false;
+
     const extraHeaderData = {
       bigLeading,
       inheritLeadingData,
       parentData: this.props.content?.parent,
+      leadNavigation,
     };
 
     return (

@@ -2,10 +2,13 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Placeholder } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import HeaderNavigation from './HeaderNavigation';
 
 function HeaderImage(props) {
   const isBig = props.bigImage ? props.bigImage : false;
   const headerDimension = isBig ? 600 : 280;
+
+  console.log('navinhead', props.navigationItems);
   return props.url ? (
     <div className={`header-image-wrapper ${isBig ? 'header-image-big' : ''}`}>
       <LazyLoadImage
@@ -27,6 +30,9 @@ function HeaderImage(props) {
           className="header-meta-data"
           dangerouslySetInnerHTML={{ __html: props.metadata }}
         />
+      )}
+      {props.navigationItems && props.leadNavigation && (
+        <HeaderNavigation items={props.navigationItems} />
       )}
       <div className="header-image-overlay" />
       <div className="header-image-content" />

@@ -18,6 +18,10 @@ import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSear
 import Sticky from 'react-stickynode';
 import HeaderBackground from './header-bg.png';
 import axios from 'axios';
+import {
+  getBasePath,
+  getNavigationByParent,
+} from 'components/manage/Blocks/NavigationBlock/helpers';
 
 // export function getParentData(url) {
 //   return axios
@@ -49,6 +53,7 @@ class Header extends Component {
       frontPageSlides: null,
       inheritedImage: '',
       inheritedText: '',
+      navigationItems: '',
     };
   }
   /**
@@ -74,7 +79,11 @@ class Header extends Component {
   };
 
   componentDidMount() {
-    const { inheritLeadingData, parentData } = this.props.extraData;
+    const {
+      inheritLeadingData,
+      parentData,
+      leadNavigation,
+    } = this.props.extraData;
     if (inheritLeadingData) {
       const parentUrl = parentData['@id'];
       axios
@@ -93,8 +102,18 @@ class Header extends Component {
             response.data && response.data.text && response.data.text.data
               ? response.data.text.data
               : '';
+
+          const parentData =
+            response.data && this.props.navItems && response.data['@id']
+              ? getNavigationByParent(
+                  this.props.navItems,
+                  getBasePath(response.data['@id']),
+                )
+              : '';
+
           this.setState({ inheritedImage: parentImage });
           this.setState({ inheritedText: parentText });
+          this.setState({ navigationItems: parentData.items });
         })
         .catch((error) => {
           return error;
@@ -137,7 +156,12 @@ class Header extends Component {
     const pathName = this.props.pathname;
     const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
 
-    const { bigLeading, inheritLeadingData, parentData } = this.props.extraData;
+    const {
+      bigLeading,
+      inheritLeadingData,
+      parentData,
+      leadNavigation,
+    } = this.props.extraData;
 
     return (
       <div className="header-wrapper" role="banner">
@@ -180,6 +204,8 @@ class Header extends Component {
 
               <HeaderImage
                 bigImage={bigLeading}
+                leadNavigation={leadNavigation}
+                navigationItems={this.state.navigationItems}
                 metadata={inheritLeadingData ? this.state.inheritedText : ''}
                 url={
                   inheritLeadingData
@@ -196,4 +222,5 @@ class Header extends Component {
 }
 export default connect((state) => ({
   token: state.userSession.token,
+  navItems: state.navigation?.items,
 }))(Header);

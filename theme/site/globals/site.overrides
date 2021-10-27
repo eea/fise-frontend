@@ -120,6 +120,14 @@ body.has-toolbar {
   height: 600px !important;
 }
 
+.header-navigation-lead {
+  z-index: 1;
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  color: white;
+}
+
 .header-meta-data {
   z-index: 1;
   position: absolute;
