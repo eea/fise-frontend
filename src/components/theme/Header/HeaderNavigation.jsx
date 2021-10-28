@@ -17,22 +17,23 @@ const HeaderNavigation = ({ items }) => {
 
   const handleNavigate = (item) => {
     setActiveItem(item);
-    history.push(`${item.url}`);
+    //history.push(`${item.url}`);
   };
 
   return (
     <div className="header-navigation-lead">
-      <Menu tabular>
-        {items.length > 0 &&
-          items.map((item, index) => (
-            <Menu.Item
-              className="lead-navigation-item"
-              name={item.title}
-              active={activeItem.title === item.title}
-              onClick={() => handleNavigate(item)}
-            />
-          ))}
-      </Menu>
+      {items.length > 0 &&
+        items.map((item, index) => (
+          <a
+            className={`lead-navigation-item ${
+              activeItem.title === item.title ? 'active-lead-nav' : ''
+            }`}
+            href={item.url}
+            onClick={() => handleNavigate(item)}
+          >
+            {item.title}
+          </a>
+        ))}
     </div>
   );
 };
