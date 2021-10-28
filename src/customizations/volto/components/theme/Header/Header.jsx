@@ -78,13 +78,37 @@ class Header extends Component {
     token: null,
   };
 
-  componentDidMount() {
+  componentDidMount() {}
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.actualPathName !== this.props.actualPathName) {
+      this.setState({
+        isHomepage: nextProps.actualPathName === '/',
+      });
+    }
+
+    if (
+      JSON.stringify(nextProps.frontPageSlides) !==
+      JSON.stringify(this.props.frontPageSlides)
+    ) {
+      this.setState({
+        frontPageSlides: nextProps.frontPageSlides,
+      });
+    }
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.actualPathName !== this.props.actualPathName) {
+      this.setState({
+        isHomepage: this.props.actualPathName === '/',
+      });
+    }
+
     const {
       inheritLeadingData,
       parentData,
       leadNavigation,
     } = this.props.extraData;
-    if (inheritLeadingData) {
+    if (inheritLeadingData && this.props.extraData !== prevProps.extraData) {
       const parentUrl = parentData['@id'];
       axios
         .get(parentUrl, {
@@ -118,30 +142,6 @@ class Header extends Component {
         .catch((error) => {
           return error;
         });
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.actualPathName !== this.props.actualPathName) {
-      this.setState({
-        isHomepage: nextProps.actualPathName === '/',
-      });
-    }
-
-    if (
-      JSON.stringify(nextProps.frontPageSlides) !==
-      JSON.stringify(this.props.frontPageSlides)
-    ) {
-      this.setState({
-        frontPageSlides: nextProps.frontPageSlides,
-      });
-    }
-  }
-  componentDidUpdate(prevProps) {
-    if (prevProps.actualPathName !== this.props.actualPathName) {
-      this.setState({
-        isHomepage: this.props.actualPathName === '/',
-      });
     }
   }
 

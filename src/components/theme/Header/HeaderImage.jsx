@@ -8,7 +8,6 @@ function HeaderImage(props) {
   const isBig = props.bigImage ? props.bigImage : false;
   const headerDimension = isBig ? 600 : 280;
 
-  console.log('navinhead', props.navigationItems);
   return props.url ? (
     <div className={`header-image-wrapper ${isBig ? 'header-image-big' : ''}`}>
       <LazyLoadImage
