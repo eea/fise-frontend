@@ -137,7 +137,9 @@ class Header extends Component {
 
           this.setState({ inheritedImage: parentImage });
           this.setState({ inheritedText: parentText });
-          this.setState({ navigationItems: parentData.items });
+          if (leadNavigation) {
+            this.setState({ navigationItems: parentData.items });
+          }
         })
         .catch((error) => {
           return error;
