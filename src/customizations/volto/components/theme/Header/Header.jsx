@@ -10,12 +10,33 @@ import { connect } from 'react-redux';
 
 import { Logo, Navigation, Breadcrumbs } from '@plone/volto/components';
 
+import { getBaseUrl } from '@plone/volto/helpers';
+
 import HeaderImage from '~/components/theme/Header/HeaderImage';
 import HomepageSlider from '~/components/theme/Header/HomepageSlider';
 import MobileSearchWidget from '~/components/theme/MobileSearchWidget/MobileSearchWidget';
 import Sticky from 'react-stickynode';
 import HeaderBackground from './header-bg.png';
+import axios from 'axios';
+import {
+  getBasePath,
+  getNavigationByParent,
+} from 'components/manage/Blocks/NavigationBlock/helpers';
 
+// export function getParentData(url) {
+//   return axios
+//     .get(url, {
+//       headers: {
+//         accept: 'application/json',
+//       },
+//     })
+//     .then((response) => {
+//       return response.data;
+//     })
+//     .catch((error) => {
+//       return error;
+//     });
+// }
 /**
  * Header component class.
  * @class Header
@@ -30,6 +51,9 @@ class Header extends Component {
       description: null,
       title: null,
       frontPageSlides: null,
+      inheritedImage: '',
+      inheritedText: '',
+      navigationItems: '',
     };
   }
   /**
@@ -54,6 +78,8 @@ class Header extends Component {
     token: null,
   };
 
+  componentDidMount() {}
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.actualPathName !== this.props.actualPathName) {
       this.setState({
@@ -76,6 +102,49 @@ class Header extends Component {
         isHomepage: this.props.actualPathName === '/',
       });
     }
+
+    const {
+      inheritLeadingData,
+      parentData,
+      leadNavigation,
+    } = this.props.extraData;
+    if (inheritLeadingData && this.props.extraData !== prevProps.extraData) {
+      const parentUrl = parentData['@id'];
+      axios
+        .get(parentUrl, {
+          headers: {
+            accept: 'application/json',
+          },
+        })
+        .then((response) => {
+          const parentImage =
+            response.data && response.data.image && response.data.image.download
+              ? response.data.image.download
+              : '';
+
+          const parentText =
+            response.data && response.data.text && response.data.text.data
+              ? response.data.text.data
+              : '';
+
+          const parentData =
+            response.data && this.props.navItems && response.data['@id']
+              ? getNavigationByParent(
+                  this.props.navItems,
+                  getBasePath(response.data['@id']),
+                )
+              : '';
+
+          this.setState({ inheritedImage: parentImage });
+          this.setState({ inheritedText: parentText });
+          if (leadNavigation) {
+            this.setState({ navigationItems: parentData.items });
+          }
+        })
+        .catch((error) => {
+          return error;
+        });
+    }
   }
 
   /**
@@ -88,6 +157,14 @@ class Header extends Component {
     let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
     const pathName = this.props.pathname;
     const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
+
+    const {
+      bigLeading,
+      inheritLeadingData,
+      parentData,
+      leadNavigation,
+    } = this.props.extraData;
+
     return (
       <div className="header-wrapper" role="banner">
         <Sticky enabled={true} top={0}>
@@ -127,7 +204,17 @@ class Header extends Component {
             <div style={{ position: 'relative' }}>
               <Breadcrumbs pathname={this.props.pathname} />
 
-              <HeaderImage url={headerImageUrl} />
+              <HeaderImage
+                bigImage={bigLeading}
+                leadNavigation={leadNavigation}
+                navigationItems={this.state.navigationItems}
+                metadata={inheritLeadingData ? this.state.inheritedText : ''}
+                url={
+                  inheritLeadingData
+                    ? this.state.inheritedImage
+                    : headerImageUrl
+                }
+              />
             </div>
           )}
         </Container>
@@ -137,4 +224,5 @@ class Header extends Component {
 }
 export default connect((state) => ({
   token: state.userSession.token,
+  navItems: state.navigation?.items,
 }))(Header);
