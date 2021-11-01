@@ -14,22 +14,22 @@ const MobileNav = ({ items, activeItem }) => {
           {items &&
             items.length > 0 &&
             items.map((item, i) => (
-              <a
-                className={`lead-nav-item ${
-                  activeItem.title === item.title ? 'active-mobile-nav' : ''
-                }`}
-                href={item.url}
-                key={i}
-              >
-                {item.title}
-              </a>
+              <Link key={i} to={item.url}>
+                <p
+                  className={`lead-nav-item ${
+                    activeItem.title === item.title ? 'active-mobile-nav' : ''
+                  }`}
+                >
+                  {item.title}
+                </p>
+              </Link>
             ))}
         </div>
       ) : (
         <div className="nav-items-container">
           <p
-            className="lead-nav-item active-mobile-nav"
             onClick={() => setExpanded(true)}
+            className="lead-nav-item active-mobile-nav"
           >
             {activeItem.title}
           </p>
