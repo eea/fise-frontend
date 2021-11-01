@@ -111,6 +111,31 @@ class App extends Component {
     const headerImage =
       this.props.content?.image?.download || this.props.defaultHeaderImage;
 
+    const bigLeading =
+      this.props.content?.big_leading_image &&
+      this.props.content.big_leading_image !== null
+        ? this.props.content.big_leading_image
+        : false;
+
+    const inheritLeadingData =
+      this.props.content?.inherit_leading_data &&
+      this.props.content.inherit_leading_data !== null
+        ? this.props.content.inherit_leading_data
+        : false;
+
+    const leadNavigation =
+      this.props.content?.lead_navigation &&
+      this.props.content.lead_navigation !== null
+        ? this.props.content.lead_navigation
+        : false;
+
+    const extraHeaderData = {
+      bigLeading,
+      inheritLeadingData,
+      parentData: this.props.content?.parent,
+      leadNavigation,
+    };
+
     return (
       <PluggablesProvider>
         <BodyClass className={`view-${action}view`} />
@@ -140,6 +165,7 @@ class App extends Component {
         <Header
           actualPathName={this.props.pathname}
           pathname={path}
+          extraData={extraHeaderData}
           defaultHeaderImage={headerImage}
           navigationItems={this.props.navigation}
           frontpage_slides={this.props.frontpage_slides}
