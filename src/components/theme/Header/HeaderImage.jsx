@@ -24,6 +24,8 @@ function HeaderImage(props) {
           </Placeholder>
         }
       />
+      <div className="header-image-overlay" />
+      <div className="header-image-content" />
       {props.metadata && (
         <div
           className="header-meta-data"
@@ -33,8 +35,6 @@ function HeaderImage(props) {
       {props.navigationItems && props.leadNavigation && (
         <HeaderNavigation items={props.navigationItems} />
       )}
-      <div className="header-image-overlay" />
-      <div className="header-image-content" />
     </div>
   ) : (
     <Placeholder className="header-image">

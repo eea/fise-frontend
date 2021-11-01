@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MobileNav = ({ items, activeItem }) => {
   const [expanded, setExpanded] = React.useState(false);
@@ -68,15 +68,15 @@ const HeaderNavigation = ({ items }) => {
         <div className="header-navigation-lead">
           {items.length > 0 &&
             items.map((item, index) => (
-              <a
-                key={index}
-                className={`lead-navigation-item ${
-                  activeItem.title === item.title ? 'active-lead-nav' : ''
-                }`}
-                href={item.url}
-              >
-                {item.title}
-              </a>
+              <Link key={index} to={item.url}>
+                <p
+                  className={`lead-navigation-item ${
+                    activeItem.title === item.title ? 'active-lead-nav' : ''
+                  }`}
+                >
+                  {item.title}
+                </p>
+              </Link>
             ))}
         </div>
       )}

@@ -165,7 +165,7 @@ body.has-toolbar {
   left: 5px;
   bottom: 0;
   color: white;
-  padding: 10px 0;
+  display: flex;
 
   .active-lead-nav{
     color:#cd4200 !important;
@@ -189,6 +189,7 @@ body.has-toolbar {
     border-radius: 3px 3px 0 0;
 
     border: 2px solid #f7f7f5;
+    cursor: pointer;
 }
 
   .lead-navigation-item:hover{

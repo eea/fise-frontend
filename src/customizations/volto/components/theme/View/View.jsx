@@ -11,7 +11,7 @@ import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { Dimmer, Loader } from 'semantic-ui-react';
-import {trackEvent} from '@eeacms/volto-matomo/utils'
+import { trackEvent } from '@eeacms/volto-matomo/utils';
 
 import {
   ContentMetadataTags,
@@ -246,7 +246,7 @@ class View extends Component {
     trackEvent({
       category: 'Print',
       action: 'Click',
-      name: document.title
+      name: document.title,
     });
     document.getElementById('main').classList.add('print');
     setTimeout(() => {
