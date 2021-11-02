@@ -12,16 +12,59 @@ import axios from 'axios';
 import {
   getBasePath,
   getNavigationByParent,
-} from 'components/manage/Blocks/NavigationBlock/helpers';
+} from '~/components/manage/Blocks/NavigationBlock/helpers';
 
 const Header = (props) => {
+  const {
+    inheritLeadingData,
+    parentData,
+    leadNavigation,
+    bigLeading,
+  } = props.extraData;
   const [isHomepage, setIsHomePage] = React.useState(
     props.actualPathName === '/',
   );
-
   const [inheritedImage, setInheritedImage] = React.useState('');
   const [inheritedText, setInheritedText] = React.useState('');
   const [navigationItems, setNavigationItems] = React.useState('');
+
+  const getParentData = (url) => {
+    axios
+      .get(url, {
+        headers: {
+          accept: 'application/json',
+        },
+      })
+      .then((response) => {
+        const parentImage =
+          response.data && response.data.image && response.data.image.download
+            ? response.data.image.download
+            : '';
+
+        const parentText =
+          response.data && response.data.text && response.data.text.data
+            ? response.data.text.data
+            : '';
+
+        const parentData =
+          response.data && props.navItems && response.data['@id']
+            ? getNavigationByParent(
+                props.navItems,
+                getBasePath(response.data['@id']),
+              )
+            : '';
+        if (inheritLeadingData) {
+          setInheritedImage(parentImage);
+          setInheritedText(parentText);
+        }
+        if (leadNavigation) {
+          setNavigationItems(parentData.items);
+        }
+      })
+      .catch((error) => {
+        return error;
+      });
+  };
 
   React.useEffect(() => {
     if (props.actualPathName) {
@@ -30,42 +73,9 @@ const Header = (props) => {
   }, [props.actualPathName, props.frontPageSlides]);
 
   React.useEffect(() => {
-    const { inheritLeadingData, parentData, leadNavigation } = props.extraData;
-    if (inheritLeadingData && props.extraData) {
+    if (inheritLeadingData || leadNavigation) {
       const parentUrl = parentData['@id'];
-      axios
-        .get(parentUrl, {
-          headers: {
-            accept: 'application/json',
-          },
-        })
-        .then((response) => {
-          const parentImage =
-            response.data && response.data.image && response.data.image.download
-              ? response.data.image.download
-              : '';
-
-          const parentText =
-            response.data && response.data.text && response.data.text.data
-              ? response.data.text.data
-              : '';
-
-          const parentData =
-            response.data && props.navItems && response.data['@id']
-              ? getNavigationByParent(
-                  props.navItems,
-                  getBasePath(response.data['@id']),
-                )
-              : '';
-          setInheritedImage(parentImage);
-          setInheritedText(parentText);
-          if (leadNavigation) {
-            setNavigationItems(parentData.items);
-          }
-        })
-        .catch((error) => {
-          return error;
-        });
+      getParentData(parentUrl);
     }
   }, [props.extraData, props.navItems]);
 
@@ -73,8 +83,6 @@ const Header = (props) => {
   let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
   const pathName = props.pathname;
   const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
-
-  const { bigLeading, inheritLeadingData, leadNavigation } = props.extraData;
 
   return (
     <div className="header-wrapper" role="banner">
