@@ -40,9 +40,9 @@
 
 /* media queries  */
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1400px) {
   .sticky-tabs {
-    top: 80px;
+    top: 150px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -50,16 +50,13 @@
     background-color: white;
   }
 }
-@media screen and (max-width: 1300px) and (min-width: 1200px) {
+
+@media screen and (max-width: 1300px) {
   .sticky-tabs {
-    top: 50px;
+    top: 125px;
   }
 }
-@media screen and (max-width: 1050px) and (min-width: 850px) {
-  .sticky-tabs {
-    top: 142px;
-  }
-}
+
 @media screen and (max-width: 767px) {
   .sticky-tabs {
     top: 79px;
