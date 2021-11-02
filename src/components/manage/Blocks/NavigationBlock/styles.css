@@ -1,18 +1,18 @@
 .sticky-tabs {
   position: sticky;
-  top: 79px;
   z-index: 9;
+  top: 101px;
   margin: 25px 0;
 }
 
 .modern-tabs {
   padding-top: 0 !important;
-  
-  box-shadow: 0 1px 6px 0 #c7d5d8;
   margin: 25px 0;
-  background-color: #f1f0ee;
-  margin-left: 0.6rem;
   margin-right: 0.6rem;
+  margin-left: 0.6rem;
+  background-color: #f1f0ee;
+
+  box-shadow: 0 1px 6px 0 #c7d5d8;
 }
 
 .nav-tab-item:hover {
@@ -26,29 +26,23 @@
 }
 
 .tabs-view-menu .ui.menu .item {
-  font-weight: bold;
   color: #554535;
+  font-weight: bold;
 }
 
 .mobile-nav-icon {
   position: absolute;
-  right: 5px;
   top: 5px;
-  fill: white !important;
+  right: 5px;
   cursor: pointer;
+  fill: white !important;
 }
 
 /* media queries  */
 
-@media screen and (max-width: 1578px) {
-  .sticky-tabs {
-    top: 101px;
-  }
-}
-
 @media screen and (max-width: 1280px) {
   .sticky-tabs {
-    top: 79px;
+    top: 80px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -56,11 +50,21 @@
     background-color: white;
   }
 }
-
+@media screen and (max-width: 1300px) and (min-width: 1200px) {
+  .sticky-tabs {
+    top: 50px;
+  }
+}
+@media screen and (max-width: 1050px) and (min-width: 850px) {
+  .sticky-tabs {
+    top: 142px;
+  }
+}
 @media screen and (max-width: 767px) {
   .sticky-tabs {
     top: 79px;
   }
+
   .mobile-authenticated-sticky {
     top: 101px;
   }
