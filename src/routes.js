@@ -2,7 +2,6 @@
  * Routes.
  * @module routes
  */
-
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
 import config from '@plone/volto/registry';

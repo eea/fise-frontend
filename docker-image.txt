@@ -1,1 +1,1 @@
-eeacms/forests-frontend:2.1.11
+eeacms/forests-frontend:latest

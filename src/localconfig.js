@@ -225,6 +225,16 @@ export function applyConfig(config) {
       cssClass: 'drop-shadow-tile margin-block-10 padding-block-10',
     },
   ];
+
+  config.settings.slate = config.settings.slate || {};
+  config.settings.slate.styleMenu = config.settings.slate.styleMenu || {};
+  config.settings.slate.styleMenu.inlineStyles = [
+    ...(config.settings.slate.styleMenu?.inlineStyles || []),
+    {
+      cssClass: 'discreet block_source',
+      label: 'Source formatting',
+    },
+  ];
   // config.settings.search_portal_types = [
   //   'Event',
   //   'News Item',
