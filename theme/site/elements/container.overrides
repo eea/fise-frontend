@@ -1,0 +1,426 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+@toolbarWidth : 80px;
+@sidebarWidth : 375px;
+@collapsedWidth: 20px;
+
+/* All Sizes */
+.ui.container {
+  display: block;
+  max-width: 1700px !important;
+}
+
+.contentWidthMedia(@width, @gutter, @offset) {
+  .ui.container {
+    width: 100% !important;
+    margin-right: @gutter  !important;
+    margin-left: @gutter  !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .drag.handle.wrapper {
+    margin-left: @offset  !important;
+  }
+
+  .block .delete-button {
+    margin-right: @offset  !important;
+  }
+}
+
+// ~768
+.contentWidth(@offset) {
+
+  @media only screen and (max-width: @largestMobileScreen + @offset) {
+    .contentWidthMedia(@mobileWidth, @mobileGutter, -12px);
+
+    .ui.container {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .nav-actions {
+      position: relative;
+      justify-content: flex-end;
+      padding-right: 0;
+    }
+
+
+    .thematic-areas {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .sticky-outer-wrapper.active {
+      nav.navigation {
+        top: 0;
+        right: auto;
+        left: 0;
+      }
+    }
+
+    // .image-gallery-left-nav,
+    // .image-gallery-right-nav {
+    //   bottom: 0 !important;
+    // }
+
+
+    .searchbox {
+      svg,
+      .accountIcon {
+        height: 24px !important;
+      }
+    }
+
+    .nav-actions {
+      position: relative;
+      justify-content: flex-end;
+      padding-right: 0;
+    }
+
+    .tools {
+      .accountIcon {
+        height: 24px !important;
+      }
+    }
+
+    .header .nav-actions {
+      bottom: 11px;
+      top: unset;
+    }
+
+  }
+
+
+  // 1200
+  @media (max-width: @largestTabletScreen + @offset) {
+    .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
+
+
+    .slider-wrapper .slider-slide .slide-img {
+      height: 550px;
+    }
+
+    .slider-wrapper {
+      height: 550px;
+    }
+
+    .content-area main {
+      padding: 1rem 10px;
+      padding-bottom: 2rem;
+    }
+
+    &.mosaic-view {
+      .content-area main {
+        padding: 0;
+      }
+    }
+
+
+    .footerWrapper {
+      .ui.grid {
+
+        margin: 0;
+      }
+    }
+
+    .image-gallery-thumbnails-wrapper {
+      display: none;
+    }
+
+    .slide-overlay {
+      border-bottom: none;
+    }
+
+    .image-gallery-left-nav {
+      left: unset;
+      right: 5rem;
+      bottom: -3.5rem!important;
+    }
+
+    .image-gallery-right-nav {
+      left: unset;
+      right: 1rem;
+      bottom: -3.5rem!important;
+    }
+
+    .searchInput {
+      width: 0 !important;
+
+      &.show {
+        width: 100% !important;
+      }
+    }
+
+    .logo-nav-wrapper {
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        flex-grow: 1;
+      }
+    }
+
+    .nav-actions-mobile {
+      margin: 0 1rem;
+
+      .searchInput {
+        background: transparent;
+
+        &.show {
+          background: #F1F0EE;
+        }
+      }
+    }
+
+    .sticky-outer-wrapper.active {
+      .nav-actions-mobile {
+        margin: 0 1rem;
+
+        .searchInput {
+          background: transparent;
+
+          &.show {
+            background: white !important;
+          }
+        }
+      }
+    }
+
+    .ui.pointing.secondary.stackable.open.menu {
+      position: absolute;
+      background: white;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      right: 0;
+      box-shadow: 1px 1px 3px #13131361;
+      margin-top: 17px;
+
+      >.item.firstLevel {
+        width: 100%;
+        margin-right: 0 !important;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+
+        >a {
+          width: 100%;
+        }
+
+        &:hover {
+          >.menu {
+            position: relative;
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+  // 1600
+
+  @media (max-width: @largestSmallMonitor + @offset) {
+    .contentWidthMedia(@computerWidth, @computerGutter, -30px);
+
+  }
+
+
+  //  1200+
+
+  @media only screen and (max-width: @largeMonitorBreakpoint + @offset) {
+    .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
+
+  }
+
+
+
+
+
+  @media only screen and (max-width: @widescreenMonitorBreakpoint + @offset) {
+    .contentWidthMedia(@widescreenMonitorWidth, @largeMonitorGutter, -30px);
+
+
+  }
+
+
+
+
+
+
+  // ONLY STUFF
+  @media only screen and (max-width: @largestMobileScreen + @offset) {
+    .contentWidthMedia(@mobileWidth, @mobileGutter, -12px);
+
+    [class*='mobile hidden'],
+    [class*='tablet only']:not(.mobile),
+    [class*='computer only']:not(.mobile),
+    [class*='large screen only']:not(.mobile),
+    [class*='widescreen only']:not(.mobile),
+    [class*='or lower hidden'] {
+      display: none !important;
+    }
+  }
+
+  @media only screen and (min-width: @tabletBreakpoint + @offset) and (max-width: @largestTabletScreen + @offset) {
+    .contentWidthMedia(@tabletWidth, @tabletGutter, -30px);
+
+    [class*='mobile only']:not(.tablet),
+    [class*='tablet hidden'],
+    [class*='computer only']:not(.tablet),
+    [class*='large screen only']:not(.tablet),
+    [class*='widescreen only']:not(.tablet),
+    [class*='or lower hidden']:not(.mobile) {
+      display: none !important;
+    }
+  }
+
+
+
+  @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
+    .contentWidthMedia(@computerWidth, @computerGutter, -30px);
+
+    [class*='mobile only']:not(.computer),
+    [class*='tablet only']:not(.computer),
+    [class*='computer hidden'],
+    [class*='large screen only']:not(.computer),
+    [class*='widescreen only']:not(.computer),
+    [class*='or lower hidden']:not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+
+  @media only screen and (min-width: @largeMonitorBreakpoint + @offset) {
+    .contentWidthMedia(@largeMonitorWidth, @largeMonitorGutter, -30px);
+
+    [class*='mobile only']:not([class*='large screen']),
+    [class*='tablet only']:not([class*='large screen']),
+    [class*='computer only']:not([class*='large screen']),
+    [class*='large screen hidden'],
+    [class*='widescreen only']:not([class*='large screen']),
+    [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+}
+
+body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
+  .contentWidth(0);
+}
+
+body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  // .contentWidth(@toolbarWidth);
+  .contentWidth(0);
+
+}
+
+body.has-toolbar.has-sidebar {
+  // .contentWidth(@toolbarWidth + @sidebarWidth);
+  .contentWidth(0);
+
+}
+
+body.has-toolbar.has-sidebar-collapsed {
+  // .contentWidth(@toolbarWidth + @collapsedWidth);
+  .contentWidth(0);
+
+}
+
+body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  // .contentWidth(@collapsedWidth);
+  .contentWidth(0);
+
+}
+
+body.has-toolbar-collapsed.has-sidebar {
+  // .contentWidth(@collapsedWidth + @sidebarWidth);
+  .contentWidth(0);
+
+}
+
+body.has-toolbar-collapsed.has-sidebar-collapsed {
+  // .contentWidth(@collapsedWidth + @collapsedWidth);
+  .contentWidth(0);
+
+}
+
+
+// body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar.has-sidebar {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar.has-sidebar-collapsed {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar-collapsed.has-sidebar {
+//   .contentWidth(0);
+// }
+
+// body.has-toolbar-collapsed.has-sidebar-collapsed {
+//   .contentWidth(0);
+// }
+
+.drag.handle.wrapper {
+  margin-left: -15px !important;
+}
+
+.block .delete-button {
+  margin-right: -25px !important;
+}
+
+/* Hack for escape the blocks container in blocks full width */
+.full-width {
+  position: relative;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+}
+
+body.view-editview {
+
+  @media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+
+    [class*='mobile only']:not(.computer),
+    [class*='tablet only']:not(.computer),
+    [class*='large screen hidden'],
+    [class*='large screen only']:not(.computer),
+    [class*='widescreen only']:not(.computer),
+    [class*='or lower hidden']:not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+
+
+}
+
+
+
+  // Hotfix because we can't really do anything else for this situation
+  @media only screen and (min-width: 1200px) and (max-width: 1219px) {
+    body.has-toolbar-collapsed .hamburger-wrapper.computer.hidden.large.screen.hidden.widescreen.hidden {
+       display: block!important;
+     }
+   }
+
+   @media only screen and (min-width: 1200px) and (max-width: 1279px) {
+    body.has-toolbar .hamburger-wrapper.computer.hidden.large.screen.hidden.widescreen.hidden {
+       display: block!important;
+     }
+   }
+

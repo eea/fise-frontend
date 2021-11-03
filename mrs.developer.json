@@ -6,13 +6,6 @@
     "branch": "develop",
     "path": "src"
   },
-  "volto-forests-theme": {
-    "url": "https://github.com/eea/volto-forests-theme.git",
-    "package": "@eeacms/volto-forests-theme",
-    "branch": "develop",
-    "path": "src",
-    "develop": true
-  },
   "volto-sentry-rancher-config": {
     "url": "git@github.com:eea/volto-sentry-rancher-config.git",
     "https": "https://github.com/eea/volto-sentry-rancher-config.git",
