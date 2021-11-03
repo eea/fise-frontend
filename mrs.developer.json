@@ -13,6 +13,13 @@
     "branch": "develop",
     "path": "src"
   },
+  "volto-forests-theme": {
+    "url": "git@github.com:eea/volto-forests-theme.git",
+    "https": "https://github.com/eea/volto-forests-theme.git",
+    "package": "@eeacms/volto-forests-theme",
+    "branch": "develop",
+    "path": "src"
+  },
   "volto-corsproxy": {
     "url": "git@github.com:eea/volto-corsproxy.git",
     "https": "https://github.com/eea/volto-corsproxy.git",
