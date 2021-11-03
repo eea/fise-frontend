@@ -8,3 +8,4 @@
  *   Footer,
  * };
  */
+export CountryView from '~/components/theme/CountryView/CountryView';

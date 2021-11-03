@@ -4,6 +4,14 @@
  */
 
 import defaultReducers from '@plone/volto/reducers';
+import frontpage_slides from '~/reducers/frontpage_slides';
+import folder_header from '~/reducers/folder_header';
+import folder_tabs from '~/reducers/folder_tabs';
+import default_header_image from '~/reducers/default_header_image';
+import parent_folder_data from '~/reducers/parent_folder_data';
+import localnavigation from '~/reducers/localnavigation';
+import navSiteMap from '~/reducers/sitemap';
+import current_version from '~/reducers/current_version';
 
 /**
  * Root reducer.
@@ -14,7 +22,14 @@ import defaultReducers from '@plone/volto/reducers';
  */
 const reducers = {
   ...defaultReducers,
-  // Add your reducers here
+  frontpage_slides,
+  folder_header,
+  default_header_image,
+  folder_tabs,
+  parent_folder_data,
+  localnavigation,
+  navSiteMap,
+  current_version,
 };
 
 export default reducers;
