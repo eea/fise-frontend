@@ -10,7 +10,8 @@
       "@eeacms/volto-addons-forest": ["develop/volto-addons-forest/src"],
       "@eeacms/volto-widget-toggle": ["develop/volto-widget-toggle/src"],
       "@eeacms/volto-slate": ["develop/volto-slate/src"],
-      "@eeacms/volto-forests-theme": ["develop/volto-forests-theme/src"]
+      "@eeacms/volto-forests-theme": ["develop/volto-forests-theme/src"],
+      "@eeacms/volto-block-style": ["develop/volto-block-style/src"]
     },
     "baseUrl": "src"
   }
