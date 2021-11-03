@@ -68,6 +68,11 @@ build
 .env.development.local
 .env.test.local
 .env.production.local
+report.html
+selenium-screenshot-*.png
+/selenium/
+cypress/videos/
+cypress/screenshots
 
 data
 *.old
