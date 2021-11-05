@@ -13,9 +13,9 @@
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-addons-forest",
-    "@eeacms/volto-forests-theme",
     "@eeacms/volto-embed",
-    "@eeacms/volto-middleware-vh"
+    "@eeacms/volto-middleware-vh",
+    "@eeacms/volto-forests-theme"
   ],
   "dependencies": {
     "@eeacms/volto-addons-forest": "0.1.3",
