@@ -26,7 +26,7 @@
     "@eeacms/volto-middleware-vh": "1.0.1",
     "@eeacms/volto-plotlycharts": "2.0.8",
     "@eeacms/volto-tableau": "1.2.3",
-    "@plone/volto": "13.15.0",
+    "@plone/volto": "14.0.0-alpha.31",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "patches": "/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true",
     "build": "razzle build",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js",
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n",
     "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=develop",
     "develop": "missdev --config=jsconfig.json --output=develop",
     "update": "./scripts/update.sh",
