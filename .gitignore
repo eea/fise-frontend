@@ -73,6 +73,7 @@ selenium-screenshot-*.png
 /selenium/
 cypress/videos/
 cypress/screenshots
+cypress/reports
 
 data
 *.old
