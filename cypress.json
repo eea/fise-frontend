@@ -1,10 +1,7 @@
 {
   "baseUrl": "http://localhost:3000",
   "viewportWidth": 1280,
-  "env": {
-    "API_PATH": "http://localhost:8080/fise"
-  },
-  "defaultCommandTimeout": 30000,
+  "defaultCommandTimeout": 60000,
   "reporter": "junit",
   "video": true,
   "reporterOptions": {
