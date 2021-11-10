@@ -1,10 +1,10 @@
 import { openSidebar, closeSidebar } from '../index';
 
 export const changePageTitle = (title, delay = 10) => {
-  cy.get('.documentFirstHeading > span[data-slate-node="text"]')
+  cy.get('div[data-slate-editor] > .documentFirstHeading')
     .clear()
     .type(title)
-    .get('.documentFirstHeading > span[data-slate-node="text"]')
+    .get('.documentFirstHeading > span')
     .contains(title);
 
   // cy.get('.documentFirstHeading').type('{enter}');
