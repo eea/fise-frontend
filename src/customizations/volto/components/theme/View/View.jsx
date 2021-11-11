@@ -11,7 +11,7 @@ import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { Dimmer, Loader } from 'semantic-ui-react';
-import {trackEvent} from '@eeacms/volto-matomo/utils'
+import { trackEvent } from '@eeacms/volto-matomo/utils';
 
 import {
   ContentMetadataTags,
@@ -172,10 +172,17 @@ class View extends Component {
    * @method getViewByLayout
    * @returns {string} Markup for component.
    */
-  getViewByLayout = () =>
-    config.views.layoutViews[
-      this.props.content[getLayoutFieldname(this.props.content)]
-    ] || null;
+  getViewByLayout = () => {
+    if (this.props.pathname === '/') {
+      return config.views.layoutViews['document_view_wide'];
+    }
+
+    return (
+      config.views.layoutViews[
+        this.props.content[getLayoutFieldname(this.props.content)]
+      ] || null
+    );
+  };
 
   /**
    * Cleans the component displayName (specially for connected components)
@@ -246,7 +253,7 @@ class View extends Component {
     trackEvent({
       category: 'Print',
       action: 'Click',
-      name: document.title
+      name: document.title,
     });
     document.getElementById('main').classList.add('print');
     setTimeout(() => {
