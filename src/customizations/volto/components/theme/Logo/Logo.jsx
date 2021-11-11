@@ -31,11 +31,9 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const Logo = ({ intl }) => (
-
   <Link to="/" title={intl.formatMessage(messages.site)}>
-
     <LazyLoadImage
-      className="logoImage computer large screen widescreen only"
+      className="logoImage tablet logoImageWithText computer large screen widescreen only"
       // alt={image.alt}
       height={80}
       effect="blur"
@@ -50,8 +48,8 @@ const Logo = ({ intl }) => (
       }
     />
     <LazyLoadImage
-      className="logoImageSm computer large screen widescreen only"
-      // alt={image.alt}
+      className="logoImageSm tablet logoImageWithText computer large screen widescreen only"
+      // alt={image.alLogoImageSmWithoutTextt}
       height={65}
       effect="blur"
       src={LogoImageSm}

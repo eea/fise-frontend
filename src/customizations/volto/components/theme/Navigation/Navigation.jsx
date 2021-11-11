@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Menu, Dropdown } from 'semantic-ui-react';
 import cx from 'classnames';
-import { getBasePath } from '~/helpers';
+import { getBasePath } from '@eeacms/volto-forests-theme/helpers';
 import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
@@ -29,15 +29,6 @@ const messages = defineMessages({
     defaultMessage: 'Open menu',
   },
 });
-
-const getChildPath = (parent, child) => {
-  if (!parent && child) return child.url === '' ? '/' : child.url;
-  if (!child) return parent.url === '' ? '/' : parent.url;
-  if (!parent) return '/';
-  if (parent.title === 'Countries' && child.items?.length > 0)
-    return child.items[0].url === '' ? '/' : child.items[0].url;
-  return child.url === '' ? '/' : child.url;
-};
 
 /**
  * Navigation container class.
@@ -250,7 +241,7 @@ class Navigation extends Component {
             </button>
           </div>
         </div>
-        <div className="search-widget smallSearch">
+        <div className="search-widget smallSearch menu-force-mobile">
           <Icon
             className="searchIcon"
             onClick={this.toggleMobileSearch}
@@ -291,7 +282,9 @@ class Navigation extends Component {
           pointing
           secondary
           className={
-            this.state.isMobileMenuOpen ? 'open firstLevel' : 'mobile hidden'
+            this.state.isMobileMenuOpen
+              ? 'open firstLevel'
+              : 'menu-manual-mobile'
           }
         >
           {navigation.map((item) =>
