@@ -8,10 +8,6 @@ import { Menu } from 'semantic-ui-react';
 /* HELPERS */
 import cx from 'classnames';
 import { isActive, getNavigationByParent, getBasePath } from './helpers';
-import {
-  deleteQueryParam,
-  setQueryParam,
-} from '@eeacms/volto-datablocks/actions';
 import { useEffect } from 'react';
 import './styles.css';
 import cookie from 'react-cookie';
@@ -248,6 +244,6 @@ export default compose(
           )
         : {},
     }),
-    { deleteQueryParam, setQueryParam },
+    {},
   ),
 )(View);
