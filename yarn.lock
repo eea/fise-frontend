@@ -1318,15 +1318,15 @@
     "@eeacms/volto-widgets-view" "3.0.0"
     volto-slate "4.2.1"
 
-"@eeacms/volto-embed@2.0.8", "@eeacms/volto-embed@^2.0.4":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-2.0.8.tgz#01cf3ab816fb5af53613d155028c92590c459214"
-  integrity sha512-XRjyibqbJ/Q3ornJXr8X33AmlFlWy2kkC0wJa8T0x6bQctGYArPuYQFKWtlPJx+Wy35LUfrZT95nZpSap4aiKQ==
+"@eeacms/volto-embed@2.0.9", "@eeacms/volto-embed@^2.0.4":
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-2.0.9.tgz#b9dfb778f9b4f09b5fc812dd38cab4d177a6bdf2"
+  integrity sha512-rFBsFya7qIhtvh91YTLiGKW42RYSFAR/M3W1JLUWaFw9z6F/1bD5nHKNix3htX9oDz87l/tiaQ8bx7xNE7lRww==
   dependencies:
-    "@eeacms/volto-corsproxy" "2.1.2"
+    "@eeacms/volto-corsproxy" "*"
     "@eeacms/volto-datablocks" "*"
     react-visibility-sensor "5.1.1"
-    volto-slate "2.9.1"
+    volto-slate "*"
 
 "@eeacms/volto-forests-theme@0.1.10":
   version "0.1.10"
