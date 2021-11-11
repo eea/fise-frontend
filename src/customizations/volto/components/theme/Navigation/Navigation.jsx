@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Menu, Dropdown } from 'semantic-ui-react';
 import cx from 'classnames';
-import { getBasePath } from '@eeacms/volto-forests-theme/helpers';
+import { getBasePath } from '~/helpers';
 import SearchBlock from '@eeacms/volto-addons-forest/SearchBlock/View';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
