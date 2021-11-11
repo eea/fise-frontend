@@ -1328,10 +1328,10 @@
     react-visibility-sensor "5.1.1"
     volto-slate "2.9.1"
 
-"@eeacms/volto-forests-theme@0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.9.tgz#2849b466f35db237230e516b46e7301394469798"
-  integrity sha512-T8x+HUwqht9vGbtumEFU9TyEqrwnY5KO0HviECVRXBnc5WQjYqcALTt8NDWT5MCQLZauQQE0wIbXpz3j1BoF6w==
+"@eeacms/volto-forests-theme@0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.10.tgz#9e229eda375ba5d8c379f9df57656475d51528ca"
+  integrity sha512-RfzaUtoSvbqQYzERCyqcwZPkDdVt4ne0snHs07LJquV2I6SNqndCJSQUtIOFgsxFPGLJQsVuasJyIz6th31jTQ==
   dependencies:
     "@blueprintjs/core" "^3.30.0"
     "@blueprintjs/icons" "^3.19.0"
@@ -1346,7 +1346,7 @@
     react-stickynode "^2.1.1"
     react-toastify "^5.3.2"
     recharts "2.1.6"
-    volto-slate "4.2.1"
+    volto-slate "*"
     webpack-bundle-analyzer "^3.6.0"
 
 "@eeacms/volto-group-block@4.3.1":
@@ -1383,26 +1383,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-object-widget/-/volto-object-widget-3.0.0.tgz#caf99ec54bb39481a99937985f362f086c1c5fd5"
   integrity sha512-8ByONF12U35HKnsO6gKAxCxSe4xfSintAU7zE8zWEKgdtcIb+Jx78wpi6cy3p0C0YLUTnd2BGIXLqDSftKI+WA==
 
-"@eeacms/volto-plotlycharts@*":
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@2.0.9":
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-2.0.9.tgz#23c5d10bb9f1e4dde3b16b103946534a6efdf6aa"
   integrity sha512-rt4SZKjrc2gYJsSGnuWo6kaINTXqZpWjdIBW94fvOxl1c/k9z7L90LKjz+iEEqkew1moxOSP461slA3iRfZ55w==
-  dependencies:
-    "@eeacms/volto-datablocks" "^2.0.13"
-    plotly.js "^2.5.1"
-    react-chart-editor "^0.45.0"
-    react-component-queries "2.3.0"
-    react-inspector "^5.1.1"
-    react-json-editor-ajrm "2.5.13"
-    react-plotly.js "^2.5.1"
-    react-resize-detector "^6.7.6"
-    react-sizeme "^3.0.2"
-    react-visibility-sensor "^5.1.1"
-
-"@eeacms/volto-plotlycharts@2.0.8":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-2.0.8.tgz#a1d0fd556c01c6f778e30e1701005c3099e433ca"
-  integrity sha512-e9CUOe62KNk4XncrJzvIighZJRB9JneryxOFQovs9Ou+TUuZCgVnPu1mmcpANoHE6VV8+5VKIFBpBKwOO9dtrw==
   dependencies:
     "@eeacms/volto-datablocks" "^2.0.13"
     plotly.js "^2.5.1"
