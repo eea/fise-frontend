@@ -24,7 +24,7 @@
     "@eeacms/volto-embed": "2.0.9",
     "@eeacms/volto-forests-theme": "0.1.11",
     "@eeacms/volto-middleware-vh": "1.0.1",
-    "@eeacms/volto-plotlycharts": "2.0.9",
+    "@eeacms/volto-plotlycharts": "2.0.10",
     "@eeacms/volto-tableau": "1.2.3",
     "@plone/volto": "13.15.0",
     "semantic-ui-react": "2.0.4"

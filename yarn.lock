@@ -1382,10 +1382,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-object-widget/-/volto-object-widget-3.0.0.tgz#caf99ec54bb39481a99937985f362f086c1c5fd5"
   integrity sha512-8ByONF12U35HKnsO6gKAxCxSe4xfSintAU7zE8zWEKgdtcIb+Jx78wpi6cy3p0C0YLUTnd2BGIXLqDSftKI+WA==
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@2.0.9":
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-2.0.9.tgz#23c5d10bb9f1e4dde3b16b103946534a6efdf6aa"
-  integrity sha512-rt4SZKjrc2gYJsSGnuWo6kaINTXqZpWjdIBW94fvOxl1c/k9z7L90LKjz+iEEqkew1moxOSP461slA3iRfZ55w==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@2.0.10":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-2.0.10.tgz#2d77769db9857825ea1092280e2c93eb83a8c657"
+  integrity sha512-44wfoxMqni/Cahm0So98Jj8KxbU3esIBvo/i9A/9PQGY7qDzRrLmTyVXD2Ojv8tnm37FlLj7cgkw54LB8j/TIw==
   dependencies:
     "@eeacms/volto-datablocks" "^2.0.13"
     plotly.js "^2.5.1"
