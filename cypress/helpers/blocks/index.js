@@ -1,11 +1,12 @@
 import { openSidebar, closeSidebar } from '../index';
 
 export const changePageTitle = (title, delay = 10) => {
+  // Change page title
   cy.get('.documentFirstHeading > .public-DraftStyleDefault-block')
     .clear()
-    .type(title)
+    .type('My Add-on Page')
     .get('.documentFirstHeading span[data-text]')
-    .contains(title);
+    .contains('My Add-on Page');
 
   cy.get('.documentFirstHeading > .public-DraftStyleDefault-block').type(
     '{enter}',

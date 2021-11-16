@@ -33,7 +33,7 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
-locales/*.json
+locales/**
 
 # Dependency directories
 node_modules/
@@ -68,6 +68,12 @@ build
 .env.development.local
 .env.test.local
 .env.production.local
+report.html
+selenium-screenshot-*.png
+/selenium/
+cypress/videos/
+cypress/screenshots
+cypress/reports
 
 data
 *.old
