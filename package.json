@@ -28,7 +28,8 @@
     "@eeacms/volto-plotlycharts": "2.0.10",
     "@eeacms/volto-tableau": "1.2.4",
     "@plone/volto": "13.15.0",
-    "semantic-ui-react": "2.0.4"
+    "semantic-ui-react": "2.0.4",
+    "@eeacms/volto-slate-dataentity": "1.0.2"
   },
   "resolutions": {
     "volto-slate": "4.2.1"
