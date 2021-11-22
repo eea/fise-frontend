@@ -103,6 +103,9 @@
             ],
             "@eeacms/volto-addons-forest": [
                 "develop/volto-addons-forest/src"
+            ],
+            "@eeacms/volto-slate-dataentity": [
+                "develop/volto-slate-dataentity/src"
             ]
         },
         "baseUrl": "src"
