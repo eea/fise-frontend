@@ -1320,10 +1320,10 @@
     react-visibility-sensor "5.1.1"
     volto-slate "*"
 
-"@eeacms/volto-forests-theme@0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.16.tgz#cfbc454c7652d3156026715243d191635da95ea1"
-  integrity sha512-M2dneRKGaiGsgIUEQ1UF97SDreK/+ccE0CqNkGd9ydapoxLlOHq5D0Zcml/mLljqtyG6rjOSgcPXSWzyLUOXeQ==
+"@eeacms/volto-forests-theme@0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.17.tgz#bd5f3bb621d88b0e620e66240a15d48658abf435"
+  integrity sha512-XfglqXpCnPj3PJBpngYlTvIbaoztxMtLTj7hGm5cQb8RjiNey3UOruhKZRk80AKsFk59ev1L6kygE+pjJFiJbw==
   dependencies:
     "@blueprintjs/core" "^3.30.0"
     "@blueprintjs/icons" "^3.19.0"
