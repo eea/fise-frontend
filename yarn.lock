@@ -1280,6 +1280,21 @@
     sanitize-html "^2.3.3"
     slate "^0.62.0"
 
+"@eeacms/volto-datablocks@2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-2.0.16.tgz#d1eb465c2d860acd54b779e834c149ff130bcaf3"
+  integrity sha512-nGIPKj9S+Xp4epOjSh7rzTMhPqaxzTWICRxKWgD5NN4uMs8CwZZ91CW8fLq9ZlszdSoxF3CMjtR+mCehP0iMjQ==
+  dependencies:
+    "@eeacms/volto-embed" "^2.0.4"
+    "@eeacms/volto-matomo" "^2.0.2"
+    d3 "7.1.1"
+    humanize-plus "^1.8.2"
+    performant-array-to-tree "^1.7.1"
+    plotly.js "^2.5.1"
+    react-plotly.js "^2.5.1"
+    sanitize-html "^2.3.3"
+    slate "^0.62.0"
+
 "@eeacms/volto-depiction@0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-depiction/-/volto-depiction-0.1.2.tgz#59dc808f75dc24c0134bbdc90b0c59783f1b6339"
@@ -1327,15 +1342,15 @@
     react-visibility-sensor "5.1.1"
     volto-slate "4.2.1"
 
-"@eeacms/volto-forests-theme@0.1.23":
-  version "0.1.23"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.23.tgz#c1708b33b8c1336dbc3bc6f1f7a135753a0e4636"
-  integrity sha512-Q0egHBb97saksRB8GoKL3yshmQnl9u8+sDs2NP0BMcVchdfd+XeBWscLfd4fHhGCmojOhB98+IzFEQ/kQu8h7A==
+"@eeacms/volto-forests-theme@0.1.24":
+  version "0.1.24"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.24.tgz#c53633dd1a370649b182126c252c864e4aed3fd9"
+  integrity sha512-qS4JLwcurpHJi5sVjAdN6clvr1vsLZeMPfIYdsyRU8BpZqupoOqRRy9DotzsEeTDL6muCTfqr+hZ351Kogfcrg==
   dependencies:
     "@blueprintjs/core" "^3.30.0"
     "@blueprintjs/icons" "^3.19.0"
     "@eeacms/volto-addons-forest" "*"
-    "@eeacms/volto-datablocks" "*"
+    "@eeacms/volto-datablocks" "2.0.16"
     "@eeacms/volto-matomo" "*"
     "@eeacms/volto-plotlycharts" "*"
     raven-js "3.27.2"
