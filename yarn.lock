@@ -1265,7 +1265,7 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-corsproxy/-/volto-corsproxy-2.1.2.tgz#eb1b50a7382e4da9601128ee972d3249a29ce939"
   integrity sha512-5j2ETMD8XRUk8hs4qqpd6F9SSlmTw0eqwNKPlouF78cdql/vJ5Pc4cgdZDh1Qldum1CcFnqdLxGABzQkfE3SDQ==
 
-"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@2.0.17", "@eeacms/volto-datablocks@^2.0.13", "@eeacms/volto-datablocks@^2.0.2":
+"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@^2.0.13", "@eeacms/volto-datablocks@^2.0.2":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-2.0.17.tgz#ec120ba96b55db6dc0db1f3ce57f3518614ff34b"
   integrity sha512-09gDvfabU8O9BTTB0+H4VaIM9ddvZIicCnW5CNaTVeUAtpBHqbtunN4tkume0J+lZBXm3YJZ7YVgwIUETGsn8w==
@@ -1342,10 +1342,10 @@
     react-visibility-sensor "5.1.1"
     volto-slate "4.2.1"
 
-"@eeacms/volto-forests-theme@0.1.24":
-  version "0.1.24"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.24.tgz#c53633dd1a370649b182126c252c864e4aed3fd9"
-  integrity sha512-qS4JLwcurpHJi5sVjAdN6clvr1vsLZeMPfIYdsyRU8BpZqupoOqRRy9DotzsEeTDL6muCTfqr+hZ351Kogfcrg==
+"@eeacms/volto-forests-theme@0.1.25":
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.25.tgz#d51d313aec2ddf9c16a106ceba9f13539cce8081"
+  integrity sha512-fJyYJvbTfWNRRGhtpmYwR6eyTp+AnatAu3nMoglHVjdghFKp6uxgLstisucfl+Wc3+7g3a9zevLfzb1dxn+blQ==
   dependencies:
     "@blueprintjs/core" "^3.30.0"
     "@blueprintjs/icons" "^3.19.0"
