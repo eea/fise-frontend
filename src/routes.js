@@ -18,27 +18,27 @@ import Head from '@eeacms/volto-forests-theme/components/theme/CatalogueViews/Ap
  */
 const routes = [
   {
-    path: '/header',
-    component: Header,
-  },
-  {
-    path: '/footer',
-    component: Footer,
-  },
-  {
-    path: '/head',
-    component: Head,
-  },
-  {
-    path: '/sitemap',
-    component: SiteMap,
-    exact: true,
-  },
-  {
     path: '/',
     component: App, // Change this if you want a different component
     routes: [
       // Add your routes here
+      {
+        path: '/header',
+        component: Header,
+      },
+      {
+        path: '/footer',
+        component: Footer,
+      },
+      {
+        path: '/head',
+        component: Head,
+      },
+      {
+        path: '/sitemap',
+        component: SiteMap,
+        exact: true,
+      },
       ...(config.addonRoutes || []),
       ...defaultRoutes,
     ],
