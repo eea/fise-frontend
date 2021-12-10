@@ -236,5 +236,10 @@
     "package": "@eeacms/volto-addons-forest",
     "branch": "develop",
     "path": "src"
+  },
+  "volto-slate-dataentity": {
+    "url": "https://github.com/tiberiuichim/volto-slate-dataentity.git",
+    "path": "src",
+    "package": "@eeacms/volto-slate-dataentity"
   }
 }

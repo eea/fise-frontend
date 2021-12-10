@@ -2,32 +2,37 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.13.0",
+  "version": "2.15.0",
   "private": true,
   "workspaces": [
     "src/develop/*"
   ],
   "addons": [
-    "@eeacms/volto-forests-theme",
     "@eeacms/volto-eea-kitkat",
+    "@eeacms/volto-forests-theme",
     "@eeacms/volto-tableau",
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-addons-forest",
     "@eeacms/volto-embed",
-    "@eeacms/volto-middleware-vh"
+    "@eeacms/volto-middleware-vh",
+    "@eeacms/volto-slate-dataentity"
   ],
   "dependencies": {
     "@eeacms/volto-addons-forest": "0.1.4",
-    "@eeacms/volto-datablocks": "2.0.15",
-    "@eeacms/volto-eea-kitkat": "4.1.1",
-    "@eeacms/volto-embed": "2.0.9",
-    "@eeacms/volto-forests-theme": "0.1.11",
+    "@eeacms/volto-datablocks": "2.0.16",
+    "@eeacms/volto-eea-kitkat": "4.1.7",
+    "@eeacms/volto-embed": "2.0.10",
+    "@eeacms/volto-forests-theme": "0.1.28",
     "@eeacms/volto-middleware-vh": "1.0.1",
-    "@eeacms/volto-plotlycharts": "2.0.9",
-    "@eeacms/volto-tableau": "1.2.3",
+    "@eeacms/volto-plotlycharts": "2.0.10",
+    "@eeacms/volto-slate-dataentity": "1.0.2",
+    "@eeacms/volto-tableau": "1.2.4",
     "@plone/volto": "13.15.0",
     "semantic-ui-react": "2.0.4"
+  },
+  "resolutions": {
+    "volto-slate": "4.2.1"
   },
   "devDependencies": {
     "mrs-developer": "^1.4.0"
