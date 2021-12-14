@@ -19,7 +19,7 @@
     "@eeacms/volto-slate-dataentity"
   ],
   "dependencies": {
-    "@eeacms/volto-addons-forest": "0.1.4",
+    "@eeacms/volto-addons-forest": "0.1.5",
     "@eeacms/volto-datablocks": "2.0.20",
     "@eeacms/volto-eea-kitkat": "4.1.7",
     "@eeacms/volto-embed": "2.0.10",

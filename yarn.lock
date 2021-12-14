@@ -1186,10 +1186,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.8.tgz#c408a828d04b85cbccee337b8558a46f70a62865"
   integrity sha512-pQ8J3TvDd5jydJIJQlem7CCmcNnDwFtqVHS0AwDaj4175MCVYyuA6VH2NSx80TIrVUYRdgiFBHnh4PKKDTWZoQ==
 
-"@eeacms/volto-addons-forest@*", "@eeacms/volto-addons-forest@0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.4.tgz#8f54e252fff6c64447656e47ec6d8b96113f508b"
-  integrity sha512-1yzS2FcEYuz0pN+OELqS8hdrHz//R6V9gmXgzlMIYD8h/ccqCbdkl1mB0lELojtPMM+NhOaM8kjsAUVn1bvmjQ==
+"@eeacms/volto-addons-forest@*", "@eeacms/volto-addons-forest@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.5.tgz#ba7f11afb243c766fd0aac9f03ded5736386c62e"
+  integrity sha512-/GiXkwJNFSxIiaVvAiOGiQ5VgTK8BOZVGT94X/JWLeDLLXBYcqh0my6WegEq5naxzQEHvHqB9Ritug6U1FapIw==
   dependencies:
     dompurify "^2.0.12"
     draft-js-alignment-plugin "^2.0.6"
