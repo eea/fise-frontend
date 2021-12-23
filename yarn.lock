@@ -1379,10 +1379,10 @@
   dependencies:
     "@eeacms/volto-widgets-view" "*"
 
-"@eeacms/volto-middleware-vh@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-middleware-vh/-/volto-middleware-vh-1.0.4.tgz#45b4cd6b48535a4fbc4aaa10516be56231f3926a"
-  integrity sha512-NoZ7yCFawzzBsUd2nKLMc9Y3qX38gPvRcu4e0R5VlPJXKFOSCEJTX7afiN9CZ241mZKlhkoblRoxdtw+Pm+lgA==
+"@eeacms/volto-middleware-vh@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-middleware-vh/-/volto-middleware-vh-1.0.5.tgz#52685ea58329c9ff5cb3129191c316b71db0d3e5"
+  integrity sha512-k9rCumR97Daus8/M8FT4MqNF6j+wLAfzeH7dTpoolj4VKUJ845nj26cGFZLSso+xFb++B4RwQFslDbsAfUY67Q==
 
 "@eeacms/volto-object-widget@*", "@eeacms/volto-object-widget@3.0.2":
   version "3.0.2"
