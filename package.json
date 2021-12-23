@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.15.0-beta.2",
+  "version": "2.15.0-beta.1",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -32,7 +32,7 @@
     "semantic-ui-react": "2.0.4"
   },
   "resolutions": {
-    "volto-slate": "4.2.1"
+    "volto-slate": "5.2.1"
   },
   "devDependencies": {
     "mrs-developer": "^1.4.0"
