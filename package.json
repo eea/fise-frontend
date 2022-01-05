@@ -31,12 +31,6 @@
     "@plone/volto": "14.2.0",
     "semantic-ui-react": "2.0.4"
   },
-<<<<<<< HEAD
-  "resolutions": {
-    "volto-slate": "5.3.3"
-  },
-=======
->>>>>>> 2923a6a (volto 14 compatibility)
   "devDependencies": {
     "mrs-developer": "^1.4.0"
   },
