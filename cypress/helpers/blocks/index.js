@@ -1,16 +1,13 @@
 import { openSidebar, closeSidebar } from '../index';
 
 export const changePageTitle = (title, delay = 10) => {
-  // Change page title
-  cy.get('.documentFirstHeading > .public-DraftStyleDefault-block')
-    .clear()
-    .type('My Add-on Page')
-    .get('.documentFirstHeading span[data-text]')
-    .contains('My Add-on Page');
+  cy.get('[contenteditable=true]').first().clear();
 
-  cy.get('.documentFirstHeading > .public-DraftStyleDefault-block').type(
-    '{enter}',
-  );
+  cy.get('[contenteditable=true]').first().type(title);
+
+  cy.get('.documentFirstHeading').contains(title);
+
+  cy.get('[contenteditable=true]').first().type('{enter}');
 };
 
 export const addBlock = (groupTitle, groupId, blockId) => {
