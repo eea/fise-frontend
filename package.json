@@ -2,15 +2,15 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.15.0",
+  "version": "2.15.1",
   "private": true,
   "workspaces": [
     "src/develop/*"
   ],
   "addons": [
     "@eeacms/volto-eea-kitkat",
-    "@eeacms/volto-forests-theme",
     "@eeacms/volto-tableau",
+    "@eeacms/volto-forests-theme",
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-addons-forest",
