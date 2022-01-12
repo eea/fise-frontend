@@ -9,8 +9,8 @@
   ],
   "addons": [
     "@eeacms/volto-eea-kitkat",
-    "@eeacms/volto-forests-theme",
     "@eeacms/volto-tableau",
+    "@eeacms/volto-forests-theme",
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-addons-forest",
