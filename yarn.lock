@@ -1402,21 +1402,19 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-object-widget/-/volto-object-widget-3.0.3.tgz#1d12a769c3f0d9a1448f857e60be4dd6771a647b"
   integrity sha512-AZiWLwS4kXRN696BzJfSncfvbnHsnF11m7iCF+W38ROGIUau3fmiLV9KnXxgDJZg/AV/wI3AcdSXr2fnH3uOAA==
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@2.0.11":
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-2.0.11.tgz#f8f2886f4d45f74c8c81228cf87f5b56962d55c0"
-  integrity sha512-ydrnkN071CJWlAPwnP5VYwmwwIPs9ne7e3vc753iFjbBjK136IfhCutFNBapX76L0xTVYrA/4Q4tQY6DQANPUw==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-3.0.0.tgz#6e0b700ca4efac6f1b1e3d776736b64d9a23612f"
+  integrity sha512-fm/mGjbOvagzTd93AhYzkjRSbhtagVnWYaTqrbmDIii4qD297kRD+thiGK1Uuc70ReSczIhpxp6GimxlqEpdlg==
   dependencies:
-    "@eeacms/volto-datablocks" "^2.0.13"
+    "@eeacms/volto-datablocks" "*"
+    "@plone/scripts" "*"
     plotly.js "^2.5.1"
-    react-chart-editor "^0.45.0"
-    react-component-queries "2.3.0"
-    react-inspector "^5.1.1"
+    react-chart-editor "0.45.0"
+    react-colorscales "0.7.3"
+    react-inspector "5.1.1"
     react-json-editor-ajrm "2.5.13"
-    react-plotly.js "^2.5.1"
-    react-resize-detector "^6.7.6"
-    react-sizeme "^3.0.2"
-    react-visibility-sensor "^5.1.1"
+    react-plotly.js "2.5.1"
 
 "@eeacms/volto-resize-helper@*", "@eeacms/volto-resize-helper@0.2.8", "@eeacms/volto-resize-helper@^0.2.4":
   version "0.2.8"
@@ -1921,6 +1919,18 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@kwsites/file-exists@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwsites/file-exists/-/file-exists-1.1.1.tgz#ad1efcac13e1987d8dbaf235ef3be5b0d96faa99"
+  integrity sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==
+  dependencies:
+    debug "^4.1.1"
+
+"@kwsites/promise-deferred@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
+  integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
+
 "@loadable/babel-plugin@5.13.2":
   version "5.13.2"
   resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.13.2.tgz#373cddc64ee5437814f7dca1c1b6a7b2c1665a9f"
@@ -2142,6 +2152,20 @@
   integrity sha512-s1zLBjWhdEI2zwaoSgyOFoKSl109CUcVBCc7biPJ3aAf6LGLU6szDvi31JPU7bxfla2lqfhjbbg/5DdFNxOwHw==
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
+
+"@plone/scripts@*":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@plone/scripts/-/scripts-1.4.0.tgz#1c50f3e191d5eb2fbb16f7aa7922115646974f4b"
+  integrity sha512-GOysIP1bAIjvrgQRF1IvE1k8WkJGfRB+hr3Bf9n5FseEkMy6hSE8xdhB9AbI2aWmKGYznYGcOOvy4OmHLbPvUA==
+  dependencies:
+    babel-plugin-react-intl "5.1.17"
+    babel-preset-razzle "3.4.5"
+    commander "8.2.0"
+    git-url-parse "^11.6.0"
+    mrs-developer "*"
+    pofile "1.0.10"
+    razzle "3.4.5"
+    simple-git "2.48.0"
 
 "@plone/scripts@1.0.3":
   version "1.0.3"
@@ -9001,6 +9025,13 @@ git-url-parse@11.4.0:
   dependencies:
     git-up "^4.0.0"
 
+git-url-parse@^11.6.0:
+  version "11.6.0"
+  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-11.6.0.tgz#c634b8de7faa66498a2b88932df31702c67df605"
+  integrity sha512-WWUxvJs5HsyHL6L08wOusa/IXYtMuCAhrMmnTjQPpBU0TTHyDhnOATNH3xNQz7YOQUsqIIPTGr4xiVti1Hsk5g==
+  dependencies:
+    git-up "^4.0.0"
+
 gl-axes3d@^1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/gl-axes3d/-/gl-axes3d-1.5.3.tgz#47e3dd6c21356a59349910ec01af58e28ea69fe9"
@@ -13255,7 +13286,7 @@ mrmime@^1.0.0:
   resolved "https://registry.yarnpkg.com/mrmime/-/mrmime-1.0.0.tgz#14d387f0585a5233d291baba339b063752a2398b"
   integrity sha512-a70zx7zFfVO7XpnQ2IX1Myh9yY4UYvfld/dikWRnsXxbyvMcfz+u6UfgNAtH+k2QqtJuzVpv6eLTx1G2+WKZbQ==
 
-mrs-developer@^1.4.0:
+mrs-developer@*, mrs-developer@^1.4.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/mrs-developer/-/mrs-developer-1.6.1.tgz#3a36d579480d42ea069a9d7b58dbe309cd5d5f63"
   integrity sha512-YKsW+ZTRBw6/C5IHNl2mTbXfLDJjQ1D3LXTw1WE2j6WhsTSIp7zIfFIs1YSehQt1Z+xgN2BxSrxzRdIzG1KrXA==
@@ -16103,7 +16134,7 @@ react-beautiful-dnd@13.0.0:
     redux "^4.0.4"
     use-memo-one "^1.1.1"
 
-react-chart-editor@^0.45.0:
+react-chart-editor@0.45.0, react-chart-editor@^0.45.0:
   version "0.45.0"
   resolved "https://registry.yarnpkg.com/react-chart-editor/-/react-chart-editor-0.45.0.tgz#6f45f5892cdd21c7e5bd84f485e250c9d1847e2c"
   integrity sha512-/SurlIFait/BbWhq7sd8gIPr5MbhjPgrNY+d4V3sH6R/BjUocN/5SqUhQGknOUkxH8Fu4V+qn/8GsjYRFvk5NA==
@@ -16349,7 +16380,7 @@ react-input-autosize@^3.0.0:
   dependencies:
     prop-types "^15.5.8"
 
-react-inspector@^5.1.1:
+react-inspector@5.1.1, react-inspector@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-5.1.1.tgz#58476c78fde05d5055646ed8ec02030af42953c8"
   integrity sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg==
@@ -18136,6 +18167,15 @@ signum@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/signum/-/signum-1.0.0.tgz#74a7d2bf2a20b40eba16a92b152124f1d559fa77"
   integrity sha1-dKfSvyogtA66FqkrFSEk8dVZ+nc=
+
+simple-git@2.48.0:
+  version "2.48.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.48.0.tgz#87c262dba8f84d7b96bb3a713e9e34701c1f6e3b"
+  integrity sha512-z4qtrRuaAFJS4PUd0g+xy7aN4y+RvEt/QTJpR184lhJguBA1S/LsVlvE/CM95RsYMOFJG3NGGDjqFCzKU19S/A==
+  dependencies:
+    "@kwsites/file-exists" "^1.1.1"
+    "@kwsites/promise-deferred" "^1.1.1"
+    debug "^4.3.2"
 
 simple-git@^1.132.0:
   version "1.132.0"
