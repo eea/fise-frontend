@@ -1277,36 +1277,6 @@
     sanitize-html "^2.3.3"
     slate "^0.62.0"
 
-"@eeacms/volto-datablocks@2.0.16":
-  version "2.0.16"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-2.0.16.tgz#d1eb465c2d860acd54b779e834c149ff130bcaf3"
-  integrity sha512-nGIPKj9S+Xp4epOjSh7rzTMhPqaxzTWICRxKWgD5NN4uMs8CwZZ91CW8fLq9ZlszdSoxF3CMjtR+mCehP0iMjQ==
-  dependencies:
-    "@eeacms/volto-embed" "^2.0.4"
-    "@eeacms/volto-matomo" "^2.0.2"
-    d3 "7.1.1"
-    humanize-plus "^1.8.2"
-    performant-array-to-tree "^1.7.1"
-    plotly.js "^2.5.1"
-    react-plotly.js "^2.5.1"
-    sanitize-html "^2.3.3"
-    slate "^0.62.0"
-
-"@eeacms/volto-datablocks@^2.0.13":
-  version "2.0.21"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-2.0.21.tgz#a8bf66d4871da9fe913212293f58699881e32157"
-  integrity sha512-5lwsF/zdi1kEgyMVNGvFRJVaSfYXP6/UNmWmVfvfMXC5mKoDWcR9cccQUUuZE7wuq509CPZpAdgsJOYJ7uAjcQ==
-  dependencies:
-    "@eeacms/volto-embed" "*"
-    "@eeacms/volto-matomo" "*"
-    d3 "7.1.1"
-    humanize-plus "^1.8.2"
-    performant-array-to-tree "^1.7.1"
-    plotly.js "^2.5.1"
-    react-plotly.js "^2.5.1"
-    sanitize-html "^2.3.3"
-    slate "^0.62.0"
-
 "@eeacms/volto-depiction@0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-depiction/-/volto-depiction-0.1.5.tgz#758467102fe8635601e32923244ea3a9c6279643"
@@ -1344,7 +1314,7 @@
     "@eeacms/volto-widgets-view" "3.0.4"
     volto-slate "5.3.3"
 
-"@eeacms/volto-embed@*", "@eeacms/volto-embed@2.0.11", "@eeacms/volto-embed@^2.0.4":
+"@eeacms/volto-embed@*", "@eeacms/volto-embed@2.0.11":
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-2.0.11.tgz#b933a4519587d22c6560758f079619030b6a7dd7"
   integrity sha512-FzggUwZOUZqQRUEUje5JFgWJl9+u98Rnk7e99mSHsjyth+4oDTC/k2QNQ1WB0f8Zouuk4Z682PKCH+7u5EZAxQ==
@@ -1354,13 +1324,13 @@
     react-visibility-sensor "5.1.1"
     volto-slate "*"
 
-"@eeacms/volto-forests-theme@0.1.37":
-  version "0.1.37"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.1.37.tgz#cbb32b930c13158bbae2f0b6508a856be11dc517"
-  integrity sha512-TMOoYDUYqjINDnS6FAVv1W/iHyfC0WB+NwlXMHTYxt7UVV32RmFMbms2Q5Jwm4xN48i/KoEcbYcl1s7J+Hhx+w==
+"@eeacms/volto-forests-theme@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.0.tgz#6b88da1eba107726f3877b0febe8212050a5b1d1"
+  integrity sha512-bE+BHiKB2ie/W6kNFa+grM5zJJgIVxRHkvnxBkOS7zEKwmy1vZBHEBPALfA+N1Sib9HSeu96PdI39uGtCW/JGg==
   dependencies:
     "@eeacms/volto-addons-forest" "*"
-    "@eeacms/volto-datablocks" "2.0.16"
+    "@eeacms/volto-datablocks" "*"
     "@eeacms/volto-matomo" "*"
     "@eeacms/volto-plotlycharts" "*"
     react-highlight-words "^0.16.0"
@@ -1378,7 +1348,7 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-0.1.5.tgz#9bcd4d07eb8d00b4423ab78a98283b87f9ccc6aa"
   integrity sha512-r51qkqCYTS4iOchjlH59gm69BPK/mNI9Vjv+ZtEvfb0+zowMgth7ARbnmcmLQ38nv6/+tAv62AVlGj95CTTlAg==
 
-"@eeacms/volto-matomo@*", "@eeacms/volto-matomo@2.0.7", "@eeacms/volto-matomo@^2.0.2":
+"@eeacms/volto-matomo@*", "@eeacms/volto-matomo@2.0.7":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-matomo/-/volto-matomo-2.0.7.tgz#80a8ffdffb9fbc279943d183554cbafbafe50a79"
   integrity sha512-gpjTHmw2sWQeBEnFYtqUfgQZ32X2vkLt72A9FmBZuOLMnw2MDGbGpnJIr1vzBqvaFZSxMb/sNXiL6rRmw3jOfw==
@@ -14467,11 +14437,6 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-performant-array-to-tree@^1.7.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/performant-array-to-tree/-/performant-array-to-tree-1.9.1.tgz#24897a56dedaa00c1f9c1a7e7ba92103008d1059"
-  integrity sha512-t+Hiy1HbKTVXg+mdcDUwPwAGgrLMtNUOhs2vV0M9MG2aAfnXQT9czAadksufMnf75h4xYU014HqlQ91JZ4XdlA==
-
 permutation-parity@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/permutation-parity/-/permutation-parity-1.0.0.tgz#0174d51fca704b11b9a4b152b23d537fdc6b5ef4"
@@ -16134,7 +16099,7 @@ react-beautiful-dnd@13.0.0:
     redux "^4.0.4"
     use-memo-one "^1.1.1"
 
-react-chart-editor@0.45.0, react-chart-editor@^0.45.0:
+react-chart-editor@0.45.0:
   version "0.45.0"
   resolved "https://registry.yarnpkg.com/react-chart-editor/-/react-chart-editor-0.45.0.tgz#6f45f5892cdd21c7e5bd84f485e250c9d1847e2c"
   integrity sha512-/SurlIFait/BbWhq7sd8gIPr5MbhjPgrNY+d4V3sH6R/BjUocN/5SqUhQGknOUkxH8Fu4V+qn/8GsjYRFvk5NA==
@@ -16380,7 +16345,7 @@ react-input-autosize@^3.0.0:
   dependencies:
     prop-types "^15.5.8"
 
-react-inspector@5.1.1, react-inspector@^5.1.1:
+react-inspector@5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-5.1.1.tgz#58476c78fde05d5055646ed8ec02030af42953c8"
   integrity sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg==
@@ -16485,7 +16450,7 @@ react-pdf-js@^5.1.0:
   dependencies:
     "@bundled-es-modules/pdfjs-dist" "2.1.266-rc"
 
-react-plotly.js@2.5.1, react-plotly.js@^2.5.1:
+react-plotly.js@2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/react-plotly.js/-/react-plotly.js-2.5.1.tgz#11182bf599ef11a0dbfcd171c6f5645535a2b486"
   integrity sha512-Oya14whSHvPsYXdI0nHOGs1pZhMzV2edV7HAW1xFHD58Y73m/LbG2Encvyz1tztL0vfjph0JNhiwO8cGBJnlhg==
@@ -16570,15 +16535,6 @@ react-resize-detector@6.7.6:
     "@types/resize-observer-browser" "^0.1.6"
     lodash.debounce "^4.0.8"
     lodash.throttle "^4.1.1"
-    resize-observer-polyfill "^1.5.1"
-
-react-resize-detector@^6.7.6:
-  version "6.7.8"
-  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-6.7.8.tgz#318c85d1335e50f99d4fb8eb9ec34e066db597d0"
-  integrity sha512-0FaEcUBAbn+pq3PT5a9hHRebUfuS1SRLGLpIw8LydU7zX429I6XJgKerKAMPsJH0qWAl6o5bVKNqFJqr6tGPYw==
-  dependencies:
-    "@types/resize-observer-browser" "^0.1.6"
-    lodash "^4.17.21"
     resize-observer-polyfill "^1.5.1"
 
 react-router-config@5.1.1:
@@ -16700,16 +16656,6 @@ react-sizeme@3.0.1:
     shallowequal "^1.1.0"
     throttle-debounce "^3.0.1"
 
-react-sizeme@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/react-sizeme/-/react-sizeme-3.0.2.tgz#4a2f167905ba8f8b8d932a9e35164e459f9020e4"
-  integrity sha512-xOIAOqqSSmKlKFJLO3inBQBdymzDuXx4iuwkNcJmC96jeiOg5ojByvL+g3MW9LPEsojLbC6pf68zOfobK8IPlw==
-  dependencies:
-    element-resize-detector "^1.2.2"
-    invariant "^2.2.4"
-    shallowequal "^1.1.0"
-    throttle-debounce "^3.0.1"
-
 react-slick@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.24.0.tgz#1a4e078a82de4e9458255d9ce26aa6f3b17b168b"
@@ -16795,7 +16741,7 @@ react-transition-group@^4, react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-visibility-sensor@5.1.1, react-visibility-sensor@^5.1.1:
+react-visibility-sensor@5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-5.1.1.tgz#5238380960d3a0b2be0b7faddff38541e337f5a9"
   integrity sha512-cTUHqIK+zDYpeK19rzW6zF9YfT4486TIgizZW53wEZ+/GPBbK7cNS0EHyJVyHYacwFEvvHLEKfgJndbemWhB/w==
