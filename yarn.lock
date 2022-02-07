@@ -1314,10 +1314,10 @@
     "@eeacms/volto-widgets-view" "3.0.4"
     volto-slate "5.3.3"
 
-"@eeacms/volto-embed@*", "@eeacms/volto-embed@2.0.11":
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-2.0.11.tgz#b933a4519587d22c6560758f079619030b6a7dd7"
-  integrity sha512-FzggUwZOUZqQRUEUje5JFgWJl9+u98Rnk7e99mSHsjyth+4oDTC/k2QNQ1WB0f8Zouuk4Z682PKCH+7u5EZAxQ==
+"@eeacms/volto-embed@*", "@eeacms/volto-embed@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-3.0.0.tgz#62539d5f6bc059d691921a427e6576e4b8704781"
+  integrity sha512-9EJmqa1RosPAaj4S5utyDtceJPU75DjYflD51MVT9eTe0aB5QJaniTdiS1y64P5nCFeMem7JadOcwQ4FtPXToA==
   dependencies:
     "@eeacms/volto-corsproxy" "*"
     "@eeacms/volto-datablocks" "*"
@@ -14642,7 +14642,7 @@ plotly.js@1.58.x:
     webgl-context "^2.2.0"
     world-calendars "^1.0.3"
 
-plotly.js@^2.5.1, plotly.js@^2.9.0:
+plotly.js@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-2.9.0.tgz#3ffa428c351c5665e9e0ad20234bebe23f5f7b08"
   integrity sha512-A3kqjGq2PCeL/z19BNvg5YD712mWCMaRW2WbmYA+qpdbNPUjBNjMK/MWXDi7pV53CUM2ZKAqre4j6Uy7bIoAGA==
@@ -15534,7 +15534,7 @@ private@^0.1.8:
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
   integrity sha512-VvivMrbvd2nKkiG38qjULzlc+4Vx4wm/whI9pQD35YrARNnhxeiRktSOhSukRLFNlzg6Br/cJPet5J/u19r/mg==
 
-probe-image-size@^7.2.2, probe-image-size@^7.2.3:
+probe-image-size@^7.2.3:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-7.2.3.tgz#d49c64be540ec8edea538f6f585f65a9b3ab4309"
   integrity sha512-HubhG4Rb2UH8YtV4ba0Vp5bQ7L78RTONYu/ujmCu5nBI8wGv24s4E9xSKBi0N1MowRpxk76pFCpJtW0KPzOK0w==
