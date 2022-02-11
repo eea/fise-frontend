@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.15.1",
+  "version": "2.16.0",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -19,20 +19,17 @@
     "@eeacms/volto-slate-dataentity"
   ],
   "dependencies": {
-    "@eeacms/volto-addons-forest": "0.1.4",
-    "@eeacms/volto-datablocks": "2.0.16",
-    "@eeacms/volto-eea-kitkat": "4.1.7",
-    "@eeacms/volto-embed": "2.0.10",
-    "@eeacms/volto-forests-theme": "0.1.28",
-    "@eeacms/volto-middleware-vh": "1.0.1",
-    "@eeacms/volto-plotlycharts": "2.0.10",
-    "@eeacms/volto-slate-dataentity": "1.0.2",
+    "@eeacms/volto-addons-forest": "0.1.5",
+    "@eeacms/volto-datablocks": "3.0.3",
+    "@eeacms/volto-eea-kitkat": "5.1.6",
+    "@eeacms/volto-embed": "3.0.0",
+    "@eeacms/volto-forests-theme": "0.2.0",
+    "@eeacms/volto-middleware-vh": "1.0.6",
+    "@eeacms/volto-plotlycharts": "3.0.1",
+    "@eeacms/volto-slate-dataentity": "1.0.5",
     "@eeacms/volto-tableau": "1.2.4",
-    "@plone/volto": "13.15.0",
+    "@plone/volto": "14.2.2",
     "semantic-ui-react": "2.0.4"
-  },
-  "resolutions": {
-    "volto-slate": "4.2.1"
   },
   "devDependencies": {
     "mrs-developer": "^1.4.0"
@@ -40,6 +37,7 @@
   "scripts": {
     "start": "razzle start",
     "postinstall": "yarn omelette && yarn patches",
+    "analyze": "BUNDLE_ANALYZE=true razzle build",
     "omelette": "ln -sf node_modules/@plone/volto/ omelette",
     "patches": "/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true",
     "build": "razzle build",
@@ -128,12 +126,6 @@
     "ignoreFiles": "theme/themes/default/**/*.overrides"
   },
   "engines": {
-    "node": "^10 || ^12 || ^14"
-  },
-  "manuallyTranspile": [
-    "prepend-http",
-    "normalize-url",
-    "cidr-regex",
-    "url-regex"
-  ]
+    "node": "^12 || ^14 || ^16"
+  }
 }
