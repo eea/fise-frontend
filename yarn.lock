@@ -1325,10 +1325,10 @@
     react-visibility-sensor "5.1.1"
     volto-slate "*"
 
-"@eeacms/volto-forests-theme@0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.4.tgz#fb57433dcc10f6af0d98fdf896c5861b1865f5f2"
-  integrity sha512-wE50nADzaWTWcd3t3OegdOR90Rl0fqzBvsPko+mOTYZwpHrj7r1Q7L5umSBWwaIWtTXorDxCCuIiWG7iOge/oQ==
+"@eeacms/volto-forests-theme@0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.5.tgz#f2e6d24b702f70ad0818f29c56a84cf8c158c40d"
+  integrity sha512-nn46JrnOHoMZs/z8ddgWx+RTUYGJ3B0PWlMfVmUuDPzFyJVcN/rQ67/898YCl8GtHmegnD/WL5YrMBr1/4lzqQ==
   dependencies:
     "@eeacms/volto-addons-forest" "*"
     "@eeacms/volto-datablocks" "*"
