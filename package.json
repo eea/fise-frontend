@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.17.0",
+  "version": "2.18.0",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -20,10 +20,10 @@
   ],
   "dependencies": {
     "@eeacms/volto-addons-forest": "0.1.5",
-    "@eeacms/volto-datablocks": "3.0.4",
-    "@eeacms/volto-eea-kitkat": "5.1.6",
+    "@eeacms/volto-datablocks": "3.0.8",
+    "@eeacms/volto-eea-kitkat": "5.2.4",
     "@eeacms/volto-embed": "3.0.1",
-    "@eeacms/volto-forests-theme": "0.2.0",
+    "@eeacms/volto-forests-theme": "0.2.5",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "3.0.1",
     "@eeacms/volto-slate-dataentity": "1.0.5",

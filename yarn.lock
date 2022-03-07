@@ -1187,10 +1187,10 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.3.1"
 
-"@eeacms/volto-accordion-block@3.4.13":
-  version "3.4.13"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.13.tgz#7a61bbad1733be607ba65ee078212ad914c088d8"
-  integrity sha512-kn9mxMKEqk83/oXKDXFYdV/ZipClFyNN1VSxgF0qUI0PdeYon8R+bRjVyltLhcoPXd5oZSGmlezfVK9+L+JqGg==
+"@eeacms/volto-accordion-block@3.4.14":
+  version "3.4.14"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.14.tgz#0775048a94b0fd46485e044bfdbd5e027cf2e7f9"
+  integrity sha512-nBVtqo9qiog5HcPOKiEPMR8EEognsNLCmgW5cr5Qh+rquuMdV6W01bA++QXED0nTO0651xPaxfq4OTxNVqCZWA==
 
 "@eeacms/volto-addons-forest@*", "@eeacms/volto-addons-forest@0.1.5":
   version "0.1.5"
@@ -1215,10 +1215,10 @@
     react-sizeme "3.0.1"
     redraft "^0.10.2"
 
-"@eeacms/volto-banner@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-banner/-/volto-banner-1.0.4.tgz#699a2c7d0de35801f4bf9f5b83a3d214569565c0"
-  integrity sha512-4o+U/7VLbYiG629TGdzqasvK1wbaIHrrjDT+ZaJ5lKXoD4TXm4Vt8PWbhN8Hb/B1a2T7FBfT+6rR7cysQvcOFQ==
+"@eeacms/volto-banner@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-banner/-/volto-banner-2.0.0.tgz#eb24cab5bcf4969e2a47ac1cf6798e29ea2a552b"
+  integrity sha512-sINjMe3ktRIOLcjwLlaswM2WFUqrgP2kLe/Z5eszbBCQBvI8c00duRuwlkDw7NrRoSQ0a5LEIP1C3PcHlJXO7A==
 
 "@eeacms/volto-block-divider@2.1.6":
   version "2.1.6"
@@ -1239,10 +1239,10 @@
     slick-carousel "^1.8.1"
     volto-slate "*"
 
-"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@3.5.16":
-  version "3.5.16"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-3.5.16.tgz#185bb84ffb65fc741fdaaf21134da0c2d7cf8cdc"
-  integrity sha512-BBChM/TJGqs/E2Qn6r/4/bsO5CZDsJsPrS8In/2Kkpgw5KBKSss7e0an64sa7ydxIdQ7oH5kx0Ta4LoyGmTsrA==
+"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@3.5.18":
+  version "3.5.18"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-3.5.18.tgz#c08508acd0dfae5a6ec9bff3a701b57400bcfe5d"
+  integrity sha512-c2qiltquVE/5smqs77UGsgXZcn0aACy2JiwEMEu8JI3t60KKsVB1p9cYaKqgtQuhd8nqe5G9p5n6+pRaadFDXw==
   dependencies:
     "@eeacms/volto-resize-helper" "*"
     react-color "~2.18.1"
@@ -1264,16 +1264,17 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-corsproxy/-/volto-corsproxy-2.1.5.tgz#e72c9277e3c950899f1abc07f48128fcca73c9c8"
   integrity sha512-2LqBkOBj2WhnihYc2brhBsMtSUnSHN8w6jupyNzmHdUjScrJWebkq35GxonnrBtWrpeWGVuQ4I3hIf4zwd8Mhw==
 
-"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-3.0.4.tgz#094d8b570ab2497f07841596e536730687d574fe"
-  integrity sha512-lN5oNMktK9yh4ftis+DUnUW2OM6XP9WwxOhDdnAKDa4NuwPSQ/+oxmgMZC4GRxgvZDSzMAGVnY5kE3doVRyW/w==
+"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@3.0.8":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-3.0.8.tgz#c2849f2a9bb4d4060d5600b8304630ec0ed52fa5"
+  integrity sha512-5yJuyhjSWkXxJ5CNDO7VkIDtmUDxb8CShjcsIvkQYpa2QFdG36CBIfWX4oVG1N1qyN20NTvK9QswCAGhEXlSDQ==
   dependencies:
     "@eeacms/volto-embed" "*"
     "@eeacms/volto-matomo" "*"
     d3 "7.1.1"
     humanize-plus "^1.8.2"
     object-hash "2.2.0"
+    react-countup "6.1.1"
     sanitize-html "^2.3.3"
     slate "^0.62.0"
 
@@ -1282,24 +1283,24 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-depiction/-/volto-depiction-0.1.5.tgz#758467102fe8635601e32923244ea3a9c6279643"
   integrity sha512-wp5QMxwOp+xkcXNB3WiMkY3WkaeMuhIxYYz5fWhSWz8aZQdfANI6MKxOohuTjuVk+82Cm80qZnpzYhuwjCwGgg==
 
-"@eeacms/volto-eea-kitkat@5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-5.1.6.tgz#9eed3a1e7b48da5c0840f19a0732a3f731e20223"
-  integrity sha512-GgVNGDHXxVBnP5G+LLIZepYhDcgzNHef7KYH4aoUJdULqLJvCN16KRrD17FtxDOsi+g3IrWktU5nB66J2A+2wQ==
+"@eeacms/volto-eea-kitkat@5.2.4":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-5.2.4.tgz#aaf777864de17db6ee0f734397e0ac2d37a53d09"
+  integrity sha512-IzAbKXVOCLYCgm8Oqju80JdcobXNx7rmWoUDNhaH7o3cjClZuBcwIDCPVwDIuSLfD5iOoJU3GaTwjjaSoDfDWQ==
   dependencies:
-    "@eeacms/volto-accordion-block" "3.4.13"
-    "@eeacms/volto-banner" "1.0.4"
+    "@eeacms/volto-accordion-block" "3.4.14"
+    "@eeacms/volto-banner" "2.0.0"
     "@eeacms/volto-block-divider" "2.1.6"
     "@eeacms/volto-block-image-cards" "0.1.11"
-    "@eeacms/volto-block-style" "3.5.16"
+    "@eeacms/volto-block-style" "3.5.18"
     "@eeacms/volto-block-toc" "2.2.5"
     "@eeacms/volto-columns-block" "4.4.14"
     "@eeacms/volto-corsproxy" "2.1.5"
     "@eeacms/volto-depiction" "0.1.5"
     "@eeacms/volto-group-block" "4.3.5"
-    "@eeacms/volto-listing-block" "0.1.5"
+    "@eeacms/volto-listing-block" "0.2.0"
     "@eeacms/volto-matomo" "2.0.7"
-    "@eeacms/volto-metadata-block" "4.0.6"
+    "@eeacms/volto-metadata-block" "4.0.7"
     "@eeacms/volto-object-widget" "3.0.3"
     "@eeacms/volto-resize-helper" "0.2.8"
     "@eeacms/volto-sentry-rancher-config" "2.1.5"
@@ -1312,7 +1313,7 @@
     "@eeacms/volto-widget-temporal-coverage" "4.0.5"
     "@eeacms/volto-widget-toggle" "2.2.6"
     "@eeacms/volto-widgets-view" "3.0.4"
-    volto-slate "5.3.3"
+    volto-slate "5.3.4"
 
 "@eeacms/volto-embed@*", "@eeacms/volto-embed@3.0.1":
   version "3.0.1"
@@ -1324,10 +1325,10 @@
     react-visibility-sensor "5.1.1"
     volto-slate "*"
 
-"@eeacms/volto-forests-theme@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.0.tgz#6b88da1eba107726f3877b0febe8212050a5b1d1"
-  integrity sha512-bE+BHiKB2ie/W6kNFa+grM5zJJgIVxRHkvnxBkOS7zEKwmy1vZBHEBPALfA+N1Sib9HSeu96PdI39uGtCW/JGg==
+"@eeacms/volto-forests-theme@0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.5.tgz#f2e6d24b702f70ad0818f29c56a84cf8c158c40d"
+  integrity sha512-nn46JrnOHoMZs/z8ddgWx+RTUYGJ3B0PWlMfVmUuDPzFyJVcN/rQ67/898YCl8GtHmegnD/WL5YrMBr1/4lzqQ==
   dependencies:
     "@eeacms/volto-addons-forest" "*"
     "@eeacms/volto-datablocks" "*"
@@ -1343,10 +1344,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-group-block/-/volto-group-block-4.3.5.tgz#43e2413f9f03b9fa9c9541988ef4a351a410d338"
   integrity sha512-Takka/4kXVUCwpin7Gj8aNbWx1g7L35bTCM6AAUJIQYPgvNg2j04/S2jaZ+iWWOopasND5GaiBBQ4LqgF1U0zA==
 
-"@eeacms/volto-listing-block@0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-0.1.5.tgz#9bcd4d07eb8d00b4423ab78a98283b87f9ccc6aa"
-  integrity sha512-r51qkqCYTS4iOchjlH59gm69BPK/mNI9Vjv+ZtEvfb0+zowMgth7ARbnmcmLQ38nv6/+tAv62AVlGj95CTTlAg==
+"@eeacms/volto-listing-block@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-0.2.0.tgz#12403fc90db97cf9962604ef3a20133fa6cff6c3"
+  integrity sha512-qAm1AaWt/fZRk3yaM8xLJgp3nMgftczWPyAJWNpYcDIczoAAREY9f37xdPqnnrmOpLXTOPtGjSZ7lpm+bpPu9A==
 
 "@eeacms/volto-matomo@*", "@eeacms/volto-matomo@2.0.7":
   version "2.0.7"
@@ -1355,10 +1356,10 @@
   dependencies:
     "@datapunt/matomo-tracker-react" "0.3.1"
 
-"@eeacms/volto-metadata-block@4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-metadata-block/-/volto-metadata-block-4.0.6.tgz#7f62e4848a08f8813111caafa4e9ed89ed96d82e"
-  integrity sha512-bgvwc2o85bzzdWfiCxVUk+V/1ecg3PhGP6GdAUvfxiTeYDf9rR3LThrObHQv9xtpscsX9WwdcJSK2l8FTGAd9A==
+"@eeacms/volto-metadata-block@4.0.7":
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-metadata-block/-/volto-metadata-block-4.0.7.tgz#3e562be7ef4a04bd25da43ecf19bcb1ed1639686"
+  integrity sha512-3iRdE6r4MFyplXXWkZ9uvi5gl3y9N/pCY9me03Kxc2lli6LhbOLcWOEc6RfnprkAmltaECJWsOhuK791bxRk5g==
   dependencies:
     "@eeacms/volto-widgets-view" "*"
 
@@ -5695,6 +5696,11 @@ country-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/country-regex/-/country-regex-1.1.0.tgz#51c333dcdf12927b7e5eeb9c10ac8112a6120896"
   integrity sha1-UcMz3N8Sknt+XuucEKyBEqYSCJY=
+
+countup.js@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.0.8.tgz#eca0c31c9db3f7769cba494d9315cd52dbaaf1b9"
+  integrity sha512-pW3xwwD+hB+xmtI16xFcuLS0D5hSQqPQWkZOdgpKQyzxCquDNo2VCFPkRw12vmvdpnicXVTcjmYiakG6biwINg==
 
 coveralls@3.0.2:
   version "3.0.2"
@@ -13320,9 +13326,9 @@ nan@^2.12.1:
   integrity sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==
 
 nanoid@^3.1.30:
-  version "3.1.30"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.30.tgz#63f93cc548d2a113dc5dfbc63bfa09e2b9b64362"
-  integrity sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.2.0.tgz#62667522da6673971cca916a6d3eff3f415ff80c"
+  integrity sha512-fmsZYa9lpn69Ad5eDn7FMcnnSR+8R34W9qJEijxYhTbfOWzr22n1QxCMzXLK+ODyW2973V3Fux959iQoUxzUIA==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -16176,6 +16182,13 @@ react-cookie@1.0.5:
     cookie "^0.3.1"
     is-node "^1.0.2"
     object-assign "^4.1.0"
+
+react-countup@6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-6.1.1.tgz#2dd5a82dd1059afd4e269a33de5cd1fa5a7910d7"
+  integrity sha512-9mYlnk/yCFg3g2/65pCTex6mr9h0eYdDMIL4T5nfLj/RzoiqY03wlPxZglzbJ6OzXvU37OmYApwQ4WMZNFr8Aw==
+  dependencies:
+    countup.js "^2.0.8"
 
 react-dates@21.5.1:
   version "21.5.1"
@@ -19969,9 +19982,9 @@ url-parse-lax@^3.0.0:
     prepend-http "^2.0.0"
 
 url-parse@^1.4.3:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.4.tgz#e4f645a7e2a0852cc8a66b14b292a3e9a11a97fd"
-  integrity sha512-ITeAByWWoqutFClc/lRZnFplgXgEZr3WJ6XngMM/N9DMIm4K8zXPCZ1Jdu0rERwO84w1WC5wkle2ubwTA4NTBg==
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.10.tgz#9d3c2f736c1d75dd3bd2be507dcc111f1e2ea9c1"
+  integrity sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
@@ -20246,10 +20259,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@*, volto-slate@5.3.3:
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-5.3.3.tgz#4af806ec9e84f141da3e38e9f98852679aed4fdd"
-  integrity sha512-D9HDlCJAt6FCAL1EQY9PdnLSp7aqdJqEoeI4Gl+omNvR+JtefkE6ilkFL6s+pITAyK3He5t704ujGgT7Wf8+HA==
+volto-slate@*, volto-slate@5.3.4:
+  version "5.3.4"
+  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-5.3.4.tgz#fd551e31f4d72e3e7ec4d4f8db127de9ad4ced0e"
+  integrity sha512-ec2u3ZAgX4cek6tEiY+drc/wFIJi5Z9Sz9Zee7/hagpyhexVqaYhOIpnCCf7KtimWKhuP0yq0C5NIABfeEdXAA==
   dependencies:
     "@eeacms/volto-object-widget" "*"
     classnames "2.2.6"
