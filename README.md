@@ -3,7 +3,7 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/eea/forests-frontend?sort=semver)](https://github.com/eea/forests-frontend/releases)
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/master/lastBuild/display/redirect)
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/develop/lastBuild/display/redirect)
-[![Release pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2F2.17.3&build=last&subject=release%20v2.17.3%20pipeline)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/2.17.3/lastBuild/display/redirect/)
+[![Release pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2F2.18.0&build=last&subject=release%20v2.18.0%20pipeline)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/2.18.0/lastBuild/display/redirect/)
 
 
 
