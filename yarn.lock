@@ -1326,15 +1326,16 @@
     react-visibility-sensor "5.1.1"
     volto-slate "*"
 
-"@eeacms/volto-forests-theme@0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.5.tgz#f2e6d24b702f70ad0818f29c56a84cf8c158c40d"
-  integrity sha512-nn46JrnOHoMZs/z8ddgWx+RTUYGJ3B0PWlMfVmUuDPzFyJVcN/rQ67/898YCl8GtHmegnD/WL5YrMBr1/4lzqQ==
+"@eeacms/volto-forests-theme@0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.6.tgz#bcfe764e1a7e15611d9f6332c4fcfcfc4f26da6e"
+  integrity sha512-R+HusV+WC90YhVTCfXOf6QzjcqDwpFWGok077Jkjmnjvp9WKcz135Q+XutAjuXVjdN65jEq1aBLqcnmH8joRzQ==
   dependencies:
     "@eeacms/volto-addons-forest" "*"
     "@eeacms/volto-datablocks" "*"
     "@eeacms/volto-matomo" "*"
     "@eeacms/volto-plotlycharts" "*"
+    pigeon-maps "0.21.0"
     react-highlight-words "^0.16.0"
     react-image-gallery "1.2.7"
     react-lazy-load-image-component "^1.5.0"
@@ -14493,6 +14494,11 @@ pify@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
+
+pigeon-maps@0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/pigeon-maps/-/pigeon-maps-0.21.0.tgz#eb757acfe4b75234cba63c2c5e87e42c410de4b3"
+  integrity sha512-p3GaGday5nmufHVGZW/36LnSXfYVh6qfzYisqcC87nqFr0eXIKkqQcDuPP9g4F1OXL1JeJe4x6JEnAE9HB+zWQ==
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
