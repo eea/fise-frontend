@@ -23,7 +23,7 @@
     "@eeacms/volto-datablocks": "3.0.11",
     "@eeacms/volto-eea-kitkat": "5.4.0",
     "@eeacms/volto-embed": "4.0.1",
-    "@eeacms/volto-forests-theme": "0.2.12",
+    "@eeacms/volto-forests-theme": "0.2.13",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "3.0.4",
     "@eeacms/volto-slate-dataentity": "1.0.5",
