@@ -80,7 +80,7 @@
     "url": "git@github.com:eea/volto-slate.git",
     "https": "https://github.com/eea/volto-slate.git",
     "package": "volto-slate",
-    "branch": "stable",
+    "branch": "develop",
     "path": "src"
   },
   "volto-slate-metadata-mentions": {
