@@ -1386,10 +1386,10 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-3.0.4.tgz#624e6bf3b1ff2d54ecd5d5e186dc53773e3b22a3"
-  integrity sha512-zP5CVsqTgxQIPo5Zjnh5Nvs4xOkA4Z69ILfOpzHFyWTXgXCeApN4pjkIha8um6j1xSExgZVzUmZCW7BX8/863A==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-3.0.5.tgz#ce046021dce9d342f28f2e96d15b4cdf89256bcd"
+  integrity sha512-xo0Hm5O9Y9EmkYdr8hKieCbaZRbiE4ys2yTwftYnjFZsundYfGg3fH8Oj5xnPcLFaTz891ZZ/wlxxd5vFZ0kCA==
   dependencies:
     "@eeacms/volto-datablocks" "*"
     "@plone/scripts" "*"
