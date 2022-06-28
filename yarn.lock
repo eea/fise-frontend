@@ -1192,10 +1192,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-3.4.16.tgz#4d7ec5bd8fbd33e27f44fceb465c1f02f08c715a"
   integrity sha512-DK2MEdeEzoJ9SnAKCNySW7LMo4HWs9NGSiVPQH36ksHYJus88Zl5GhHlHLaennNVaLWQcttfSTCmSIgUV7mYAw==
 
-"@eeacms/volto-addons-forest@*", "@eeacms/volto-addons-forest@0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.5.tgz#ba7f11afb243c766fd0aac9f03ded5736386c62e"
-  integrity sha512-/GiXkwJNFSxIiaVvAiOGiQ5VgTK8BOZVGT94X/JWLeDLLXBYcqh0my6WegEq5naxzQEHvHqB9Ritug6U1FapIw==
+"@eeacms/volto-addons-forest@*", "@eeacms/volto-addons-forest@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-addons-forest/-/volto-addons-forest-0.1.6.tgz#46bca1af02e6c7cbde73540e07ddeb895818ca70"
+  integrity sha512-mf7AxUy301BvtEbjW3xgHyHEgZYzVvLsvTxldeSo1AY7LtsrlnmdsC1uepgaYnQ19iqhwg4jpXkEZXbSODh0DQ==
   dependencies:
     dompurify "^2.0.12"
     draft-js-alignment-plugin "^2.0.6"
@@ -1327,10 +1327,10 @@
     react-visibility-sensor "5.1.1"
     volto-slate "*"
 
-"@eeacms/volto-forests-theme@0.2.14":
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.14.tgz#5eecd77edba91ee7088c8b93383264834cb45142"
-  integrity sha512-sheqlJKs1s5qAtCaobYmzSzZV/FZgeNVRyaKAurqfvnAmGpCj7VQAgbrEbKCrCtoX6HVIicArmpr10q+vQKbdQ==
+"@eeacms/volto-forests-theme@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.16.tgz#09992e22ce1c10bdb3c7029b2b59eeb0d5768830"
+  integrity sha512-oiAyK3/B//sOeHnAAn9JODLC3dAYiewHYrRbDC5OBOsyPueVCN13ofxPCy7Hzb5P6MIlMuVAtCLqUV/3wgng3Q==
   dependencies:
     "@eeacms/volto-addons-forest" "*"
     "@eeacms/volto-datablocks" "*"
@@ -1386,10 +1386,10 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-3.0.4.tgz#624e6bf3b1ff2d54ecd5d5e186dc53773e3b22a3"
-  integrity sha512-zP5CVsqTgxQIPo5Zjnh5Nvs4xOkA4Z69ILfOpzHFyWTXgXCeApN4pjkIha8um6j1xSExgZVzUmZCW7BX8/863A==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-3.0.5.tgz#ce046021dce9d342f28f2e96d15b4cdf89256bcd"
+  integrity sha512-xo0Hm5O9Y9EmkYdr8hKieCbaZRbiE4ys2yTwftYnjFZsundYfGg3fH8Oj5xnPcLFaTz891ZZ/wlxxd5vFZ0kCA==
   dependencies:
     "@eeacms/volto-datablocks" "*"
     "@plone/scripts" "*"
