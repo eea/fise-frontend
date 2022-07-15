@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@eeacms/volto-addons-forest": "0.1.6",
-    "@eeacms/volto-datablocks": "3.0.13",
+    "@eeacms/volto-datablocks": "3.0.14",
     "@eeacms/volto-eea-kitkat": "6.2.0",
     "@eeacms/volto-embed": "4.0.1",
     "@eeacms/volto-forests-theme": "0.2.16",
