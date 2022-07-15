@@ -1265,18 +1265,20 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-corsproxy/-/volto-corsproxy-2.1.6.tgz#af110351370553c4bd51f404e0aca8e5593ec863"
   integrity sha512-ScJuVsF51efiiHfv3nPuVoocHN9YpTUA2Jjsb193NFjtxMY1WH9fcAVlZt12Nau/5dqQRLPCl5VtVyxWvOwxsg==
 
-"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@3.0.12":
-  version "3.0.12"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-3.0.12.tgz#9ddd40b99132e69d619aaeefeadbee3cd79df6b4"
-  integrity sha512-oyfW/xpjl4pz3S7e8jCSkd7YyYo8XmS2sGMgK/OQONrmjN/XbIaxlMOll/q9wNfl7r4vF6ZjCfXDbIuQt2GM9g==
+"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@3.0.13":
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-3.0.13.tgz#b1d3d22a4904ff83a015a7ff96227f4d6b4c5063"
+  integrity sha512-7OGg9IWHe+Nzt2TbQstvKcTrzX5OubBLK/21wjUGB8+pvb0600qSfXGNnudpiKKkh2CzS/gM4AOW7FJ7M+aAig==
   dependencies:
     "@eeacms/volto-embed" "*"
     "@eeacms/volto-group-block" "*"
     "@eeacms/volto-matomo" "*"
     d3 "7.1.1"
+    date-fns "2.28.0"
     humanize-plus "^1.8.2"
     object-hash "2.2.0"
     react-countup "6.1.1"
+    react-visibility-sensor "5.1.1"
     sanitize-html "^2.3.3"
     slate "^0.62.0"
 
@@ -6619,6 +6621,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+date-fns@2.28.0:
+  version "2.28.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.28.0.tgz#9570d656f5fc13143e50c975a3b6bbeb46cd08b2"
+  integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
 
 date-fns@^1.27.2:
   version "1.30.1"
