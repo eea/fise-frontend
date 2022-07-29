@@ -1320,6 +1320,16 @@
     "@eeacms/volto-widgets-view" "3.0.5"
     volto-slate "6.2.2"
 
+"@eeacms/volto-eea-map@*":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-map/-/volto-eea-map-0.1.2.tgz#1afa4865de1ea3eac744033f3a1e94388a2c5ddb"
+  integrity sha512-gStcmZ12TRMshykoGppPAoTQc9egSbq4OdORBEyglf6iXaJxD6bz3XHMEP5Y7F5M3ClACUto9XKhqqlgT+9kgw==
+  dependencies:
+    "@eeacms/volto-embed" "^2.0.1"
+    "@plone/scripts" "*"
+    esri-loader "3.5.0"
+    volto-slate "*"
+
 "@eeacms/volto-embed@*", "@eeacms/volto-embed@4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-4.0.2.tgz#f1b7d769a6fe42bfb7f347878e911f6a869c7e46"
@@ -1330,13 +1340,24 @@
     react-visibility-sensor "5.1.1"
     volto-slate "*"
 
-"@eeacms/volto-forests-theme@0.2.16":
-  version "0.2.16"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.16.tgz#09992e22ce1c10bdb3c7029b2b59eeb0d5768830"
-  integrity sha512-oiAyK3/B//sOeHnAAn9JODLC3dAYiewHYrRbDC5OBOsyPueVCN13ofxPCy7Hzb5P6MIlMuVAtCLqUV/3wgng3Q==
+"@eeacms/volto-embed@^2.0.1":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-2.0.11.tgz#b933a4519587d22c6560758f079619030b6a7dd7"
+  integrity sha512-FzggUwZOUZqQRUEUje5JFgWJl9+u98Rnk7e99mSHsjyth+4oDTC/k2QNQ1WB0f8Zouuk4Z682PKCH+7u5EZAxQ==
+  dependencies:
+    "@eeacms/volto-corsproxy" "*"
+    "@eeacms/volto-datablocks" "*"
+    react-visibility-sensor "5.1.1"
+    volto-slate "*"
+
+"@eeacms/volto-forests-theme@0.2.17":
+  version "0.2.17"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-forests-theme/-/volto-forests-theme-0.2.17.tgz#452b2a3f59798252e8ae78c376f6534f243ef94d"
+  integrity sha512-/c418LD+X1NEr+ZA4A4+rtGUIiIQraN8iinvM3+7kUoJVFn1SrU4v434DAD5DKMUqZ3yhqO56x7GVr0Vu+sViQ==
   dependencies:
     "@eeacms/volto-addons-forest" "*"
     "@eeacms/volto-datablocks" "*"
+    "@eeacms/volto-eea-map" "*"
     "@eeacms/volto-matomo" "*"
     "@eeacms/volto-openlayers-map" "0.1.4"
     "@eeacms/volto-plotlycharts" "*"
@@ -7929,6 +7950,11 @@ esrever@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/esrever/-/esrever-0.2.0.tgz#96e9d28f4f1b1a76784cd5d490eaae010e7407b8"
   integrity sha1-lunSj08bGnZ4TNXUkOquAQ50B7g=
+
+esri-loader@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/esri-loader/-/esri-loader-3.5.0.tgz#f536cbaaf676d54f6b05a706e51ececd9303ce05"
+  integrity sha512-rIXyT51x/co86DPORKBMMldJrdLjghDepJ3WjDVTr2yZXBbghMbGgNA8yIQ9Pd/Gw6/fMgF9YHZU+wjRHRCDoA==
 
 esri-loader@^2.14.0:
   version "2.16.0"
