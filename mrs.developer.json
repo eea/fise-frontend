@@ -241,5 +241,15 @@
     "url": "https://github.com/tiberiuichim/volto-slate-dataentity.git",
     "path": "src",
     "package": "@eeacms/volto-slate-dataentity"
+  },
+  "volto-eea-map": {
+    "url": "https://github.com/eea/volto-eea-map.git",
+    "path": "src",
+    "package": "@eeacms/volto-eea-map"
+  },
+  "volto-webmap": {
+    "url": "https://github.com/eea/volto-webmap.git",
+    "path": "src",
+    "package": "@eeacms/volto-webmap"
   }
 }
