@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.25.1-beta.8",
+  "version": "2.25.1-beta.9",
   "private": true,
   "workspaces": [
     "src/develop/*"
