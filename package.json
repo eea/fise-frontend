@@ -28,7 +28,7 @@
     "@eeacms/volto-plotlycharts": "3.0.6",
     "@eeacms/volto-slate-dataentity": "1.0.6",
     "@eeacms/volto-tableau": "1.2.4",
-    "@plone/volto": "16.0.0-alpha.14",
+    "@plone/volto": "15.4.1",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
@@ -126,6 +126,6 @@
     "ignoreFiles": "theme/themes/default/**/*.overrides"
   },
   "engines": {
-    "node": "^14 || ^16"
+    "node": "^12 || ^14 || ^16"
   }
 }
