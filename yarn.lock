@@ -5135,9 +5135,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001023, caniuse-lite@^1.0.30001039, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001370:
-  version "1.0.30001383"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001383.tgz#aecf317ccd940690725ae3ae4f28293c5fb8050e"
-  integrity sha512-swMpEoTp5vDoGBZsYZX7L7nXHe6dsHxi9o6/LKf/f0LukVtnrxly5GVb/fWdCDTqi/yw6Km6tiJ0pmBacm0gbg==
+  version "1.0.30001384"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001384.tgz#029527c2d781a3cfef13fa63b3a78a6088e35973"
+  integrity sha512-BBWt57kqWbc0GYZXb47wTXpmAgqr5LSibPzNjk/AWMdmJMQhLqOl3c/Kd4OAU/tu4NLfYkMx8Tlq3RVBkOBolQ==
 
 canvas-fit@^1.5.0:
   version "1.5.0"
@@ -7919,9 +7919,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.3.341, electron-to-chromium@^1.4.202:
-  version "1.4.232"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.232.tgz#67a0a874b0057662244230d18d3a9847c135a9d9"
-  integrity sha512-nd+FW8xHjM+PxNWG44nKnwHaBDdVpJUZuI2sS2JJPt/QpdombnmoCRWEEQNnzaktdIQhsNWdD+dlqxwO8Bn99g==
+  version "1.4.233"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.233.tgz#aa142e45468bda111b88abc9cc59d573b75d6a60"
+  integrity sha512-ejwIKXTg1wqbmkcRJh9Ur3hFGHFDZDw1POzdsVrB2WZjgRuRMHIQQKNpe64N/qh3ZtH2otEoRoS+s6arAAuAAw==
 
 elegant-spinner@^2.0.0:
   version "2.0.0"
@@ -21889,9 +21889,9 @@ vm-browserify@^1.0.1:
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
 vm2@^3.9.8:
-  version "3.9.10"
-  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.9.10.tgz#c66543096b5c44c8861a6465805c23c7cc996a44"
-  integrity sha512-AuECTSvwu2OHLAZYhG716YzwodKCIJxB6u1zG7PgSQwIgAlEaoXH52bxdcvT8GkGjnYK7r7yWDW0m0sOsPuBjQ==
+  version "3.9.11"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.9.11.tgz#a880f510a606481719ec3f9803b940c5805a06fe"
+  integrity sha512-PFG8iJRSjvvBdisowQ7iVF580DXb1uCIiGaXgm7tynMR1uTBlv7UJlB1zdv5KJ+Tmq1f0Upnj3fayoEOPpCBKg==
   dependencies:
     acorn "^8.7.0"
     acorn-walk "^8.2.0"
