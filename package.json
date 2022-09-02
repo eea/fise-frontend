@@ -27,7 +27,7 @@
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "3.0.7",
     "@eeacms/volto-slate-dataentity": "1.0.6",
-    "@eeacms/volto-tableau": "1.2.4",
+    "@eeacms/volto-tableau": "1.2.5",
     "@plone/volto": "16.0.0-alpha.14",
     "semantic-ui-react": "2.0.4"
   },
