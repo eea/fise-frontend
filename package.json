@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.25.0",
+  "version": "2.26.0",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -20,15 +20,15 @@
   ],
   "dependencies": {
     "@eeacms/volto-addons-forest": "0.1.6",
-    "@eeacms/volto-datablocks": "3.0.12",
-    "@eeacms/volto-eea-kitkat": "6.1.4",
-    "@eeacms/volto-embed": "4.0.1",
-    "@eeacms/volto-forests-theme": "0.2.16",
+    "@eeacms/volto-datablocks": "3.0.18",
+    "@eeacms/volto-eea-kitkat": "7.1.4",
+    "@eeacms/volto-embed": "4.0.2",
+    "@eeacms/volto-forests-theme": "0.2.19",
     "@eeacms/volto-middleware-vh": "1.0.6",
-    "@eeacms/volto-plotlycharts": "3.0.5",
-    "@eeacms/volto-slate-dataentity": "1.0.5",
-    "@eeacms/volto-tableau": "1.2.4",
-    "@plone/volto": "15.4.1",
+    "@eeacms/volto-plotlycharts": "3.0.7",
+    "@eeacms/volto-slate-dataentity": "1.0.6",
+    "@eeacms/volto-tableau": "1.2.5",
+    "@plone/volto": "16.0.0-alpha.14",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
@@ -126,6 +126,6 @@
     "ignoreFiles": "theme/themes/default/**/*.overrides"
   },
   "engines": {
-    "node": "^12 || ^14 || ^16"
+    "node": "^14 || ^16"
   }
 }
