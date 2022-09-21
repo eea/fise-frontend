@@ -60,6 +60,10 @@ typings/
 # dotenv environment variables file
 .env
 
+# yalc data 
+.yalc
+yalc.lock
+
 # next.js build output
 .next
 
