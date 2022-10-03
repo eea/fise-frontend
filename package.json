@@ -19,6 +19,7 @@
     "@eeacms/volto-slate-dataentity"
   ],
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-addons-forest": "0.1.6",
     "@eeacms/volto-datablocks": "3.0.18",
     "@eeacms/volto-eea-kitkat": "8.2.2",
