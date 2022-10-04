@@ -24,12 +24,12 @@
     "@eeacms/volto-datablocks": "3.0.18",
     "@eeacms/volto-eea-kitkat": "8.2.2",
     "@eeacms/volto-embed": "4.0.2",
-    "@eeacms/volto-forests-theme": "0.2.19",
+    "@eeacms/volto-forests-theme": "0.2.20",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "3.0.7",
     "@eeacms/volto-slate-dataentity": "1.0.6",
-    "@plone/volto": "16.0.0-alpha.14",
     "@eeacms/volto-tableau": "1.3.0",
+    "@plone/volto": "16.0.0-alpha.14",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
