@@ -1346,15 +1346,14 @@
     react-querybuilder "4.2.3"
     volto-slate "*"
 
-"@eeacms/volto-embed@*", "@eeacms/volto-embed@4.0.4":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-4.0.4.tgz#10de852f884cff3ce91bffbbb16a5b88a6c52992"
-  integrity sha512-kQWJmkg4eUdwezWEPck9kQW7s+EiArI5f1rsKZqnA2Zg8tojC57kSzKIJGIKl3WkNvmjtQ7u1yVQB8ATE4sd2A==
+"@eeacms/volto-embed@*", "@eeacms/volto-embed@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-5.0.0.tgz#9a0d6089d81c37048d3b79f3b3d1c50aaec4675e"
+  integrity sha512-yFOrx2UGQkTvbaV6mw9GH1POJ3SMGyRi/bG7WjSJOCCcDxCKquN5/WTsQWZPNcDtBMB0c+nxVdiBeNPwoxxrIg==
   dependencies:
     "@eeacms/volto-corsproxy" "*"
     "@eeacms/volto-datablocks" "*"
     react-visibility-sensor "5.1.1"
-    volto-slate "*"
 
 "@eeacms/volto-embed@4.0.2":
   version "4.0.2"
