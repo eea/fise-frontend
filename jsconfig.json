@@ -1,54 +1,7 @@
 {
-  "compilerOptions": {
-    "baseUrl": "src",
-    "jsx": "react",
-    "paths": {
-      "@eeacms/volto-matomo": ["develop/volto-matomo/src"],
-      "@eeacms/volto-sentry-rancher-config": [
-        "develop/volto-sentry-rancher-config/src"
-      ],
-      "@eeacms/volto-forests-theme": ["develop/volto-forests-theme/src"],
-      "@eeacms/volto-corsproxy": ["develop/volto-corsproxy/src"],
-      "@eeacms/volto-depiction": ["develop/volto-depiction/src"],
-      "@eeacms/volto-taxonomy": ["develop/volto-taxonomy/src"],
-      "@eeacms/volto-object-widget": ["develop/volto-object-widget/src"],
-      "@eeacms/volto-widgets-view": ["develop/volto-widgets-view/src"],
-      "@eeacms/volto-widget-toggle": ["develop/volto-widget-toggle/src"],
-      "@eeacms/volto-widget-temporal-coverage": [
-        "develop/volto-widget-temporal-coverage/src"
-      ],
-      "@eeacms/volto-widget-geolocation": [
-        "develop/volto-widget-geolocation/src"
-      ],
-      "volto-slate": ["develop/volto-slate/src"],
-      "@eeacms/volto-slate-metadata-mentions": [
-        "develop/volto-slate-metadata-mentions/src"
-      ],
-      "@eeacms/volto-slate-footnote": ["develop/volto-slate-footnote/src"],
-      "@eeacms/volto-slate-zotero": ["develop/volto-slate-zotero/src"],
-      "@eeacms/volto-accordion-block": ["develop/volto-accordion-block/src"],
-      "@eeacms/volto-block-toc": ["develop/volto-block-toc/src"],
-      "@eeacms/volto-block-divider": ["develop/volto-block-divider/src"],
-      "@eeacms/volto-listing-block": ["develop/volto-listing-block/src"],
-      "@eeacms/volto-metadata-block": ["develop/volto-metadata-block/src"],
-      "@eeacms/volto-group-block": ["develop/volto-group-block/src"],
-      "@eeacms/volto-columns-block": ["develop/volto-columns-block/src"],
-      "@eeacms/volto-tabs-block": ["develop/volto-tabs-block/src"],
-      "@eeacms/volto-block-image-cards": [
-        "develop/volto-block-image-cards/src"
-      ],
-      "@eeacms/volto-banner": ["develop/volto-banner/src"],
-      "@eeacms/volto-resize-helper": ["develop/volto-resize-helper/src"],
-      "@eeacms/volto-block-style": ["develop/volto-block-style/src"],
-      "@eeacms/volto-eea-kitkat": ["develop/volto-eea-kitkat/src"],
-      "@eeacms/volto-tableau": ["develop/volto-tableau/src"],
-      "@eeacms/volto-plotlycharts": ["develop/volto-plotlycharts/src"],
-      "@eeacms/volto-middleware-vh": ["develop/volto-middleware-vh/src"],
-      "@eeacms/volto-embed": ["develop/volto-embed/src"],
-      "@eeacms/volto-datablocks": ["develop/volto-datablocks/src"],
-      "@eeacms/volto-addons-forest": ["develop/volto-addons-forest/src"],
-      "@eeacms/volto-slate-dataentity": ["develop/volto-slate-dataentity/src"],
-      "@eeacms/volto-eea-map": ["develop/volto-eea-map/src"]
+    "compilerOptions": {
+        "baseUrl": "src",
+        "jsx": "react",
+        "paths": {}
     }
-  }
 }
