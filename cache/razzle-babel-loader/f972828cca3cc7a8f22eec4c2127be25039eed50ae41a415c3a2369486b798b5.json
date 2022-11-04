@@ -1,1 +1,0 @@
-{"ast":null,"code":"export * from './Loadable';","map":{"version":3,"names":[],"sources":["/home/tooler/code/work/forests-frontend/node_modules/@plone/volto/src/helpers/Loadable/index.js"],"sourcesContent":["export * from './Loadable';\n"],"mappings":"AAAA,cAAc,YAAY"},"metadata":{"react-intl":{"messages":[]}},"sourceType":"module","externalDependencies":[]}

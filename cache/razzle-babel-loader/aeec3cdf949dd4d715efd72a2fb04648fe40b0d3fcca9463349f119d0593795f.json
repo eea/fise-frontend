@@ -1,1 +1,0 @@
-{"ast":null,"code":"export * from './dataProvider';","map":{"version":3,"names":[],"sources":["/home/tooler/code/work/forests-frontend/src/develop/volto-datablocks/src/middlewares/index.js"],"sourcesContent":["export * from './dataProvider';\n"],"mappings":"AAAA,cAAc,gBAAgB"},"metadata":{"react-intl":{"messages":[]}},"sourceType":"module","externalDependencies":[]}
