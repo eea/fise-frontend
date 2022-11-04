@@ -1,1 +1,16 @@
-{}
+{
+  "volto-forests-theme": {
+    "url": "git@github.com:eea/volto-forests-theme.git",
+    "https": "https://github.com/eea/volto-forests-theme.git",
+    "package": "@eeacms/volto-forests-theme",
+    "branch": "develop",
+    "path": "src"
+  },
+  "volto-plotlycharts": {
+    "url": "https://github.com/eea/volto-plotlycharts.git",
+    "https": "https://github.com/eea/volto-plotlycharts.git",
+    "package": "@eeacms/volto-plotlycharts",
+    "branch": "develop",
+    "path": "src"
+  }
+}

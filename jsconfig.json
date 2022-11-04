@@ -2,6 +2,13 @@
     "compilerOptions": {
         "baseUrl": "src",
         "jsx": "react",
-        "paths": {}
+        "paths": {
+            "@eeacms/volto-forests-theme": [
+                "develop/volto-forests-theme/src"
+            ],
+            "@eeacms/volto-plotlycharts": [
+                "develop/volto-plotlycharts/src"
+            ]
+        }
     }
 }
