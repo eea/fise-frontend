@@ -1289,18 +1289,6 @@
     "@eeacms/volto-widget-toggle" "3.0.0"
     "@eeacms/volto-widgets-view" "4.0.0"
 
-"@eeacms/volto-eea-map@*":
-  version "0.1.29"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-map/-/volto-eea-map-0.1.29.tgz#ca3ffe99f76c655e9b531df4a028afc29392e292"
-  integrity sha512-HMTeQB8UxTcZ41FbmrirWDV2npZf2/dWTmk3dSCd9mnyEB0tBTp+AQ0sqTnA7BEUfkvULDdIs7GZpW5VZTMFOg==
-  dependencies:
-    "@eeacms/volto-embed" "4.0.2"
-    "@plone/scripts" "*"
-    esri-loader "3.6.0"
-    lodash "4.17.21"
-    react-querybuilder "4.2.3"
-    volto-slate "*"
-
 "@eeacms/volto-embed@*", "@eeacms/volto-embed@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-5.0.0.tgz#9a0d6089d81c37048d3b79f3b3d1c50aaec4675e"
@@ -1309,16 +1297,6 @@
     "@eeacms/volto-corsproxy" "*"
     "@eeacms/volto-datablocks" "*"
     react-visibility-sensor "5.1.1"
-
-"@eeacms/volto-embed@4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-4.0.2.tgz#f1b7d769a6fe42bfb7f347878e911f6a869c7e46"
-  integrity sha512-2yAiykVij/4iu/GMyeCQ7gIJAieaTCblLyG0oADIuUcutyeMv2ZC7dWHuAkHKtInKXm+/ynugOEV8iX1nhHTSA==
-  dependencies:
-    "@eeacms/volto-corsproxy" "*"
-    "@eeacms/volto-datablocks" "*"
-    react-visibility-sensor "5.1.1"
-    volto-slate "*"
 
 "@eeacms/volto-group-block@*", "@eeacms/volto-group-block@5.0.0":
   version "5.0.0"
@@ -3504,13 +3482,13 @@ array.prototype.flat@^1.2.1:
     es-shim-unscopables "^1.0.0"
 
 array.prototype.reduce@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/array.prototype.reduce/-/array.prototype.reduce-1.0.4.tgz#8167e80089f78bff70a99e20bd4201d4663b0a6f"
-  integrity sha512-WnM+AjG/DvLRLo4DDl+r+SvCzYtD2Jd9oeBYMcEaI7t3fFrHY9M53/wdLcTvmZNQ70IU6Htj0emFkZ5TS+lrdw==
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/array.prototype.reduce/-/array.prototype.reduce-1.0.5.tgz#6b20b0daa9d9734dd6bc7ea66b5bbce395471eac"
+  integrity sha512-kDdugMl7id9COE8R7MHF5jWk7Dqt/fs4Pv+JXoICnYwqpjjjbUurz6w5fT5IG6brLdJhv6/VoHB0H7oyIBXd+Q==
   dependencies:
     call-bind "^1.0.2"
-    define-properties "^1.1.3"
-    es-abstract "^1.19.2"
+    define-properties "^1.1.4"
+    es-abstract "^1.20.4"
     es-array-method-boxes-properly "^1.0.0"
     is-string "^1.0.7"
 
@@ -4628,9 +4606,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001373, caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001426:
-  version "1.0.30001429"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001429.tgz#70cdae959096756a85713b36dd9cb82e62325639"
-  integrity sha512-511ThLu1hF+5RRRt0zYCf2U2yRr9GPF6m5y90SBCWsvSoYoW7yAGlv/elyPaNfvGCkp6kj/KFZWU0BMA69Prsg==
+  version "1.0.30001430"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001430.tgz#638a8ae00b5a8a97e66ff43733b2701f81b101fa"
+  integrity sha512-IB1BXTZKPDVPM7cnV4iaKaHxckvdr/3xtctB3f7Hmenx3qYBhGtTZ//7EllK66aKXW98Lx0+7Yr0kxBtIt3tzg==
 
 canvas-fit@^1.5.0:
   version "1.5.0"
@@ -5959,6 +5937,54 @@ cypress@10.11.0:
     debug "^4.3.2"
     enquirer "^2.3.6"
     eventemitter2 "6.4.7"
+    execa "4.1.0"
+    executable "^4.1.1"
+    extract-zip "2.0.1"
+    figures "^3.2.0"
+    fs-extra "^9.1.0"
+    getos "^3.2.1"
+    is-ci "^3.0.0"
+    is-installed-globally "~0.4.0"
+    lazy-ass "^1.6.0"
+    listr2 "^3.8.3"
+    lodash "^4.17.21"
+    log-symbols "^4.0.0"
+    minimist "^1.2.6"
+    ospath "^1.2.2"
+    pretty-bytes "^5.6.0"
+    proxy-from-env "1.0.0"
+    request-progress "^3.0.0"
+    semver "^7.3.2"
+    supports-color "^8.1.1"
+    tmp "~0.2.1"
+    untildify "^4.0.0"
+    yauzl "^2.10.0"
+
+cypress@10.3.1:
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-10.3.1.tgz#7fab4ef43481c05a9a17ebe9a0ec860e15b95a19"
+  integrity sha512-As9HrExjAgpgjCnbiQCuPdw5sWKx5HUJcK2EOKziu642akwufr/GUeqL5UnCPYXTyyibvEdWT/pSC2qnGW/e5w==
+  dependencies:
+    "@cypress/request" "^2.88.10"
+    "@cypress/xvfb" "^1.2.4"
+    "@types/node" "^14.14.31"
+    "@types/sinonjs__fake-timers" "8.1.1"
+    "@types/sizzle" "^2.3.2"
+    arch "^2.2.0"
+    blob-util "^2.0.2"
+    bluebird "^3.7.2"
+    buffer "^5.6.0"
+    cachedir "^2.3.0"
+    chalk "^4.1.0"
+    check-more-types "^2.24.0"
+    cli-cursor "^3.1.0"
+    cli-table3 "~0.6.1"
+    commander "^5.1.0"
+    common-tags "^1.8.0"
+    dayjs "^1.10.4"
+    debug "^4.3.2"
+    enquirer "^2.3.6"
+    eventemitter2 "^6.4.3"
     execa "4.1.0"
     executable "^4.1.1"
     extract-zip "2.0.1"
@@ -7349,7 +7375,7 @@ error-stack-parser@^2.0.6:
   dependencies:
     stackframe "^1.3.4"
 
-es-abstract@^1.17.2, es-abstract@^1.19.0, es-abstract@^1.19.1, es-abstract@^1.19.2, es-abstract@^1.19.5, es-abstract@^1.20.1, es-abstract@^1.20.4:
+es-abstract@^1.17.2, es-abstract@^1.19.0, es-abstract@^1.19.1, es-abstract@^1.19.5, es-abstract@^1.20.1, es-abstract@^1.20.4:
   version "1.20.4"
   resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.20.4.tgz#1d103f9f8d78d4cf0713edcd6d0ed1a46eed5861"
   integrity sha512-0UtvRN79eMe2L+UNEF1BwRe364sj/DXhQ/k5FmivgoSdpM90b8Jc0mDzKMGo7QS0BVbOP/bTwBKNnDc9rNzaPA==
@@ -11400,7 +11426,7 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg==
 
-jsdom@^16.4.0, jsdom@^16.6.0:
+jsdom@^16.4.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-16.7.0.tgz#918ae71965424b197c819f8183a754e18977b710"
   integrity sha512-u9Smc2G1USStM+s/x1ru5Sxrl6mPYCbByG1U/hUmqaVsm4tbNyS7CicOSRyuGQYZhTu0h84qkZZQ/I+dzizSVw==
@@ -15242,11 +15268,6 @@ react-intersection-observer@9.1.0:
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.1.0.tgz#27e66be9113fdf6fc6d745e849e1ad6ef20f97f1"
   integrity sha512-XSDWQGzgJ4/B4eW39+qa3S+uc4Gb+m6lxXR54m/uD5lqeL5sLrgYdntbjl4BlTYAblgUhz+JB5obINhZaD+c0Q==
 
-react-intersection-observer@^8.32.0:
-  version "8.34.0"
-  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.34.0.tgz#6f6e67831c52e6233f6b6cc7eb55814820137c42"
-  integrity sha512-TYKh52Zc0Uptp5/b4N91XydfSGKubEhgZRtcg1rhTKABXijc4Sdr1uTp5lJ8TN27jwUsdXxjHXtHa0kPj704sw==
-
 react-intl-redux@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-intl-redux/-/react-intl-redux-2.2.0.tgz#7187865c86931f7d69d88a243c1143cfc06f1bf0"
@@ -16989,7 +17010,7 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-slate-history@0.66.0, slate-history@^0.66.0:
+slate-history@0.66.0:
   version "0.66.0"
   resolved "https://registry.yarnpkg.com/slate-history/-/slate-history-0.66.0.tgz#ac63fddb903098ceb4c944433e3f75fe63acf940"
   integrity sha512-6MWpxGQZiMvSINlCbMW43E2YBSVMCMCIwQfBzGssjWw4kb0qfvj0pIdblWNRQZD0hR6WHP+dHHgGSeVdMWzfng==
@@ -17000,13 +17021,6 @@ slate-hyperscript@0.77.0:
   version "0.77.0"
   resolved "https://registry.yarnpkg.com/slate-hyperscript/-/slate-hyperscript-0.77.0.tgz#72c1c0fbd54dc6b6210ecd81d020c8d3d0ab8eae"
   integrity sha512-M6uRpttwKnosniQORNPYQABHQ9XWC7qaSr/127LWWPjTOR5MSSwrHGrghN81BhZVqpICHrI7jkPA2813cWdHNA==
-  dependencies:
-    is-plain-object "^5.0.0"
-
-slate-hyperscript@^0.67.0:
-  version "0.67.0"
-  resolved "https://registry.yarnpkg.com/slate-hyperscript/-/slate-hyperscript-0.67.0.tgz#b066febf10a5176106fe1fcdcdc76460f3eb721b"
-  integrity sha512-3c+d2ePTUk5J7wMjs2CZIJPhb1/VnTltel+qnQarOWlXtJng7oRc8BNaYbNfkl2ecT9W5bpxpsy1r6x5ICXucQ==
   dependencies:
     is-plain-object "^5.0.0"
 
@@ -17024,33 +17038,10 @@ slate-react@0.78.1:
     scroll-into-view-if-needed "^2.2.20"
     tiny-invariant "1.0.6"
 
-slate-react@^0.71.0:
-  version "0.71.0"
-  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.71.0.tgz#abc96384777603950a36c09e9a8707d493733541"
-  integrity sha512-UgryclHduQyOUAtoCk/05/4z6CMSURV+WyTwNMJZB10QDVviI78LsLCWstSo0jDlewM8KAX150s3aC2EZwH70w==
-  dependencies:
-    "@types/is-hotkey" "^0.1.1"
-    "@types/lodash" "^4.14.149"
-    direction "^1.0.3"
-    is-hotkey "^0.1.6"
-    is-plain-object "^5.0.0"
-    lodash "^4.17.4"
-    scroll-into-view-if-needed "^2.2.20"
-    tiny-invariant "1.0.6"
-
 slate@0.78.0:
   version "0.78.0"
   resolved "https://registry.yarnpkg.com/slate/-/slate-0.78.0.tgz#cd0328d22b0a99c543987d2a2dd30903bb950ee9"
   integrity sha512-VwQ0RafT3JPf9SFrXI02Dh3S4Iz9en7d1nn50C/LJjjqjfgv+a2ORbgWMdYjhycPYldaxJwcI3OpP9D1g4SXEg==
-  dependencies:
-    immer "^9.0.6"
-    is-plain-object "^5.0.0"
-    tiny-warning "^1.0.3"
-
-slate@^0.71.0:
-  version "0.71.0"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.71.0.tgz#37dea4eb05b8e78b76aa15c8a35b0aaf58beb8a1"
-  integrity sha512-DKK7Fk9UzCgN31X7safnJE0i9CbXv9pdnwTyt3NYak9xDFTltv27U+z9NCyi9M5ahqEK2fO5hjjDzPBuPOSRLQ==
   dependencies:
     immer "^9.0.6"
     is-plain-object "^5.0.0"
@@ -19027,24 +19018,6 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-volto-slate@*:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/volto-slate/-/volto-slate-6.4.0.tgz#10a42ab901965025ee6dc10edadedafceb5c4ca9"
-  integrity sha512-+ThIsM2eGc4HbA6EHnDEoz1Bykb6ADRzdoDM4expVYEtnd1a0fVMkA2W2zGEqvXSd/uYc4UqdqQk0cq+6jHCjg==
-  dependencies:
-    "@eeacms/volto-object-widget" "*"
-    classnames "2.2.6"
-    image-extensions "1.1.0"
-    is-url "1.2.4"
-    jsdom "^16.6.0"
-    react-intersection-observer "^8.32.0"
-    react-visibility-sensor "5.1.1"
-    slate "^0.71.0"
-    slate-history "^0.66.0"
-    slate-hyperscript "^0.67.0"
-    slate-react "^0.71.0"
-    weak-key "^1.0.2"
-
 vt-pbf@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vt-pbf/-/vt-pbf-3.1.3.tgz#68fd150756465e2edae1cc5c048e063916dcfaac"
@@ -19124,13 +19097,6 @@ wcwidth@^1.0.1:
   integrity sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==
   dependencies:
     defaults "^1.0.3"
-
-weak-key@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/weak-key/-/weak-key-1.0.2.tgz#dd5f66648ffb7e83810ea0553a948c60b2b50588"
-  integrity sha512-x9y9moPEcom985nUdHxM+YWbMcP3Ru+fmYqVNHSb6djJGg7H6Ru2ohuzaVIXx1JNyp8E7GO7GsBnehRntaBlsg==
-  dependencies:
-    core-js "^2.4.0"
 
 weak-map@^1.0.5:
   version "1.0.8"
