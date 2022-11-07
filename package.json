@@ -29,7 +29,7 @@
     "@eeacms/volto-plotlycharts": "5.0.1",
     "@eeacms/volto-slate-dataentity": "2.0.0",
     "@eeacms/volto-tableau": "2.0.0",
-    "@plone/volto": "16.0.0-alpha.44",
+    "@plone/volto": "16.0.0-alpha.45",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
