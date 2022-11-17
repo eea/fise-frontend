@@ -18,9 +18,6 @@ RUN runDeps="openssl ca-certificates patch git" \
 
 USER node
 
-ARG MAX_OLD_SPACE_SIZE=8192
-ENV NODE_OPTIONS=--max_old_space_size=$MAX_OLD_SPACE_SIZE
-
 USER node
 RUN yarn \
   && yarn build \
