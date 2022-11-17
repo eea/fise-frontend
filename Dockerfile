@@ -8,6 +8,7 @@ WORKDIR /opt/frontend/
 RUN runDeps="openssl ca-certificates patch git" \
   && apt-get update \
   && apt-get install -y --no-install-recommends $runDeps \
+  && apt-get update && apt-get install make \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && chown -R node /opt/frontend/ \
@@ -20,12 +21,13 @@ USER node
 
 USER node
 RUN yarn \
-  && yarn build \
-  && rm -rf /home/node/.cache
-USER root
+   && yarn build \
+   && rm -rf /home/node/.cache
+ USER root
 
-EXPOSE 3000 3001 4000 4001
+ EXPOSE 3000 3001 4000 4001
 
-ENTRYPOINT ["/opt/frontend/entrypoint-prod.sh"]
-CMD ["yarn", "start:prod"]
-USER root
+ ENTRYPOINT ["/opt/frontend/entrypoint-prod.sh"]
+ CMD ["yarn", "start:prod"]
+ USER root
+ 
