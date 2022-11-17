@@ -5,10 +5,9 @@ COPY . /opt/frontend/
 WORKDIR /opt/frontend/
 
 # Update apt packages
-RUN runDeps="openssl ca-certificates patch git" \
+RUN runDeps="openssl ca-certificates patch git make gosu" \
   && apt-get update \
   && apt-get install -y --no-install-recommends $runDeps \
-  && apt-get update && apt-get install make \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && chown -R node /opt/frontend/ \
