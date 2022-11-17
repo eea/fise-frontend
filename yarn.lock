@@ -1692,7 +1692,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-datablocks@npm:*":
+"@eeacms/volto-datablocks@npm:*, @eeacms/volto-datablocks@npm:4.0.1":
   version: 4.0.1
   resolution: "@eeacms/volto-datablocks@npm:4.0.1"
   dependencies:
@@ -1707,24 +1707,6 @@ __metadata:
     react-visibility-sensor: 5.1.1
     sanitize-html: ^2.3.3
   checksum: 8e9e2de7ef64812688cf596273ba75d2cadc34ef8cf7d7bf5607ee86c119179375db445d5e197cf8f6564bf5d75ce4f76644c14223c52884ac6cf257cfdb9ab7
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-datablocks@npm:4.0.0":
-  version: 4.0.0
-  resolution: "@eeacms/volto-datablocks@npm:4.0.0"
-  dependencies:
-    "@eeacms/volto-embed": "*"
-    "@eeacms/volto-group-block": "*"
-    "@eeacms/volto-matomo": "*"
-    d3: 7.1.1
-    date-fns: 2.28.0
-    humanize-plus: ^1.8.2
-    object-hash: 2.2.0
-    react-countup: 6.1.1
-    react-visibility-sensor: 5.1.1
-    sanitize-html: ^2.3.3
-  checksum: 60ccd868d76a8485046e03196314ff0cc96c98636b3ebc2c4c4ff4a9b362c6d433bc6c8ca53756665df672d3b1e62863d2ad701322c340be9ff5d7da8d30878a
   languageName: node
   linkType: hard
 
@@ -1898,7 +1880,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:*":
+"@eeacms/volto-plotlycharts@npm:*, @eeacms/volto-plotlycharts@npm:5.0.3":
   version: 5.0.3
   resolution: "@eeacms/volto-plotlycharts@npm:5.0.3"
   dependencies:
@@ -1913,24 +1895,6 @@ __metadata:
     react-json-editor-ajrm: 2.5.13
     react-plotly.js: 2.5.1
   checksum: ca6d5b13b0345107cd1462aab7313b9619579996aa0a8bc6040df1928235e7a504e69452197a9f250ba001db7660a47d41ea2447980a44f4fc4b1ac7634ff35f
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-plotlycharts@npm:5.0.2":
-  version: 5.0.2
-  resolution: "@eeacms/volto-plotlycharts@npm:5.0.2"
-  dependencies:
-    "@eeacms/volto-block-style": 4.1.0
-    "@eeacms/volto-datablocks": "*"
-    "@eeacms/volto-matomo": "*"
-    "@plone/scripts": "*"
-    plotly.js: ^2.9.0
-    react-chart-editor: 0.45.0
-    react-colorscales: 0.7.3
-    react-inspector: 5.1.1
-    react-json-editor-ajrm: 2.5.13
-    react-plotly.js: 2.5.1
-  checksum: 4754e1ebc42c789587f0930af8a60e9fece9cc39fae3951824243e0eba82eeb129256bbe2b3690019ad56c6a787160aa1498cab73af48f7c5462e5bf13f03370
   languageName: node
   linkType: hard
 
@@ -11113,12 +11077,12 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-react-jsx": "*"
     "@eeacms/volto-addons-forest": 0.1.6
-    "@eeacms/volto-datablocks": 4.0.0
+    "@eeacms/volto-datablocks": 4.0.1
     "@eeacms/volto-eea-kitkat": 10.0.0
     "@eeacms/volto-embed": 5.0.0
     "@eeacms/volto-forests-theme": 0.2.22
     "@eeacms/volto-middleware-vh": 1.0.6
-    "@eeacms/volto-plotlycharts": 5.0.2
+    "@eeacms/volto-plotlycharts": 5.0.3
     "@eeacms/volto-slate-dataentity": 2.0.0
     "@eeacms/volto-tableau": 2.0.0
     "@plone/volto": 16.0.0-alpha.50
