@@ -10,8 +10,7 @@ services:
     environment:
       API_PATH: "http://localhost:${BACKEND:-8080}/Plone"
       INTERNAL_API_PATH: "http://ploneapi:${BACKEND:-8080}/Plone"
-      RAZZLE_API_PATH: "${API_PATH}"
-      RAZZLE_INTERNAL_API_PATH: "${INTERNAL_API_PATH}"
+
 
   ploneapi:
     image: eeacms/plonesaas-devel
