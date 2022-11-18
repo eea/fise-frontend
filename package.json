@@ -22,14 +22,14 @@
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-addons-forest": "0.1.6",
     "@eeacms/volto-datablocks": "4.0.1",
-    "@eeacms/volto-eea-kitkat": "9.0.0",
+    "@eeacms/volto-eea-kitkat": "10.0.0",
     "@eeacms/volto-embed": "5.0.0",
     "@eeacms/volto-forests-theme": "0.2.22",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "5.0.3",
     "@eeacms/volto-slate-dataentity": "2.0.0",
     "@eeacms/volto-tableau": "2.0.0",
-    "@plone/volto": "16.0.0-alpha.45",
+    "@plone/volto": "16.0.0-alpha.50",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
