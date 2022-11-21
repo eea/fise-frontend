@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "2.27.0",
+  "version": "2.27.10",
   "private": true,
   "workspaces": [
     "src/develop/*"
@@ -29,19 +29,17 @@
     "@eeacms/volto-plotlycharts": "5.0.3",
     "@eeacms/volto-slate-dataentity": "2.0.0",
     "@eeacms/volto-tableau": "2.0.0",
-    "@plone/volto": "16.0.0-alpha.45",
+    "@plone/volto": "16.0.0-alpha.50",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
     "cypress": "10.11.0",
-    "mrs-developer": "^1.4.0"
+    "mrs-developer": "^1.4.0",
+    "razzle": "4.2.17"
   },
   "scripts": {
     "start": "razzle start",
-    "postinstall": "yarn omelette && yarn patches",
     "analyze": "BUNDLE_ANALYZE=true razzle build",
-    "omelette": "ln -sf node_modules/@plone/volto/ omelette",
-    "patches": "/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true",
     "build": "razzle build --noninteractive",
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n",
@@ -53,7 +51,8 @@
     "cypress:open": "./node_modules/cypress/bin/cypress open",
     "release": "release-it",
     "release-major-beta": "release-it major --preRelease=beta",
-    "release-beta": "release-it --preRelease=beta"
+    "release-beta": "npx release-it --preRelease=beta",
+    "postinstall": "make omelette && make patches"
   },
   "jest": {
     "modulePathIgnorePatterns": [
@@ -132,5 +131,6 @@
   },
   "engines": {
     "node": "^14 || ^16"
-  }
+  },
+  "packageManager": "yarn@1.18.0"
 }

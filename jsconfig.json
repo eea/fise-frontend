@@ -4,10 +4,13 @@
         "jsx": "react",
         "paths": {
             "@eeacms/volto-forests-theme": [
-                "develop/volto-forests-theme/src"
+                "addons/volto-forests-theme/src"
             ],
             "@eeacms/volto-plotlycharts": [
-                "develop/volto-plotlycharts/src"
+                "addons/volto-plotlycharts/src"
+            ],
+            "@eeacms/volto-datablocks": [
+                "addons/volto-datablocks/src"
             ]
         }
     }

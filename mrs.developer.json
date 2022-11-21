@@ -12,5 +12,12 @@
     "package": "@eeacms/volto-plotlycharts",
     "branch": "develop",
     "path": "src"
+  },
+  "volto-datablocks": {
+    "url": "https://github.com/eea/volto-datablocks.git",
+    "https": "https://github.com/eea/volto-datablocks.git",
+    "package": "@eeacms/volto-datablocks",
+    "branch": "develop",
+    "path": "src"
   }
 }

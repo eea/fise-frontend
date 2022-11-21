@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
 set -Ex
 
+if [ -z "$API_PATH" ]; then
+  API_PATH="http://localhost:8080/fise"
+fi
+
+if [ -z "$INTERNAL_API_PATH" ]; then
+  INTERNAL_API_PATH="http://backend:8080/fise"
+fi
+
+function apply_rebuild {
+  mkdir -p /app/src/addons
+  gosu node yarn develop
+  gosu node yarn
+  gosu node yarn build
+}
+
+# Should we re-build
+test -n "$REBUILD" && apply_rebuild
+
 function apply_path {
     mainjs=./build/server.js
     bundlejs=./build/public/static/js/*.js
@@ -22,5 +40,9 @@ function apply_path {
 # Should we monkey patch?
 test -n "$API_PATH" && apply_path
 
-echo "Starting Volto"
+if [[ "$1" == "yarn"* ]]; then
+  echo "Starting Volto"
+  exec gosu node "$@"
+fi
+
 exec "$@"
