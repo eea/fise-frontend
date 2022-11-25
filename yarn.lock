@@ -1374,10 +1374,10 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-5.0.4.tgz#d2444315c5c77dd3c8a3dfeaeb17e6cae5f0ffde"
-  integrity sha512-BioefXpCKOTiF+8vu0Hu0o7g54OpO+vtic1Zr+oaZV4jWAd0zm0Y+/XhN1CA8JOfiHDmKosVAKL3QREtiM+PNA==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-5.0.5.tgz#85ef381ecb2d4a08a018678ddaaeb64db5ecab94"
+  integrity sha512-uiAFTwuVeV7InRxrytVCT7foUfY4LvJLrtBoqRYeqOzlQDte6Ai2uuA2C0tcmMzAIyCTpKxEEQiGmJMJeQskLw==
   dependencies:
     "@eeacms/volto-block-style" "4.1.0"
     "@eeacms/volto-datablocks" "*"
@@ -2131,9 +2131,9 @@
     rimraf "^3.0.2"
 
 "@plone/scripts@*":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@plone/scripts/-/scripts-2.2.0.tgz#e2705b07d9e4c8fd05057ab1f31630bdd953d8d4"
-  integrity sha512-ylpoAaHmv6S54tHqGKd4petCUWJGUbkk/SyX1kY8FNM9O67ge18lNggDZJee7Gd/dNvNslhdOundJBsA38zKxQ==
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@plone/scripts/-/scripts-2.2.1.tgz#2daaf877de77110c4084638b10928f970f9886ac"
+  integrity sha512-Lf4bV5+j/Jq0UIqtWVdKdqRc4ilUZsBJn8GiHOL8wNTY3v28eRDgbEd6uYnokc2+t0paw0pq/e/SZpVpuRF16Q==
   dependencies:
     babel-plugin-react-intl "5.1.17"
     babel-preset-razzle "4.2.17"
@@ -4738,9 +4738,9 @@ ci-info@^2.0.0:
   integrity sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
 
 ci-info@^3.2.0:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.6.2.tgz#362ea15378f1c39378ba786affbc1c9ef015ecfd"
-  integrity sha512-lVZdhvbEudris15CLytp2u6Y0p5EKfztae9Fqa189MfNmln9F33XuH69v5fvNfiRN5/0eAUz2yJL3mo+nhaRKg==
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.7.0.tgz#6d01b3696c59915b6ce057e4aa4adfc2fa25f5ef"
+  integrity sha512-2CpRNYmImPx+RXKLq6jko/L07phmS9I02TyqkcNU20GCF/GgaWvc58hPtjxDX8lPpkdwc9sNh72V9k00S7ezog==
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
@@ -12225,9 +12225,9 @@ minipass-pipeline@^1.2.2:
     minipass "^3.0.0"
 
 minipass@^3.0.0, minipass@^3.1.1:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-3.3.4.tgz#ca99f95dd77c43c7a76bf51e6d200025eee0ffae"
-  integrity sha512-I9WPbWHCGu8W+6k1ZiGpPu0GkoKBeorkfKNuAFBNS1HNFJvke82sxvI5bzcCNpWPorkOO5QQ+zomzzwRxejXiw==
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-3.3.6.tgz#7bba384db3a1520d18c9c0e5251c3444e95dd94a"
+  integrity sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==
   dependencies:
     yallist "^4.0.0"
 
