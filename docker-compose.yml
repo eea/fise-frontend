@@ -11,6 +11,7 @@ services:
       API_PATH: "http://localhost:${BACKEND:-8080}/Plone"
       INTERNAL_API_PATH: "http://ploneapi:${BACKEND:-8080}/Plone"
 
+
   ploneapi:
     image: eeacms/plonesaas-devel
     ports:
