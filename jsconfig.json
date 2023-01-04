@@ -11,6 +11,9 @@
             ],
             "@eeacms/volto-datablocks": [
                 "develop/volto-datablocks/src"
+            ],
+            "@eeacms/volto-tableau": [
+                "develop/volto-tableau/src"
             ]
         }
     }
