@@ -22,7 +22,7 @@
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-addons-forest": "0.1.6",
     "@eeacms/volto-datablocks": "4.0.2",
-    "@eeacms/volto-eea-kitkat": "10.5.1",
+    "@eeacms/volto-eea-kitkat": "9.0.0",
     "@eeacms/volto-embed": "5.0.0",
     "@eeacms/volto-forests-theme": "0.2.23",
     "@eeacms/volto-middleware-vh": "1.0.6",
@@ -37,6 +37,7 @@
     "mrs-developer": "^1.4.0"
   },
   "scripts": {
+    "fise-quickstart": "RAZZLE_API_PATH=http://localhost:8080/fise yarn start",
     "start": "razzle start",
     "analyze": "BUNDLE_ANALYZE=true razzle build",
     "build": "razzle build --noninteractive",
