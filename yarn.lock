@@ -1166,6 +1166,11 @@
     react-sizeme "3.0.1"
     redraft "^0.10.2"
 
+"@eeacms/volto-anchors@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-anchors/-/volto-anchors-0.1.4.tgz#e975f5eff9ae7077c6cda0e5741b0bd6d9e9366e"
+  integrity sha512-rr5eK9ZQ6Z4WeY6OuD4aIIFQXzzXkwFhGlO6H6CRhOTwMfCGQelNNorfOZEnBV8wA1Cf6foPL5fRywYwKDODiw==
+
 "@eeacms/volto-banner@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-banner/-/volto-banner-3.0.1.tgz#32b80b48683f484168b217a7ba50fe6b38dc330a"
@@ -1191,10 +1196,10 @@
     react-slick "^0.24.0"
     slick-carousel "^1.8.1"
 
-"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-5.0.0.tgz#f2a0884c380d0eb62f231a3331f9b7d8c4a717f4"
-  integrity sha512-mlB01qSIi3E7yuqAeSMUoceS8RmW9BJllDmcONEEe9kzGhArqvxoS90Zkbl3EdyO3dk0Wc6aee0wlOnoxZmOOA==
+"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-5.0.1.tgz#095133522cbc449a35b482c2fc5bd1cf006f5d8a"
+  integrity sha512-5F/hKLZq6d8XvTlVTYt+TcRbsHLA9qf/yqIltOLOKvfpyfABmYeRJlSPmLM37M7nOyq64b/DfYWHC1VvtrbfPA==
   dependencies:
     "@eeacms/volto-resize-helper" "*"
     "@eeacms/volto-widget-theme-picker" "*"
@@ -1253,16 +1258,17 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.0.1.tgz#4ae89166e424e2bc1299cbe617e132644401d801"
   integrity sha512-ZfopN9sA3rT4WONZgZWyGCTVzviuBewbabTrgE6MfJME1e3mAll452aEub26Y6ccdUp40hKe4sV1+ZTTUAsiAg==
 
-"@eeacms/volto-eea-kitkat@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-11.0.0.tgz#a63ab3b796609d7478441210620e4c16e697bec9"
-  integrity sha512-TmmCoCxfHX0/J1x1RVZ2KsZK5wzXKeMxwldz7i2PSCAJL71AMgYfUtOX+U4ywwS/GRECLDc6UyQfEM4U3uZzYg==
+"@eeacms/volto-eea-kitkat@12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-12.0.0.tgz#bbe69dc631b3ea9d247f4a662b8f97166f210c49"
+  integrity sha512-t9F1TJitynsT02NYRyzTJJ0/T/X8Q0nBX3OO/7oxHrKWtyqjFvoSshhRaqY2crY+hn+1+XwLUqc+9zRwNsRvgA==
   dependencies:
     "@eeacms/volto-accordion-block" "7.0.0"
+    "@eeacms/volto-anchors" "0.1.4"
     "@eeacms/volto-banner" "3.0.1"
     "@eeacms/volto-block-divider" "6.0.0"
     "@eeacms/volto-block-image-cards" "1.0.2"
-    "@eeacms/volto-block-style" "5.0.0"
+    "@eeacms/volto-block-style" "5.0.1"
     "@eeacms/volto-call-to-action-block" "4.0.0"
     "@eeacms/volto-columns-block" "6.0.0"
     "@eeacms/volto-corsproxy" "3.0.1"
@@ -1289,6 +1295,7 @@
     "@eeacms/volto-widget-dataprovenance" "0.2.1"
     "@eeacms/volto-widget-geolocation" "5.0.1"
     "@eeacms/volto-widget-temporal-coverage" "5.0.1"
+    "@eeacms/volto-widget-theme-picker" "1.0.3"
     "@eeacms/volto-widget-toggle" "3.0.1"
     "@eeacms/volto-widgets-view" "4.0.1"
     "@kitconcept/volto-blocks-grid" "5.1.1"
@@ -1525,10 +1532,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-temporal-coverage/-/volto-widget-temporal-coverage-5.0.1.tgz#dec62a152fc2c7e9a7657e7fa49880cf82dc114a"
   integrity sha512-dMiIfvxSetIOgJIGjMCjudIPkEimkMTl5AUPMkx5MzdqE0KecV0twIlorJL3es2CwhRcKBmKk3RjC+L+70zyHw==
 
-"@eeacms/volto-widget-theme-picker@*", "@eeacms/volto-widget-theme-picker@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-theme-picker/-/volto-widget-theme-picker-1.0.2.tgz#8ecfe9eeb5de775dfb2f85581c4324183d9adec1"
-  integrity sha512-bLP9TYx3tLaLc83aqKrKAPl01M+71duBL54fo2GadFcG92ObIiQTq5DBfstxU3hag6h8+KlXy6ZOY0HlCoeAIQ==
+"@eeacms/volto-widget-theme-picker@*", "@eeacms/volto-widget-theme-picker@1.0.3", "@eeacms/volto-widget-theme-picker@^1.0.1":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-theme-picker/-/volto-widget-theme-picker-1.0.3.tgz#f786371ec54dbb431378422c1b543fff37ab3a39"
+  integrity sha512-Ne77D1OAmpjE4HAqL4NVSOCVXvxFjVD37ENzpqnlFbNCGH8uZdRY27YGvEaX+BJIwRntyp+nFBwu7svjk5uPhA==
 
 "@eeacms/volto-widget-toggle@3.0.1":
   version "3.0.1"
