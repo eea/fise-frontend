@@ -10,26 +10,33 @@
   "addons": [
     "@eeacms/volto-eea-kitkat",
     "@eeacms/volto-tableau",
-    "@eeacms/volto-forests-theme",
     "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-addons-forest",
     "@eeacms/volto-embed",
     "@eeacms/volto-middleware-vh",
-    "@eeacms/volto-slate-dataentity"
+    "@eeacms/volto-slate-dataentity",
+    "@eeacms/volto-eea-design-system",
+    "@eeacms/volto-eea-website-theme",
+    "@eeacms/volto-forest-policy"
   ],
+  "resolutions": {
+    "@eeacms/volto-eea-design-system": "1.0.0-beta.1"
+  },
   "dependencies": {
+    "@eeacms/volto-forest-policy": "*",
+    "@eeacms/volto-eea-design-system": "1.0.0-beta.1",
+    "@eeacms/volto-eea-website-theme": "1.8.1",
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-addons-forest": "0.1.6",
     "@eeacms/volto-datablocks": "4.0.2",
     "@eeacms/volto-eea-kitkat": "11.0.0",
     "@eeacms/volto-embed": "5.0.1",
-    "@eeacms/volto-forests-theme": "0.2.23",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "5.0.8",
     "@eeacms/volto-slate-dataentity": "2.0.0",
     "@eeacms/volto-tableau": "3.0.6",
-    "@plone/volto": "16.0.0-alpha.45",
+    "@plone/volto": "16.10.0",
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {

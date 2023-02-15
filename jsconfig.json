@@ -3,8 +3,14 @@
         "baseUrl": "src",
         "jsx": "react",
         "paths": {
-            "@eeacms/volto-forests-theme": [
-                "develop/volto-forests-theme/src"
+            "@eeacms/volto-forest-policy": [
+                "develop/volto-forest-policy/src"
+            ],
+            "@eeacms/volto-eea-design-system": [
+                "develop/volto-eea-design-system/src"
+            ],
+            "@eeacms/volto-eea-website-theme": [
+                "develop/volto-eea-website-theme/src"
             ],
             "@eeacms/volto-plotlycharts": [
                 "develop/volto-plotlycharts/src"
