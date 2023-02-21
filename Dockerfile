@@ -1,11 +1,11 @@
 # Based on https://github.com/plone/volto/blob/master/entrypoint.sh
-FROM node:14-stretch-slim
+FROM node:16-slim
 
 COPY . /opt/frontend/
 WORKDIR /opt/frontend/
 
 # Update apt packages
-RUN runDeps="openssl ca-certificates patch git" \
+RUN runDeps="openssl ca-certificates patch git make" \
  && apt-get update \
  && apt-get install -y --no-install-recommends $runDeps \
  && apt-get clean \
