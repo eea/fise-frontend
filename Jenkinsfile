@@ -135,6 +135,7 @@ pipeline {
               tagName = "$BRANCH_NAME"
             }
             try {
+              sh script: "apt-get update && apt-get install make"
               dockerImage = docker.build("$registry:$tagName", "--no-cache .")
               docker.withRegistry( '', 'eeajenkins' ) {
                 dockerImage.push()
