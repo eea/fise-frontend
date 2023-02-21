@@ -35,7 +35,8 @@
     "@eeacms/volto-slate-dataentity": "2.0.0",
     "@eeacms/volto-tableau": "3.0.6",
     "@plone/volto": "16.10.0",
-    "semantic-ui-react": "2.0.4"
+    "semantic-ui-react": "2.0.4",
+    "eslint-plugin-jsx-a11y": "6.6.0"
   },
   "devDependencies": {
     "cypress": "10.11.0",
