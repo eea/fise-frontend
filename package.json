@@ -23,7 +23,7 @@
     "@eeacms/volto-eea-design-system": "1.0.0-beta.1"
   },
   "dependencies": {
-    "@eeacms/volto-forest-policy": "*",
+    "@eeacms/volto-forest-policy": "0.1.2",
     "@eeacms/volto-eea-design-system": "1.0.0-beta.1",
     "@eeacms/volto-eea-website-theme": "1.8.1",
     "@babel/plugin-transform-react-jsx": "*",
