@@ -1258,10 +1258,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.0.1.tgz#4ae89166e424e2bc1299cbe617e132644401d801"
   integrity sha512-ZfopN9sA3rT4WONZgZWyGCTVzviuBewbabTrgE6MfJME1e3mAll452aEub26Y6ccdUp40hKe4sV1+ZTTUAsiAg==
 
-"@eeacms/volto-eea-kitkat@12.0.1":
-  version "12.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-12.0.1.tgz#3e183fa825fec806fc35490ae3c398137f61727c"
-  integrity sha512-LK6P+5laxVCzfPoJVdB7/0RQWFCwF25nQ8OJJaVTAeOewZOWm5Egh8O8ziEZoVwgBIcCRkKBSwI2GQYUIOjhyg==
+"@eeacms/volto-eea-kitkat@12.0.2":
+  version "12.0.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-12.0.2.tgz#d8326628bcdd6bdf5da5b2891001fefa6e7b778a"
+  integrity sha512-N+6kQZeb8SiCghIY5w9tKMswY+GCc4m2+o0BWT5f+1vKK+0pez4VR74xZ0EiQrGab1OgZ/tHto+J/HDtL921Og==
   dependencies:
     "@eeacms/volto-accordion-block" "7.0.0"
     "@eeacms/volto-anchors" "0.1.4"
@@ -1276,8 +1276,8 @@
     "@eeacms/volto-description-block" "1.0.1"
     "@eeacms/volto-group-block" "5.0.1"
     "@eeacms/volto-hero-block" "4.0.0"
-    "@eeacms/volto-listing-block" "3.0.1"
-    "@eeacms/volto-matomo" "3.0.1"
+    "@eeacms/volto-listing-block" "3.0.2"
+    "@eeacms/volto-matomo" "4.0.2"
     "@eeacms/volto-metadata-block" "5.0.1"
     "@eeacms/volto-object-widget" "5.0.1"
     "@eeacms/volto-quote-block" "1.0.1"
@@ -1293,7 +1293,7 @@
     "@eeacms/volto-taxonomy" "3.0.1"
     "@eeacms/volto-timeline-block" "1.0.1"
     "@eeacms/volto-widget-dataprovenance" "0.2.1"
-    "@eeacms/volto-widget-geolocation" "5.0.1"
+    "@eeacms/volto-widget-geolocation" "5.0.2"
     "@eeacms/volto-widget-temporal-coverage" "5.0.1"
     "@eeacms/volto-widget-theme-picker" "1.0.3"
     "@eeacms/volto-widget-toggle" "3.0.1"
@@ -1362,20 +1362,20 @@
     "@eeacms/volto-object-widget" "*"
     "@eeacms/volto-widget-theme-picker" "^1.0.1"
 
-"@eeacms/volto-listing-block@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-3.0.1.tgz#e6236820bc795ec1c8cbdb06656dd9ce1d08e668"
-  integrity sha512-zgxDRnF/LXxr6r+NVIjLUmOiJJq059Xm1wfGUlLUvwb1/FvUyCGGzuzDF++Db5r5uSoY66mpIU7dVEZeYnsS8A==
+"@eeacms/volto-listing-block@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-3.0.2.tgz#d15608d131198f6ac261503520481b9072b276e1"
+  integrity sha512-RX7zzdDilZN3/v2xJSYc21YmJpUCZ4NWu9KergwiTEopc49zeUQZulrVRLXyBKLguq+1OeZMjhYSzLY7I1oujg==
   dependencies:
     "@eeacms/volto-widget-theme-picker" "^1.0.1"
     react-resize-detector "7.1.2"
     react-slick "0.29.0"
     slick-carousel "1.8.1"
 
-"@eeacms/volto-matomo@*", "@eeacms/volto-matomo@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-matomo/-/volto-matomo-3.0.1.tgz#e098268c6964b553e75297cca5f9ac15b73ba2d9"
-  integrity sha512-cdAf76iaSrmHbH7zuE+PsAb4buMZZE8gKYyEAOswaxUF+yg/5ZAGpYIUA6Qr2PCRuDRokr1SJTQv4UVAGGMaKg==
+"@eeacms/volto-matomo@*", "@eeacms/volto-matomo@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-matomo/-/volto-matomo-4.0.2.tgz#69bfbdd9cf6fb0f22b57f6eaae641cf5b8441dac"
+  integrity sha512-LbVpoLxGlH4VquUlo+a1Z3ED7cH5MyJq9F44l1fWD7M5wj6Bx4L4jxKwxv2J0korYlLwVCad5BwfD7RTGpWGRg==
   dependencies:
     "@datapunt/matomo-tracker-react" "0.3.1"
 
@@ -1519,10 +1519,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-dataprovenance/-/volto-widget-dataprovenance-0.2.1.tgz#616880d813dae362506032580a89b579a79779f4"
   integrity sha512-80XVzXKR4H2BXicMx3V0YRSVkTbA22yWB+zqtpVTot9UTpgUt/oH6Eryd6uKvDPmgVkMFNhZiFsOLrFlP7c0eQ==
 
-"@eeacms/volto-widget-geolocation@5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-geolocation/-/volto-widget-geolocation-5.0.1.tgz#2801e3f04b272a851ea2a4a1c9cf95a707c709f7"
-  integrity sha512-5cImd4Q00le7+2mCcItZ62As5tfzyJqgcAdP1PUhSPHylnOGifEo6KODw6Pehf7QiMO7KBO/O0WGA/D/XhmaBQ==
+"@eeacms/volto-widget-geolocation@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-geolocation/-/volto-widget-geolocation-5.0.2.tgz#0f9fcd391f5b33b1c4c0e2911645b89d33e1bbe9"
+  integrity sha512-OLTnx3aRL9hlNSMKS4RdcqJXdAsfkjBVeOQ9OHdwymdj9300aF2H71hUwS01CmLwbmyjcnzI/PhS9XeCzwZbQA==
   dependencies:
     "@eeacms/volto-corsproxy" "*"
     i18n-iso-countries "6.2.1"
