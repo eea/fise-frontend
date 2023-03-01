@@ -1166,10 +1166,12 @@
     react-sizeme "3.0.1"
     redraft "^0.10.2"
 
-"@eeacms/volto-anchors@0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-anchors/-/volto-anchors-0.1.4.tgz#e975f5eff9ae7077c6cda0e5741b0bd6d9e9366e"
-  integrity sha512-rr5eK9ZQ6Z4WeY6OuD4aIIFQXzzXkwFhGlO6H6CRhOTwMfCGQelNNorfOZEnBV8wA1Cf6foPL5fRywYwKDODiw==
+"@eeacms/volto-anchors@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-anchors/-/volto-anchors-0.1.5.tgz#14664d0561507bc5bf2f96043f0bd0e1abe647f1"
+  integrity sha512-166WbZJDrdAr5QNm/5+7bhzznc1f8vDshVslwmxY+rMiFSPcMzmmgZ0ol37UxJH7ltil/TZAaS9VZXDoWbpYgw==
+  dependencies:
+    github-slugger "1.4.0"
 
 "@eeacms/volto-banner@3.0.1":
   version "3.0.1"
@@ -1258,13 +1260,13 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.0.1.tgz#4ae89166e424e2bc1299cbe617e132644401d801"
   integrity sha512-ZfopN9sA3rT4WONZgZWyGCTVzviuBewbabTrgE6MfJME1e3mAll452aEub26Y6ccdUp40hKe4sV1+ZTTUAsiAg==
 
-"@eeacms/volto-eea-kitkat@12.0.2":
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-12.0.2.tgz#d8326628bcdd6bdf5da5b2891001fefa6e7b778a"
-  integrity sha512-N+6kQZeb8SiCghIY5w9tKMswY+GCc4m2+o0BWT5f+1vKK+0pez4VR74xZ0EiQrGab1OgZ/tHto+J/HDtL921Og==
+"@eeacms/volto-eea-kitkat@12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-12.0.3.tgz#8c9b6c18c60bd4a5fef65408cdcbd3f5dbe1761c"
+  integrity sha512-EHRiGZCVfV3n3oEV1I6FdecRUY7eQymuBYyzCJnow6XWFHAlQ1b4XvP6OenX+oFLgpwDz42PvwFcBjwL21dAVA==
   dependencies:
     "@eeacms/volto-accordion-block" "7.0.0"
-    "@eeacms/volto-anchors" "0.1.4"
+    "@eeacms/volto-anchors" "0.1.5"
     "@eeacms/volto-banner" "3.0.1"
     "@eeacms/volto-block-divider" "6.0.0"
     "@eeacms/volto-block-image-cards" "1.0.2"
@@ -8769,6 +8771,11 @@ git-url-parse@^11.6.0:
   integrity sha512-WWUxvJs5HsyHL6L08wOusa/IXYtMuCAhrMmnTjQPpBU0TTHyDhnOATNH3xNQz7YOQUsqIIPTGr4xiVti1Hsk5g==
   dependencies:
     git-up "^4.0.0"
+
+github-slugger@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.4.0.tgz#206eb96cdb22ee56fdc53a28d5a302338463444e"
+  integrity sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==
 
 gl-axes3d@^1.5.3:
   version "1.5.3"
