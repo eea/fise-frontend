@@ -2093,7 +2093,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@0.1.5, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@npm:0.1.6":
+  version: 0.1.6
+  resolution: "@eeacms/volto-forest-policy@npm:0.1.6"
+  dependencies:
+    "@eeacms/volto-datablocks": "*"
+    "@eeacms/volto-eea-design-system": "*"
+    "@eeacms/volto-eea-map": "*"
+    "@eeacms/volto-eea-website-theme": "*"
+    "@eeacms/volto-matomo": "*"
+    "@eeacms/volto-openlayers-map": 0.1.4
+    "@eeacms/volto-plotlycharts": "*"
+    "@sentry/browser": 7.17.3
+    dompurify: ^2.0.12
+    draft-js-alignment-plugin: ^2.0.6
+    draft-js-focus-plugin: ^3.0.1
+    draft-js-import-html: ^1.4.1
+    draft-js-inline-toolbar-plugin: ^2.0.3
+    draft-js-modifiers: ^0.2.2
+    draft-js-plugins-editor: ^3.0.0
+    draft-js-resizeable-plugin: ^2.0.9
+    draft-js-video-plugin: ^2.0.2
+    esri-loader: ^2.14.0
+    react-component-queries: 2.3.0
+    react-highlight-words: ^0.16.0
+    react-image-gallery: 1.2.7
+    react-lazy-load-image-component: ^1.5.0
+    react-pdf-js: ^5.1.0
+    react-sizeme: 3.0.1
+    react-stickynode: ^2.1.1
+    redraft: ^0.10.2
+    redux-connect: 10.0.0
+  checksum: a1ae727d9c39bd4a6293d46fd167f52c95fc041d2b22153b18c5fe669d63756161cc32adc353f64d0df71b9e118922b0eb0982dcaf360da01fa164c9ac055aa0
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -2162,7 +2197,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-matomo@npm:*, @eeacms/volto-matomo@npm:3.0.1":
+"@eeacms/volto-matomo@npm:*":
+  version: 4.0.2
+  resolution: "@eeacms/volto-matomo@npm:4.0.2"
+  dependencies:
+    "@datapunt/matomo-tracker-react": 0.3.1
+  checksum: 1e1096b17f9242b3d19fd98fe3a2b96013e080758abc1c5202c7c662ba7fbfc8b6badac971ce0c956c2486a43e44976e42828894a5af214ee6695a516f2c505e
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-matomo@npm:3.0.1":
   version: 3.0.1
   resolution: "@eeacms/volto-matomo@npm:3.0.1"
   dependencies:
@@ -5894,23 +5938,23 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 18.14.1
-  resolution: "@types/node@npm:18.14.1"
-  checksum: 58556bbdb0050e44a4934742c1da2530812782c06d266a758e669e44c5aa196166c5fce45fdb03f016876717e3840478b3220129bb77367f979607564047f0a3
+  version: 18.14.4
+  resolution: "@types/node@npm:18.14.4"
+  checksum: 3f2f625777747b9f87e793eea5a8bbf1ac2c828846bda5811d07a457d55cfe6762239779759de61e7b7e917632b9ceee3f7ffd2a024117e7ec364dc1b4eb8d55
   languageName: node
   linkType: hard
 
 "@types/node@npm:^14.0.10 || ^16.0.0, @types/node@npm:^14.14.20 || ^16.0.0":
-  version: 16.18.12
-  resolution: "@types/node@npm:16.18.12"
-  checksum: fc3271182414f8593018ef8f00b4718116a92f463f619081bd399d9460e7861e1dd7eebc7cf94c23567e418ff397babed077011711aae8d47171b5a81c5bd71d
+  version: 16.18.14
+  resolution: "@types/node@npm:16.18.14"
+  checksum: 7865c1c3e7c7d2fef6103c6dfa181755dc48365024253d6acc460e884508b5937a222aa8bd04835988ff0bdc47867e2ada78859c0a7f9c65b44884316f3b469c
   languageName: node
   linkType: hard
 
 "@types/node@npm:^14.14.31":
-  version: 14.18.36
-  resolution: "@types/node@npm:14.18.36"
-  checksum: da7f479b3fc996d585e60b8329987c6e310ddbf051e14f2d900ce04f7768f42fa7b760f0eb376008d3eca130ce9431018fb5c9e44027dcb7bb139c547e44b9c5
+  version: 14.18.37
+  resolution: "@types/node@npm:14.18.37"
+  checksum: d21e8c58ddd01ae069b196c2a4eaf9c9749e6666565349667334c60cfc119c1fa280234a8001157dd7ffe73501ce4f4940ca05f9d5c402c5abe78c8dca8376a6
   languageName: node
   linkType: hard
 
@@ -8958,9 +9002,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001125, caniuse-lite@npm:^1.0.30001373, caniuse-lite@npm:^1.0.30001426, caniuse-lite@npm:^1.0.30001449":
-  version: 1.0.30001457
-  resolution: "caniuse-lite@npm:1.0.30001457"
-  checksum: f311a7c5098681962402a86a0a367014ee91c3135395ee68bbfaf45caf0e36d581e42d7c5b1526ce99484a228e6cf5cf0e400678292c65f5a21512a3fc7a5fb6
+  version: 1.0.30001458
+  resolution: "caniuse-lite@npm:1.0.30001458"
+  checksum: 258cc5a25babbbfe483bf788c6f321a19400ff80b2bf156b360bac09a6f9f4da44516350d187a30395667cb142c682d9ea96577ea0df236d35f76234b07ccb41
   languageName: node
   linkType: hard
 
@@ -10108,18 +10152,18 @@ __metadata:
   linkType: hard
 
 "core-js-compat@npm:^3.25.1, core-js-compat@npm:^3.8.1":
-  version: 3.28.0
-  resolution: "core-js-compat@npm:3.28.0"
+  version: 3.29.0
+  resolution: "core-js-compat@npm:3.29.0"
   dependencies:
     browserslist: ^4.21.5
-  checksum: 41d1d58c99ce7ee7abd8cf070f4c07a8f2655dbed1777d90a26246dddd7fac68315d53d2192584c8621a5328e6fe1a10da39b6bf2666e90fd5c2ff3b8f24e874
+  checksum: ca5d370296c15ebd5f961dae6b6a24a153a84937bff58543099b7f1c407e8d5bbafafa7ca27e65baad522ece762d6356e1d6ea9efa99815f6fefd150fac7e8a5
   languageName: node
   linkType: hard
 
 "core-js-pure@npm:^3.23.3, core-js-pure@npm:^3.25.1":
-  version: 3.28.0
-  resolution: "core-js-pure@npm:3.28.0"
-  checksum: 8bef96a435783ea7e62b2bd4d6cc3d427a7bfeb053954aadabb33b5dba14a85c6297f7638bba9676a144f9cd7a5a0185a576d41d67baaae15227a4c9982a8cef
+  version: 3.29.0
+  resolution: "core-js-pure@npm:3.29.0"
+  checksum: 281805cda717a471a15fd44a526ce873e19598ce4f2a5ac00daf4324583becc4956b1a15a266d5488668326bba420cc84fc957abe42f198796e5cf0acc62dfc8
   languageName: node
   linkType: hard
 
@@ -10138,9 +10182,9 @@ __metadata:
   linkType: hard
 
 "core-js@npm:^3.0.4, core-js@npm:^3.6.4, core-js@npm:^3.6.5, core-js@npm:^3.8.2":
-  version: 3.28.0
-  resolution: "core-js@npm:3.28.0"
-  checksum: 3155fd0ec16d0089106b145e9595280a4ea4bde0d7ff26aa14364cd4f1c203baf6620c3025acd284f363d08b9f21104101692766ca9a36ffeee7307bdf3e1881
+  version: 3.29.0
+  resolution: "core-js@npm:3.29.0"
+  checksum: 2bd69d783efcd2ef9197ce892a8b91d7b2fd86dddce805a3be0ff721013a2342eeab0f7d0b4b5548c1377b9846a8fb81485054efd39618b9d1a1fca04af81ccf
   languageName: node
   linkType: hard
 
@@ -10204,9 +10248,9 @@ __metadata:
   linkType: hard
 
 "countup.js@npm:^2.0.8, countup.js@npm:^2.2.0, countup.js@npm:^2.4.1":
-  version: 2.4.2
-  resolution: "countup.js@npm:2.4.2"
-  checksum: 5341734ed6b6c095881f5c52fa615224bcb4741f44f5589f296ff5147d78b01f48c5be7afebf4e30117debd8013f979915cf1be6625c98eb4b9987ee9c054d23
+  version: 2.5.0
+  resolution: "countup.js@npm:2.5.0"
+  checksum: 96b0f65746d644612c3f01647096b540891788338ada408fdd5efdc1b6cdd83237051b9e7c7ff3b23bd25955eb8c4fb2b9d2db62ec6e3f02d3c4c953e5c57f81
   languageName: node
   linkType: hard
 
@@ -12121,9 +12165,9 @@ __metadata:
   linkType: hard
 
 "dompurify@npm:^2.0.12":
-  version: 2.4.4
-  resolution: "dompurify@npm:2.4.4"
-  checksum: 6a29c2a1b76c0723564d009a26b9123e23ea61ac5d6f30cdcdd01f4d48b257a99adb5952c7a08390a7323353dbb333ad7d650c7cf3f5b6b5bb81eab5826a7f7c
+  version: 2.4.5
+  resolution: "dompurify@npm:2.4.5"
+  checksum: d6d3c3b320f15cdb5b26aa1902c3275a3ab2c3705a9df4420bb94691d7c4df67959ec7b91e486c308320791b0ee000456f042734c45d76721e61c2768eac706e
   languageName: node
   linkType: hard
 
@@ -12508,9 +12552,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.3.564, electron-to-chromium@npm:^1.4.284":
-  version: 1.4.308
-  resolution: "electron-to-chromium@npm:1.4.308"
-  checksum: 6e49a6c0e0ae2c4be3d5acd76ba6d497383a1ceb224cada6cdbba83aa95952336f96aa742cbf3697dd39d091624b53a912c0015fe5a30a8d6138e14287a0a9ad
+  version: 1.4.315
+  resolution: "electron-to-chromium@npm:1.4.315"
+  checksum: 9b1e9a43afe086aaed9af2a60076a409c0d6a0d9a9f4d0a293131763329c48c86198bda4020155c7ce53d2569840d49d51e8ce2405b6cd90000a77c1bd650ea5
   languageName: node
   linkType: hard
 
@@ -13342,11 +13386,11 @@ __metadata:
   linkType: hard
 
 "esquery@npm:^1.0.1":
-  version: 1.4.2
-  resolution: "esquery@npm:1.4.2"
+  version: 1.5.0
+  resolution: "esquery@npm:1.5.0"
   dependencies:
     estraverse: ^5.1.0
-  checksum: 2f4ad89c5aafaca61cc2c15e256190f0d6deb4791cae6552d3cb4b1eb8867958cdf27a56aaa3272ff17435e3eaa19ee0d4129fac336ca6373d7354d7b5da7966
+  checksum: aefb0d2596c230118656cd4ec7532d447333a410a48834d80ea648b1e7b5c9bc9ed8b5e33a89cb04e487b60d622f44cf5713bf4abed7c97343edefdc84a35900
   languageName: node
   linkType: hard
 
@@ -13975,9 +14019,9 @@ __metadata:
   linkType: hard
 
 "fetch-retry@npm:^5.0.2":
-  version: 5.0.3
-  resolution: "fetch-retry@npm:5.0.3"
-  checksum: b4eebc04bd41651417e89ae9287e5b9e5421970ce07058c6e1e22f7d9c1cd5f935fc39a328fd66b433247c0ae1bb8a6b2d48c073d5a9f911992f72c5d311b14d
+  version: 5.0.4
+  resolution: "fetch-retry@npm:5.0.4"
+  checksum: 5c8a87f523223052b1192cc353001ceff8fe9f87926577c7e6532140c0780421cd7f7e0230e3d69f73f308b4071c4e6317b53e1058e31213dac1100c3ff96513
   languageName: node
   linkType: hard
 
@@ -14381,7 +14425,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 11.0.0
     "@eeacms/volto-eea-website-theme": 1.8.1
     "@eeacms/volto-embed": 5.0.1
-    "@eeacms/volto-forest-policy": 0.1.5
+    "@eeacms/volto-forest-policy": 0.1.6
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 5.0.8
     "@eeacms/volto-slate-dataentity": 2.0.0
@@ -17135,13 +17179,13 @@ __metadata:
   linkType: hard
 
 "is-array-buffer@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "is-array-buffer@npm:3.0.1"
+  version: 3.0.2
+  resolution: "is-array-buffer@npm:3.0.2"
   dependencies:
     call-bind: ^1.0.2
-    get-intrinsic: ^1.1.3
+    get-intrinsic: ^1.2.0
     is-typed-array: ^1.1.10
-  checksum: f26ab87448e698285daf707e52a533920449f7abf63714140ffab9d5571aa5a71ac2fa2677e8b793ad0d5d3e40078d4d2c8a0ab39c957e3cfc6513bb6c9dfdc9
+  checksum: dcac9dda66ff17df9cabdc58214172bf41082f956eab30bb0d86bc0fab1e44b690fc8e1f855cf2481245caf4e8a5a006a982a71ddccec84032ed41f9d8da8c14
   languageName: node
   linkType: hard
 
@@ -19687,9 +19731,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^7.7.1":
-  version: 7.17.0
-  resolution: "lru-cache@npm:7.17.0"
-  checksum: 28c2a98ad313b8d61beac1f08257b6f0ca990e39d24a9bc831030b6e209447cfb11c6d9d1a774282189bfc9609d1dfd17ebe485228dd68f7b96b6b9b7740894e
+  version: 7.18.1
+  resolution: "lru-cache@npm:7.18.1"
+  checksum: ab0ec1360c552f1ffa54b1eaf0026126c5116a07bee156b92d1e971f4c8c88e9160f0fad4ab6fed4e0fdea84f25a4590ece085bc57ed9ab1d90b17f0b138c556
   languageName: node
   linkType: hard
 
@@ -20414,9 +20458,9 @@ __metadata:
   linkType: hard
 
 "minipass@npm:^4.0.0":
-  version: 4.2.0
-  resolution: "minipass@npm:4.2.0"
-  checksum: 3c3ce269eacdcecb56b5dfe4bb4ab905d60fea1af4c967c7ed54baadfdd4af03e4d926567fb655957504fb4c9e2e7adbb2dc636927dfb56c829f2b25f1b2b3dd
+  version: 4.2.4
+  resolution: "minipass@npm:4.2.4"
+  checksum: c664f2ae4401408d1e7a6e4f50aca45f87b1b0634bc9261136df5c378e313e77355765f73f59c4a5abcadcdf43d83fcd3eb14e4a7cdcce8e36508e2290345753
   languageName: node
   linkType: hard
 
