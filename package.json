@@ -19,18 +19,15 @@
     "@eeacms/volto-eea-website-theme",
     "@eeacms/volto-forest-policy"
   ],
-  "resolutions": {
-    "@eeacms/volto-eea-design-system": "1.0.0-beta.1"
-  },
   "installConfig": {
     "pnp": false
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-datablocks": "4.0.2",
-    "@eeacms/volto-eea-design-system": "1.0.0-beta.4",
-    "@eeacms/volto-eea-kitkat": "11.0.0",
-    "@eeacms/volto-eea-website-theme": "1.8.1",
+    "@eeacms/volto-eea-design-system": "1.0.0-beta.5",
+    "@eeacms/volto-eea-kitkat": "12.1.0",
+    "@eeacms/volto-eea-website-theme": "1.9.2",
     "@eeacms/volto-embed": "5.0.1",
     "@eeacms/volto-forest-policy": "0.1.6",
     "@eeacms/volto-middleware-vh": "1.0.6",
