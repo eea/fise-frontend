@@ -2127,7 +2127,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@0.1.9, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@npm:0.1.10":
+  version: 0.1.10
+  resolution: "@eeacms/volto-forest-policy@npm:0.1.10"
+  dependencies:
+    "@eeacms/volto-datablocks": "*"
+    "@eeacms/volto-eea-design-system": "*"
+    "@eeacms/volto-eea-map": "*"
+    "@eeacms/volto-eea-website-theme": "*"
+    "@eeacms/volto-matomo": "*"
+    "@eeacms/volto-openlayers-map": 0.1.4
+    "@eeacms/volto-plotlycharts": "*"
+    "@sentry/browser": 7.17.3
+    dompurify: ^2.0.12
+    draft-js-alignment-plugin: ^2.0.6
+    draft-js-focus-plugin: ^3.0.1
+    draft-js-import-html: ^1.4.1
+    draft-js-inline-toolbar-plugin: ^2.0.3
+    draft-js-modifiers: ^0.2.2
+    draft-js-plugins-editor: ^3.0.0
+    draft-js-resizeable-plugin: ^2.0.9
+    draft-js-video-plugin: ^2.0.2
+    esri-loader: ^2.14.0
+    react-component-queries: 2.3.0
+    react-highlight-words: ^0.16.0
+    react-image-gallery: 1.2.7
+    react-lazy-load-image-component: ^1.5.0
+    react-pdf-js: ^5.1.0
+    react-sizeme: 3.0.1
+    react-stickynode: ^2.1.1
+    redraft: ^0.10.2
+    redux-connect: 10.0.0
+  checksum: 9ccef082cc0a83bac4d9d5bfc500dd84bbd7e79f4fdef0690e38d0c22563f6989d44734231f7efcb45c7cb6adfbe13c06e46a99ced127d71ebf5ec07341b1984
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -14562,7 +14597,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 13.0.0
     "@eeacms/volto-eea-website-theme": 1.11.0
     "@eeacms/volto-embed": 5.0.1
-    "@eeacms/volto-forest-policy": 0.1.9
+    "@eeacms/volto-forest-policy": 0.1.10
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 5.0.8
     "@eeacms/volto-slate-dataentity": 2.0.0
