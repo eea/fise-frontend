@@ -1488,12 +1488,11 @@
     react-countup "6.3.1"
     react-visibility-sensor "5.1.1"
 
-"@eeacms/volto-tableau@3.0.6":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-tableau/-/volto-tableau-3.0.6.tgz#46924fd8794c00f050059b92544745316c91820e"
-  integrity sha512-pxjIto86TklkfzPGO579OmFwcwK5CO2PIEgF9EmvqDYAfjnVrTiyLWwTDDvbjDfFfyIAmi2tew8UvLJZGjshzg==
+"@eeacms/volto-tableau@3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-tableau/-/volto-tableau-3.0.7.tgz#b828e8260c5e7e9733bbbc8758f193d833d37f16"
+  integrity sha512-mQGY9E8PC/OrEustBR3vQtAWivlCdkt479vwjmN29lAhR5ICRXQ6Jh4Dqd5UyRV5yryQmxPg3S99wv+gifTOrQ==
   dependencies:
-    "@eeacms/volto-block-style" "4.1.0"
     "@eeacms/volto-embed" "5.0.0"
     "@eeacms/volto-resize-helper" "^0.2.4"
 
