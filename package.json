@@ -8,11 +8,11 @@
     "src/develop/*"
   ],
   "addons": [
-    "@eeacms/volto-eea-kitkat",
-    "@eeacms/volto-tableau",
-    "@eeacms/volto-datablocks",
     "@eeacms/volto-plotlycharts",
+    "@eeacms/volto-datablocks",
     "@eeacms/volto-embed",
+    "@eeacms/volto-tableau",
+    "@eeacms/volto-eea-kitkat",
     "@eeacms/volto-middleware-vh",
     "@eeacms/volto-slate-dataentity",
     "@eeacms/volto-eea-design-system",
