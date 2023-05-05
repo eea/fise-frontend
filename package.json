@@ -58,6 +58,9 @@
     "stylelint-config-prettier": "8.0.1",
     "stylelint-prettier": "1.1.2"
   },
+  "resolutions": {
+    "react-countup/countup.js": "2.5.0"
+  },
   "scripts": {
     "fise-quickstart": "RAZZLE_API_PATH=http://localhost:8080/fise yarn start",
     "start": "razzle start",
