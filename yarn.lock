@@ -2142,7 +2142,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@0.1.13, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@0.1.14, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -14694,7 +14694,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 13.0.0
     "@eeacms/volto-eea-website-theme": 1.11.0
     "@eeacms/volto-embed": 5.0.1
-    "@eeacms/volto-forest-policy": 0.1.13
+    "@eeacms/volto-forest-policy": 0.1.14
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 5.0.8
     "@eeacms/volto-slate-dataentity": 2.0.0
