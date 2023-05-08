@@ -1831,6 +1831,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eeacms/volto-addons-forest@npm:*":
+  version: 0.1.6
+  resolution: "@eeacms/volto-addons-forest@npm:0.1.6"
+  dependencies:
+    dompurify: ^2.0.12
+    draft-js-alignment-plugin: ^2.0.6
+    draft-js-focus-plugin: ^3.0.1
+    draft-js-import-html: ^1.4.1
+    draft-js-inline-toolbar-plugin: ^2.0.3
+    draft-js-modifiers: ^0.2.2
+    draft-js-plugins-editor: ^3.0.0
+    draft-js-resizeable-plugin: ^2.0.9
+    draft-js-video-plugin: ^2.0.2
+    esri-loader: ^2.14.0
+    react-component-queries: 2.3.0
+    react-highlight-words: ^0.16.0
+    react-image-gallery: ^1.0.7
+    react-lazy-load-image-component: ^1.4.3
+    react-pdf-js: ^5.1.0
+    react-sizeme: 3.0.1
+    redraft: ^0.10.2
+  checksum: c19e06addf910ca4931de2cd3f81e865e35505866e5cc9fd5c7dfb2ef6f4974b768aa24f951132d187fb31c24b1519d9eff312984510d9545d07741e3a8db824
+  languageName: node
+  linkType: hard
+
 "@eeacms/volto-anchors@npm:0.1.5":
   version: 0.1.5
   resolution: "@eeacms/volto-anchors@npm:0.1.5"
@@ -2179,6 +2204,29 @@ __metadata:
     react-sizeme: 3.0.1
     react-stickynode: ^2.1.1
     redraft: ^0.10.2
+    redux-connect: 10.0.0
+  languageName: unknown
+  linkType: soft
+
+"@eeacms/volto-forests-theme@workspace:src/develop/volto-forests-theme":
+  version: 0.0.0-use.local
+  resolution: "@eeacms/volto-forests-theme@workspace:src/develop/volto-forests-theme"
+  dependencies:
+    "@cypress/code-coverage": ^3.9.5
+    "@eeacms/volto-addons-forest": "*"
+    "@eeacms/volto-datablocks": "*"
+    "@eeacms/volto-eea-map": "*"
+    "@eeacms/volto-matomo": "*"
+    "@eeacms/volto-openlayers-map": 0.1.4
+    "@eeacms/volto-plotlycharts": "*"
+    "@sentry/browser": 7.17.3
+    babel-plugin-transform-class-properties: ^6.24.1
+    cypress: 10.7.0
+    md5: ^2.3.0
+    react-highlight-words: ^0.16.0
+    react-image-gallery: 1.2.7
+    react-lazy-load-image-component: ^1.5.0
+    react-stickynode: ^2.1.1
     redux-connect: 10.0.0
   languageName: unknown
   linkType: soft
@@ -11114,6 +11162,58 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cypress@npm:10.7.0":
+  version: 10.7.0
+  resolution: "cypress@npm:10.7.0"
+  dependencies:
+    "@cypress/request": ^2.88.10
+    "@cypress/xvfb": ^1.2.4
+    "@types/node": ^14.14.31
+    "@types/sinonjs__fake-timers": 8.1.1
+    "@types/sizzle": ^2.3.2
+    arch: ^2.2.0
+    blob-util: ^2.0.2
+    bluebird: ^3.7.2
+    buffer: ^5.6.0
+    cachedir: ^2.3.0
+    chalk: ^4.1.0
+    check-more-types: ^2.24.0
+    cli-cursor: ^3.1.0
+    cli-table3: ~0.6.1
+    commander: ^5.1.0
+    common-tags: ^1.8.0
+    dayjs: ^1.10.4
+    debug: ^4.3.2
+    enquirer: ^2.3.6
+    eventemitter2: ^6.4.3
+    execa: 4.1.0
+    executable: ^4.1.1
+    extract-zip: 2.0.1
+    figures: ^3.2.0
+    fs-extra: ^9.1.0
+    getos: ^3.2.1
+    is-ci: ^3.0.0
+    is-installed-globally: ~0.4.0
+    lazy-ass: ^1.6.0
+    listr2: ^3.8.3
+    lodash: ^4.17.21
+    log-symbols: ^4.0.0
+    minimist: ^1.2.6
+    ospath: ^1.2.2
+    pretty-bytes: ^5.6.0
+    proxy-from-env: 1.0.0
+    request-progress: ^3.0.0
+    semver: ^7.3.2
+    supports-color: ^8.1.1
+    tmp: ~0.2.1
+    untildify: ^4.0.0
+    yauzl: ^2.10.0
+  bin:
+    cypress: bin/cypress
+  checksum: ef8a5ae54f3404f7926e1e248ba7a27c7f66e654a9603bf9df6366731d8dd75455f6ec9cc34d7e55e1a8c3cb8e0e36ce59add81b7b14466f2063cfe45e6c00f4
+  languageName: node
+  linkType: hard
+
 "cypress@npm:11.1.0":
   version: 11.1.0
   resolution: "cypress@npm:11.1.0"
@@ -13744,6 +13844,13 @@ __metadata:
   version: 6.4.7
   resolution: "eventemitter2@npm:6.4.7"
   checksum: 1b36a77e139d6965ebf3a36c01fa00c089ae6b80faa1911e52888f40b3a7057b36a2cc45dcd1ad87cda3798fe7b97a0aabcbb8175a8b96092a23bb7d0f039e66
+  languageName: node
+  linkType: hard
+
+"eventemitter2@npm:^6.4.3":
+  version: 6.4.9
+  resolution: "eventemitter2@npm:6.4.9"
+  checksum: be59577c1e1c35509c7ba0e2624335c35bbcfd9485b8a977384c6cc6759341ea1a98d3cb9dbaa5cea4fff9b687e504504e3f9c2cc1674cf3bd8a43a7c74ea3eb
   languageName: node
   linkType: hard
 
@@ -24982,6 +25089,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-image-gallery@npm:^1.0.7":
+  version: 1.2.11
+  resolution: "react-image-gallery@npm:1.2.11"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 0399bab83b343e395ed20b8c663ae0c1be60ae35de18b9697ebe045b51d0267e2d572e647eb2c69cef0e78351207304c181c746ef29f07f5472c4f479f1460c9
+  languageName: node
+  linkType: hard
+
 "react-input-autosize@npm:^2.1.2, react-input-autosize@npm:^2.2.1":
   version: 2.2.2
   resolution: "react-input-autosize@npm:2.2.2"
@@ -25104,7 +25220,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-lazy-load-image-component@npm:1.5.6, react-lazy-load-image-component@npm:^1.4.0, react-lazy-load-image-component@npm:^1.5.0":
+"react-lazy-load-image-component@npm:1.5.6, react-lazy-load-image-component@npm:^1.4.0, react-lazy-load-image-component@npm:^1.4.3, react-lazy-load-image-component@npm:^1.5.0":
   version: 1.5.6
   resolution: "react-lazy-load-image-component@npm:1.5.6"
   dependencies:
