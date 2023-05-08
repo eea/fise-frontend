@@ -41,6 +41,8 @@
     "semantic-ui-react": "2.0.4"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "3.10.0",
+    "cypress-fail-fast": "7.0.0",
     "@plone/scripts": "^2.1.2",
     "@storybook/addon-actions": "^6.3.0",
     "@storybook/addon-controls": "6.3.0",
