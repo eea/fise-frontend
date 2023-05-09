@@ -1850,31 +1850,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-addons-forest@npm:0.1.6":
-  version: 0.1.6
-  resolution: "@eeacms/volto-addons-forest@npm:0.1.6"
-  dependencies:
-    dompurify: ^2.0.12
-    draft-js-alignment-plugin: ^2.0.6
-    draft-js-focus-plugin: ^3.0.1
-    draft-js-import-html: ^1.4.1
-    draft-js-inline-toolbar-plugin: ^2.0.3
-    draft-js-modifiers: ^0.2.2
-    draft-js-plugins-editor: ^3.0.0
-    draft-js-resizeable-plugin: ^2.0.9
-    draft-js-video-plugin: ^2.0.2
-    esri-loader: ^2.14.0
-    react-component-queries: 2.3.0
-    react-highlight-words: ^0.16.0
-    react-image-gallery: ^1.0.7
-    react-lazy-load-image-component: ^1.4.3
-    react-pdf-js: ^5.1.0
-    react-sizeme: 3.0.1
-    redraft: ^0.10.2
-  checksum: c19e06addf910ca4931de2cd3f81e865e35505866e5cc9fd5c7dfb2ef6f4974b768aa24f951132d187fb31c24b1519d9eff312984510d9545d07741e3a8db824
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-anchors@npm:0.2.0":
   version: 0.2.0
   resolution: "@eeacms/volto-anchors@npm:0.2.0"
@@ -2000,7 +1975,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@*, @eeacms/volto-eea-design-system@workspace:src/develop/volto-eea-design-system":
+"@eeacms/volto-eea-design-system@*, @eeacms/volto-eea-design-system@1.0.7, @eeacms/volto-eea-design-system@workspace:src/develop/volto-eea-design-system":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-eea-design-system@workspace:src/develop/volto-eea-design-system"
   dependencies:
@@ -2017,21 +1992,6 @@ __metadata:
     slick-carousel: ^1.8.1
   languageName: unknown
   linkType: soft
-
-"@eeacms/volto-eea-design-system@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@eeacms/volto-eea-design-system@npm:1.0.1"
-  dependencies:
-    "@eeacms/volto-corsproxy": "*"
-    "@fontsource/roboto": 4.5.8
-    react-countup: ^6.3.0
-    react-lazy-load-image-component: 1.5.6
-    react-slick: ^0.28.1
-    remixicon: 2.5.0
-    slick-carousel: ^1.8.1
-  checksum: 643d3786125b02e4d0dc78f36b6944c336e3974a0505a65412f85e9399c77f73a3b43890518c3edde632a22cde88758227b92b198f03dc81bb9c1a5ff5b5fccf
-  languageName: node
-  linkType: hard
 
 "@eeacms/volto-eea-kitkat@npm:15.3.0":
   version: 15.3.0
@@ -14675,9 +14635,8 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-react-jsx": "*"
     "@cypress/code-coverage": 3.10.0
-    "@eeacms/volto-addons-forest": 0.1.6
     "@eeacms/volto-datablocks": 4.0.4
-    "@eeacms/volto-eea-design-system": 1.0.1
+    "@eeacms/volto-eea-design-system": 1.0.7
     "@eeacms/volto-eea-kitkat": 15.3.0
     "@eeacms/volto-eea-website-theme": 1.11.0
     "@eeacms/volto-embed": 5.0.2
@@ -24970,15 +24929,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-image-gallery@npm:^1.0.7":
-  version: 1.2.11
-  resolution: "react-image-gallery@npm:1.2.11"
-  peerDependencies:
-    react: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 0399bab83b343e395ed20b8c663ae0c1be60ae35de18b9697ebe045b51d0267e2d572e647eb2c69cef0e78351207304c181c746ef29f07f5472c4f479f1460c9
-  languageName: node
-  linkType: hard
-
 "react-input-autosize@npm:^2.1.2, react-input-autosize@npm:^2.2.1":
   version: 2.2.2
   resolution: "react-input-autosize@npm:2.2.2"
@@ -25101,7 +25051,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-lazy-load-image-component@npm:1.5.6, react-lazy-load-image-component@npm:^1.4.0, react-lazy-load-image-component@npm:^1.4.3, react-lazy-load-image-component@npm:^1.5.0":
+"react-lazy-load-image-component@npm:1.5.6, react-lazy-load-image-component@npm:^1.4.0, react-lazy-load-image-component@npm:^1.5.0":
   version: 1.5.6
   resolution: "react-lazy-load-image-component@npm:1.5.6"
   dependencies:
