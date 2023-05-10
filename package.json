@@ -39,6 +39,7 @@
     "@eeacms/volto-slate-dataentity": "2.0.1",
     "@eeacms/volto-tableau": "3.0.7",
     "@plone/volto": "16.20.0",
+    "cross-env": "7.0.3",
     "eslint-plugin-jsx-a11y": "6.6.0",
     "semantic-ui-react": "2.0.4"
   },
