@@ -1975,7 +1975,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@*, @eeacms/volto-eea-design-system@workspace:src/develop/volto-eea-design-system":
+"@eeacms/volto-eea-design-system@*, @eeacms/volto-eea-design-system@1.0.7, @eeacms/volto-eea-design-system@workspace:src/develop/volto-eea-design-system":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-eea-design-system@workspace:src/develop/volto-eea-design-system"
   dependencies:
@@ -1992,21 +1992,6 @@ __metadata:
     slick-carousel: ^1.8.1
   languageName: unknown
   linkType: soft
-
-"@eeacms/volto-eea-design-system@npm:1.0.7":
-  version: 1.0.7
-  resolution: "@eeacms/volto-eea-design-system@npm:1.0.7"
-  dependencies:
-    "@eeacms/volto-corsproxy": "*"
-    "@fontsource/roboto": 4.5.8
-    react-countup: ^6.3.0
-    react-lazy-load-image-component: 1.5.6
-    react-slick: ^0.28.1
-    remixicon: 2.5.0
-    slick-carousel: ^1.8.1
-  checksum: 5246c7a244a2524682aff67305631a19f9c2c2b17b5ce2325808d47cbc5e119ad1a4258fbb126f9ad354277b3ae978d8b2a768e1de758b19e78027426c0fec2c
-  languageName: node
-  linkType: hard
 
 "@eeacms/volto-eea-kitkat@npm:15.3.0":
   version: 15.3.0
@@ -2104,7 +2089,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@0.1.15, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@npm:0.1.16":
+  version: 0.1.16
+  resolution: "@eeacms/volto-forest-policy@npm:0.1.16"
+  dependencies:
+    "@eeacms/volto-datablocks": "*"
+    "@eeacms/volto-eea-design-system": "*"
+    "@eeacms/volto-eea-map": "*"
+    "@eeacms/volto-eea-website-theme": "*"
+    "@eeacms/volto-globalsearch": "*"
+    "@eeacms/volto-matomo": "*"
+    "@eeacms/volto-openlayers-map": 0.1.4
+    "@eeacms/volto-plotlycharts": "*"
+    "@eeacms/volto-searchlib": "*"
+    "@sentry/browser": 7.17.3
+    dompurify: ^2.0.12
+    draft-js-alignment-plugin: ^2.0.6
+    draft-js-focus-plugin: ^3.0.1
+    draft-js-import-html: ^1.4.1
+    draft-js-inline-toolbar-plugin: ^2.0.3
+    draft-js-modifiers: ^0.2.2
+    draft-js-plugins-editor: ^3.0.0
+    draft-js-resizeable-plugin: ^2.0.9
+    draft-js-video-plugin: ^2.0.2
+    esri-loader: ^2.14.0
+    razzle-plugin-scss: 4.2.18
+    react-component-queries: 2.3.0
+    react-highlight-words: ^0.16.0
+    react-image-gallery: 1.2.7
+    react-lazy-load-image-component: ^1.5.0
+    react-pdf-js: ^5.1.0
+    react-sizeme: 3.0.1
+    react-stickynode: ^2.1.1
+    redraft: ^0.10.2
+    redux-connect: 10.0.0
+  checksum: 1f0977745b42dd7a197c67bf99082a8f7d290e177158013ab27b93beb940db27ea5a0f1539ac918dbc08ff0e6bbd9a7052f0b4ac132aff616baa3dfcf2a3ae54
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -15067,7 +15090,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 15.3.0
     "@eeacms/volto-eea-website-theme": 1.14.0
     "@eeacms/volto-embed": 5.0.2
-    "@eeacms/volto-forest-policy": 0.1.15
+    "@eeacms/volto-forest-policy": 0.1.16
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 5.1.1
