@@ -20,6 +20,12 @@
             ],
             "@eeacms/volto-tableau": [
                 "develop/volto-tableau/src"
+            ],
+            "@eeacms/volto-searchlib": [
+                "develop/volto-searchlib/src"
+            ],
+            "@eeacms/volto-globalsearch": [
+                "develop/volto-globalsearch/src"
             ]
         }
     }

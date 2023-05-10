@@ -43,5 +43,19 @@
     "package": "@eeacms/volto-tableau",
     "branch": "develop",
     "path": "src"
+  },
+  "volto-searchlib": {
+    "url": "https://github.com/eea/volto-searchlib.git",
+    "https": "https://github.com/eea/volto-searchlib.git",
+    "package": "@eeacms/volto-searchlib",
+    "branch": "develop",
+    "path": "src"
+  },
+  "volto-globalsearch": {
+    "url": "https://github.com/eea/volto-globalsearch.git",
+    "https": "https://github.com/eea/volto-globalsearch.git",
+    "package": "@eeacms/volto-globalsearch",
+    "branch": "develop",
+    "path": "src"
   }
 }

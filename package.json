@@ -17,7 +17,9 @@
     "@eeacms/volto-slate-dataentity",
     "@eeacms/volto-eea-design-system",
     "@eeacms/volto-eea-website-theme",
-    "@eeacms/volto-forest-policy"
+    "@eeacms/volto-forest-policy",
+    "@eeacms/volto-globalsearch",
+    "@eeacms/volto-searchlib"
   ],
   "installConfig": {
     "pnp": false
@@ -30,8 +32,10 @@
     "@eeacms/volto-eea-website-theme": "1.14.0",
     "@eeacms/volto-embed": "5.0.2",
     "@eeacms/volto-forest-policy": "0.1.15",
+    "@eeacms/volto-globalsearch": "1.0.15",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "5.1.1",
+    "@eeacms/volto-searchlib": "0.5.3",
     "@eeacms/volto-slate-dataentity": "2.0.1",
     "@eeacms/volto-tableau": "3.0.7",
     "@plone/volto": "16.20.0",
