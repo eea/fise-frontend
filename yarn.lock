@@ -1993,9 +1993,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@eeacms/volto-eea-design-system@npm:1.0.7":
-  version: 1.0.7
-  resolution: "@eeacms/volto-eea-design-system@npm:1.0.7"
+"@eeacms/volto-eea-design-system@npm:1.11.0":
+  version: 1.11.0
+  resolution: "@eeacms/volto-eea-design-system@npm:1.11.0"
   dependencies:
     "@eeacms/volto-corsproxy": "*"
     "@fontsource/roboto": 4.5.8
@@ -2004,7 +2004,7 @@ __metadata:
     react-slick: ^0.28.1
     remixicon: 2.5.0
     slick-carousel: ^1.8.1
-  checksum: 5246c7a244a2524682aff67305631a19f9c2c2b17b5ce2325808d47cbc5e119ad1a4258fbb126f9ad354277b3ae978d8b2a768e1de758b19e78027426c0fec2c
+  checksum: b2f58043b52dad7650558f60fc8505faf9525f109591905f90267ec73efa56b3a862d254f2782241dd9ab0d61465ddc1018919cb7c6f4bcd8c0cd7e5afc1f9d0
   languageName: node
   linkType: hard
 
@@ -2243,7 +2243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@*, @eeacms/volto-plotlycharts@6.0.0, @eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts":
+"@eeacms/volto-plotlycharts@*, @eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts"
   dependencies:
@@ -2261,6 +2261,23 @@ __metadata:
     react-plotly.js: 2.5.1
   languageName: unknown
   linkType: soft
+
+"@eeacms/volto-plotlycharts@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@eeacms/volto-plotlycharts@npm:6.0.1"
+  dependencies:
+    "@eeacms/volto-datablocks": "*"
+    "@eeacms/volto-matomo": "*"
+    "@plone/scripts": "*"
+    plotly.js: ^2.9.0
+    react-chart-editor: 0.45.0
+    react-colorscales: 0.7.3
+    react-inspector: 5.1.1
+    react-json-editor-ajrm: 2.5.13
+    react-plotly.js: 2.5.1
+  checksum: de404ee711a231e3144165f6ff1e3edec160d5460cbafbccc189b6f23bc7b33aec8d1fb6fcc563a30215c563aadf9afc1101df4297183e7395182d6d46140797
+  languageName: node
+  linkType: hard
 
 "@eeacms/volto-quote-block@npm:1.1.0":
   version: 1.1.0
@@ -15034,14 +15051,14 @@ __metadata:
     "@babel/plugin-transform-react-jsx": "*"
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 4.0.5
-    "@eeacms/volto-eea-design-system": 1.0.7
+    "@eeacms/volto-eea-design-system": 1.11.0
     "@eeacms/volto-eea-kitkat": 15.3.0
     "@eeacms/volto-eea-website-theme": 1.14.0
     "@eeacms/volto-embed": 5.0.2
     "@eeacms/volto-forest-policy": 0.1.16
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
-    "@eeacms/volto-plotlycharts": 6.0.0
+    "@eeacms/volto-plotlycharts": 6.0.1
     "@eeacms/volto-searchlib": 0.5.3
     "@eeacms/volto-slate-dataentity": 2.0.1
     "@eeacms/volto-tableau": 3.0.7

@@ -26,6 +26,7 @@ lighthouse-report.html
 .vscode/
 .#*
 *~
+start-backendless.sh
 
 # Python
 /api/.installed.cfg
