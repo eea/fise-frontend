@@ -6,42 +6,5 @@
     "branch": "develop",
     "develop": true,
     "path": "src"
-  },
-  "volto-eea-design-system": {
-    "url": "git@github.com:eea/volto-eea-design-system.git",
-    "https": "https://github.com/eea/volto-eea-design-system.git",
-    "package": "@eeacms/volto-eea-design-system",
-    "branch": "develop",
-    "develop": true,
-    "path": "src"
-  },
-  "volto-eea-website-theme": {
-    "url": "git@github.com:eea/volto-eea-website-theme.git",
-    "https": "https://github.com/eea/volto-eea-website-theme.git",
-    "package": "@eeacms/volto-eea-website-theme",
-    "branch": "develop",
-    "develop": true,
-    "path": "src"
-  },
-  "volto-plotlycharts": {
-    "url": "https://github.com/eea/volto-plotlycharts.git",
-    "https": "https://github.com/eea/volto-plotlycharts.git",
-    "package": "@eeacms/volto-plotlycharts",
-    "branch": "develop",
-    "path": "src"
-  },
-  "volto-datablocks": {
-    "url": "https://github.com/eea/volto-datablocks.git",
-    "https": "https://github.com/eea/volto-datablocks.git",
-    "package": "@eeacms/volto-datablocks",
-    "branch": "develop",
-    "path": "src"
-  },
-  "volto-tableau": {
-    "url": "https://github.com/eea/volto-tableau.git",
-    "https": "https://github.com/eea/volto-tableau.git",
-    "package": "@eeacms/volto-tableau",
-    "branch": "develop",
-    "path": "src"
   }
 }
