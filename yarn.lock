@@ -2082,45 +2082,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:0.1.17":
-  version: 0.1.17
-  resolution: "@eeacms/volto-forest-policy@npm:0.1.17"
-  dependencies:
-    "@eeacms/volto-datablocks": "*"
-    "@eeacms/volto-eea-design-system": "*"
-    "@eeacms/volto-eea-map": "*"
-    "@eeacms/volto-eea-website-theme": "*"
-    "@eeacms/volto-globalsearch": "*"
-    "@eeacms/volto-matomo": "*"
-    "@eeacms/volto-openlayers-map": 0.1.4
-    "@eeacms/volto-plotlycharts": "*"
-    "@eeacms/volto-searchlib": "*"
-    "@sentry/browser": 7.17.3
-    dompurify: ^2.0.12
-    draft-js-alignment-plugin: ^2.0.6
-    draft-js-focus-plugin: ^3.0.1
-    draft-js-import-html: ^1.4.1
-    draft-js-inline-toolbar-plugin: ^2.0.3
-    draft-js-modifiers: ^0.2.2
-    draft-js-plugins-editor: ^3.0.0
-    draft-js-resizeable-plugin: ^2.0.9
-    draft-js-video-plugin: ^2.0.2
-    esri-loader: ^2.14.0
-    razzle-plugin-scss: 4.2.18
-    react-component-queries: 2.3.0
-    react-highlight-words: ^0.16.0
-    react-image-gallery: 1.2.7
-    react-lazy-load-image-component: ^1.5.0
-    react-pdf-js: ^5.1.0
-    react-sizeme: 3.0.1
-    react-stickynode: ^2.1.1
-    redraft: ^0.10.2
-    redux-connect: 10.0.0
-  checksum: 5e1c588edac2975d0bf5483e882deb83d1ff7a1149dec86e90e3e73a5ed375b688fb35117358e55c6ff567661e9255bf811439e293f6a84f686b637b1fc30a4c
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@0.1.18, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -15054,7 +15016,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 15.3.0
     "@eeacms/volto-eea-website-theme": 1.14.0
     "@eeacms/volto-embed": 5.0.2
-    "@eeacms/volto-forest-policy": 0.1.17
+    "@eeacms/volto-forest-policy": 0.1.18
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 6.0.3
