@@ -1745,7 +1745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/code-coverage@npm:^3.10.0":
+"@cypress/code-coverage@npm:^3.10.0, @cypress/code-coverage@npm:^3.9.5":
   version: 3.10.4
   resolution: "@cypress/code-coverage@npm:3.10.4"
   dependencies:
@@ -2100,7 +2100,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@0.1.19, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@npm:0.1.20":
+  version: 0.1.20
+  resolution: "@eeacms/volto-forest-policy@npm:0.1.20"
+  dependencies:
+    "@eeacms/volto-datablocks": "*"
+    "@eeacms/volto-eea-design-system": "*"
+    "@eeacms/volto-eea-map": "*"
+    "@eeacms/volto-eea-website-theme": "*"
+    "@eeacms/volto-globalsearch": "*"
+    "@eeacms/volto-matomo": "*"
+    "@eeacms/volto-openlayers-map": 0.1.4
+    "@eeacms/volto-plotlycharts": "*"
+    "@eeacms/volto-searchlib": "*"
+    "@sentry/browser": 7.17.3
+    dompurify: ^2.0.12
+    draft-js-alignment-plugin: ^2.0.6
+    draft-js-focus-plugin: ^3.0.1
+    draft-js-import-html: ^1.4.1
+    draft-js-inline-toolbar-plugin: ^2.0.3
+    draft-js-modifiers: ^0.2.2
+    draft-js-plugins-editor: ^3.0.0
+    draft-js-resizeable-plugin: ^2.0.9
+    draft-js-video-plugin: ^2.0.2
+    esri-loader: ^2.14.0
+    razzle-plugin-scss: 4.2.18
+    react-component-queries: 2.3.0
+    react-highlight-words: ^0.16.0
+    react-image-gallery: 1.2.7
+    react-lazy-load-image-component: ^1.5.0
+    react-pdf-js: ^5.1.0
+    react-sizeme: 3.0.1
+    react-stickynode: ^2.1.1
+    redraft: ^0.10.2
+    redux-connect: 10.0.0
+  checksum: b271934994e0f8fd4eba0478053b24bb110e6f3145256d0ce2b766a57cc80c6415fbe16ba9eb802eb543100a02f3afb23b9434a7191a8fb592bf1124991ae175
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -2272,13 +2310,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-resize-helper@npm:^0.2.4":
-  version: 0.2.10
-  resolution: "@eeacms/volto-resize-helper@npm:0.2.10"
-  checksum: 8dd8c5dfb1628bd680dfb25ba1a567553f0a755801267d3f7c51e03c25980a7fa74610365f63228e9115ef28ee02e0a3e9155b853a34540fced746f830529475
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-searchlib@npm:*, @eeacms/volto-searchlib@npm:0.5.3":
   version: 0.5.3
   resolution: "@eeacms/volto-searchlib@npm:0.5.3"
@@ -2381,15 +2412,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tableau@npm:3.0.7":
-  version: 3.0.7
-  resolution: "@eeacms/volto-tableau@npm:3.0.7"
+"@eeacms/volto-tableau@npm:3.0.8":
+  version: 3.0.8
+  resolution: "@eeacms/volto-tableau@npm:3.0.8"
   dependencies:
-    "@eeacms/volto-embed": 5.0.0
-    "@eeacms/volto-resize-helper": ^0.2.4
-  checksum: 49200e89c118dbe63c209053ae2c79859840407416e172293d428fc6cb56e3178fb325981ca63136185242b39e89b4e9eb0fdd9486d68194eff0f6f355d09d3f
+    "@eeacms/volto-embed": "*"
+    "@eeacms/volto-object-widget": "*"
+    "@eeacms/volto-resize-helper": "*"
+  checksum: c21dc82c5b73b151010bf4c3b32031f9be94caf8d0ff79bee7edc9309678af5c873f54c26f4ff445685374a69ddf95cb66a75169f6fcda265a07a21a21290404
   languageName: node
   linkType: hard
+
+"@eeacms/volto-tableau@workspace:src/develop/volto-tableau":
+  version: 0.0.0-use.local
+  resolution: "@eeacms/volto-tableau@workspace:src/develop/volto-tableau"
+  dependencies:
+    "@cypress/code-coverage": ^3.9.5
+    "@eeacms/volto-embed": "*"
+    "@eeacms/volto-object-widget": "*"
+    "@eeacms/volto-resize-helper": "*"
+    "@plone/scripts": "*"
+    babel-plugin-transform-class-properties: ^6.24.1
+    md5: ^2.3.0
+  languageName: unknown
+  linkType: soft
 
 "@eeacms/volto-tabs-block@npm:4.0.1":
   version: 4.0.1
@@ -15029,13 +15075,13 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 15.3.0
     "@eeacms/volto-eea-website-theme": 1.14.0
     "@eeacms/volto-embed": 5.0.2
-    "@eeacms/volto-forest-policy": 0.1.19
+    "@eeacms/volto-forest-policy": 0.1.20
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 6.0.3
     "@eeacms/volto-searchlib": 0.5.3
     "@eeacms/volto-slate-dataentity": 2.0.1
-    "@eeacms/volto-tableau": 3.0.7
+    "@eeacms/volto-tableau": 3.0.8
     "@plone/scripts": ^2.1.2
     "@plone/volto": 16.20.0
     "@storybook/addon-actions": ^6.3.0

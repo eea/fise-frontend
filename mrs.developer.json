@@ -14,5 +14,13 @@
     "branch": "develop",
     "develop": true,
     "path": "src"
+  },
+  "volto-tableau": {
+    "url": "git@github.com:eea/volto-tableau.git",
+    "https": "https://github.com/eea/volto-tableau.git",
+    "package": "@eeacms/volto-tableau",
+    "branch": "develop",
+    "develop": true,
+    "path": "src"
   }
 }
