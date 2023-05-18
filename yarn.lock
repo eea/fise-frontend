@@ -1745,7 +1745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/code-coverage@npm:^3.10.0, @cypress/code-coverage@npm:^3.9.5":
+"@cypress/code-coverage@npm:^3.10.0":
   version: 3.10.4
   resolution: "@cypress/code-coverage@npm:3.10.4"
   dependencies:
@@ -1939,7 +1939,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-datablocks@*, @eeacms/volto-datablocks@4.0.5, @eeacms/volto-datablocks@workspace:src/develop/volto-datablocks":
+"@eeacms/volto-datablocks@*, @eeacms/volto-datablocks@workspace:src/develop/volto-datablocks":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-datablocks@workspace:src/develop/volto-datablocks"
   dependencies:
@@ -1960,6 +1960,24 @@ __metadata:
     sanitize-html: 2.7.3
   languageName: unknown
   linkType: soft
+
+"@eeacms/volto-datablocks@npm:4.0.5":
+  version: 4.0.5
+  resolution: "@eeacms/volto-datablocks@npm:4.0.5"
+  dependencies:
+    "@eeacms/volto-embed": "*"
+    "@eeacms/volto-group-block": "*"
+    "@eeacms/volto-matomo": "*"
+    d3: 7.1.1
+    date-fns: 2.28.0
+    humanize-plus: ^1.8.2
+    object-hash: 2.2.0
+    react-countup: 6.1.1
+    react-visibility-sensor: 5.1.1
+    sanitize-html: 2.7.3
+  checksum: 2c7a6d23c7aefca0cf244fc5318983e427921b17c8ad635c32ca2a79bc3c934b2b0e0bfaa08994d25487bb3e9591daf839f86d302b19cd70a675bb3951d0ac4c
+  languageName: node
+  linkType: hard
 
 "@eeacms/volto-depiction@npm:1.1.0":
   version: 1.1.0
@@ -2082,7 +2100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@0.1.18, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@0.1.19, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -2221,26 +2239,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@*, @eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts":
-  version: 0.0.0-use.local
-  resolution: "@eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts"
-  dependencies:
-    "@cypress/code-coverage": ^3.10.0
-    "@eeacms/volto-datablocks": "*"
-    "@eeacms/volto-matomo": "*"
-    "@plone/scripts": "*"
-    babel-plugin-transform-class-properties: ^6.24.1
-    md5: ^2.3.0
-    plotly.js: ^2.9.0
-    react-chart-editor: 0.45.0
-    react-colorscales: 0.7.3
-    react-inspector: 5.1.1
-    react-json-editor-ajrm: 2.5.13
-    react-plotly.js: 2.5.1
-  languageName: unknown
-  linkType: soft
-
-"@eeacms/volto-plotlycharts@npm:6.0.3":
+"@eeacms/volto-plotlycharts@npm:*, @eeacms/volto-plotlycharts@npm:6.0.3":
   version: 6.0.3
   resolution: "@eeacms/volto-plotlycharts@npm:6.0.3"
   dependencies:
@@ -2382,18 +2381,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tableau@3.0.7, @eeacms/volto-tableau@workspace:src/develop/volto-tableau":
-  version: 0.0.0-use.local
-  resolution: "@eeacms/volto-tableau@workspace:src/develop/volto-tableau"
+"@eeacms/volto-tableau@npm:3.0.7":
+  version: 3.0.7
+  resolution: "@eeacms/volto-tableau@npm:3.0.7"
   dependencies:
-    "@cypress/code-coverage": ^3.9.5
     "@eeacms/volto-embed": 5.0.0
     "@eeacms/volto-resize-helper": ^0.2.4
-    "@plone/scripts": "*"
-    babel-plugin-transform-class-properties: ^6.24.1
-    md5: ^2.3.0
-  languageName: unknown
-  linkType: soft
+  checksum: 49200e89c118dbe63c209053ae2c79859840407416e172293d428fc6cb56e3178fb325981ca63136185242b39e89b4e9eb0fdd9486d68194eff0f6f355d09d3f
+  languageName: node
+  linkType: hard
 
 "@eeacms/volto-tabs-block@npm:4.0.1":
   version: 4.0.1
@@ -15033,7 +15029,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 15.3.0
     "@eeacms/volto-eea-website-theme": 1.14.0
     "@eeacms/volto-embed": 5.0.2
-    "@eeacms/volto-forest-policy": 0.1.18
+    "@eeacms/volto-forest-policy": 0.1.19
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 6.0.3
