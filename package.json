@@ -17,6 +17,7 @@
     "@eeacms/volto-slate-dataentity",
     "@eeacms/volto-eea-design-system",
     "@eeacms/volto-eea-website-theme",
+    "@eeacms/volto-redmine-helpdesk",
     "@eeacms/volto-forest-policy",
     "@eeacms/volto-globalsearch",
     "@eeacms/volto-searchlib"
@@ -35,6 +36,7 @@
     "@eeacms/volto-globalsearch": "1.0.15",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "6.0.3",
+    "@eeacms/volto-redmine-helpdesk": "0.1.11",
     "@eeacms/volto-searchlib": "0.5.3",
     "@eeacms/volto-slate-dataentity": "2.0.1",
     "@eeacms/volto-tableau": "3.0.7",
