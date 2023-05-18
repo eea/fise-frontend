@@ -2221,7 +2221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@*, @eeacms/volto-plotlycharts@6.0.3, @eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts":
+"@eeacms/volto-plotlycharts@*, @eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-plotlycharts@workspace:src/develop/volto-plotlycharts"
   dependencies:
@@ -2263,13 +2263,6 @@ __metadata:
   dependencies:
     "@eeacms/volto-object-widget": "*"
   checksum: a1b26932a8dbfc0b7df99bb1675edc360ba75e2d52305e02d3811ac714cf98956734f0a42580bd0c250d364fc629ff2bbf5d5fd826e035452fd0444d19ea264a
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-redmine-helpdesk@npm:0.1.11":
-  version: 0.1.11
-  resolution: "@eeacms/volto-redmine-helpdesk@npm:0.1.11"
-  checksum: f01e6549881e10ce025332688feee64cec880e2c5143197fdd73410fd4bd5eb1a18c112870ba0cd7259bf03ae3561d1ce800ab6d32ccf583c48e05a1343b91c5
   languageName: node
   linkType: hard
 
@@ -15044,7 +15037,6 @@ __metadata:
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 6.0.3
-    "@eeacms/volto-redmine-helpdesk": 0.1.11
     "@eeacms/volto-searchlib": 0.5.3
     "@eeacms/volto-slate-dataentity": 2.0.1
     "@eeacms/volto-tableau": 3.0.7
