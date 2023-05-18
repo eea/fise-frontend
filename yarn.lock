@@ -2240,12 +2240,36 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@eeacms/volto-plotlycharts@npm:6.0.3":
+  version: 6.0.3
+  resolution: "@eeacms/volto-plotlycharts@npm:6.0.3"
+  dependencies:
+    "@eeacms/volto-datablocks": "*"
+    "@eeacms/volto-matomo": "*"
+    "@plone/scripts": "*"
+    plotly.js: ^2.9.0
+    react-chart-editor: 0.45.0
+    react-colorscales: 0.7.3
+    react-inspector: 5.1.1
+    react-json-editor-ajrm: 2.5.13
+    react-plotly.js: 2.5.1
+  checksum: 031cdb908c652b9d3d557cce9a12a45bf5147c6f0757664cb2e8f4ff642d92c4f9b19d1e1a31ada7d2ed145aa938158e497234727baf26e0a3ca0479e8051126
+  languageName: node
+  linkType: hard
+
 "@eeacms/volto-quote-block@npm:1.1.0":
   version: 1.1.0
   resolution: "@eeacms/volto-quote-block@npm:1.1.0"
   dependencies:
     "@eeacms/volto-object-widget": "*"
   checksum: a1b26932a8dbfc0b7df99bb1675edc360ba75e2d52305e02d3811ac714cf98956734f0a42580bd0c250d364fc629ff2bbf5d5fd826e035452fd0444d19ea264a
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-redmine-helpdesk@npm:0.1.11":
+  version: 0.1.11
+  resolution: "@eeacms/volto-redmine-helpdesk@npm:0.1.11"
+  checksum: f01e6549881e10ce025332688feee64cec880e2c5143197fdd73410fd4bd5eb1a18c112870ba0cd7259bf03ae3561d1ce800ab6d32ccf583c48e05a1343b91c5
   languageName: node
   linkType: hard
 
@@ -15020,6 +15044,7 @@ __metadata:
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 6.0.3
+    "@eeacms/volto-redmine-helpdesk": 0.1.11
     "@eeacms/volto-searchlib": 0.5.3
     "@eeacms/volto-slate-dataentity": 2.0.1
     "@eeacms/volto-tableau": 3.0.7
