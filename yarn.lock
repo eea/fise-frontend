@@ -1975,7 +1975,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@npm:*, @eeacms/volto-eea-design-system@npm:1.11.0":
+"@eeacms/volto-eea-design-system@npm:*":
   version: 1.11.0
   resolution: "@eeacms/volto-eea-design-system@npm:1.11.0"
   dependencies:
@@ -1987,6 +1987,21 @@ __metadata:
     remixicon: 2.5.0
     slick-carousel: ^1.8.1
   checksum: b2f58043b52dad7650558f60fc8505faf9525f109591905f90267ec73efa56b3a862d254f2782241dd9ab0d61465ddc1018919cb7c6f4bcd8c0cd7e5afc1f9d0
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-eea-design-system@npm:1.12.0":
+  version: 1.12.0
+  resolution: "@eeacms/volto-eea-design-system@npm:1.12.0"
+  dependencies:
+    "@eeacms/volto-corsproxy": "*"
+    "@fontsource/roboto": 4.5.8
+    react-countup: ^6.3.0
+    react-lazy-load-image-component: 1.5.6
+    react-slick: ^0.28.1
+    remixicon: 2.5.0
+    slick-carousel: ^1.8.1
+  checksum: 8041c1343e7f914d602dbd97af01c48bca9bb2d9aeb12003cd7679ac4f7c07cec7d5047bc7170a744b23c307882e23c7ffa7ec637ce87e640083f1a0186088f9
   languageName: node
   linkType: hard
 
@@ -2082,45 +2097,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:0.1.20":
-  version: 0.1.20
-  resolution: "@eeacms/volto-forest-policy@npm:0.1.20"
-  dependencies:
-    "@eeacms/volto-datablocks": "*"
-    "@eeacms/volto-eea-design-system": "*"
-    "@eeacms/volto-eea-map": "*"
-    "@eeacms/volto-eea-website-theme": "*"
-    "@eeacms/volto-globalsearch": "*"
-    "@eeacms/volto-matomo": "*"
-    "@eeacms/volto-openlayers-map": 0.1.4
-    "@eeacms/volto-plotlycharts": "*"
-    "@eeacms/volto-searchlib": "*"
-    "@sentry/browser": 7.17.3
-    dompurify: ^2.0.12
-    draft-js-alignment-plugin: ^2.0.6
-    draft-js-focus-plugin: ^3.0.1
-    draft-js-import-html: ^1.4.1
-    draft-js-inline-toolbar-plugin: ^2.0.3
-    draft-js-modifiers: ^0.2.2
-    draft-js-plugins-editor: ^3.0.0
-    draft-js-resizeable-plugin: ^2.0.9
-    draft-js-video-plugin: ^2.0.2
-    esri-loader: ^2.14.0
-    razzle-plugin-scss: 4.2.18
-    react-component-queries: 2.3.0
-    react-highlight-words: ^0.16.0
-    react-image-gallery: 1.2.7
-    react-lazy-load-image-component: ^1.5.0
-    react-pdf-js: ^5.1.0
-    react-sizeme: 3.0.1
-    react-stickynode: ^2.1.1
-    redraft: ^0.10.2
-    redux-connect: 10.0.0
-  checksum: b271934994e0f8fd4eba0478053b24bb110e6f3145256d0ce2b766a57cc80c6415fbe16ba9eb802eb543100a02f3afb23b9434a7191a8fb592bf1124991ae175
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@0.1.20, @eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
   dependencies:
@@ -2399,18 +2376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tableau@npm:3.0.8":
-  version: 3.0.8
-  resolution: "@eeacms/volto-tableau@npm:3.0.8"
-  dependencies:
-    "@eeacms/volto-embed": "*"
-    "@eeacms/volto-object-widget": "*"
-    "@eeacms/volto-resize-helper": "*"
-  checksum: c21dc82c5b73b151010bf4c3b32031f9be94caf8d0ff79bee7edc9309678af5c873f54c26f4ff445685374a69ddf95cb66a75169f6fcda265a07a21a21290404
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-tableau@workspace:src/develop/volto-tableau":
+"@eeacms/volto-tableau@3.0.8, @eeacms/volto-tableau@workspace:src/develop/volto-tableau":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-tableau@workspace:src/develop/volto-tableau"
   dependencies:
@@ -15052,7 +15018,7 @@ __metadata:
     "@babel/plugin-transform-react-jsx": "*"
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 5.0.0
-    "@eeacms/volto-eea-design-system": 1.11.0
+    "@eeacms/volto-eea-design-system": 1.12.0
     "@eeacms/volto-eea-kitkat": 15.4.0
     "@eeacms/volto-eea-website-theme": 1.14.0
     "@eeacms/volto-embed": 5.0.2
