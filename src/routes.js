@@ -6,7 +6,6 @@
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
 import config from '@plone/volto/registry';
-import SiteMap from '@eeacms/volto-forest-policy/components/theme/SiteMap/SiteMap';
 import Header from '@eeacms/volto-forest-policy/components/theme/CatalogueViews/AppHeader.jsx';
 import Footer from '@eeacms/volto-forest-policy/components/theme/CatalogueViews/AppFooter.jsx';
 import Head from '@eeacms/volto-forest-policy/components/theme/CatalogueViews/AppHead.jsx';
@@ -33,11 +32,6 @@ const routes = [
     path: '/',
     component: App, // Change this if you want a different component
     routes: [
-      {
-        path: '/sitemap',
-        component: SiteMap,
-        exact: true,
-      },
       // Add your routes here
       ...(config.addonRoutes || []),
       ...defaultRoutes,
