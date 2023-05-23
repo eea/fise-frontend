@@ -2,16 +2,6 @@
     "compilerOptions": {
         "baseUrl": "src",
         "jsx": "react",
-        "paths": {
-            "@eeacms/volto-forest-policy": [
-                "develop/volto-forest-policy/src"
-            ],
-            "@eeacms/volto-datablocks": [
-                "develop/volto-datablocks/src"
-            ],
-            "@eeacms/volto-tableau": [
-                "develop/volto-tableau/src"
-            ]
-        }
+        "paths": {}
     }
 }

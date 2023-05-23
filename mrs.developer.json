@@ -4,7 +4,7 @@
     "https": "https://github.com/eea/volto-forest-policy.git",
     "package": "@eeacms/volto-forest-policy",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   },
   "volto-datablocks": {
@@ -12,7 +12,7 @@
     "https": "https://github.com/eea/volto-datablocks.git",
     "package": "@eeacms/volto-datablocks",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   },
   "volto-tableau": {
@@ -20,7 +20,7 @@
     "https": "https://github.com/eea/volto-tableau.git",
     "package": "@eeacms/volto-tableau",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   }
 }
