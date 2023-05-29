@@ -1444,10 +1444,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-sentry-rancher-config/-/volto-sentry-rancher-config-3.1.0.tgz#99f6b378ece240800dda50ee0bd975fed1f748e0"
   integrity sha512-UveANdM3TXI+gHYGeYCeXGwi2Y/CYvTQttzWi/i5tlpCS/hgSTCbDR8VIhqWsnjIS969QtO7Q+mBiUNKzyXs9g==
 
-"@eeacms/volto-slate-dataentity@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-slate-dataentity/-/volto-slate-dataentity-2.0.1.tgz#bd21c817a0bfefa224a39ea839c6932c155ed396"
-  integrity sha512-OxVJ5/qU+riE3DxjrWULD5NdhJ9iGtUenW7EnBqi0Ak7MfTnzdzA+4iPC0jCyfo5a+7cJpSy3OPH/Oo9qWJedg==
+"@eeacms/volto-slate-dataentity@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-slate-dataentity/-/volto-slate-dataentity-2.1.0.tgz#0368e23074c9532b8a4e305865b417e79f6171cf"
+  integrity sha512-IHnBy3LswtJ/j9UNdrD5/1L9OrrO8fsIz+3jmklcxHAwZUpJYdPIP8AE0zkv5hh881P0X6CEd7U3Ba2qdfzCUg==
   dependencies:
     "@eeacms/volto-datablocks" "*"
 
@@ -14887,16 +14887,7 @@ react-color@~2.18.1:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-colorscales@0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/react-colorscales/-/react-colorscales-0.7.3.tgz#037e66d3df1513e0b76536fdfcc963eeeba3f5a1"
-  integrity sha512-cekeF6mgATIwG257lu4aan2uF3AaiLmI4XvC1Sf2x+KKfCM6J8Ogl4eoO8ii2Cy/ddb+bL1QNnjN9KSQmbGc2Q==
-  dependencies:
-    chroma-js "^1.3.4"
-    rc-slider "^8.4.0"
-    react-select "^1.2.1"
-
-"react-colorscales@github:eea/react-colorscales#1.0.0":
+react-colorscales@0.7.3, "react-colorscales@github:eea/react-colorscales#1.0.0":
   version "0.7.3"
   resolved "https://codeload.github.com/eea/react-colorscales/tar.gz/bc0ec14f30161d705a72779085e63c47738ab845"
   dependencies:
