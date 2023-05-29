@@ -1412,17 +1412,17 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-6.0.4.tgz#bd523e476e393a58196c64db6f611d831aa1374f"
-  integrity sha512-JetCLCv5/fBQgMawu+1WDgK8qdnQD3BxNDiid3f08dh0H3JGnWgbyvNkqJKVkFUkLAyl0dP6SjiFnf9nMxgOGQ==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-6.1.0.tgz#dbddb12314ec979c193b118327fac84ed2d2995a"
+  integrity sha512-pJtapqiGZWYudMIAwhavBPVbcMZArYATQqGx79Zrd3CDDMPxl3jK9xZMKXAwrZDYj8Tj/RkLBcpoi0qyv31oqw==
   dependencies:
     "@eeacms/volto-datablocks" "*"
     "@eeacms/volto-matomo" "*"
     "@plone/scripts" "*"
     plotly.js "^2.9.0"
     react-chart-editor "0.45.0"
-    react-colorscales "0.7.3"
+    react-colorscales "github:eea/react-colorscales#1.0.0"
     react-inspector "5.1.1"
     react-json-editor-ajrm "2.5.13"
     react-plotly.js "2.5.1"
@@ -14891,6 +14891,14 @@ react-colorscales@0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/react-colorscales/-/react-colorscales-0.7.3.tgz#037e66d3df1513e0b76536fdfcc963eeeba3f5a1"
   integrity sha512-cekeF6mgATIwG257lu4aan2uF3AaiLmI4XvC1Sf2x+KKfCM6J8Ogl4eoO8ii2Cy/ddb+bL1QNnjN9KSQmbGc2Q==
+  dependencies:
+    chroma-js "^1.3.4"
+    rc-slider "^8.4.0"
+    react-select "^1.2.1"
+
+"react-colorscales@github:eea/react-colorscales#1.0.0":
+  version "0.7.3"
+  resolved "https://codeload.github.com/eea/react-colorscales/tar.gz/bc0ec14f30161d705a72779085e63c47738ab845"
   dependencies:
     chroma-js "^1.3.4"
     rc-slider "^8.4.0"
