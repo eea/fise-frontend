@@ -2,6 +2,13 @@
     "compilerOptions": {
         "baseUrl": "src",
         "jsx": "react",
-        "paths": {}
+        "paths": {
+            "@eeacms/volto-forest-policy": [
+                "develop/volto-forest-policy/src"
+            ],
+            "@eeacms/volto-embed": [
+                "develop/volto-embed/src"
+            ]
+        }
     }
 }
