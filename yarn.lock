@@ -1412,10 +1412,10 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-6.2.0.tgz#f5b1227eeee529bd5716e620640874b8e08cb368"
-  integrity sha512-eX+Z3BLSpgT2kx75u1RisDwaNF5ASNr13PykvFFqXR4EmhycMYKw8ezgUJVKk1ICCSFf/1lYrDxaIqAsdc5KCQ==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-6.2.1.tgz#f54f6920d10bf3952970c3dbc49ef3a0805153e0"
+  integrity sha512-MdZayvlpqVgrr2FuWIp3T2QtvL/mFVFwXZsQEknS6HpDvlTsPfLVnoRmkoAeO9VpfSHWUQf8OaoO+Q+4sYnmAw==
   dependencies:
     "@eeacms/volto-datablocks" "*"
     "@eeacms/volto-matomo" "*"
@@ -14887,7 +14887,7 @@ react-color@~2.18.1:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-colorscales@0.7.3, "react-colorscales@github:eea/react-colorscales#1.0.1":
+react-colorscales@0.7.3:
   version "0.7.3"
   resolved "https://codeload.github.com/eea/react-colorscales/tar.gz/c9e32bfee905ea57a7319f5257a48d86a26652a1"
   dependencies:
