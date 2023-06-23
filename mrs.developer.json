@@ -14,5 +14,21 @@
     "branch": "develop",
     "develop": true,
     "path": "src"
+  },
+  "volto-searchlib": {
+    "url": "git@github.com:eea/volto-searchlib.git",
+    "https": "https://github.com/eea/volto-searchlib.git",
+    "package": "@eeacms/volto-searchlib",
+    "branch": "develop",
+    "develop": true,
+    "path": "src"
+  },
+  "volto-plotlycharts": {
+    "url": "git@github.com:eea/volto-plotlycharts.git",
+    "https": "https://github.com/eea/volto-plotlycharts.git",
+    "package": "@eeacms/volto-plotlycharts",
+    "branch": "develop",
+    "develop": true,
+    "path": "src"
   }
 }

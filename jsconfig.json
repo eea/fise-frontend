@@ -8,6 +8,12 @@
             ],
             "@eeacms/volto-embed": [
                 "develop/volto-embed/src"
+            ],
+            "@eeacms/volto-searchlib": [
+                "develop/volto-searchlib/src"
+            ],
+            "@eeacms/volto-plotlycharts": [
+                "develop/volto-plotlycharts/src"
             ]
         }
     }
