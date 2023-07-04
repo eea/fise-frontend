@@ -26,7 +26,7 @@
     "@eeacms/volto-embed": "5.0.4",
     "@eeacms/volto-forests-theme": "0.2.23",
     "@eeacms/volto-middleware-vh": "1.0.6",
-    "@eeacms/volto-plotlycharts": "6.4.0",
+    "@eeacms/volto-plotlycharts": "6.4.1",
     "@eeacms/volto-slate-dataentity": "2.1.0",
     "@eeacms/volto-tableau": "4.1.0",
     "@plone/volto": "16.0.0-alpha.45",
