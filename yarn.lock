@@ -1254,10 +1254,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.1.2.tgz#9f16a8877ad7be05465f0eb4e89a128a0a28361d"
   integrity sha512-yvab1BFhQ4K0SEm1NPjuJy2zeFoil7zc6Z6FSlolvOXHPcm4ITUhU2BNSadX4JSVChOC4XpdLrPTCrcb1FrAvA==
 
-"@eeacms/volto-eea-kitkat@16.0.3":
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-16.0.3.tgz#d353e3053106596351c028b085505aeabe41a35b"
-  integrity sha512-dOJ6eaklLEtT5i3oORNb6lPZc1RyD8PtGUe1M79lMN0ovVhQmdvi+RJ1umqoGjfKK31NLQaA912P9LcsyUBH/Q==
+"@eeacms/volto-eea-kitkat@16.0.4":
+  version "16.0.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-16.0.4.tgz#3a8ea85c35167f824d3b8ecbd5b3e9443b2ba3f6"
+  integrity sha512-9aZ8PBWZfB54IHFJeoS5AnQePA7NBqXYFFZGkTXcSnLfbKmo/rLsI7qAHnda5rtMjRBoFkDACUCjjYfWbrsL1g==
   dependencies:
     "@eeacms/volto-accordion-block" "9.0.0"
     "@eeacms/volto-anchors" "0.3.2"
@@ -1284,7 +1284,7 @@
     "@eeacms/volto-slate-metadata-mentions" "6.1.1"
     "@eeacms/volto-slate-zotero" "5.2.1"
     "@eeacms/volto-statistic-block" "1.3.0"
-    "@eeacms/volto-tabs-block" "5.0.5"
+    "@eeacms/volto-tabs-block" "5.0.6"
     "@eeacms/volto-tags-block" "1.2.0"
     "@eeacms/volto-taxonomy" "4.0.1"
     "@eeacms/volto-timeline-block" "1.1.1"
@@ -1488,10 +1488,10 @@
     "@eeacms/volto-object-widget" "*"
     "@eeacms/volto-resize-helper" "*"
 
-"@eeacms/volto-tabs-block@5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-tabs-block/-/volto-tabs-block-5.0.5.tgz#def57644622811698a487c47a1f52a1f0c08996a"
-  integrity sha512-npcnGKLq58UJyLY7XmGB1y/29xPMmEBQVebiiZPTqxC2uEzY4gd1/oO/7LVlfOOfXCXFdzBt8NlQXFzcV8OX5g==
+"@eeacms/volto-tabs-block@5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-tabs-block/-/volto-tabs-block-5.0.6.tgz#1e9a0306b24f5a267bf3f5deb10e3152efe72e5b"
+  integrity sha512-kjAThA9MFzFiH6+cRxLV10XHKwKd9pCi7M+nJZEN8Xx+Zq8IyVet/YXkmG6YNlvqSdsOZx5lqMoYkCuh+1Junw==
   dependencies:
     "@eeacms/volto-anchors" "*"
     "@eeacms/volto-block-style" "*"
