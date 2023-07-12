@@ -36,6 +36,9 @@
     "cypress": "10.11.0",
     "mrs-developer": "^1.4.0"
   },
+  "resolutions": {
+    "@eeacms/volto-matomo": "github:eea/volto-matomo#track-query"
+  },
   "scripts": {
     "fise-quickstart": "RAZZLE_API_PATH=http://localhost:8080/fise yarn start",
     "start": "razzle start",
