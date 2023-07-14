@@ -2132,9 +2132,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@npm:1.12.0":
-  version: 1.12.0
-  resolution: "@eeacms/volto-eea-design-system@npm:1.12.0"
+"@eeacms/volto-eea-design-system@npm:*, @eeacms/volto-eea-design-system@npm:1.13.2":
+  version: 1.13.2
+  resolution: "@eeacms/volto-eea-design-system@npm:1.13.2"
   dependencies:
     "@eeacms/volto-corsproxy": "*"
     "@fontsource/roboto": 4.5.8
@@ -2143,7 +2143,7 @@ __metadata:
     react-slick: ^0.28.1
     remixicon: 2.5.0
     slick-carousel: ^1.8.1
-  checksum: 8041c1343e7f914d602dbd97af01c48bca9bb2d9aeb12003cd7679ac4f7c07cec7d5047bc7170a744b23c307882e23c7ffa7ec637ce87e640083f1a0186088f9
+  checksum: 26af462316f1001c67e81675d3f412c6ca47bdb97574df15dec7146106d20ab85af2a898392693ca6dc72d625b3e3022bf880b0f1a6dcde015b230cc791c782d
   languageName: node
   linkType: hard
 
@@ -2229,47 +2229,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:0.1.23":
-  version: 0.1.23
-  resolution: "@eeacms/volto-forest-policy@npm:0.1.23"
-  dependencies:
-    "@eeacms/volto-datablocks": "*"
-    "@eeacms/volto-eea-design-system": "*"
-    "@eeacms/volto-eea-map": "*"
-    "@eeacms/volto-eea-website-theme": "*"
-    "@eeacms/volto-globalsearch": "*"
-    "@eeacms/volto-matomo": "*"
-    "@eeacms/volto-openlayers-map": 0.1.4
-    "@eeacms/volto-plotlycharts": "*"
-    "@eeacms/volto-searchlib": "*"
-    "@sentry/browser": 7.17.3
-    dompurify: ^2.0.12
-    draft-js-alignment-plugin: ^2.0.6
-    draft-js-focus-plugin: ^3.0.1
-    draft-js-import-html: ^1.4.1
-    draft-js-inline-toolbar-plugin: ^2.0.3
-    draft-js-modifiers: ^0.2.2
-    draft-js-plugins-editor: ^3.0.0
-    draft-js-resizeable-plugin: ^2.0.9
-    draft-js-video-plugin: ^2.0.2
-    esri-loader: ^2.14.0
-    razzle-plugin-scss: 4.2.18
-    react-component-queries: 2.3.0
-    react-highlight-words: ^0.16.0
-    react-image-gallery: 1.2.7
-    react-lazy-load-image-component: ^1.5.0
-    react-pdf-js: ^5.1.0
-    react-sizeme: 3.0.1
-    react-stickynode: ^2.1.1
-    redraft: ^0.10.2
-    redux-connect: 10.0.0
-  checksum: ab38ca75dc0c46047635ea4226c650d194e863a745a144042befb7fe014b0cac0f620d2d3925938b5f9cb4876f4de3e6c35f86f9ed5c10716ab77b27ac93b86d
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy":
+"@eeacms/volto-forest-policy@0.1.23, @eeacms/volto-forest-policy@workspace:src/addons/volto-forest-policy":
   version: 0.0.0-use.local
-  resolution: "@eeacms/volto-forest-policy@workspace:src/develop/volto-forest-policy"
+  resolution: "@eeacms/volto-forest-policy@workspace:src/addons/volto-forest-policy"
   dependencies:
     "@cypress/code-coverage": ^3.10.0
     "@eeacms/volto-datablocks": "*"
@@ -2443,7 +2405,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-searchlib@npm:*":
+"@eeacms/volto-searchlib@npm:*, @eeacms/volto-searchlib@npm:0.5.7":
   version: 0.5.7
   resolution: "@eeacms/volto-searchlib@npm:0.5.7"
   dependencies:
@@ -2484,50 +2446,6 @@ __metadata:
     svg-loader: 0.0.2
     use-deep-compare-effect: 1.8.1
   checksum: 7e6895b21ba9cc4739dcb17bbc5c21a8d59bd72013501d32d4a48264c7fce3e7c40dad001d803319722b25f62fd559ac045b5ed91012a6e126bcadf1b83f5fce
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-searchlib@npm:0.5.5":
-  version: 0.5.5
-  resolution: "@eeacms/volto-searchlib@npm:0.5.5"
-  dependencies:
-    "@eeacms/volto-eea-design-system": "*"
-    "@elastic/react-search-ui": ^1.9.0
-    "@elastic/react-search-ui-views": ^1.9.0
-    "@elastic/search-ui": ^1.9.0
-    "@visx/group": ^1.7.0
-    "@visx/responsive": ^1.10.1
-    "@visx/scale": ^1.11.1
-    "@visx/shape": ^1.12.0
-    "@visx/tooltip": ^1.7.2
-    classnames: ^2.2.6
-    csv-stringify: ^5.6.5
-    d3-array: ^2.12.1
-    d3-scale: ^3.3.0
-    deep-equal: ^2.0.5
-    downshift: ^3.4.8
-    elasticsearch: 16.7.3
-    fast-deep-equal: ^3.1.3
-    http-proxy-middleware: ^2.0.1
-    jotai: ^1.6.0
-    lodash: 4.17.21
-    lodash.clonedeep: ^4.5.0
-    lodash.isfunction: ^3.0.9
-    lodash.uniq: ^4.5.0
-    luxon: ^1.22.0
-    node-fetch: ^2.6.1
-    re-resizable: ^6.9.0
-    react-compound-slider: ^3.4.0
-    react-masonry-component: 6.3.0
-    react-motion: ^0.5.2
-    react-speech-recognition: ^3.8.2
-    react-toastify: 5.4.1
-    redux: 4.1.0
-    semantic-ui-react: 2.0.3
-    superagent: 3.8.2
-    svg-loader: 0.0.2
-    use-deep-compare-effect: 1.8.1
-  checksum: 1ed2863fd9a592b9863667d1cb774f6dab0905867761852bc879e7fd8b9ac1e935e92d5d03ebe49fc3ce1cd4b24056823b84cf3291fa4f803cbb112e40ec9d4c
   languageName: node
   linkType: hard
 
@@ -15231,20 +15149,20 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-react-jsx": "*"
     "@cypress/code-coverage": 3.10.0
-    "@eeacms/volto-datablocks": 5.0.0
-    "@eeacms/volto-eea-design-system": 1.12.0
-    "@eeacms/volto-eea-kitkat": 15.4.0
-    "@eeacms/volto-eea-website-theme": 1.14.1
-    "@eeacms/volto-embed": 5.0.3
+    "@eeacms/volto-datablocks": 5.0.2
+    "@eeacms/volto-eea-design-system": 1.13.2
+    "@eeacms/volto-eea-kitkat": 16.0.4
+    "@eeacms/volto-eea-website-theme": 1.18.1
+    "@eeacms/volto-embed": 5.0.4
     "@eeacms/volto-forest-policy": 0.1.23
     "@eeacms/volto-globalsearch": 1.0.15
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 6.0.3
-    "@eeacms/volto-searchlib": 0.5.5
+    "@eeacms/volto-searchlib": 0.5.7
     "@eeacms/volto-slate-dataentity": 2.0.1
     "@eeacms/volto-tableau": 3.0.8
     "@plone/scripts": ^2.1.2
-    "@plone/volto": 16.20.0
+    "@plone/volto": 16.21.2
     "@storybook/addon-actions": ^6.3.0
     "@storybook/addon-controls": 6.3.0
     "@storybook/addon-essentials": ^6.3.0

@@ -4,7 +4,7 @@
         "jsx": "react",
         "paths": {
             "@eeacms/volto-forest-policy": [
-                "develop/volto-forest-policy/src"
+                "addons/volto-forest-policy/src"
             ]
         }
     }
