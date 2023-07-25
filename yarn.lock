@@ -1479,10 +1479,10 @@
     react-countup "6.3.1"
     react-visibility-sensor "5.1.1"
 
-"@eeacms/volto-tableau@4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-tableau/-/volto-tableau-4.1.1.tgz#4b0cd19f55c02df467c3f53ec742d31023b481b8"
-  integrity sha512-qWvyeXZGayEDTBTLZDoeAex2tHCeyBf6J0RmGtw9rGMimog9AiRKsIIRYCLyxlrDmEW99aj8KV0ufFSuKfxHog==
+"@eeacms/volto-tableau@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-tableau/-/volto-tableau-5.0.0.tgz#8daeedac7bab7ac20036e6021bb710ba745acc13"
+  integrity sha512-ZBT51QiRbWu2TmZXHAzo2eqSutVZgnYrx4osuiLQPzpgyNZfcjvDkdg0A44+jXe/t4lNuaClHKEr2qwNEsQxOA==
   dependencies:
     "@eeacms/volto-embed" "*"
     "@eeacms/volto-object-widget" "*"
