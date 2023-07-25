@@ -1136,6 +1136,13 @@
   dependencies:
     "@datapunt/matomo-tracker-js" "^0.3.1"
 
+"@eeacms/countup@*":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/countup/-/countup-2.0.4.tgz#2ff711adab63a8508fcde5391cd0c2dc79d7ed34"
+  integrity sha512-rjg7Fn13hXF+tyhc/ZfLEuqgR/hDMQ1i9FsBIz/5ufij0A7+dRkW+qo4XfO6qkAhyS7fZRxTAHHmqhU/Fx3MCQ==
+  dependencies:
+    use-elapsed-time "3.0.2"
+
 "@eeacms/volto-accordion-block@9.2.0":
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-accordion-block/-/volto-accordion-block-9.2.0.tgz#5bca0659eb67ff3b7cc0c58a2ec3187f1a705e59"
@@ -1233,11 +1240,12 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-corsproxy/-/volto-corsproxy-3.1.3.tgz#92a75a27f7c822038ffe403f22ee189a7ebec62a"
   integrity sha512-X/CsApbqZoUqZaIZC692Fdexg35K/gQl/dApfPQK1GA1fdzjTUW97ewY1VWTcyZtXdPCAP6qeK1xg7adxajbmg==
 
-"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-5.0.2.tgz#e268db87fd265cc5311afd8299f394c5972b496d"
-  integrity sha512-9R7TyNUV2FzIjSMKpoPeoEdDYr7PpXJta9qz6g1wjOf03BCdASLI/EpE4cCg4Wu+IA7PSbqHGQRVOa4JBvelcA==
+"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-6.0.0.tgz#5de37eea93f6251562e4ebc0c0217b8959ca3f7f"
+  integrity sha512-+xHjkVRESHyklu9yvfdDdSkDdZpn2Q/H7n4vq4RVjLbGAuXWAzThluYBYWfGZyR9r5ZFhbcIIvd91AO9xhkI4Q==
   dependencies:
+    "@eeacms/countup" "*"
     "@eeacms/volto-embed" "*"
     "@eeacms/volto-group-block" "*"
     "@eeacms/volto-matomo" "*"
@@ -1245,7 +1253,6 @@
     date-fns "2.28.0"
     humanize-plus "^1.8.2"
     object-hash "2.2.0"
-    react-countup "6.1.1"
     react-visibility-sensor "5.1.1"
     sanitize-html "2.7.3"
 
@@ -18569,6 +18576,11 @@ use-deep-compare-effect@1.8.1:
   dependencies:
     "@babel/runtime" "^7.12.5"
     dequal "^2.0.2"
+
+use-elapsed-time@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/use-elapsed-time/-/use-elapsed-time-3.0.2.tgz#ef22bf520e60f9873fd102925a2d5cbc5d4faaf5"
+  integrity sha512-2EY9lJ5DWbAvT8wWiEp6Ztnl46DjXz2j78uhWbXaz/bg3OfpbgVucCAlcN8Bih6hTJfFTdVYX9L6ySMn5py/wQ==
 
 use-memo-one@^1.1.1:
   version "1.1.3"
