@@ -1415,10 +1415,10 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@6.4.2":
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-6.4.2.tgz#a9ac95cd375092ebe597d978f66b572b5f7d1249"
-  integrity sha512-bb3CNfHgXZWwszWTYuNkMGio9PDJtf6SvsMCgEzCAzD6JEjZK/2s/FoKYVGA985W7ZRP9rqpdNpt/I+4EHX2og==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-7.0.0.tgz#5cf68408d757ac052eabfb003ae1df05f1085da6"
+  integrity sha512-ax91iyo4qQFdKmuyLA/ICyEUhaLqyj9+XEqGXFLb4GXGwqWcw1IYjk7B6wmKs/1IYebgXFnT74kFhOotSiEpEA==
   dependencies:
     "@eeacms/volto-datablocks" "*"
     "@eeacms/volto-matomo" "*"
@@ -5560,7 +5560,7 @@ country-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/country-regex/-/country-regex-1.1.0.tgz#51c333dcdf12927b7e5eeb9c10ac8112a6120896"
   integrity sha512-iSPlClZP8vX7MC3/u6s3lrDuoQyhQukh5LyABJ3hvfzbQ3Yyayd4fp04zjLnfi267B/B2FkumcWWgrbban7sSA==
 
-countup.js@^2.0.8, countup.js@^2.2.0:
+countup.js@^2.2.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.4.2.tgz#723538b4b2b01ebe2ed0e6759d41b8f97dc00c34"
   integrity sha512-EExCcu5rd7ffBj65B3CVNuS1HddN1Y4WuTfJEuocJXwZlNnlXZQ4sD9M/Cq32ZS0zR38F9vGMCw/iFcVImrNbw==
@@ -14860,13 +14860,6 @@ react-cookie@4.1.1:
     "@types/hoist-non-react-statics" "^3.0.1"
     hoist-non-react-statics "^3.0.0"
     universal-cookie "^4.0.0"
-
-react-countup@6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-6.1.1.tgz#2dd5a82dd1059afd4e269a33de5cd1fa5a7910d7"
-  integrity sha512-9mYlnk/yCFg3g2/65pCTex6mr9h0eYdDMIL4T5nfLj/RzoiqY03wlPxZglzbJ6OzXvU37OmYApwQ4WMZNFr8Aw==
-  dependencies:
-    countup.js "^2.0.8"
 
 react-countup@6.3.1:
   version "6.3.1"
