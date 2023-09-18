@@ -2217,9 +2217,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-map@npm:*":
-  version: 1.0.1
-  resolution: "@eeacms/volto-eea-map@npm:1.0.1"
+"@eeacms/volto-eea-map@npm:2.0.5":
+  version: 2.0.5
+  resolution: "@eeacms/volto-eea-map@npm:2.0.5"
   dependencies:
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-object-widget": "*"
@@ -2229,7 +2229,7 @@ __metadata:
     razzle-plugin-scss: 4.2.18
     react-color: ~2.19.3
     react-querybuilder: 4.2.3
-  checksum: 75dc7786afcb154cfbe4e291b3ec7160ada5ed0b432a3aa60cee52b7d272dbf83958600e8dd53db2dcb761122eaf1adbf761d815142c6749b2e8e0af4220cb9e
+  checksum: d0aa49354416138d1e34fd9d49681dce619909fdc6ad303cf180149ac058c19acecc25cad02ccf8ce63f7bded8ebdfa2ea04f88c7ec72031bac3b646aae40869
   languageName: node
   linkType: hard
 
@@ -2254,9 +2254,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:0.1.23":
-  version: 0.1.23
-  resolution: "@eeacms/volto-forest-policy@npm:0.1.23"
+"@eeacms/volto-forest-policy@npm:0.1.24":
+  version: 0.1.24
+  resolution: "@eeacms/volto-forest-policy@npm:0.1.24"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
@@ -2288,7 +2288,7 @@ __metadata:
     react-stickynode: ^2.1.1
     redraft: ^0.10.2
     redux-connect: 10.0.0
-  checksum: ab38ca75dc0c46047635ea4226c650d194e863a745a144042befb7fe014b0cac0f620d2d3925938b5f9cb4876f4de3e6c35f86f9ed5c10716ab77b27ac93b86d
+  checksum: c2d20a6fc281701d196d09b50f36b837862458c625aad8acade302156de484242c84c6c5ef19cb05f7ca19960df0cd5ccc3303fcd7462c23aba474fee28b2914
   languageName: node
   linkType: hard
 
@@ -15119,9 +15119,10 @@ __metadata:
     "@eeacms/volto-datablocks": 6.1.0
     "@eeacms/volto-eea-design-system": 1.18.1
     "@eeacms/volto-eea-kitkat": 18.1.1
+    "@eeacms/volto-eea-map": 2.0.5
     "@eeacms/volto-eea-website-theme": 1.21.0
     "@eeacms/volto-embed": 6.0.0
-    "@eeacms/volto-forest-policy": 0.1.23
+    "@eeacms/volto-forest-policy": 0.1.24
     "@eeacms/volto-globalsearch": 1.0.20
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 7.0.4
