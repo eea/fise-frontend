@@ -2,8 +2,8 @@ pipeline {
  environment {
     registry = "eeacms/forests-frontend"
     template = "templates/volto-forests"
-    RANCHER_STACKID = "1st1821"
-    RANCHER_ENVID = "1a332957"
+    RANCHER_STACKID = ""
+    RANCHER_ENVID = ""
     dockerImage = ''
     tagName = ''
     GIT_NAME = "forests-frontend"
