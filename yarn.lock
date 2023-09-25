@@ -2140,9 +2140,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-datablocks@npm:6.1.0":
-  version: 6.1.0
-  resolution: "@eeacms/volto-datablocks@npm:6.1.0"
+"@eeacms/volto-datablocks@npm:6.1.1":
+  version: 6.1.1
+  resolution: "@eeacms/volto-datablocks@npm:6.1.1"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-embed": "*"
@@ -2154,9 +2154,33 @@ __metadata:
     object-hash: 2.2.0
     react-visibility-sensor: 5.1.1
     sanitize-html: 2.7.3
-  checksum: 626192e32eb9c39a48c012059dd5a98de65c319609a72b0424991f538e5484d353f33827fe77ad633e3637205749ee843e97390248bd3b9cc4b43696051ee298
+  checksum: b8df64eeae668f3eeaa2e8530d6a010464ffcacb217d05653248c4a38102768a141f693034a1213768388f4c45a85608ece5a38a15b27765a4fba3a150f2d553
   languageName: node
   linkType: hard
+
+"@eeacms/volto-datablocks@workspace:src/addons/volto-datablocks":
+  version: 0.0.0-use.local
+  resolution: "@eeacms/volto-datablocks@workspace:src/addons/volto-datablocks"
+  dependencies:
+    "@cypress/code-coverage": ^3.10.0
+    "@eeacms/countup": "*"
+    "@eeacms/volto-embed": "*"
+    "@eeacms/volto-group-block": "*"
+    "@eeacms/volto-matomo": "*"
+    "@plone/scripts": "*"
+    babel-plugin-transform-class-properties: ^6.24.1
+    cypress-fail-fast: ^5.0.1
+    d3: 7.1.1
+    date-fns: 2.28.0
+    humanize-plus: ^1.8.2
+    husky: "*"
+    lint-staged: "*"
+    md5: ^2.3.0
+    object-hash: 2.2.0
+    react-visibility-sensor: 5.1.1
+    sanitize-html: 2.7.3
+  languageName: unknown
+  linkType: soft
 
 "@eeacms/volto-description-block@npm:1.1.3":
   version: 1.1.3
@@ -15358,7 +15382,7 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-react-jsx": "*"
     "@cypress/code-coverage": 3.10.0
-    "@eeacms/volto-datablocks": 6.1.0
+    "@eeacms/volto-datablocks": 6.1.1
     "@eeacms/volto-eea-design-system": 1.18.1
     "@eeacms/volto-eea-kitkat": 18.1.2
     "@eeacms/volto-eea-map": 2.0.5

@@ -5,6 +5,9 @@
         "paths": {
             "@eeacms/volto-forest-policy": [
                 "addons/volto-forest-policy/src"
+            ],
+            "@eeacms/volto-datablocks": [
+                "addons/volto-datablocks/src"
             ]
         }
     }
