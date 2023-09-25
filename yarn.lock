@@ -1204,10 +1204,10 @@
     react-slick "^0.24.0"
     slick-carousel "^1.8.1"
 
-"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@5.2.2":
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-5.2.2.tgz#942aaac5af7500aad2988b401da2c241e0748f07"
-  integrity sha512-ej9ILXVTp4prihb0ZoMRgNgG3EIPFw911e4q5NaSEW4TEebxdNZEazV5C+Y1CeMsnp+byEKkvuDZOJ9uyl0FJQ==
+"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-5.2.3.tgz#a0ca759bdaddc640ff6783574d2308dc52ece67b"
+  integrity sha512-2KwnmueVUpIxtNaBvi6GdHfkKHh2ylcd4W6phJjpl7Aw0HaXhaITVq5dXxSnWJKmWqHMhXB9f9IhjgoSbuuUpA==
   dependencies:
     "@eeacms/volto-resize-helper" "*"
     "@eeacms/volto-widget-theme-picker" "*"
@@ -1261,10 +1261,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.1.3.tgz#93f447af9c9ccc477f5d7518efe982df09368dec"
   integrity sha512-fBvizTC6AbkL2JFsI0zKU5m8YkybAcKhYazOR43GmYKABuvH69jpuS5i4clDnsNvZ48q+FnH0mqys7p4RWNX3Q==
 
-"@eeacms/volto-eea-kitkat@18.1.2":
-  version "18.1.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-18.1.2.tgz#3fa03daf7cb80de1fcc38d7a1645e24cfec21c0a"
-  integrity sha512-hRZqqXQoeOmkurbRhLaUUSDZI3tuxqLbDq6w8ZPAkndrsi3IOmFsoCqCP1bJWUUQLx5mXSctO2OeOtn/4MmaVQ==
+"@eeacms/volto-eea-kitkat@18.1.3":
+  version "18.1.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-18.1.3.tgz#ee6591e85b92cc7a1c10d6d7b62fc8854e21b188"
+  integrity sha512-+f7WCWX9BJ4XOY0PuFGuV/SGxE4S51d6BZL8kzFRZZtR8i/FcXFFJfriUdu7qZk8BD6hDhapkc/Wwm0jibw6PQ==
   dependencies:
     "@eeacms/countup" "2.0.4"
     "@eeacms/volto-accordion-block" "10.3.0"
@@ -1272,14 +1272,14 @@
     "@eeacms/volto-banner" "3.1.3"
     "@eeacms/volto-block-divider" "6.1.2"
     "@eeacms/volto-block-image-cards" "1.3.3"
-    "@eeacms/volto-block-style" "5.2.2"
+    "@eeacms/volto-block-style" "5.2.3"
     "@eeacms/volto-call-to-action-block" "4.1.4"
     "@eeacms/volto-columns-block" "6.3.3"
     "@eeacms/volto-corsproxy" "3.1.3"
     "@eeacms/volto-description-block" "1.1.3"
     "@eeacms/volto-group-block" "6.3.1"
     "@eeacms/volto-hero-block" "5.4.1"
-    "@eeacms/volto-listing-block" "5.0.0"
+    "@eeacms/volto-listing-block" "5.0.1"
     "@eeacms/volto-matomo" "4.1.3"
     "@eeacms/volto-metadata-block" "6.0.0"
     "@eeacms/volto-nextcloud-video-block" "0.4.4"
@@ -1365,10 +1365,10 @@
     "@eeacms/volto-object-widget" "*"
     "@eeacms/volto-widget-theme-picker" "^1.0.1"
 
-"@eeacms/volto-listing-block@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-5.0.0.tgz#cdf77dc35e9368eba81c8f513aaefd4e19ebbcee"
-  integrity sha512-uuzKq/bR+TjKUn6ZSAmTyG40c0g65/1PltsjOklhwH03p0kaJffum5UrMPsjlOWiAoL/H58mabj/pKX+tYlCKA==
+"@eeacms/volto-listing-block@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-5.0.1.tgz#c6e657927cf381b1430cf3f1c469b9e9136a3ea5"
+  integrity sha512-f67JUbq+47bmYL4HIjCQwiB5Y+Lk3u5xZW+OVP5YMcs4l25VZsZ/ODimjQBAYqVU157ZN5XvAhXuIyfsUkVF3A==
   dependencies:
     "@eeacms/volto-widget-theme-picker" "^1.0.1"
     react-resize-detector "7.1.2"
