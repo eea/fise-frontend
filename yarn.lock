@@ -2641,9 +2641,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-searchlib@npm:0.6.6":
-  version: 0.6.6
-  resolution: "@eeacms/volto-searchlib@npm:0.6.6"
+"@eeacms/volto-searchlib@npm:0.6.7":
+  version: 0.6.7
+  resolution: "@eeacms/volto-searchlib@npm:0.6.7"
   dependencies:
     "@eeacms/volto-eea-design-system": "*"
     "@elastic/react-search-ui": ^1.9.0
@@ -2681,7 +2681,7 @@ __metadata:
     superagent: 3.8.2
     svg-loader: 0.0.2
     use-deep-compare-effect: 1.8.1
-  checksum: 5f312c830b62bdbb27042a4392089fd0c2125f4e1246c5dc17466eb8ae4d4c523e5f5bd38bd1f23df27284887a8df86eb20241ea92d41830003261fca97a1a42
+  checksum: beca7ad596551cf030da047891847dfef1bfe5cd87d25d9d65890f8a8d1da9cb48b624df141267e1eec198b725c27c3928bf7a0e5f2fe8e8901e772257335ff2
   languageName: node
   linkType: hard
 
@@ -15301,7 +15301,7 @@ __metadata:
     "@eeacms/volto-globalsearch": 1.0.21
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 7.0.5
-    "@eeacms/volto-searchlib": 0.6.6
+    "@eeacms/volto-searchlib": 0.6.7
     "@eeacms/volto-slate-dataentity": 3.0.0
     "@eeacms/volto-tableau": 5.0.1
     "@plone/scripts": ^2.1.2

@@ -37,7 +37,7 @@
     "@eeacms/volto-globalsearch": "1.0.21",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "7.0.5",
-    "@eeacms/volto-searchlib": "0.6.6",
+    "@eeacms/volto-searchlib": "0.6.7",
     "@eeacms/volto-slate-dataentity": "3.0.0",
     "@eeacms/volto-tableau": "5.0.1",
     "@plone/volto": "16.22.2",
