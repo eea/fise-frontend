@@ -2214,7 +2214,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-website-theme@npm:*, @eeacms/volto-eea-website-theme@npm:1.22.1":
+"@eeacms/volto-eea-website-theme@npm:*":
   version: 1.22.1
   resolution: "@eeacms/volto-eea-website-theme@npm:1.22.1"
   dependencies:
@@ -2222,6 +2222,17 @@ __metadata:
     "@eeacms/volto-group-block": "*"
     volto-subsites: "*"
   checksum: 9d3e899de33d03f599254c9aed732b02ff039876ca2d878f75966bc90677fd97f2600ff404a9e22c17c27a16ef3ad688acb568710b1b477739120deb0e2cda46
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-eea-website-theme@npm:1.23.0":
+  version: 1.23.0
+  resolution: "@eeacms/volto-eea-website-theme@npm:1.23.0"
+  dependencies:
+    "@eeacms/volto-eea-design-system": "*"
+    "@eeacms/volto-group-block": "*"
+    volto-subsites: "*"
+  checksum: a75f65b32431fefcebef0c4d302d2b1c8e89d3fde6a57f93496f49de75fcceefa8050d16349393a9a5e663a0c94e2d7e6a444d9a44268a01491a981809ac221a
   languageName: node
   linkType: hard
 
@@ -14625,7 +14636,7 @@ __metadata:
     "@eeacms/volto-eea-design-system": 1.20.0
     "@eeacms/volto-eea-kitkat": 19.1.0
     "@eeacms/volto-eea-map": "git+https://github.com/eea/volto-eea-map.git#2.0.7-alpha.01"
-    "@eeacms/volto-eea-website-theme": 1.22.1
+    "@eeacms/volto-eea-website-theme": 1.23.0
     "@eeacms/volto-embed": 6.0.1
     "@eeacms/volto-forest-policy": 0.1.25
     "@eeacms/volto-globalsearch": 1.0.21
