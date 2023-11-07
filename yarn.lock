@@ -2265,14 +2265,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-embed@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@eeacms/volto-embed@npm:7.0.0"
+"@eeacms/volto-embed@npm:7.0.1":
+  version: 7.0.1
+  resolution: "@eeacms/volto-embed@npm:7.0.1"
   dependencies:
     "@eeacms/volto-corsproxy": "*"
     "@eeacms/volto-datablocks": "*"
     react-visibility-sensor: 5.1.1
-  checksum: 190f3a4c496bd63f1ed36dd560f0301bc4af41dd46de7eacf20602f9ee8bfdde309eb4cd541280323decc3721aae5488d47d7f2c859290d7d743701048035e6a
+  checksum: c1230f564948f34b48f3ff5d3c642d76ba9eab4c12c12580cedb10873e9da91793f8534905d95c424467852a275e7a07101390c6bfd217e5f9a0f745ce18449e
   languageName: node
   linkType: hard
 
@@ -14708,7 +14708,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 20.0.0
     "@eeacms/volto-eea-map": "git+https://github.com/eea/volto-eea-map.git#2.0.7-alpha.01"
     "@eeacms/volto-eea-website-theme": 1.23.0
-    "@eeacms/volto-embed": 7.0.0
+    "@eeacms/volto-embed": 7.0.1
     "@eeacms/volto-forest-policy": 0.1.25
     "@eeacms/volto-globalsearch": 1.0.21
     "@eeacms/volto-middleware-vh": 1.0.6
