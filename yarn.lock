@@ -1415,12 +1415,12 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-7.1.0.tgz#067a68aab75d754b75efe22f287e518efc1af4f0"
-  integrity sha512-RFRJcb4Ty8OGgwXc6s7KQERza/XdomqU4h3B4yFpueFVyOEqVHCaMYPZvtp6oP7W8yjvQfxPyXzdfOa+by10tg==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-7.1.1.tgz#51bb41669c2925bdb3e2653010ffe1c7f09ce6fd"
+  integrity sha512-3wTwWq/Ek3BxVUw+XA5KU0MtDiwI3sjm9C0lDFpWQtLjwEUtzZf33FGFyBmkYsHPlipsgvnYXn51fxsUlG3GBw==
   dependencies:
-    "@eeacms/volto-datablocks" "*"
+    "@eeacms/volto-embed" "*"
     "@eeacms/volto-matomo" "*"
     "@plone/scripts" "*"
     plotly.js "^2.24.2"
