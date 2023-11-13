@@ -29,7 +29,7 @@
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-datablocks": "6.1.4",
     "@eeacms/volto-eea-design-system": "1.20.0",
-    "@eeacms/volto-eea-kitkat": "20.0.0",
+    "@eeacms/volto-eea-kitkat": "20.0.1",
     "@eeacms/volto-eea-map": "2.0.7",
     "@eeacms/volto-eea-website-theme": "1.23.0",
     "@eeacms/volto-embed": "7.0.2",
