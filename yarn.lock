@@ -1261,10 +1261,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.2.4.tgz#75832d86c9bc40d0bb206c97aa8a5de199d787ab"
   integrity sha512-SiIl68cIfwdb1SKrwyyY+Y0qrsuZG7j2JvOOGGykbn6pFAlP3aFeUQMLR21c8OTSdWG+WAhcApheNlOohagItg==
 
-"@eeacms/volto-eea-kitkat@20.0.1":
-  version "20.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-20.0.1.tgz#f2f56a9334df4f7b9409a78380306fc7ec994dec"
-  integrity sha512-XZoEt77fgBAYdOAsh3fe6ykMdz19k4JsqJYaWDRARpSz/G4NdB+77rRrLFYmuUEGchQBJS1ndQfXkqc/Qe+73g==
+"@eeacms/volto-eea-kitkat@20.0.2":
+  version "20.0.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-20.0.2.tgz#267821fa65030a474fea31dfceb6b7d9f82523f0"
+  integrity sha512-vZEdNcOjvN3W/V3JDnYcI1QVM/zOkGIjx6Y9t8SWZc6tCMIr5T97sE4Uj773t0lXkWndbhlRf4LNuwobxL4oQw==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "10.4.3"
@@ -1281,7 +1281,7 @@
     "@eeacms/volto-hero-block" "5.4.5"
     "@eeacms/volto-listing-block" "6.0.3"
     "@eeacms/volto-matomo" "4.2.1"
-    "@eeacms/volto-metadata-block" "6.0.3"
+    "@eeacms/volto-metadata-block" "6.0.4"
     "@eeacms/volto-nextcloud-video-block" "0.4.8"
     "@eeacms/volto-object-widget" "5.1.5"
     "@eeacms/volto-quote-block" "1.2.3"
@@ -1382,10 +1382,10 @@
   dependencies:
     "@datapunt/matomo-tracker-react" "0.3.1"
 
-"@eeacms/volto-metadata-block@6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-metadata-block/-/volto-metadata-block-6.0.3.tgz#151293cab92f5dfb78e2a0ad22d78276c152b64d"
-  integrity sha512-MDwBlQ8noi0/Mi9r1F5C5SMY0ys3AETEvSlBLEviy+SAvsvY9N+EMoV0gWLYMGM+RGGKfBoYIY3L6Y1kh403DA==
+"@eeacms/volto-metadata-block@6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-metadata-block/-/volto-metadata-block-6.0.4.tgz#8d80016c4b49d6789866c644ece6cb2796d823a6"
+  integrity sha512-qOvl0rGKdWA5OKb3uFVRGOOe6s8S0tciHiywdv+haRKx9LrXirf1WVTthGcHUXnBTRhiomnftBeIXtVr80rUsg==
   dependencies:
     razzle-plugin-scss "4.2.18"
 
