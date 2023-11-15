@@ -2589,14 +2589,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tableau@npm:6.0.3":
-  version: 6.0.3
-  resolution: "@eeacms/volto-tableau@npm:6.0.3"
+"@eeacms/volto-tableau@npm:6.0.4":
+  version: 6.0.4
+  resolution: "@eeacms/volto-tableau@npm:6.0.4"
   dependencies:
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-object-widget": "*"
     "@eeacms/volto-resize-helper": "*"
-  checksum: 6a5c67b9741e70dceba650339cf120b4d56fd44ec6db0fe569a77ce569198255dd6574a5b3499f87f0d0110e322e6286730693911f8d180d91e2e54efec8c6af
+  checksum: 309a944c37fb7abd50779eb09a6a45239ea427e7f957079b0894ceb132191a435707908d008d82290f5bf273f73484f5e441d61340b9e4b0e9b8239eaf4da647
   languageName: node
   linkType: hard
 
@@ -14732,7 +14732,7 @@ __metadata:
     "@eeacms/volto-plotlycharts": 7.1.2
     "@eeacms/volto-searchlib": 0.6.7
     "@eeacms/volto-slate-dataentity": 3.0.0
-    "@eeacms/volto-tableau": 6.0.3
+    "@eeacms/volto-tableau": 6.0.4
     "@plone/scripts": ^2.1.2
     "@plone/volto": 16.22.2
     "@storybook/addon-actions": ^6.3.0
@@ -24006,7 +24006,7 @@ __metadata:
   peerDependencies:
     react: ">=0.14"
     react-dom: ">=0.14"
-  checksum: 03bd2571d0fecc1cd321c8c98555cb8032f55131d06e2e39bc3eaf8d7924b2a223e45f9baa3ccd9eb21dec474b0eb54d1fa29b4655e93099b229d5402461e75a
+  checksum: ea65e61461d825cb35df1ca3e99a67d88cfdf50db7ec75eda5320b576b30ffc45ef04bb89d5708df56f73ce5803540e5b8ac8a42b04847077afb59f9071bdb6f
   languageName: node
   linkType: hard
 
