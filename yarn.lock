@@ -2232,7 +2232,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-website-theme@npm:*":
+"@eeacms/volto-eea-website-theme@npm:*, @eeacms/volto-eea-website-theme@npm:1.22.1":
   version: 1.22.1
   resolution: "@eeacms/volto-eea-website-theme@npm:1.22.1"
   dependencies:
@@ -2240,17 +2240,6 @@ __metadata:
     "@eeacms/volto-group-block": "*"
     volto-subsites: "*"
   checksum: 9d3e899de33d03f599254c9aed732b02ff039876ca2d878f75966bc90677fd97f2600ff404a9e22c17c27a16ef3ad688acb568710b1b477739120deb0e2cda46
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-eea-website-theme@npm:1.23.0":
-  version: 1.23.0
-  resolution: "@eeacms/volto-eea-website-theme@npm:1.23.0"
-  dependencies:
-    "@eeacms/volto-eea-design-system": "*"
-    "@eeacms/volto-group-block": "*"
-    volto-subsites: "*"
-  checksum: a75f65b32431fefcebef0c4d302d2b1c8e89d3fde6a57f93496f49de75fcceefa8050d16349393a9a5e663a0c94e2d7e6a444d9a44268a01491a981809ac221a
   languageName: node
   linkType: hard
 
@@ -2600,16 +2589,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tabs-block@npm:7.0.1":
-  version: 7.0.1
-  resolution: "@eeacms/volto-tabs-block@npm:7.0.1"
+"@eeacms/volto-tabs-block@npm:6.0.3":
+  version: 6.0.3
+  resolution: "@eeacms/volto-tabs-block@npm:6.0.3"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
     react-responsive-tabs: 4.4.3
     react-slick: ^0.24.0
     slick-carousel: ^1.8.1
-  checksum: 98c0a558656fa7329fdd81a7b892a93ce0541a59e6627e07b2cc5d92d08750f94cb937253c6221e8e7df796bd9440250691baab59066fff8ffc214127f1d74dd
+  checksum: 7ffa7795c6243bdf91b14f93d00d1d13f8d4733e459de75c7754952a9221b59ac580fafb7aa6cecb92528aab9a3a1e8cc7faf256ed41f579c8e1b502f395354f
   languageName: node
   linkType: hard
 
@@ -14724,7 +14713,7 @@ __metadata:
     "@eeacms/volto-eea-design-system": 1.20.0
     "@eeacms/volto-eea-kitkat": 20.0.2
     "@eeacms/volto-eea-map": 2.0.7
-    "@eeacms/volto-eea-website-theme": 1.23.0
+    "@eeacms/volto-eea-website-theme": 1.22.1
     "@eeacms/volto-embed": 8.0.0
     "@eeacms/volto-forest-policy": 0.1.25
     "@eeacms/volto-globalsearch": 1.0.21
@@ -24006,7 +23995,7 @@ __metadata:
   peerDependencies:
     react: ">=0.14"
     react-dom: ">=0.14"
-  checksum: ea65e61461d825cb35df1ca3e99a67d88cfdf50db7ec75eda5320b576b30ffc45ef04bb89d5708df56f73ce5803540e5b8ac8a42b04847077afb59f9071bdb6f
+  checksum: 03bd2571d0fecc1cd321c8c98555cb8032f55131d06e2e39bc3eaf8d7924b2a223e45f9baa3ccd9eb21dec474b0eb54d1fa29b4655e93099b229d5402461e75a
   languageName: node
   linkType: hard
 
