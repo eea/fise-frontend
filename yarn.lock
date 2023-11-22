@@ -2265,20 +2265,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:0.1.25":
-  version: 0.1.25
-  resolution: "@eeacms/volto-forest-policy@npm:0.1.25"
+"@eeacms/volto-forest-policy@npm:0.1.26":
+  version: 0.1.26
+  resolution: "@eeacms/volto-forest-policy@npm:0.1.26"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
     "@eeacms/volto-eea-map": "*"
     "@eeacms/volto-eea-website-theme": "*"
+    "@eeacms/volto-embed": "*"
     "@eeacms/volto-globalsearch": "*"
     "@eeacms/volto-matomo": "*"
     "@eeacms/volto-openlayers-map": 0.1.4
     "@eeacms/volto-plotlycharts": "*"
     "@eeacms/volto-searchlib": "*"
     "@sentry/browser": 7.17.3
+    d3-array: ^2.12.1
     dompurify: ^2.0.12
     draft-js-alignment-plugin: ^2.0.6
     draft-js-focus-plugin: ^3.0.1
@@ -2299,7 +2301,7 @@ __metadata:
     react-stickynode: ^2.1.1
     redraft: ^0.10.2
     redux-connect: 10.0.0
-  checksum: 02f446c7865d7b6962e8b386146823d12326a1892af3860b9c83b48dfb7fcee8556e4add6190190d6b65add04fe3f88dbc5ef065cfa4af708322388af0963d52
+  checksum: e4293724fef18b5313e05aa2724667a8c508c7fb5bdaecf894770a560f728768ec637765ea1e431e71a4fee678485a6d2529229964ce592fd8ff9fd943af26d9
   languageName: node
   linkType: hard
 
@@ -14715,7 +14717,7 @@ __metadata:
     "@eeacms/volto-eea-map": 2.0.7
     "@eeacms/volto-eea-website-theme": 1.22.1
     "@eeacms/volto-embed": 8.0.0
-    "@eeacms/volto-forest-policy": 0.1.25
+    "@eeacms/volto-forest-policy": 0.1.26
     "@eeacms/volto-globalsearch": 1.0.21
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 8.0.0
