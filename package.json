@@ -32,14 +32,14 @@
     "@eeacms/volto-eea-kitkat": "20.0.2",
     "@eeacms/volto-eea-map": "3.0.1",
     "@eeacms/volto-eea-website-theme": "1.24.0",
-    "@eeacms/volto-embed": "github:eea/volto-embed#develop",
+    "@eeacms/volto-embed": "9.0.1",
     "@eeacms/volto-forest-policy": "0.1.26",
     "@eeacms/volto-globalsearch": "1.0.21",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "8.1.1",
     "@eeacms/volto-searchlib": "0.6.7",
     "@eeacms/volto-slate-dataentity": "3.0.0",
-    "@eeacms/volto-tableau": "github:eea/volto-tableau#develop",
+    "@eeacms/volto-tableau": "7.0.1",
     "@plone/volto": "16.22.2",
     "cross-env": "7.0.3",
     "eslint-plugin-jsx-a11y": "6.6.0",
@@ -70,7 +70,7 @@
   "resolutions": {
     "react-countup/countup.js": "2.5.0",
     "d3-array": "2.12.1",
-    "@eeacms/volto-tabs-block": "7.0.2"
+    "@eeacms/volto-tabs-block": "6.0.3"
   },
   "scripts": {
     "start": "razzle start",
