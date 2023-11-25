@@ -2231,9 +2231,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:0.1.26":
-  version: 0.1.26
-  resolution: "@eeacms/volto-forest-policy@npm:0.1.26"
+"@eeacms/volto-forest-policy@npm:0.1.27":
+  version: 0.1.27
+  resolution: "@eeacms/volto-forest-policy@npm:0.1.27"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
@@ -2267,7 +2267,7 @@ __metadata:
     react-stickynode: ^2.1.1
     redraft: ^0.10.2
     redux-connect: 10.0.0
-  checksum: e4293724fef18b5313e05aa2724667a8c508c7fb5bdaecf894770a560f728768ec637765ea1e431e71a4fee678485a6d2529229964ce592fd8ff9fd943af26d9
+  checksum: 16b5bfb1664c75ea362c96036fdb60513b5657f37da35a0b36f209d4104ae129223bba30343df453cdd007d2b0500477ccdc3c4a2bccffdab0cbd376e21cf7af
   languageName: node
   linkType: hard
 
@@ -14666,7 +14666,7 @@ __metadata:
     "@eeacms/volto-eea-map": 3.0.1
     "@eeacms/volto-eea-website-theme": 1.24.0
     "@eeacms/volto-embed": 9.0.1
-    "@eeacms/volto-forest-policy": 0.1.26
+    "@eeacms/volto-forest-policy": 0.1.27
     "@eeacms/volto-globalsearch": 1.0.21
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 8.1.2
