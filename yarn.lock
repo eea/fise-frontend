@@ -1316,10 +1316,10 @@
     lodash "4.17.21"
     react-querybuilder "4.2.3"
 
-"@eeacms/volto-embed@*", "@eeacms/volto-embed@9.0.1":
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-9.0.1.tgz#34dade727fbca2cd85a188f827fc06ce70aad038"
-  integrity sha512-BELoaSMOhwZTMpiaD3rciv//JXr9jcHwpW4zRl+6BuLX5yQBYn5VAHSbmyo1tlKtluRBwCWpRN7yMlSzsrbTgA==
+"@eeacms/volto-embed@*", "@eeacms/volto-embed@9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-embed/-/volto-embed-9.0.2.tgz#64a9af8981cb4d334de191f5727e474bdcc0b71e"
+  integrity sha512-HU42VzV512bqLqbPGV78qGf8VJVLOMu+QiVfBdxA7QcAs89mO8SQYq2LW5BtcTU/qtPo+g/DbO6EOc2Z0L4MeQ==
   dependencies:
     "@eeacms/volto-corsproxy" "*"
     "@eeacms/volto-datablocks" "*"
