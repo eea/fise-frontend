@@ -28,7 +28,7 @@
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-datablocks": "6.1.6",
-    "@eeacms/volto-eea-design-system": "1.22.1",
+    "@eeacms/volto-eea-design-system": "1.22.2",
     "@eeacms/volto-eea-kitkat": "20.1.0",
     "@eeacms/volto-eea-map": "github:eea/volto-eea-map#develop",
     "@eeacms/volto-eea-website-theme": "1.24.1",
