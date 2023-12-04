@@ -2122,18 +2122,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@npm:1.22.2":
-  version: 1.22.2
-  resolution: "@eeacms/volto-eea-design-system@npm:1.22.2"
+"@eeacms/volto-eea-design-system@npm:1.22.3":
+  version: 1.22.3
+  resolution: "@eeacms/volto-eea-design-system@npm:1.22.3"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-corsproxy": "*"
     "@fontsource/roboto": 4.5.8
     react-lazy-load-image-component: 1.5.6
     react-slick: ^0.28.1
-    remixicon: 2.5.0
+    remixicon: 3.6.0
     slick-carousel: ^1.8.1
-  checksum: 982a94e56b35689e045a9e90b05a04650ffce7ca85e34d6a4a3786a4c259e77765552feef0e13d687c22ef12bb0488d7f615e04fc8a5f71f8c4c7fb2a4773311
+  checksum: 45fa92b890a3f9013ddd9b9bea4817015d2d37e04119823f4d987476b8670b53e45c01a90545ccdf0203ab8873731bd9fcf244e7f454b07284316cfcf0377846
   languageName: node
   linkType: hard
 
@@ -2583,16 +2583,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tabs-block@npm:7.0.3":
-  version: 7.0.3
-  resolution: "@eeacms/volto-tabs-block@npm:7.0.3"
+"@eeacms/volto-tabs-block@npm:7.0.4":
+  version: 7.0.4
+  resolution: "@eeacms/volto-tabs-block@npm:7.0.4"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
     react-responsive-tabs: 4.4.3
     react-slick: ^0.24.0
     slick-carousel: ^1.8.1
-  checksum: 6dd54b62fbafb3c9172d3bd8429f91accdf669f07a2db353dc2658e3510edbac2f64302b81c90f477c3e32a7ef79eb1e34abe48db951099826140752abc7c051
+  checksum: 87a714c9b96a4358246bb79dd25e32d3735067e1221dd4925153fa6c4152a051014ca3697799d83efc8108640c32d12cd4e7e35fa6e356cd6d0fa67d6be333e9
   languageName: node
   linkType: hard
 
@@ -14706,7 +14706,7 @@ __metadata:
     "@babel/plugin-transform-react-jsx": "*"
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 6.1.6
-    "@eeacms/volto-eea-design-system": 1.22.2
+    "@eeacms/volto-eea-design-system": 1.22.3
     "@eeacms/volto-eea-kitkat": 21.0.0
     "@eeacms/volto-eea-map": "github:eea/volto-eea-map#develop"
     "@eeacms/volto-eea-website-theme": 1.24.2
@@ -25942,6 +25942,13 @@ __metadata:
   version: 2.5.0
   resolution: "remixicon@npm:2.5.0"
   checksum: 7fa8f3643e3f24d7fa1cdbf37391bb4b3bfc0fda6643ba4e09e92fb8639351cee03f51539f18640747c2055e3622c8b81369f323857793ffbe7d2292cbac60c6
+  languageName: node
+  linkType: hard
+
+"remixicon@npm:3.6.0":
+  version: 3.6.0
+  resolution: "remixicon@npm:3.6.0"
+  checksum: 602815dd4af6f087fe661f2591dad76476aa132e9cf062195130d33b289e2426319efd20c622b167429c1de88b3c08e062194f079df2773698dd239b62248aec
   languageName: node
   linkType: hard
 
