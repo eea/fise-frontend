@@ -31,7 +31,7 @@
     "@eeacms/volto-eea-design-system": "1.22.3",
     "@eeacms/volto-eea-kitkat": "21.0.0",
     "@eeacms/volto-eea-map": "github:eea/volto-eea-map#develop",
-    "@eeacms/volto-eea-website-theme": "1.24.2",
+    "@eeacms/volto-eea-website-theme": "1.24.3",
     "@eeacms/volto-embed": "github:eea/volto-embed#develop",
     "@eeacms/volto-forest-policy": "0.1.27",
     "@eeacms/volto-globalsearch": "1.0.21",
