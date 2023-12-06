@@ -1482,10 +1482,10 @@
   dependencies:
     "@eeacms/countup" "*"
 
-"@eeacms/volto-tableau@7.0.4":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-tableau/-/volto-tableau-7.0.4.tgz#c4d05e7938f544817d0e3e7c5e79a66245182bab"
-  integrity sha512-WHxWKvKRWIwk9UuylPkvCacUFsbcMreD45r8cbrH5Iu6faC7+P0djH6ZpsBy8iW8QYoovcWARP7Nd4HPM4TVHA==
+"@eeacms/volto-tableau@7.0.5":
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-tableau/-/volto-tableau-7.0.5.tgz#aa51adc44e1b152307bd2da90bd7f5ecfa0d228a"
+  integrity sha512-cxv8TlrOf/y/Wc/uXasy5BuTSINLXQODmovekUG+PQxtKwRZc3cwfGXiY4aMjvSC1CImoYzni4Hc22JHWASMSw==
   dependencies:
     "@eeacms/volto-embed" "*"
     "@eeacms/volto-object-widget" "*"
