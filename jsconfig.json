@@ -2,25 +2,6 @@
     "compilerOptions": {
         "baseUrl": "src",
         "jsx": "react",
-        "paths": {
-            "@eeacms/volto-forest-policy": [
-                "addons/volto-forest-policy/src"
-            ],
-            "@eeacms/volto-plotlycharts": [
-                "addons/volto-plotlycharts/src"
-            ],
-            "@eeacms/volto-datablocks": [
-                "addons/volto-datablocks/src"
-            ],
-            "@eeacms/volto-embed": [
-                "addons/volto-embed/src"
-            ],
-            "@eeacms/volto-eea-map": [
-                "addons/volto-eea-map/src"
-            ],
-            "@eeacms/volto-tableau": [
-                "addons/volto-tableau/src"
-            ]
-        }
+        "paths": {}
     }
 }

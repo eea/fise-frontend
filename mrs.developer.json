@@ -3,42 +3,42 @@
     "url": "git@github.com:eea/volto-forest-policy.git",
     "package": "@eeacms/volto-forest-policy",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   },
   "volto-plotlycharts": {
     "url": "git@github.com:eea/volto-plotlycharts.git",
     "package": "@eeacms/volto-plotlycharts",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   },
   "volto-datablocks": {
     "url": "git@github.com:eea/volto-datablocks.git",
     "package": "@eeacms/volto-datablocks",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   },
   "volto-embed": {
     "url": "git@github.com:eea/volto-embed.git",
     "package": "@eeacms/volto-embed",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   },
   "volto-eea-map": {
     "url": "git@github.com:eea/volto-eea-map.git",
     "package": "@eeacms/volto-eea-map",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   },
   "volto-tableau": {
     "url": "git@github.com:eea/volto-tableau.git",
     "package": "@eeacms/volto-tableau",
     "branch": "develop",
-    "develop": true,
+    "develop": false,
     "path": "src"
   }
 }

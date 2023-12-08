@@ -2182,23 +2182,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-map@github:eea/volto-eea-map#develop":
-  version: 3.0.3
-  resolution: "@eeacms/volto-eea-map@https://github.com/eea/volto-eea-map.git#commit=5113b3bfc1ca20291d74412a476d42f400fa7b12"
-  dependencies:
-    "@eeacms/volto-embed": "*"
-    "@eeacms/volto-object-widget": "*"
-    "@plone/scripts": "*"
-    esri-loader: 3.6.0
-    lodash: 4.17.21
-    razzle-plugin-scss: 4.2.18
-    react-color: ~2.19.3
-    react-querybuilder: 4.2.3
-  checksum: 2d478b4d274f00c5cfccc73187ebfa1ce3d7a83b9cf79aa6b88e30cc9bec69ab3cc53b23a58df7140ba9d1c04f4834ce2ddff79af8b0e2f017db62b9139fa8c4
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-eea-map@npm:*":
+"@eeacms/volto-eea-map@npm:*, @eeacms/volto-eea-map@npm:3.0.3":
   version: 3.0.3
   resolution: "@eeacms/volto-eea-map@npm:3.0.3"
   dependencies:
@@ -2237,16 +2221,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-embed@github:eea/volto-embed#develop":
-  version: 9.0.2
-  resolution: "@eeacms/volto-embed@https://github.com/eea/volto-embed.git#commit=7c9452f1851a26de2ad5d57c80475bb362065782"
-  dependencies:
-    "@eeacms/volto-corsproxy": "*"
-    "@eeacms/volto-datablocks": "*"
-  checksum: 7b132c55662d8e915cb6de4d7900d82b5585439ea8cec114ac5374f180db23398ac107f81443dafe43c96c415454535a7b5eeb51a1fe2b0594740f94fd02a631
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-embed@npm:*":
   version: 9.0.2
   resolution: "@eeacms/volto-embed@npm:9.0.2"
@@ -2254,6 +2228,16 @@ __metadata:
     "@eeacms/volto-corsproxy": "*"
     "@eeacms/volto-datablocks": "*"
   checksum: 9dc5a2be62eacff66383dc7dc545b7909560135b4cde407b4231eec3fb0a3bc57e9dede19ade3564aa8cb7a40ba3a4cbbca946cab7e04ff60bc7758753fdb420
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-embed@npm:9.0.3":
+  version: 9.0.3
+  resolution: "@eeacms/volto-embed@npm:9.0.3"
+  dependencies:
+    "@eeacms/volto-corsproxy": "*"
+    "@eeacms/volto-datablocks": "*"
+  checksum: 201d504892bb10f4b35830dcd11aa0d860b82971854388fe20376eb2c7790b8e69e2ad1c7b041f71245ce294c8ad2e8c9fd4032d7caeeffe694ea69749c2e986
   languageName: node
   linkType: hard
 
@@ -2416,23 +2400,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@github:eea/volto-plotlycharts#develop":
-  version: 8.1.3
-  resolution: "@eeacms/volto-plotlycharts@https://github.com/eea/volto-plotlycharts.git#commit=c4ea48f81f48150845e4540a304b37bcb947b528"
-  dependencies:
-    "@eeacms/volto-embed": "*"
-    "@eeacms/volto-matomo": "*"
-    "@plone/scripts": "*"
-    plotly.js: ^2.24.2
-    react-chart-editor: latest
-    react-colorscales: "github:eea/react-colorscales#1.0.2"
-    react-inspector: 6.0.2
-    react-json-editor-ajrm: 2.5.14
-    react-plotly.js: 2.6.0
-  checksum: 7a8b5eb4b3ebb768ef264ca8ca0b73da7e8d06d9204bc33d73d526067602ed1e7a8665bb7c430608695804209ae7525f779e16e7aaba42cec5befc0a3ffaa006
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-plotlycharts@npm:*":
   version: 8.1.3
   resolution: "@eeacms/volto-plotlycharts@npm:8.1.3"
@@ -2447,6 +2414,23 @@ __metadata:
     react-json-editor-ajrm: 2.5.14
     react-plotly.js: 2.6.0
   checksum: 1eac14871521696ca2f285bf575b3a6b6574fa0c1d5f0e1c8004a3a3f0de249ebbdd89866cd35e44a256e16397a6e10b4706b817e7e65f70d44122e067dcb7d6
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-plotlycharts@npm:8.1.4":
+  version: 8.1.4
+  resolution: "@eeacms/volto-plotlycharts@npm:8.1.4"
+  dependencies:
+    "@eeacms/volto-embed": "*"
+    "@eeacms/volto-matomo": "*"
+    "@plone/scripts": "*"
+    plotly.js: ^2.24.2
+    react-chart-editor: latest
+    react-colorscales: "github:eea/react-colorscales#1.0.2"
+    react-inspector: 6.0.2
+    react-json-editor-ajrm: 2.5.14
+    react-plotly.js: 2.6.0
+  checksum: 143b287f4d91f223fa484450c6447fd9d1cab91fa157193bcc9439fdd4cc64904ff12c34a43f1819c9305d8e5cf07d90b5ef79e802282e2c73fa7c182ba12f08
   languageName: node
   linkType: hard
 
@@ -2572,14 +2556,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tableau@github:eea/volto-tableau#develop":
-  version: 7.0.2
-  resolution: "@eeacms/volto-tableau@https://github.com/eea/volto-tableau.git#commit=d5cb3222e0a316d2627cade3d2534942264b24ac"
+"@eeacms/volto-tableau@npm:7.0.5":
+  version: 7.0.5
+  resolution: "@eeacms/volto-tableau@npm:7.0.5"
   dependencies:
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-object-widget": "*"
     "@eeacms/volto-resize-helper": "*"
-  checksum: 5fdff653015f4e8a74f0934211e6e9fb1c1e57ed0b7a6efa243211edcb61a9f291173b609ac5db484c1d5c39680c3ff3dfbddb50cc20f5b1ec17198f7bb5dcbd
+  checksum: 16d0947e4ac75ce1598e067f25d3adbb763743dc491226bb22a7ca256e7a056259f21f76af36b62fb3c637f17b302c245eba7af2a15a92672417162d0dc8d4f5
   languageName: node
   linkType: hard
 
@@ -14708,16 +14692,16 @@ __metadata:
     "@eeacms/volto-datablocks": 6.1.6
     "@eeacms/volto-eea-design-system": 1.22.4
     "@eeacms/volto-eea-kitkat": 21.0.1
-    "@eeacms/volto-eea-map": "github:eea/volto-eea-map#develop"
+    "@eeacms/volto-eea-map": 3.0.3
     "@eeacms/volto-eea-website-theme": 1.24.3
-    "@eeacms/volto-embed": "github:eea/volto-embed#develop"
+    "@eeacms/volto-embed": 9.0.3
     "@eeacms/volto-forest-policy": 0.1.27
     "@eeacms/volto-globalsearch": 1.0.21
     "@eeacms/volto-middleware-vh": 1.0.6
-    "@eeacms/volto-plotlycharts": "github:eea/volto-plotlycharts#develop"
+    "@eeacms/volto-plotlycharts": 8.1.4
     "@eeacms/volto-searchlib": 0.6.7
     "@eeacms/volto-slate-dataentity": 3.0.0
-    "@eeacms/volto-tableau": "github:eea/volto-tableau#develop"
+    "@eeacms/volto-tableau": 7.0.5
     "@plone/scripts": ^2.1.2
     "@plone/volto": 16.22.2
     "@storybook/addon-actions": ^6.3.0
