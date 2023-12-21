@@ -2478,6 +2478,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eeacms/volto-prefixPath@github:eea/volto-prefixPath#develop":
+  version: 0.1.0
+  resolution: "@eeacms/volto-prefixPath@https://github.com/eea/volto-prefixPath.git#commit=7e333dea3522b17a24e56eb7dc938735482a59ba"
+  dependencies:
+    "@eeacms/volto-eea-design-system": "*"
+  checksum: 4cb5041151a7308eb7c97d9e38c5171e7c2b6cd5ea6867ecf6ffe5b8b968f8add896ff0de54ae3f7fcc792c7ec98408a5d2687c38fc199aa31e6aa212370cdb3
+  languageName: node
+  linkType: hard
+
 "@eeacms/volto-quote-block@npm:1.2.3":
   version: 1.2.3
   resolution: "@eeacms/volto-quote-block@npm:1.2.3"
@@ -14743,6 +14752,7 @@ __metadata:
     "@eeacms/volto-globalsearch": 1.0.22
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 8.2.0
+    "@eeacms/volto-prefixPath": "github:eea/volto-prefixPath#develop"
     "@eeacms/volto-searchlib": 0.6.7
     "@eeacms/volto-slate-dataentity": 3.0.0
     "@eeacms/volto-tableau": 7.1.0
@@ -24019,7 +24029,7 @@ __metadata:
   peerDependencies:
     react: ">=0.14"
     react-dom: ">=0.14"
-  checksum: ea65e61461d825cb35df1ca3e99a67d88cfdf50db7ec75eda5320b576b30ffc45ef04bb89d5708df56f73ce5803540e5b8ac8a42b04847077afb59f9071bdb6f
+  checksum: 03bd2571d0fecc1cd321c8c98555cb8032f55131d06e2e39bc3eaf8d7924b2a223e45f9baa3ccd9eb21dec474b0eb54d1fa29b4655e93099b229d5402461e75a
   languageName: node
   linkType: hard
 

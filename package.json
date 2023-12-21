@@ -20,7 +20,8 @@
     "@eeacms/volto-eea-website-theme",
     "@eeacms/volto-globalsearch",
     "@eeacms/volto-searchlib",
-    "@eeacms/volto-forest-policy"
+    "@eeacms/volto-forest-policy",
+    "@eeacms/volto-prefixPath"
   ],
   "installConfig": {
     "pnp": false
@@ -37,6 +38,7 @@
     "@eeacms/volto-globalsearch": "1.0.22",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "8.2.0",
+    "@eeacms/volto-prefixPath": "github:eea/volto-prefixPath#develop",
     "@eeacms/volto-searchlib": "0.6.7",
     "@eeacms/volto-slate-dataentity": "3.0.0",
     "@eeacms/volto-tableau": "7.1.0",
