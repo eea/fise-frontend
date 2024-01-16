@@ -34,7 +34,7 @@
     "@eeacms/volto-eea-website-theme": "1.26.2",
     "@eeacms/volto-embed": "9.0.6",
     "@eeacms/volto-forest-policy": "0.1.29",
-    "@eeacms/volto-globalsearch": "1.0.22",
+    "@eeacms/volto-globalsearch": "1.1.0",
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "8.2.0",
     "@eeacms/volto-searchlib": "0.6.7",
