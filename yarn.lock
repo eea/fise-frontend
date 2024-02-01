@@ -1193,10 +1193,10 @@
     "@eeacms/volto-widget-theme-picker" "^1.0.1"
     react-color "~2.18.1"
 
-"@eeacms/volto-block-image-cards@1.3.6":
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-image-cards/-/volto-block-image-cards-1.3.6.tgz#446e1150ae28cd4e17986d2b149d6b998b96b03d"
-  integrity sha512-09H5ot3scxkTIhnD9X42FPzwtEMY8dKqEvVYrdAIpRT4QLcny5z09NDu1PgV0pSacUt4w7lx64i+sCbccsFi9Q==
+"@eeacms/volto-block-image-cards@1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-image-cards/-/volto-block-image-cards-1.3.7.tgz#196bc2658ad110f95a410752f2d453378c1a7dd7"
+  integrity sha512-V6t7Su/lTXjNRRJAaIQk8zdL12+ak+BLFX0/MzYtFbc3L2HtSmkcm/AkVG7ZJhLeJj8o5eps67G73u0VKQB3+A==
   dependencies:
     "@eeacms/volto-object-widget" "*"
     react-lazy-load-image-component "^1.4.0"
@@ -1204,10 +1204,10 @@
     react-slick "^0.24.0"
     slick-carousel "^1.8.1"
 
-"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-6.0.0.tgz#e9369c830e030c19762f0ceecc20b28be26fdf32"
-  integrity sha512-4GFt3ypxX50pB/yhNwrGYBEfWYEleuaNcAYTGsDiQBkWBJubzs7/OjM7ERpzUWhAgjNU8RY+daX8MmFWirvEGQ==
+"@eeacms/volto-block-style@*", "@eeacms/volto-block-style@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-style/-/volto-block-style-6.1.0.tgz#ec888386b83e3923630ca9ec776bd129741ae345"
+  integrity sha512-znNKgzoSCVfrl95bvACirvVAr6RUnby7WtNL5nRa5kTKuPrJx/x2XvGoBkfhW63jbuLn1Sthgpws625P3wQiyw==
   dependencies:
     "@eeacms/volto-resize-helper" "*"
     "@eeacms/volto-widget-theme-picker" "*"
@@ -1261,18 +1261,18 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.2.4.tgz#75832d86c9bc40d0bb206c97aa8a5de199d787ab"
   integrity sha512-SiIl68cIfwdb1SKrwyyY+Y0qrsuZG7j2JvOOGGykbn6pFAlP3aFeUQMLR21c8OTSdWG+WAhcApheNlOohagItg==
 
-"@eeacms/volto-eea-kitkat@21.2.2":
-  version "21.2.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-21.2.2.tgz#e53ed5672fe48f2946591592687e036ad44b2187"
-  integrity sha512-/dM8jFQPVQpPbX79W7LN5G+pQZhbTSYV/MHMBmqggjqx/7D8TN4IqjZ9VXr9YEt36BS9fEjdjxirk1MLrW9/ag==
+"@eeacms/volto-eea-kitkat@21.2.3":
+  version "21.2.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-21.2.3.tgz#103ab19507b6d6c0dbcb94a92ec28acf082008ac"
+  integrity sha512-3+AzPBeJizpanp+hxjdsu+Ivu+yia6PcbBCf6ZeZhMCpN8Eixio19UPqFR8us1f9FDC3C2SF3YLPBsNzznB8/Q==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "10.4.6"
     "@eeacms/volto-anchors" "0.5.0"
     "@eeacms/volto-banner" "3.1.5"
     "@eeacms/volto-block-divider" "6.1.6"
-    "@eeacms/volto-block-image-cards" "1.3.6"
-    "@eeacms/volto-block-style" "6.0.0"
+    "@eeacms/volto-block-image-cards" "1.3.7"
+    "@eeacms/volto-block-style" "6.1.0"
     "@eeacms/volto-call-to-action-block" "4.3.0"
     "@eeacms/volto-columns-block" "7.0.1"
     "@eeacms/volto-corsproxy" "3.1.5"
