@@ -1261,10 +1261,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.2.4.tgz#75832d86c9bc40d0bb206c97aa8a5de199d787ab"
   integrity sha512-SiIl68cIfwdb1SKrwyyY+Y0qrsuZG7j2JvOOGGykbn6pFAlP3aFeUQMLR21c8OTSdWG+WAhcApheNlOohagItg==
 
-"@eeacms/volto-eea-kitkat@22.0.0":
-  version "22.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-22.0.0.tgz#666ceaf75c3b88732e75286020b4e1b7fd7cfb72"
-  integrity sha512-vPhN4h+liWpqTFVRLDm4pavEEKVJq8nOrhVdmOEYSY/pNdOtcuFKcq1bKa1vRjruCree0rVYnwihPU5UU98YXA==
+"@eeacms/volto-eea-kitkat@22.0.1":
+  version "22.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-22.0.1.tgz#76024f615c16e5614d6d1b2940c07eab5703591c"
+  integrity sha512-LXiKMAqgdpRllr52CDCPK80YY1VOC/M8eR/Af4QQ0h5Vp6CiFIvF/njNgdNZcnHDH3fHZDEWx5xuuul60m8j/w==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "10.4.6"
@@ -1287,7 +1287,7 @@
     "@eeacms/volto-quote-block" "1.2.3"
     "@eeacms/volto-resize-helper" "1.3.4"
     "@eeacms/volto-sentry-rancher-config" "4.0.0"
-    "@eeacms/volto-slate-footnote" "6.2.2"
+    "@eeacms/volto-slate-footnote" "6.2.3"
     "@eeacms/volto-slate-label" "0.6.0"
     "@eeacms/volto-slate-metadata-mentions" "7.0.3"
     "@eeacms/volto-slate-zotero" "5.2.7"
@@ -1452,10 +1452,10 @@
   dependencies:
     "@eeacms/volto-datablocks" "*"
 
-"@eeacms/volto-slate-footnote@*", "@eeacms/volto-slate-footnote@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-slate-footnote/-/volto-slate-footnote-6.2.2.tgz#8bcc8f32bf85f2abb8254ad31c2a5c1377c6124e"
-  integrity sha512-LZ8NZ0+WYMKs/KZLyAbWEuSAIOv38Ec74m/1MfWm9S3aAO7LbhC0AOhEiN2AarTx/7GEQ2gT+8P1OgHyJUwFGg==
+"@eeacms/volto-slate-footnote@*", "@eeacms/volto-slate-footnote@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-slate-footnote/-/volto-slate-footnote-6.2.3.tgz#ee961c9fee470e9fb69fdeba3e53a12776f961eb"
+  integrity sha512-IhTdLw3I4PZfVlNZcm7Ce05CidCMRfeg2yvjsIt9uPDLkkoiwXp7sBGehoVVy6B/SHVPbFWwMhZ/9Hz2VOJuCA==
 
 "@eeacms/volto-slate-label@0.6.0":
   version "0.6.0"
