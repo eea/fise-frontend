@@ -1261,10 +1261,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.2.4.tgz#75832d86c9bc40d0bb206c97aa8a5de199d787ab"
   integrity sha512-SiIl68cIfwdb1SKrwyyY+Y0qrsuZG7j2JvOOGGykbn6pFAlP3aFeUQMLR21c8OTSdWG+WAhcApheNlOohagItg==
 
-"@eeacms/volto-eea-kitkat@22.0.1":
-  version "22.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-22.0.1.tgz#76024f615c16e5614d6d1b2940c07eab5703591c"
-  integrity sha512-LXiKMAqgdpRllr52CDCPK80YY1VOC/M8eR/Af4QQ0h5Vp6CiFIvF/njNgdNZcnHDH3fHZDEWx5xuuul60m8j/w==
+"@eeacms/volto-eea-kitkat@22.1.0":
+  version "22.1.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-22.1.0.tgz#fdefb9bf11cbad1b426b6271c9519360a5421867"
+  integrity sha512-WVD2HldBT1LTiggVe6aj4dzqbARiOQ4dKZMY4P9RmZvJNxq+wceIrqEza9EB9VeXmwez1/c2KJ2ZFV6KHPjujw==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "10.4.6"
@@ -1292,7 +1292,7 @@
     "@eeacms/volto-slate-metadata-mentions" "7.0.3"
     "@eeacms/volto-slate-zotero" "5.2.7"
     "@eeacms/volto-statistic-block" "4.1.0"
-    "@eeacms/volto-tabs-block" "7.0.5"
+    "@eeacms/volto-tabs-block" "7.5.0"
     "@eeacms/volto-tags-block" "1.2.4"
     "@eeacms/volto-taxonomy" "4.1.1"
     "@eeacms/volto-timeline-block" "1.1.5"
@@ -1490,15 +1490,15 @@
     "@eeacms/volto-object-widget" "*"
     "@eeacms/volto-resize-helper" "*"
 
-"@eeacms/volto-tabs-block@7.0.5":
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-tabs-block/-/volto-tabs-block-7.0.5.tgz#0e6ec0d66b71591e4a271d2d6cedb6246f669d64"
-  integrity sha512-4fTV/3SbKUxGnGJCesYBoWePdcXBox3emwKgOBywLxwSN3hLjK8/YiE1vP0axBkGjegNWPyDj1ogiZRfpu6uRQ==
+"@eeacms/volto-tabs-block@7.5.0":
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-tabs-block/-/volto-tabs-block-7.5.0.tgz#2e8f0d862b413cf9fddb3d2db09a8d72c92e0ce6"
+  integrity sha512-erAgfENfkgVaFV/Tz2M05g+nRFvPGWt9eE3+I8bgTCMuXuowE0ZKesa4UR6QwkMZMWRlLbDEM8x8AC34qCXhEA==
   dependencies:
     "@eeacms/volto-anchors" "*"
     "@eeacms/volto-block-style" "*"
     react-responsive-tabs "4.4.3"
-    react-slick "^0.24.0"
+    react-slick "^0.30.1"
     slick-carousel "^1.8.1"
 
 "@eeacms/volto-tags-block@1.2.4":
@@ -15589,17 +15589,6 @@ react-sizeme@3.0.1:
     invariant "^2.2.4"
     shallowequal "^1.1.0"
     throttle-debounce "^3.0.1"
-
-react-slick@^0.24.0:
-  version "0.24.0"
-  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.24.0.tgz#1a4e078a82de4e9458255d9ce26aa6f3b17b168b"
-  integrity sha512-Pvo0B74ohumQdYOf0qP+pdQpj9iUbAav7+2qiF3uTc5XeQp/Y/cnIeDBM2tB3txthfSe05jKIqLMJTS6qVvt5g==
-  dependencies:
-    classnames "^2.2.5"
-    enquire.js "^2.1.6"
-    json2mq "^0.2.0"
-    lodash.debounce "^4.0.8"
-    resize-observer-polyfill "^1.5.0"
 
 react-slick@^0.30.1:
   version "0.30.2"
