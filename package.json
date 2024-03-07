@@ -21,7 +21,7 @@
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-addons-forest": "0.1.6",
-    "@eeacms/volto-datablocks": "6.3.4",
+    "@eeacms/volto-datablocks": "6.4.0",
     "@eeacms/volto-eea-kitkat": "22.1.0",
     "@eeacms/volto-embed": "9.1.1",
     "@eeacms/volto-forests-theme": "0.2.23",
