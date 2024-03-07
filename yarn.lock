@@ -2164,9 +2164,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-kitkat@npm:22.0.1":
-  version: 22.0.1
-  resolution: "@eeacms/volto-eea-kitkat@npm:22.0.1"
+"@eeacms/volto-eea-kitkat@npm:22.1.0":
+  version: 22.1.0
+  resolution: "@eeacms/volto-eea-kitkat@npm:22.1.0"
   dependencies:
     "@eeacms/countup": 2.0.6
     "@eeacms/volto-accordion-block": 10.4.6
@@ -2194,7 +2194,7 @@ __metadata:
     "@eeacms/volto-slate-metadata-mentions": 7.0.3
     "@eeacms/volto-slate-zotero": 5.2.7
     "@eeacms/volto-statistic-block": 4.1.0
-    "@eeacms/volto-tabs-block": 7.0.5
+    "@eeacms/volto-tabs-block": 7.5.0
     "@eeacms/volto-tags-block": 1.2.4
     "@eeacms/volto-taxonomy": 4.1.1
     "@eeacms/volto-timeline-block": 1.1.5
@@ -2205,7 +2205,7 @@ __metadata:
     "@eeacms/volto-widget-toggle": 3.1.4
     "@kitconcept/volto-blocks-grid": 7.0.2
     "@plone-collective/volto-sentry": 0.3.1
-  checksum: 67897f6439eab30361fde54e0286e5305928d0201680b17703aad5819368ef64c27fb88a1bfe575e7227ea86f84946833bfca947034920b032e3e6574096db47
+  checksum: 05f8975d5fb69dbf7c658f9064bff916c57ae393172f44e8830591282f515ba1df0c0d2e1c6582ece82d6ce6eff29dc01fb1efc0410c67a818b064fa33bbf186
   languageName: node
   linkType: hard
 
@@ -2663,16 +2663,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tabs-block@npm:7.0.5":
-  version: 7.0.5
-  resolution: "@eeacms/volto-tabs-block@npm:7.0.5"
+"@eeacms/volto-tabs-block@npm:7.5.0":
+  version: 7.5.0
+  resolution: "@eeacms/volto-tabs-block@npm:7.5.0"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
     react-responsive-tabs: 4.4.3
-    react-slick: ^0.24.0
+    react-slick: ^0.30.1
     slick-carousel: ^1.8.1
-  checksum: 5d5bc8337e137ff8cd32f5393978a785e96a4bac345a7027b45a8d7e43c4b999c9d6686ab87506f68ebbf5f9725e85d404c0b2ffedb7283733dd8016d8c0ee04
+  checksum: 1f08b0d5af4d376e008313fca1389dc23de6f3adaf8acfbe0df8ffcf3633b7c0d63c4d0fb59aaca54126c9e6e84d6b3095e8da72a8bbab0ae175d93b4edb95cb
   languageName: node
   linkType: hard
 
@@ -14838,7 +14838,7 @@ __metadata:
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 6.3.4
     "@eeacms/volto-eea-design-system": 1.23.2
-    "@eeacms/volto-eea-kitkat": 22.0.1
+    "@eeacms/volto-eea-kitkat": 22.1.0
     "@eeacms/volto-eea-map": 3.3.1
     "@eeacms/volto-eea-website-theme": 1.28.3
     "@eeacms/volto-embed": 9.1.1
@@ -25280,22 +25280,6 @@ __metadata:
     react: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: 67ce4981914da8a76c6efb4bc8ee7ab69e04c33bd4b3517419ab2165679a3c701dae781556149713fe2c542f84188b7ca101ea58883537be5c05756408f48c8b
-  languageName: node
-  linkType: hard
-
-"react-slick@npm:^0.24.0":
-  version: 0.24.0
-  resolution: "react-slick@npm:0.24.0"
-  dependencies:
-    classnames: ^2.2.5
-    enquire.js: ^2.1.6
-    json2mq: ^0.2.0
-    lodash.debounce: ^4.0.8
-    resize-observer-polyfill: ^1.5.0
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.1 || ^16.0.0
-    react-dom: ^0.14.0 || ^15.0.1 || ^16.0.0
-  checksum: af03d42cc940795d417b00a4eccb11709c1120f2702121d41cab0bf956ccfde7711aa9361e791ea3bc744662c4d911077c59ab114358ff57f27a9c4625308142
   languageName: node
   linkType: hard
 
