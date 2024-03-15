@@ -1226,10 +1226,10 @@
   dependencies:
     react-color "~2.19.3"
 
-"@eeacms/volto-controlpanel@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-controlpanel/-/volto-controlpanel-0.2.0.tgz#9c4ad5e751be71fac0cde07bf67ff5e003e4f7dc"
-  integrity sha512-U2KdWgySnonj1vaWIqstdJSZ4I2NSWJ4eqZCEPjHu2jIe6OR7gGR3xpKFQLnH04/5pIa+7kIpehN3IB6zYKfSg==
+"@eeacms/volto-controlpanel@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-controlpanel/-/volto-controlpanel-0.3.0.tgz#10ba49b2cebc68987063d2d4879017d690548086"
+  integrity sha512-M1P0OyheiQ+/vT/Qv5FqyWnRK5K2pfPx6NYmZunW2RypyWtxXhql/tqqeLvHK4vRmS6zYrW94ldPCFjWaI5TrQ==
 
 "@eeacms/volto-corsproxy@*", "@eeacms/volto-corsproxy@3.1.5":
   version "3.1.5"
@@ -1257,10 +1257,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.2.4.tgz#75832d86c9bc40d0bb206c97aa8a5de199d787ab"
   integrity sha512-SiIl68cIfwdb1SKrwyyY+Y0qrsuZG7j2JvOOGGykbn6pFAlP3aFeUQMLR21c8OTSdWG+WAhcApheNlOohagItg==
 
-"@eeacms/volto-eea-kitkat@23.0.0":
-  version "23.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-23.0.0.tgz#292a2c354a1d3a81ad478918a70c242d33d34ccf"
-  integrity sha512-YKuXy31zX3gYW/AYb7Yc+CFJXF9rK/dnOgmOzj35VHKWShFoijH5Y+BNT8ZTPIuRkGbu3E2v2k5cbQJvVCRlQw==
+"@eeacms/volto-eea-kitkat@23.0.1":
+  version "23.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-23.0.1.tgz#b1c7b95ccdb6527c6debe2296048c889b96859bb"
+  integrity sha512-6dym/jQ9XfLcDy2DKd6I25afIRE7TmzFwTW1KjPrsJoyy84D41Fgv4gWKvN2+CS+06VfQAlnuxI5t0XWPm5Zhw==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "10.4.6"
@@ -1271,7 +1271,7 @@
     "@eeacms/volto-block-style" "6.1.0"
     "@eeacms/volto-call-to-action-block" "4.3.1"
     "@eeacms/volto-columns-block" "7.0.1"
-    "@eeacms/volto-controlpanel" "0.2.0"
+    "@eeacms/volto-controlpanel" "0.3.0"
     "@eeacms/volto-corsproxy" "3.1.5"
     "@eeacms/volto-description-block" "1.2.4"
     "@eeacms/volto-group-block" "6.4.0"
