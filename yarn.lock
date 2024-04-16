@@ -1264,10 +1264,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-1.2.4.tgz#75832d86c9bc40d0bb206c97aa8a5de199d787ab"
   integrity sha512-SiIl68cIfwdb1SKrwyyY+Y0qrsuZG7j2JvOOGGykbn6pFAlP3aFeUQMLR21c8OTSdWG+WAhcApheNlOohagItg==
 
-"@eeacms/volto-eea-kitkat@24.0.0":
-  version "24.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-24.0.0.tgz#a8c788e1e91c5c79a09dbdc382ccd66930ba123f"
-  integrity sha512-rPsYFMWacKAMVRlCO1i/9t7TxFimcryyJyE1bsoXCgEUnBCTG8y8LlNapPUMHJAKvGusBt9jPelMjYvGc3SfRg==
+"@eeacms/volto-eea-kitkat@24.0.1":
+  version "24.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-24.0.1.tgz#5f656299d6905d2108f52b49bbe4f70d87eb0356"
+  integrity sha512-g7eDgU7mp6r3TsJLW94n4CE3zRhIZW2Bi3CZcnb+KH7kXVDifaAyqYMBUZyFOhf1Eubz3wkPAy+x6IZWaAWcdw==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "10.4.6"
@@ -1303,7 +1303,7 @@
     "@eeacms/volto-timeline-block" "1.1.5"
     "@eeacms/volto-toolbar-actions" "1.0.3"
     "@eeacms/volto-widget-dataprovenance" "0.4.3"
-    "@eeacms/volto-widget-geolocation" "5.3.0"
+    "@eeacms/volto-widget-geolocation" "5.3.1"
     "@eeacms/volto-widget-temporal-coverage" "5.2.0"
     "@eeacms/volto-widget-theme-picker" "1.1.5"
     "@eeacms/volto-widget-toggle" "3.1.4"
@@ -1534,10 +1534,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-dataprovenance/-/volto-widget-dataprovenance-0.4.3.tgz#d4fdf27cc267bf5aa7f8d2f373fce02c1d16b888"
   integrity sha512-YIeUHimxmV6VVbZC/7/FaOctroIO0o/n/RW7C+MvRitM5X5CNFA9OYzob+57BMHzWZdxpJU3Tp7vGYXXnfTUwA==
 
-"@eeacms/volto-widget-geolocation@5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-geolocation/-/volto-widget-geolocation-5.3.0.tgz#1a405b244c1cba1a1d95d0aac5d0083cc7fd02f9"
-  integrity sha512-BYC+hz7vklq9gizNl46q4N7k+wlIQ+YV7ZbFXUGVC8wQd/m6T/2QWAMQyv3Mckdj/B3Q4azuuQm3i+8Mq9r86w==
+"@eeacms/volto-widget-geolocation@5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-widget-geolocation/-/volto-widget-geolocation-5.3.1.tgz#96c55de05e805e5c862f553863273fab1ab46fe3"
+  integrity sha512-9otMwQcrkORqxZzH/UZYhCdMIb/5Sz8/h/yxlL5itepOAUygV/bZhGyZMFZu1Ov8R1qxaSzjPCCu+7KAqTwapg==
   dependencies:
     "@eeacms/volto-corsproxy" "*"
     i18n-iso-countries "6.2.1"
