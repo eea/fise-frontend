@@ -2661,27 +2661,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tableau@npm:7.2.1":
-  version: 7.2.1
-  resolution: "@eeacms/volto-tableau@npm:7.2.1"
+"@eeacms/volto-tableau@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@eeacms/volto-tableau@npm:8.0.0"
   dependencies:
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-object-widget": "*"
     "@eeacms/volto-resize-helper": "*"
-  checksum: 236a030fa5f8f7c38fe9a4f68b1dca2de199e51575f4cba99976c081d0afed9c9a9b61dd807459f96e0b3bc44ae664260c253bfe0fc906b501a474671803415d
+  checksum: 6997b674451254d4fd90a0c7bca584dbcf2aecd835c83d915e86eff929bfe881d4ca08075e2bcac1d67a1bfb2a04940df75a268ce874acc6bd5f46523f2ab292
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tabs-block@npm:7.5.1":
-  version: 7.5.1
-  resolution: "@eeacms/volto-tabs-block@npm:7.5.1"
+"@eeacms/volto-tabs-block@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@eeacms/volto-tabs-block@npm:8.0.0"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
     react-responsive-tabs: 4.4.3
     react-slick: ^0.30.1
     slick-carousel: ^1.8.1
-  checksum: 25c0e4a89fba97be5e4add0baf610b3d00644e7983d0a3a5cbca5bba0b4d77ee6d18ab4073fa30e78ac683d9f58444d4846a8bc5952a43cc7d89c6821494110b
+  checksum: c51d0aaca6af0bfdb5d2f676572ae88d3160014d4ff7e17439d38857612617e94184bae56907476d288f356a5671a09857658912cccc74ffa2614651a4df1112
   languageName: node
   linkType: hard
 
@@ -14864,7 +14864,7 @@ __metadata:
     "@eeacms/volto-plotlycharts": 10.0.0
     "@eeacms/volto-searchlib": 1.0.0
     "@eeacms/volto-slate-dataentity": 3.0.1
-    "@eeacms/volto-tableau": 7.2.1
+    "@eeacms/volto-tableau": 8.0.0
     "@plone/scripts": ^2.1.2
     "@plone/volto": 16.22.2
     "@storybook/addon-actions": ^6.3.0
