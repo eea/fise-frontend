@@ -1251,14 +1251,15 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-corsproxy/-/volto-corsproxy-4.0.0.tgz#16b8548eec882befe241cd51298eabf29f76a016"
   integrity sha512-ZRARIIlpz8p8AGtKK4ddl+IaDKpZ20JxL78JvI19srty3M4dRdgZQymtTtQh0YWS665gL8GdpZCHfq8L3FdRyw==
 
-"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@7.0.3":
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-7.0.3.tgz#0f046a16309a5b7257bc2681d7c169eaa5568807"
-  integrity sha512-nVqX0xVK1RJEFSl5oKf2yNgN6+uCrnIBorIhUrUb1msjaLqD9ySJVfB6lCMdCBDRhfRCHcr5i9jSMDxGrMbTqg==
+"@eeacms/volto-datablocks@*", "@eeacms/volto-datablocks@7.0.4":
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-datablocks/-/volto-datablocks-7.0.4.tgz#b18d9a4f5a241c2e6fd90d4c438ce062af70b9ac"
+  integrity sha512-FGkl06fi9uAknCg3QcPEwhZMR9z+YbHuTzBMQxU75RU9y83ikoKWEV004Ikq0zcQrWL1KwKezhiNQrLirBt07Q==
   dependencies:
     "@eeacms/countup" "*"
     "@eeacms/volto-embed" "*"
     "@eeacms/volto-group-block" "*"
+    "@eeacms/volto-listing-block" "*"
     "@eeacms/volto-matomo" "*"
     d3 "7.1.1"
     date-fns "2.28.0"
@@ -1378,7 +1379,7 @@
     "@eeacms/volto-object-widget" "*"
     "@eeacms/volto-widget-theme-picker" "*"
 
-"@eeacms/volto-listing-block@8.0.2":
+"@eeacms/volto-listing-block@*", "@eeacms/volto-listing-block@8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-8.0.2.tgz#6774b7a1ab815352f666ca5893281d135228eda5"
   integrity sha512-ysYR6RkBrwMzO1NRXQozvujZSRuDIxmjcimt6BjB5d9EQc1yvACsAIVdA0Kz4UssrhpDQN+Yi56j49e8xIBWjg==
