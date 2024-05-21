@@ -36,7 +36,7 @@
     "@eeacms/volto-forest-policy": "0.1.30",
     "@eeacms/volto-globalsearch": "2.0.0",
     "@eeacms/volto-middleware-vh": "1.0.6",
-    "@eeacms/volto-plotlycharts": "10.0.2",
+    "@eeacms/volto-plotlycharts": "10.0.3",
     "@eeacms/volto-searchlib": "1.0.0",
     "@eeacms/volto-slate-dataentity": "3.0.1",
     "@eeacms/volto-tableau": "8.0.2",
