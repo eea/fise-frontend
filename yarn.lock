@@ -1273,10 +1273,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-2.0.0.tgz#4ab3c61abec2fa654d17048e50bad95528c71052"
   integrity sha512-wM2cbD8a6mhGD32yvJ8XlvNTPtOXKpsouCk3WHuYeEWRHiYS3RzGClELZQKD3CqQfo/qYkBlkkRfmJYYHpxq6Q==
 
-"@eeacms/volto-eea-kitkat@25.0.2":
-  version "25.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.0.2.tgz#ad92d35c61e5fbb3c8b5f13b0c76af9f71820b66"
-  integrity sha512-EmBKq21bJWa0DKb3d1EVygLKIvi6LLWqb/ttNKjfTjpqM2iC5U3YrEMmU2so8S9OvMiyTV12KhzwXVi+IQCBwQ==
+"@eeacms/volto-eea-kitkat@25.0.3":
+  version "25.0.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.0.3.tgz#731b4cf67cd1fbe31e1886bf66194a24ef890a7c"
+  integrity sha512-Y4z357eKJN/mzTXmtqZTae6pBZydvnS9sd+SQbJwoKO0O1p8GTR/dCsn0gqRUd+34VMxJ1EYPIq9IYKRZOZUag==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "11.0.0"
@@ -1294,7 +1294,7 @@
     "@eeacms/volto-description-block" "2.0.0"
     "@eeacms/volto-group-block" "7.0.0"
     "@eeacms/volto-hero-block" "7.0.1"
-    "@eeacms/volto-listing-block" "8.0.2"
+    "@eeacms/volto-listing-block" "8.0.3"
     "@eeacms/volto-matomo" "5.0.0"
     "@eeacms/volto-metadata-block" "7.0.0"
     "@eeacms/volto-nextcloud-video-block" "1.0.0"
@@ -1379,10 +1379,10 @@
     "@eeacms/volto-object-widget" "*"
     "@eeacms/volto-widget-theme-picker" "*"
 
-"@eeacms/volto-listing-block@*", "@eeacms/volto-listing-block@8.0.2":
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-8.0.2.tgz#6774b7a1ab815352f666ca5893281d135228eda5"
-  integrity sha512-ysYR6RkBrwMzO1NRXQozvujZSRuDIxmjcimt6BjB5d9EQc1yvACsAIVdA0Kz4UssrhpDQN+Yi56j49e8xIBWjg==
+"@eeacms/volto-listing-block@*", "@eeacms/volto-listing-block@8.0.3":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-listing-block/-/volto-listing-block-8.0.3.tgz#eaa5b1829342675b63b34b696249d955327f0b35"
+  integrity sha512-vMV1+i+5rtk/LDvMKP/irkj06bcOGLcAEve4kg3QtnoD1aVilp1W/yiphOgABAsiUV59N5ONXaG4Ldham6fbhg==
   dependencies:
     "@eeacms/volto-widget-theme-picker" "*"
     react-resize-detector "7.1.2"
