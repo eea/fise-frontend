@@ -1227,10 +1227,10 @@
     github-slugger "1.4.0"
     smoothscroll-polyfill "^0.4.4"
 
-"@eeacms/volto-call-to-action-block@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-call-to-action-block/-/volto-call-to-action-block-5.0.0.tgz#a7071c8caa47bc8f62aa1e92e5f2938970bd9334"
-  integrity sha512-YqpGiMKu01apuQYCLxMKTGEfM+twlgMmVSHp/vb7IAqucRVaUfqqXPFZACcG3jNu18v0JhbVzwEj1CHoTnClyg==
+"@eeacms/volto-call-to-action-block@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-call-to-action-block/-/volto-call-to-action-block-5.1.0.tgz#020e06025e3c38b412c1a13fe2b1eaa618169fb1"
+  integrity sha512-62JyQ/a2xWJN/Fp1m9osqBIomz10U2GHGUu51Br9z9r0SpfvW94u+KbWKNaKGjWz+fkR1VFXxH3XziDplkREuA==
   dependencies:
     "@eeacms/volto-widget-theme-picker" "*"
 
@@ -1268,15 +1268,15 @@
     react-visibility-sensor "5.1.1"
     sanitize-html "2.12.1"
 
-"@eeacms/volto-description-block@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-2.0.2.tgz#3364c684d37c74cfdf939f50daf99e4400096478"
-  integrity sha512-e2Rs8gGPRMWkdQAeq+vxIkNimNH5SQhK+G34rrKQWmrShvSO+J+AxLaI8cXtM5RulbjSNVp7iY1eps6LG/tk5Q==
+"@eeacms/volto-description-block@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-2.2.0.tgz#c2fcfc402e014133a7f9f93933124b922f8d9c43"
+  integrity sha512-da0sD2FbCpl6j3yraqiYzkue8Yo/gjUc1uaZG4/Gzfsgz90KmuEu7yPkPRV2hdw2CK2V84pxTQ3F1Zjm2Rqj5A==
 
-"@eeacms/volto-eea-kitkat@25.1.1":
-  version "25.1.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.1.1.tgz#187be381806079833e71f1b5e740383477f14e45"
-  integrity sha512-vazExgzuAEvo4xS/ze3lwyxvu2jZpV2IlFoJLmnGOs30BXmS+ogQ0VC1F+dukwM/eCB+tywvyRarKN2R8ecL7Q==
+"@eeacms/volto-eea-kitkat@25.1.2":
+  version "25.1.2"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.1.2.tgz#b59a1c32351a329efe18465f4677150baf72af06"
+  integrity sha512-tTIzgIpaO1C0OpW+OWcW43oWyYfZ3XtXx6XJYyhmRWL+EOoOPaD5KZ5ZpgA+xuRAS4aUz9WgI7HQcH6BpwZq4g==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "11.0.0"
@@ -1287,13 +1287,13 @@
     "@eeacms/volto-block-image-cards" "2.0.1"
     "@eeacms/volto-block-style" "7.1.0"
     "@eeacms/volto-block-toc" "5.0.2"
-    "@eeacms/volto-call-to-action-block" "5.0.0"
+    "@eeacms/volto-call-to-action-block" "5.1.0"
     "@eeacms/volto-columns-block" "8.0.0"
     "@eeacms/volto-controlpanel" "1.0.0"
     "@eeacms/volto-corsproxy" "4.0.0"
-    "@eeacms/volto-description-block" "2.0.2"
+    "@eeacms/volto-description-block" "2.2.0"
     "@eeacms/volto-group-block" "7.0.0"
-    "@eeacms/volto-hero-block" "7.0.1"
+    "@eeacms/volto-hero-block" "7.1.0"
     "@eeacms/volto-listing-block" "8.1.1"
     "@eeacms/volto-matomo" "5.0.0"
     "@eeacms/volto-metadata-block" "7.0.0"
@@ -1371,10 +1371,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-group-block/-/volto-group-block-7.0.0.tgz#ea899bcb4881b83f78bc5302c5e3fe84bb0637e8"
   integrity sha512-kAbbyr0r6wESb6Z9p99UL4OC7BuipgwhA7UsxAHscpP5zuDPbNvBeecQMU4Ap+Iw9w+MnwI7iGM7NqCxZjEgVg==
 
-"@eeacms/volto-hero-block@7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-hero-block/-/volto-hero-block-7.0.1.tgz#90f847cbca4738942274d36465dba02394a2fb78"
-  integrity sha512-iCb76UDRHGuPfTYTSdILzPCPLaBuIfIzonBfPK9RCZSNvIrPOnQ0gSPDRXKuNtdAf7YoXfyPlamXLv9TpBPUyA==
+"@eeacms/volto-hero-block@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-hero-block/-/volto-hero-block-7.1.0.tgz#25a09b54adadacab2d47bfd0c22b7f336bec4dc8"
+  integrity sha512-FWY4xSUHYm77MZGDirDT0SgPuaFmRWMMYCIYeZE2fvaJ/jMxtPjsH4KhaqdaGM6EfDuxAQmxs6wvavEMnT2ffA==
   dependencies:
     "@eeacms/volto-object-widget" "*"
     "@eeacms/volto-widget-theme-picker" "*"
@@ -9201,7 +9201,7 @@ html-webpack-plugin@4.5.2:
     tapable "^1.1.3"
     util.promisify "1.0.0"
 
-htmlparser2@^6.0.0, htmlparser2@^6.1.0:
+htmlparser2@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-6.1.0.tgz#c4d762b6c3371a05dbe65e94ae43a9f845fb8fb7"
   integrity sha512-gyyPk6rgonLFEDGoeRgQNaEUvdJ4ktTmmUh/h2t7s+M8oPpIPxgNACWa+6ESR57kXstwqPiCut0V8NRpcwgU7A==
@@ -15495,18 +15495,6 @@ sanitize-html@2.12.1:
     deepmerge "^4.2.2"
     escape-string-regexp "^4.0.0"
     htmlparser2 "^8.0.0"
-    is-plain-object "^5.0.0"
-    parse-srcset "^1.0.2"
-    postcss "^8.3.11"
-
-sanitize-html@2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-2.7.3.tgz#166c868444ee4f9fd7352ac8c63fa86c343fc2bd"
-  integrity sha512-jMaHG29ak4miiJ8wgqA1849iInqORgNv7SLfSw9LtfOhEUQ1C0YHKH73R+hgyufBW9ZFeJrb057k9hjlfBCVlw==
-  dependencies:
-    deepmerge "^4.2.2"
-    escape-string-regexp "^4.0.0"
-    htmlparser2 "^6.0.0"
     is-plain-object "^5.0.0"
     parse-srcset "^1.0.2"
     postcss "^8.3.11"
