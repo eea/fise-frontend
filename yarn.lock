@@ -1268,15 +1268,15 @@
     react-visibility-sensor "5.1.1"
     sanitize-html "2.12.1"
 
-"@eeacms/volto-description-block@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-2.2.0.tgz#c2fcfc402e014133a7f9f93933124b922f8d9c43"
-  integrity sha512-da0sD2FbCpl6j3yraqiYzkue8Yo/gjUc1uaZG4/Gzfsgz90KmuEu7yPkPRV2hdw2CK2V84pxTQ3F1Zjm2Rqj5A==
+"@eeacms/volto-description-block@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-2.2.1.tgz#b40f926658ea8a869cabd2cfb754e8b943c8b097"
+  integrity sha512-lTXlB0+lLWnSxXE9JTszgjN5BVH4QkrrdY4BXYw4omdL6qwPXKKy6ovX6v+dEa5/fq+9AIoVbuxGStWSPIJctQ==
 
-"@eeacms/volto-eea-kitkat@25.1.2":
-  version "25.1.2"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.1.2.tgz#b59a1c32351a329efe18465f4677150baf72af06"
-  integrity sha512-tTIzgIpaO1C0OpW+OWcW43oWyYfZ3XtXx6XJYyhmRWL+EOoOPaD5KZ5ZpgA+xuRAS4aUz9WgI7HQcH6BpwZq4g==
+"@eeacms/volto-eea-kitkat@25.1.3":
+  version "25.1.3"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.1.3.tgz#c5a32d48f17a9b63dbb288a1a908c5a4faa2d8e9"
+  integrity sha512-P4FtBbhYrBmZriMODLrm9vXNvKKtsknuNQ60kqXGBds0UezE76zMOxpBnla21UvkOKk0/u/R0RsTer8vQuh9pg==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "11.0.0"
@@ -1291,7 +1291,7 @@
     "@eeacms/volto-columns-block" "8.0.0"
     "@eeacms/volto-controlpanel" "1.0.0"
     "@eeacms/volto-corsproxy" "4.0.0"
-    "@eeacms/volto-description-block" "2.2.0"
+    "@eeacms/volto-description-block" "2.2.1"
     "@eeacms/volto-group-block" "7.0.0"
     "@eeacms/volto-hero-block" "7.1.0"
     "@eeacms/volto-listing-block" "8.1.1"
