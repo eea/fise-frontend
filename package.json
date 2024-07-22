@@ -39,7 +39,7 @@
     "@eeacms/volto-plotlycharts": "10.0.4",
     "@eeacms/volto-searchlib": "2.0.2",
     "@eeacms/volto-slate-dataentity": "3.0.1",
-    "@eeacms/volto-tableau": "8.0.3",
+    "@eeacms/volto-tableau": "8.0.4",
     "@plone/volto": "16.22.2",
     "cross-env": "7.0.3",
     "eslint-plugin-jsx-a11y": "6.6.0",

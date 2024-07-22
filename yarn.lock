@@ -2698,14 +2698,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tableau@npm:8.0.3":
-  version: 8.0.3
-  resolution: "@eeacms/volto-tableau@npm:8.0.3"
+"@eeacms/volto-tableau@npm:8.0.4":
+  version: 8.0.4
+  resolution: "@eeacms/volto-tableau@npm:8.0.4"
   dependencies:
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-object-widget": "*"
     "@eeacms/volto-resize-helper": "*"
-  checksum: 070c687bde27baeb78cf10bd132ca2f4a4471e2de1d489daa2ce4a5a42c03cb1d4a4555cbfed405a6c191c75c66307d5cb6020292d31dc83781318f6a7a6733a
+  checksum: 63a009c55d8d3fb59da7c8fa31b55e55b88c0e203075c5e5ce1f32bfb4f31c94de303da585c7f54773e5febffd830d81bfcb70367620f27f328fa87cad7e884a
   languageName: node
   linkType: hard
 
@@ -14930,7 +14930,7 @@ __metadata:
     "@eeacms/volto-plotlycharts": 10.0.4
     "@eeacms/volto-searchlib": 2.0.2
     "@eeacms/volto-slate-dataentity": 3.0.1
-    "@eeacms/volto-tableau": 8.0.3
+    "@eeacms/volto-tableau": 8.0.4
     "@plone/scripts": ^2.1.2
     "@plone/volto": 16.22.2
     "@storybook/addon-actions": ^6.3.0
