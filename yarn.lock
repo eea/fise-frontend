@@ -2527,19 +2527,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:10.0.4":
-  version: 10.0.4
-  resolution: "@eeacms/volto-plotlycharts@npm:10.0.4"
+"@eeacms/volto-plotlycharts@npm:10.0.5":
+  version: 10.0.5
+  resolution: "@eeacms/volto-plotlycharts@npm:10.0.5"
   dependencies:
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-matomo": "*"
     "@plone/scripts": "*"
-    jsoneditor: 10.0.0
+    jsoneditor: 10.1.0
     plotly.js: ^2.28.0
     react-chart-editor: 0.46.1
     react-colorscales: "github:eea/react-colorscales#1.0.2"
     react-plotly.js: 2.6.0
-  checksum: 6bbef1aa43e75aa61f9148f7cac0d3fc967323c946e1e5b38f92ccc65f97255aeb1f64219d8a3b1a27a571e5bad54eeb7091bae53fa489529c4b8049a8a1fec1
+  checksum: 868dc2b74911c9d7e8d243a51abb81b324fe6399fdcf0beabf0c9eec82701e3c30b8bf43d416f77aab6e35f30fea84e82f4149389c88dd4a4cd21d0e3ce017c5
   languageName: node
   linkType: hard
 
@@ -7525,13 +7525,6 @@ __metadata:
     mime-types: ~2.1.34
     negotiator: 0.6.3
   checksum: 50c43d32e7b50285ebe84b613ee4a3aa426715a7d131b65b786e2ead0fd76b6b60091b9916d3478a75f11f162628a2139991b6c03ab3f1d9ab7c86075dc8eab4
-  languageName: node
-  linkType: hard
-
-"ace-builds@npm:^1.32.2":
-  version: 1.32.3
-  resolution: "ace-builds@npm:1.32.3"
-  checksum: 328c7027844a13e7081047f4156a2dff47a8fcb299224d5c52abecbf0a21df083dd212f04bf03a430dbd06912f5ed39fd72868899adf3afde8f2fd216a40662a
   languageName: node
   linkType: hard
 
@@ -15317,7 +15310,7 @@ __metadata:
     "@eeacms/volto-forest-policy": 0.1.30
     "@eeacms/volto-globalsearch": 2.0.0
     "@eeacms/volto-middleware-vh": 1.0.6
-    "@eeacms/volto-plotlycharts": 10.0.4
+    "@eeacms/volto-plotlycharts": 10.0.5
     "@eeacms/volto-searchlib": 2.0.2
     "@eeacms/volto-slate-dataentity": 3.0.1
     "@eeacms/volto-tableau": 8.0.6
@@ -19508,23 +19501,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsoneditor@npm:10.0.0":
-  version: 10.0.0
-  resolution: "jsoneditor@npm:10.0.0"
-  dependencies:
-    ace-builds: ^1.32.2
-    ajv: ^6.12.6
-    javascript-natural-sort: ^0.7.1
-    jmespath: ^0.16.0
-    json-source-map: ^0.6.1
-    jsonrepair: 3.5.0
-    mobius1-selectr: ^2.4.13
-    picomodal: ^3.0.0
-    vanilla-picker: ^2.12.2
-  checksum: ddc125f2ce4831aae60218f374688b63412a3c3d14ffe43974c9aeda73a6446ac8d22bf9ff3d7fab238616f0dbdd8bf9946c1e4c95def7b5a8df3776173e6ed5
-  languageName: node
-  linkType: hard
-
 "jsoneditor@npm:10.1.0":
   version: 10.1.0
   resolution: "jsoneditor@npm:10.1.0"
@@ -19580,15 +19556,6 @@ __metadata:
   version: 1.1.5
   resolution: "jsonpack@npm:1.1.5"
   checksum: 60ae0a52343a6bc254ff6677e87c55f4d71347b4a0c981b53cd3fdc184e139e0bf1b6bc127d42c1ab41b3c99d98e1e81559a94ba74a1c91c9143f70c8d751bf6
-  languageName: node
-  linkType: hard
-
-"jsonrepair@npm:3.5.0":
-  version: 3.5.0
-  resolution: "jsonrepair@npm:3.5.0"
-  bin:
-    jsonrepair: bin/cli.js
-  checksum: c22bebbecbd456ae01e7faa13acf9043d0be39efda625f1ec26129e0cda4f475c2a416701f997589adf09ccd73ccc20dc80cccdecc10dc08d9c46ebd976e426c
   languageName: node
   linkType: hard
 
@@ -30964,15 +30931,6 @@ __metadata:
   version: 1.0.1
   resolution: "value-equal@npm:1.0.1"
   checksum: bb7ae1facc76b5cf8071aeb6c13d284d023fdb370478d10a5d64508e0e6e53bb459c4bbe34258df29d82e6f561f874f0105eba38de0e61fe9edd0bdce07a77a2
-  languageName: node
-  linkType: hard
-
-"vanilla-picker@npm:^2.12.2":
-  version: 2.12.2
-  resolution: "vanilla-picker@npm:2.12.2"
-  dependencies:
-    "@sphinxxxx/color-conversion": ^2.2.2
-  checksum: 3712edfb53e9bc698a339a6f40f38e04f125bf0d0ebddb69155f755480f49425c26690f729baae8800c9f511b0242287eb7ce28f4303427979dd7db37068e1c5
   languageName: node
   linkType: hard
 
