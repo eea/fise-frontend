@@ -22,7 +22,7 @@
     "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-addons-forest": "0.1.6",
     "@eeacms/volto-datablocks": "7.2.1",
-    "@eeacms/volto-eea-kitkat": "25.1.4",
+    "@eeacms/volto-eea-kitkat": "25.1.5",
     "@eeacms/volto-embed": "10.0.3",
     "@eeacms/volto-forests-theme": "0.2.23",
     "@eeacms/volto-middleware-vh": "1.0.6",
