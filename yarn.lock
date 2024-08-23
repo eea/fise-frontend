@@ -1273,10 +1273,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-2.2.1.tgz#b40f926658ea8a869cabd2cfb754e8b943c8b097"
   integrity sha512-lTXlB0+lLWnSxXE9JTszgjN5BVH4QkrrdY4BXYw4omdL6qwPXKKy6ovX6v+dEa5/fq+9AIoVbuxGStWSPIJctQ==
 
-"@eeacms/volto-eea-kitkat@25.1.5":
-  version "25.1.5"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.1.5.tgz#ad1b1c002f138431b37cf50d855946d476a605a8"
-  integrity sha512-YJmn7j8TQF55rA/SbvuqF8GPYcDOU/crmWTCW4HKj4tdz0k21NFfauuPt+BWAa5Z7v2yafR3N9qfISc+k0oK3Q==
+"@eeacms/volto-eea-kitkat@25.2.0":
+  version "25.2.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.2.0.tgz#9f31fa7434367e46cb96d5a2be2d294902bfa377"
+  integrity sha512-o9c+sDrf/3e2YoPhdy+WY6ymHlOOISVZ88m4KXcyUlpjseUbiwXtR/ku8YMpCx/VUs7463z95FfQmSFBrWpZvw==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "11.0.1"
@@ -1292,7 +1292,7 @@
     "@eeacms/volto-controlpanel" "1.0.1"
     "@eeacms/volto-corsproxy" "4.0.0"
     "@eeacms/volto-description-block" "2.2.1"
-    "@eeacms/volto-group-block" "7.0.1"
+    "@eeacms/volto-group-block" "7.1.0"
     "@eeacms/volto-hero-block" "7.1.0"
     "@eeacms/volto-listing-block" "8.1.1"
     "@eeacms/volto-matomo" "5.0.0"
@@ -1366,10 +1366,10 @@
     react-stickynode "^2.1.1"
     redux-connect "10.0.0"
 
-"@eeacms/volto-group-block@*", "@eeacms/volto-group-block@7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-group-block/-/volto-group-block-7.0.1.tgz#dd5e2c7fee796951b7f028d2e3536e875594cff7"
-  integrity sha512-gljKsJ8dG5dU2I+S40SUh5Hlxe50QqsKLVdJAYJvhofzF/UCfwBTd2av4W4kPCaFbURPb1G4+gBlNe+0kz8S9Q==
+"@eeacms/volto-group-block@*", "@eeacms/volto-group-block@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-group-block/-/volto-group-block-7.1.0.tgz#d918b3b49738908323e76fa50ba202fd6a0d4477"
+  integrity sha512-sYkE1+e8SsnhegxhYRQriN0Hg+qbKVCkMLEU6STzSgkyWJ0jhy3ejl7gF5Fycy+idQ2/tCWw+M/VlbUapQEO/Q==
 
 "@eeacms/volto-hero-block@7.1.0":
   version "7.1.0"
