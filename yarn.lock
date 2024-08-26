@@ -2192,9 +2192,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@npm:1.31.2":
-  version: 1.31.2
-  resolution: "@eeacms/volto-eea-design-system@npm:1.31.2"
+"@eeacms/volto-eea-design-system@npm:1.32.0":
+  version: 1.32.0
+  resolution: "@eeacms/volto-eea-design-system@npm:1.32.0"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-corsproxy": "*"
@@ -2203,7 +2203,7 @@ __metadata:
     react-slick: ^0.30.1
     remixicon: 3.6.0
     slick-carousel: ^1.8.1
-  checksum: 5acb3c758ace4628bc8ed1972cca6c607dd0fd765ebbde3797401fc4fd6ff812cdfa83a5733e73229f6ce12669a1dbc67cedbb1198c704e58e3edb905aef9aef
+  checksum: 1f6973100443480cf46ed1785237f9fdd682ab92d2b20fd60771b3323905011e8fb980782542ad83e345b59c762742c12f36f4b4bfd1b484477f843a165eb280
   languageName: node
   linkType: hard
 
@@ -2727,16 +2727,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-tabs-block@npm:8.0.1":
-  version: 8.0.1
-  resolution: "@eeacms/volto-tabs-block@npm:8.0.1"
+"@eeacms/volto-tabs-block@npm:8.1.0":
+  version: 8.1.0
+  resolution: "@eeacms/volto-tabs-block@npm:8.1.0"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
     react-responsive-tabs: 4.4.3
     react-slick: ^0.30.1
     slick-carousel: ^1.8.1
-  checksum: 21867f4c40ec5e9135023e9189d7a4adf504f0a6448ada2590f081b26a3ec495c7179705d214e801a175f015233716c3b9de37e1ef3cf6f17d7b0aa23d1c8f2c
+  checksum: b1c00fab4b747299b6d6bcdd5b3af31da367000a86129791f2f6c30e29a30eb803b49782d010d081b3f0d0d9eca6b91d831d1a2450d986a2e0742e2ff6a53f90
   languageName: node
   linkType: hard
 
@@ -15302,7 +15302,7 @@ __metadata:
     "@babel/plugin-transform-react-jsx": "*"
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 7.2.1
-    "@eeacms/volto-eea-design-system": 1.31.2
+    "@eeacms/volto-eea-design-system": 1.32.0
     "@eeacms/volto-eea-kitkat": 25.2.0
     "@eeacms/volto-eea-map": 5.0.3
     "@eeacms/volto-eea-website-theme": 2.1.6
