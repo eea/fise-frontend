@@ -1429,10 +1429,10 @@
   dependencies:
     ol "6.6.x"
 
-"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@10.0.5":
-  version "10.0.5"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-10.0.5.tgz#7fdc48daacb62bf101410b7073cd278e2eb27d55"
-  integrity sha512-qa1q5n0JT7tF3Dpjdav72yLNTApANGgLcuPwDPvuCcll4eMIG40fFu1KyOr7kwPJTUYDXno0NSMcKBwIfn0e8g==
+"@eeacms/volto-plotlycharts@*", "@eeacms/volto-plotlycharts@10.0.6":
+  version "10.0.6"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-plotlycharts/-/volto-plotlycharts-10.0.6.tgz#2765b3dd65be5ef0103531ccd8ae6ef92e9fefa0"
+  integrity sha512-+IF/Ch8tr+yI0+znHTKMa7MVJ33RApDMgXElIwpkx31MohLHonaXGmsx7QfQn5t2JqpaO28T0nsdOhN4NEEPig==
   dependencies:
     "@eeacms/volto-embed" "*"
     "@eeacms/volto-matomo" "*"
