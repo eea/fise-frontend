@@ -1219,10 +1219,10 @@
     "@eeacms/volto-resize-helper" "*"
     react-color "~2.18.1"
 
-"@eeacms/volto-block-toc@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-toc/-/volto-block-toc-6.0.0.tgz#c8b89edb1a2e80fb7685fd82ab5acfccc414f76c"
-  integrity sha512-t/ORGmRNdsUMNiyEcmyA8XKrjGS4uewu28HMbl/2pzrUBMltd6xc2RpNSX8CyVS6xctwxwrcPUlnHLTTY1z+Cg==
+"@eeacms/volto-block-toc@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-block-toc/-/volto-block-toc-6.0.1.tgz#8cfc67790f8d6c1940c0903bd0ef94ee48c9214c"
+  integrity sha512-F8P7iFHYrXFlFTnZhSwfoClgNWvF9u0xE8R9bU/A/9XPR/GLiHUTidfg8qweOoH1rIEuLIjdqaJby5J/Om7oHQ==
   dependencies:
     github-slugger "1.4.0"
     smoothscroll-polyfill "^0.4.4"
@@ -1273,10 +1273,10 @@
   resolved "https://registry.yarnpkg.com/@eeacms/volto-description-block/-/volto-description-block-2.2.1.tgz#b40f926658ea8a869cabd2cfb754e8b943c8b097"
   integrity sha512-lTXlB0+lLWnSxXE9JTszgjN5BVH4QkrrdY4BXYw4omdL6qwPXKKy6ovX6v+dEa5/fq+9AIoVbuxGStWSPIJctQ==
 
-"@eeacms/volto-eea-kitkat@25.4.0":
-  version "25.4.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.4.0.tgz#8b3c5fc0e83410d73390d3be65307b1a20470c2c"
-  integrity sha512-ATQmRwoejOWaLTqON81L/cNQjAnJqAGiVx0BUneGVbKeXzWWAshmmYSJNHEuaFMC4lcTqKA9VJC0qvpMxQb5Yg==
+"@eeacms/volto-eea-kitkat@25.4.1":
+  version "25.4.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-eea-kitkat/-/volto-eea-kitkat-25.4.1.tgz#7e7f12d1d4804bd030f49cab5c0e7bd739ddceae"
+  integrity sha512-FRlwErpki1nzWrd3HGFggpLXBlCUdd55FU1J3lnKYmFASqkJD/3RGIoMU0PfD6z0aXloQmNm9k0L7kYRHCTfsQ==
   dependencies:
     "@eeacms/countup" "2.0.6"
     "@eeacms/volto-accordion-block" "11.0.2"
@@ -1286,7 +1286,7 @@
     "@eeacms/volto-block-divider" "7.0.1"
     "@eeacms/volto-block-image-cards" "2.0.1"
     "@eeacms/volto-block-style" "7.1.0"
-    "@eeacms/volto-block-toc" "6.0.0"
+    "@eeacms/volto-block-toc" "6.0.1"
     "@eeacms/volto-call-to-action-block" "5.1.1"
     "@eeacms/volto-columns-block" "8.0.1"
     "@eeacms/volto-controlpanel" "1.0.1"
@@ -1302,7 +1302,7 @@
     "@eeacms/volto-quote-block" "2.0.0"
     "@eeacms/volto-resize-helper" "2.0.0"
     "@eeacms/volto-sentry-rancher-config" "5.0.0"
-    "@eeacms/volto-slate-footnote" "7.1.0"
+    "@eeacms/volto-slate-footnote" "7.1.1"
     "@eeacms/volto-slate-label" "1.0.0"
     "@eeacms/volto-slate-metadata-mentions" "8.2.0"
     "@eeacms/volto-slate-zotero" "6.0.0"
@@ -1467,10 +1467,10 @@
   dependencies:
     "@eeacms/volto-datablocks" "*"
 
-"@eeacms/volto-slate-footnote@*", "@eeacms/volto-slate-footnote@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@eeacms/volto-slate-footnote/-/volto-slate-footnote-7.1.0.tgz#cef9ad68f4a3a7cfd3ad76d4c24d3fbb66e6e589"
-  integrity sha512-o0vFIK5BwJPLqzcwRmocS18RXk4H3B/MhhcTdapOWn2Ic4w0ohqlGAaLAAEiwKYgLTcIFFcJHZijnLXnaU5FUw==
+"@eeacms/volto-slate-footnote@*", "@eeacms/volto-slate-footnote@7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@eeacms/volto-slate-footnote/-/volto-slate-footnote-7.1.1.tgz#a5535b7d99c05902931576226a46105fe0779490"
+  integrity sha512-L4WFlo+fwGGhFY/htLWRNXCs/84lhLJyIDrbEk4taqLCH7mfG+UaJg9s7oetGU6JYnD0AH1mKc3/AYAzMUp1wQ==
 
 "@eeacms/volto-slate-label@1.0.0":
   version "1.0.0"
