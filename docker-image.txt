@@ -1,1 +1,1 @@
-eeacms/forests-frontend:latest
+eeacms/fise-frontend:latest
