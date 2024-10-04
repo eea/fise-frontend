@@ -38,7 +38,7 @@
     "@eeacms/volto-middleware-vh": "1.0.6",
     "@eeacms/volto-plotlycharts": "10.0.9",
     "@eeacms/volto-searchlib": "2.0.3",
-    "@eeacms/volto-slate-dataentity": "3.0.1",
+    "@eeacms/volto-slate-dataentity": "4.0.0",
     "@eeacms/volto-tableau": "8.1.0",
     "@plone/volto": "16.22.2",
     "cross-env": "7.0.3",

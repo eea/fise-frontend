@@ -2681,12 +2681,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-slate-dataentity@npm:3.0.1":
-  version: 3.0.1
-  resolution: "@eeacms/volto-slate-dataentity@npm:3.0.1"
+"@eeacms/volto-slate-dataentity@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@eeacms/volto-slate-dataentity@npm:4.0.0"
   dependencies:
     "@eeacms/volto-datablocks": "*"
-  checksum: 8f874919f91af0aa3dd37a8d29fa005d9bf81b96505fd7ac20e79fd5980480554b04a95e451694a389a90d6939bac97b2747535f41420e2be7b269cb47faddda
+  checksum: bf2563883a4892609d70e3b8ce01cdcb210068b86f389ffb333019fa056cdfe8ad348d23b8bbc495a766019f97dd617881bfffa1943a9e018e3f181a7c1d5e5a
   languageName: node
   linkType: hard
 
@@ -15652,7 +15652,7 @@ __metadata:
     "@eeacms/volto-middleware-vh": 1.0.6
     "@eeacms/volto-plotlycharts": 10.0.9
     "@eeacms/volto-searchlib": 2.0.3
-    "@eeacms/volto-slate-dataentity": 3.0.1
+    "@eeacms/volto-slate-dataentity": 4.0.0
     "@eeacms/volto-tableau": 8.1.0
     "@plone/scripts": ^2.1.2
     "@plone/volto": 16.22.2
