@@ -55,6 +55,10 @@ develop:    	## Runs missdev in the local project (mrs.developer.json should be 
 install:		## Install project and add-ons
 	yarn install
 
+.PHONY: build
+build:			## Build frontend
+	NODE_OPTIONS="--max-old-space-size=8192" yarn build
+
 .PHONY: husky
 husky:			## Install husky git hooks in src/addons/*
 	./scripts/husky.sh

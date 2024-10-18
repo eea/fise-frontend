@@ -29,7 +29,7 @@ const defaultConfig = {
     'import/resolver': {
       alias: {
         map: [['@plone/volto', '@plone/volto/src'], ['@plone/volto-slate', '@plone/volto/packages/volto-slate/src'], ...addonAliases, ['@package', `${__dirname}/src`], ['@root', `${__dirname}/src`], ['~', `${__dirname}/src`]],
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
       'babel-plugin-root-import': {
         rootPathSuffix: 'src',
