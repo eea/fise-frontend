@@ -2498,10 +2498,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-middleware-vh@npm:1.0.6":
-  version: 1.0.6
-  resolution: "@eeacms/volto-middleware-vh@npm:1.0.6"
-  checksum: 34a5db9e2959c995d59a1182be9bf0ce10ce8f3da1207ce9b45cd3fbe6095f2398e4d05ba6630766ef32c5255b90cc30b306845e1e214e154573cd67125338f4
+"@eeacms/volto-middleware-vh@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@eeacms/volto-middleware-vh@npm:2.0.0"
+  checksum: d0fa2205dc595960f02227664ac4ca7fa2bcb2ea3bb8d0a0fca9003233beb12aef380a7bb44bfdd24ce485bba70d767e6ffe706a915b6fb1d299b46192bd1169
   languageName: node
   linkType: hard
 
@@ -15660,7 +15660,7 @@ __metadata:
     "@eeacms/volto-embed": 10.1.1
     "@eeacms/volto-forest-policy": 0.1.30
     "@eeacms/volto-globalsearch": 2.0.1
-    "@eeacms/volto-middleware-vh": 1.0.6
+    "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": 10.0.10
     "@eeacms/volto-searchlib": 2.0.3
     "@eeacms/volto-slate-dataentity": 4.0.0
