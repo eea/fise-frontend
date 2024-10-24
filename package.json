@@ -26,6 +26,7 @@
     "pnp": false
   },
   "resolutions": {
+    "@elastic/search-ui": "1.21.2",
     "react-countup/countup.js": "2.5.0",
     "d3-array": "2.12.1",
     "@eeacms/volto-eea-kitkat": "^21.1.0",
