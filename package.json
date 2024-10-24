@@ -33,7 +33,7 @@
     "@eeacms/volto-eea-map": "5.0.5",
     "@eeacms/volto-eea-website-theme": "3.0.0",
     "@eeacms/volto-embed": "10.1.1",
-    "@eeacms/volto-forest-policy": "0.1.30",
+    "@eeacms/volto-forest-policy": "0.1.31",
     "@eeacms/volto-globalsearch": "2.0.1",
     "@eeacms/volto-middleware-vh": "2.0.0",
     "@eeacms/volto-plotlycharts": "10.0.10",
