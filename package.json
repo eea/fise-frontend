@@ -27,6 +27,8 @@
   },
   "resolutions": {
     "@elastic/search-ui": "1.21.2",
+    "@elastic/react-search-ui": "1.20.2",
+    "@elastic/react-search-ui-views": "1.20.2",
     "react-countup/countup.js": "2.5.0",
     "d3-array": "2.12.1",
     "@eeacms/volto-eea-kitkat": "^21.1.0",
