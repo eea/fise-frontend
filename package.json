@@ -40,7 +40,7 @@
     "@eeacms/volto-searchlib": "2.0.3",
     "@eeacms/volto-slate-dataentity": "4.0.0",
     "@eeacms/volto-tableau": "8.1.1",
-    "@plone/volto": "17.20.0",
+    "@plone/volto": "17.20.1",
     "cross-env": "7.0.3",
     "eslint-plugin-jsx-a11y": "6.6.0",
     "semantic-ui-react": "2.0.4"
