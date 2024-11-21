@@ -76,8 +76,7 @@
   },
   "resolutions": {
     "react-countup/countup.js": "2.5.0",
-    "d3-array": "2.12.1",
-    "@eeacms/volto-tabs-block": "^8.1.0"
+    "d3-array": "2.12.1"
   },
   "scripts": {
     "start": "razzle start",
