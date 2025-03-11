@@ -1,12 +1,12 @@
 pipeline {
  environment {
-    registry = "eeacms/forests-frontend"
+    registry = "eeacms/fise-frontend"
     template = "templates/volto-forests"
     RANCHER_STACKID = ""
     RANCHER_ENVID = ""
     dockerImage = ''
     tagName = ''
-    GIT_NAME = "forests-frontend"
+    GIT_NAME = "fise-frontend"
     SONARQUBE_TAG = "forest.eea.europa.eu"
   }
 
