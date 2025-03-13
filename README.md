@@ -3,7 +3,7 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/eea/fise-frontend?sort=semver)](https://github.com/eea/fise-frontend/releases)
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Ffise-frontend%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto/job/fise-frontend/job/master/lastBuild/display/redirect)
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Ffise-frontend%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto/job/fise-frontend/job/develop/lastBuild/display/redirect)
-[![Release pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Ffise-frontend%2F2.28.0&build=last&subject=release%20v2.28.0%20pipeline)](https://ci.eionet.europa.eu/view/Github/job/volto/job/fise-frontend/job/2.28.0/lastBuild/display/redirect/)
+[![Release pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Ffise-frontend%2F3.1.0&build=last&subject=release%20v3.1.0%20pipeline)](https://ci.eionet.europa.eu/view/Github/job/volto/job/fise-frontend/job/3.1.0/lastBuild/display/redirect/)
 
 
 
