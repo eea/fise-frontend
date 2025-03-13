@@ -26,7 +26,6 @@ lighthouse-report.html
 .vscode/
 .#*
 *~
-start-backendless.sh
 
 # Python
 /api/.installed.cfg
@@ -83,7 +82,6 @@ omelette
 # build
 public/critical.css
 src/addons/*
-src/develop/*
 /cache
 
 # yarn 3

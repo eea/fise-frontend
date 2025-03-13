@@ -22,18 +22,38 @@
     "@eeacms/volto-searchlib",
     "@eeacms/volto-forest-policy"
   ],
-  "installConfig": {
-    "pnp": false
+  "theme": "@eeacms/volto-forest-policy",
+  "resolutions": {
+    "@elastic/search-ui": "1.21.2",
+    "@eeacms/volto-embed": "10.1.3",
+    "@eeacms/volto-datablocks": "7.2.9",
+    "@eeacms/volto-eea-design-system": "1.36.3",
+    "@eeacms/volto-eea-kitkat": "26.4.4",
+    "@eeacms/volto-eea-map": "5.0.8",
+    "@eeacms/volto-slate-dataentity": "4.0.1",
+    "@eeacms/volto-eea-website-theme": "3.5.4",
+    "@eeacms/volto-globalsearch": "2.0.9",
+    "@eeacms/volto-plotlycharts": "11.0.1",
+    "@eeacms/volto-searchlib": "2.0.13",
+    "@eeacms/volto-tableau": "8.1.3",
+    "@eeacms/volto-forest-policy": "1.0.0",
+    "@eeacms/volto-middleware-vh": "2.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "d3-array": "2.12.1",
+    "react-colorscales": "github:eea/react-colorscales#1.0.2",
+    "react-error-overlay": "6.0.9",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "react-countup/countup.js": "2.5.0"
   },
   "dependencies": {
-    "@babel/plugin-transform-react-jsx": "*",
     "@eeacms/volto-datablocks": "7.2.9",
     "@eeacms/volto-eea-design-system": "1.36.3",
     "@eeacms/volto-eea-kitkat": "26.4.4",
     "@eeacms/volto-eea-map": "5.0.8",
     "@eeacms/volto-eea-website-theme": "3.5.4",
     "@eeacms/volto-embed": "10.1.3",
-    "@eeacms/volto-forest-policy": "github:eea/volto-forest-policy#1.0.0-alpha.03",
+    "@eeacms/volto-forest-policy": "1.0.0",
     "@eeacms/volto-globalsearch": "2.0.9",
     "@eeacms/volto-middleware-vh": "2.0.0",
     "@eeacms/volto-plotlycharts": "11.0.1",
@@ -41,9 +61,7 @@
     "@eeacms/volto-slate-dataentity": "4.0.1",
     "@eeacms/volto-tableau": "8.1.3",
     "@plone/volto": "17.20.1",
-    "cross-env": "7.0.3",
-    "eslint-plugin-jsx-a11y": "6.6.0",
-    "semantic-ui-react": "2.0.4"
+    "eslint-plugin-jsx-a11y": "6.7.1"
   },
   "devDependencies": {
     "@cypress/code-coverage": "3.10.0",
@@ -73,10 +91,6 @@
     "ts-jest": "^26.4.2",
     "ts-loader": "9.4.4",
     "typescript": "5.2.2"
-  },
-  "resolutions": {
-    "react-countup/countup.js": "2.5.0",
-    "d3-array": "2.12.1"
   },
   "scripts": {
     "start": "razzle start",
