@@ -2,32 +2,33 @@ version: '3'
 
 services:
   frontend:
-    image: eeacms/ims-frontend
+    image: eeacms/forests-frontend
     ports:
-    - "${FRONTEND:-8000}:3000"
-    depends_on:
-    - ploneapi
+      - '${FRONTEND:-3000}:3000'
     environment:
-      API_PATH: "http://localhost:${BACKEND:-8080}/Plone"
-      INTERNAL_API_PATH: "http://ploneapi:${BACKEND:-8080}/Plone"
+      RAZZLE_INTERNAL_API_PATH: 'http://backend:8080/Plone'
+      RAZZLE_DEV_PROXY_API_PATH: 'http://backend:8080/Plone'
+    volumes:
+      - ./src/addons:/app/src/addons
+    depends_on:
+      - backend
 
-
-  ploneapi:
+  backend:
     image: eeacms/plonesaas-devel
     ports:
-    - "${BACKEND:-8080}:8080"
+      - '${BACKEND:-8080}:8080'
     environment:
-      CORS_ALLOW_ORIGIN: "http://localhost:3000,http://127.0.0.1:3000,http://localhost:${FRONTEND:-8000},http://127.0.0.1:${FRONTEND:-8000}"
+      CORS_ALLOW_ORIGIN: 'http://localhost:3000,http://127.0.0.1:3000,http://localhost:${FRONTEND:-8000},http://127.0.0.1:${FRONTEND:-8000}'
     depends_on:
-    - memcached
+      - memcached
     volumes:
-    - data:/data
+      - data:/data
 
   memcached:
     image: memcached
     command:
-    - "-m"
-    - "512"
+      - '-m'
+      - '512'
 
 volumes:
   data:

@@ -1,20 +1,44 @@
 {
     "compilerOptions": {
-        "baseUrl": "src",
-        "jsx": "react",
+        "target": "ESNext",
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "module": "commonjs",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
         "paths": {
-            "@eeacms/volto-forests-theme": [
-                "develop/volto-forests-theme/src"
+            "@plone/volto/*": [
+                "../node_modules/@plone/volto/src/*",
+                "../node_modules/@plone/volto/types/*"
             ],
-            "@eeacms/volto-plotlycharts": [
-                "develop/volto-plotlycharts/src"
-            ],
-            "@eeacms/volto-datablocks": [
-                "develop/volto-datablocks/src"
-            ],
-            "@eeacms/volto-tableau": [
-                "develop/volto-tableau/src"
+            "@root/*": [
+                "."
             ]
-        }
-    }
+        },
+        "baseUrl": "src"
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "build",
+        "public",
+        "coverage",
+        "src/**/*.test.{js,jsx,ts,tsx}",
+        "src/**/*.spec.{js,jsx,ts,tsx}",
+        "src/**/*.stories.{js,jsx,ts,tsx}"
+    ]
 }

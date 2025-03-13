@@ -2,8 +2,8 @@ pipeline {
  environment {
     registry = "eeacms/fise-frontend"
     template = "templates/volto-forests"
-    RANCHER_STACKID = "1st1821"
-    RANCHER_ENVID = "1a332957"
+    RANCHER_STACKID = ""
+    RANCHER_ENVID = ""
     dockerImage = ''
     tagName = ''
     GIT_NAME = "fise-frontend"
@@ -135,6 +135,7 @@ pipeline {
               tagName = "$BRANCH_NAME"
             }
             try {
+              sh script: "apt-get update && apt-get install make"
               dockerImage = docker.build("$registry:$tagName", "--no-cache .")
               docker.withRegistry( '', 'eeajenkins' ) {
                 dockerImage.push()
