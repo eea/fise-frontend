@@ -1,9 +1,9 @@
 # Forest: Volto Frontend
 
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/eea/forests-frontend?sort=semver)](https://github.com/eea/forests-frontend/releases)
-[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/master/lastBuild/display/redirect)
-[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/develop/lastBuild/display/redirect)
-[![Release pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Fforests-frontend%2F2.28.0&build=last&subject=release%20v2.28.0%20pipeline)](https://ci.eionet.europa.eu/view/Github/job/volto/job/forests-frontend/job/2.28.0/lastBuild/display/redirect/)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/eea/fise-frontend?sort=semver)](https://github.com/eea/fise-frontend/releases)
+[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Ffise-frontend%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto/job/fise-frontend/job/master/lastBuild/display/redirect)
+[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Ffise-frontend%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto/job/fise-frontend/job/develop/lastBuild/display/redirect)
+[![Release pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto%2Ffise-frontend%2F3.0.0&build=last&subject=release%20v3.0.0%20pipeline)](https://ci.eionet.europa.eu/view/Github/job/volto/job/fise-frontend/job/3.0.0/lastBuild/display/redirect/)
 
 
 
@@ -164,8 +164,8 @@ We use [Docker](https://www.docker.com/), [Rancher](https://rancher.com/) and [J
 
 ### Release
 
-- Create a new release of this code via `git tag` command or [Draft new release](https://github.com/eea/forests-frontend/releases/new) on Github.
-  - A new Docker image is built and released automatically on [DockerHub](https://hub.docker.com/r/eeacms/forests-frontend) based on this tag.
+- Create a new release of this code via `git tag` command or [Draft new release](https://github.com/eea/fise-frontend/releases/new) on Github.
+  - A new Docker image is built and released automatically on [DockerHub](https://hub.docker.com/r/eeacms/fise-frontend) based on this tag.
   - A new entry is automatically added to [Volto - Forests](https://github.com/eea/eea.rancher.catalog/tree/master/templates/volto-forests) `EEA Rancher Catalog`
 
 ### Upgrade

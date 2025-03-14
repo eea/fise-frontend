@@ -1,158 +1,113 @@
-image-name-split = $(word $2,$(subst :, ,$1))
+##############################################################################
+# Run:
+#    make
+#    make start
+#
+# Go to:
+#
+#     http://localhost:3000
+#
+# Test add-ons:
+#
+#    make test src/addons/volto-accordion-block
+#
+##############################################################################
+# SETUP MAKE
+#
+## Defensive settings for make: https://tech.davis-hansson.com/p/make/
+SHELL:=bash
+.ONESHELL:
+# for Makefile debugging purposes add -x to the .SHELLFLAGS
+.SHELLFLAGS:=-eu -o pipefail -O inherit_errexit -c
+.SILENT:
+.DELETE_ON_ERROR:
+MAKEFLAGS+=--warn-undefined-variables
+MAKEFLAGS+=--no-builtin-rules
 
-SHELL=/bin/bash
-DOCKERIMAGE_FILE="docker-image.txt"
-NAME := $(call image-name-split,$(shell cat $(DOCKERIMAGE_FILE)), 1)
-IMAGE=$(shell cat $(DOCKERIMAGE_FILE))
+# Colors
+# OK=Green, warn=yellow, error=red
+ifeq ($(TERM),)
+# no colors if not in terminal
+	MARK_COLOR=
+	OK_COLOR=
+	WARN_COLOR=
+	ERROR_COLOR=
+	NO_COLOR=
+else
+	MARK_COLOR=`tput setaf 6`
+	OK_COLOR=`tput setaf 2`
+	WARN_COLOR=`tput setaf 3`
+	ERROR_COLOR=`tput setaf 1`
+	NO_COLOR=`tput sgr0`
+endif
 
-# VOLTO_ADDONS=$(shell ./scripts/pkg_helper.py list)
+##############################################################################
 
-.DEFAULT_GOAL := help
-
-.PHONY: activate
-activate:		## Activate an addon package for development
-	set -e; \
-		if [[ -z "${pkg}" ]]; then\
-			echo "You need to specify package name in make command";\
-			echo "Ex: make activate pkg=volto-datablocks";\
-		else \
-			./scripts/pkg_helper.py --target=${pkg} activate;\
-			echo "Running npm install in src/develop/${pkg}";\
-			cd "src/addons/$${pkg}";\
-			npm install;\
-			cd ../..;\
-			echo "Cleaning up after npm install";\
-			export VOLTO_ADDONS=`./scripts/pkg_helper.py list`;\
-			read -ra ADDR <<< "$${VOLTO_ADDONS}"; \
-			for pkg in "$${ADDR[@]}"; do \
-				echo "removing node_modules/$${pkg}"; \
-				rm -rf "./node_modules/$${pkg}";\
-			done; \
-			echo "Done.";\
-		fi
-
-PHONY: clean-addons
-clean-addons:
-	set -e; \
-		echo "Cleaning up after npm install";\
-		export VOLTO_ADDONS=`./scripts/pkg_helper.py list`;\
-		read -ra ADDR <<< "$${VOLTO_ADDONS}"; \
-		for pkg in "$${ADDR[@]}"; do \
-			echo "removing node_modules/$${pkg}"; \
-			rm -rf "./node_modules/$${pkg}";\
-		done; \
-
-.PHONY: activate-all
-activate-all:		## Automatically activates all addons from mr.developer.json
-	@echo "Activating all addon packages"
-	./scripts/pkg_helper.py activate-all
-
-.PHONY: deactivate
-deactivate:		## Deactivate an addon package for development
-	@if [[ -z "${pkg}" ]]; then\
-		echo "You need to specify package name in make command";\
-		echo "Ex: make deactivate pkg=volto-datablocks";\
-	else \
-		exec ./scripts/pkg_helper.py --target=${pkg} deactivate;\
-		rm -rf node_modules/${pkg};\
-		echo "Deactivated ${pkg}";\
-	fi
-
+# Top-level targets
 .PHONY: all
-all: clean build		## (Inside container) build a production version of resources
-	@echo "Built production files"
-
-.PHONY: clean
-clean:
-	rm -rf build/
-
-.PHONY: build
-build:
-	echo "";\
-	echo "Make sure that you have the npm cache (Verdaccio) running!";\
-	echo "";\
-	DEBUG= \
-				 NODE_OPTIONS=--max_old_space_size=4096 \
-				 RAZZLE_API_PATH=VOLTO_API_PATH \
-				 RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
-				 yarn build;	\
-	./entrypoint-prod.sh
-
-.PHONY: start
-start:		## (Inside container) starts production mode frontend server
-	npm run start:prod
-
-.PHONY: analyze
-analyze:		## (Inside container) build production resources and start bundle analyzer HTTP server
-	DEBUG= \
-				 BUNDLE_ANALYZE=true \
-				 NODE_OPTIONS=--max_old_space_size=4096 \
-				 RAZZLE_API_PATH=VOLTO_API_PATH \
-				 RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
-				 yarn build
-
-.PHONY: release
-release: bump build-image push		## (Host side) release a new version of frontend docker image
-
-.PHONY: bump
-bump:
-	echo "Bumping version...";
-	python ./../scripts/version_bump.py $(DOCKERIMAGE_FILE);
-
-.PHONY: build-image
-build-image:
-	@echo "Building new docker image: $(IMAGE)";
-	docker build . --network=host --build-arg MAX_OLD_SPACE_SIZE=4096 --build-arg NPM_CONFIG_REGISTRY=http://127.0.0.1:4873 -t "$(IMAGE)";
-	@echo "Image built."
-
-.PHONY: push
-push:
-	docker push $(IMAGE)
-	docker tag $(IMAGE) $(NAME):latest
-	docker push $(NAME):latest
-
-.PHONY: init-submodules
-init-submodules:		## Initialize the git submodules
-	git submodule update --init --recursive
+all: develop install husky
 
 .PHONY: develop
-develop:		## Runs "git pull" in all addons
-	./scripts/pkg_helper.py develop
-
-.PHONY: help
-help:		## Show this help.
-	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
-
-.PHONY: build-production
-try-production:		## Build production bundle
-	NODE_OPTIONS=--max_old_space_size=4096 \
-		BUNDLE_ANALYZE=true \
-		RAZZLE_API_PATH=VOLTO_API_PATH \
-		RAZZLE_INTERNAL_API_PATH=VOLTO_INTERNAL_API_PATH \
-		yarn build
-	./entrypoint-dev.sh
-	echo "Now run: node build/server.js"
-
-.PHONY: install
-install: ## Install the frontend
-	@echo "Install frontend"
-	$(MAKE) omelette
-	$(MAKE) preinstall
-	yarn install
-
-.PHONY: preinstall
-preinstall: ## Preinstall task, checks if missdev (mrs-developer) is present and runs it
-	if [ -f $$(pwd)/mrs.developer.json ]; then make develop; fi
-
-
-.PHONY: develop
-develop: ## Runs missdev in the local project (mrs.developer.json should be present)
+develop:    	## Runs missdev in the local project (mrs.developer.json should be present)
 	npx -p mrs-developer missdev --config=jsconfig.json --output=addons --fetch-https
 
+.PHONY: install
+install:		## Install project and add-ons
+	yarn install
+
+.PHONY: build
+build:			## Build frontend
+	NODE_OPTIONS="--max-old-space-size=8192" yarn build
+
+.PHONY: husky
+husky:			## Install husky git hooks in src/addons/*
+	./scripts/husky.sh
+
+.PHONY: start
+start:			## Start frontend
+	yarn start
+
+.PHONY: relstorage
+relstorage:		## Start frontend w/ RelStorage Plone Backend
+	RAZZLE_DEV_PROXY_API_PATH=http://localhost:8080/www yarn start
+
 .PHONY: omelette
-omelette: ## Creates the omelette folder that contains a link to the installed version of Volto (a softlink pointing to node_modules/@plone/volto)
+omelette: 		## Creates the omelette folder that contains a link to the installed version of Volto (a softlink pointing to node_modules/@plone/volto)
 	if [ ! -d omelette ]; then ln -sf node_modules/@plone/volto omelette; fi
 
 .PHONY: patches
 patches:
 	/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true
+
+.PHONY: release
+release: 		## Show release candidates
+	./scripts/release.py -v
+
+.PHONY: update
+update: 		## git pull all src/addons
+	./scripts/update.sh
+
+.PHONY: issues
+issues: 		## Check github for open pull-requests
+	./scripts/pull-requests.py WARN
+
+.PHONY: issues-all
+issues-all: 	## Check github for open pull-requests
+	./scripts/pull-requests-volto.py WARN
+
+.PHONY: status
+status: 		## Check src/addons for changes
+	./scripts/status.sh
+
+.PHONY: pull
+pull: 			## Run git pull on all src/addons
+	./scripts/pull.sh
+
+.PHONY: test
+test: 			## Run Jest tests for Volto add-on
+	RAZZLE_JEST_CONFIG=$(filter-out $@,$(MAKECMDGOALS))/jest-addon.config.js yarn test $(filter-out $@,$(MAKECMDGOALS))
+
+.PHONY: help
+help:			## Show this help.
+	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
+	head -n 14 Makefile

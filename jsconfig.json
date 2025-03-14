@@ -1,17 +1,25 @@
 {
-    "compilerOptions": {
-        "baseUrl": "src",
-        "jsx": "react",
-        "paths": {
-            "@eeacms/volto-forests-theme": [
-                "addons/volto-forests-theme/src"
-            ],
-            "@eeacms/volto-plotlycharts": [
-                "addons/volto-plotlycharts/src"
-            ],
-            "@eeacms/volto-datablocks": [
-                "addons/volto-datablocks/src"
-            ]
-        }
-    }
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "commonjs",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@plone/volto/*": ["../node_modules/@plone/volto/src/*", "../node_modules/@plone/volto/types/*"],
+      "@root/*": ["."]
+    },
+    "baseUrl": "src"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "public", "coverage", "src/**/*.test.{js,jsx,ts,tsx}", "src/**/*.spec.{js,jsx,ts,tsx}", "src/**/*.stories.{js,jsx,ts,tsx}"]
 }
