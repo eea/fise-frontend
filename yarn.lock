@@ -3099,13 +3099,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bundled-es-modules/pdfjs-dist@npm:2.1.266-rc":
-  version: 2.1.266-rc
-  resolution: "@bundled-es-modules/pdfjs-dist@npm:2.1.266-rc"
-  checksum: 1f4188e34bfc1250f7e55026d333ecb3b6417de0e78c783749f4ca6617f8f1051b2014cfc176397d6681249f54e75aac7ce24c1bac8e37ff78162d78a590b8d9
-  languageName: node
-  linkType: hard
-
 "@choojs/findup@npm:^0.2.0":
   version: 0.2.1
   resolution: "@choojs/findup@npm:0.2.1"
@@ -3590,26 +3583,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@eeacms/volto-forest-policy@npm:1.0.1"
+"@eeacms/volto-forest-policy@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@eeacms/volto-forest-policy@npm:1.0.3"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
     "@eeacms/volto-eea-map": "*"
     "@eeacms/volto-eea-website-theme": "*"
     "@eeacms/volto-embed": "*"
-    "@eeacms/volto-globalsearch": "*"
+    "@eeacms/volto-globalsearch": 2.1.0
     "@eeacms/volto-matomo": "*"
     "@eeacms/volto-openlayers-map": "*"
     "@eeacms/volto-plotlycharts": "*"
-    "@eeacms/volto-searchlib": "*"
+    "@eeacms/volto-searchlib": 2.0.15
     "@elastic/react-search-ui": 1.20.2
     "@elastic/react-search-ui-views": 1.20.2
     "@elastic/search-ui": 1.21.2
-    "@sentry/browser": 7.17.3
     d3-array: ^2.12.1
-    dompurify: ^2.0.12
     draft-js-alignment-plugin: ^2.0.6
     draft-js-focus-plugin: ^3.0.1
     draft-js-import-html: ^1.4.1
@@ -3619,17 +3610,12 @@ __metadata:
     draft-js-resizeable-plugin: ^2.0.9
     draft-js-video-plugin: ^2.0.2
     esri-loader: ^2.14.0
-    razzle-plugin-scss: 4.2.18
     react-component-queries: 2.3.0
     react-highlight-words: ^0.16.0
     react-image-gallery: 1.2.7
     react-lazy-load-image-component: ^1.5.0
-    react-pdf-js: ^5.1.0
-    react-sizeme: 3.0.1
-    react-stickynode: ^2.1.1
     redraft: ^0.10.2
-    redux-connect: 10.0.0
-  checksum: 6d2fd503a9e4cff3a0b44e5e2600b19f7ff6168ea23631727025afaacf040a4d131e8ad7f656b9b5b8085a11d48a78cb59245bcff59eedd1c62a621dfe4f077f
+  checksum: 44dd9db02f239b00ebb5e95a963f7e6c119dc174efd02e03680744efb91ad7c334e9f794d02fe0b82befd499bd3e4cd38bf340a2fe6126bb2ec6b0e739476a46
   languageName: node
   linkType: hard
 
@@ -5826,18 +5812,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/browser@npm:7.17.3":
-  version: 7.17.3
-  resolution: "@sentry/browser@npm:7.17.3"
-  dependencies:
-    "@sentry/core": 7.17.3
-    "@sentry/types": 7.17.3
-    "@sentry/utils": 7.17.3
-    tslib: ^1.9.3
-  checksum: e0c8268b2376dbed90c38aba47518c2841d25b3c418f3e8812e4ab5f114da36c9d942b9fb17cf58dff1c7e7cc481b6267352603e450deb6a0d82de1851e9520a
-  languageName: node
-  linkType: hard
-
 "@sentry/cli@npm:^1.74.4":
   version: 1.75.2
   resolution: "@sentry/cli@npm:1.75.2"
@@ -5862,17 +5836,6 @@ __metadata:
     "@sentry/utils": 7.15.0
     tslib: ^1.9.3
   checksum: 3a0c410a186f062ba026c85729e35ee78d99e8d124036742fb52e8064f95c32a5d9516514bfb0e52fcd3bfd8ff96678eb586f351e2ed270d8c7733c98cc77548
-  languageName: node
-  linkType: hard
-
-"@sentry/core@npm:7.17.3":
-  version: 7.17.3
-  resolution: "@sentry/core@npm:7.17.3"
-  dependencies:
-    "@sentry/types": 7.17.3
-    "@sentry/utils": 7.17.3
-    tslib: ^1.9.3
-  checksum: 6895e4893587749df9a916aeff676472027dc5e24614824eb9730b3819649166f465f46d1efb6dc9b1e25e8eccac56e490e38f099a5e28245b86dfbc971df210
   languageName: node
   linkType: hard
 
@@ -5910,13 +5873,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/types@npm:7.17.3":
-  version: 7.17.3
-  resolution: "@sentry/types@npm:7.17.3"
-  checksum: 92e6debe96e324df54c2bd2601c7db5bf47ffb261812bde5ff2a116aca2cbf4cc850bf16d7c58f15612bb920ffefa5a31f4309a5b8e6bb82bc02ad15b697600a
-  languageName: node
-  linkType: hard
-
 "@sentry/utils@npm:7.15.0":
   version: 7.15.0
   resolution: "@sentry/utils@npm:7.15.0"
@@ -5924,16 +5880,6 @@ __metadata:
     "@sentry/types": 7.15.0
     tslib: ^1.9.3
   checksum: 9445a78c23b230a39d05c4ff44fb02f66bbb4dd4638216419b99ab53fa403bf613ea175c642b0bc015038370d229af76046689a08efe5a030d64b5cb0e02cfa1
-  languageName: node
-  linkType: hard
-
-"@sentry/utils@npm:7.17.3":
-  version: 7.17.3
-  resolution: "@sentry/utils@npm:7.17.3"
-  dependencies:
-    "@sentry/types": 7.17.3
-    tslib: ^1.9.3
-  checksum: 82a2c1ab89635a96ca4e3bfac599235434f601d10033ebb9f08608b41e49d96b725935cfc4d350111968c7b66b97a69bd303f92bb9e64664b0e8f5b8d9c99845
   languageName: node
   linkType: hard
 
@@ -12730,7 +12676,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:2.x, classnames@npm:^2.0.0, classnames@npm:^2.2.3, classnames@npm:^2.2.5, classnames@npm:^2.2.6, classnames@npm:^2.3.1, classnames@npm:^2.3.2":
+"classnames@npm:2.x, classnames@npm:^2.2.3, classnames@npm:^2.2.5, classnames@npm:^2.2.6, classnames@npm:^2.3.1, classnames@npm:^2.3.2":
   version: 2.3.2
   resolution: "classnames@npm:2.3.2"
   checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
@@ -15773,13 +15719,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^2.0.12":
-  version: 2.4.7
-  resolution: "dompurify@npm:2.4.7"
-  checksum: 13c047e772a1998348191554dda403950d45ef2ec75fa0b9915cc179ccea0a39ef780d283109bd72cf83a2a085af6c77664281d4d0106a737bc5f39906364efe
-  languageName: node
-  linkType: hard
-
 "domutils@npm:^1.7.0":
   version: 1.7.0
   resolution: "domutils@npm:1.7.0"
@@ -16207,7 +16146,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"element-resize-detector@npm:^1.1.9, element-resize-detector@npm:^1.2.2":
+"element-resize-detector@npm:^1.1.9":
   version: 1.2.4
   resolution: "element-resize-detector@npm:1.2.4"
   dependencies:
@@ -17382,13 +17321,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:^3.0.0":
-  version: 3.1.2
-  resolution: "eventemitter3@npm:3.1.2"
-  checksum: 81e4e82b8418f5cfd986d2b4a2fa5397ac4eb8134e09bcb47005545e22fdf8e9e61d5c053d34651112245aae411bdfe6d0ad5511da0400743fef5fc38bfcfbe3
-  languageName: node
-  linkType: hard
-
 "eventemitter3@npm:^4.0.0":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
@@ -18396,7 +18328,7 @@ __metadata:
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-website-theme": 3.6.1
     "@eeacms/volto-embed": 10.1.3
-    "@eeacms/volto-forest-policy": 1.0.1
+    "@eeacms/volto-forest-policy": 1.0.3
     "@eeacms/volto-globalsearch": 2.1.0
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
@@ -28466,7 +28398,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"raf@npm:^3.0.0, raf@npm:^3.1.0, raf@npm:^3.2.0, raf@npm:^3.4.0, raf@npm:^3.4.1":
+"raf@npm:^3.1.0, raf@npm:^3.2.0, raf@npm:^3.4.0, raf@npm:^3.4.1":
   version: 3.4.1
   resolution: "raf@npm:3.4.1"
   dependencies:
@@ -29494,17 +29426,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-pdf-js@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "react-pdf-js@npm:5.1.0"
-  dependencies:
-    "@bundled-es-modules/pdfjs-dist": 2.1.266-rc
-  peerDependencies:
-    react: ">=16"
-  checksum: 8b6e70520905fc5e3c212f3a22408ac3ce0e35ee82431f8dde0034a008c4b2f21dabcb0e121932c47554389039be00da907234bb9d7001e572041dcb2830123c
-  languageName: node
-  linkType: hard
-
 "react-plotly.js@npm:2.6.0, react-plotly.js@npm:^2.6.0":
   version: 2.6.0
   resolution: "react-plotly.js@npm:2.6.0"
@@ -29873,21 +29794,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-sizeme@npm:3.0.1":
-  version: 3.0.1
-  resolution: "react-sizeme@npm:3.0.1"
-  dependencies:
-    element-resize-detector: ^1.2.2
-    invariant: ^2.2.4
-    shallowequal: ^1.1.0
-    throttle-debounce: ^3.0.1
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.0-0 || ^16.0.0 || ^17.0.0
-    react-dom: ^0.14.0 || ^15.0.0-0 || ^16.0.0 || ^17.0.0
-  checksum: 58ec9166dc458a1fd7929df8658d9dae3c1534968efbe66ffd026e3c38672b64374afa9df371d529e13fccab1758328d8fc52454745000d481b076ef457da7d7
-  languageName: node
-  linkType: hard
-
 "react-slick@npm:0.29.0":
   version: 0.29.0
   resolution: "react-slick@npm:0.29.0"
@@ -29960,21 +29866,6 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
   checksum: 40f3a2561f525d2624b154ccb6da90592a32fe131c33b3258a8892041bcf0c6f8e4527d7310718aeaee119266b1e8a1c383f9842ae984b7c97987ce9d6a5203f
-  languageName: node
-  linkType: hard
-
-"react-stickynode@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "react-stickynode@npm:2.1.1"
-  dependencies:
-    classnames: ^2.0.0
-    prop-types: ^15.6.0
-    shallowequal: ^1.0.0
-    subscribe-ui-event: ^2.0.0
-  peerDependencies:
-    react: ^0.14.2 || ^15.0.0 || ^16.0.0
-    react-dom: ^0.14.2 || ^15.0.0 || ^16.0.0
-  checksum: b1fcf2fbb3fcdb869820f6f9e368ac0f6f90f97629e0671d5af10ae3db58252561cf8c66dab93a2653d133f86ad1649bcfea696a127281e95887a5bd324879ea
   languageName: node
   linkType: hard
 
@@ -32106,7 +31997,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shallowequal@npm:^1.0.0, shallowequal@npm:^1.0.2, shallowequal@npm:^1.1.0":
+"shallowequal@npm:^1.0.2, shallowequal@npm:^1.1.0":
   version: 1.1.0
   resolution: "shallowequal@npm:1.1.0"
   checksum: f4c1de0837f106d2dbbfd5d0720a5d059d1c66b42b580965c8f06bb1db684be8783538b684092648c981294bf817869f743a066538771dbecb293df78f765e00
@@ -33569,17 +33460,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"subscribe-ui-event@npm:^2.0.0":
-  version: 2.0.7
-  resolution: "subscribe-ui-event@npm:2.0.7"
-  dependencies:
-    eventemitter3: ^3.0.0
-    lodash: ^4.17.15
-    raf: ^3.0.0
-  checksum: 60c78c1930bedd58cb18fda4b88e271f7181aaf02ee83d6071a414de13a9fdb3941ea1d6222fa92c109d59f16d17d8f7110f88d9afd94609951977fc5c9834b3
-  languageName: node
-  linkType: hard
-
 "superagent@npm:3.8.2":
   version: 3.8.2
   resolution: "superagent@npm:3.8.2"
@@ -34149,13 +34029,6 @@ __metadata:
   version: 5.0.0
   resolution: "throat@npm:5.0.0"
   checksum: 031ff7f4431618036c1dedd99c8aa82f5c33077320a8358ed829e84b320783781d1869fe58e8f76e948306803de966f5f7573766a437562c9f5c033297ad2fe2
-  languageName: node
-  linkType: hard
-
-"throttle-debounce@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "throttle-debounce@npm:3.0.1"
-  checksum: e34ef638e8df3a9154249101b68afcbf2652a139c803415ef8a2f6a8bc577bcd4d79e4bb914ad3cd206523ac78b9fb7e80885bfa049f64fbb1927f99d98b5736
   languageName: node
   linkType: hard
 
