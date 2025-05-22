@@ -3384,13 +3384,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-block-toc@npm:6.2.0":
-  version: 6.2.0
-  resolution: "@eeacms/volto-block-toc@npm:6.2.0"
+"@eeacms/volto-block-toc@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@eeacms/volto-block-toc@npm:7.0.0"
   dependencies:
     github-slugger: 1.4.0
     smoothscroll-polyfill: ^0.4.4
-  checksum: b0082785308fc724f32cbc396607f1c73a5de9ad26150d80556cdb701e0e15e569e2dbb3e089c8140e33f06061718b07cab10243d489e7fad65a631cc5004d2d
+  checksum: a6d3480e643317cc493b5edc7f6ddcb1bab05c9f1a8fe276317329d7968892effc208aa2e2745165f38485b4930aca521a3d11cd50105e79f8ec62b11a94656b
   languageName: node
   linkType: hard
 
@@ -3403,9 +3403,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-chatbot@npm:0.1.16":
-  version: 0.1.16
-  resolution: "@eeacms/volto-chatbot@npm:0.1.16"
+"@eeacms/volto-chatbot@npm:0.1.19":
+  version: 0.1.19
+  resolution: "@eeacms/volto-chatbot@npm:0.1.19"
   dependencies:
     "@microsoft/fetch-event-source": 2.0.1
     fast-json-patch: 3.1.1
@@ -3418,7 +3418,7 @@ __metadata:
     rehype-prism-plus: 1.6.0
     remark-gfm: 3.0.1
     uuid: 10.0.0
-  checksum: ae7614d6644d8369cd8b42fb29188e79fa5b3b13e116b43897a1018ade694a259179e936681273547b47d118db78fc1ffee0355cb94ffb0da5b7203cdec52dbd
+  checksum: 0cf1d18996ad76a536d3a6c6dbc8188aefa9c1f849fc698423e81c1074b2e7e5d710d7002daa02b7c6eb35e182cb65e1045a03963ac452fb2e608837451eed1a
   languageName: node
   linkType: hard
 
@@ -3452,9 +3452,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-datablocks@npm:7.2.11":
-  version: 7.2.11
-  resolution: "@eeacms/volto-datablocks@npm:7.2.11"
+"@eeacms/volto-datablocks@npm:7.3.0":
+  version: 7.3.0
+  resolution: "@eeacms/volto-datablocks@npm:7.3.0"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-embed": "*"
@@ -3467,7 +3467,7 @@ __metadata:
     object-hash: 2.2.0
     react-visibility-sensor: 5.1.1
     sanitize-html: 2.12.1
-  checksum: 0825ebea398a91b14e3ba6cfc712ee6f60fb6fced45b413749786b564088b2f02b7cd97bc8a4c22be250b3829ef54e064ca853f35fcacf4839ec1cfb7c2eca2c
+  checksum: d384736f89a831a84d526f6c5fa014a32b221712db600bdc0fd016fc7dec65bdc8710565bd73c5ed42c00c8a505f978c5b59e35e8fe75e04c42a8800c3784c46
   languageName: node
   linkType: hard
 
@@ -3493,9 +3493,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-kitkat@npm:27.0.0":
-  version: 27.0.0
-  resolution: "@eeacms/volto-eea-kitkat@npm:27.0.0"
+"@eeacms/volto-eea-kitkat@npm:27.1.0":
+  version: 27.1.0
+  resolution: "@eeacms/volto-eea-kitkat@npm:27.1.0"
   dependencies:
     "@eeacms/countup": 2.0.7
     "@eeacms/volto-accordion-block": 11.0.4
@@ -3505,9 +3505,9 @@ __metadata:
     "@eeacms/volto-block-divider": 7.0.2
     "@eeacms/volto-block-image-cards": 2.0.2
     "@eeacms/volto-block-style": 7.2.1
-    "@eeacms/volto-block-toc": 6.2.0
+    "@eeacms/volto-block-toc": 7.0.0
     "@eeacms/volto-call-to-action-block": 5.1.3
-    "@eeacms/volto-chatbot": 0.1.16
+    "@eeacms/volto-chatbot": 0.1.19
     "@eeacms/volto-columns-block": 8.0.3
     "@eeacms/volto-controlpanel": 1.0.2
     "@eeacms/volto-corsproxy": 4.0.0
@@ -3529,7 +3529,7 @@ __metadata:
     "@eeacms/volto-statistic-block": 6.0.1
     "@eeacms/volto-tabs-block": 9.0.3
     "@eeacms/volto-tags-block": 3.0.1
-    "@eeacms/volto-taxonomy": 5.1.1
+    "@eeacms/volto-taxonomy": 5.1.2
     "@eeacms/volto-timeline-block": 2.0.1
     "@eeacms/volto-toolbar-actions": 2.0.1
     "@eeacms/volto-widget-dataprovenance": 1.0.0
@@ -3538,7 +3538,7 @@ __metadata:
     "@eeacms/volto-widget-theme-picker": 2.0.0
     "@eeacms/volto-widget-toggle": 4.0.0
     "@plone-collective/volto-sentry": 0.3.1
-  checksum: 111174be1e877d21a4660362e6d975e2794027e03dadf8c9caf67bc2276a798efc8a943662d773ae19b33bba1a080d2024ef3c6862c508cee0cb68be2a450958
+  checksum: aa9312e030a51ee45a750f161912683db3b75a70f6ed327054f53eb5aa8305e1787b7cac493dfe13b0acf8288e5888c89edaf1b3c7bdbba6174be141faefc2ae
   languageName: node
   linkType: hard
 
@@ -3619,13 +3619,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-globalsearch@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@eeacms/volto-globalsearch@npm:2.1.0"
+"@eeacms/volto-globalsearch@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@eeacms/volto-globalsearch@npm:2.1.2"
   dependencies:
     "@eeacms/volto-listing-block": "*"
     "@eeacms/volto-searchlib": "*"
-  checksum: ed2371d4b43d9e0399154c40aeb53f765b7553eb7fbdfbef8a7c8ac3caae963f195facf8cc4256e12b30513407beeb9324e8a7291a30338f9e3bb1a8e71484ba
+  checksum: bb9604a7c0290605619fbd9e3b0dbf2f1bf8deb1ba244f3cbefce91bbbf1daf00735650df49fc0fc72d9d343af6ce9da349b0bb5e654bbc9ae61af6b45e3ae31
   languageName: node
   linkType: hard
 
@@ -3923,12 +3923,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-taxonomy@npm:5.1.1":
-  version: 5.1.1
-  resolution: "@eeacms/volto-taxonomy@npm:5.1.1"
+"@eeacms/volto-taxonomy@npm:5.1.2":
+  version: 5.1.2
+  resolution: "@eeacms/volto-taxonomy@npm:5.1.2"
   dependencies:
     react-sortable-tree: 2.8.0
-  checksum: 555149133ca91eba8350709e540f278e835480b0e1d3b0b5190eccb3564ca95faef6801dc4f27da804b57b73485b71f7651f1217485926f2e16bc47113451f40
+  checksum: f3880fbd9acaf9ac5baf5f0a2ca01bd186beb76bc4611cd7c93749140fd37e4a46bf7c51cc30bbb302b55f12ab176735ad285054eee9256f1e3e79a5913d82e0
   languageName: node
   linkType: hard
 
@@ -18322,14 +18322,14 @@ __metadata:
   resolution: "forest-frontend@workspace:."
   dependencies:
     "@cypress/code-coverage": 3.10.0
-    "@eeacms/volto-datablocks": 7.2.11
+    "@eeacms/volto-datablocks": 7.3.0
     "@eeacms/volto-eea-design-system": 1.36.6
-    "@eeacms/volto-eea-kitkat": 27.0.0
+    "@eeacms/volto-eea-kitkat": 27.1.0
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-website-theme": 3.6.1
     "@eeacms/volto-embed": 10.1.3
     "@eeacms/volto-forest-policy": 1.0.3
-    "@eeacms/volto-globalsearch": 2.1.0
+    "@eeacms/volto-globalsearch": 2.1.2
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
     "@eeacms/volto-searchlib": 2.0.16
