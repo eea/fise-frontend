@@ -3618,16 +3618,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-website-theme@npm:3.6.1":
-  version: 3.6.1
-  resolution: "@eeacms/volto-eea-website-theme@npm:3.6.1"
+"@eeacms/volto-eea-website-theme@npm:3.6.2":
+  version: 3.6.2
+  resolution: "@eeacms/volto-eea-website-theme@npm:3.6.2"
   dependencies:
     "@eeacms/volto-block-style": "*"
     "@eeacms/volto-block-toc": "*"
     "@eeacms/volto-eea-design-system": "*"
     "@eeacms/volto-group-block": "*"
     volto-subsites: "*"
-  checksum: 6cada5e6c9607fbd3eab7831f6119d79159b135d9473618fa28ec696892c6b1a57fedd2e1e6bd06eb5dec25cba0a9916be8f16c256a3d4b0bb89b30f9dabdd21
+  checksum: ab9cd59836a58bf0a55ff7926081fcf6405dda3d20e5873a4eb2e177f8ec803625c0553f483e33f3808da8ae4e49a0318853af9a9cc8383e640e1a94914d8a3a
   languageName: node
   linkType: hard
 
@@ -3805,19 +3805,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:12.0.3":
-  version: 12.0.3
-  resolution: "@eeacms/volto-plotlycharts@npm:12.0.3"
+"@eeacms/volto-plotlycharts@npm:12.0.5":
+  version: 12.0.5
+  resolution: "@eeacms/volto-plotlycharts@npm:12.0.5"
   dependencies:
     "@eeacms/react-chart-editor": 0.47.2
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-matomo": "*"
     "@plone/scripts": "*"
+    handsontable: ^15.2.0
     jsoneditor: 10.2.0
     plotly.js: ^2.35.3
     react-plotly.js: 2.6.0
-  checksum: 875b492e56f5008e4af255b3883cbe3518f1f2cb5de64cd9c2a70b9c8731ac974439f3925df0c37fbb1c9ded5374335e41d4b5af48ec1e2bddfa6ff32d53be8e
+  checksum: 7f3c050d9fc2ea5376a57ea25f77d2ece4c8964534ae82f73d565259d607cc5131172da6c74e9650e5c851ca1afb2577ba4977b7d25c623b7eaca3dc67b625c1
   languageName: node
   linkType: hard
 
@@ -18426,7 +18427,7 @@ __metadata:
     "@eeacms/volto-eea-design-system": 1.36.6
     "@eeacms/volto-eea-kitkat": 27.1.1
     "@eeacms/volto-eea-map": 5.0.8
-    "@eeacms/volto-eea-website-theme": 3.6.1
+    "@eeacms/volto-eea-website-theme": 3.6.2
     "@eeacms/volto-embed": 10.1.3
     "@eeacms/volto-forest-policy": 1.0.3
     "@eeacms/volto-globalsearch": 2.1.2
