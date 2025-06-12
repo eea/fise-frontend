@@ -20,7 +20,8 @@
     "@eeacms/volto-eea-website-theme",
     "@eeacms/volto-globalsearch",
     "@eeacms/volto-searchlib",
-    "@eeacms/volto-forest-policy"
+    "@eeacms/volto-forest-policy",
+    "@eeacms/volto-eea-slate-glossary"
   ],
   "theme": "@eeacms/volto-forest-policy",
   "resolutions": {
