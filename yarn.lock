@@ -3452,9 +3452,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-datablocks@npm:7.3.0":
-  version: 7.3.0
-  resolution: "@eeacms/volto-datablocks@npm:7.3.0"
+"@eeacms/volto-datablocks@npm:7.3.1":
+  version: 7.3.1
+  resolution: "@eeacms/volto-datablocks@npm:7.3.1"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-embed": "*"
@@ -3467,7 +3467,7 @@ __metadata:
     object-hash: 2.2.0
     react-visibility-sensor: 5.1.1
     sanitize-html: 2.12.1
-  checksum: d384736f89a831a84d526f6c5fa014a32b221712db600bdc0fd016fc7dec65bdc8710565bd73c5ed42c00c8a505f978c5b59e35e8fe75e04c42a8800c3784c46
+  checksum: b658158a202e7ba0f08c05341869b63ed2e3330c22d347d2e09a12ce500bb45aab32c1b35317c1f8902e1d9241ef836fa3bc86ede989f3f8197c31268627f0a4
   languageName: node
   linkType: hard
 
@@ -18329,7 +18329,7 @@ __metadata:
   resolution: "forest-frontend@workspace:."
   dependencies:
     "@cypress/code-coverage": 3.10.0
-    "@eeacms/volto-datablocks": 7.3.0
+    "@eeacms/volto-datablocks": 7.3.1
     "@eeacms/volto-eea-design-system": 1.37.0
     "@eeacms/volto-eea-kitkat": 27.1.1
     "@eeacms/volto-eea-map": 5.0.8
@@ -28879,7 +28879,7 @@ __metadata:
   peerDependencies:
     react: ">=0.14"
     react-dom: ">=0.14"
-  checksum: f9e7f893f9efd2b02687f887bfb62e31a7ad4b9afc32fd7143d867423813cc8acd382325a2915c76d703a8e1ec9e2a1513addb428498f88f64fc71fde25acc6c
+  checksum: ea65e61461d825cb35df1ca3e99a67d88cfdf50db7ec75eda5320b576b30ffc45ef04bb89d5708df56f73ce5803540e5b8ac8a42b04847077afb59f9071bdb6f
   languageName: node
   linkType: hard
 
