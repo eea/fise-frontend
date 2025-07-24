@@ -3752,15 +3752,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-matomo@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@eeacms/volto-matomo@npm:5.0.0"
-  dependencies:
-    "@datapunt/matomo-tracker-react": 0.3.1
-  checksum: 238fe12d34eb1d108998d536c036b8ca4f68afd35d409d6a12a9331a0b93c87dd048079712d9922bef4ec0dbc3aded188aac98e3a4c5ab9ee9cd6e8b6c0eb27a
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-matomo@npm:6.0.0":
   version: 6.0.0
   resolution: "@eeacms/volto-matomo@npm:6.0.0"
@@ -3822,9 +3813,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:13.0.0":
-  version: 13.0.0
-  resolution: "@eeacms/volto-plotlycharts@npm:13.0.0"
+"@eeacms/volto-plotlycharts@npm:13.0.1":
+  version: 13.0.1
+  resolution: "@eeacms/volto-plotlycharts@npm:13.0.1"
   dependencies:
     "@eeacms/react-chart-editor": 0.47.4
     "@eeacms/volto-datablocks": "*"
@@ -3836,7 +3827,8 @@ __metadata:
     jszip: 3.10.1
     plotly.js: ^2.35.3
     react-plotly.js: 2.6.0
-  checksum: df84b2933da8e5b5c72c28751d2ee75e6b7cbb5d37866bc55f1a1ece438c0ed89012bd9bc916cc011febd4e575fdb7884b3181cd29791c82cecdad8b5242af7d
+    remixicon: 4.6.0
+  checksum: 5bd51ed2af88e4e384ce027668301847e27134e925c1c6b9e07bb7252d469be3cb82879e109e7d4df4abb3aa020dd112d2e3684f9981b23510c43a93aaf22bdd
   languageName: node
   linkType: hard
 
@@ -3863,11 +3855,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-searchlib@npm:2.1.4":
-  version: 2.1.4
-  resolution: "@eeacms/volto-searchlib@npm:2.1.4"
+"@eeacms/volto-searchlib@npm:2.1.5":
+  version: 2.1.5
+  resolution: "@eeacms/volto-searchlib@npm:2.1.5"
   dependencies:
-    "@eeacms/volto-matomo": 5.0.0
+    "@eeacms/volto-matomo": "*"
     "@elastic/react-search-ui": 1.20.2
     "@elastic/react-search-ui-views": 1.20.2
     "@elastic/search-ui": 1.20.2
@@ -3903,7 +3895,7 @@ __metadata:
     superagent: 3.8.2
     svg-loader: 0.0.2
     use-deep-compare-effect: 1.8.1
-  checksum: 21bdb1133e96adfa3ea9b47849b3405b2ad53db5f0b3de68423fd58084d6db231af80239fdace3fc24b5bd8e4fde6171dc9470753d2b448f8225585611f2af7b
+  checksum: 31c77d521b54f4111a416a67cb8a5d7d791127adf44168fdaa03194226bcce0f7cd4a19b5199a1aa2a66424d0fbee676f4e9c2eb01f9ff48d10f25afef55937d
   languageName: node
   linkType: hard
 
@@ -18452,7 +18444,7 @@ __metadata:
     "@eeacms/volto-globalsearch": 2.1.2
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
-    "@eeacms/volto-searchlib": 2.1.4
+    "@eeacms/volto-searchlib": 2.1.5
     "@eeacms/volto-slate-dataentity": 4.0.2
     "@eeacms/volto-tableau": 8.1.4
     "@plone/scripts": ^3.3.2
