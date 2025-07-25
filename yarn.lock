@@ -3787,24 +3787,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-object-widget@npm:*":
-  version: 5.1.4
-  resolution: "@eeacms/volto-object-widget@npm:5.1.4"
-  dependencies:
-    "@eeacms/volto-resize-helper": "*"
-  checksum: 137e37413de84354e7a4ecff8a6565ce7e019c787b501c6728afeb7b06407706528f717c04a235cb37947ddb4fcfb96aa3b5fc0e487192d7700a4362d9930e15
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-object-widget@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@eeacms/volto-object-widget@npm:7.0.0"
-  dependencies:
-    "@eeacms/volto-resize-helper": "*"
-  checksum: a6c6e03d339de51e79e83731332e340678afd8e08303da5bce954d80cd6f04c2945ee70efaf6a7bb811327a1388c1a46f5f35013a13c1ea02c73fd4eb8b32879
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-object-widget@npm:8.0.0":
   version: 8.0.0
   resolution: "@eeacms/volto-object-widget@npm:8.0.0"
