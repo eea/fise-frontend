@@ -38,7 +38,7 @@
     "@eeacms/volto-globalsearch": "2.1.2",
     "@eeacms/volto-plotlycharts": "13.0.2",
     "@eeacms/volto-searchlib": "2.1.7",
-    "@eeacms/volto-tableau": "8.1.4",
+    "@eeacms/volto-tableau": "8.1.5",
     "@eeacms/volto-forest-policy": "2.0.0",
     "@eeacms/volto-middleware-vh": "2.0.0",
     "react": "17.0.2",
@@ -63,7 +63,7 @@
     "@eeacms/volto-plotlycharts": "^11.0.2",
     "@eeacms/volto-searchlib": "2.1.7",
     "@eeacms/volto-slate-dataentity": "4.0.2",
-    "@eeacms/volto-tableau": "8.1.4",
+    "@eeacms/volto-tableau": "8.1.5",
     "@plone/volto": "17.20.1",
     "eslint-plugin-jsx-a11y": "6.7.1"
   },
