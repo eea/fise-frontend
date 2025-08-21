@@ -2019,9 +2019,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/react-chart-editor@npm:0.47.6":
-  version: 0.47.6
-  resolution: "@eeacms/react-chart-editor@npm:0.47.6"
+"@eeacms/react-chart-editor@npm:0.47.7":
+  version: 0.47.7
+  resolution: "@eeacms/react-chart-editor@npm:0.47.7"
   dependencies:
     "@eeacms/react-colorscales": 2.1.1
     "@plotly/draft-js-export-html": ^1.2.0
@@ -2050,7 +2050,7 @@ __metadata:
     plotly.js: ">=1.58.5 <3.0.0"
     react: ">=16"
     react-dom: ">=16"
-  checksum: ee5d12f835d37cf2a1e75049f9d235ea2047f0868e2888a4de8e11678a2444227c20852c0e54faa9d42d7a7306dd430f1a832b2c6def6737c0877c991d5227b5
+  checksum: 8238de3cc8aaff871f7bbdb3f7e83def9980f6b0140267fbeded433ad3ac8636428d5509996a3460cd38b851554655742f7401fafad13d267cbc1bdc5acd356b
   languageName: node
   linkType: hard
 
@@ -2253,9 +2253,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-kitkat@npm:28.0.4":
-  version: 28.0.4
-  resolution: "@eeacms/volto-eea-kitkat@npm:28.0.4"
+"@eeacms/volto-eea-kitkat@npm:28.0.5":
+  version: 28.0.5
+  resolution: "@eeacms/volto-eea-kitkat@npm:28.0.5"
   dependencies:
     "@eeacms/countup": 2.0.7
     "@eeacms/volto-accordion-block": 11.0.4
@@ -2274,7 +2274,7 @@ __metadata:
     "@eeacms/volto-description-block": 2.2.3
     "@eeacms/volto-group-block": 7.1.1
     "@eeacms/volto-hero-block": 8.0.0
-    "@eeacms/volto-listing-block": 9.0.2
+    "@eeacms/volto-listing-block": 9.0.3
     "@eeacms/volto-matomo": 6.0.1
     "@eeacms/volto-metadata-block": 8.0.5
     "@eeacms/volto-nextcloud-video-block": 2.0.0
@@ -2298,7 +2298,7 @@ __metadata:
     "@eeacms/volto-widget-theme-picker": 2.0.0
     "@eeacms/volto-widget-toggle": 4.0.0
     "@plone-collective/volto-sentry": 0.3.1
-  checksum: 855082b3f612e74d0b5a784b259b33720a2231cfbbc4305240fc21c920ea8404fa41a39959719ba50672446c5b518e601fc3af1d6c05229fbb8d03c84b5421bd
+  checksum: 0a99786bf96dfbcab8bb0b354865d554f8ae2c254041fa563c626db17cc25967150a736f507b92552d674ca59bf6096ab53cf9d24e1195f9dfdafcdd6971fa98
   languageName: node
   linkType: hard
 
@@ -2428,16 +2428,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-listing-block@npm:9.0.2":
-  version: 9.0.2
-  resolution: "@eeacms/volto-listing-block@npm:9.0.2"
+"@eeacms/volto-listing-block@npm:9.0.3":
+  version: 9.0.3
+  resolution: "@eeacms/volto-listing-block@npm:9.0.3"
   dependencies:
     "@eeacms/volto-object-widget": "*"
     "@eeacms/volto-widget-theme-picker": "*"
     react-resize-detector: 7.1.2
     react-slick: ^0.30.1
     slick-carousel: 1.8.1
-  checksum: 5030702105da49a90b2fbe1fef0f24e801448410652467ab506b99beb28afebb0146e5ab1a544ba089f8630e8ddfa3c431c36a00fdca6d87edd768e60a6fcddd
+  checksum: 924363f36c1ea4a16a0a7e4e072636ade8b83bd164b2ddcaa5a4f59ef4d61699a1831fc1398f8028b10595c0486a395d734019d494d28016be44684ba7568f90
   languageName: node
   linkType: hard
 
@@ -2491,11 +2491,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:13.0.4":
-  version: 13.0.4
-  resolution: "@eeacms/volto-plotlycharts@npm:13.0.4"
+"@eeacms/volto-plotlycharts@npm:13.0.6":
+  version: 13.0.6
+  resolution: "@eeacms/volto-plotlycharts@npm:13.0.6"
   dependencies:
-    "@eeacms/react-chart-editor": 0.47.6
+    "@eeacms/react-chart-editor": 0.47.7
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-matomo": "*"
@@ -2504,8 +2504,9 @@ __metadata:
     jsoneditor: 10.2.0
     jszip: 3.10.1
     plotly.js: ^2.35.3
+    react-plotly.js: 2.6.0
     remixicon: 4.6.0
-  checksum: 6513b57e544375cc1874692d2efac31399eadab7f3108402ba1eea47199ad9d9acb68ebf2f72e878ae2597867eada4741ac915c635ef357c947482991c6a4fd9
+  checksum: cadd000b491cd831799125338701dc5c1934063c1701815cced99ad7936e121ca6e9c93de012b550a88f3e88e8d52a0ffb05696e70594abd6902e161681568b0
   languageName: node
   linkType: hard
 
@@ -16564,7 +16565,7 @@ __metadata:
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 7.3.3
     "@eeacms/volto-eea-design-system": 1.39.0
-    "@eeacms/volto-eea-kitkat": 28.0.4
+    "@eeacms/volto-eea-kitkat": 28.0.5
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-slate-glossary": 1.0.0
     "@eeacms/volto-eea-website-theme": 3.9.0
@@ -27244,6 +27245,18 @@ __metadata:
     react: ^0.14 || >=15
     react-dom: ^0.14 || >=15
   checksum: c3afc3ce1c1d4c2df8d650ae399848dd788c6e41798ef0cd9701b2279c41bfd52b4cbac428a942995444ef2fffcc9126351a7de9f05e1c42fbe2a9454a2ec250
+  languageName: node
+  linkType: hard
+
+"react-plotly.js@npm:2.6.0":
+  version: 2.6.0
+  resolution: "react-plotly.js@npm:2.6.0"
+  dependencies:
+    prop-types: ^15.8.1
+  peerDependencies:
+    plotly.js: ">1.34.0"
+    react: ">0.13.0"
+  checksum: e826a3c94ec831c9d8fd92fa73aeece35d8ac04e0828d8362b28139d5b2923b83530356fb39c690debce20c47ba5d0a809f458a8c741d94edf88211e4ea4439f
   languageName: node
   linkType: hard
 
