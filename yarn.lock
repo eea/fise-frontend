@@ -2351,9 +2351,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@eeacms/volto-forest-policy@npm:2.0.0"
+"@eeacms/volto-forest-policy@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@eeacms/volto-forest-policy@npm:2.0.1"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
@@ -2365,10 +2365,11 @@ __metadata:
     "@eeacms/volto-object-widget": 8.0.0
     "@eeacms/volto-openlayers-map": "*"
     "@eeacms/volto-plotlycharts": "*"
-    "@eeacms/volto-searchlib": 2.1.5
+    "@eeacms/volto-searchlib": 2.1.8
     "@elastic/react-search-ui": 1.20.2
     "@elastic/react-search-ui-views": 1.20.2
     "@elastic/search-ui": 1.21.2
+    "@plone-collective/volto-authomatic": 2.0.1
     d3-array: ^2.12.1
     draft-js-alignment-plugin: ^2.0.6
     draft-js-focus-plugin: ^3.0.1
@@ -2384,7 +2385,7 @@ __metadata:
     react-image-gallery: 1.2.7
     react-lazy-load-image-component: ^1.5.0
     redraft: ^0.10.2
-  checksum: a9d2476d6bc4b10f471aefd39c9086deb0fe830a611e29de7bc43772b82489bbc008b43efa33403f0db6b90850c755b82cf1391e9d0e16a00973b319632f7693
+  checksum: 18c0ea9988d7853c2d7ea735239872b86fc7869a9175ada082ee13782e7ee3dd56bcb89d7581cb84f3dd450e26f6565b2aee028053dea52e22a54b9484bf5ff1
   languageName: node
   linkType: hard
 
@@ -4184,6 +4185,15 @@ __metadata:
   version: 0.1.2
   resolution: "@pkgr/core@npm:0.1.2"
   checksum: 5160ec9f2e3232da681824a42583ef80e637ae6143339bd1db176848efd244dd71d177ccb7fd729261d8dcaf88486ce701d39500d873ed5caf16e8c281e9e28a
+  languageName: node
+  linkType: hard
+
+"@plone-collective/volto-authomatic@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@plone-collective/volto-authomatic@npm:2.0.1"
+  peerDependencies:
+    "@plone/volto": ">=13.8.0"
+  checksum: 3ef620d30dd7c5716a327acdd8875df3b7902d2812c9d6dd1faf4dd36fd8462b32d04b20011070edfc781d5139f7eb0745702cf147e4703c0d8bb4315e8abfaa
   languageName: node
   linkType: hard
 
@@ -16570,13 +16580,14 @@ __metadata:
     "@eeacms/volto-eea-slate-glossary": 1.0.0
     "@eeacms/volto-eea-website-theme": 3.9.0
     "@eeacms/volto-embed": 10.1.3
-    "@eeacms/volto-forest-policy": 2.0.0
+    "@eeacms/volto-forest-policy": 2.0.1
     "@eeacms/volto-globalsearch": 2.1.2
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
     "@eeacms/volto-searchlib": 2.1.8
     "@eeacms/volto-slate-dataentity": 4.0.2
     "@eeacms/volto-tableau": 8.1.5
+    "@plone-collective/volto-authomatic": 2.0.1
     "@plone/scripts": ^3.3.2
     "@plone/volto": 17.20.1
     "@storybook/addon-actions": ^6.3.0
