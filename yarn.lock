@@ -2327,9 +2327,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-website-theme@npm:3.9.0":
-  version: 3.9.0
-  resolution: "@eeacms/volto-eea-website-theme@npm:3.9.0"
+"@eeacms/volto-eea-website-theme@npm:3.9.1":
+  version: 3.9.1
+  resolution: "@eeacms/volto-eea-website-theme@npm:3.9.1"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
@@ -2337,7 +2337,7 @@ __metadata:
     "@eeacms/volto-eea-design-system": "*"
     "@eeacms/volto-group-block": "*"
     volto-subsites: "*"
-  checksum: 801be45e67dd996470ba5dd34524b45742a5454272cc6d68f8251fe346764baa4cc91d5ca832a3f15515759de05292b739d3f7d0a86b1a368e482b0b2122f948
+  checksum: 641733fe283b923c684fc7adca51ecfd69b529b92b12eb57b51951f5f9476d48545ede53d666b2274d89d8592240669c9c44884a197e2d8b9004b9721743db95
   languageName: node
   linkType: hard
 
@@ -2351,9 +2351,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:2.0.1":
-  version: 2.0.1
-  resolution: "@eeacms/volto-forest-policy@npm:2.0.1"
+"@eeacms/volto-forest-policy@npm:2.0.3":
+  version: 2.0.3
+  resolution: "@eeacms/volto-forest-policy@npm:2.0.3"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
@@ -2385,7 +2385,7 @@ __metadata:
     react-image-gallery: 1.2.7
     react-lazy-load-image-component: ^1.5.0
     redraft: ^0.10.2
-  checksum: 18c0ea9988d7853c2d7ea735239872b86fc7869a9175ada082ee13782e7ee3dd56bcb89d7581cb84f3dd450e26f6565b2aee028053dea52e22a54b9484bf5ff1
+  checksum: 5b63b66885d9bbd39f93d74f2041104c147904d03903c825a982a7141f25dd3c6fa1858c30fd60bffe3e8527fc6aa78e421e730fe1e2b8872f99766aadef4ef9
   languageName: node
   linkType: hard
 
@@ -2492,9 +2492,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:13.0.6":
-  version: 13.0.6
-  resolution: "@eeacms/volto-plotlycharts@npm:13.0.6"
+"@eeacms/volto-plotlycharts@npm:13.0.7":
+  version: 13.0.7
+  resolution: "@eeacms/volto-plotlycharts@npm:13.0.7"
   dependencies:
     "@eeacms/react-chart-editor": 0.47.7
     "@eeacms/volto-datablocks": "*"
@@ -2507,7 +2507,7 @@ __metadata:
     plotly.js: ^2.35.3
     react-plotly.js: 2.6.0
     remixicon: 4.6.0
-  checksum: cadd000b491cd831799125338701dc5c1934063c1701815cced99ad7936e121ca6e9c93de012b550a88f3e88e8d52a0ffb05696e70594abd6902e161681568b0
+  checksum: 156e4d7cd3dc6b605060b6032f186d44ab78a7ff253f1cbff81a7ebaf52afcaf6a330255bb92b3c0e711860aff02cf22af9ae0a2ecad614208d354be72585fb1
   languageName: node
   linkType: hard
 
@@ -16578,9 +16578,9 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 28.0.5
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-slate-glossary": 1.0.0
-    "@eeacms/volto-eea-website-theme": 3.9.0
+    "@eeacms/volto-eea-website-theme": 3.9.1
     "@eeacms/volto-embed": 10.1.3
-    "@eeacms/volto-forest-policy": 2.0.1
+    "@eeacms/volto-forest-policy": 2.0.3
     "@eeacms/volto-globalsearch": 2.1.2
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
