@@ -2238,7 +2238,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-design-tokens@npm:1.1.0":
+"@eeacms/volto-design-tokens@npm:*":
   version: 1.1.0
   resolution: "@eeacms/volto-design-tokens@npm:1.1.0"
   checksum: c69ddaaeac7106fc4e32ab4b09481047d99336ec8d65e468923ec40967bc5c8da417c54a8fd77cbcccd35d9d19ec10fcf9470a0287a1d96f09b8d1553ac83131
@@ -2534,11 +2534,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-searchlib@npm:2.1.9":
-  version: 2.1.9
-  resolution: "@eeacms/volto-searchlib@npm:2.1.9"
+"@eeacms/volto-searchlib@npm:2.1.10":
+  version: 2.1.10
+  resolution: "@eeacms/volto-searchlib@npm:2.1.10"
   dependencies:
-    "@eeacms/volto-design-tokens": 1.1.0
+    "@eeacms/volto-design-tokens": "*"
     "@eeacms/volto-matomo": "*"
     "@elastic/react-search-ui": 1.20.2
     "@elastic/react-search-ui-views": 1.20.2
@@ -2575,7 +2575,7 @@ __metadata:
     superagent: 3.8.2
     svg-loader: 0.0.2
     use-deep-compare-effect: 1.8.1
-  checksum: 8c37feabe8e1ead27cdfdf84f42db01c4361c0dad37313b465690b43b566d98cf7fb4d3c8f2bc0aacb83c8b8e9d0f99694caf7aa8e4623d8c9b6fbc85a0fb785
+  checksum: abeb43f15e02c3f7174a2024e6d93a3763b7b31ebfb1b6115fd27a40dba099f301c3bbe661fbd0c29a03174fd4476a65b133f2f752168765006e0061c7e43730
   languageName: node
   linkType: hard
 
@@ -16592,7 +16592,7 @@ __metadata:
     "@eeacms/volto-globalsearch": 2.1.2
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
-    "@eeacms/volto-searchlib": 2.1.9
+    "@eeacms/volto-searchlib": 2.1.10
     "@eeacms/volto-slate-dataentity": 4.0.2
     "@eeacms/volto-tableau": 8.1.5
     "@plone-collective/volto-authomatic": 2.0.1
