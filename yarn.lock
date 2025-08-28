@@ -2358,9 +2358,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:2.0.4":
-  version: 2.0.4
-  resolution: "@eeacms/volto-forest-policy@npm:2.0.4"
+"@eeacms/volto-forest-policy@npm:2.0.5":
+  version: 2.0.5
+  resolution: "@eeacms/volto-forest-policy@npm:2.0.5"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
@@ -2372,7 +2372,7 @@ __metadata:
     "@eeacms/volto-object-widget": 8.0.0
     "@eeacms/volto-openlayers-map": "*"
     "@eeacms/volto-plotlycharts": "*"
-    "@eeacms/volto-searchlib": 2.1.8
+    "@eeacms/volto-searchlib": 2.1.10
     "@elastic/react-search-ui": 1.20.2
     "@elastic/react-search-ui-views": 1.20.2
     "@elastic/search-ui": 1.21.2
@@ -2392,7 +2392,7 @@ __metadata:
     react-image-gallery: 1.2.7
     react-lazy-load-image-component: ^1.5.0
     redraft: ^0.10.2
-  checksum: a2e1637e4b56247ed789bdc6ac26a1d744c52ab345fdbc8baf76a3258a533c3b2d5d067880e2ab7fcbbc0e2629ef6bc0258a67946461c921b165d227461f9383
+  checksum: ba3e1e3d2571da6a31df30f600f5ace0dc027868bcb68178031f8d96a7dcdef1d0b60a24e26b840c7fa776e3c4eaff9fc1fe46422971aab1d554243e8fd35bc3
   languageName: node
   linkType: hard
 
@@ -16588,7 +16588,7 @@ __metadata:
     "@eeacms/volto-eea-slate-glossary": 1.0.0
     "@eeacms/volto-eea-website-theme": 3.9.1
     "@eeacms/volto-embed": 10.1.3
-    "@eeacms/volto-forest-policy": 2.0.4
+    "@eeacms/volto-forest-policy": 2.0.5
     "@eeacms/volto-globalsearch": 2.1.2
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
