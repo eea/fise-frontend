@@ -2019,9 +2019,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/react-chart-editor@npm:0.47.7":
-  version: 0.47.7
-  resolution: "@eeacms/react-chart-editor@npm:0.47.7"
+"@eeacms/react-chart-editor@npm:0.47.8":
+  version: 0.47.8
+  resolution: "@eeacms/react-chart-editor@npm:0.47.8"
   dependencies:
     "@eeacms/react-colorscales": 2.1.1
     "@plotly/draft-js-export-html": ^1.2.0
@@ -2050,7 +2050,7 @@ __metadata:
     plotly.js: ">=1.58.5 <3.0.0"
     react: ">=16"
     react-dom: ">=16"
-  checksum: 8238de3cc8aaff871f7bbdb3f7e83def9980f6b0140267fbeded433ad3ac8636428d5509996a3460cd38b851554655742f7401fafad13d267cbc1bdc5acd356b
+  checksum: c57a8f0975ab94fa0b385bb9c95fecae645b1990443456c34985cca8be3265a4d196b30691e45d5c96742e8b151280ae944b2fa511c67268b91e3b74dcdf9c82
   languageName: node
   linkType: hard
 
@@ -2245,9 +2245,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@npm:1.39.0":
-  version: 1.39.0
-  resolution: "@eeacms/volto-eea-design-system@npm:1.39.0"
+"@eeacms/volto-eea-design-system@npm:1.39.1":
+  version: 1.39.1
+  resolution: "@eeacms/volto-eea-design-system@npm:1.39.1"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-corsproxy": "*"
@@ -2256,7 +2256,7 @@ __metadata:
     react-slick: ^0.30.1
     remixicon: 4.6.0
     slick-carousel: ^1.8.1
-  checksum: a5925a60d89eb883dd9f7f1b4bffc653c73ec341933f22c9c7f5ab6b8f12be03ad3b324ceeb4c3dbe903c5cae508fee2ae3c2b2e8383a429a999517e1d643257
+  checksum: d68153a4eb28b07034b2cee7142e8b0ab6bfb43d2faabb7a96805df2484c0b8993daceadff165859e23ed9cc4b1ded86d23fe56703464af327fed59db3956893
   languageName: node
   linkType: hard
 
@@ -2499,11 +2499,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:13.0.9":
-  version: 13.0.9
-  resolution: "@eeacms/volto-plotlycharts@npm:13.0.9"
+"@eeacms/volto-plotlycharts@npm:13.1.0":
+  version: 13.1.0
+  resolution: "@eeacms/volto-plotlycharts@npm:13.1.0"
   dependencies:
-    "@eeacms/react-chart-editor": 0.47.7
+    "@eeacms/react-chart-editor": 0.47.8
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-matomo": "*"
@@ -2514,7 +2514,7 @@ __metadata:
     plotly.js: ^2.35.3
     react-plotly.js: 2.6.0
     remixicon: 4.6.0
-  checksum: 9b19a033dcbbfa6de140b4942d81d77dd3d92f760e3c57dd399cfc5d1b7f4dd9b13c1ab71d0b3056a2547c3485f5950c64e5ebbfec08f7a5487913939d86b538
+  checksum: 7d7e8b7422cfda08d222f36d2e836dc763e5c04e5cc8cf4e9c2ef9f551836aa42124165eebfc81464374366403f69e110d32fe370665b541fd2561fcf96c4a8b
   languageName: node
   linkType: hard
 
@@ -16589,7 +16589,7 @@ __metadata:
   dependencies:
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 7.3.3
-    "@eeacms/volto-eea-design-system": 1.39.0
+    "@eeacms/volto-eea-design-system": 1.39.1
     "@eeacms/volto-eea-kitkat": 28.0.8
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-slate-glossary": 1.0.0
