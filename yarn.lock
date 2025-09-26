@@ -2335,9 +2335,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-website-theme@npm:3.10.0":
-  version: 3.10.0
-  resolution: "@eeacms/volto-eea-website-theme@npm:3.10.0"
+"@eeacms/volto-eea-website-theme@npm:3.10.1":
+  version: 3.10.1
+  resolution: "@eeacms/volto-eea-website-theme@npm:3.10.1"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
@@ -2345,7 +2345,7 @@ __metadata:
     "@eeacms/volto-eea-design-system": "*"
     "@eeacms/volto-group-block": "*"
     volto-subsites: "*"
-  checksum: 0e36f110fc1ee37b2925ca59ab506d13425d7a814b657d2eebe66556586370c8f2319a47c64c13598e1418f8d04f9ab017503042c20b9b04f5c0221a26b30995
+  checksum: 1621e2ecca5db97cb458f5d895fe8133afb8ea4c7683ce05dadec74a198bb80c2f761844ebb82fe1608ed08aba27d1cb146d50b8ce78bc60f33f89cc4fc908e6
   languageName: node
   linkType: hard
 
@@ -2500,9 +2500,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:13.1.0":
-  version: 13.1.0
-  resolution: "@eeacms/volto-plotlycharts@npm:13.1.0"
+"@eeacms/volto-plotlycharts@npm:13.1.2":
+  version: 13.1.2
+  resolution: "@eeacms/volto-plotlycharts@npm:13.1.2"
   dependencies:
     "@eeacms/react-chart-editor": 0.47.8
     "@eeacms/volto-datablocks": "*"
@@ -2515,7 +2515,7 @@ __metadata:
     plotly.js: ^2.35.3
     react-plotly.js: 2.6.0
     remixicon: 4.6.0
-  checksum: 7d7e8b7422cfda08d222f36d2e836dc763e5c04e5cc8cf4e9c2ef9f551836aa42124165eebfc81464374366403f69e110d32fe370665b541fd2561fcf96c4a8b
+  checksum: 3033438619e8a85a8d616b068129446fbc80e53399926003b8efc298b397616a1d84bbee5aa1dc7a097d50453d38ac0d19feb732c7d2721ffea775ca46f82511
   languageName: node
   linkType: hard
 
@@ -16601,7 +16601,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 28.1.0
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-slate-glossary": 1.0.0
-    "@eeacms/volto-eea-website-theme": 3.10.0
+    "@eeacms/volto-eea-website-theme": 3.10.1
     "@eeacms/volto-embed": 10.1.3
     "@eeacms/volto-forest-policy": 2.0.5
     "@eeacms/volto-globalsearch": 2.1.2
