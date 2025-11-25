@@ -2169,9 +2169,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-chatbot@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@eeacms/volto-chatbot@npm:0.6.0"
+"@eeacms/volto-chatbot@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@eeacms/volto-chatbot@npm:1.0.0"
   dependencies:
     "@eeacms/volto-matomo": "*"
     "@microsoft/fetch-event-source": 2.0.1
@@ -2186,7 +2186,7 @@ __metadata:
     rehype-prism-plus: 1.6.0
     remark-gfm: 3.0.1
     uuid: 10.0.0
-  checksum: bb628e47f46df2283aace054716161d01452d6696c50ce8158a056bfb3f6abb765d12eae72494a03e90a490c2afcb801f241e4e91781cf099884247c51b30ad7
+  checksum: f1bbb2a7e571fb0f2fd009c853805c9be137939bdeab75691ecb03b54c11d5e6a5f2684a4ea3b15be87e6957d80eb1e1744e058d75f087e8e180371afda4882d
   languageName: node
   linkType: hard
 
@@ -2261,9 +2261,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-kitkat@npm:28.2.0":
-  version: 28.2.0
-  resolution: "@eeacms/volto-eea-kitkat@npm:28.2.0"
+"@eeacms/volto-eea-kitkat@npm:29.0.0":
+  version: 29.0.0
+  resolution: "@eeacms/volto-eea-kitkat@npm:29.0.0"
   dependencies:
     "@eeacms/countup": 2.0.7
     "@eeacms/volto-accordion-block": 11.0.4
@@ -2275,7 +2275,7 @@ __metadata:
     "@eeacms/volto-block-style": 8.0.0
     "@eeacms/volto-block-toc": 8.2.0
     "@eeacms/volto-call-to-action-block": 5.1.3
-    "@eeacms/volto-chatbot": 0.6.0
+    "@eeacms/volto-chatbot": 1.0.0
     "@eeacms/volto-columns-block": 8.1.0
     "@eeacms/volto-controlpanel": 1.0.2
     "@eeacms/volto-corsproxy": 4.0.0
@@ -2306,7 +2306,7 @@ __metadata:
     "@eeacms/volto-widget-theme-picker": 2.0.0
     "@eeacms/volto-widget-toggle": 4.0.0
     "@plone-collective/volto-sentry": 0.4.0
-  checksum: c1134367acfc568bfa748fe6cad38065e1010c59a45de6da849cf32d6adf1e7054381ac2c7e17255dfd3f666553a21c4c4f3fc1d3c088de341cc0424f13cb750
+  checksum: 9be2fbec40c11c142f97fe68eb4b898ab0d15251ba62630ca32661cabfea7b9a903361379d4ba97202a54b267be79fd5238249a5c7b01d048f4f3818b79552d3
   languageName: node
   linkType: hard
 
@@ -2500,9 +2500,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:13.3.3":
-  version: 13.3.3
-  resolution: "@eeacms/volto-plotlycharts@npm:13.3.3"
+"@eeacms/volto-plotlycharts@npm:13.3.7":
+  version: 13.3.7
+  resolution: "@eeacms/volto-plotlycharts@npm:13.3.7"
   dependencies:
     "@eeacms/react-chart-editor": 0.47.8
     "@eeacms/volto-datablocks": "*"
@@ -2515,7 +2515,7 @@ __metadata:
     plotly.js: ^2.35.3
     react-plotly.js: 2.6.0
     remixicon: 4.6.0
-  checksum: 906018d5cd7feb20e7571d577e391f8d556f1bac4bd3e1196731a69fe2c5f568c2e733df888055f7824cfbd5709bec9b2e1d340268e1f135584fceb81ac1cfb9
+  checksum: 880955e4e6c042a6ecb7e88dc8f05f98d9cc3b116376e2176fa85333df447d28dd896033597806c74491d9be5a48444bc7eae14671fc5df0fbcaf45b42e1b379
   languageName: node
   linkType: hard
 
@@ -2693,6 +2693,13 @@ __metadata:
   version: 2.0.1
   resolution: "@eeacms/volto-toolbar-actions@npm:2.0.1"
   checksum: 6bec49572f34213f705a65545559c6e5454b4413da728ac8b1e2c3c14e4868f15c47e6b64d938669e7e141c395001df85d9abc5c677c72348bc878b4c39ba2d9
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-visualization-utils@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@eeacms/volto-visualization-utils@npm:1.0.2"
+  checksum: 0ad90d387710f770db78011949564ca75e1d7b22a385c19b4dd89239ae14c38c39156f5b6d6132ff97739765ddaa72ae0060098c4258cc078bb0285c814c64f0
   languageName: node
   linkType: hard
 
@@ -16610,7 +16617,7 @@ __metadata:
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 7.3.3
     "@eeacms/volto-eea-design-system": 1.40.0
-    "@eeacms/volto-eea-kitkat": 28.2.0
+    "@eeacms/volto-eea-kitkat": 29.0.0
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-slate-glossary": 1.0.0
     "@eeacms/volto-eea-website-theme": 3.14.1
@@ -16622,6 +16629,7 @@ __metadata:
     "@eeacms/volto-searchlib": 2.1.10
     "@eeacms/volto-slate-dataentity": 4.0.2
     "@eeacms/volto-tableau": 8.1.5
+    "@eeacms/volto-visualization-utils": 1.0.2
     "@plone-collective/volto-authomatic": 2.0.1
     "@plone/scripts": ^3.3.2
     "@plone/volto": 17.20.1
