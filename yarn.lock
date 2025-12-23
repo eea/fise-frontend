@@ -2335,17 +2335,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-website-theme@npm:3.16.0":
-  version: 3.16.0
-  resolution: "@eeacms/volto-eea-website-theme@npm:3.16.0"
+"@eeacms/volto-eea-website-theme@npm:3.17.0":
+  version: 3.17.0
+  resolution: "@eeacms/volto-eea-website-theme@npm:3.17.0"
   dependencies:
     "@eeacms/volto-anchors": "*"
     "@eeacms/volto-block-style": "*"
     "@eeacms/volto-block-toc": "*"
-    "@eeacms/volto-eea-design-system": "*"
+    "@eeacms/volto-eea-design-system": "github:eea/volto-eea-design-system#develop"
     "@eeacms/volto-group-block": "*"
     volto-subsites: "*"
-  checksum: 90df32ed955252af99849d3c1faced776f73313ee541305eb20abfad11ff19dcc71659eb37757b199534b25503bcd45bee2be9cdd34f2cb88224553e7ddcd9ab
+  checksum: a2ff9a1e1552d07ddeae5fff332705eb15821e4d76015af9265673e7513dd3d46dba22fee499dd6714c5178ab4cd4ee10e87ad879fe24994105a0caa1f2ebe7a
   languageName: node
   linkType: hard
 
@@ -16627,7 +16627,7 @@ __metadata:
     "@eeacms/volto-eea-kitkat": 30.1.0
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-slate-glossary": 1.0.0
-    "@eeacms/volto-eea-website-theme": 3.16.0
+    "@eeacms/volto-eea-website-theme": 3.17.0
     "@eeacms/volto-embed": 10.1.4
     "@eeacms/volto-forest-policy": 2.0.5
     "@eeacms/volto-globalsearch": 2.1.2
