@@ -2169,27 +2169,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-chatbot@npm:*":
-  version: 1.0.5
-  resolution: "@eeacms/volto-chatbot@npm:1.0.5"
-  dependencies:
-    "@eeacms/volto-matomo": "*"
-    "@microsoft/fetch-event-source": 2.0.1
-    "@plone-collective/volto-sentry": "*"
-    fast-json-patch: 3.1.1
-    highlight.js: 11.10.0
-    luxon: 3.5.0
-    marked: 13.0.3
-    node-fetch: 2.7.0
-    react-markdown: 8.0.7
-    react-textarea-autosize: ^8.5.3
-    rehype-prism-plus: 1.6.0
-    remark-gfm: 3.0.1
-    uuid: 10.0.0
-  checksum: be98dcc4eaa446319c378a73ae39b0f29b9531d45775703b24f8210add0eb1d47183601eb88c3e88a238b2a691823347dad30ed599b49c6ebf60ad735aa47342
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-chatbot@npm:1.0.8":
   version: 1.0.8
   resolution: "@eeacms/volto-chatbot@npm:1.0.8"
@@ -2264,6 +2243,27 @@ __metadata:
   version: 1.1.0
   resolution: "@eeacms/volto-design-tokens@npm:1.1.0"
   checksum: c69ddaaeac7106fc4e32ab4b09481047d99336ec8d65e468923ec40967bc5c8da417c54a8fd77cbcccd35d9d19ec10fcf9470a0287a1d96f09b8d1553ac83131
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-eea-chatbot@npm:*":
+  version: 1.0.10
+  resolution: "@eeacms/volto-eea-chatbot@npm:1.0.10"
+  dependencies:
+    "@eeacms/volto-matomo": "*"
+    "@microsoft/fetch-event-source": 2.0.1
+    "@plone-collective/volto-sentry": "*"
+    fast-json-patch: 3.1.1
+    highlight.js: 11.10.0
+    luxon: 3.5.0
+    marked: 13.0.3
+    node-fetch: 2.7.0
+    react-markdown: 8.0.7
+    react-textarea-autosize: ^8.5.3
+    rehype-prism-plus: 1.6.0
+    remark-gfm: 3.0.1
+    uuid: 10.0.0
+  checksum: 23baae1a60677afd00fd8e13a82c7d54d94a16dfcca410325ffb053a21b681e7916ddc493914d327ff0874f65a56f3fdf01263f4a0990a53dad38c8dfc5d12df
   languageName: node
   linkType: hard
 
@@ -2563,12 +2563,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-searchlib@npm:3.0.2":
-  version: 3.0.2
-  resolution: "@eeacms/volto-searchlib@npm:3.0.2"
+"@eeacms/volto-searchlib@npm:3.0.3":
+  version: 3.0.3
+  resolution: "@eeacms/volto-searchlib@npm:3.0.3"
   dependencies:
-    "@eeacms/volto-chatbot": "*"
     "@eeacms/volto-design-tokens": "*"
+    "@eeacms/volto-eea-chatbot": "*"
     "@eeacms/volto-matomo": "*"
     "@elastic/react-search-ui": 1.20.2
     "@elastic/react-search-ui-views": 1.20.2
@@ -2605,7 +2605,7 @@ __metadata:
     superagent: 3.8.2
     svg-loader: 0.0.2
     use-deep-compare-effect: 1.8.1
-  checksum: 1b28862c7d0754269c0593ee994229f62919b0c517b25fa7961b47b59629018acae77500ad51c0d24608941ed4f984f858cbcba94773034f78162a504acb827d
+  checksum: 4f6795fbfd4b55877e7d0a09dfa3c5310b1f84c34a7dc4322fcb17c1d7a33074035a934e6c919ef53e080f1d10cda9cd694e5239403e32d27087f39f98bf66a8
   languageName: node
   linkType: hard
 
@@ -16643,7 +16643,7 @@ __metadata:
     "@eeacms/volto-globalsearch": 3.0.0
     "@eeacms/volto-middleware-vh": 2.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
-    "@eeacms/volto-searchlib": 3.0.2
+    "@eeacms/volto-searchlib": 3.0.3
     "@eeacms/volto-slate-dataentity": 4.0.2
     "@eeacms/volto-tableau": 8.1.5
     "@eeacms/volto-visualization-utils": 1.0.4
