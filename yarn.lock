@@ -2169,27 +2169,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-chatbot@npm:0.6.4":
-  version: 0.6.4
-  resolution: "@eeacms/volto-chatbot@npm:0.6.4"
-  dependencies:
-    "@eeacms/volto-matomo": "*"
-    "@microsoft/fetch-event-source": 2.0.1
-    "@plone-collective/volto-sentry": "*"
-    fast-json-patch: 3.1.1
-    highlight.js: 11.10.0
-    luxon: 3.5.0
-    marked: 13.0.3
-    node-fetch: 2.7.0
-    react-markdown: 8.0.7
-    react-textarea-autosize: ^8.5.3
-    rehype-prism-plus: 1.6.0
-    remark-gfm: 3.0.1
-    uuid: 10.0.0
-  checksum: 802735fc8faac58cfdf07df5844b0b4694b6777bf9ef6b927d9c01cdf7f532350a88094d1c95535fccee720a4aae9f5a10ca1460bc2c19572e5e41c0e04e6cfb
-  languageName: node
-  linkType: hard
-
 "@eeacms/volto-columns-block@npm:8.1.1":
   version: 8.1.1
   resolution: "@eeacms/volto-columns-block@npm:8.1.1"
@@ -2282,9 +2261,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-kitkat@npm:31.0.2":
-  version: 31.0.2
-  resolution: "@eeacms/volto-eea-kitkat@npm:31.0.2"
+"@eeacms/volto-eea-kitkat@npm:32.0.0":
+  version: 32.0.0
+  resolution: "@eeacms/volto-eea-kitkat@npm:32.0.0"
   dependencies:
     "@eeacms/countup": 2.0.7
     "@eeacms/volto-accordion-block": 12.0.0
@@ -2296,7 +2275,6 @@ __metadata:
     "@eeacms/volto-block-style": 8.0.0
     "@eeacms/volto-block-toc": 8.2.0
     "@eeacms/volto-call-to-action-block": 5.2.0
-    "@eeacms/volto-chatbot": 0.6.4
     "@eeacms/volto-columns-block": 8.1.1
     "@eeacms/volto-controlpanel": 1.0.2
     "@eeacms/volto-corsproxy": 4.0.0
@@ -2327,7 +2305,7 @@ __metadata:
     "@eeacms/volto-widget-theme-picker": 2.0.0
     "@eeacms/volto-widget-toggle": 4.0.0
     "@plone-collective/volto-sentry": 0.4.0
-  checksum: d0935d5b3916289771069897e2bc5bbcada207d9eae05e9c9742881009c62fc1a156710804544c65e86955e2d7691747eb037e389276b2c9dd2486ce29dccf55
+  checksum: 06e726ab1fc763a3fb1d37b2a9aecd333d69c9879a66767aa2909a8a3bf69513faea3971b607519759b0e13b308df66bfd3ad2ae2086a9896e453d3d76a60d03
   languageName: node
   linkType: hard
 
@@ -16634,7 +16612,7 @@ __metadata:
     "@cypress/code-coverage": 3.10.0
     "@eeacms/volto-datablocks": 7.3.4
     "@eeacms/volto-eea-design-system": 1.40.3
-    "@eeacms/volto-eea-kitkat": 31.0.2
+    "@eeacms/volto-eea-kitkat": 32.0.0
     "@eeacms/volto-eea-map": 5.0.8
     "@eeacms/volto-eea-slate-glossary": 1.0.0
     "@eeacms/volto-eea-website-theme": 3.19.0
