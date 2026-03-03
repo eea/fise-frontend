@@ -29,7 +29,7 @@
   "resolutions": {
     "@elastic/search-ui": "1.21.2",
     "@eeacms/volto-embed": "10.1.4",
-    "@eeacms/volto-datablocks": "7.3.4",
+    "@eeacms/volto-datablocks": "7.3.5",
     "@eeacms/volto-eea-design-system": "1.40.3",
     "@eeacms/volto-eea-kitkat": "32.0.2",
     "@eeacms/volto-eea-map": "5.0.8",
@@ -53,7 +53,7 @@
     "react-countup/countup.js": "2.5.0"
   },
   "dependencies": {
-    "@eeacms/volto-datablocks": "7.3.4",
+    "@eeacms/volto-datablocks": "7.3.5",
     "@eeacms/volto-eea-design-system": "1.40.3",
     "@eeacms/volto-eea-kitkat": "32.0.2",
     "@eeacms/volto-eea-map": "5.0.8",
