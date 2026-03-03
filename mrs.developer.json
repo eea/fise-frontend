@@ -20,6 +20,13 @@
     "develop": false,
     "path": "src"
   },
+  "volto-openlayers-map": {
+    "url": "git@github.com:eea/volto-openlayers-map.git",
+    "package": "@eeacms/volto-openlayers-map",
+    "branch": "develop",
+    "develop": false,
+    "path": "src"
+  },
   "volto-embed": {
     "url": "git@github.com:eea/volto-embed.git",
     "package": "@eeacms/volto-embed",
