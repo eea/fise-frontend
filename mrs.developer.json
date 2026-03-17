@@ -47,5 +47,26 @@
     "branch": "develop",
     "develop": false,
     "path": "src"
+  },
+  "volto-globalsearch": {
+    "url": "git@github.com:eea/volto-globalsearch.git",
+    "package": "@eeacms/volto-globalsearch",
+    "branch": "develop",
+    "develop": false,
+    "path": "src"
+  },
+  "volto-searchlib": {
+    "url": "git@github.com:eea/volto-searchlib.git",
+    "package": "@eeacms/volto-searchlib",
+    "branch": "develop",
+    "develop": false,
+    "path": "src"
+  },
+  "volto-eea-chatbot": {
+    "url": "git@github.com:eea/volto-eea-chatbot.git",
+    "package": "@eeacms/volto-eea-chatbot",
+    "branch": "develop",
+    "develop": false,
+    "path": "src"
   }
 }
