@@ -39,6 +39,7 @@
     "@eeacms/volto-object-widget": "8.0.0",
     "@eeacms/volto-globalsearch": "3.0.0",
     "@eeacms/volto-plotlycharts": "13.3.7",
+    "@eeacms/volto-eea-chatbot": "2.0.0",
     "@eeacms/volto-searchlib": "3.0.3",
     "@eeacms/volto-tableau": "8.1.5",
     "@eeacms/volto-forest-policy": "2.0.7",
