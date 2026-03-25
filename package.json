@@ -38,7 +38,7 @@
     "@eeacms/volto-openlayers-map": "1.0.1",
     "@eeacms/volto-object-widget": "8.0.0",
     "@eeacms/volto-globalsearch": "4.0.0",
-    "@eeacms/volto-plotlycharts": "13.3.7",
+    "@eeacms/volto-plotlycharts": "14.0.0",
     "@eeacms/volto-eea-chatbot": "2.0.0",
     "@eeacms/volto-searchlib": "4.0.0",
     "@eeacms/volto-tableau": "9.0.0",
