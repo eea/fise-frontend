@@ -2203,13 +2203,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-datablocks@npm:7.3.5":
-  version: 7.3.5
-  resolution: "@eeacms/volto-datablocks@npm:7.3.5"
+"@eeacms/volto-datablocks@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@eeacms/volto-datablocks@npm:8.0.0"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-embed": "*"
-    "@eeacms/volto-group-block": "*"
     "@eeacms/volto-listing-block": "*"
     "@eeacms/volto-matomo": "*"
     d3: 7.1.1
@@ -2218,7 +2217,7 @@ __metadata:
     object-hash: 2.2.0
     react-visibility-sensor: 5.1.1
     sanitize-html: 2.12.1
-  checksum: e564143863937d3751dff1e3c8623a5ff1f668f93a924aed646c55a9c16aa1174f8b1acee32562ad0eedea2240d11476d1d58f9796e36bd1eb52e6c1ea8587ca
+  checksum: bda4ebe7cab3f10da7fa150fa7f79b58b862b67e34a9f7ca943c80e613e0618d4b73b27484b2a5094805bbc290e4bb10684095f74cdd638f0b7e66cab3607ee1
   languageName: node
   linkType: hard
 
@@ -2518,9 +2517,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:13.3.7":
-  version: 13.3.7
-  resolution: "@eeacms/volto-plotlycharts@npm:13.3.7"
+"@eeacms/volto-plotlycharts@npm:14.0.0":
+  version: 14.0.0
+  resolution: "@eeacms/volto-plotlycharts@npm:14.0.0"
   dependencies:
     "@eeacms/react-chart-editor": 0.47.8
     "@eeacms/volto-datablocks": "*"
@@ -2533,7 +2532,7 @@ __metadata:
     plotly.js: ^2.35.3
     react-plotly.js: 2.6.0
     remixicon: 4.6.0
-  checksum: 880955e4e6c042a6ecb7e88dc8f05f98d9cc3b116376e2176fa85333df447d28dd896033597806c74491d9be5a48444bc7eae14671fc5df0fbcaf45b42e1b379
+  checksum: ebcb2c8060c34b57c76baa70e899b03f7f48537aef84340717cb689d907fcec6c236b1eda294a72de2b8542394c2e7f2c39852c6791a1f4389c237880b91dd3b
   languageName: node
   linkType: hard
 
@@ -16640,7 +16639,7 @@ __metadata:
   resolution: "forest-frontend@workspace:."
   dependencies:
     "@cypress/code-coverage": 3.10.0
-    "@eeacms/volto-datablocks": 7.3.5
+    "@eeacms/volto-datablocks": 8.0.0
     "@eeacms/volto-eea-design-system": 1.50.0
     "@eeacms/volto-eea-kitkat": 32.0.2
     "@eeacms/volto-eea-map": 6.0.0
