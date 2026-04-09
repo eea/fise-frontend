@@ -31,7 +31,7 @@
     "@eeacms/volto-embed": "11.0.1",
     "@eeacms/volto-datablocks": "8.0.2",
     "@eeacms/volto-eea-design-system": "1.50.2",
-    "@eeacms/volto-eea-kitkat": "32.0.2",
+    "@eeacms/volto-eea-kitkat": "33.0.0",
     "@eeacms/volto-eea-map": "6.0.1",
     "@eeacms/volto-slate-dataentity": "4.0.2",
     "@eeacms/volto-eea-website-theme": "4.0.3",
@@ -56,7 +56,7 @@
   "dependencies": {
     "@eeacms/volto-datablocks": "8.0.2",
     "@eeacms/volto-eea-design-system": "1.50.2",
-    "@eeacms/volto-eea-kitkat": "32.0.2",
+    "@eeacms/volto-eea-kitkat": "33.0.0",
     "@eeacms/volto-eea-map": "6.0.1",
     "@eeacms/volto-eea-slate-glossary": "1.0.0",
     "@eeacms/volto-eea-website-theme": "4.0.3",
