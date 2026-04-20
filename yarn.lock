@@ -2365,10 +2365,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-slate-glossary@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@eeacms/volto-eea-slate-glossary@npm:1.0.0"
-  checksum: ad149a8c5a319fcae35eeb35da6696fcf186e742abcb818cf92f2921fdc19b5174575ce02121d6f0f81d751126924a1fc8732138be9519c07a449cdbcfe242fb
+"@eeacms/volto-eea-slate-glossary@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@eeacms/volto-eea-slate-glossary@npm:2.0.0"
+  checksum: 5ec652e61d7825ad89f6c4bdd4a59993447f6a89d9bc0f2ea91a7ec027d2ba3e896490db44a3823361c43eb9ae895d710784abef72fd6d9eee5bc686c26596fe
   languageName: node
   linkType: hard
 
@@ -16725,7 +16725,7 @@ __metadata:
     "@eeacms/volto-eea-design-system": 1.60.1
     "@eeacms/volto-eea-kitkat": 33.0.1
     "@eeacms/volto-eea-map": 6.0.1
-    "@eeacms/volto-eea-slate-glossary": 1.0.0
+    "@eeacms/volto-eea-slate-glossary": 2.0.0
     "@eeacms/volto-eea-website-theme": 4.1.1
     "@eeacms/volto-embed": 11.0.1
     "@eeacms/volto-forest-policy": 2.0.8
