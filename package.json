@@ -68,7 +68,7 @@
     "@eeacms/volto-searchlib": "4.0.2",
     "@eeacms/volto-slate-dataentity": "4.0.2",
     "@eeacms/volto-tableau": "9.0.1",
-    "@eeacms/volto-visualization-utils": "1.0.5",
+    "@eeacms/volto-visualization-utils": "2.0.0",
     "@plone-collective/volto-authomatic": "2.0.1",
     "@plone/volto": "17.20.1",
     "eslint-plugin-jsx-a11y": "6.7.1"
