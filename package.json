@@ -10,6 +10,7 @@
   "addons": [
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-datablocks",
+    "@eeacms/volto-custom-html-block",
     "@eeacms/volto-embed",
     "@eeacms/volto-eea-map",
     "@eeacms/volto-tableau",
@@ -54,6 +55,7 @@
     "react-countup/countup.js": "2.5.0"
   },
   "dependencies": {
+    "@eeacms/volto-custom-html-block": "0.1.2",
     "@eeacms/volto-datablocks": "8.0.2",
     "@eeacms/volto-eea-design-system": "1.60.2",
     "@eeacms/volto-eea-kitkat": "33.0.1",
