@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "build/public/static/js/*.js",
+      "maxSize": "50kB"
+    },
+    {
+      "path": "build/public/static/js/d3*.js",
+      "maxSize": "103kB"
+    },
+    {
+      "path": "build/public/static/js/react-sortable*.js",
+      "maxSize": "100kB"
+    },
+    {
+      "path": "build/public/static/js/PlotlyEditor*.js",
+      "maxSize": "2.1MB"
+    },
+    {
+      "path": "build/public/static/js/react-plotly*.js",
+      "maxSize": "1.3MB"
+    },
+    {
+      "path": "build/public/static/js/plotly-js-dist-plotly-with-meta*.js",
+      "maxSize": "1.38MB"
+    },
+    {
+      "path": "build/public/static/js/plotly-js-dist-plotly-min*.js",
+      "maxSize": "1.3MB"
+    },
+    {
+      "path": "build/public/static/js/client*.js",
+      "maxSize": "2.45MB"
+    },
+    {
+      "path": "build/public/static/js/prettier-standalone*.js",
+      "maxSize": "135kB"
+    },
+    {
+      "path": "build/public/static/js/jsoneditor*.js",
+      "maxSize": "280kB"
+    },
+    {
+      "path": "build/public/static/js/sanitize-html*.js",
+      "maxSize": "85kB"
+    },
+    {
+      "path": "build/public/static/js/rehype-prism-plus*.js",
+      "maxSize": "250kB"
+    }
+  ]
+}
