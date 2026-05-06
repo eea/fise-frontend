@@ -419,6 +419,20 @@
     },
     "ignoreFiles": "theme/themes/default/**/*.overrides"
   },
+  "bundlesize": [
+    {
+      "path": "build/public/static/js/*.js",
+      "maxSize": "680kB"
+    }
+  ],
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "build/public/static/js/*.js",
+        "maxSize": "680kB"
+      }
+    ]
+  },
   "engines": {
     "node": "^22"
   },
