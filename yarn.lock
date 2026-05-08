@@ -2402,9 +2402,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:2.0.10":
-  version: 2.0.10
-  resolution: "@eeacms/volto-forest-policy@npm:2.0.10"
+"@eeacms/volto-forest-policy@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@eeacms/volto-forest-policy@npm:3.0.0"
   dependencies:
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-eea-design-system": "*"
@@ -2422,21 +2422,13 @@ __metadata:
     "@elastic/search-ui": 1.21.2
     "@plone-collective/volto-authomatic": 2.0.1
     d3-array: ^2.12.1
-    draft-js-alignment-plugin: ^2.0.6
-    draft-js-focus-plugin: ^3.0.1
-    draft-js-import-html: ^1.4.1
-    draft-js-inline-toolbar-plugin: ^2.0.3
-    draft-js-modifiers: ^0.2.2
-    draft-js-plugins-editor: ^3.0.0
-    draft-js-resizeable-plugin: ^2.0.9
-    draft-js-video-plugin: ^2.0.2
     esri-loader: ^2.14.0
+    querystring: 0.2.1
     react-component-queries: 2.3.0
     react-highlight-words: ^0.16.0
     react-image-gallery: 1.2.7
     react-lazy-load-image-component: ^1.5.0
-    redraft: ^0.10.2
-  checksum: 619819de1504b09daf28dd33a8e7e973f3c4769d43518d3bf50925c6903a95e4f3d10bf928dab19d12535da2e942d108095268667d8a406cbec07b87c8bd32a6
+  checksum: 098bed87509d27bc63bb105ca2cb69caabf370630a3e70a96b4fdbd2d4df0c2ceeb3633453c4ba681ccc924a6d8430e2e7f28a2918a752a1add69849aa7ecb9c
   languageName: node
   linkType: hard
 
@@ -14207,7 +14199,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decorate-component-with-props@npm:1.2.1, decorate-component-with-props@npm:^1.0.2":
+"decorate-component-with-props@npm:1.2.1":
   version: 1.2.1
   resolution: "decorate-component-with-props@npm:1.2.1"
   peerDependencies:
@@ -14932,46 +14924,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"draft-js-alignment-plugin@npm:^2.0.6":
-  version: 2.0.6
-  resolution: "draft-js-alignment-plugin@npm:2.0.6"
-  dependencies:
-    draft-js-buttons: ^2.0.1
-  peerDependencies:
-    draft-js: ^0.10.1 || ^0.11.0
-    react: ^15.5.0 || ^16.0.0-rc
-    react-dom: ^15.5.0 || ^16.0.0-rc
-  checksum: 2ca0173a324e4874b62a225972550ff0ef8ec071bf3b238fecfa95effccdce756b32ea8b39816c010f9c6d548bd0fb4ad8dff6fb1e4e8859a3840f9a92670144
-  languageName: node
-  linkType: hard
-
-"draft-js-buttons@npm:^2.0.1":
-  version: 2.0.2
-  resolution: "draft-js-buttons@npm:2.0.2"
-  dependencies:
-    clsx: ^1.0.4
-  peerDependencies:
-    draft-js: ^0.10.1 || ^0.11.0
-    react: ^15.5.0 || ^16.0.0-rc
-    react-dom: ^15.5.0 || ^16.0.0-rc
-  checksum: 7515ee5843e881e5932e3be4460376f445e52e64b6f6a8ce5f3bf17fdac45b2bd0f2218e5ebb6df0c4ba36292160ae975d130b134ee91c6f731cfa2725b6d5c1
-  languageName: node
-  linkType: hard
-
-"draft-js-focus-plugin@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "draft-js-focus-plugin@npm:3.0.1"
-  dependencies:
-    clsx: ^1.0.4
-    immutable: ~3.7.4
-  peerDependencies:
-    draft-js: ^0.11.0
-    react: ^15.5.0 || ^16.0.0-rc
-    react-dom: ^15.5.0 || ^16.0.0-rc
-  checksum: 26d7eac9647133e8992d45282d9af334c46a0b959faa0890d8cf2c37bf04d5fa64832585d17e5ba504ea5afd5d4a64979b77562deea723cb4ea4c24f3d3433b4
-  languageName: node
-  linkType: hard
-
 "draft-js-import-element@npm:^1.4.0":
   version: 1.4.0
   resolution: "draft-js-import-element@npm:1.4.0"
@@ -14997,59 +14949,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"draft-js-inline-toolbar-plugin@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "draft-js-inline-toolbar-plugin@npm:2.0.3"
-  dependencies:
-    decorate-component-with-props: ^1.0.2
-    draft-js-buttons: ^2.0.1
-    find-with-regex: ^1.1.2
-    immutable: ~3.7.4
-    prop-types: ^15.5.8
-    union-class-names: ^1.0.0
-  peerDependencies:
-    draft-js: ^0.10.1
-    react: ^15.5.0 || ^16.0.0-rc
-    react-dom: ^15.5.0 || ^16.0.0-rc
-  checksum: 6c35d7e8ad4ecc1e96b3961ca9a9743789a46a88b61d821d6efe788dafd34731d2f9f810645c5220353d2839794e8dd2f2dd5aadec7750ca07d5082ab194c7f1
-  languageName: node
-  linkType: hard
-
-"draft-js-modifiers@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "draft-js-modifiers@npm:0.2.2"
-  dependencies:
-    draft-js: ~0.10.5
-    immutable: ~3.7.4
-  checksum: 79cea4b0cd50ef454b22d14ec928bf7a55b51ac96fd0a7994553fd60f3553ec72d3d9ebe57ff08da1bbd9e849c970a872e9570d9bfcea1fd77c360bd8c2e67fc
-  languageName: node
-  linkType: hard
-
-"draft-js-plugins-editor@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "draft-js-plugins-editor@npm:3.0.0"
-  dependencies:
-    immutable: ~3.7.4
-    prop-types: ^15.5.8
-  peerDependencies:
-    draft-js: ^0.11.0
-    react: ^15.5.0 || ^16.0.0-rc
-    react-dom: ^15.5.0 || ^16.0.0-rc
-  checksum: 1ffd15468987292a3e5ecbe3dd39bf424a37566ac8b9f09a9357c22e74ea80f12638e7cd303579d91b5a9c442b923d13be1e22e44876823866cf382994918bc5
-  languageName: node
-  linkType: hard
-
-"draft-js-resizeable-plugin@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "draft-js-resizeable-plugin@npm:2.0.9"
-  peerDependencies:
-    draft-js: ^0.10.1 || ^0.11.0
-    react: ^15.5.0 || ^16.0.0-rc
-    react-dom: ^15.5.0 || ^16.0.0-rc
-  checksum: f617a79c22fd1ac1e445a281251acaf19b0e1dbdb36a2e3672d7893c8cc1ccf9f99e1feac83a90ce83a3858d5129ed642bd9ab13f23e7bc76a0b21046e13a807
-  languageName: node
-  linkType: hard
-
 "draft-js-utils@npm:^1.2.0, draft-js-utils@npm:^1.4.0, draft-js-utils@npm:^1.4.1":
   version: 1.4.1
   resolution: "draft-js-utils@npm:1.4.1"
@@ -15057,19 +14956,6 @@ __metadata:
     draft-js: ">=0.10.0"
     immutable: 3.x.x
   checksum: 0b261e8bf9267089ca31962a288ffa755c14c22436f4962b6fea2261555c12a5fe8df91982e0f96fd9b8d8c7c0514c69cf6299dbcdea41c6e8d53e2b74f411de
-  languageName: node
-  linkType: hard
-
-"draft-js-video-plugin@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "draft-js-video-plugin@npm:2.0.2"
-  dependencies:
-    prop-types: ^15.5.8
-  peerDependencies:
-    draft-js: ^0.10.1 || ^0.11.0
-    react: ^15.5.0 || ^16.0.0-rc
-    react-dom: ^15.5.0 || ^16.0.0-rc
-  checksum: 4012090aa22e14b66064a1a33748a810f069548880c7f1d6cf0469bcdb143ce363e715f6952b0936fa129fe37aad235ea37d8bd741d7d004b7fbf8f448544162
   languageName: node
   linkType: hard
 
@@ -15084,20 +14970,6 @@ __metadata:
     react: ">=0.14.0"
     react-dom: ">=0.14.0"
   checksum: b6d127a5e22838d3d43e736762c689c8d67dc632e9eb53b025c2d9504f892bcd0e05c8137f63051ae7b6ecb8b722c8f3923a13453583023e85b999cc0f6f93f7
-  languageName: node
-  linkType: hard
-
-"draft-js@npm:~0.10.5":
-  version: 0.10.5
-  resolution: "draft-js@npm:0.10.5"
-  dependencies:
-    fbjs: ^0.8.15
-    immutable: ~3.7.4
-    object-assign: ^4.1.0
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0
-    react-dom: ^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0
-  checksum: 5cf661c64035ea1e54f4d873cfe9e9e344974aa8e22024bebec59347ba2faeb1aaac955d666d78b0e6ce0910556b7af36c2ce7925df0f71bd055ed6754507986
   languageName: node
   linkType: hard
 
@@ -16971,7 +16843,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fbjs@npm:^0.8.1, fbjs@npm:^0.8.15":
+"fbjs@npm:^0.8.1":
   version: 0.8.18
   resolution: "fbjs@npm:0.8.18"
   dependencies:
@@ -17277,15 +17149,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-with-regex@npm:^1.1.2":
-  version: 1.1.3
-  resolution: "find-with-regex@npm:1.1.3"
-  peerDependencies:
-    draft-js: ^0.10.5
-  checksum: 22baefcbc3f086c98d01f177e645fbfcba683d920b059bbab41775352cab80921dbd2d1032e1c000d59afdbd937a449dea375a15249d5dfbdbbf352b761afb98
-  languageName: node
-  linkType: hard
-
 "fizzy-ui-utils@npm:^2.0.0":
   version: 2.0.7
   resolution: "fizzy-ui-utils@npm:2.0.7"
@@ -17442,7 +17305,7 @@ __metadata:
     "@eeacms/volto-eea-slate-glossary": 2.0.0
     "@eeacms/volto-eea-website-theme": 4.3.0
     "@eeacms/volto-embed": 11.0.1
-    "@eeacms/volto-forest-policy": 2.0.10
+    "@eeacms/volto-forest-policy": 3.0.0
     "@eeacms/volto-globalsearch": 4.0.1
     "@eeacms/volto-middleware-vh": 3.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
@@ -27136,7 +26999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"querystring@npm:^0.2.0":
+"querystring@npm:0.2.1, querystring@npm:^0.2.0":
   version: 0.2.1
   resolution: "querystring@npm:0.2.1"
   checksum: 7b83b45d641e75fd39cd6625ddfd44e7618e741c61e95281b57bbae8fde0afcc12cf851924559e5cc1ef9baa3b1e06e22b164ea1397d65dd94b801f678d9c8ce
@@ -28922,15 +28785,6 @@ __metadata:
     indent-string: ^4.0.0
     strip-indent: ^3.0.0
   checksum: fa1ef20404a2d399235e83cc80bd55a956642e37dd197b4b612ba7327bf87fa32745aeb4a1634b2bab25467164ab4ed9c15be2c307923dd08b0fe7c52431ae6b
-  languageName: node
-  linkType: hard
-
-"redraft@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "redraft@npm:0.10.2"
-  dependencies:
-    punycode: ^2.1.0
-  checksum: bf52c2e42f9c427a3f537eda03c2a6d378be37d37b93a72f28b840c35550efcfc8b37427c2082730d59b441924eb028f9f4ce830b3a48f659386123337bb2ecc
   languageName: node
   linkType: hard
 
@@ -33377,13 +33231,6 @@ __metadata:
     trough: ^2.0.0
     vfile: ^5.0.0
   checksum: 053e7c65ede644607f87bd625a299e4b709869d2f76ec8138569e6e886903b6988b21cd9699e471eda42bee189527be0a9dac05936f1d069a5e65d0125d5d756
-  languageName: node
-  linkType: hard
-
-"union-class-names@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "union-class-names@npm:1.0.0"
-  checksum: 7cc032c581f05781aa30c207c71dcca4f03e18a7999f557188bcb2666b63027acd797270e5a3e9293f8537c503e056275f13af13a8ea236cca39139a534c37de
   languageName: node
   linkType: hard
 
