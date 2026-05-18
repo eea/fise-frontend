@@ -2443,45 +2443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-forest-policy@npm:2.0.10":
-  version: 2.0.10
-  resolution: "@eeacms/volto-forest-policy@npm:2.0.10"
-  dependencies:
-    "@eeacms/volto-datablocks": "*"
-    "@eeacms/volto-eea-design-system": "*"
-    "@eeacms/volto-eea-map": "*"
-    "@eeacms/volto-eea-website-theme": "*"
-    "@eeacms/volto-embed": "*"
-    "@eeacms/volto-globalsearch": 4.0.1
-    "@eeacms/volto-matomo": "*"
-    "@eeacms/volto-object-widget": 9.1.1
-    "@eeacms/volto-openlayers-map": "*"
-    "@eeacms/volto-plotlycharts": "*"
-    "@eeacms/volto-searchlib": 4.0.3
-    "@elastic/react-search-ui": 1.20.2
-    "@elastic/react-search-ui-views": 1.20.2
-    "@elastic/search-ui": 1.21.2
-    "@plone-collective/volto-authomatic": 2.0.1
-    d3-array: ^2.12.1
-    draft-js-alignment-plugin: ^2.0.6
-    draft-js-focus-plugin: ^3.0.1
-    draft-js-import-html: ^1.4.1
-    draft-js-inline-toolbar-plugin: ^2.0.3
-    draft-js-modifiers: ^0.2.2
-    draft-js-plugins-editor: ^3.0.0
-    draft-js-resizeable-plugin: ^2.0.9
-    draft-js-video-plugin: ^2.0.2
-    esri-loader: ^2.14.0
-    react-component-queries: 2.3.0
-    react-highlight-words: ^0.16.0
-    react-image-gallery: 1.2.7
-    react-lazy-load-image-component: ^1.5.0
-    redraft: ^0.10.2
-  checksum: 619819de1504b09daf28dd33a8e7e973f3c4769d43518d3bf50925c6903a95e4f3d10bf928dab19d12535da2e942d108095268667d8a406cbec07b87c8bd32a6
-  languageName: node
-  linkType: hard
-
-"@eeacms/volto-forest-policy@workspace:src/addons/volto-forest-policy":
+"@eeacms/volto-forest-policy@2.0.11, @eeacms/volto-forest-policy@workspace:src/addons/volto-forest-policy":
   version: 0.0.0-use.local
   resolution: "@eeacms/volto-forest-policy@workspace:src/addons/volto-forest-policy"
   dependencies:
