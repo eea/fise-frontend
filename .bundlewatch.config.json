@@ -1,10 +1,6 @@
 {
   "files": [
     {
-      "path": "build/public/static/js/*.js",
-      "maxSize": "50kB"
-    },
-    {
       "path": "build/public/static/js/2126.*.chunk.js",
       "maxSize": "55kB"
     },
@@ -63,6 +59,10 @@
     {
       "path": "build/public/static/js/rehype-prism-plus*.js",
       "maxSize": "250kB"
+    },
+    {
+      "path": "build/public/static/js/*.js",
+      "maxSize": "50kB"
     }
   ]
 }
