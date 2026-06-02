@@ -5,20 +5,20 @@
       "maxSize": "50kB"
     },
     {
-      "path": "build/public/static/js/ol-format.*.js",
-      "maxSize": "60kB"
+      "path": "build/public/static/js/2126.*.chunk.js",
+      "maxSize": "55kB"
     },
     {
-      "path": "build/public/static/js/ol-layer.*.js",
-      "maxSize": "147kB"
+      "path": "build/public/static/js/2728.*.chunk.js",
+      "maxSize": "150kB"
     },
     {
-      "path": "build/public/static/js/ol-source.*.js",
-      "maxSize": "53kB"
+      "path": "build/public/static/js/7739.*.chunk.js",
+      "maxSize": "100kB"
     },
     {
-      "path": "build/public/static/js/ol.*.js",
-      "maxSize": "97kB"
+      "path": "build/public/static/js/8168.*.chunk.js",
+      "maxSize": "65kB"
     },
     {
       "path": "build/public/static/js/d3*.js",
