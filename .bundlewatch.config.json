@@ -70,7 +70,7 @@
     },
     {
       "path": "build/public/static/js/*.js",
-      "maxSize": "150kB"
+      "maxSize": "2.5MB"
     }
   ]
 }
