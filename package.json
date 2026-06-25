@@ -40,7 +40,7 @@
     "@eeacms/volto-object-widget": "9.1.1",
     "@eeacms/volto-globalsearch": "4.0.1",
     "@eeacms/volto-plotlycharts": "14.0.3",
-    "@eeacms/volto-eea-chatbot": "2.0.2",
+    "@eeacms/volto-eea-chatbot": "2.0.5",
     "@eeacms/volto-searchlib": "4.0.3",
     "@eeacms/volto-tableau": "9.0.1",
     "@eeacms/volto-forest-policy": "2.0.11",
@@ -57,6 +57,7 @@
   "dependencies": {
     "@eeacms/volto-custom-html-block": "0.1.2",
     "@eeacms/volto-datablocks": "8.0.2",
+    "@eeacms/volto-eea-chatbot": "2.0.5",
     "@eeacms/volto-eea-design-system": "1.60.2",
     "@eeacms/volto-eea-kitkat": "33.0.3",
     "@eeacms/volto-eea-map": "6.0.1",
