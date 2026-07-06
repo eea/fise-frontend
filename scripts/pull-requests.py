@@ -41,7 +41,7 @@ class Github(object):
 
     [github]
     username: foobar
-    password: secret
+    password: secret #betterleaks:allow
 
     """
 
@@ -60,7 +60,7 @@ class Github(object):
         self.status = 0
         self.repos = []
         self.username = ""
-        self.password = ""
+        self.password = "" #betterleaks:allow
         self.token = os.environ.get("GITHUB_TOKEN", "")
 
         self.loglevel = loglevel
@@ -79,11 +79,11 @@ class Github(object):
             cfg_file = os.path.expanduser("~/.github")
             if not os.path.exists(cfg_file):
                 with contextlib.closing(open(cfg_file, "w")) as cfg:
-                    cfg.write("[github]\nusername:\npassword:\n")
+                    cfg.write("[github]\nusername:\npassword:\n") #betterleaks:allow
             config = SafeConfigParser()
             config.read([cfg_file])
             self.username = config.get("github", "username")
-            self.password = config.get("github", "password")
+            self.password = config.get("github", "password") #betterleaks:allow
 
         return {
             "username": self.username,
