@@ -1,0 +1,76 @@
+{
+  "files": [
+    {
+      "path": "build/public/static/js/2126.*.chunk.js",
+      "maxSize": "55kB"
+    },
+    {
+      "path": "build/public/static/js/2728.*.chunk.js",
+      "maxSize": "150kB"
+    },
+    {
+      "path": "build/public/static/js/7739.*.chunk.js",
+      "maxSize": "100kB"
+    },
+    {
+      "path": "build/public/static/js/8168.*.chunk.js",
+      "maxSize": "65kB"
+    },
+    {
+      "path": "build/public/static/js/d3.*.chunk.js",
+      "maxSize": "103kB"
+    },
+    {
+      "path": "build/public/static/js/react-sortable-tree.*.chunk.js",
+      "maxSize": "100kB"
+    },
+    {
+      "path": "build/public/static/js/react-sortable-hoc.*.chunk.js",
+      "maxSize": "10kB"
+    },
+    {
+      "path": "build/public/static/js/PlotlyEditor.*.chunk.js",
+      "maxSize": "2.1MB"
+    },
+    {
+      "path": "build/public/static/js/react-plotly-js-factory.*.chunk.js",
+      "maxSize": "5kB"
+    },
+    {
+      "path": "build/public/static/js/plotly-js-dist-plotly-with-meta.*.chunk.js",
+      "maxSize": "1.38MB"
+    },
+    {
+      "path": "build/public/static/js/plotly-js-dist-plotly-min.*.chunk.js",
+      "maxSize": "1.3MB"
+    },
+    {
+      "path": "build/public/static/js/client.*.js",
+      "maxSize": "2.45MB"
+    },
+    {
+      "path": "build/public/static/js/prettier-standalone.*.chunk.js",
+      "maxSize": "135kB"
+    },
+    {
+      "path": "build/public/static/js/jsoneditor-dist-jsoneditor-min.*.chunk.js",
+      "maxSize": "280kB"
+    },
+    {
+      "path": "build/public/static/js/jsoneditor.*.chunk.js",
+      "maxSize": "280kB"
+    },
+    {
+      "path": "build/public/static/js/sanitize-html.*.chunk.js",
+      "maxSize": "85kB"
+    },
+    {
+      "path": "build/public/static/js/rehype-prism-plus.*.chunk.js",
+      "maxSize": "250kB"
+    },
+    {
+      "path": "build/public/static/js/*.js",
+      "maxSize": "2.5MB"
+    }
+  ]
+}
