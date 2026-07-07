@@ -5171,8 +5171,8 @@ __metadata:
   linkType: hard
 
 "@plone/scripts@npm:^3.10.6":
-  version: 3.10.6
-  resolution: "@plone/scripts@npm:3.10.6"
+  version: 3.10.7
+  resolution: "@plone/scripts@npm:3.10.7"
   dependencies:
     "@babel/core": ^7.0.0
     babel-plugin-react-intl: 5.1.17
@@ -5194,7 +5194,7 @@ __metadata:
     changelogupdater: changelogupdater.cjs
     i18n: i18n.cjs
     volto-update-deps: volto-update-deps.js
-  checksum: 97d79b70bcf1b1aa8de7344c56a96a5375b14fc0f22991a52b3f9aac58e78e619b80f589b998ea009eb37cc55e0f5af08aa17356dd901e43f527270a30f6e82b
+  checksum: 17f904a1f702e02311c4e43518178b10e8c6038004c72abdee5af6e115a10173be83faf1e0cd0eef7c301061273dd84606550e52b901ad793d65f39afab695c3
   languageName: node
   linkType: hard
 
