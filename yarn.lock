@@ -2280,10 +2280,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-chatbot@npm:2.0.5":
-  version: 2.0.5
-  resolution: "@eeacms/volto-eea-chatbot@npm:2.0.5"
+"@eeacms/volto-eea-chatbot@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@eeacms/volto-eea-chatbot@npm:3.0.0"
   dependencies:
+    "@eeacms/volto-design-tokens": "*"
     "@eeacms/volto-matomo": "*"
     "@microsoft/fetch-event-source": 2.0.1
     "@plone-collective/volto-sentry": "*"
@@ -2298,7 +2299,7 @@ __metadata:
     rehype-prism-plus: 1.6.0
     remark-gfm: 3.0.1
     uuid: 10.0.0
-  checksum: a75826d0570a60988614c4cf936d5a384558b106d220738ed3aaf616dd463d6487145e2b7027b6c88608b188eeb2b8c43ed9309a30c73ee4c6ca8048769af3e1
+  checksum: c14ce606a1ce76d655037181dcd922608d1832b87071a6eef94c8379b862fd7369c22725bf82578563cda86d108be3c481e763407851967cf1fd791692889ded
   languageName: node
   linkType: hard
 
@@ -14926,14 +14927,14 @@ __metadata:
   linkType: hard
 
 "dompurify@npm:^3.1.7":
-  version: 3.4.2
-  resolution: "dompurify@npm:3.4.2"
+  version: 3.4.12
+  resolution: "dompurify@npm:3.4.12"
   dependencies:
     "@types/trusted-types": ^2.0.7
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 2b1d3bdace712a27db9a23cde39357002cb1445a5966d6f320d66d75aefc22d796bdee8187eb512114870fdc45401e4bab04d1a0a1d0e3f40294c23d7784cbc4
+  checksum: 477e944e669bac9247c9ebfa55c7ea5c73f3cc6cd6b21ee72e306000e3e53d308e7bdaac89e655a0e2661de2ffbdd877e6a92537d07ba1d70c6c441fcef8c65c
   languageName: node
   linkType: hard
 
