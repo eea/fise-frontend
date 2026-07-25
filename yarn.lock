@@ -2280,10 +2280,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-chatbot@npm:2.0.5":
-  version: 2.0.5
-  resolution: "@eeacms/volto-eea-chatbot@npm:2.0.5"
+"@eeacms/volto-eea-chatbot@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@eeacms/volto-eea-chatbot@npm:3.0.0"
   dependencies:
+    "@eeacms/volto-design-tokens": "*"
     "@eeacms/volto-matomo": "*"
     "@microsoft/fetch-event-source": 2.0.1
     "@plone-collective/volto-sentry": "*"
@@ -2298,7 +2299,7 @@ __metadata:
     rehype-prism-plus: 1.6.0
     remark-gfm: 3.0.1
     uuid: 10.0.0
-  checksum: a75826d0570a60988614c4cf936d5a384558b106d220738ed3aaf616dd463d6487145e2b7027b6c88608b188eeb2b8c43ed9309a30c73ee4c6ca8048769af3e1
+  checksum: c14ce606a1ce76d655037181dcd922608d1832b87071a6eef94c8379b862fd7369c22725bf82578563cda86d108be3c481e763407851967cf1fd791692889ded
   languageName: node
   linkType: hard
 
@@ -16895,9 +16896,9 @@ __metadata:
   linkType: hard
 
 "fast-uri@npm:^3.0.1":
-  version: 3.1.2
-  resolution: "fast-uri@npm:3.1.2"
-  checksum: 73a6e1b04e6fcf7a09ed93316e72d643ef177d26969973784690708612141f2c2f74657120bab75bf5bbc26bfd535a32c90a8c3bc50aca50584cf01f98815afe
+  version: 3.1.4
+  resolution: "fast-uri@npm:3.1.4"
+  checksum: 6e1262dd5901f4f095eeb4c446111f5818320f05a8f11eaa46d9117eec3b5fd6114507a66338c564004eaa002b0eb865ca998b34780373fd205d53b5182c3bd2
   languageName: node
   linkType: hard
 
