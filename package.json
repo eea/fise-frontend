@@ -2,7 +2,7 @@
   "name": "forest-frontend",
   "description": "Frontend component for the Forests website.",
   "license": "MIT",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "private": true,
   "workspaces": [
     "src/addons/*"
@@ -44,7 +44,7 @@
     "@eeacms/volto-eea-chatbot": "3.0.0",
     "@eeacms/volto-searchlib": "5.0.0",
     "@eeacms/volto-tableau": "9.0.4",
-    "@eeacms/volto-forest-policy": "3.0.2",
+    "@eeacms/volto-forest-policy": "3.0.3",
     "@eeacms/volto-middleware-vh": "3.0.0",
     "@plone-collective/volto-authomatic": "2.0.1",
     "d3-array": "^2.12.1",
@@ -66,7 +66,7 @@
     "@eeacms/volto-eea-website-theme": "4.4.0",
     "@eeacms/volto-embed": "11.0.5",
     "@eeacms/volto-embed-content": "1.0.2",
-    "@eeacms/volto-forest-policy": "3.0.2",
+    "@eeacms/volto-forest-policy": "3.0.3",
     "@eeacms/volto-globalsearch": "4.0.1",
     "@eeacms/volto-middleware-vh": "3.0.0",
     "@eeacms/volto-plotlycharts": "^11.0.2",
