@@ -30,7 +30,7 @@
   "theme": "@eeacms/volto-forest-policy",
   "resolutions": {
     "@elastic/search-ui": "1.21.2",
-    "@eeacms/volto-embed": "11.0.5",
+    "@eeacms/volto-embed": "11.0.6",
     "@eeacms/volto-datablocks": "8.0.3",
     "@eeacms/volto-eea-design-system": "1.60.8",
     "@eeacms/volto-eea-kitkat": "33.1.1",
@@ -64,7 +64,7 @@
     "@eeacms/volto-eea-map": "6.0.2",
     "@eeacms/volto-eea-slate-glossary": "2.0.0",
     "@eeacms/volto-eea-website-theme": "4.4.0",
-    "@eeacms/volto-embed": "11.0.5",
+    "@eeacms/volto-embed": "11.0.6",
     "@eeacms/volto-embed-content": "1.0.2",
     "@eeacms/volto-forest-policy": "3.0.3",
     "@eeacms/volto-globalsearch": "4.1.0",
