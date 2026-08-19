@@ -2663,12 +2663,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-slate-dataentity@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@eeacms/volto-slate-dataentity@npm:5.0.0"
+"@eeacms/volto-slate-dataentity@npm:5.0.1":
+  version: 5.0.1
+  resolution: "@eeacms/volto-slate-dataentity@npm:5.0.1"
   dependencies:
     "@eeacms/volto-datablocks": "*"
-  checksum: 71924c97fb816b4904ab653d4ccc94c0945c6f94edaa34ebfb7c47373017b25ff216453f01ad07f34e396e60abdb86c8cf02fc2a2ea5f6fbdc725925ec052575
+  checksum: 94632a05ff7d1b465e82775a0b2b85ed54dbad3d828df6f415240d2fc93b6d1de57eafadc2c58f5d78c6175e09264631976e1d72480fca7e74ba4cd94df91395
   languageName: node
   linkType: hard
 
@@ -17426,7 +17426,7 @@ __metadata:
     "@eeacms/volto-middleware-vh": 3.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
     "@eeacms/volto-searchlib": 5.0.0
-    "@eeacms/volto-slate-dataentity": 5.0.0
+    "@eeacms/volto-slate-dataentity": 5.0.1
     "@eeacms/volto-tableau": 9.0.4
     "@eeacms/volto-visualization-utils": 2.0.0
     "@fiverr/afterbuild-webpack-plugin": ^1.0.0
