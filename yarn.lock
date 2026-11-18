@@ -2290,14 +2290,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-chatbot@npm:4.1.6":
-  version: 4.1.6
-  resolution: "@eeacms/volto-eea-chatbot@npm:4.1.6"
+"@eeacms/volto-eea-chatbot@npm:4.1.7":
+  version: 4.1.7
+  resolution: "@eeacms/volto-eea-chatbot@npm:4.1.7"
   dependencies:
     "@eeacms/volto-design-tokens": "*"
     "@eeacms/volto-matomo": "*"
     "@microsoft/fetch-event-source": 2.0.1
-    "@plone-collective/volto-sentry": "*"
+    "@sentry/browser": 7.15.0
     compromise: 14.14.5
     fast-json-patch: 3.1.1
     highlight.js: 11.10.0
@@ -2309,7 +2309,7 @@ __metadata:
     rehype-prism-plus: 1.6.0
     remark-gfm: 3.0.1
     uuid: 10.0.0
-  checksum: 7f26b4a0ab791a2925e6195163774ca571e272c76c93ba57798932792ab5b8f344dea9ebf83f9562a55f717432e7b4b1ddf5b9363e05084abf4feffa7de6b98c
+  checksum: 91ae27c91822dd84db60703656053feb12634ad4efdd1e77af90dbd88e36f6e88b0d3aadc15689e299e6196acf1aa53c09136e0e33753ee4791bdef6c7d785fd
   languageName: node
   linkType: hard
 
@@ -2641,9 +2641,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-searchlib@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@eeacms/volto-searchlib@npm:7.0.0"
+"@eeacms/volto-searchlib@npm:7.0.1":
+  version: 7.0.1
+  resolution: "@eeacms/volto-searchlib@npm:7.0.1"
   dependencies:
     "@eeacms/volto-design-tokens": "*"
     "@eeacms/volto-eea-chatbot": "*"
@@ -2685,7 +2685,7 @@ __metadata:
     superagent: 3.8.2
     svg-loader: 0.0.2
     use-deep-compare-effect: 1.8.1
-  checksum: 3f36c2b2018c2999cfa7c963e95cdd05e4a325e12b88aa8d400314dfce384af625fe8a2c4303e988bc98dc841a07c2b2c29701ece35d972b6c405faac2acfef5
+  checksum: 7d278aac9c8904126f02fab3c26f2a16908df31ffebdbe568f2c0df82e5978cf2f5a2964712ef9c7897fbc752acf2c80dee94a501bc6b703f3ab70276befed85
   languageName: node
   linkType: hard
 
@@ -5105,18 +5105,6 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=13.8.0"
   checksum: 3ef620d30dd7c5716a327acdd8875df3b7902d2812c9d6dd1faf4dd36fd8462b32d04b20011070edfc781d5139f7eb0745702cf147e4703c0d8bb4315e8abfaa
-  languageName: node
-  linkType: hard
-
-"@plone-collective/volto-sentry@npm:*":
-  version: 0.4.0
-  resolution: "@plone-collective/volto-sentry@npm:0.4.0"
-  dependencies:
-    "@sentry/browser": 7.15.0
-    "@sentry/integrations": 7.15.0
-    "@sentry/node": 7.15.0
-    "@sentry/webpack-plugin": 1.19.1
-  checksum: db8660ac3a82320d917222e940842479f2aa2945f3e6b8614d40fc12f96b5b4eb997fb4ab92ab7087492ec0cbb653b65fd2ee0f6f37d39ad5125e9c37c233c49
   languageName: node
   linkType: hard
 
@@ -17499,7 +17487,7 @@ __metadata:
     "@eeacms/volto-globalsearch": 4.1.1
     "@eeacms/volto-middleware-vh": 3.0.0
     "@eeacms/volto-plotlycharts": ^11.0.2
-    "@eeacms/volto-searchlib": 7.0.0
+    "@eeacms/volto-searchlib": 7.0.1
     "@eeacms/volto-slate-dataentity": 5.0.1
     "@eeacms/volto-tableau": 9.0.4
     "@eeacms/volto-visualization-utils": 2.0.0
