@@ -2324,18 +2324,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-design-system@npm:1.61.10":
-  version: 1.61.10
-  resolution: "@eeacms/volto-eea-design-system@npm:1.61.10"
+"@eeacms/volto-eea-design-system@npm:1.70.0":
+  version: 1.70.0
+  resolution: "@eeacms/volto-eea-design-system@npm:1.70.0"
   dependencies:
     "@eeacms/countup": "*"
     "@eeacms/volto-corsproxy": "*"
     "@fontsource/roboto": 4.5.8
+    "@semantic-ui-react/event-stack": 3.1.3
     react-lazy-load-image-component: 1.5.6
     react-slick: ^0.30.1
     remixicon: 4.6.0
     slick-carousel: ^1.8.1
-  checksum: 082f433c52a3846d664492eadda7f963a82fe0065d084dbe9971e74e3fde060d89e4ced6b5a8e970786c5f78f85f9204e867d99d4683d8145c5fc5475214e87b
+  peerDependencies:
+    "@plone/volto": ">=18.0.0 <20.0.0"
+    classnames: ">=2.0.0"
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+    react-intl: ">=3.0.0"
+    semantic-ui-react: ">=2.0.0"
+  checksum: edc448893c4d4c860ce10795e7a0ab2e4f915850f05cc2a7b0cc4fb5e1cb18b841a1cbd70b50c185a9d442745829ec0d713f1288199caf7b382b7e468f247bc9
   languageName: node
   linkType: hard
 
@@ -2619,23 +2627,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-plotlycharts@npm:14.0.7":
-  version: 14.0.7
-  resolution: "@eeacms/volto-plotlycharts@npm:14.0.7"
+"@eeacms/volto-plotlycharts@npm:15.0.0":
+  version: 15.0.0
+  resolution: "@eeacms/volto-plotlycharts@npm:15.0.0"
   dependencies:
     "@eeacms/react-chart-editor": 0.47.8
     "@eeacms/volto-datablocks": "*"
     "@eeacms/volto-embed": "*"
     "@eeacms/volto-matomo": "*"
-    "@plone/scripts": ^3.10.6
     handsontable: ^15.2.0
     jsoneditor: 10.2.0
     jszip: 3.10.1
+    plotly-icons: ^1.3.15
     plotly.js: ^2.35.3
+    qs: ^6.14.2
     react-plotly.js: 2.6.0
+    react-portal: ^4.3.0
     remixicon: 4.6.0
     uuid: ^8.3.2
-  checksum: 1c9ac12f61f3373f34a501b380779cd223df6948f0387676fa0a18074b243a7cc75f0fde76da4725e5120e38d7b785cf537063d7d7364518d89d889b06b67d2a
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 102845f27fa956aa22129b256f5fd9d5e7262f4064378a639267734abe7dc13bcd47639db2fc48648c06cb36c6ab19bb9a56edacb20bb9942647a5af880e44eb
   languageName: node
   linkType: hard
 
@@ -5222,34 +5235,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/scripts@npm:^3.10.6":
-  version: 3.10.7
-  resolution: "@plone/scripts@npm:3.10.7"
-  dependencies:
-    "@babel/core": ^7.0.0
-    babel-plugin-react-intl: 5.1.17
-    babel-preset-razzle: 4.2.17
-    chalk: 4
-    commander: 8.2.0
-    comment-json: ^4.2.3
-    execa: 9.6.0
-    find-parent-dir: ^0.3.1
-    fs-extra: 10.1.0
-    git-url-parse: ^13.1.0
-    glob: ^10.4.5
-    lodash: 4.18.1
-    mrs-developer: ^2.1.1
-    pofile: 1.0.10
-    wait-on: ^9.0.4
-  bin:
-    addon: addon/index.js
-    changelogupdater: changelogupdater.cjs
-    i18n: i18n.cjs
-    volto-update-deps: volto-update-deps.js
-  checksum: 17f904a1f702e02311c4e43518178b10e8c6038004c72abdee5af6e115a10173be83faf1e0cd0eef7c301061273dd84606550e52b901ad793d65f39afab695c3
-  languageName: node
-  linkType: hard
-
 "@plone/scripts@npm:^3.3.2":
   version: 3.10.5
   resolution: "@plone/scripts@npm:3.10.5"
@@ -5811,7 +5796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-ui-react/event-stack@npm:^3.1.2, @semantic-ui-react/event-stack@npm:^3.1.3":
+"@semantic-ui-react/event-stack@npm:3.1.3, @semantic-ui-react/event-stack@npm:^3.1.2, @semantic-ui-react/event-stack@npm:^3.1.3":
   version: 3.1.3
   resolution: "@semantic-ui-react/event-stack@npm:3.1.3"
   dependencies:
@@ -17547,7 +17532,7 @@ __metadata:
     "@dnd-kit/utilities": 3.2.2
     "@eeacms/volto-custom-html-block": 0.1.2
     "@eeacms/volto-datablocks": 10.0.0
-    "@eeacms/volto-eea-design-system": 1.61.10
+    "@eeacms/volto-eea-design-system": 1.70.0
     "@eeacms/volto-eea-kitkat": 34.0.4
     "@eeacms/volto-eea-map": 7.0.0
     "@eeacms/volto-eea-slate-glossary": 2.0.0
@@ -22868,7 +22853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.18.1, lodash@npm:4.x, lodash@npm:^4.0.1, lodash@npm:^4.1.1, lodash@npm:^4.15.0, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.18.1, lodash@npm:^4.6.1, lodash@npm:^4.7.0":
+"lodash@npm:4.x, lodash@npm:^4.0.1, lodash@npm:^4.1.1, lodash@npm:^4.15.0, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.18.1, lodash@npm:^4.6.1, lodash@npm:^4.7.0":
   version: 4.18.1
   resolution: "lodash@npm:4.18.1"
   checksum: bb5f5b49aad29614e709af02b64c56b0f8b78c6a81434a3c1ae527d2f0f78ca08f9d9fb22aa825a053876c9d2166e9c01f31c356014b5e2bdc0556c057433102
@@ -28378,7 +28363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-portal@npm:^4.2.0":
+"react-portal@npm:^4.2.0, react-portal@npm:^4.3.0":
   version: 4.3.0
   resolution: "react-portal@npm:4.3.0"
   dependencies:
