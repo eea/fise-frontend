@@ -2293,26 +2293,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-eea-chatbot@npm:4.1.7":
-  version: 4.1.7
-  resolution: "@eeacms/volto-eea-chatbot@npm:4.1.7"
+"@eeacms/volto-eea-chatbot@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@eeacms/volto-eea-chatbot@npm:5.0.0"
   dependencies:
     "@eeacms/volto-design-tokens": "*"
     "@eeacms/volto-matomo": "*"
     "@microsoft/fetch-event-source": 2.0.1
+    "@plone-collective/volto-sentry": "*"
     "@sentry/browser": 7.15.0
     compromise: 14.14.5
+    debug: ^4.3.4
+    dequal: ^2.0.3
     fast-json-patch: 3.1.1
     highlight.js: 11.10.0
     luxon: 3.5.0
     marked: 13.0.3
     node-fetch: 2.7.0
+    qs: ^6.14.2
     react-markdown: 8.0.7
     react-textarea-autosize: ^8.5.3
     rehype-prism-plus: 1.6.0
     remark-gfm: 3.0.1
+    superagent: ^10.3.0
     uuid: 10.0.0
-  checksum: 91ae27c91822dd84db60703656053feb12634ad4efdd1e77af90dbd88e36f6e88b0d3aadc15689e299e6196acf1aa53c09136e0e33753ee4791bdef6c7d785fd
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 1894ff810f0db8b6e44fb79edee04f377d1e65d1ee51a95b44e150d10c051b43b9924196cc94efafcc26736bacfb8c9882e5711d34ece985f35ab2d299463a30
   languageName: node
   linkType: hard
 
@@ -2420,9 +2428,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-embed-content@npm:1.0.2":
-  version: 1.0.2
-  resolution: "@eeacms/volto-embed-content@npm:1.0.2"
+"@eeacms/volto-embed-content@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@eeacms/volto-embed-content@npm:2.0.0"
   dependencies:
     "@eeacms/volto-block-data-figure": "*"
     "@eeacms/volto-eea-map": "*"
@@ -2430,7 +2438,10 @@ __metadata:
     "@eeacms/volto-embed-static-content": "*"
     "@eeacms/volto-plotlycharts": "*"
     "@eeacms/volto-tableau": "*"
-  checksum: 51a9d1658d6dd7ba45f0431729171b4dd32e2cb3d2bef8af4f4349b231c9b8f2b2ddce611b492f97edf8a6b81410eddc7fbf49002e07040cb5a0419c8dd77e1b
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 970eb5107860b4887b7509162951e2d8ff3953d1eb497ff92e8751cf69e361479c78ccb48acd0b14c7d29dc05a11610b0026637d48c614613d8ffd53e4b8d942
   languageName: node
   linkType: hard
 
@@ -5128,6 +5139,21 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=13.8.0"
   checksum: 3ef620d30dd7c5716a327acdd8875df3b7902d2812c9d6dd1faf4dd36fd8462b32d04b20011070edfc781d5139f7eb0745702cf147e4703c0d8bb4315e8abfaa
+  languageName: node
+  linkType: hard
+
+"@plone-collective/volto-sentry@npm:*":
+  version: 2.0.0
+  resolution: "@plone-collective/volto-sentry@npm:2.0.0"
+  dependencies:
+    "@sentry/browser": 7.15.0
+    "@sentry/integrations": 7.15.0
+    "@sentry/node": 7.15.0
+    "@sentry/webpack-plugin": 1.19.1
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 7cf31659f724afe3e1dea23c6461176450d11c2ab93fdd3570b1f252b427ef49649d40d74f7556f4c2fcf0b67ccf7d6aa529c7b82406e10e64c59767b4b2920c
   languageName: node
   linkType: hard
 
@@ -17522,7 +17548,7 @@ __metadata:
     "@eeacms/volto-eea-slate-glossary": 2.0.0
     "@eeacms/volto-eea-website-theme": 5.0.7
     "@eeacms/volto-embed": 12.0.0
-    "@eeacms/volto-embed-content": 1.0.2
+    "@eeacms/volto-embed-content": 2.0.0
     "@eeacms/volto-forest-policy": 3.0.3
     "@eeacms/volto-globalsearch": 4.1.1
     "@eeacms/volto-middleware-vh": 3.0.0
